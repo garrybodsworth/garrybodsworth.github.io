@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: API | Fragmented Memory]]></title>
+  <link href="http://www.fragmentedmemory.com/blog/categories/api/atom.xml" rel="self"/>
+  <link href="http://www.fragmentedmemory.com/"/>
+  <updated>2013-06-18T16:32:26+01:00</updated>
+  <id>http://www.fragmentedmemory.com/</id>
+  <author>
+    <name><![CDATA[Garry Bodsworth]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[More Vista Native API Examples]]></title>
+    <link href="http://www.fragmentedmemory.com/blog/2006/12/13/more-vista-native-api-examples/"/>
+    <updated>2006-12-13T08:50:00+00:00</updated>
+    <id>http://www.fragmentedmemory.com/blog/2006/12/13/more-vista-native-api-examples</id>
+    <content type="html"><![CDATA[<div class='post'>
+On the <a href="http://www.codeproject.com">CodeProject</a> there are a couple more articles about using the Vista Native API, which is actually accessing the base API through C++, bypassing the need for .NET.<br /><br />The first article is <a href="http://www.codeproject.com/vista/VGFileDialogs.asp">Using the New Vista File Dialogs</a>.  This is actually written with <a href="http://wtl.sourceforge.net/">WTL</a> in mind, but the ideas are the same whatever you are using, so long as you can access the API.  So you can now add the new Vista file dialogs to your current programs.<br /><br />The second article is <a href="http://www.codeproject.com/vista/VGTaskDialog.asp">Showing Friendly Messages with Task Dialogs</a>.  This exposes the new TaskDialog API which Microsoft want people to use for displaying information to users.  It's all fairly simple, so it is extra Vista in your program for not too much effort.</div>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[GUI Toolkits - Boxely]]></title>
+    <link href="http://www.fragmentedmemory.com/blog/2006/11/06/gui-toolkits-boxely/"/>
+    <updated>2006-11-06T20:49:00+00:00</updated>
+    <id>http://www.fragmentedmemory.com/blog/2006/11/06/gui-toolkits-boxely</id>
+    <content type="html"><![CDATA[<div class='post'>
+My discovery of this toolkit was from the article posted about the <a href="http://www.spectrum.ieee.org/nov06/4696">Firefox Kid</a>.  At the end it linked to the blogs of the two Parakey developers <a href="http://www.blakeross.com/">Blake Ross</a> and <a href="http://www.joehewitt.com/">Joe Hewitt</a>.  The article was abou Blake Ross but it turns out Joe Hewitt's blog was really the more interesting.<br /><br />This is how I discovered <a href="http://dev.aol.com/boxely/">Boxely</a>.  Joe Hewitt's posts about it are here:<br /><a href="http://www.joehewitt.com/blog/boxely_is_final.php">His post about the release of Boxely.</a><br /><a href="http://www.joehewitt.com/blog/boxely_part_1_o.php">Boxely - Part 1.</a><br /><a href="http://www.joehewitt.com/blog/boxely_part_2_o.php">Boxely - Part 2.</a><br /><a href="http://www.joehewitt.com/blog/boxely_part_3_o.php">Boxely - Part 3.</a><br /><br />Boxely was envisioned as a lighter weight more powerful XUL type UI toolkit.  It is an XML and Javascript toolkit for creating desktop applications in the same family as XUL and XAML.  It was initially put together for the AIM client, and to allow extensibility.  Reading the articles it seems that Boxely's existence is a lucky break.  Due to being integrated with more AOL services over time it seems that it is more bloated than it started with.<br /><br />It seems to be capable of some really nice graphics and also integrated animations.  I don't know how much XUL/XULRunner has improved to close the gap on the features that Boxely has.  It's almost a shame that the earlier versions were not released without the COM stuff as it all sounded pretty good.<br /><br /><a href="http://dev.aol.com/boxely/">Boxely is available for download</a> now and seems pretty capable.  I, however, don't know if it is worth investigating further as XULRunner seems to do a pretty good job with stuff like <a href="http://www.songbirdnest.com/">SongBird</a>.  In fact I think the sentiments and vision behind the initial design is more more interesting than perhaps the final product.</div>
+
+
+<h2>Comments</h2>
+
+
+<div class='comments'>
+<div class='comment'>
+<div class='author'>Garry Bodsworth</div>
+<div class='content'>
+Thanks for the heads up.  I will definitely look into this deeper and gather together some more information.<br /><br />Thanks,<br /><br />Garry</div>
+</div>
+<div class='comment'>
+<div class='author'>Twinsen</div>
+<div class='content'>
+Boxely has changed significantly since Joe's original chapter series on its conception.  <br /><br />And in fact it is quite a bit better than XUL/XULRunner in many ways, I encourage you to download the SDK and play with the samples.<br /><br />That said, a XUL based app would be 5 or 6 times the size of a Boxely/OCP based app, fwiw (not that size matters right). As an example of a fairly tight, non-bloated Boxely app see: <br /><br /><a href="http://greenhouse.aol.com/prod.jsp?prod_id=27<br />">AIM Lite (LAIM)</a><br /><br />Have fun...</div>
+</div>
+</div>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[GUI Toolkits - qooxdoo]]></title>
+    <link href="http://www.fragmentedmemory.com/blog/2006/10/28/gui-toolkits-qooxdoo/"/>
+    <updated>2006-10-28T22:30:00+01:00</updated>
+    <id>http://www.fragmentedmemory.com/blog/2006/10/28/gui-toolkits-qooxdoo</id>
+    <content type="html"><![CDATA[<div class='post'>
+No, I haven't lost all typing skills, it is really called qooxdoo.<br /><br /><a href="http://qooxdoo.org/">qooxdoo</a> (see also <a href="http://en.wikipedia.org/wiki/Qooxdoo">Wikipedia</a>) is an AJAX targetted Javascript user interface toolkit.  It is surprisingly fully featured and shows how far along web-based toolkits have come.  Well, when I say surprising, I mean shocking.<br /><br />The toolkit is LGPL licensed and has a large set of widgets available.  I think the best way to describe it is to send you to the demo page <a href="http://qooxdoo.org/demo">here</a> and I would recommend you look at <a href="http://demo.qooxdoo.org/html/at-a-glance/index.html">this example</a> in particular.  There is no point in looking at the screenshots as playing round with the demos demonstrates its depth of features and how polished they are.<br /><br />The advantages of this kit for web development include the abstraction away of web browser specifics and automatic browser detection.  It has things that are normally only seen in fully fledged desktop environments like drag-n-drop support.  Like I said earlier though I think the demos speak for themselves.</div>
+
+
+<h2>Comments</h2>
+
+
+<div class='comments'>
+<div class='comment'>
+<div class='author'>Garry Bodsworth</div>
+<div class='content'>
+No probs Si.  I found the whole thing astonishing when I found it, then I rebuilt my computer and forgot about it completely until a bit of paper just saying qooxdoo turned up by the computer today ;)<br /><br />If it was possible to make a web browser with no frame and a transparent window it would look pretty integrated with the system (not perfect for XP though at the moment).</div>
+</div>
+<div class='comment'>
+<div class='author'>Si</div>
+<div class='content'>
+Nice find!!! <br /><br />This is for sure something i need to have a look at, for my blog and future plans!<br /><br />Si<br /><br />http://worldofsi.blogspot.com/</div>
+</div>
+</div>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[GUI Toolkits - More VCF]]></title>
+    <link href="http://www.fragmentedmemory.com/blog/2006/10/24/gui-toolkits-more-vcf/"/>
+    <updated>2006-10-24T21:40:00+01:00</updated>
+    <id>http://www.fragmentedmemory.com/blog/2006/10/24/gui-toolkits-more-vcf</id>
+    <content type="html"><![CDATA[<div class='post'>
+I've already covered the <a href="http://www.vcf-online.org/">Visual Component Framework (VCF)</a>, but I feel like talking about it a bit more.<br /><br />Before starting make sure you check out the <a href="http://vcf-online.org/docs/ref_manual/ch01.html">list of features</a> from the VCF documentation, as I won't repeat them all here (after all it is what hyperlinking is invented for).<br /><br />There are three core libraries in the VCF:<ul><li><span style="font-weight: bold;">FoundationKit</span> - The base library for the VCF providing the lower level building blocks for the other libraries.  It provides the RTTI system, string support, threading, and much more.</li><li><span style="font-weight: bold;">GraphicsKit</span> - It's the library that provides the graphic rendering and graphics formats.  It has some great functionality from <a href="http://www.antigrain.com/">libAGG (The Anti-Grain Geometry Tookit)</a> which I have mentioined in some previous posts.</li><li><span style="font-weight: bold;">ApplicationKit</span> - The GUI functionality itself.  Obviously this is the largest component and covers the widgets, events, focus, and more.  It's almost so big there must be a thought to break it down further into smaller functional components.</li></ul>There are more libraries (kits) that contribute functionality including HTML, OpenGL, the upcoming Regex, and a few more.<br /><br />One compaint I hear is that the libraries are too large (in file size) which I have never understood as an argument for or against a toolkit (unless we are talking MASSIVE).  It is rare that a toolkit has a small amount of dependencies, plus with the VCF you don't need everything if you are into that (but it is obviously more work to do).<br /><br />I have found writing code in VCF is surprisingly concise and easy to understand.  If you have come from an MFC or wxWidgets background, the event system will need some understanding.  I was trying out writing something to simulate docking with a small amount of success, although I haven't done as much coding for it as I probably should have.  It wasn't more than a little experiment to try out something in the VCF.<br /><br />I probably should list the major features that it lacks, which are docking windows (and toolbars), fully implemented cross-platform support, scripting language bindings (<span style="font-weight:bold;">Edit:</span> There is a basic Javascript engine that has not made it into the release yet), and the finished documentation.<br /><br />The cross platform aspect remains incomplete for Linux and Mac although the Linux version has pushed on in the recent past.  Actually I find it a bit disappointing that it does not have a large community built up around it like some other toolkits.  The foundations seem so solid that the system is begging to be extended more.<br /><br />Make sure you read the documentation <a href="http://vcf-online.org/docs/ref_manual/">here</a> which is excellent although not comprehensive, and not completely finished.  Also check out the VCF articles on the <a href="http://www.codeproject.com/">CodeProject</a> (do a search for VCF).<br /><br />As you can tell I am quite positive about this toolkit, it is almost too understated for its own good.  I can imagine developing something quite complex in it and being able to extend it for more complex things.</div>
+
+
+<h2>Comments</h2>
+
+
+<div class='comments'>
+<div class='comment'>
+<div class='author'>Jim</div>
+<div class='content'>
+Just a note, we do have a basic JavaScript engine that the <a href="http://vcfbuilder.org">VCF Builder</a> uses. This is not in the formal VCF at the moment however.<br /><br />Cheers,<br /><br />Jim (ddiego)</div>
+</div>
+</div>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[GUI Toolkits Again - a bit of MFC]]></title>
+    <link href="http://www.fragmentedmemory.com/blog/2006/10/09/gui-toolkits-again-bit-of-mfc/"/>
+    <updated>2006-10-09T20:58:00+01:00</updated>
+    <id>http://www.fragmentedmemory.com/blog/2006/10/09/gui-toolkits-again-bit-of-mfc</id>
+    <content type="html"><![CDATA[<div class='post'>
+At work, I only use MFC and the antiquated design features in Visual Studio for working on resources.  These interfaces still feel like they haven't moved on for a lifetime (and are in fact pretty much unchanged from Visual Studio 6.0).<br /><br />The most annoying part about working with the resources is I have to resort to handcoding most of the time.  It is especially necessary in order to follow the <a href="http://msdn.microsoft.com/library/default.asp?url=/library/en-us/dnwue/html/ch14e.asp">Official Guidelines for User Interface Developers and Designers</a> (self-inflicted myself, but you need some level of consistency).  Also the IDE design features have an uncanny knack for orphaned <span style="font-style:italic;">#defines</span> and controls.<br /><br />MFC doesn't really feel like an API as most of the stuff I want to do I end up having to subclass and write lots of specific code.  There are subclasses for just about every type of control, and in that a lot of it is direct access to the Win32 API.<br /><br />I must admit that I don't have an intense hatred for MFC like a lot of developers.  It seems to serve its purpose well, and there are so many extensions and large applications built on it.  I don't think Microsoft envisioned being unable to kill it off because it is used by too many applications.  It will still be developed and have some new "managed" features which strikes me as odd...  MFC is a thin wrapper around the Win32 API, but .NET is a wrapper around the Win32 API, so there would be a double level of indirection for these new features.<br /><br />A lot of people would love to migrate away from MFC, but they are too integrally tied into their applications.  The cause of that is normally the initial codebase grew from a small code-generated wizard application.  I know I would love to do move away from MFC, but it is first necessary to find a new GUI toolkit that is capable of doing every feature you have probably handcoded in extensions to MFC, or if you have to write the extensions yourself it is no more difficult to do than the first time you wrote it.<br /><br />That is part of the reason to really look in depth at GUI toolkits.  It is really necessary to find one that will allow the most active development by the virtue of being easy to pick up.  Also, the grass is not always greener on the other side.</div>
+
+
+<h2>Comments</h2>
+
+
+<div class='comments'>
+<div class='comment'>
+<div class='author'>Garry Bodsworth</div>
+<div class='content'>
+It is quite bizarre they have never tried to make any improvements to it ever, even when they deprecate bits it never actually provides a great improvement - it is pretty much the same as when it first appeared.<br /><br />In fact in SP1 Beta of VS2005 they put in some safe library work.  It manages to break MFC to the point of being unusable thanks to making the Recent Files List throwing an exception.</div>
+</div>
+<div class='comment'>
+<div class='author'>Karthik</div>
+<div class='content'>
+It is unfortunate that Microsoft doesn't bother to improve the GUI library in MFC. MFC programmers are forced to use unreliable third party code from forums like CodeProject and CodeGuru.</div>
+</div>
+</div>
+
+]]></content>
+  </entry>
+  
+</feed>

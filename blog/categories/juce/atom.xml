@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Juce | Fragmented Memory]]></title>
+  <link href="http://www.fragmentedmemory.com/blog/categories/juce/atom.xml" rel="self"/>
+  <link href="http://www.fragmentedmemory.com/"/>
+  <updated>2013-06-18T16:32:26+01:00</updated>
+  <id>http://www.fragmentedmemory.com/</id>
+  <author>
+    <name><![CDATA[Garry Bodsworth]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[GUI Toolkits - JUCE]]></title>
+    <link href="http://www.fragmentedmemory.com/blog/2006/12/18/gui-toolkits-juce/"/>
+    <updated>2006-12-18T22:22:00+00:00</updated>
+    <id>http://www.fragmentedmemory.com/blog/2006/12/18/gui-toolkits-juce</id>
+    <content type="html"><![CDATA[<div class='post'>
+Just a quick one...  A little while back I briefly <a href="http://garrys-brain.blogspot.com/2006/10/gui-toolkits-juce.html">posted</a> about <a href="http://www.rawmaterialsoftware.com/juce/">JUCE</a> - a different type of GUI toolkit.  The Register has just posted a <a href="http://www.regdeveloper.co.uk/2006/12/18/juce_cross_platform/">small review of Juce</a> - definitely worth having a quick read.</div>
+
+
+<h2>Comments</h2>
+
+
+<div class='comments'>
+<div class='comment'>
+<div class='author'>Adi</div>
+<div class='content'>
+<a rel="external" href="http://orientinspiration.com/2009/09/oes-tsetnoc.html" rel="nofollow">Oes  Tsetnoc</a> one of the ways in which we can learn seo besides <a rel="external" href="http://duniasoer.com/archives/mengembalikan-jati-diri-bangsa.html" rel="nofollow">Mengembalikan Jati Diri Bangsa</a>.  By participating in the <a rel="external" href="http://mncmakina.com/2009/09/oes-tsetnoc-seo-contest/" rel="nofollow">Oes Tsetnoc</a> or <a rel="external" href="http://ulaznice.info/mengembalikan-jati-diri-bangsa.html" rel="nofollow">Mengembalikan Jati Diri Bangsa</a> we can improve our seo skills. To find more information about <a rel="external" href="http://catatanblogger.info/738688-Oes-Tsetnoc.html" rel="nofollow">Oest Tsetnoc</a> please visit my <a rel="external" href="http://kusukaseo.info/981750-Oes-Tsetnoc-Support.html" rel="nofollow">Oes Tsetnoc</a> pages. And to find more information about <a rel="external" href="http://duniasoer.com" rel="nofollow">Mengembalikan Jati Diri Bangsa</a> please visit my <a rel="external" href="http://catatanblogger.info/464655-Mengembalikan-Jati-Diri-Bangsa.html" rel="nofollow">Mengembalikan Jati Diri Bangsa</a> pages. Thank you So much.<br> <a rel="external" href="http://orientinspiration.com" rel="nofollow">Oes  Tsetnoc</a> | <a rel="external" href="http://duniasoer.com/archives/semangat-mengembalikan-jati-diri-bangsa.html" rel="nofollow">Semangat Mengembalikan Jati Diri Bangsa</a></div>
+</div>
+</div>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[GUI Toolkits - JUCE]]></title>
+    <link href="http://www.fragmentedmemory.com/blog/2006/10/18/gui-toolkits-juce/"/>
+    <updated>2006-10-18T12:03:00+01:00</updated>
+    <id>http://www.fragmentedmemory.com/blog/2006/10/18/gui-toolkits-juce</id>
+    <content type="html"><![CDATA[<div class='post'>
+On my trawl through GUI toolkits and my general web browsing I have encountered the name <a href="http://www.rawmaterialsoftware.com/juce/">Juce</a> from time to time.  It's not just a GUI toolkit, it aims to be as comprehensive as possible.<br /><br />What stopped me from taking a closer look in the past is that it is a non-native UI, but hey, nothing ventured...<br /><br />It provides excellent support to essentially a vector graphics based user interface.  It seems really solid and smooth.  The library itself was developed for the audio sequencer application <a href="http://www.mackie.com/products/tracktion2/">Tracktion</a>, and looking more closely at this you can see where the library's real power lies.  Providing you don't want a platform standard GUI toolkit UI you are away, like if you wanted a midi sequencing apllication to look like a keyboard not a standard windows dialog based application.  I'm sure it must be possible to apply a Windows XP/Vista theme with enough effort.<br /><br />Juce is also on the <a href="http://en.wikipedia.org/wiki/Juce">Wikipedia</a> which covers the main points from the website.  I recommend downloading the <a href="http://www.rawmaterialsoftware.com/juce/download.php">example application</a> the Juce website as it is interesting seeing how it behaves.  I do find it all a little blurry, but I think that is the theme supplied not the toolkit itself.</div>
+
+
+<h2>Comments</h2>
+
+
+<div class='comments'>
+<div class='comment'>
+<div class='author'>Adi</div>
+<div class='content'>
+<a rel="external" href="http://orientinspiration.com/2009/09/oes-tsetnoc.html" rel="nofollow">Oes  Tsetnoc</a> one of the ways in which we can learn seo besides <a rel="external" href="http://duniasoer.com/archives/mengembalikan-jati-diri-bangsa.html" rel="nofollow">Mengembalikan Jati Diri Bangsa</a>.  By participating in the <a rel="external" href="http://mncmakina.com/2009/09/oes-tsetnoc-seo-contest/" rel="nofollow">Oes Tsetnoc</a> or <a rel="external" href="http://ulaznice.info/mengembalikan-jati-diri-bangsa.html" rel="nofollow">Mengembalikan Jati Diri Bangsa</a> we can improve our seo skills. To find more information about <a rel="external" href="http://catatanblogger.info/738688-Oes-Tsetnoc.html" rel="nofollow">Oest Tsetnoc</a> please visit my <a rel="external" href="http://kusukaseo.info/981750-Oes-Tsetnoc-Support.html" rel="nofollow">Oes Tsetnoc</a> pages. And to find more information about <a rel="external" href="http://duniasoer.com" rel="nofollow">Mengembalikan Jati Diri Bangsa</a> please visit my <a rel="external" href="http://catatanblogger.info/464655-Mengembalikan-Jati-Diri-Bangsa.html" rel="nofollow">Mengembalikan Jati Diri Bangsa</a> pages. Thank you So much.</div>
+</div>
+<div class='comment'>
+<div class='author'>oli</div>
+<div class='content'>
+mackie tracktion looks also very blurry.<br /><br />unfortunatly is GPL instead of LGPL or BSD.</div>
+</div>
+</div>
+
+]]></content>
+  </entry>
+  
+</feed>

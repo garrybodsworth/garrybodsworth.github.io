@@ -1,0 +1,179 @@
+
+<!DOCTYPE HTML>
+<html lang="en-gb">
+<head>
+  <meta charset="UTF-8">
+  <title>Fragmented Memory</title>
+
+  <meta name="author" content="Garry Bodsworth">
+  
+  <meta name="description" content="GUI Toolkits Again - a Bit of MFC Oct 9th, 2006 At work, I only use MFC and the antiquated design features in Visual Studio for working on resources &hellip;">
+  
+  
+
+  <link rel="canonical" href="http://www.fragmentedmemory.com/blog/2006/10/09/gui-toolkits-again-bit-of-mfc">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/atom.xml" rel="alternate" title="Fragmented Memory" type="application/atom+xml">
+</head>
+  
+<body class="default">
+  <div id="wrapper">
+    <div id="header">
+  <h1><a href="/">Fragmented Memory</a></h1>
+  
+    <p>Garry Bodsworth's Blog (formerly Garry's Bit Patterns &amp; Programmer's Log)</p>
+  
+</div>
+<ul id="social-links">
+  
+    <li><a class="feed" href="/atom.xml" title="RSS">RSS</a></li>
+  
+  
+    <li><a class="twitter" href="http://twitter.com/garrybodsworth" title="Twitter">Twitter</a></li>
+  
+  
+    <li> <a class="github" href="https://github.com/garrybodsworth" title="GitHub">GitHub</a> </li>
+  
+</ul>
+<div class="clear"></div>
+<ul id="nav">
+  
+    <li> <a href="/">blog</a> </li>
+  
+
+  
+    <li><a href="/blog/archives">archives</a></li>
+  
+</ul>
+
+    <div id="main"> <div class="post-header">
+  
+    <h1 class="post-title">GUI Toolkits Again - a Bit of MFC</h1>
+  
+  
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2006-10-09T20:58:00+01:00" pubdate data-updated="true">Oct 9<span>th</span>, 2006</time>
+</div>
+
+<div class="post-content"><div class='post'>
+At work, I only use MFC and the antiquated design features in Visual Studio for working on resources.  These interfaces still feel like they haven&#8217;t moved on for a lifetime (and are in fact pretty much unchanged from Visual Studio 6.0).<br /><br />The most annoying part about working with the resources is I have to resort to handcoding most of the time.  It is especially necessary in order to follow the <a href="http://msdn.microsoft.com/library/default.asp?url=/library/en-us/dnwue/html/ch14e.asp">Official Guidelines for User Interface Developers and Designers</a> (self-inflicted myself, but you need some level of consistency).  Also the IDE design features have an uncanny knack for orphaned <span style="font-style:italic;">#defines</span> and controls.<br /><br />MFC doesn&#8217;t really feel like an API as most of the stuff I want to do I end up having to subclass and write lots of specific code.  There are subclasses for just about every type of control, and in that a lot of it is direct access to the Win32 API.<br /><br />I must admit that I don&#8217;t have an intense hatred for MFC like a lot of developers.  It seems to serve its purpose well, and there are so many extensions and large applications built on it.  I don&#8217;t think Microsoft envisioned being unable to kill it off because it is used by too many applications.  It will still be developed and have some new &#8220;managed&#8221; features which strikes me as odd&#8230;  MFC is a thin wrapper around the Win32 API, but .NET is a wrapper around the Win32 API, so there would be a double level of indirection for these new features.<br /><br />A lot of people would love to migrate away from MFC, but they are too integrally tied into their applications.  The cause of that is normally the initial codebase grew from a small code-generated wizard application.  I know I would love to do move away from MFC, but it is first necessary to find a new GUI toolkit that is capable of doing every feature you have probably handcoded in extensions to MFC, or if you have to write the extensions yourself it is no more difficult to do than the first time you wrote it.<br /><br />That is part of the reason to really look in depth at GUI toolkits.  It is really necessary to find one that will allow the most active development by the virtue of being easy to pick up.  Also, the grass is not always greener on the other side.</div>
+<h2>Comments</h2>
+<div class='comments'>
+<div class='comment'>
+<div class='author'>Garry Bodsworth</div>
+<div class='content'>
+It is quite bizarre they have never tried to make any improvements to it ever, even when they deprecate bits it never actually provides a great improvement - it is pretty much the same as when it first appeared.<br /><br />In fact in SP1 Beta of VS2005 they put in some safe library work.  It manages to break MFC to the point of being unusable thanks to making the Recent Files List throwing an exception.</div>
+</div>
+<div class='comment'>
+<div class='author'>Karthik</div>
+<div class='content'>
+It is unfortunate that Microsoft doesn&#8217;t bother to improve the GUI library in MFC. MFC programmers are forced to use unreliable third party code from forums like CodeProject and CodeGuru.</div>
+</div>
+</div>
+</div>
+
+
+<div class="post-single">
+  <div class="post-meta">
+    
+
+<span class="categories">
+  Categories:
+  
+    <a class='category' href='/blog/categories/api/'>API</a>, <a class='category' href='/blog/categories/gui/'>GUI</a>, <a class='category' href='/blog/categories/libraries/'>Libraries</a>, <a class='category' href='/blog/categories/mfc/'>MFC</a>, <a class='category' href='/blog/categories/toolkits/'>Toolkits</a>, <a class='category' href='/blog/categories/win32/'>Win32</a>, <a class='category' href='/blog/categories/windows/'>Windows</a>
+  
+</span>
+
+
+    
+      <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://www.fragmentedmemory.com/blog/2006/10/09/gui-toolkits-again-bit-of-mfc/" data-via="garrybodsworth" data-counturl="http://www.fragmentedmemory.com/blog/2006/10/09/gui-toolkits-again-bit-of-mfc/" >Tweet</a>
+  
+  
+  
+</div>
+
+    
+  </div>
+  <div class="clear"></div>
+
+  
+</div>
+ </div>
+    <div id="footer">
+  <div class="panels">
+    <div class="license">
+      <h2>License</h2>
+      <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-nc-sa/3.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/">Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License</a>.
+    </div>
+
+    <div class="posts">
+      <h2>Recent Posts</h2>
+      <ul>
+        
+          <li>
+            <a href="/blog/2013/06/18/new-location-and-new-blog-engine-and-old-content-restored/">New Location &amp; New Blog Engine &amp; Old Content Restored</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2013/06/13/joining-microsoft/">Joining Microsoft</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2013/06/13/leaving-bromium/">Leaving Bromium</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2013/03/05/philip-su-engineering-process-and/">Philip Su - Engineering Process And Philosophy At Facebook</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2013/03/05/more-creator-owned-comics-genocide/">More Creator-Owned Comics - Genocide: Duostar</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  <p class="powered">
+    Powered by <a href="http://octopress.org">Octopress</a> and <a href="https://github.com/iwinux/compbits">Compbits</a>
+  </p>
+</div>
+
+  </div> <!-- #wrapper end -->
+
+  
+
+  
+
+
+  
+
+  
+
+  
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+</body>
+</html>

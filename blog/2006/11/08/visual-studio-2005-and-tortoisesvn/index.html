@@ -1,0 +1,254 @@
+
+<!DOCTYPE HTML>
+<html lang="en-gb">
+<head>
+  <meta charset="UTF-8">
+  <title>Fragmented Memory</title>
+
+  <meta name="author" content="Garry Bodsworth">
+  
+  <meta name="description" content="Visual Studio 2005 and TortoiseSVN Subversion Integration - Update Nov 8th, 2006 See the update here.Hi there everyone,Here is an update to the &hellip;">
+  
+  
+
+  <link rel="canonical" href="http://www.fragmentedmemory.com/blog/2006/11/08/visual-studio-2005-and-tortoisesvn">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/atom.xml" rel="alternate" title="Fragmented Memory" type="application/atom+xml">
+</head>
+  
+<body class="default">
+  <div id="wrapper">
+    <div id="header">
+  <h1><a href="/">Fragmented Memory</a></h1>
+  
+    <p>Garry Bodsworth's Blog (formerly Garry's Bit Patterns &amp; Programmer's Log)</p>
+  
+</div>
+<ul id="social-links">
+  
+    <li><a class="feed" href="/atom.xml" title="RSS">RSS</a></li>
+  
+  
+    <li><a class="twitter" href="http://twitter.com/garrybodsworth" title="Twitter">Twitter</a></li>
+  
+  
+    <li> <a class="github" href="https://github.com/garrybodsworth" title="GitHub">GitHub</a> </li>
+  
+</ul>
+<div class="clear"></div>
+<ul id="nav">
+  
+    <li> <a href="/">blog</a> </li>
+  
+
+  
+    <li><a href="/blog/archives">archives</a></li>
+  
+</ul>
+
+    <div id="main"> <div class="post-header">
+  
+    <h1 class="post-title">Visual Studio 2005 and TortoiseSVN Subversion Integration - Update</h1>
+  
+  
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2006-11-08T21:12:00+00:00" pubdate data-updated="true">Nov 8<span>th</span>, 2006</time>
+</div>
+
+<div class="post-content"><div class='post'>
+<span style="font-weight:bold;"><a href="http://garrys-brain.blogspot.com/2007/07/tortoisesvn-and-visual-studio.html">See the update here.</a></span><br /><br />Hi there everyone,<br /><br />Here is an update to the TortoiseSVN integration into Visual Studio 2005.  This update is a fairly major change since this will only have the changes to external tools, menus and toolbars.  This means when you import these settings you get a new menu at the top of the screen (with icons), a new toolbar with proper TortoiseSVN icons, and context menus for solutions and files.<br /><br />You can download the <a href="http://garry.bodsworth.googlepages.com/SubversionToolbarsAndMenus.zip">new settings file here</a> (it is 9k in size compressed).  All you need to do is go to your Tools menu and choose &#8220;Import and Export Settings&#8221; and follow the instructions.  Ensure the tick box for which settings to import are all ticked.<br /><br />Here are the original posts from the Subversion integration (and old files are still available).<br /><ul><li><a href="http://garrys-brain.blogspot.com/2006/10/subversion-and-tortoisesvn-programmers.html">Subversion and TortoiseSVN - A programmers best friend</a></li><li><a href="http://garrys-brain.blogspot.com/2006/10/subversion-tortoisesvn-integration.html">Subversion : TortoiseSVN Integration into Visual Studio</a> - A vbs script that will add Subversion to your external tools in Visual Studio 2003 and 2005.</li><li><a href="http://garrys-brain.blogspot.com/2006/10/subversion-tortoisesvn-integration_03.html">Subversion : TortoiseSVN Integration into Visual Studio.NET 2005 Again</a></li><li><a href="http://garrys-brain.blogspot.com/2006/10/tortoisesvn-vsnet-2005-good-stuff.html">TortoiseSVN + VS.NET 2005 = Good Stuff</a> - The original vssettings based integration with additional screenshots that still apply.</li><li><a href="http://garrys-brain.blogspot.com/2006/10/tools-for-tortoisesvn.html">Tools for TortoiseSVN</a> - Some recommended tools for TortoiseSVN.</li><li><a href="http://garrys-brain.blogspot.com/2006/10/updated-visual-studio-2005-express-and.html">Updated Visual Studio 2005 Express and TortoiseSVN Integration</a> - The first update to the vssettings implementation.</li></ul><br /><a href="http://garry.bodsworth.googlepages.com/SubversionToolbarsAndMenus.zip">DOWNLOAD SETTINGS FILE</a><br /><br /><span style="font-weight:bold;">Edit: </span> Now there is a yet another update - this is now 7k.  This makes a minimum of changes to your IDE as humanly (or inhumanly) possible.  There is still a deficiency in the .vssettings that messes up the build toolbar comboboxes, but this seems unfixable in the current format.<br /><br />Oh, and don&#8217;t forget to leave some comments as to whether this new stuff is all working for you (along with the new &#8220;Add Solution To Repository&#8221; functionality.</div>
+<h2>Comments</h2>
+<div class='comments'>
+<div class='comment'>
+<div class='author'>bkraul</div>
+<div class='content'>
+Just a quick question. The article mentions &#8220;Context Menus&#8221;. Are you talking about context menus that show up when right clicking a file or folder in the solution explorer? Because if that is the case, Eventhough I get everything else working fine, I cant see any context menus. Thanks for such a nice solution man!</div>
+</div>
+<div class='comment'>
+<div class='author'>Jon</div>
+<div class='content'>
+ahh my bad. sorry ;-)</div>
+</div>
+<div class='comment'>
+<div class='author'>Garry Bodsworth</div>
+<div class='content'>
+This is for TortoiseSVN, not TortoiseCVS.  It is probable that a similar solution can be used for that source control system.<BR/><BR/>Check out TortoiseSVN at http://tortoisesvn.net<BR/><BR/>The latest version of the Visual Studio settings is here:<BR/>http://garrys-brain.blogspot.com/2007/07/tortoisesvn-and-visual-studio.html</div>
+</div>
+<div class='comment'>
+<div class='author'>Jon</div>
+<div class='content'>
+I don&#8217;t know which version of TortoiseCVS you are targeting but none of the executables in your settings file is in my Tortoise installment. I use TortoiseCVS 1.8.31<BR/>Am I suppose to install another version of Tortoise?<BR/> - Jon</div>
+</div>
+<div class='comment'>
+<div class='author'>Manish Joisar</div>
+<div class='content'>
+I have done as per your setting, but i am not getting file wise Update/Commit/Get Lock/Release Lock/Revert. So i can get same way like i am doing it in VSS. It will be great if someone can solve this issue. And i am only interested in VS2005, Subverion, TortoiseSVN & vssettings. Not at all interested in any other tools. I think Garry&#8217;s Bit can solve this. Please help me.</div>
+</div>
+<div class='comment'>
+<div class='author'>sheremetyev</div>
+<div class='content'>
+If you want to get complete Subversion integration in Visual Studio please have a look at <A HREF="http://www.visualsvn.com/" REL="nofollow">VisualSVN</A>. It wraps TortoiseSVN UI too but provides also seamless support for file operations (renames, moves etc.) and shows status in Solution Explorer. Costs just $49.</div>
+</div>
+<div class='comment'>
+<div class='author'>Garry Bodsworth</div>
+<div class='content'>
+Hi there,<BR/><BR/>Just to answer a couple of previous questions:<BR/><BR/>There is no internal way to resolve a conflict at the moment.<BR/><BR/>It is impossible to add icons to the front of folders since it uses the &#8220;External Tools&#8221; feature so it can work easily with the Express Editions as well as the Professional ones.<BR/><BR/>If the command being run is wrong (Dotsfuscator) it is possible the order your External Tools is incorrect or when you imported the settings they may not have all been applied.</div>
+</div>
+<div class='comment'>
+<div class='author'>Frank</div>
+<div class='content'>
+This looks promising however when I try to execute the &#8220;Update&#8221; command from the Subversion menu it seems to launch DotFuscater and not do anything else?</div>
+</div>
+<div class='comment'>
+<div class='author'>Jack</div>
+<div class='content'>
+Wow, cool stuff. Just 2 comments:<BR/><BR/>1. How to edit conflict and resolve conflict?<BR/>2. Is there anyway to add icon in front of file/folder?<BR/><BR/>Thanks for your great work</div>
+</div>
+<div class='comment'>
+<div class='author'>malks</div>
+<div class='content'>
+I&#8217;ve just started using the whole SVN/Tortoise/VS2005 stuff&#8230; it seems to me that you can&#8217;t do a checkout from within VS and need to do it from Tortoise directly.  I just used Tortoise to check out to a working dir then opened up in VS and it seemed to work.<br /><br />Coming from an eclipse/CVS background what would be nice is the &#8220;decorators&#8221; in VS that tell you that you&#8217;re working with a checked out file.  That is in vs if you change a file, you get a red exclamation mark to remind you that you need to commit your changes.  I might be asking a bit much here though :)<br /><br />Regards,<br />Anthony.</div>
+</div>
+<div class='comment'>
+<div class='author'>brian.gullo</div>
+<div class='content'>
+I keep getting &#8220;is not working copy&#8221; error.  I&#8217;m using vs pro 2005.  How to i get a project checked out?</div>
+</div>
+<div class='comment'>
+<div class='author'>brian.gullo</div>
+<div class='content'>
+How do i implement the svn checkout functionality.</div>
+</div>
+<div class='comment'>
+<div class='author'>Jordan Elver</div>
+<div class='content'>
+I&#8217;m using professional.</div>
+</div>
+<div class='comment'>
+<div class='author'>Garry Bodsworth</div>
+<div class='content'>
+No problems, glad it works for you now.  Just out of interest are you using Professional or Express?<br /><br />Thanks,<br /><br />Garry</div>
+</div>
+<div class='comment'>
+<div class='author'>Jordan Elver</div>
+<div class='content'>
+Weird. When importing the settings file again, I selected the &#8220;External Tools List&#8221; checkbox and now everything shows up ok. Thanks :)</div>
+</div>
+<div class='comment'>
+<div class='author'>Garry Bodsworth</div>
+<div class='content'>
+They are external tools, so if the executable is not in the place it expects then it is possible that it can&#8217;t find it.  Is it also disabled on the external tools menu?<br /><br />The settings make the assumption TortoiseSVN is in the default installation location.  If this is the case then do a search and replace on the settings file for:c:&#92;program files&#92;TortoiseSVN&#92;bin&#92;tortoiseproc.exe<br />And replace it with the location that yours is installed (keeping the double slashes).<br /><br />If that is not the case then try reimporting the settings as VS2005 has this wonderful knack of getting confused when loading settings.<br /><br />Garry</div>
+</div>
+<div class='comment'>
+<div class='author'>Jordan Elver</div>
+<div class='content'>
+Hi,<br />I&#8217;ve imported the settings and everything seems to be ok, but toolbar is greyed out and the menus don&#8217;t appear. What am I doing wrong?<br /><br />Thanks for working on this :)<br /><br />Cheers, Jordan</div>
+</div>
+</div>
+</div>
+
+
+<div class="post-single">
+  <div class="post-meta">
+    
+
+<span class="categories">
+  Categories:
+  
+    <a class='category' href='/blog/categories/ide/'>IDE</a>, <a class='category' href='/blog/categories/integration/'>Integration</a>, <a class='category' href='/blog/categories/subversion/'>Subversion</a>, <a class='category' href='/blog/categories/tortoisesvn/'>TortoiseSVN</a>, <a class='category' href='/blog/categories/visual-studio-2005/'>Visual Studio 2005</a>
+  
+</span>
+
+
+    
+      <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://www.fragmentedmemory.com/blog/2006/11/08/visual-studio-2005-and-tortoisesvn/" data-via="garrybodsworth" data-counturl="http://www.fragmentedmemory.com/blog/2006/11/08/visual-studio-2005-and-tortoisesvn/" >Tweet</a>
+  
+  
+  
+</div>
+
+    
+  </div>
+  <div class="clear"></div>
+
+  
+</div>
+ </div>
+    <div id="footer">
+  <div class="panels">
+    <div class="license">
+      <h2>License</h2>
+      <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-nc-sa/3.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/">Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License</a>.
+    </div>
+
+    <div class="posts">
+      <h2>Recent Posts</h2>
+      <ul>
+        
+          <li>
+            <a href="/blog/2013/06/18/new-location-and-new-blog-engine-and-old-content-restored/">New Location &amp; New Blog Engine &amp; Old Content Restored</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2013/06/13/joining-microsoft/">Joining Microsoft</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2013/06/13/leaving-bromium/">Leaving Bromium</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2013/03/05/philip-su-engineering-process-and/">Philip Su - Engineering Process And Philosophy At Facebook</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2013/03/05/more-creator-owned-comics-genocide/">More Creator-Owned Comics - Genocide: Duostar</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  <p class="powered">
+    Powered by <a href="http://octopress.org">Octopress</a> and <a href="https://github.com/iwinux/compbits">Compbits</a>
+  </p>
+</div>
+
+  </div> <!-- #wrapper end -->
+
+  
+
+  
+
+
+  
+
+  
+
+  
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+</body>
+</html>

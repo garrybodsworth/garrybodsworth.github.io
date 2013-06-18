@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Aero | Fragmented Memory]]></title>
+  <link href="http://www.fragmentedmemory.com/blog/categories/aero/atom.xml" rel="self"/>
+  <link href="http://www.fragmentedmemory.com/"/>
+  <updated>2013-06-18T16:32:26+01:00</updated>
+  <id>http://www.fragmentedmemory.com/</id>
+  <author>
+    <name><![CDATA[Garry Bodsworth]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Windows Aero UI Development]]></title>
+    <link href="http://www.fragmentedmemory.com/blog/2007/05/29/windows-aero-ui-development/"/>
+    <updated>2007-05-29T20:18:00+01:00</updated>
+    <id>http://www.fragmentedmemory.com/blog/2007/05/29/windows-aero-ui-development</id>
+    <content type="html"><![CDATA[<div class='post'>
+There is a new article on the <a href="http://www.codeproject.com">CodeProject</a> about retrofitting Windows Aero UI elements to existing applications.  <a href="http://www.codeproject.com/vista/AeroGlassLegacyWindowsApp.asp">Adding or Retrofitting Aero Glass into Legacy Windows Applications - Stefan Kuhr</a>.<br /><br />It's quite a comprehensive article and means someone else has done the research legwork for you - one of the beauties of the CodeProject.  This is especially useful as the Aero C++ headers have no real documentation as yet.</div>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Installing Vista]]></title>
+    <link href="http://www.fragmentedmemory.com/blog/2006/11/17/installing-vista/"/>
+    <updated>2006-11-17T20:38:00+00:00</updated>
+    <id>http://www.fragmentedmemory.com/blog/2006/11/17/installing-vista</id>
+    <content type="html"><![CDATA[<div class='post'>
+So Windows Vista was released on MSDN Subscriber Downloads today.  I offered to be the Vista guinea pig and install it to make sure everything works before it hits general release.<br /><br />Two identical computers one I spent all afternoon trying to get to work which could only amount to 4-bit colour 640x480...  I tried swapping graphics cards - no luck.  The other identical twin computer, pop the disc in and bosh it is installed and looking all Aero-ey.  Even swapping the graphics cards between the two computers seems not to have helped.  This is a bizarre turn of events, especially as XP seems to have run and installed no problem.  It was not a driver problem either since it seems to have installed and understands the cards, but it seems to be an IRQ conflict of some sort, I haven't seen one of them since the old DOS days :D<br /><br />Also, you still have to use an external source for your RAID drivers.  I was hoping that was not still the case.  Hopefully, it will all be solved by a clear head on Monday.</div>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[More Vista - Desktop Window Manager]]></title>
+    <link href="http://www.fragmentedmemory.com/blog/2006/10/14/more-vista-desktop-window-manager/"/>
+    <updated>2006-10-14T20:46:00+01:00</updated>
+    <id>http://www.fragmentedmemory.com/blog/2006/10/14/more-vista-desktop-window-manager</id>
+    <content type="html"><![CDATA[<div class='post'>
+I must admit, although I am not very interested in running Microsoft Windows Vista as my own operating system at home, I am interested in understanding the UI technologies that are going to be available in it.  It's certainly necessary to understand it for work.<br /><br />A more interesting application of these new UI features are how the cross-platform toolkits going to incorporate them (and indeed whether some of it is so useless that it shouldn't be incorporated).  I don't think that the toolkits will struggle to keep up since each time operating system UIs try to diverge they always end up converging.  I do think that the way these toolkits expand will show which ones are the best designed (you know, the extra functionalty being less kludgey).<br /><br />There is nother decent blog article about DWM <a href="http://blogs.msdn.com/greg_schechter/archive/2006/09/14/753605.aspx">here</a>.</div>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Windows Vista - Aero Basic UI Explanation]]></title>
+    <link href="http://www.fragmentedmemory.com/blog/2006/10/13/windows-vista-aero-basic-ui-explanation/"/>
+    <updated>2006-10-13T15:40:00+01:00</updated>
+    <id>http://www.fragmentedmemory.com/blog/2006/10/13/windows-vista-aero-basic-ui-explanation</id>
+    <content type="html"><![CDATA[<div class='post'>
+There is an interesting explanation as to why the Aero Basic Interface looks the way it does when compared to the Aero accelerated theme.  You can read about it <a href="http://shellrevealed.com/blogs/shellblog/archive/2006/10/12/Frequently-asked-questions-about-the-Aero-Basic-window-frame.aspx">here</a>.<br /><br />It's quite an interesting little article since it shows Microsoft banging their heads up against the same limitations as GUI developers have been.</div>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[More Vista Native API]]></title>
+    <link href="http://www.fragmentedmemory.com/blog/2006/10/06/more-vista-native-api/"/>
+    <updated>2006-10-06T08:37:00+01:00</updated>
+    <id>http://www.fragmentedmemory.com/blog/2006/10/06/more-vista-native-api</id>
+    <content type="html"><![CDATA[<div class='post'>
+Michael Dunn has posted anotehr Vista native API tutorial about <a href="http://www.codeproject.com/winfx/VGPowerMonitor.asp">monitoring the system's power</a>.  It is obviously not as whizz-bang as the first tutorial, but this is excellent stuff as I hope it means C/C++ developers are going to have a real go at messing around with the native API.<br /><br />There is an excellent and massive post from <a href="http://weblogs.asp.net/kennykerr/archive/2006/08/10/Windows-Vista-for-Developers-_1320_-Part-3-_1320_-The-Desktop-Window-Manager.aspx">Kenny Kerr available from this link</a>.  Make sure you check that out as well.<br /><br />I've now installed the Windows SDK (I think they call the Win32 API the Windows API now, but there is no definitive answer as Microsoft want to encourage people to use other technologies).</div>
+
+]]></content>
+  </entry>
+  
+</feed>

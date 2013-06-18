@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Qt | Fragmented Memory]]></title>
+  <link href="http://www.fragmentedmemory.com/blog/categories/qt/atom.xml" rel="self"/>
+  <link href="http://www.fragmentedmemory.com/"/>
+  <updated>2013-06-18T16:32:26+01:00</updated>
+  <id>http://www.fragmentedmemory.com/</id>
+  <author>
+    <name><![CDATA[Garry Bodsworth]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[GUI Toolkits: Qt and Eclipse]]></title>
+    <link href="http://www.fragmentedmemory.com/blog/2007/08/09/gui-toolkits-qt-and-eclipse/"/>
+    <updated>2007-08-09T21:26:00+01:00</updated>
+    <id>http://www.fragmentedmemory.com/blog/2007/08/09/gui-toolkits-qt-and-eclipse</id>
+    <content type="html"><![CDATA[<div class='post'>
+There is now a <a href="http://www.trolltech.com/qt">Qt</a> integration into <a href="http://www.eclipse.org">Eclipse</a> provided by the good folks at Trolltech.<br /><br />You can check out the press release <a href="http://trolltech.com/company/newsroom/announcements/press.2007-05-24.8884335791">here</a>.<br /><br />There is a sneak peak article <a href="http://trolltech.com/company/tt/contents/issue3/eclipse-integration">here</a> and you can download it <a href="http://trolltech.com/developer/downloads/qt/eclipse-integration-download">here</a>.  The best thing about it is certainly the integrated form editor.<br /><br />There is a little run-through/review type thing <a href="http://www.thelins.se/index.php?title=Qt_from_Eclipse">here</a> and even more info <a href="http://labs.trolltech.com/blogs/2007/07/11/develop-qt-applications-in-eclipse/">here</a>.<br /><br />Unfortunately I don't think I will ever get to use it in a commercial environment due to the cost, but it could be good to try out for cross-platform development.</div>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[KDE desktop news]]></title>
+    <link href="http://www.fragmentedmemory.com/blog/2007/04/20/kde-desktop-news/"/>
+    <updated>2007-04-20T21:37:00+01:00</updated>
+    <id>http://www.fragmentedmemory.com/blog/2007/04/20/kde-desktop-news</id>
+    <content type="html"><![CDATA[<div class='post'>
+With the release of KDE4 planned for October the KDE development is certainly motoring along.<br /><ul><li><span style="font-weight: bold;">kdesvn</span> is covered in the <a href="http://kde.org.uk/apps/kdesvn/">KDE app of the month</a>.</li><li>For anyone that can read German there is a new <a href="http://dot.kde.org/1176768033/">KDevelop book available</a>.</li><li>There is now a <a href="http://www.kdevelop.org/mediawiki/index.php/KDevelop_4">page for KDevelop 4.0</a>.</li><li>More details of the new <a href="http://arstechnica.com/news.ars/post/20070405-afirst-look-at-dolphin-the-kde-4-file-manager.html">Dolphin file manager</a> are covered in a first look article.</li></ul></div>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[GUI Toolkits - MFC to Qt Migration]]></title>
+    <link href="http://www.fragmentedmemory.com/blog/2006/12/06/gui-toolkits-mfc-to-qt-migration/"/>
+    <updated>2006-12-06T21:00:00+00:00</updated>
+    <id>http://www.fragmentedmemory.com/blog/2006/12/06/gui-toolkits-mfc-to-qt-migration</id>
+    <content type="html"><![CDATA[<div class='post'>
+I haven't got round to actively trying out Qt yet, although I have heard more or less universally good stuff about it (if you discount the meta-object compiler which is simply a matter of taste, oh yeah, and the price, but we all want something for nothing...).  One day I will find the time to try it out.<br /><br />Qt is the premier cross-platform GUI toolkit.  It has its foibles, but I'll leave that for when I review it.<br /><br />One of the areas on their website details the migration to Qt from MFC.  They actually provide lots of information about how to go about this process.<br /><br />The main link is here - <a href="http://www.trolltech.com/products/qt/addon/solutions/catalog/4/Windows/qtwinmigrate/">The Qt/MFC Migration Framework</a>.  The <a href="http://doc.trolltech.com/solutions/4/qtwinmigrate/winmigrate-walkthrough.html">Walkthrough</a> is the most practical application of the knowledge.  The <a href="http://www.trolltech.com/products/qt/learnmore/migration/mfc">Q&A</a> also provides interesting tidbits.<br /><br />Honestly, there is no way to tell how successful this is without speaking to someone who has ported a moderately large and mature app from MFC to Qt, but it is interesting to see someone does provide some kind of migration path (if that is the way you want to go).</div>
+
+]]></content>
+  </entry>
+  
+</feed>

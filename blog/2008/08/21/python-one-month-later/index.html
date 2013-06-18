@@ -1,0 +1,173 @@
+
+<!DOCTYPE HTML>
+<html lang="en-gb">
+<head>
+  <meta charset="UTF-8">
+  <title>Fragmented Memory</title>
+
+  <meta name="author" content="Garry Bodsworth">
+  
+  <meta name="description" content="Python &#8211; One Month Later Aug 21st, 2008 So I&#8217;ve been writing in Python as part of my job for a month now&#8230; I am still writing using &hellip;">
+  
+  
+
+  <link rel="canonical" href="http://www.fragmentedmemory.com/blog/2008/08/21/python-one-month-later">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/atom.xml" rel="alternate" title="Fragmented Memory" type="application/atom+xml">
+</head>
+  
+<body class="default">
+  <div id="wrapper">
+    <div id="header">
+  <h1><a href="/">Fragmented Memory</a></h1>
+  
+    <p>Garry Bodsworth's Blog (formerly Garry's Bit Patterns &amp; Programmer's Log)</p>
+  
+</div>
+<ul id="social-links">
+  
+    <li><a class="feed" href="/atom.xml" title="RSS">RSS</a></li>
+  
+  
+    <li><a class="twitter" href="http://twitter.com/garrybodsworth" title="Twitter">Twitter</a></li>
+  
+  
+    <li> <a class="github" href="https://github.com/garrybodsworth" title="GitHub">GitHub</a> </li>
+  
+</ul>
+<div class="clear"></div>
+<ul id="nav">
+  
+    <li> <a href="/">blog</a> </li>
+  
+
+  
+    <li><a href="/blog/archives">archives</a></li>
+  
+</ul>
+
+    <div id="main"> <div class="post-header">
+  
+    <h1 class="post-title">Python &#8211; One Month Later</h1>
+  
+  
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2008-08-21T00:00:00+01:00" pubdate data-updated="true">Aug 21<span>st</span>, 2008</time>
+</div>
+
+<div class="post-content"><p>So I&#8217;ve been writing in Python as part of my job for a month now&#8230; I am still writing using a text editor and running stuff on the command line (after dabbling in Eclipse and other Python editors). I can see why people like Python so much, it has some cool stuff.</p>
+
+<p>What I discovered this week was the <a href="http://docs.python.org/lib/module-Queue.html">Queue</a> object in Python. It is a thread-safe FIFO queue and it is there and ready to use. In C++ I would probably have found the definitive implementation through some library (hopefully in <a href="http://www.boost.org">Boost</a>) or I would have to roll my own with all the headaches involved in making sure just the building blocks work correctly. I&#8217;m not using it in the way that most people would expect but that is the great part of supplying solidly tested building blocks.</p>
+
+<p>As usual the code I am writing needed unit-testing to make sure it did what it says on the tin. This meant a multi-threaded unit-test &#8211; I know this is a <a href="http://goodliffe.blogspot.com/2008/06/unit-testing-threads-is-hard-part-4.html">bad thing sometimes</a>. I had to thrash it with the mountain of threads but the tests seem to work consistently (although I imagine it could turn up to bite me in the future). I am sure three-quarters of the code I have been writing are unit tests.</p>
+
+<p>Some other great parts of Python I found is the function is a first class object, and I&#8217;ve even played a little with lambdas. I&#8217;m looking forward to investigating where the best place is to put the boundaries between C++ and Python code.</p>
+
+<p>At the moment I am really at the tip of the iceberg stage, there is the 75% that isn&#8217;t so obviously on display.</p>
+</div>
+
+
+<div class="post-single">
+  <div class="post-meta">
+    
+
+<span class="categories">
+  Categories:
+  
+    <a class='category' href='/blog/categories/uncategorized/'>Uncategorized</a>
+  
+</span>
+
+
+    
+      <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://www.fragmentedmemory.com/blog/2008/08/21/python-one-month-later/" data-via="garrybodsworth" data-counturl="http://www.fragmentedmemory.com/blog/2008/08/21/python-one-month-later/" >Tweet</a>
+  
+  
+  
+</div>
+
+    
+  </div>
+  <div class="clear"></div>
+
+  
+</div>
+ </div>
+    <div id="footer">
+  <div class="panels">
+    <div class="license">
+      <h2>License</h2>
+      <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-nc-sa/3.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/">Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License</a>.
+    </div>
+
+    <div class="posts">
+      <h2>Recent Posts</h2>
+      <ul>
+        
+          <li>
+            <a href="/blog/2013/06/18/new-location-and-new-blog-engine-and-old-content-restored/">New Location &amp; New Blog Engine &amp; Old Content Restored</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2013/06/13/joining-microsoft/">Joining Microsoft</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2013/06/13/leaving-bromium/">Leaving Bromium</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2013/03/05/philip-su-engineering-process-and/">Philip Su - Engineering Process And Philosophy At Facebook</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2013/03/05/more-creator-owned-comics-genocide/">More Creator-Owned Comics - Genocide: Duostar</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  <p class="powered">
+    Powered by <a href="http://octopress.org">Octopress</a> and <a href="https://github.com/iwinux/compbits">Compbits</a>
+  </p>
+</div>
+
+  </div> <!-- #wrapper end -->
+
+  
+
+  
+
+
+  
+
+  
+
+  
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+</body>
+</html>

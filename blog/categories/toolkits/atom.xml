@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Toolkits | Fragmented Memory]]></title>
+  <link href="http://www.fragmentedmemory.com/blog/categories/toolkits/atom.xml" rel="self"/>
+  <link href="http://www.fragmentedmemory.com/"/>
+  <updated>2013-06-18T16:32:26+01:00</updated>
+  <id>http://www.fragmentedmemory.com/</id>
+  <author>
+    <name><![CDATA[Garry Bodsworth]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[GUI Toolkits - eGUI++ Easy GUI]]></title>
+    <link href="http://www.fragmentedmemory.com/blog/2008/06/10/gui-toolkits-egui-easy-gui/"/>
+    <updated>2008-06-10T22:10:00+01:00</updated>
+    <id>http://www.fragmentedmemory.com/blog/2008/06/10/gui-toolkits-egui-easy-gui</id>
+    <content type="html"><![CDATA[<div class='post'>
+I've blogged a few times in the past about <a href="http://torjo.com">John Torjo</a>'s <a href="http://torjo.com/win32gui/index.html">Win32 GUI Generics</a>.  It was really quite an impressive accomplishment using the advanced C++ techniques in Windows development, but was a bit of a rough diamond. I did do some minor changes to my local copy when I was playing around with it to make sure that the widgets used the correct Windows theming engine, and it was surprisingly easy to add which is a testament to the quality of the code.  It did take ages to compile though with all those templates.<br /><br />I notice that now John Torjo has posted <a href="http://torjo.blogspot.com/2008/06/egui-easy-gui-for-c.html">eGUI++ to his blog</a>.  Hopefully this is a progression using all he learnt with his previous iteration in Win32 GUI Generics.<br /><br />There is an article about eGUI++ on the <a href="http://msdn.microsoft.com/en-us/magazine/cc534994.aspx">MSDN here</a> written by John.  It covers the basics of what he has done and covers some of the features.  It is typesafe at compile time which is great for catching errors early as most GUI toolkits you rarely find those types of problems until runtime (especially when using Windows resources).<br /><br />You can download it from <a href="http://torjo.com/egui/">here</a>.  The example presented on that page is quick and to the point.  Hopefully this is a toolkit to watch.</div>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[GUI Toolkits - GTK+ 3.0]]></title>
+    <link href="http://www.fragmentedmemory.com/blog/2008/03/13/gui-toolkits-gtk-30/"/>
+    <updated>2008-03-13T22:23:00+00:00</updated>
+    <id>http://www.fragmentedmemory.com/blog/2008/03/13/gui-toolkits-gtk-30</id>
+    <content type="html"><![CDATA[<div class='post'>
+GTK+ is used by a large variety of programs on a decent number of platforms.  It doesn't have the best reputation for certain bits and pieces, some fairly, some unfairly.<br /><br />Discussions have begun on what will be the new version of GTK+ 3.0.  The most important news is that they will be able to break the ABI which they have heroically maintained all through the 2.0 releases, this should mean lots of good stuff now they are let off the leash.<br /><br />You can check out the start at this <a href="http://federkiel.wordpress.com/2008/03/12/gtk-30-getting-serious/">blog post</a>.<br /><br />The touchstones for the GUI toolkit will be to improve the theming abilities (which in theory will improve look and feel cross platform), animations for swishy interfaces, and proper canvas widget/window.  It will be remaining C which is excellent news for the millions of easy language bindings.<br /><br />It should be interesting to see what happens, hopefully only concentrating on the GUI rather than a lot of the other toolkits which are a bit "kitchen sink" will do for it.</div>
+
+
+<h2>Comments</h2>
+
+
+<div class='comments'>
+<div class='comment'>
+<div class='author'>Adi</div>
+<div class='content'>
+<a rel="external" href="http://orientinspiration.com/2009/09/oes-tsetnoc.html" rel="nofollow">Oes  Tsetnoc</a> one of the ways in which we can learn seo besides <a rel="external" href="http://duniasoer.com/archives/mengembalikan-jati-diri-bangsa.html" rel="nofollow">Mengembalikan Jati Diri Bangsa</a>.  By participating in the <a rel="external" href="http://mncmakina.com/2009/09/oes-tsetnoc-seo-contest/" rel="nofollow">Oes Tsetnoc</a> or <a rel="external" href="http://ulaznice.info/mengembalikan-jati-diri-bangsa.html" rel="nofollow">Mengembalikan Jati Diri Bangsa</a> we can improve our seo skills. To find more information about <a rel="external" href="http://catatanblogger.info/738688-Oes-Tsetnoc.html" rel="nofollow">Oest Tsetnoc</a> please visit my <a rel="external" href="http://kusukaseo.info/981750-Oes-Tsetnoc-Support.html" rel="nofollow">Oes Tsetnoc</a> pages. And to find more information about <a rel="external" href="http://duniasoer.com" rel="nofollow">Mengembalikan Jati Diri Bangsa</a> please visit my <a rel="external" href="http://catatanblogger.info/464655-Mengembalikan-Jati-Diri-Bangsa.html" rel="nofollow">Mengembalikan Jati Diri Bangsa</a> pages. Thank you So much.<br> <a rel="external" href="http://orientinspiration.com" rel="nofollow">Oes  Tsetnoc</a> | <a rel="external" href="http://duniasoer.com/archives/semangat-mengembalikan-jati-diri-bangsa.html" rel="nofollow">Semangat Mengembalikan Jati Diri Bangsa</a></div>
+</div>
+</div>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[GUI Toolkits - Mythos]]></title>
+    <link href="http://www.fragmentedmemory.com/blog/2008/03/04/gui-toolkits-mythos/"/>
+    <updated>2008-03-04T19:28:00+00:00</updated>
+    <id>http://www.fragmentedmemory.com/blog/2008/03/04/gui-toolkits-mythos</id>
+    <content type="html"><![CDATA[<div class='post'>
+A while back I <a href="http://garrys-brain.blogspot.com/2007/10/gui-toolkits-some-thoughts.html">blogged about some ideas</a> for GUI toolkits, not that I ever managed to get off my backside and do something about it.<br /><br />Well someone has done a great job with a DSEL (domain specific embedded language) with a toolkit called <a href="http://code.google.com/p/mythos/">Mythos</a>.  To quote the website <span style="font-style:italic;">"Mythos is a GUI library written in C++ using modern C++ techniques."</span>  It does state on the website that it is more of a proof of concept than a fully-blown attempt.<br /><br />Still, it looks really interesting and has a few different components that make it up.  There is <span style="font-weight:bold;">khaos</span> which does the low level windowing bits and pieces.  <span style="font-weight:bold;">nyx</span> is the window layout library with a DSEL that lets you define the ayout in the C++ files.  <span style="font-weight:bold;">iris</span> does the event handling with another DSEL for associating events and actions.  <span style="font-weight:bold;">gaia</span> is the widget abstraction.<br /><br />Overall it looks like a very interesting use of modern C++ applied to GUI toolkits.  It is a different approach to something like <a href="http://stlab.adobe.com/">Adobe's ASL</a> (adam and eve) but I think if the use of the code generation available through templates should be used to take the legwork out of defining user interfaces.  Mythos, which is the work of one person as far as I can tell (Benaka Moorthi) is a pretty neat accomplishment.</div>
+
+
+<h2>Comments</h2>
+
+
+<div class='comments'>
+<div class='comment'>
+<div class='author'>Adi</div>
+<div class='content'>
+<a rel="external" href="http://orientinspiration.com/2009/09/oes-tsetnoc.html" rel="nofollow">Oes  Tsetnoc</a> one of the ways in which we can learn seo besides <a rel="external" href="http://duniasoer.com/archives/mengembalikan-jati-diri-bangsa.html" rel="nofollow">Mengembalikan Jati Diri Bangsa</a>.  By participating in the <a rel="external" href="http://mncmakina.com/2009/09/oes-tsetnoc-seo-contest/" rel="nofollow">Oes Tsetnoc</a> or <a rel="external" href="http://ulaznice.info/mengembalikan-jati-diri-bangsa.html" rel="nofollow">Mengembalikan Jati Diri Bangsa</a> we can improve our seo skills. To find more information about <a rel="external" href="http://catatanblogger.info/738688-Oes-Tsetnoc.html" rel="nofollow">Oest Tsetnoc</a> please visit my <a rel="external" href="http://kusukaseo.info/981750-Oes-Tsetnoc-Support.html" rel="nofollow">Oes Tsetnoc</a> pages. And to find more information about <a rel="external" href="http://duniasoer.com" rel="nofollow">Mengembalikan Jati Diri Bangsa</a> please visit my <a rel="external" href="http://catatanblogger.info/464655-Mengembalikan-Jati-Diri-Bangsa.html" rel="nofollow">Mengembalikan Jati Diri Bangsa</a> pages. Thank you So much.<br> <a rel="external" href="http://orientinspiration.com" rel="nofollow">Oes  Tsetnoc</a> | <a rel="external" href="http://duniasoer.com/archives/semangat-mengembalikan-jati-diri-bangsa.html" rel="nofollow">Semangat Mengembalikan Jati Diri Bangsa</a></div>
+</div>
+</div>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Visual Studio 2008 Feature Pack Beta]]></title>
+    <link href="http://www.fragmentedmemory.com/blog/2008/01/08/visual-studio-2008-feature-pack-beta/"/>
+    <updated>2008-01-08T22:01:00+00:00</updated>
+    <id>http://www.fragmentedmemory.com/blog/2008/01/08/visual-studio-2008-feature-pack-beta</id>
+    <content type="html"><![CDATA[<div class='post'>
+Microsoft have just released the beta of the Visual Studio 2008 "Feature Pack" which is an update for the C++ portion of the environment.  The main features are substantial updates to MFC and TR1 library support.<br /><br /><span style="font-style:italic;">The VC++ 2008 MFC libraries have been extended to support creation of applications that have:<br />    * Office Ribbon style interface<br />    * Office 2007, Office 2003 and Office XP look and feel<br />    * Modern Visual Studio-style docking toolbars and panes<br />    * Fully customizable toolbars and menus<br />    * A rich set of advanced GUI controls<br />    * Advanced MDI tabs and groups<br />    * And much more!<br /><br />This feature pack also includes an implementation of TR1. Portions of TR1 are scheduled for adoption in the upcoming C++0x standard as the first major addition to the ISO 2003 standard C++ library. Our implementation includes a number of important features such as:<br />    * Smart pointers<br />    * Regular expression parsing<br />    * New containers (tuple, array, unordered set, etc)<br />    * Sophisticated random number generators<br />    * Polymorphic function wrappers<br />    * Type traits<br />    * And more!<br /><br />Note: This feature pack does not include C99 compatibility or support for special math functions.</span><br /><br />Certainly for anyone maintaining MFC based products it is a free upgrade tot he look and feel of the program with tons of advantages.<br /><br />You can <a href="http://www.microsoft.com/downloads/details.aspx?FamilyId=D466226B-8DAB-445F-A7B4-448B326C48E7&displaylang=en">download it here</a>.  Unfortunately it tries to force you to download Silverlight which I have been avoiding like the plague but the attempts to get you to install it from Microsoft are getting more aggressive.</div>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Official News On The MFC Update]]></title>
+    <link href="http://www.fragmentedmemory.com/blog/2007/11/11/official-news-on-mfc-update/"/>
+    <updated>2007-11-11T21:23:00+00:00</updated>
+    <id>http://www.fragmentedmemory.com/blog/2007/11/11/official-news-on-mfc-update</id>
+    <content type="html"><![CDATA[<div class='post'>
+http://www.blogger.com/img/gl.link.gifObviously I have been posting recently about the new native code and MFC updates that will be appearing in Visual Studio 2008.  There is now some official news on the <a href="http://blogs.msdn.com/vcblog/">Visual C++ Team Blog</a>.<br /><br />You can see the posts here:<br />* <a href="http://blogs.msdn.com/vcblog/archive/2007/11/09/announcing-a-major-mfc-update-plus-tr1-support.aspx">Announcing a major MFC update plus TR1 support</a><br />* <a href="http://blogs.msdn.com/vcblog/archive/2007/11/09/channel-9-pat-brenner-overview-of-new-mfc-update.aspx">Channel 9: Pat Brenner – Overview of new MFC update</a><br />* <a href="http://blogs.msdn.com/vcblog/archive/2007/11/09/hola-from-barcelona-and-welcome-to-a-major-mfc-update.aspx">Hola from Barcelona…and welcome to a major MFC update!</a><br />* <a href="http://blogs.msdn.com/vcblog/archive/2007/11/09/quick-tour-of-new-mfc-functionality.aspx">Quick Tour Of New MFC Functionality</a><br /><br />In the new year the native code improvements will be in beta and it will all be released in a service pack early next year.  It'll be interesting to see what the code available will actually be like.<br /><br />Anyway, now I'll be aiming for a change of subject...</div>
+
+]]></content>
+  </entry>
+  
+</feed>

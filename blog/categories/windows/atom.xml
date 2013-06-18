@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Windows | Fragmented Memory]]></title>
+  <link href="http://www.fragmentedmemory.com/blog/categories/windows/atom.xml" rel="self"/>
+  <link href="http://www.fragmentedmemory.com/"/>
+  <updated>2013-06-18T16:32:26+01:00</updated>
+  <id>http://www.fragmentedmemory.com/</id>
+  <author>
+    <name><![CDATA[Garry Bodsworth]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Windows Aero UI Development]]></title>
+    <link href="http://www.fragmentedmemory.com/blog/2007/05/29/windows-aero-ui-development/"/>
+    <updated>2007-05-29T20:18:00+01:00</updated>
+    <id>http://www.fragmentedmemory.com/blog/2007/05/29/windows-aero-ui-development</id>
+    <content type="html"><![CDATA[<div class='post'>
+There is a new article on the <a href="http://www.codeproject.com">CodeProject</a> about retrofitting Windows Aero UI elements to existing applications.  <a href="http://www.codeproject.com/vista/AeroGlassLegacyWindowsApp.asp">Adding or Retrofitting Aero Glass into Legacy Windows Applications - Stefan Kuhr</a>.<br /><br />It's quite a comprehensive article and means someone else has done the research legwork for you - one of the beauties of the CodeProject.  This is especially useful as the Aero C++ headers have no real documentation as yet.</div>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Take Screenshots on Vista]]></title>
+    <link href="http://www.fragmentedmemory.com/blog/2007/03/09/take-screenshots-on-vista/"/>
+    <updated>2007-03-09T09:00:00+00:00</updated>
+    <id>http://www.fragmentedmemory.com/blog/2007/03/09/take-screenshots-on-vista</id>
+    <content type="html"><![CDATA[<div class='post'>
+<a href="http://weblogs.asp.net/kennykerr/archive/2007/01/28/window-clippings-1-5.aspx">Here</a> is a great little program for taking screenshots on Vista without the pollution of underlying windows unless you want it to.  It is called Window Clippings by Kenny Kerr.</div>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Vista and system RAM]]></title>
+    <link href="http://www.fragmentedmemory.com/blog/2007/03/01/vista-and-system-ram/"/>
+    <updated>2007-03-01T19:26:00+00:00</updated>
+    <id>http://www.fragmentedmemory.com/blog/2007/03/01/vista-and-system-ram</id>
+    <content type="html"><![CDATA[<div class='post'>
+There is an article <a href="http://www.codinghorror.com/blog/archives/000688.html">here</a> about how Vista handles system memory.  It is called "Why does Vista use all my memory" by Jeff Atwood.<br /><br />Essentially all system memory is now considered a cache (using a system called SuperFetch).  This means that the amount of memory used would be as much RAM as is available to cache from the hard-drive.<br /><br />I don't know if I am completely sure it is a good idea because if a program requires a lot of memory then it has the initial lag to clear the cache in order to service memory requests.  Maybe as time goes on the technology will get better, so it may be more usable in the future.</div>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Improve your XP experience]]></title>
+    <link href="http://www.fragmentedmemory.com/blog/2007/02/27/improve-your-xp-experience/"/>
+    <updated>2007-02-27T18:38:00+00:00</updated>
+    <id>http://www.fragmentedmemory.com/blog/2007/02/27/improve-your-xp-experience</id>
+    <content type="html"><![CDATA[<div class='post'>
+Since going back to standard XP Pro I thought is there a way of making it look a bit more modern.  I didn't fancy messing round with the theming DLLs and using what essentially amount to substandard themes.<br /><br />I thought how about getting the MCE2005 UI on Windows XP Pro (not a recreation of it but the actual one).  A few minutes Googling gave me my answer, Microsoft New Zealand had accidentally released the Royale theme, unfortunately they pulled it soon after.  Luckily this being the Internet the cat can never go back in the bag.<br /><br />The <a href="http://www.softpedia.com/get/Desktop-Enhancements/Themes/Royale-Theme-for-WinXP.shtml">MCE2005 Royale theme</a> for Windows XP is available at the link.  You just need to run the installer and it puts it in the right place.<br /><br />For those that like things a bit darker there is a Royale Noir theme leaked from Microsoft that did not make the cut into MCE2005.  You can download the files <a href="http://plaza.ufl.edu/psrivats/Luna2.rar">here</a>.  You need to install this after the Royale theme.  Extract it to c:\WINDOWS\Resource\Luna Noir.  Then double-click on the luna.msstyles file, this will then give another sub-option to Royale on the Appearance tab in display settings.</div>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[That Is It!  I Can Take No More!]]></title>
+    <link href="http://www.fragmentedmemory.com/blog/2007/02/26/that-is-it-i-can-take-no-more/"/>
+    <updated>2007-02-26T21:35:00+00:00</updated>
+    <id>http://www.fragmentedmemory.com/blog/2007/02/26/that-is-it-i-can-take-no-more</id>
+    <content type="html"><![CDATA[<div class='post'>
+Finally today I snapped.<br /><br />No more Vista for me I am going back to Windows XP and hopefully a working life of sanity.  I had been at work for two hours and accomplished nothing but fighting with Windows Vista for uninstalling, installing, and rebooting.  Even then I didn't manage to finish what I was trying to do.<br /><br />So then I snapped.  I decided to go back to Windows XP.  No more deathly slow animations or silent marches of death through the UAC for me.  I have no idea if Vista is a good consumer OS, but it is awful for developers who have to constantly install, reboot, update, use large amounts of files, do incremental building, and other such things.<br /><br />I can't see a service pack rectifying the problem, maybe in three years it will be usable if the XP lifecycle is anything to go by.<br /><br />It was noticeable working on Vista then coming home to XP simply how much faster XP is.  It is not anything to do with slowness drawing to the screen or the length of animations.  It all comes down to things like context menus, and security running in the background that makes simple tasks like starting a program or switching applications into a waiting game.  Nothing ever "locks up" as something is always moving and interactive, but it rarely lets you do a series of quickfire operations or run multiple IDEs without groaning.  Don't even get me started on rebooting breaking C++ precompiled headers.<br /><br />Well, this three month hell is over...</div>
+
+
+<h2>Comments</h2>
+
+
+<div class='comments'>
+<div class='comment'>
+<div class='author'>Garry Bodsworth</div>
+<div class='content'>
+I had to make sure the application I work on runs well on Vista.  It was the best way to ensure this.<BR/><BR/>Unfortunately I paid the price with my own sanity.  People are already commenting I am much more relaxed running XP ;)</div>
+</div>
+<div class='comment'>
+<div class='author'>Jalf</div>
+<div class='content'>
+Three months? I'm impressed.<BR/>I lasted four or five days before I gave up and went back to XP...<BR/>It's interesting to see I'm not alone though... ;)</div>
+</div>
+</div>
+
+]]></content>
+  </entry>
+  
+</feed>

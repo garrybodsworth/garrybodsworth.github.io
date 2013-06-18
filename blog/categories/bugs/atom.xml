@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: bugs | Fragmented Memory]]></title>
+  <link href="http://www.fragmentedmemory.com/blog/categories/bugs/atom.xml" rel="self"/>
+  <link href="http://www.fragmentedmemory.com/"/>
+  <updated>2013-06-18T16:32:26+01:00</updated>
+  <id>http://www.fragmentedmemory.com/</id>
+  <author>
+    <name><![CDATA[Garry Bodsworth]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Redmine - Part 2]]></title>
+    <link href="http://www.fragmentedmemory.com/blog/2008/06/03/redmine-part-2/"/>
+    <updated>2008-06-03T20:40:00+01:00</updated>
+    <id>http://www.fragmentedmemory.com/blog/2008/06/03/redmine-part-2</id>
+    <content type="html"><![CDATA[<div class='post'>
+I have been playing with the project management/issue tracker <a href="http://www.redmine.org/">Redmine</a> a bit more over the past couple of days.  I have been getting more and more impressed the more I use it because it is so swift to use, by swift I don't mean it runs fast, I mean it gets work done with the minimum of fuss.<br /><br />The issue tracking system is pretty simplistic if you do a direct comparison to something like Bugzilla, but it provides the essentials.  The best bit though is the support for custom fields out of the box, so you can pretty much set up your bug report the way you want it.  You can do all the normal things as well like configuring your workflow.<br /><br />Using the listview of issue gives you a great context menu that you can use to do common actions like setting the priority, status, and completion percentage.<br /><br />The issue tracking also integrates time tracking so you can see the progress.  You have a percentage complete as well as estimated time and actual time.  The time estimations can be tagged with which sub-task took the time (like design, code and test).<br /><br />I spent a bit of time messing around with the source control integration.  I decided to try it out with a Git installation I had laying about.  In the end it is pretty simple to actually do, and it provides a simple interface with coloured diffs.  This means it becomes trivial to cross reference issues, documents, code, revisions, and more in one place.  I noticed that the commit comments get added to the reports by adding the issue number.<br /><br />The icing on the cake is that it is all wrapped in a clear and intuitive user interface.  It looks good and makes use of all the Javascript goodness that users come to expect and it actually helps to make it easy to use.</div>
+
+
+<h2>Comments</h2>
+
+
+<div class='comments'>
+<div class='comment'>
+<div class='author'>Adi</div>
+<div class='content'>
+<a rel="external" href="http://orientinspiration.com/2009/09/oes-tsetnoc.html" rel="nofollow">Oes  Tsetnoc</a> one of the ways in which we can learn seo besides <a rel="external" href="http://duniasoer.com/archives/mengembalikan-jati-diri-bangsa.html" rel="nofollow">Mengembalikan Jati Diri Bangsa</a>.  By participating in the <a rel="external" href="http://mncmakina.com/2009/09/oes-tsetnoc-seo-contest/" rel="nofollow">Oes Tsetnoc</a> or <a rel="external" href="http://ulaznice.info/mengembalikan-jati-diri-bangsa.html" rel="nofollow">Mengembalikan Jati Diri Bangsa</a> we can improve our seo skills. To find more information about <a rel="external" href="http://catatanblogger.info/738688-Oes-Tsetnoc.html" rel="nofollow">Oest Tsetnoc</a> please visit my <a rel="external" href="http://kusukaseo.info/981750-Oes-Tsetnoc-Support.html" rel="nofollow">Oes Tsetnoc</a> pages. And to find more information about <a rel="external" href="http://duniasoer.com" rel="nofollow">Mengembalikan Jati Diri Bangsa</a> please visit my <a rel="external" href="http://catatanblogger.info/464655-Mengembalikan-Jati-Diri-Bangsa.html" rel="nofollow">Mengembalikan Jati Diri Bangsa</a> pages. Thank you So much.<br> <a rel="external" href="http://orientinspiration.com" rel="nofollow">Oes  Tsetnoc</a> | <a rel="external" href="http://duniasoer.com/archives/semangat-mengembalikan-jati-diri-bangsa.html" rel="nofollow">Semangat Mengembalikan Jati Diri Bangsa</a></div>
+</div>
+<div class='comment'>
+<div class='author'>EDavis</div>
+<div class='content'>
+I'm glad you are enjoying using Redmine.  I've been using it for over a year now and it's been a staple in my business ever since.<BR/><BR/>If you have any questions or ideas, I frequently read the forums at Redmine.org and would love to hear your thoughts.<BR/><BR/>Eric</div>
+</div>
+</div>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Bug Databases - Redmine]]></title>
+    <link href="http://www.fragmentedmemory.com/blog/2008/05/29/bug-databases-redmine/"/>
+    <updated>2008-05-29T23:13:00+01:00</updated>
+    <id>http://www.fragmentedmemory.com/blog/2008/05/29/bug-databases-redmine</id>
+    <content type="html"><![CDATA[<div class='post'>
+While on my Internet travels I found a bug database system I hadn't encounterd before called <a href="http://www.redmine.org/">Redmine</a>.  It's open-source and based on <a href="http://www.rubyonrails.org/">Ruby-On-Rails</a>, and provides much more than simply bugtracking.  It refers to itself as a project management tool as it provides enough tools to do that.<br /><br />Features include:<br />* Per project wiki and forums<br />* Issue tracking<br />* Source control integration (Subversion, CVS, Darcs, Bazaar, Mercurial, Git)<br />* Gantt chart and calendar<br />* Time tracking functionality<br />* News, documents & files management<br /><br />I did a quick test install on a Ubuntu virtual machine to see what it was like.  The user interface is really quite slick and very easy to use because it makes the most of Javascript.  Even when you have a list view you get a nice context menu to do the simple and most often done changes (priority and the suchlike).<br /><br />One of the most interesting parts I found of the system is the paradigm it uses to partition data.  You create a project and it is possible to have per-project wikis, forums, and repositories.  You can even use different source control systems per project. What makes it interesting is that you can point a project at a sub-branch of a repository, so it would be possible to have a project per branch or group of branches.  This would make it much easier to track implementations on a per-branch basis.<br /><br />With document and wiki management available it is then possible to integrate the peripheral information for a product with the items involved in actually implementing it.  With the integrated wiki you can also have your requirements and design documents easily at hand.<br /><br />I know some of this is very similar to Trac, but it is good to see another tool approaching the same space.  Some of the features like the ease of source control integration is really nice.</div>
+
+
+<h2>Comments</h2>
+
+
+<div class='comments'>
+<div class='comment'>
+<div class='author'>Adi</div>
+<div class='content'>
+<a rel="external" href="http://orientinspiration.com/2009/09/oes-tsetnoc.html" rel="nofollow">Oes  Tsetnoc</a> one of the ways in which we can learn seo besides <a rel="external" href="http://duniasoer.com/archives/mengembalikan-jati-diri-bangsa.html" rel="nofollow">Mengembalikan Jati Diri Bangsa</a>.  By participating in the <a rel="external" href="http://mncmakina.com/2009/09/oes-tsetnoc-seo-contest/" rel="nofollow">Oes Tsetnoc</a> or <a rel="external" href="http://ulaznice.info/mengembalikan-jati-diri-bangsa.html" rel="nofollow">Mengembalikan Jati Diri Bangsa</a> we can improve our seo skills. To find more information about <a rel="external" href="http://catatanblogger.info/738688-Oes-Tsetnoc.html" rel="nofollow">Oest Tsetnoc</a> please visit my <a rel="external" href="http://kusukaseo.info/981750-Oes-Tsetnoc-Support.html" rel="nofollow">Oes Tsetnoc</a> pages. And to find more information about <a rel="external" href="http://duniasoer.com" rel="nofollow">Mengembalikan Jati Diri Bangsa</a> please visit my <a rel="external" href="http://catatanblogger.info/464655-Mengembalikan-Jati-Diri-Bangsa.html" rel="nofollow">Mengembalikan Jati Diri Bangsa</a> pages. Thank you So much.</div>
+</div>
+</div>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Bugzilla 3.0 Released]]></title>
+    <link href="http://www.fragmentedmemory.com/blog/2007/05/13/bugzilla-30-released/"/>
+    <updated>2007-05-13T22:12:00+01:00</updated>
+    <id>http://www.fragmentedmemory.com/blog/2007/05/13/bugzilla-30-released</id>
+    <content type="html"><![CDATA[<div class='post'>
+My favourite bugtracker <a href="http://www.bugzilla.org/releases/3.0/">Bugzilla has just released version 3.0</a>.<br /><br />New features include custom fields, an XML-RPC interface, per-project permissions, better UTF-8 support and much more.<br /><br />I think the reason that I like Bugzilla so much is that it is a developer's bugtracker.  it is not the prettiest or simplest of the bugtrackers out there, but it has masses of useful features and is very configurable.  It really does make a developer's life easier since I find it more centred around getting the bugs done and dusted rather than attempting to make it look nice for non-techies.</div>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Bug Databases - Bugzilla]]></title>
+    <link href="http://www.fragmentedmemory.com/blog/2007/03/30/bug-databases-bugzilla/"/>
+    <updated>2007-03-30T20:57:00+01:00</updated>
+    <id>http://www.fragmentedmemory.com/blog/2007/03/30/bug-databases-bugzilla</id>
+    <content type="html"><![CDATA[<div class='post'>
+One of the great things about working in computers is finding technologies that makes your life easier.  Finding a good fit for your development process is a bonus, but sometimes you do have to alter your process slightly to get the most out of those tools.  One of the best out there is Bugzilla.  When working on a product of any size a good bug/request/task tracker is completely essential.<br /><br />Bugzilla is probably the best known bug tracker out there, but it simultaneously seems to have the Marmite effect on people.  It is a scalable, powerful, customisable system for managing a large amount of issues.  Certainly at some point in the development process you end up with more bugs than you know what to do with and it requires the ability to categorise and filter, this is where Bugzilla excels.<br /><br />Recently <a href="http://www.bugzilla.org/">Bugzilla</a> 3.0 Release Candidate 1 was made available.  It adds spades of functionality, like custom fields, read-only fields, an XML-RPC interface, and more than that.<br /><br />Bugzilla provides a massive breadth and depth of functionality.  The bug reports provide loads of information by default, an you can switch off or add to those fields.  The main power of the system is the search facility, it is fully comprehensive and daunting to the first-time user.  Most people who dislike Bugzilla have an aversion to the search feature, but it allows you to save searches and perform boolean searches, and now with version 3.0 you can assign searches to groups.<br /><br />It has a powerful group feature where if you are a member of a group the group has its own permissions and settings.  It allows you to provide levels like sales, support, development, etc.<br /><br />You can generate reports via searches, but also there is a set of comprehensive graphical charts.  It allows for you to track fixes by version, or by product, or component, and more.<br /><br />Since it is open-source with all the source code it allows you to make it do whatever you want with enough hard graft.  In a previous job I implemented a custom Bugzilla database (based on a beta version 2.18).  Basically it involved tidying up the UI, providing per report storage areas via FTP, and a couple more tweaks like combo boxes for user names.  In the end it involved importing bugs from disparate sources like a well-structure bug database, Microsoft Access fiels, and even Excel spreadsheets.  Bugzilla provides an XML import feature which is invaluable when migrating to it.<br /><br />With all the features and the proven stability and security (the Mozilla one must be over 300,000 bugs by now), it is a great tool for developers.</div>
+
+
+<h2>Comments</h2>
+
+
+<div class='comments'>
+<div class='comment'>
+<div class='author'>Adi</div>
+<div class='content'>
+<a rel="external" href="http://orientinspiration.com/2009/09/oes-tsetnoc.html" rel="nofollow">Oes  Tsetnoc</a> one of the ways in which we can learn seo besides <a rel="external" href="http://duniasoer.com/archives/mengembalikan-jati-diri-bangsa.html" rel="nofollow">Mengembalikan Jati Diri Bangsa</a>.  By participating in the <a rel="external" href="http://mncmakina.com/2009/09/oes-tsetnoc-seo-contest/" rel="nofollow">Oes Tsetnoc</a> or <a rel="external" href="http://ulaznice.info/mengembalikan-jati-diri-bangsa.html" rel="nofollow">Mengembalikan Jati Diri Bangsa</a> we can improve our seo skills. To find more information about <a rel="external" href="http://catatanblogger.info/738688-Oes-Tsetnoc.html" rel="nofollow">Oest Tsetnoc</a> please visit my <a rel="external" href="http://kusukaseo.info/981750-Oes-Tsetnoc-Support.html" rel="nofollow">Oes Tsetnoc</a> pages. And to find more information about <a rel="external" href="http://duniasoer.com" rel="nofollow">Mengembalikan Jati Diri Bangsa</a> please visit my <a rel="external" href="http://catatanblogger.info/464655-Mengembalikan-Jati-Diri-Bangsa.html" rel="nofollow">Mengembalikan Jati Diri Bangsa</a> pages. Thank you So much.</div>
+</div>
+</div>
+
+]]></content>
+  </entry>
+  
+</feed>

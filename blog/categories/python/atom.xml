@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Python | Fragmented Memory]]></title>
+  <link href="http://www.fragmentedmemory.com/blog/categories/python/atom.xml" rel="self"/>
+  <link href="http://www.fragmentedmemory.com/"/>
+  <updated>2013-06-18T16:32:26+01:00</updated>
+  <id>http://www.fragmentedmemory.com/</id>
+  <author>
+    <name><![CDATA[Garry Bodsworth]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Web Development - Pylons]]></title>
+    <link href="http://www.fragmentedmemory.com/blog/2008/05/21/web-development-pylons/"/>
+    <updated>2008-05-21T20:37:00+01:00</updated>
+    <id>http://www.fragmentedmemory.com/blog/2008/05/21/web-development-pylons</id>
+    <content type="html"><![CDATA[<div class='post'>
+I was reading some information about <a href="http://www.rubyonrails.org/">Ruby On Rails</a> and watching a few of the <a href="http://www.rubyonrails.org/screencasts">screencasts</a> and I was really impressed about how fast you can create a database-backed website.  One of the good blogs about it is <a href="http://afreshcup.com/">A Fresh Cup</a> where a Microsoft refugee embarks on a career in Rails development.  It pointed to a very interesting article <a href="http://glyphobet.net/blog/essay/228">Ruby’s Not Ready</a> whcih compares Ruby to Python.<br /><br />Through that article I discovered Pyhton has its own "On-Rails" equivalent <a href="http://pylonshq.com/">Pylons</a> for rapid website development.  Since Python resources out there are so numerous this would be a very interesting platform to build on.  I guess that also means for enterprising C++ developers using Boost.Python they could have some interesting performance improvements.<br /><br />For the most part Pylons seems about as productive as Rails, as outlined in the <a href="http://wiki.pylonshq.com/display/pylonscookbook/Making+a+Pylons+Blog">tutorial for making a quick blog</a>.<br /><br />It's pretty easy to try this stuff out on a <a href="http://www.macports.org/">Mac</a> if you have MacPorts installed (and <a href="http://porticus.alittledrop.com/">Porticus</a> to make it extra nice).</div>
+
+
+<h2>Comments</h2>
+
+
+<div class='comments'>
+<div class='comment'>
+<div class='author'>Adi</div>
+<div class='content'>
+<a rel="external" href="http://orientinspiration.com/2009/09/oes-tsetnoc.html" rel="nofollow">Oes  Tsetnoc</a> one of the ways in which we can learn seo besides <a rel="external" href="http://duniasoer.com/archives/mengembalikan-jati-diri-bangsa.html" rel="nofollow">Mengembalikan Jati Diri Bangsa</a>.  By participating in the <a rel="external" href="http://mncmakina.com/2009/09/oes-tsetnoc-seo-contest/" rel="nofollow">Oes Tsetnoc</a> or <a rel="external" href="http://ulaznice.info/mengembalikan-jati-diri-bangsa.html" rel="nofollow">Mengembalikan Jati Diri Bangsa</a> we can improve our seo skills. To find more information about <a rel="external" href="http://catatanblogger.info/738688-Oes-Tsetnoc.html" rel="nofollow">Oest Tsetnoc</a> please visit my <a rel="external" href="http://kusukaseo.info/981750-Oes-Tsetnoc-Support.html" rel="nofollow">Oes Tsetnoc</a> pages. And to find more information about <a rel="external" href="http://duniasoer.com" rel="nofollow">Mengembalikan Jati Diri Bangsa</a> please visit my <a rel="external" href="http://catatanblogger.info/464655-Mengembalikan-Jati-Diri-Bangsa.html" rel="nofollow">Mengembalikan Jati Diri Bangsa</a> pages. Thank you So much.</div>
+</div>
+<div class='comment'>
+<div class='author'>Web development</div>
+<div class='content'>
+Hi this is a nice blog for getting information about <a href="http://www.webdesigningcompany.net/" rel="nofollow">web development</a>. I really enjoy this blog. This is very interesting blog thanks for share your things related with Web site design.<br /><br /><a href="http://www.webdesigningcompany.net/" rel="nofollow">Web development</a><br /><a href="http://www.webdesigningcompany.net/" rel="nofollow">Web design Company</a><br /><a href="http://www.webdesigningcompany.net/" rel="nofollow">Web site development company</a></div>
+</div>
+</div>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Distributed Revision Control And APIs]]></title>
+    <link href="http://www.fragmentedmemory.com/blog/2007/07/16/distributed-revision-control-and-apis/"/>
+    <updated>2007-07-16T22:33:00+01:00</updated>
+    <id>http://www.fragmentedmemory.com/blog/2007/07/16/distributed-revision-control-and-apis</id>
+    <content type="html"><![CDATA[<div class='post'>
+One of the reasons blogging has been quiet the past week or so is I've been fiddling about with some coding.<br /><br />I've been trying out <a href="http://www.wxpython.org">wxPython</a> and using it as an interface to a distributed source control system.  It's purely experimental, but it did show me some deficiencies and strengths in some of the ones available.<br /><br />Here is what I learnt though...  wxPython is a great way of hacking together a coherent UI fast, I am still relatively inexperienced in Python and wxPython but the resources out there on the Internet are very useful.<br /><br />As for the source control systems...  First I tried out <a href="http://www.selenic.com/mercurial/">Mercurial</a>, but I am really struggling with the API and trying to write extensions.  This is mainly due to the lack of documentation, and a lot of current tools like <a href="http://qct.sourceforge.net/">Qct</a> simply parse the commandline.  I did work out some of the parts of the API to wrap, but I found it hard going with limited Python knowledge and a lack of comments.<br /><br />The other system I tried was <a href="http://bazaar-vcs.org/">Bazaar</a> which I found a very different experience.  The API is excellently documented and the plug-in API is excellent.  Admittedly the criticism levelled at this source contrl system is the speed, but it gets so much right.  It is built on a solid foundation of correctness and the barrier for entry is lowered thanks to the excellent documentation.  I managed o get a working status dialog up and running in a very short period of time (although admittedly I got sidetracked afterwards fiddling around with wxPython).<br /><br />One of the reasons I was using wxPython is that it looks native on my Macbook Pro as a lot of the available UIs are GTK based meaning they look pretty bad on OS X.  Also I wanted to try it out on Windows which meant it looked pretty good on that platform as well.<br /><br />Hopefully I can find the time to tidy some of this code up into a reusable form and actually see something like at least the status and commit dialogs through to completion.</div>
+
+
+<h2>Comments</h2>
+
+
+<div class='comments'>
+<div class='comment'>
+<div class='author'>Matt Doar</div>
+<div class='content'>
+I found that the Mercurial book was pretty good when it came to writing plugins. That and looking at the source for other plugins.</div>
+</div>
+</div>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[OpenGL In Python]]></title>
+    <link href="http://www.fragmentedmemory.com/blog/2007/01/23/opengl-in-python/"/>
+    <updated>2007-01-23T20:20:00+00:00</updated>
+    <id>http://www.fragmentedmemory.com/blog/2007/01/23/opengl-in-python</id>
+    <content type="html"><![CDATA[<div class='post'>
+<a href="http://pyopengl.sourceforge.net/">pyOpenGL</a> provides access to OpenGL in Python.<br /><br />PyOpenGL includes support for OpenGL v1.1, GLU, GLUT v3.7, GLE 3, WGL 4, and Togl (Tk OpenGL widget) 1.6.  It also includes support for dozens of extensions (where supported in the underlying implementation).<br /><br />Related (and unrelated) 3D libraries are also listed <a href="http://www.vrplumber.com/py3d.py">here</a>.  It includes Python bindings in OpenSceneGraph, Irrlicht, OGRE, and more.</div>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[GUI Toolkits - For Python]]></title>
+    <link href="http://www.fragmentedmemory.com/blog/2007/01/23/gui-toolkits-for-python/"/>
+    <updated>2007-01-23T20:03:00+00:00</updated>
+    <id>http://www.fragmentedmemory.com/blog/2007/01/23/gui-toolkits-for-python</id>
+    <content type="html"><![CDATA[<div class='post'>
+<a href="http://www.python.org">Python</a> is a great interpreted language for either scripting or proper applications, and I've mentioned it a few times in the past, it really is that good.<br /><br />I came across a great site about <a href="http://www.awaretek.com/toolkits.html">GUI kits for Python</a>.  It gives you suggestions based on your requirements by filling out a mini form.<br /><br /><a href="http://www.cosc.canterbury.ac.nz/greg.ewing/python_gui/">PyGUI</a> - It is planned to be a cross platform GUI library implemented specially for Python.  Currently it has Mac OSX Cocoa and X11 using GTK implementations.<br /><br /><a href="http://wiki.python.org/moin/TkInter">Tkinter</a> - the default GUI installed with Python.  It provides a thin layer to Tcl/Tk.<br /><br /><a href="http://www.wxpython.org/">wxPython</a> - I have mentioned this a few times already.  It is the Python bindings for <a href="http://www.wxwidgets.org">wxWidgets</a> making it cross-platform and with a great depth of features.  You can also use a Python written IDE and RAD GUI designer <a href="http://boa-constructor.sourceforge.net/">BoaConstructor</a>.<br /><br />There are many more listed on the page covering the GUI designers as well as the toolkits.</div>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Boost Library And Visual Studio 2005]]></title>
+    <link href="http://www.fragmentedmemory.com/blog/2006/10/03/boost-library-and-visual-studio-2005/"/>
+    <updated>2006-10-03T22:50:00+01:00</updated>
+    <id>http://www.fragmentedmemory.com/blog/2006/10/03/boost-library-and-visual-studio-2005</id>
+    <content type="html"><![CDATA[<div class='post'>
+This will set you up with a top notch development environment for C++ in Windows.  Also this will tell you how to get the Boost::Python libraries to work with as well (which can never be a bad thing).<br /><ol><li>Download Visual C++ 2005 Express from <a href="http://msdn.microsoft.com/vstudio/express/visualc/download/">here</a>.</li><li>Then go and install the <a href="http://msdn.microsoft.com/vstudio/express/visualc/usingpsdk/">Platform SDK</a>.  I recommend installing it into <span style="font-style: italic;">C:\Program Files\Microsoft Visual Studio 8\VC\PlatformSDK</span> as then the environment variables are already set up for you in VC8.</li><li>Go and download <a href="http://www.python.org/">Python</a> where the latest version is 2.5.  Install Python 2.5 to the default installation directory of <span style="font-style: italic;">c:\Python25</span>.</li><li>Now it is time to download <a href="http://www.boost.org/">Boost</a> and make sure you download the <a href="http://sourceforge.net/project/showfiles.php?group_id=7586&package_id=8041">source</a> and a precompiled <a href="http://sourceforge.net/project/showfiles.php?group_id=7586&amp;package_id=72941">bjam build tool</a>.</li><li>Extract Boost to a temporary directory on your hard drive, and copy the <span style="font-style: italic;">bjam.exe</span> into the Boost directory.</li><li>Open a command prompt in the Boost root directory(where you copied <span style="font-style: italic;">bjam.exe</span> to).</li><li>Run the batch file for registering Visual Studio commandline variables : <span style="font-style: italic;">C:\Program Files\Microsoft Visual Studio 8\Common7\Tools\vsvars32.bat</span></li><li>Run the following command line to compile and install Boost in "c:\Boost" with no checked iterators:<span style="font-style: italic;">bjam "-sTOOLS=vc-8_0" "-sPYTHON_VERSION=2.5" "-sPYTHON_ROOT=c:\Python25" "-sBUILD=debug release &lt;define&gt;_CRT_NONSTDC_NO_DEPRECATE &lt;define&gt;_CRT_SECURE_NO_DEPRECATE &lt;define&gt;_SECURE_SCL=0 &lt;define&gt;_SCL_SECURE_NO_DEPRECATE &lt;define&gt;_HAS_ITERATOR_DEBUGGING=0" install</li><li>What I tend to do then is copy Boost to where my development libraries go, and then add those directories to the lib and include directories in Visual C++.</li></ol>Now you are ready to go for Boost-ified C++ development and you will have the Boost Python libraries as well for binding your code to a scripting language.  Next install TortoiseSVN and install the settings outlined in one of my previous posts for the toolbars, and then you should be ready to check some code out and develop like a demon.</div>
+
+
+<h2>Comments</h2>
+
+
+<div class='comments'>
+<div class='comment'>
+<div class='author'>Paul</div>
+<div class='content'>
+To stop things whizzing past, run it at the command line like so:<BR/><BR/>bjam blah blah &gt; build_log.txt 2&gt;&amp;1<BR/><BR/>then open up the text file in a good text editor and reload to watch the new stuff come in...</div>
+</div>
+<div class='comment'>
+<div class='author'>Garry Bodsworth</div>
+<div class='content'>
+Oh damn!  That means I have been using it without all the switched off stuff.  Thanks for the heads up.<br /><br />Unfortunately running bjam verbosely gives far too much output, but I have also fixed another problem I spotted as it whizzed past on the DOS command prompt (to do with deprecated C library functionality).<br /><br />There is still the "Og" flag warning but hopefully that will be fixed in Boost 1.34 as it is not a problem in VC++ 8 (but will be when it is removed in future versions).<br /><br />Check out the updated post.  Overall it makes the Boost library build a whole 1Mb smaller ;)<br /><br />Thanks!<br /><br />Garry</div>
+</div>
+<div class='comment'>
+<div class='author'>dtinkham</div>
+<div class='content'>
+Hi Garry,<br /><br />I don't think that the command-line to bjam that you list is exactly right. With the preprocessor options/defines listed as you have them, bjam interprets the defines as targets, and you get 4 extra builds :)<br /><br />It looks like each define should have < define > prepended. <br /><br />e.g.<br /><br />< define >_CRT_SECURE_NO_DEPRECATE<br /><br />Note, there should not be a space between the <, >, and the word define. I had to put the space in because the blog commenter won't allow that tag. <br /><br />Cheers.</div>
+</div>
+</div>
+
+]]></content>
+  </entry>
+  
+</feed>

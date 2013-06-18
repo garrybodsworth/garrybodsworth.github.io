@@ -1,0 +1,188 @@
+
+<!DOCTYPE HTML>
+<html lang="en-gb">
+<head>
+  <meta charset="UTF-8">
+  <title>Fragmented Memory</title>
+
+  <meta name="author" content="Garry Bodsworth">
+  
+  <meta name="description" content="Installing the Latest Intel Drivers &#8211; the Kernel Jun 21st, 2009 So installing the drivers, latest X-server, mesa and so on is only part of the &hellip;">
+  
+  
+
+  <link rel="canonical" href="http://www.fragmentedmemory.com/blog/2009/06/21/installing-the-latest-intel-drivers-the-kernel">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/atom.xml" rel="alternate" title="Fragmented Memory" type="application/atom+xml">
+</head>
+  
+<body class="default">
+  <div id="wrapper">
+    <div id="header">
+  <h1><a href="/">Fragmented Memory</a></h1>
+  
+    <p>Garry Bodsworth's Blog (formerly Garry's Bit Patterns &amp; Programmer's Log)</p>
+  
+</div>
+<ul id="social-links">
+  
+    <li><a class="feed" href="/atom.xml" title="RSS">RSS</a></li>
+  
+  
+    <li><a class="twitter" href="http://twitter.com/garrybodsworth" title="Twitter">Twitter</a></li>
+  
+  
+    <li> <a class="github" href="https://github.com/garrybodsworth" title="GitHub">GitHub</a> </li>
+  
+</ul>
+<div class="clear"></div>
+<ul id="nav">
+  
+    <li> <a href="/">blog</a> </li>
+  
+
+  
+    <li><a href="/blog/archives">archives</a></li>
+  
+</ul>
+
+    <div id="main"> <div class="post-header">
+  
+    <h1 class="post-title">Installing the Latest Intel Drivers &#8211; the Kernel</h1>
+  
+  
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2009-06-21T00:00:00+01:00" pubdate data-updated="true">Jun 21<span>st</span>, 2009</time>
+</div>
+
+<div class="post-content"><p>So installing the drivers, latest X-server, mesa and so on is only part of the puzzle to use the latest Intel graphics drivers. You also need to update your kernel for more features like better kernel memory management, kernel mode switching, and other basic things. The driver can work (for differing levels of working) for older kernels, but the bugfixes tend to be on the latest version. I have tried this on an Intel 945GM.</p>
+
+<p>So this is how you update your kernel for Jaunty (and other Ubuntus would probably work). A really handy repository of kernels is maintained by Ubuntu called <a href="http://kernel.ubuntu.com/~kernel-ppa/mainline/">Mainline PPA</a> where you can download pretty much any version of the kernel.</p>
+
+<p>So for kernel 2.6.30 you need to download the following file : <a href="http://kernel.ubuntu.com/~kernel-ppa/mainline/v2.6.30/linux-image-2.6.30-020630-generic_2.6.30-020630_i386.deb">linux-image-2.6.30-020630-generic_2.6.30-020630_i386.deb</a><br/>
+You need to install this by calling:<pre colla="+" lang=”Bash”> sudo dpkg -i linux-image-2.6.30-020630-generic_2.6.30-020630_i386.deb </pre></p>
+
+<p>As part of the install it should have run update-grub. If not run <strong>sudo update-grub</strong></p>
+
+<p>To get kernel modesetting working as well as fixing a couple of minor issues you need to edit the file <strong>/boot/grub/menu.lst</strong> for some extra parameters. You need to edit the line that looks like:</p>
+
+<pre colla="+" lang="Bash">kernel      /vmlinuz-2.6.30-020630-generic root=/dev/sda7 ro 
+</pre>
+
+
+<p>And add the following between &#8220;generic&#8221; and &#8220;root&#8221;:</p>
+
+<pre colla="+" lang="Bash">nopat enable_mtrr_cleanup i915.modeset=1
+</pre>
+
+
+<p>The first two sort out some hardware bugs on the Intel 945 depending on the hardware platform which can vary. Acer Aspire Ones don&#8217;t necessarily have the same mtrr bugs as MSI Winds and so on. The modeset parameter switches on kernel modesetting which you will hopefully not notice many changes with.</p>
+
+<p>I did find kernel modesetting played a lot better running X without any monitor connected and dealt with a lot of odd mode issues.</p>
+</div>
+
+
+<div class="post-single">
+  <div class="post-meta">
+    
+
+<span class="categories">
+  Categories:
+  
+    <a class='category' href='/blog/categories/uncategorized/'>Uncategorized</a>
+  
+</span>
+
+
+    
+      <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://www.fragmentedmemory.com/blog/2009/06/21/installing-the-latest-intel-drivers-the-kernel/" data-via="garrybodsworth" data-counturl="http://www.fragmentedmemory.com/blog/2009/06/21/installing-the-latest-intel-drivers-the-kernel/" >Tweet</a>
+  
+  
+  
+</div>
+
+    
+  </div>
+  <div class="clear"></div>
+
+  
+</div>
+ </div>
+    <div id="footer">
+  <div class="panels">
+    <div class="license">
+      <h2>License</h2>
+      <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-nc-sa/3.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/">Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License</a>.
+    </div>
+
+    <div class="posts">
+      <h2>Recent Posts</h2>
+      <ul>
+        
+          <li>
+            <a href="/blog/2013/06/18/new-location-and-new-blog-engine-and-old-content-restored/">New Location &amp; New Blog Engine &amp; Old Content Restored</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2013/06/13/joining-microsoft/">Joining Microsoft</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2013/06/13/leaving-bromium/">Leaving Bromium</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2013/03/05/philip-su-engineering-process-and/">Philip Su - Engineering Process And Philosophy At Facebook</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2013/03/05/more-creator-owned-comics-genocide/">More Creator-Owned Comics - Genocide: Duostar</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  <p class="powered">
+    Powered by <a href="http://octopress.org">Octopress</a> and <a href="https://github.com/iwinux/compbits">Compbits</a>
+  </p>
+</div>
+
+  </div> <!-- #wrapper end -->
+
+  
+
+  
+
+
+  
+
+  
+
+  
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+</body>
+</html>

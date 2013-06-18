@@ -1,0 +1,175 @@
+
+<!DOCTYPE HTML>
+<html lang="en-gb">
+<head>
+  <meta charset="UTF-8">
+  <title>Fragmented Memory</title>
+
+  <meta name="author" content="Garry Bodsworth">
+  
+  <meta name="description" content="Long-Lived Processes Jun 1st, 2010 One of the things about developing a digital signage system is that the software running the display has to run &hellip;">
+  
+  
+
+  <link rel="canonical" href="http://www.fragmentedmemory.com/blog/2010/06/01/long-lived-processes">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/atom.xml" rel="alternate" title="Fragmented Memory" type="application/atom+xml">
+</head>
+  
+<body class="default">
+  <div id="wrapper">
+    <div id="header">
+  <h1><a href="/">Fragmented Memory</a></h1>
+  
+    <p>Garry Bodsworth's Blog (formerly Garry's Bit Patterns &amp; Programmer's Log)</p>
+  
+</div>
+<ul id="social-links">
+  
+    <li><a class="feed" href="/atom.xml" title="RSS">RSS</a></li>
+  
+  
+    <li><a class="twitter" href="http://twitter.com/garrybodsworth" title="Twitter">Twitter</a></li>
+  
+  
+    <li> <a class="github" href="https://github.com/garrybodsworth" title="GitHub">GitHub</a> </li>
+  
+</ul>
+<div class="clear"></div>
+<ul id="nav">
+  
+    <li> <a href="/">blog</a> </li>
+  
+
+  
+    <li><a href="/blog/archives">archives</a></li>
+  
+</ul>
+
+    <div id="main"> <div class="post-header">
+  
+    <h1 class="post-title">Long-Lived Processes</h1>
+  
+  
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-06-01T00:00:00+01:00" pubdate data-updated="true">Jun 1<span>st</span>, 2010</time>
+</div>
+
+<div class="post-content"><p>One of the things about developing a <a href="http://www.camvine.com/">digital signage system</a> is that the software running the display has to run for a long period of time. From what I have heard some people set their digital signage players (from other companies) to reboot every night which is an odd state of affairs, whereas we just say plug it in and switch it on. That does not mean we are infallible and I am constantly hunting down strange behaviours in the long-lived process.</p>
+
+<p>What I have really found from the reality of having real operating systems out there in the big wide world is that you will always encounter that which you cannot predict. There is however a way to mitigate the risk. You need to take a leaf out of the server world. Your main process should be as simple as possible doing the absolute minimum, then spawn processes to do the donkey work.</p>
+
+<p>The advantage of this is that if anything does go wrong in the real hard work then when the process is closed or is aggressively killed the resources are returned back to the system. In Linux this is particularly good because it is really good at starting processes efficiently. I saw evidence of this when git was spawning lots of perl processes, which in Windows was a lot slower, meaning that git in Linux on a VM in Windows was much faster than on plain Windows.</p>
+
+<p>Even Python has a built-in multiprocessing library (which was really put in place to get around the GIL issues) but it gives a great framework for managing processes and inter-process-communication. This is available from 2.6 up and I must get around to porting more stuff to it rather than rolling my own.</p>
+
+<p>Another great feature of the Linux graphics stack is texture from pixmap so that you can have out-of-process rendering and composite it all together in OpenGL.</p>
+
+<p>Really the lesson I learnt by forgetting to not put something into a separate process is that the unimaginable will happen, from bizarre corruptions, to parsers that should fail but are just too robust, which then means you have memory hanging around forever.</p>
+</div>
+
+
+<div class="post-single">
+  <div class="post-meta">
+    
+
+<span class="categories">
+  Categories:
+  
+    <a class='category' href='/blog/categories/uncategorized/'>Uncategorized</a>
+  
+</span>
+
+
+    
+      <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://www.fragmentedmemory.com/blog/2010/06/01/long-lived-processes/" data-via="garrybodsworth" data-counturl="http://www.fragmentedmemory.com/blog/2010/06/01/long-lived-processes/" >Tweet</a>
+  
+  
+  
+</div>
+
+    
+  </div>
+  <div class="clear"></div>
+
+  
+</div>
+ </div>
+    <div id="footer">
+  <div class="panels">
+    <div class="license">
+      <h2>License</h2>
+      <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-nc-sa/3.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/">Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License</a>.
+    </div>
+
+    <div class="posts">
+      <h2>Recent Posts</h2>
+      <ul>
+        
+          <li>
+            <a href="/blog/2013/06/18/new-location-and-new-blog-engine-and-old-content-restored/">New Location &amp; New Blog Engine &amp; Old Content Restored</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2013/06/13/joining-microsoft/">Joining Microsoft</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2013/06/13/leaving-bromium/">Leaving Bromium</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2013/03/05/philip-su-engineering-process-and/">Philip Su - Engineering Process And Philosophy At Facebook</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2013/03/05/more-creator-owned-comics-genocide/">More Creator-Owned Comics - Genocide: Duostar</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  <p class="powered">
+    Powered by <a href="http://octopress.org">Octopress</a> and <a href="https://github.com/iwinux/compbits">Compbits</a>
+  </p>
+</div>
+
+  </div> <!-- #wrapper end -->
+
+  
+
+  
+
+
+  
+
+  
+
+  
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+</body>
+</html>

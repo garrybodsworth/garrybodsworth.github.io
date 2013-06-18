@@ -1,0 +1,568 @@
+
+<!DOCTYPE HTML>
+<html lang="en-gb">
+<head>
+  <meta charset="UTF-8">
+  <title>Fragmented Memory</title>
+
+  <meta name="author" content="Garry Bodsworth">
+  
+  <meta name="description" content="Icons Icons Icons Oct 5th, 2006 In my last company I redesigned every icon in the system from a 16 colour pallette into full 32-bit alpha-blended &hellip;">
+  
+  
+
+  <link rel="canonical" href="http://www.fragmentedmemory.com/blog/page/51">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/atom.xml" rel="alternate" title="Fragmented Memory" type="application/atom+xml">
+</head>
+  
+<body class="default">
+  <div id="wrapper">
+    <div id="header">
+  <h1><a href="/">Fragmented Memory</a></h1>
+  
+    <p>Garry Bodsworth's Blog (formerly Garry's Bit Patterns &amp; Programmer's Log)</p>
+  
+</div>
+<ul id="social-links">
+  
+    <li><a class="feed" href="/atom.xml" title="RSS">RSS</a></li>
+  
+  
+    <li><a class="twitter" href="http://twitter.com/garrybodsworth" title="Twitter">Twitter</a></li>
+  
+  
+    <li> <a class="github" href="https://github.com/garrybodsworth" title="GitHub">GitHub</a> </li>
+  
+</ul>
+<div class="clear"></div>
+<ul id="nav">
+  
+    <li> <a href="/" class="current">blog</a> </li>
+  
+
+  
+    <li><a href="/blog/archives">archives</a></li>
+  
+</ul>
+
+    <div id="main"> 
+
+  
+  <div class="post"> <div class="post-header">
+  
+    <h1 class="post-title">
+      <a href="/blog/2006/10/05/icons-icons-icons/">Icons Icons Icons</a>
+    </h1>
+  
+  
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2006-10-05T09:34:00+01:00" pubdate data-updated="true">Oct 5<span>th</span>, 2006</time>
+</div>
+
+<div class="post-content"><div class='post'>
+In my last company I redesigned every icon in the system from a 16 colour pallette into full 32-bit alpha-blended glory.  I also wrote the support functions for cool looking disabled and hover (hot) looks.<br /><br />In total I think that was 250-300 icons.  Probably more.  I didn&#8217;t follow any guidelines apart from my own consistency of design.  To be honest the Microsoft Guidelines were very difficult to follow if you wanted to produce a substantial number of toolbar and tree view icons.<br /><br />There are a few guidelines out there now:<br /><ul><li><a href="http://msdn.microsoft.com/library/default.asp?url=/library/en-us/dnwxp/html/winxpicons.asp">Windows XP Icon Guidelines</a></li><li><a href="http://msdn.microsoft.com/library/default.asp?url=/library/en-us/UxGuide/UXGuide/Resources/WhatsNewInVista/Aero.asp">Windows Vista Icon Guidelines</a> - still not implemented.</li><li><a href="http://developer.apple.com/documentation/UserExperience/Conceptual/OSXHIGuidelines/XHIGIcons/chapter_14_section_2.html">Apple OS X Icon Guidelines</a></li></ul><br /><br />The reason I am writing this today is that Apple have recently added a style guide for their icons, and it is part of their <a href="http://developer.apple.com/documentation/UserExperience/Conceptual/OSXHIGuidelines/XHIGIntro/chapter_1_section_1.html#//apple_ref/doc/uid/TP30000894-TP6">Apple Human Interface Guidelines</a> which is essentially an online book and is very in-depth.<br /><br />I find it interesting that OS makers can chastise the applications for not being consistent and so on, but without providing developers with the information and tools to go and do it, they surely can&#8217;t be surprised&#8230;  Hell, you can&#8217;t even edit 32-bit icons in Visual Studio or even through an add-on.</div>
+</div>
+ </div>
+
+  
+  <div class="post"> <div class="post-header">
+  
+    <h1 class="post-title">
+      <a href="/blog/2006/10/04/visual-studio-2005-lets-break/">Visual Studio 2005 - Lets Break Everything!</a>
+    </h1>
+  
+  
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2006-10-04T21:05:00+01:00" pubdate data-updated="true">Oct 4<span>th</span>, 2006</time>
+</div>
+
+<div class="post-content"><div class='post'>
+Since I&#8217;ve been using Visual Studio.NET 2005 I have discovered a myriad of undocumented (or documented in such a way as to seem inoccuous) breaks in the compilation of most code.<br /><br /><span style="font-weight:bold;">Standard C - the CRT</span><br /><br />I should start with the simplest and probably most common breaks that would effect you if you use C or C++ with the Visual C++ 8.0 (VC8) compiler.  If you have used swprintf or any of its relations you will find your code no longer compiles, or it does and gives an odd warning.  This is extremely dangerous as to make it more conforming they have added an extra parameter for the buffer size.  All well and good, but you find most of the code you download of the Internet no longer compiles. Simply adding <span style="font-style:italic;">#define _CRT_NONSTDC_NO_DEPRECATE 1</span><br /> won&#8217;t make a difference.  You need to add:<br />   <span style="font-style:italic;">#define _CRT_NON_CONFORMING_SWPRINTFS</span><br /><br />Make sure this all gets added as the first thing in the <span style="font-style:italic;">stdafx.h</span> or in the pre-processor definitions in the project settings.<br /><br />The <span style="font-style:italic;">_CRT_NONSTDC_NO_DEPRECATE</span> will deal with the instances of other C runtime library code that has also changed.  This is because Microsoft have replaced all of the functions that you will get all the warnings about with &#8220;secure&#8221; functions.  This means that the function names are appended with <span style="font-style:italic;">_s</span>.<br /><br /><span style="font-weight:bold;">Floating Point Operations</span><br /><br />There are three options now:<br /><ul><li><span style="font-weight:bold;">fp:fast</span> - The fastest implementation.</li><li><span style="font-weight:bold;">fp:precise</span> - slower but more &#8220;precise&#8221;.</li><li><span style="font-weight:bold;">fp:strict</span> - the strictest implementation.</li></ul>You have to make a choice - faster or more precise.  I still haven&#8217;t discovered how imprecise <span style="font-style:italic;">fp:fast</span> is yet.<br /><br /><span style="font-weight:bold;">C++ Standard Template Library</span><br /><br />You&#8217;ll probably find that any code you use will fall over in some obscure and not so obscure instances, as well as being much slower.  And that goes double for Debug builds.<br /><br />So you need to add these to the top of your stdafx.h or your pre-processor definitions (or to your command line).  To get up and running use:<br />   <span style="font-style:italic;">#define _SECURE_SCL 0</span><br />   <span style="font-style:italic;">#define _SCL_SECURE_NO_DEPRECATE</span><br />   <span style="font-style:italic;">#define _HAS_ITERATOR_DEBUGGING 0</span><br /><br /><span style="font-weight:bold;">How to define these values.</span><br /><br />The options to add these things:<ol><li>Add to your stdafx.h as plain preprocessor definitions.  This option seems to be the most hit-and-miss.</li><li>Add to your pre-processor definitions in your project settings.  This is done with semi-colon separated values, eg, <span style="font-style:italic;">_SECURE_SCL=0</span></li><li>Add it to your commandline.  Do this in the project settings commandline tab.  Add /D_SECURE_SL=0 for instance, you simply add /D then the preprocessor symbol without a space with an optional assignment.</li></ol>In some instances one option may not work but one of the three will.</div>
+<h2>Comments</h2>
+<div class='comments'>
+<div class='comment'>
+<div class='author'>Manoj</div>
+<div class='content'>
+sadsdf</div>
+</div>
+</div>
+</div>
+ </div>
+
+  
+  <div class="post"> <div class="post-header">
+  
+    <h1 class="post-title">
+      <a href="/blog/2006/10/04/windows-vista-and-its-api/">Windows Vista and Its API</a>
+    </h1>
+  
+  
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2006-10-04T15:47:00+01:00" pubdate data-updated="true">Oct 4<span>th</span>, 2006</time>
+</div>
+
+<div class="post-content"><div class='post'>
+After lots of uncertainty with Windows Vista as a developer (it&#8217;s sad, I worry about such things), I breathed a huge sigh of relief today.  Windows Vista has generated such things as WPF and Aero and other things that mean very little to me as a developer.  Simply, I want to know how to access all the good stuff.<br /><br />This had me worried as they seem to want to make non-managed code a ghetto, but this is mainly from reading allt he public information and marketing.  It seems that the Win32 is still the basis of everything, although the name Win32 is ultimately misleading.  To cut to the chase, .NET sits on top of Win32, even in Vista, and you still have access to it.<br /><br />There is a great little article on the <a href="http://www.codeproject.com/winfx/VGGlassIntro.asp">CodeProject</a> that shows that you can write in what are now called the &#8220;Native APIs&#8221;.  Hit the link and have a quick read.<br /><br />I find this exciting as a developer as this means that I can write my own wrappers for stuff and extend those wrappers I have written previously.<br /><br />Now I&#8217;m in the middle of downloading the <a href="http://www.microsoft.com/downloads/details.aspx?FamilyId=117ECFD3-98AD-4D67-87D2-E95A8407FA86&displaylang=en">new Windows SDK for Vista</a> and I am going to have a closer look at the native APIs in order to work out what it can do.</div>
+</div>
+ </div>
+
+  
+  <div class="post"> <div class="post-header">
+  
+    <h1 class="post-title">
+      <a href="/blog/2006/10/03/boost-library-and-visual-studio-2005/">Boost Library and Visual Studio 2005</a>
+    </h1>
+  
+  
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2006-10-03T22:50:00+01:00" pubdate data-updated="true">Oct 3<span>rd</span>, 2006</time>
+</div>
+
+<div class="post-content"><div class='post'>
+This will set you up with a top notch development environment for C++ in Windows.  Also this will tell you how to get the Boost::Python libraries to work with as well (which can never be a bad thing).<br /><ol><li>Download Visual C++ 2005 Express from <a href="http://msdn.microsoft.com/vstudio/express/visualc/download/">here</a>.</li><li>Then go and install the <a href="http://msdn.microsoft.com/vstudio/express/visualc/usingpsdk/">Platform SDK</a>.  I recommend installing it into <span style="font-style: italic;">C:\Program Files\Microsoft Visual Studio 8\VC\PlatformSDK</span> as then the environment variables are already set up for you in VC8.</li><li>Go and download <a href="http://www.python.org/">Python</a> where the latest version is 2.5.  Install Python 2.5 to the default installation directory of <span style="font-style: italic;">c:\Python25</span>.</li><li>Now it is time to download <a href="http://www.boost.org/">Boost</a> and make sure you download the <a href="http://sourceforge.net/project/showfiles.php?group_id=7586&package_id=8041">source</a> and a precompiled <a href="http://sourceforge.net/project/showfiles.php?group_id=7586&amp;package_id=72941">bjam build tool</a>.</li><li>Extract Boost to a temporary directory on your hard drive, and copy the <span style="font-style: italic;">bjam.exe</span> into the Boost directory.</li><li>Open a command prompt in the Boost root directory(where you copied <span style="font-style: italic;">bjam.exe</span> to).</li><li>Run the batch file for registering Visual Studio commandline variables : <span style="font-style: italic;">C:\Program Files\Microsoft Visual Studio 8\Common7\Tools\vsvars32.bat</span></li><li>Run the following command line to compile and install Boost in &#8220;c:\Boost&#8221; with no checked iterators:<span style="font-style: italic;">bjam &#8220;-sTOOLS=vc-8_0&#8221; &#8220;-sPYTHON_VERSION=2.5&#8221; &#8220;-sPYTHON_ROOT=c:\Python25&#8221; &#8220;-sBUILD=debug release &lt;define&gt;_CRT_NONSTDC_NO_DEPRECATE &lt;define&gt;_CRT_SECURE_NO_DEPRECATE &lt;define&gt;_SECURE_SCL=0 &lt;define&gt;_SCL_SECURE_NO_DEPRECATE &lt;define&gt;_HAS_ITERATOR_DEBUGGING=0&#8221; install</li><li>What I tend to do then is copy Boost to where my development libraries go, and then add those directories to the lib and include directories in Visual C++.</li></ol>Now you are ready to go for Boost-ified C++ development and you will have the Boost Python libraries as well for binding your code to a scripting language.  Next install TortoiseSVN and install the settings outlined in one of my previous posts for the toolbars, and then you should be ready to check some code out and develop like a demon.</div>
+<h2>Comments</h2>
+<div class='comments'>
+<div class='comment'>
+<div class='author'>Paul</div>
+<div class='content'>
+To stop things whizzing past, run it at the command line like so:<BR/><BR/>bjam blah blah &gt; build_log.txt 2&gt;&amp;1<BR/><BR/>then open up the text file in a good text editor and reload to watch the new stuff come in&#8230;</div>
+</div>
+<div class='comment'>
+<div class='author'>Garry Bodsworth</div>
+<div class='content'>
+Oh damn!  That means I have been using it without all the switched off stuff.  Thanks for the heads up.<br /><br />Unfortunately running bjam verbosely gives far too much output, but I have also fixed another problem I spotted as it whizzed past on the DOS command prompt (to do with deprecated C library functionality).<br /><br />There is still the &#8220;Og&#8221; flag warning but hopefully that will be fixed in Boost 1.34 as it is not a problem in VC++ 8 (but will be when it is removed in future versions).<br /><br />Check out the updated post.  Overall it makes the Boost library build a whole 1Mb smaller ;)<br /><br />Thanks!<br /><br />Garry</div>
+</div>
+<div class='comment'>
+<div class='author'>dtinkham</div>
+<div class='content'>
+Hi Garry,<br /><br />I don&#8217;t think that the command-line to bjam that you list is exactly right. With the preprocessor options/defines listed as you have them, bjam interprets the defines as targets, and you get 4 extra builds :)<br /><br />It looks like each define should have < define > prepended. <br /><br />e.g.<br /><br />< define >_CRT_SECURE_NO_DEPRECATE<br /><br />Note, there should not be a space between the <, >, and the word define. I had to put the space in because the blog commenter won&#8217;t allow that tag. <br /><br />Cheers.</div>
+</div>
+</div>
+</div>
+ </div>
+
+  
+  <div class="post"> <div class="post-header">
+  
+    <h1 class="post-title">
+      <a href="/blog/2006/10/03/what-to-do-next/">What to Do Next?</a>
+    </h1>
+  
+  
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2006-10-03T21:56:00+01:00" pubdate data-updated="true">Oct 3<span>rd</span>, 2006</time>
+</div>
+
+<div class="post-content"><div class='post'>
+I think my next task should be explaining how to get Boost working with Visual C++ 2005 Express.  Then in theory with the Subversion user interface you should have a very powerful and free development environment for C++.</div>
+</div>
+ </div>
+
+  
+  <div class="post"> <div class="post-header">
+  
+    <h1 class="post-title">
+      <a href="/blog/2006/10/03/tortoisesvn-vsnet-2005-good-stuff/">TortoiseSVN + VS.NET 2005 = Good Stuff</a>
+    </h1>
+  
+  
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2006-10-03T20:56:00+01:00" pubdate data-updated="true">Oct 3<span>rd</span>, 2006</time>
+</div>
+
+<div class="post-content"><div class='post'>
+<span style="font-weight:bold;"><a href="http://garrys-brain.blogspot.com/2007/07/tortoisesvn-and-visual-studio.html">See the update here.</a></span><br /><br />As promised it is time to integrate TortoiseSVN into Visual Studio 2005.  The easiest way I have found to do this is to post the vsettings files from Visual Studio once the environment is set up.<br /><br />Here are the zipped settings files:<br /><a href="http://garry.bodsworth.googlepages.com/SubversionSettingsVS2005.zip">This link is for Visual Studio.NET 2005.</a><br /><a href="http://garry.bodsworth.googlepages.com/SubversionSettingsVC2005Express.zip">This link is for Visual C++ 2005 Express.</a><br /><br />You need to go to <span style="font-style:italic;">Tools->Import and Export Settings</span> and load the files from wizard dialog that pops up.  There are differences between the free Visual C++ Express and Visual Studio settings files, so please make sure you use the correct one.  It would also be an idea to say yes when the wizard asks you to back up your current settings.<br /><br />There is one thing the settings get wrong on the build toolbar which is the size of some controls, so once the settings have loaded make sure you resize the items on the build toolbar by right-clicking and choosing <span style="font-style:italic;">Customise&#8230;</span>.  Then you can select the items and make them smaller.<br /><br />The settings have some of my own personal changes as well as the Subversion changes I am afraid, but you can choose which bits to load in on the settings wizard dialog.  There are some assumptions made also, the PlatformSDK is assumed to be in the default environment location under <span style="font-style:italic;">c:\Program Files\Microsoft Visual Studio 8\VC\PlatformSDK</span>.  Also it assumes that TortoiseSVN is installed in the default directory.  The settings files are just XML so you could alter those directories by hand before loading it in.<br /><br />Once you have loaded these settings you will have:<br /><ul><li>A Subversion Menu.</li><li>A consolidated help menu so the same number of menus is still there at the top.</li><li>A Subversion toolbar.</li><li>All Subversion options in menus and toolbars have icons associated with them that will look familiar to users of TortoiseSVN.</li><li>The context menu for Solutions has relevant Subversion options.</li><li>As do individual files context menus - Diff, Log, Blame.</li><li>Since Subversion has its own menu they are no longer present in the External Tools.</li><li>Made the build bar actually have build options on it.</li><li>Trimmed down the main file toolbar.</li><li>All of the moving around of items means you get all the toolbars across the top of the screen in one row.</li><li>Added quickwatch to the debug menu as it annoys me they removed it after Visual Studio 6.0.</li></li></ul><span style="font-weight:bold;">Menu screenshot:</span><br /><a onblur="try {parent.deselectBloggerImageGracefully();} catch(e) {}" href="http://photos1.blogger.com/blogger/3420/3930/1600/SubversionMenu.png"><img style="cursor:pointer; cursor:hand;" src="http://photos1.blogger.com/blogger/3420/3930/320/SubversionMenu.png" border="0" alt="" /></a><br /><span style="font-weight:bold;">Toolbar screenshot:</span><br /><a onblur="try {parent.deselectBloggerImageGracefully();} catch(e) {}" href="http://photos1.blogger.com/blogger/3420/3930/1600/SubversionToolbar.png"><img style="cursor:pointer; cursor:hand;" src="http://photos1.blogger.com/blogger/3420/3930/320/SubversionToolbar.png" border="0" alt="" /></a><br /><span style="font-weight:bold;">Solution context menu:</span><br /><a onblur="try {parent.deselectBloggerImageGracefully();} catch(e) {}" href="http://photos1.blogger.com/blogger/3420/3930/1600/ContextSolution.png"><img style="cursor:pointer; cursor:hand;" src="http://photos1.blogger.com/blogger/3420/3930/320/ContextSolution.png" border="0" alt="" /></a><br /><span style="font-weight:bold;">File context menu:</span><br /><a onblur="try {parent.deselectBloggerImageGracefully();} catch(e) {}" href="http://photos1.blogger.com/blogger/3420/3930/1600/ContextFile.png"><img style="cursor:pointer; cursor:hand;" src="http://photos1.blogger.com/blogger/3420/3930/320/ContextFile.png" border="0" alt="" /></a><br />Well, if anyone has any improvements let me know&#8230;</div>
+<h2>Comments</h2>
+<div class='comments'>
+<div class='comment'>
+<div class='author'>SewhatSneev</div>
+<div class='content'>
+cheap products for man <A HREF="http://www.idealmedic.com/" REL="nofollow"> penis enlargement  </A> ideal penis enlargement<BR/><A HREF="http://www.idealmedic.com/order.html" REL="nofollow"> penis enlargement pills  </A>  penis enlargement pills<BR/><A HREF="http://www.idealmedic.com/exercises.html" REL="nofollow"> penis enlargement exercises </A> fast weight loss supplements <A HREF="http://www.pro-weight-loss.com/" REL="nofollow"> fast weight loss </A> <BR/><A HREF="http://www.idealmedic.com/about_prosolution_pills.html" REL="nofollow"> penis enhancement  </A>  <BR/><A HREF="http://www.idealmedic.com/benefits.html" REL="nofollow"> natural penis enlargement  </A></div>
+</div>
+<div class='comment'>
+<div class='author'>ASPX Beginner</div>
+<div class='content'>
+Is it possible to use this with Visual Studio 2008?</div>
+</div>
+<div class='comment'>
+<div class='author'>uiyui</div>
+<div class='content'>
+welcome to the <A HREF="http://www.igsstar.com" REL="nofollow">wow power leveling</A>, cheap service site, buy cheap wow gold,<A HREF="http://www.wotlkgolds.com" REL="nofollow">wow gold</A>,world of warcraft power leveling  buy <A HREF="http://www.xowow.com" REL="nofollow">wow power leveling</A></div>
+</div>
+<div class='comment'>
+<div class='author'>Jorge Fernando</div>
+<div class='content'>
+if i want to c# 2008 how integrate the svn.. :$</div>
+</div>
+<div class='comment'>
+<div class='author'>Khánh Đỗ</div>
+<div class='content'>
+Very very useful! Thanks for your sharing very much.</div>
+</div>
+<div class='comment'>
+<div class='author'>unRheal</div>
+<div class='content'>
+As pre what nkerkin said&#8230; <BR/>You at the very least *have* to select the &#8220;External Tools List&#8221; - even though it&#8217;s both *NOT* selected by default, and it also has a mysterious yellow exclamation icon beside it!<BR/><BR/>Leaving it at the default unselected, will give you all the options except &#8220;commit&#8221; grayed out, as some people complained about!<BR/><BR/>(and maybe only selecting the two options as nkerkin indicated will prevent the other undesired changes that someone else complained about, while still giving the desired SVN functionality - I just haven&#8217;t tested the full functionality yet&#8230;)</div>
+</div>
+<div class='comment'>
+<div class='author'>PRADEEP</div>
+<div class='content'>
+Use ankh SVN. Makes life siimpler</div>
+</div>
+<div class='comment'>
+<div class='author'>Earthly</div>
+<div class='content'>
+Does this modify the &#8216;Delete&#8217; command on a file? hence delete should be performed as a combination of &#8216;ExcludeFromProject&#8217;+&#8217;SVN.Delete&#8217;<BR/><BR/>I&#8217;m just very curious - i&#8217;m evaluating my options and would be making the move to VS 2008 very soon.</div>
+</div>
+<div class='comment'>
+<div class='author'>Yury</div>
+<div class='content'>
+Hi Garry!<BR/>Great job, thanks.<BR/>I also got a problem with the greyed out items.<BR/>It happens because of that some &#8220;assumptions&#8221; are hard-coded and in localized OS vesrion the &#8220;Program Files&#8221; folder doesn&#8217;t alway appear to be like that.  E.g. in German one it is &#8220;Programme&#8221;.<BR/>So, the resolution is obvious.  Either to edit the corresponding part of the path name for the commands under the External Tools or to change it in the .vssettings file.<BR/>To have a universal solution this part of the path should contain the system variable %programfiles%<BR/><BR/>BR,<BR/>Yury</div>
+</div>
+<div class='comment'>
+<div class='author'>John Black</div>
+<div class='content'>
+Hi Garry, <BR/>Thanks a lot for this. It is exactly what I need, I&#8217;ve done as your guide, and I have a problem that I can&#8217;t see any changes in the file context menu on the Solution Explorer windows (the Toolbar and Solution context menu work well). I&#8217;ve also tried your update, but it&#8217;s still not work.<BR/>Please help me.<BR/>Thanks again.</div>
+</div>
+<div class='comment'>
+<div class='author'>Yasith</div>
+<div class='content'>
+nice stuff! good work this is gonna help a lot of people&#8230;</div>
+</div>
+<div class='comment'>
+<div class='author'>Bjørnar</div>
+<div class='content'>
+Is there a way to get the Tortoise icons in Solution Explorer with this solution? That would be very nice ;o)</div>
+</div>
+<div class='comment'>
+<div class='author'>Garry Bodsworth</div>
+<div class='content'>
+To get the file based Revert/Commit/etc. you need to alter your external tools.<BR/><BR/>What you should do is go to the &#8220;Tools&#8221; menu, and click on &#8220;External Tools&#8230;&#8221;.  For instance, select commit and change the &#8220;arguments&#8221; from:<BR/><B>/command:commit /path:&#8221;$(SolutionDir)&#8221; /notempfile</B><BR/>to:<BR/><B>/command:commit /path:&#8221;$(ItemPath)&#8221; /notempfile</B><BR/><BR/>And then change &#8220;Initial Directory&#8221; from <B>$(SolutionDir)</B> to <B>&#8221;$(ItemDir)&#8221;</B><BR/><BR/>Repeating similar edits (replacing Solution with Item) will worki for most of the TortoiseSVN commandline tools in the External Tools.</div>
+</div>
+<div class='comment'>
+<div class='author'>Manish Joisar</div>
+<div class='content'>
+I have done as per your setting, but i am not getting file wise Update/Commit/Get Lock/Release Lock/Revert. So i can get same way like i am doing it in VSS. It will be great if someone can solve this issue. And i am only interested in VS2005, Subverion, TortoiseSVN & vssettings. Not at all interested in any other tools. I think Garry&#8217;s Bit can solve this. Please help me.</div>
+</div>
+<div class='comment'>
+<div class='author'>Michael</div>
+<div class='content'>
+First of all thanks for nice solution. It is very useful.<BR/> I had also part of menu greyed out when imported all setting (default). After going back and trying nkerkin&#8217;s suggestion solved that problem. I works great</div>
+</div>
+<div class='comment'>
+<div class='author'>cogitative</div>
+<div class='content'>
+Thank you for doing this this is exactly what I am looking for, but when I install I am also getting the buttons greyed out. I checked the vssettings file and the path to tortoise is correct. I also have my source control plug-ins set to none. I have tried to import the settings many times. Any other suggestions?</div>
+</div>
+<div class='comment'>
+<div class='author'>nkerkin</div>
+<div class='content'>
+I had a few problems setting this up. My recommendation is to only select <BR/>All settings<BR/>&#8212;>General Settings<BR/>&#8212;&#8212;>External Tools List<BR/>&#8212;&#8212;>Menu and command Bar Customizations<BR/>Ignore the little yellow warning icon on External Tools list, it won&#8217;t work if you don&#8217;t select it.</div>
+</div>
+<div class='comment'>
+<div class='author'>Nikola</div>
+<div class='content'>
+Wanned to try your approach but it doesn&#8217;t seem to work with VS2005 SP1?</div>
+</div>
+<div class='comment'>
+<div class='author'>Garry Bodsworth</div>
+<div class='content'>
+AnkhSVN is too heavyweight.  It is fine for people who don&#8217;t want to leave the SourceSafe working methodology.<BR/><BR/>When you realise you are no longer working in SourceSafe, all of the items like ticking items in the tree view are purely incidental.  You can now edit anything, undo your changes easily, and work in a seamless manner.<BR/><BR/>The reason for integrating it in this manner was so I didn&#8217;t need to swap from VS2005 to Windows Explorer to perform operations.  Plus the TortoiseSVN UI is a accomplished.</div>
+</div>
+<div class='comment'>
+<div class='author'>Nikola</div>
+<div class='content'>
+and why don&#8217;t you use Ankh?<BR/><BR/>http://ankhsvn.tigris.org/</div>
+</div>
+<div class='comment'>
+<div class='author'>spthorn</div>
+<div class='content'>
+You need to set your Source Control Plug-in Selection (in Tools | Options) to None, else certain menu options will be disabled.</div>
+</div>
+<div class='comment'>
+<div class='author'>Garry Bodsworth</div>
+<div class='content'>
+Make sure you are using the updated version, but it shouldn&#8217;t have anything greyed out (that tends to happen if the application - TortoiseSVN in this case - is not installed).<BR/><BR/>What you need to do is first install TortoiseSVN in the default location, then import the settings.  There are some quite odd issues with settings in VS2005, so sometimes you have to import the settings more than once before they take permanently.</div>
+</div>
+<div class='comment'>
+<div class='author'>Echo</div>
+<div class='content'>
+Hi,<BR/><BR/>I&#8217;m new to both VS.NET 2005 and TortoiseSVN (formula for disaster). I tried your setting, it seems worked, but in visual studio I only get &#8220;Commit&#8221; option available, with all the others greyed out. All the options are available after the installation of TortoiseSVN. Where else should I check in order to get other options work in the visual studio? Thank you very much for your help!<BR/><BR/>Cheers,<BR/><BR/>Echo</div>
+</div>
+<div class='comment'>
+<div class='author'>Frank</div>
+<div class='content'>
+Any chance that we could get a version with only those changes related to TortoiseSVN? even importing only &#8220;External Tools List&#8221; and &#8220;Menu and Command Bar Customizations&#8221; fools with things that I dont want fooled with.</div>
+</div>
+<div class='comment'>
+<div class='author'>bral</div>
+<div class='content'>
+This is just what the doctor ordered.  Very useful.</div>
+</div>
+<div class='comment'>
+<div class='author'>Garry Bodsworth</div>
+<div class='content'>
+Hi there Dean,<br /><br />Thanks for trying this out, it&#8217;s great to know it works on other platforms.<br /><br />I&#8217;ll look at adding the &#8220;Add to repository&#8221; functionality today as it would be useful.  I&#8217;ve always imported via the commandline in the past.<br /><br />Thanks,<br /><br />Garry</div>
+</div>
+<div class='comment'>
+<div class='author'>Dean</div>
+<div class='content'>
+Works like a charm!<br /><br />On Vista Build 5744 (RC2) x64, it&#8217;s brilliant, the only thing i would say is missing is an &#8216;Add to repository&#8217; function for the solution, but you know what i wouldn&#8217;t know where to start with that so i&#8217;m happy with it as it is!<br /><br />Superstar, thanks mate.</div>
+</div>
+</div>
+</div>
+ </div>
+
+  
+  <div class="post"> <div class="post-header">
+  
+    <h1 class="post-title">
+      <a href="/blog/2006/10/03/subversion-tortoisesvn-integration_03/">Subversion : TortoiseSVN Integration Into Visual Studio.NET 2005 Again</a>
+    </h1>
+  
+  
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2006-10-03T15:44:00+01:00" pubdate data-updated="true">Oct 3<span>rd</span>, 2006</time>
+</div>
+
+<div class="post-content"><div class='post'>
+Today I discovered the &#8220;Import and Export Settings&#8221; feature in Visual Studio.NET 2005.  This means no more losing settings or having to mess around getting the environment set up again after a rogue installer blitzes all of the settings I had worked so hard to set up.<br /><br />What this means is that later today I will post up a link to a file which will customise Visual Studio.NET 2003 for embedding TortoiseSVN.  You&#8217;ll have icons, toolbars, new menus, and additions to the context menus.  You&#8217;ll end up with some of my other settings like removing all Visual SourceSafe source control commands, and other things I find annoying.  But you will easily use this as a base setting and add your own bits and pieces to it.<br /><br />Garry Bodsworth<br /><br /><span style="font-weight:bold;">Edit: See my next post for links to the settings files and screenshots of teh integration.</span></div>
+</div>
+ </div>
+
+  
+  <div class="post"> <div class="post-header">
+  
+    <h1 class="post-title">
+      <a href="/blog/2006/10/02/wireless-routers-and-linksys-wrt54g/">Wireless Routers and the Linksys WRT54G</a>
+    </h1>
+  
+  
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2006-10-02T21:59:00+01:00" pubdate data-updated="true">Oct 2<span>nd</span>, 2006</time>
+</div>
+
+<div class="post-content"><div class='post'>
+My dad gave me a Linksys Wireless router (WRT54G) and it looks ug-leeee, so I never used it and bought a more stylish looking one which turned out not to work properly to the point I got so annoyed I threw it away.<br /><br />So I dug out the WRT54G and plugged it in.  It worked flawlessly until today when my two router network decided to eat itself.  Eventually after much resetting I got it all up and running again, but I discovered that with heavy network traffic like P2P (and probably my surfing habits) it can crash due to keeping a record of everything for five days.<br /><br />A quick websearch lead me to the <a href="http://en.wikipedia.org/wiki/WRT54G">Wikipedia Article on the Linksys WRT54G</a> and reading that I realised exactly what I had.  The company had opened up the firmware and there were a variety of open source versions available.  I then read this <a href="http://www.utorrent.com/faq.php#Special_note_for_users_with_Linksys_WRT54G_GL_GS_routers">FAQ for utorrent</a> where it describes what firmware it recommends and how to avoid overloading the router.  Never being afraid of destroying hardware I installed <a href="http://www.thibor.co.uk/">HyperWRT Thibor</a> on the router (there is a decent <a href="http://en.wikipedia.org/wiki/HyperWRT">Wikipedia page for HyperWRT</a> as well).  Once it rebooted I saw how many extra features are in there now.  Needless to say I am buying only Linksys routers from now on&#8230;</div>
+</div>
+ </div>
+
+  
+  <div class="post"> <div class="post-header">
+  
+    <h1 class="post-title">
+      <a href="/blog/2006/10/02/subversion-tortoisesvn-integration/">Subversion : TortoiseSVN Integration Into Visual Studio</a>
+    </h1>
+  
+  
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2006-10-02T10:35:00+01:00" pubdate data-updated="true">Oct 2<span>nd</span>, 2006</time>
+</div>
+
+<div class="post-content"><div class='post'>
+<span style="font-weight:bold;"><a href="http://garrys-brain.blogspot.com/2007/07/tortoisesvn-and-visual-studio.html">See the update here.</a></span><br /><br />This is the easy method of integrating <a href="http://www.tortoisesvn.net">TortoiseSVN</a> into Visual Studio.NET 2003 and 2005 (and probably Visual Studio 6.0).  I&#8217;ll take it in stages first and show you how to add these useful things to your &#8220;External Tools&#8221; menu.<br /><br />TortoiseSVN is kind enough to provide a decent command-line interface for bringing up the dialogs.  This gives us the ability to add External Tools that will operate on the currently open project in Visual Studio.<br /><br />Here is a script (vbs) that will append the External Tools to the end of your list:<br /><table style="font-size:75%;border: 1px dashed #2f6fab; background-color: #f9f9f9;"><tr><td><pre>'<br />' Create the Subversion External Tools for Visual Studio<br />'<br /><br />' Set the Visual Studio Version Number so we access the correct<br />' part of the registry for External Tools.<br />' Visual Studio.NET      = "7.0"<br />' Visual Studio.NET 2003 = "7.1"<br />' Visual Studio.NET 2005 = "8.0"<br />Dim strVisualStudioVersionNumber<br />strVisualStudioVersionNumber = "8.0"<br /><br />Dim strTortoiseSVNBin<br />strTortoiseSVNBin = "c:\\program files\\TortoiseSVN\\bin\\"<br /><br />' Create the scripting shell object<br />Dim WshShell<br />Set WshShell = WScript.CreateObject("WScript.Shell")<br /><br />' Function to install an external tool<br />function WriteExternalTool( strVersionNumber, _<br />    iToolNumber, _<br />    strTitle, _<br />    strCommandLine, _<br />    strArgs, _<br />    strWorkingDir, _<br />    strSource, _<br />    strOptions)<br /> ' NOTES (from Google Groups):<br /> ' ToolTitle<your tool number>:<br /> '   stores the name of your tool<br /> ' ToolCmd<your tool number>:<br /> '   stores the path to your tool<br /> ' ToolArg<your tool number>: <br /> '   stores the command line arguments for your tool.<br /> '   Set this to a blank string if your tool takes no arguments.<br /> ' ToolDir<your tool number>:<br /> '   stores the initial directory from which your tool<br /> '   should be run.  Set this to a blank string if you don't care where your tool<br /> '   is run from.<br /> ' ToolOpt<your tool number>:<br /> '   stores the settings for the checkboxes at the<br /> '   bottom of the external tools dialog.  The easiest way to determine what<br /> '   value you should set, is to create your tool once manually with the<br /> '   checkboxes set the way you like, and then exit visual studio.  Then look up<br /> '   the value that's written to this regkey.  The value that this registry<br /> '   entries got set to is the value your installer should set. <br /> <br /> Dim strTitleKey, strCommandLineKey, strArgsKey, strWorkingDirKey, strSourceKey, strOptionsKey<br /> ' Construct the keys we will be adding to as strings.  These depend on the number of the tool.<br /> strTitleKey =  "HKEY_CURRENT_USER\Software\Microsoft\VisualStudio\" & _<br />     strVersionNumber & "\External Tools\ToolTitle" & iToolNumber<br /> strCommandLineKey = "HKEY_CURRENT_USER\Software\Microsoft\VisualStudio\" & _<br />     strVersionNumber & "\External Tools\ToolCmd" & iToolNumber<br /> strArgsKey =  "HKEY_CURRENT_USER\Software\Microsoft\VisualStudio\" & _<br />     strVersionNumber & "\External Tools\ToolArg" & iToolNumber<br /> strWorkingDirKey = "HKEY_CURRENT_USER\Software\Microsoft\VisualStudio\" & _<br />     strVersionNumber & "\External Tools\ToolDir" & iToolNumber<br /> strSourceKey =  "HKEY_CURRENT_USER\Software\Microsoft\VisualStudio\" & _<br />     strVersionNumber & "\External Tools\ToolSourceKey" & iToolNumber<br /> strOptionsKey =  "HKEY_CURRENT_USER\Software\Microsoft\VisualStudio\" & _<br />     strVersionNumber & "\External Tools\ToolOpt" & iToolNumber<br /> <br /> ' Write out the contents of an external tool <br /> WshShell.RegWrite strTitleKey, strTitle<br /> WshShell.RegWrite strCommandLineKey, strCommandLine<br /> WshShell.RegWrite strArgsKey, strArgs<br /> WshShell.RegWrite strWorkingDirKey, strWorkingDir<br /> WshShell.RegWrite strSourceKey, strSource<br /> WshShell.RegWrite strOptionskey, strOptions, "REG_DWORD"<br /><br /> ' Update the count of external tools for the benefit of Visual Studio<br /> WshShell.RegWrite "HKEY_CURRENT_USER\Software\Microsoft\VisualStudio\" & _<br />     strVersionNumber & _<br />     "\External Tools\ToolNumKeys", _<br />    iToolNumber + 1, _<br />    "REG_DWORD"<br /> <br /> WriteExternalTool = (iToolNumber + 1)<br />end function<br /><br />' Get the number of current external tools as this will tell us where to start the numbering<br />Dim iNumTools<br />iNumTools = WshShell.RegRead( "HKEY_CURRENT_USER\Software\Microsoft\VisualStudio\" & _<br />    strVisualStudioVersionNumber & _<br />    "\External Tools\ToolNumKeys")<br /><br />' Install Subversion Tools<br /><br />' The order is:<br />'   SVN Commit<br />'   SVN Update<br />'   SVN History<br />'   SVN Diff<br />'   SVN Blame<br />'   SVN Revert<br />'   SVN Modifications<br />'   SVN Repository<br />'   SVN Project History<br />'   SVN Settings<br /><br />iNumTools = WriteExternalTool( strVisualStudioVersionNumber, _<br />    iNumTools, _<br />    "SVN Commit", _<br />    strTortoiseSVNBin & "tortoiseproc.exe", _<br />    "/command:commit /path:""$(SolutionDir)"" /notempfile", _<br />    "$(SolutionDir)", _<br />    "", _<br />    17)<br /><br />iNumTools = WriteExternalTool( strVisualStudioVersionNumber, _<br />    iNumTools, _<br />    "SVN Update", _<br />    strTortoiseSVNBin & "tortoiseproc.exe", _<br />    "/command:update /path:""$(SolutionDir)"" /notempfile", _<br />    "$(SolutionDir)", _<br />    "", _<br />    17)<br />    <br />iNumTools = WriteExternalTool( strVisualStudioVersionNumber, _<br />    iNumTools, _<br />    "SVN History", _<br />    strTortoiseSVNBin & "tortoiseproc.exe", _<br />    "/command:log /path:""$(ItemPath)"" /notempfile", _<br />    "$(ItemDir)", _<br />    "", _<br />    17)<br />    <br />iNumTools = WriteExternalTool( strVisualStudioVersionNumber, _<br />    iNumTools, _<br />    "SVN Diff", _<br />    strTortoiseSVNBin & "tortoiseproc.exe", _<br />    "/command:diff /path:""$(ItemPath)"" /notempfile", _<br />    "$(ItemDir)", _<br />    "", _<br />    17)<br /><br />iNumTools = WriteExternalTool( strVisualStudioVersionNumber, _<br />    iNumTools, _<br />    "SVN Blame", _<br />    strTortoiseSVNBin & "tortoiseproc.exe", _<br />    "/command:blame /path:""$(ItemPath)"" /notempfile", _<br />    "$(ItemDir)", _<br />    "", _<br />    17)<br /><br />iNumTools = WriteExternalTool( strVisualStudioVersionNumber, _<br />    iNumTools, _<br />    "SVN Revert", _<br />    strTortoiseSVNBin & "tortoiseproc.exe", _<br />    "/command:revert /path:""$(SolutionDir)"" /notempfile", _<br />    "$(SolutionDir)", _<br />    "", _<br />    17)<br /><br />iNumTools = WriteExternalTool( strVisualStudioVersionNumber, _<br />    iNumTools, _<br />    "SVN Modifications", _<br />    strTortoiseSVNBin & "tortoiseproc.exe", _<br />    "/command:repostatus /path:""$(SolutionDir)"" /notempfile", _<br />    "$(SolutionDir)", _<br />    "", _<br />    17)<br /><br />iNumTools = WriteExternalTool( strVisualStudioVersionNumber, _<br />    iNumTools, _<br />    "SVN Repository", _<br />    strTortoiseSVNBin & "tortoiseproc.exe", _<br />    "/command:repobrowser /path:""$(SolutionDir)"" /notempfile", _<br />    "$(SolutionDir)", _<br />    "", _<br />    17)<br /><br />iNumTools = WriteExternalTool( strVisualStudioVersionNumber, _<br />    iNumTools, _<br />    "SVN Project History", _<br />    strTortoiseSVNBin & "tortoiseproc.exe", _<br />    "/command:log /path:""$(SolutionDir)"" /notempfile", _<br />    "$(SolutionDir)", _<br />    "", _<br />    17)<br /><br />iNumTools = WriteExternalTool( strVisualStudioVersionNumber, _<br />    iNumTools, _<br />    "SVN Settings", _<br />    strTortoiseSVNBin & "tortoiseproc.exe", _<br />    "/command:settings /path:""$(SolutionDir)"" /notempfile", _<br />    "$(SolutionDir)", _<br />    "", _<br />    17)<br /><br />' Reset the scripting shell object<br />set WshShell = nothing</pre></td></tr></table><br /><a href="http://garry.bodsworth.googlepages.com/SubversionInstall.zip">Download the script from this link</a><br /><br />You can set your Visual Studio version by setting the <span style="font-style: italic;">strVisualStudioVersionNumber</span> variable according to the comment.<br /><br />If your TortoiseSVN is not in the default installation location change the <span style="font-style: italic;">strTortoiseSVNBin </span>variable (making sure you use &#92; as separators).<br /><br />I am not a vbs expert but I tried to make this script as reusable as possible, especially with respect to writing the external tools to the registry.  This should work with any external tools you may want to add via this script.  There are probably some TortoiseSVN features that should be added as well, but I have got by on what is in that script so far.<br /><br />For the next part I will describe how to make a toolbar to access the new External Tools.</div>
+<h2>Comments</h2>
+<div class='comments'>
+<div class='comment'>
+<div class='author'>Adi</div>
+<div class='content'>
+<a rel="external" href="http://orientinspiration.com/2009/09/oes-tsetnoc.html" rel="nofollow">Oes  Tsetnoc</a> one of the ways in which we can learn seo besides <a rel="external" href="http://duniasoer.com/archives/mengembalikan-jati-diri-bangsa.html" rel="nofollow">Mengembalikan Jati Diri Bangsa</a>.  By participating in the <a rel="external" href="http://mncmakina.com/2009/09/oes-tsetnoc-seo-contest/" rel="nofollow">Oes Tsetnoc</a> or <a rel="external" href="http://ulaznice.info/mengembalikan-jati-diri-bangsa.html" rel="nofollow">Mengembalikan Jati Diri Bangsa</a> we can improve our seo skills. To find more information about <a rel="external" href="http://catatanblogger.info/738688-Oes-Tsetnoc.html" rel="nofollow">Oest Tsetnoc</a> please visit my <a rel="external" href="http://kusukaseo.info/981750-Oes-Tsetnoc-Support.html" rel="nofollow">Oes Tsetnoc</a> pages. And to find more information about <a rel="external" href="http://duniasoer.com" rel="nofollow">Mengembalikan Jati Diri Bangsa</a> please visit my <a rel="external" href="http://catatanblogger.info/464655-Mengembalikan-Jati-Diri-Bangsa.html" rel="nofollow">Mengembalikan Jati Diri Bangsa</a> pages. Thank you So much.</div>
+</div>
+</div>
+</div>
+ </div>
+
+  
+  <div class="post"> <div class="post-header">
+  
+    <h1 class="post-title">
+      <a href="/blog/2006/10/01/subversion-and-tortoisesvn-programmers/">Subversion and TortoiseSVN - a Programmers Best Friend</a>
+    </h1>
+  
+  
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2006-10-01T19:29:00+01:00" pubdate data-updated="true">Oct 1<span>st</span>, 2006</time>
+</div>
+
+<div class="post-content"><div class='post'>
+Before you work in industry it is unlikely you ever use any source control.  At Essex Uni we were forced to use RCS (on the command-line) once and it all seemed pretty trivial and pointless.  Most of the time when you go into industry you end up having to use Visual SourceSafe, sure it does a job, but for the most part it is completely useless and scales terribly.<br /><br />Earlier this year I migrated the company I work at (<a href="http://www.ncgraphics.net">NC Graphics</a>) from Visual SourceSafe to Subversion.  I prepared a lot for this doing tons of research to make this transition as seamless as humanly possible, but as these things normally happen time was a serious factor.  Bizarrely it was done ahead of schedule and the benefits were pretty much instantaneous.  Sometimes in IT we beat deadlines(!)<br /><br /><span style="font-weight: bold;">The Migration</span><br /><br />I spent ages reading everything I could find via Google about migrating anything to Subversion.  This was necessary as there was very little covering Visual SourceSafe specifically.  In the end I had to choose the only tool even remotely capable of doing the conversion called <a href="http://vss2svn.tigris.org/">vss2svn</a> and even then there were some compromises that had to be made.  I used the orginal &#8220;legacy&#8221; script from their development repository.  It essentially gets every file you have currently in your source tree and then search each of their histories backwards in time.  This does mean you lose renames and files that have been removed.  The good thing though is that it converts the check-ins into Subversion style atomic commits by grouping them all together by time and user.<br /><br />There is a new version of <a href="http://www.pumacode.org/projects/vss2svn">vss2svn</a> (new website) but it was nowhere near being ready when I was doing this work.  This version actually reconstructs almost everything by reverse-engineering the Visual SourceSafe file format.  If you have archived portions or restored portions I found that it didn&#8217;t work.  It seems to have come a long way since I last looked, but I don&#8217;t think it would have converted our large database with all of its quirks.<br /><br />Back to the original script though&#8230;  To get it to run fast what I did was archive out the areas of SourceSafe we needed and then imported them into a brand new clean instance.  This cut the running time for the script from the test run of 14 days down to less than 2 days.<br /><br /><span style="font-weight: bold;">Using Subversion For Development</span><br /><br />Obviously you have the basic command-line tools for using <a href="http://subversion.tigris.org">Subversion</a> but there is a lot more out there as well.  Internally we use <a href="http://tortoisesvn.net/">TortoiseSVN</a> and that is about it.  Most people are looking at loads of other options, but once you use TortoiseSVN you don&#8217;t need anything else, it only takes about a day, maybe two to realise this.  Without hyperbole I can say TortoiseSVN ranks right up there as one of the greatest gifts to developers ever made.<br /><br />To make it even more useful though I did a little work to integrate it into Visual Studio.NET (2003 and 2005).  It is actually really simple to do because TortoiseSVN provides us with a commandline interface that can display the dialogs.  In the next couple of days I will give complete instructions how to set this up and even describe how to set it all up on a toolbar like I currently have it.  I&#8217;ll also cover all the clients I checked out in the course of the migration.</div>
+</div>
+ </div>
+
+
+<div id="pagination">
+  
+    <a class="prev" href="/blog/page/52/">&laquo;Previous</a>
+  
+  
+    <a class="next" href="/blog/page/50/">Next&raquo;</a>
+  
+</div>
+ </div>
+    <div id="footer">
+  <div class="panels">
+    <div class="license">
+      <h2>License</h2>
+      <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-nc-sa/3.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/">Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License</a>.
+    </div>
+
+    <div class="posts">
+      <h2>Recent Posts</h2>
+      <ul>
+        
+          <li>
+            <a href="/blog/2013/06/18/new-location-and-new-blog-engine-and-old-content-restored/">New Location &amp; New Blog Engine &amp; Old Content Restored</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2013/06/13/joining-microsoft/">Joining Microsoft</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2013/06/13/leaving-bromium/">Leaving Bromium</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2013/03/05/philip-su-engineering-process-and/">Philip Su - Engineering Process And Philosophy At Facebook</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2013/03/05/more-creator-owned-comics-genocide/">More Creator-Owned Comics - Genocide: Duostar</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  <p class="powered">
+    Powered by <a href="http://octopress.org">Octopress</a> and <a href="https://github.com/iwinux/compbits">Compbits</a>
+  </p>
+</div>
+
+  </div> <!-- #wrapper end -->
+
+  
+
+  
+
+
+  
+
+  
+
+  
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+</body>
+</html>

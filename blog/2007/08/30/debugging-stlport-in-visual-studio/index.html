@@ -1,0 +1,199 @@
+
+<!DOCTYPE HTML>
+<html lang="en-gb">
+<head>
+  <meta charset="UTF-8">
+  <title>Fragmented Memory</title>
+
+  <meta name="author" content="Garry Bodsworth">
+  
+  <meta name="description" content="Debugging STLPort in Visual Studio - autoexp.dat Aug 30th, 2007 We use STLPort for our C++ standard library as it is substantially faster than the &hellip;">
+  
+  
+
+  <link rel="canonical" href="http://www.fragmentedmemory.com/blog/2007/08/30/debugging-stlport-in-visual-studio">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/atom.xml" rel="alternate" title="Fragmented Memory" type="application/atom+xml">
+</head>
+  
+<body class="default">
+  <div id="wrapper">
+    <div id="header">
+  <h1><a href="/">Fragmented Memory</a></h1>
+  
+    <p>Garry Bodsworth's Blog (formerly Garry's Bit Patterns &amp; Programmer's Log)</p>
+  
+</div>
+<ul id="social-links">
+  
+    <li><a class="feed" href="/atom.xml" title="RSS">RSS</a></li>
+  
+  
+    <li><a class="twitter" href="http://twitter.com/garrybodsworth" title="Twitter">Twitter</a></li>
+  
+  
+    <li> <a class="github" href="https://github.com/garrybodsworth" title="GitHub">GitHub</a> </li>
+  
+</ul>
+<div class="clear"></div>
+<ul id="nav">
+  
+    <li> <a href="/">blog</a> </li>
+  
+
+  
+    <li><a href="/blog/archives">archives</a></li>
+  
+</ul>
+
+    <div id="main"> <div class="post-header">
+  
+    <h1 class="post-title">Debugging STLPort in Visual Studio - autoexp.dat</h1>
+  
+  
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2007-08-30T22:28:00+01:00" pubdate data-updated="true">Aug 30<span>th</span>, 2007</time>
+</div>
+
+<div class="post-content"><div class='post'>
+We use <a href="http://stlport.sourceforge.net/">STLPort</a> for our C++ standard library as it is substantially faster than the one supplied with Visual Studio 2005.  I  have expended quite a lot of energy trying to get the Microsoft STL to speed up more, with custom allocators and the suchlike.  The reason I pursued it was to make debugging easier as there was no way (by default) to look inside the containers in a structured fashion.<br /><br />Then I realised I was approaching the problem from the wrong angle.  Perhaps Visual Studio allows us to customise the debugging visualisations, and that means using STLPort with all the debugging benefits of the in-built system.  This was where I discovered the <a href="http://www.developer.com/net/cplus/article.php/3509761">autoexp.dat</a> which is more or less undocumented by Microsoft.  The system allows you to create custom visualisers for any datatype in the debugger.  Unfortunately it requires arcane rituals to make it work and I believe the format may have changed for VS2005.<br /><br />Anyway on to the meat of this post!  I will post here the code you need to visualise map, vector, set, and list in Visual Studio 2005.  First go and open <span style="font-weight:bold;">C:\Program Files\Microsoft Visual Studio 8\Common7\Packages\Debugger\autoexp.dat</span> in a text editor.  Locate the line featuring the text <span style="font-weight:bold;">PROPVARIANT</span>.  Just above that line add the following:<br /><pre><br />;------------------------------------------------------------------------------<br />;  STLPORT visualisers<br />;------------------------------------------------------------------------------<br /><br />;------------------------------------------------------------------------------<br /><br />;  stlp_std::vector<br />;------------------------------------------------------------------------------<br />stlp_std::vector<*>{<br />    children<br />    (<br />        #array<br />        (<br />            expr :    ($c._M_start)[$i], <br /><br />            size :    $c._M_finish-$c._M_start<br />        )<br />    )<br />   <br />    preview<br />    (<br />        #(<br />            "[",<br />            $e._M_finish - $e._M_start ,<br />            "](",<br /><br />           <br />            #array<br />            (<br />                expr :     ($c._M_start)[$i], <br />                size :     $c._M_finish-$c._M_start<br />            ),<br />            ")"<br />        )<br /><br />    )<br />}<br /><br />;------------------------------------------------------------------------------<br />;  stlp_std::list<br />;------------------------------------------------------------------------------<br />stlp_std::list<*,*>{<br /><br />    children<br />    (<br />        #list<br />        (<br />         head : $c._M_node._M_data._M_next,<br />         skip : &($c._M_node._M_data),<br />         next : _M_next<br />        ) : #( *($T1 *)(sizeof(stlp_std::priv::_List_node_base)+((char*)&($e))) )<br /><br />    )<br />   <br />    preview<br />    (<br />     #(<br />      "(",<br />      #list<br />      (<br />       head : $c._M_node._M_data._M_next,<br />       skip : &($c._M_node._M_data),<br />       next : _M_next<br />      ) : *($T1 *)(sizeof(stlp_std::priv::_List_node_base)+((char*)&($e))),<br /><br />      ")"<br />     )<br />    )<br />}<br /><br />;------------------------------------------------------------------------------<br />;  stlp_std::set<br />;------------------------------------------------------------------------------<br /><br />stlp_std::set<*> {<br /> children<br /> (<br />  #tree<br />  (<br />   head : $c._M_t._M_header._M_data._M_parent,<br />   skip : $c._M_t._M_header._M_data,<br />   left : _M_left,<br />   right : _M_right,<br />   size : $c._M_t._M_node_count<br /><br />  ) : ((_Node*)(&$e))->_M_value_field<br /> )<br />}<br /><br />;------------------------------------------------------------------------------<br />;  stlp_std::map<br />;------------------------------------------------------------------------------<br /><br />stlp_std::map<*,*,*,*> {<br /> children<br /> (<br />  #(<br />   [map]: [$c,!],<br /><br />   #tree<br />   (<br />    head : $c._M_t._M_header._M_data._M_parent,<br />    left : _M_left,<br />    right : _M_right,<br />    skip : $c._M_t._M_header._M_data<br /><br />   ) : *(stlp_std::pair<$T1,$T2>*)(((char*)(&((*((stlp_std::priv::_Rb_tree_node<$T1>*)(&$e)))._M_value_field))))<br />  )<br /> )<br />}<br /></pre><br /><br />I am pretty sure I need to do some more tweaking to get it working even better.  The map implementation is certainly the best part as it displays the list of items as pairs of (key, value) which is really useful.  Some of the code for this was pilfered from the comments of <a href="http://www.virtualdub.org/blog/pivot/entry.php?id=120">this article</a> - thanks to those people who blazed the initial trail.</div>
+<h2>Comments</h2>
+<div class='comments'>
+<div class='comment'>
+<div class='author'>Leviana</div>
+<div class='content'>
+Can I apply debugging on my <a href="http://www.rxsexual.com/" rel="nofollow">Buy Generic Viagra</a> blog ?</div>
+</div>
+<div class='comment'>
+<div class='author'>Zahary Karadjov</div>
+<div class='content'>
+A more complete set of visualizers is  now available at:<BR/>http://stlport.svn.sourceforge.net/viewvc/stlport/trunk/STLport/etc/autoexp.dat?revision=HEAD</div>
+</div>
+<div class='comment'>
+<div class='author'>Laurent</div>
+<div class='content'>
+I was using your file as a starting point, trying to improve it for other types. My Stlport setup is different than yours, it does not as use a stlp_std::priv:: namespace.  <BR/>Note that the STLPort namespace can be one of stlpdmtx_std, stlpd_std, stlpdxmtx_std, stlpdx_std too.<BR/><BR/><BR/>Maybe my setup is wrong, I am still using VS2005 without the SP1 and my STLPort is quite outdated (5.0.2). I will upgrade this week and see if things goes better. <BR/><BR/><BR/>In case you need it, this is my test file:<BR/><BR/>#include &lt;map&gt;<BR/>#include &lt;set&gt;<BR/>#include &lt;list&gt;<BR/>#include &lt;vector&gt;<BR/>#include &lt;string&gt;<BR/><BR/>using namespace std;<BR/><BR/>int main(){<BR/><BR/> _Rb_tree_node&lt;int&gt; rb_t_n_int;<BR/> rb_t_n_int._M_value_field = 4;<BR/> _Rb_tree_node&lt;string&gt; rb_t_n_string;<BR/> rb_t_n_string._M_value_field = &#8220;four&#8221;;<BR/><BR/> string s(&#8220;some string&#8221;);<BR/><BR/> pair&lt;int, int &gt; pii;<BR/> pair&lt;int, string &gt; pis;<BR/> pair&lt;string, string &gt; pss;<BR/> pair&lt;string, int &gt; psi;<BR/><BR/> map&lt;int, int &gt; mii;<BR/> map&lt;int, string &gt; mis;<BR/> map&lt;string, string &gt; mss;<BR/> map&lt;string, int &gt; msi;<BR/> map&lt;double, double&gt; mdd;<BR/> set&lt;int&gt; si;<BR/> set&lt;string&gt; ss;<BR/> list&lt;int&gt; li;<BR/> list&lt;string&gt; ls;<BR/> vector&lt;int&gt; vi;<BR/> vector&lt;string&gt; vs;<BR/><BR/> vector&lt;vector&lt;string&gt; &gt; v_vs;<BR/> map&lt;string, vector&lt;string&gt; &gt; ms_vs;<BR/><BR/> set&lt; vector&lt;int&gt; &gt; s_vi;<BR/> set&lt; vector&lt;string&gt; &gt; s_vs;<BR/><BR/> pii.first = 1;<BR/> pii.second = 2;<BR/> pis.first = 1;<BR/> pis.second = &#8220;two&#8221;;<BR/> pss.first = &#8220;one&#8221;;<BR/> pss.second = &#8220;two&#8221;;<BR/> psi.first = &#8220;one&#8221;;<BR/> psi.second = 2;<BR/><BR/> mii.insert(make_pair(1, 10));<BR/> mii.insert(make_pair(2, 20));<BR/> mii.insert(make_pair(3, 30));<BR/> mii.insert(make_pair(4, 40));<BR/> <BR/> mis.insert(make_pair(1, &#8220;one&#8221;));<BR/> mis.insert(make_pair(2, &#8220;two&#8221;));<BR/> mis.insert(make_pair(3, &#8220;three&#8221;));<BR/> mis.insert(make_pair(4, &#8220;four&#8221;));<BR/> <BR/> mss.insert(make_pair(&#8220;one&#8221;, &#8220;one&#8221;));<BR/> mss.insert(make_pair(&#8220;two&#8221;, &#8220;two&#8221;));<BR/> mss.insert(make_pair(&#8220;three&#8221;, &#8220;three&#8221;));<BR/> mss.insert(make_pair(&#8220;four&#8221;, &#8220;four&#8221;));<BR/><BR/> msi.insert(make_pair(&#8220;one&#8221;, 1));<BR/> msi.insert(make_pair(&#8220;two&#8221;, 2));<BR/> msi.insert(make_pair(&#8220;three&#8221;, 3));<BR/> msi.insert(make_pair(&#8220;four&#8221;, 4));<BR/><BR/> mdd.insert(make_pair(1.1, 11.1));<BR/> mdd.insert(make_pair(2.2, 22.2));<BR/> mdd.insert(make_pair(3.3, 33.3));<BR/> mdd.insert(make_pair(4.4, 44.4));<BR/><BR/> si.insert(1);<BR/> si.insert(2);<BR/> si.insert(3);<BR/> si.insert(4);<BR/><BR/> ss.insert(&#8220;one&#8221;);<BR/> ss.insert(&#8220;two&#8221;);<BR/> ss.insert(&#8220;three&#8221;);<BR/> ss.insert(&#8220;four&#8221;);<BR/><BR/> li.push_back(1);<BR/> li.push_back(2);<BR/> li.push_back(3);<BR/> li.push_back(4);<BR/><BR/> ls.push_back(&#8220;one&#8221;);<BR/> ls.push_back(&#8220;two&#8221;);<BR/> ls.push_back(&#8220;three&#8221;);<BR/> ls.push_back(&#8220;four&#8221;);<BR/><BR/> vi.push_back(1);<BR/> vi.push_back(2);<BR/> vi.push_back(3);<BR/> vi.push_back(4);<BR/><BR/> vs.push_back(&#8220;one&#8221;);<BR/> vs.push_back(&#8220;two&#8221;);<BR/> vs.push_back(&#8220;three&#8221;);<BR/> vs.push_back(&#8220;four&#8221;);<BR/><BR/> v_vs.push_back(vs);<BR/> v_vs.resize(2);<BR/> v_vs[1].push_back(&#8220;one&#8221;);<BR/> v_vs[1].push_back(&#8220;two&#8221;);<BR/> v_vs[1].push_back(&#8220;three&#8221;);<BR/> v_vs[1].push_back(&#8220;four&#8221;);<BR/><BR/> ms_vs.insert(make_pair(&#8220;fr&#8221;, vs));<BR/> ms_vs.insert(make_pair(&#8220;en&#8221;, v_vs[1]));<BR/><BR/> s_vi.insert(vi);<BR/> s_vs.insert(vs);<BR/>}</div>
+</div>
+<div class='comment'>
+<div class='author'>Garry Bodsworth</div>
+<div class='content'>
+I misinterpreted what you said.  The one I supplied only works for you with map{int, int} right?<BR/><BR/>That is odd because I have had maps of complex types to complex types visualise in list form with this visualiser.  I&#8217;ll have a closer look at it over the next week.</div>
+</div>
+<div class='comment'>
+<div class='author'>Garry Bodsworth</div>
+<div class='content'>
+I started with an ugly hack like that before using the map implementation in the post above.  Does my implementation work for you.<BR/><BR/>The solution really came down to understanding what STLPort was doing with its pointers and then interpreting those into the proper structures/classes by casting.<BR/><BR/>You can copy and paste my implementation above in, it looks like it is truncated but all of the text for the visualiser is on the page.</div>
+</div>
+<div class='comment'>
+<div class='author'>Laurent</div>
+<div class='content'>
+My map visualizer looks like this, but it doesn&#8217;t work for every container:<BR/> map&lt;string,int&gt; or map&lt;int,int&gt; is ok but <BR/><BR/>map&lt;int, string&gt; or map&lt;string,string&gt; is not! <BR/><BR/>Any idea ?<BR/><BR/>stlp_std::map&lt;*,*,*,*&gt; {<BR/> children<BR/> (<BR/>  #(<BR/>   [map]: [$c,!],<BR/>   #tree<BR/>   (<BR/>    head : $c._M_t._M_header._M_data._M_parent,<BR/>    left : _M_left,<BR/>    right : _M_right,<BR/>    skip : $c._M_t._M_header._M_data<BR/><BR/>   ) : #( *(stlp_std::pair&lt;$T1,$T2&gt; *)(sizeof(stlp_std::_Rb_tree_node_base)+((char*)&($e))) ) ; this is an ugly hack that works for ( map&lt;string,int&gt;, map&lt;int,int&gt;, map&lt;double,double&gt; ) but not for map&lt;int,string&gt;, map&lt;string,string&gt; &#8230; )<BR/> ;  : *(stlp_std::pair&lt;$T1,$T2&gt;*)(((char*)(&((*((stlp_std::_Rb_tree_node&lt;$T1&gt;*)(&$e)))._M_value_field))))  ;   works only for map&lt;int,int&gt;<BR/>  )<BR/> )</div>
+</div>
+</div>
+</div>
+
+
+<div class="post-single">
+  <div class="post-meta">
+    
+
+<span class="categories">
+  Categories:
+  
+    <a class='category' href='/blog/categories/c-plus-plus/'>C++</a>, <a class='category' href='/blog/categories/stl/'>STL</a>, <a class='category' href='/blog/categories/visual-studio-2005/'>Visual Studio 2005</a>
+  
+</span>
+
+
+    
+      <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://www.fragmentedmemory.com/blog/2007/08/30/debugging-stlport-in-visual-studio/" data-via="garrybodsworth" data-counturl="http://www.fragmentedmemory.com/blog/2007/08/30/debugging-stlport-in-visual-studio/" >Tweet</a>
+  
+  
+  
+</div>
+
+    
+  </div>
+  <div class="clear"></div>
+
+  
+</div>
+ </div>
+    <div id="footer">
+  <div class="panels">
+    <div class="license">
+      <h2>License</h2>
+      <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-nc-sa/3.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/">Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License</a>.
+    </div>
+
+    <div class="posts">
+      <h2>Recent Posts</h2>
+      <ul>
+        
+          <li>
+            <a href="/blog/2013/06/18/new-location-and-new-blog-engine-and-old-content-restored/">New Location &amp; New Blog Engine &amp; Old Content Restored</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2013/06/13/joining-microsoft/">Joining Microsoft</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2013/06/13/leaving-bromium/">Leaving Bromium</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2013/03/05/philip-su-engineering-process-and/">Philip Su - Engineering Process And Philosophy At Facebook</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2013/03/05/more-creator-owned-comics-genocide/">More Creator-Owned Comics - Genocide: Duostar</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  <p class="powered">
+    Powered by <a href="http://octopress.org">Octopress</a> and <a href="https://github.com/iwinux/compbits">Compbits</a>
+  </p>
+</div>
+
+  </div> <!-- #wrapper end -->
+
+  
+
+  
+
+
+  
+
+  
+
+  
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+</body>
+</html>

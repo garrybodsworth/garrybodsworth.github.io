@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: wxWidgets | Fragmented Memory]]></title>
+  <link href="http://www.fragmentedmemory.com/blog/categories/wxwidgets/atom.xml" rel="self"/>
+  <link href="http://www.fragmentedmemory.com/"/>
+  <updated>2013-06-18T16:32:26+01:00</updated>
+  <id>http://www.fragmentedmemory.com/</id>
+  <author>
+    <name><![CDATA[Garry Bodsworth]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[wxWidgets 3.0 In The New Year]]></title>
+    <link href="http://www.fragmentedmemory.com/blog/2007/11/05/wxwidgets-30-in-new-year/"/>
+    <updated>2007-11-05T19:58:00+00:00</updated>
+    <id>http://www.fragmentedmemory.com/blog/2007/11/05/wxwidgets-30-in-new-year</id>
+    <content type="html"><![CDATA[<div class='post'>
+wxWidgets 3.0 will be released in 2008.  You can read some details <a href="http://wxwidgets.blogspot.com/2007/11/looking-forward-to-wxwidgets-3.html">here</a>.<br /><br />Unfortunately (or fortunately depending on your viewpoint) this new major release will not be the radical rethink that has been mooted for the past couple of years.  The major feature will be the full integration of unicode which would be the only build type (as there was also an ANSI configuration).  This means that ANSI would get converted into unicode internally.  This new version will also require minimal changes to existing code to get it to compile.  I suppose people already working in unicode could potentially have no more upheaval than a point release.<br /><br />This means all the plans which suggested the radical rethink for v3 have been moved under <a href="http://www.wxwidgets.org/wiki/index.php/Development:_wxTNG">wxTNG on the wiki</a>.  Certainly noone ever agreed on direction for this and this does mean there will be no compatibility issues.  Hopefully this means a gradual move to newer ideas rather than the complete redesign, which would be more likely to reap some results (eg, like improving the messaging framework would be one such thing).  Another avenue I reckon which would make more sense is to use current wx as a backend for a more experimental API.<br /><br />Anyway it certainly is an extremely comprehensive framework with a liberal license unlike some other options, also the Python bindings in <a href="http://wxpython.org/">wxPython</a> are really very good.</div>
+
+
+<h2>Comments</h2>
+
+
+<div class='comments'>
+<div class='comment'>
+<div class='author'>uiyui</div>
+<div class='content'>
+You said you will love me <A HREF="http://www.wowgoldvip.co.uk" REL="nofollow">wow gold</A> the whole life, but you marry her. You said <A HREF="http://www.igsstar.com" REL="nofollow">Cheap WoW Gold</A> you will <A HREF="http://www.wow-golds.net/power-leveling.asp" REL="nofollow">wow power leveling</A>,come to marry me, but this will not be carried out forever.<A HREF="http://www.wowgold-de.com" REL="nofollow">WoW Gold</A> I am trying my best to forget you and do not love you anymore. <A HREF="http://www.igsstar.com" REL="nofollow">wow leveling</A> But I failed and I still love you. Maybe <A HREF="http://www.powerlevelingweb.com" REL="nofollow">wow leveling</A> she needs you more compared  <A HREF="http://www.sf10001.cn" REL="nofollow">wow leveling</A> with me. So I tell you that <A HREF="http://www.sf10001.cn/wow-power-leveling-us-World-Of-Warcraft-gold/" REL="nofollow">world of warcraft power leveling</A> you should love <A HREF="http://www.powerlevelingweb.com/wow-powerleveling.asp" REL="nofollow">world of warcraft power leveling</A>  her and take good <A HREF="http://www.wow-powerleveling.org/wow+power+leveling.html" REL="nofollow">world of warcraft leveling</A> care of her. You said I was so kind.<A HREF="http://www.igsstar.com/wow-powerleveling-us/" REL="nofollow">world of warcraft leveling</A> Yes, because I love you,<A HREF="http://www.xowow.com/wow-powerleveling.asp" REL="nofollow">world of warcraft leveling</A> I hope you will be happy forever.</div>
+</div>
+</div>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Distributed Revision Control And APIs]]></title>
+    <link href="http://www.fragmentedmemory.com/blog/2007/07/16/distributed-revision-control-and-apis/"/>
+    <updated>2007-07-16T22:33:00+01:00</updated>
+    <id>http://www.fragmentedmemory.com/blog/2007/07/16/distributed-revision-control-and-apis</id>
+    <content type="html"><![CDATA[<div class='post'>
+One of the reasons blogging has been quiet the past week or so is I've been fiddling about with some coding.<br /><br />I've been trying out <a href="http://www.wxpython.org">wxPython</a> and using it as an interface to a distributed source control system.  It's purely experimental, but it did show me some deficiencies and strengths in some of the ones available.<br /><br />Here is what I learnt though...  wxPython is a great way of hacking together a coherent UI fast, I am still relatively inexperienced in Python and wxPython but the resources out there on the Internet are very useful.<br /><br />As for the source control systems...  First I tried out <a href="http://www.selenic.com/mercurial/">Mercurial</a>, but I am really struggling with the API and trying to write extensions.  This is mainly due to the lack of documentation, and a lot of current tools like <a href="http://qct.sourceforge.net/">Qct</a> simply parse the commandline.  I did work out some of the parts of the API to wrap, but I found it hard going with limited Python knowledge and a lack of comments.<br /><br />The other system I tried was <a href="http://bazaar-vcs.org/">Bazaar</a> which I found a very different experience.  The API is excellently documented and the plug-in API is excellent.  Admittedly the criticism levelled at this source contrl system is the speed, but it gets so much right.  It is built on a solid foundation of correctness and the barrier for entry is lowered thanks to the excellent documentation.  I managed o get a working status dialog up and running in a very short period of time (although admittedly I got sidetracked afterwards fiddling around with wxPython).<br /><br />One of the reasons I was using wxPython is that it looks native on my Macbook Pro as a lot of the available UIs are GTK based meaning they look pretty bad on OS X.  Also I wanted to try it out on Windows which meant it looked pretty good on that platform as well.<br /><br />Hopefully I can find the time to tidy some of this code up into a reusable form and actually see something like at least the status and commit dialogs through to completion.</div>
+
+
+<h2>Comments</h2>
+
+
+<div class='comments'>
+<div class='comment'>
+<div class='author'>Matt Doar</div>
+<div class='content'>
+I found that the Mercurial book was pretty good when it came to writing plugins. That and looking at the source for other plugins.</div>
+</div>
+</div>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Random GUI stuff - wxFormBuilder]]></title>
+    <link href="http://www.fragmentedmemory.com/blog/2007/05/15/random-gui-stuff-wxformbuilder/"/>
+    <updated>2007-05-15T20:37:00+01:00</updated>
+    <id>http://www.fragmentedmemory.com/blog/2007/05/15/random-gui-stuff-wxformbuilder</id>
+    <content type="html"><![CDATA[<div class='post'>
+<a href="http://wxformbuilder.org">wxFormBuilder</a> is a RAD designer for <a href="http://www.wxwidgets.org">wxWidgets</a>.  It is free and open-source.  It is in the beta phase of version 3.0 and is also supplied as part of <a href="http://wxpack.sourceforge.net/">wxPack</a>.<br /><br />wxFormBuilder is easy to use, simple to look at, and provides a very decent set of features.  It is a standalone system that is simultaneously good and bad, goosd that it requires nothing else, bad because some people require IDE integration.  You can output the designs to XRC (the XML based resource language for wxWidgets) or to native C++.<br /><br />You can see some screenshots of version 3.0 <a href="http://wxformbuilder.org/?page_id=38">here</a>.  The screenshots so some fairly interesting and complex designs demonstrating some of the power of the system.<br /><br />You can see their roadmap for features <a href="http://issues.wxformbuilder.org/?do=roadmap&project=1">here</a>.  They use <a href="http://flyspray.org/">flyspray</a> for their bugtracker (which is a good system).<br /><br />What is particularly nice about this program is the amount of GUI widgets it supports including the contributed ones like <a href="http://sourceforge.net/projects/wxflatnotebook">wxFlatNoteBook</a>.  I thin it supports enough to create a very good GUI visually.</div>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[GUI Toolkits - wxWidgets - The Future?]]></title>
+    <link href="http://www.fragmentedmemory.com/blog/2007/01/19/gui-toolkits-wxwidgets-future/"/>
+    <updated>2007-01-19T19:43:00+00:00</updated>
+    <id>http://www.fragmentedmemory.com/blog/2007/01/19/gui-toolkits-wxwidgets-future</id>
+    <content type="html"><![CDATA[<div class='post'>
+<a href="http://www.wxwidgets.org">wxWidgets</a> has been going now for getting on to 15 years.  Some of the people developing it and some people using or evaluating it have said that it is old fashioned in design.  This is part of the legacy from being based on a similar design to MFC.<br /><br />Currently wxWidgets makes heavy use of macros in C++, and it also makes a tiny use of STL (after all when development started the STL was not even formalised).  I don't think the code is particularly unintuitive or difficult to use, but so much of the API has been set in stone.  One particular area of discussion is the event handling because of the advent of signals and slots.<br /><br />There is a page on the wiki for <a href="http://www.wxwidgets.org/wiki/index.php/Development:_wxWidgets_3">wxWidgets: The Next Generation</a>.  It is not really actively edited.  I don't know whether it will ever get out of the planning stages, I think this is probably due to the fact that the current version is simply good enough to use.  There are other priorities that want/need to be developed, and redesigning the API is not really hugely useful.<br /><br />Other GUI toolkits use some of the more powerful C++ features, but most only use small areas of it.  I think the main advantage of developing a clean API is that it is possible to make many different language bindings.  In fact I think that is what should be aimed at for most modern libraries being developed, because if you can do it in a suitably abstract fashion you'll end up with something easily maintainable and as close to future-proof as possible.</div>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[GUI Toolkits - wxWidgets 2.8 Released]]></title>
+    <link href="http://www.fragmentedmemory.com/blog/2006/12/14/gui-toolkits-wxwidgets-28-released/"/>
+    <updated>2006-12-14T21:53:00+00:00</updated>
+    <id>http://www.fragmentedmemory.com/blog/2006/12/14/gui-toolkits-wxwidgets-28-released</id>
+    <content type="html"><![CDATA[<div class='post'>
+The latest stable release of <a href="http://www.wxwidgets.org/">wxWidgets</a> has been released.  You can view the announcement <a href="http://sourceforge.net/forum/forum.php?forum_id=644606">here</a>.<br /><br />Version 2.8 is the latest stable branch of wxWidgets taking over from 2.6.  The new features it offers includes:<ul><li>wxAUI - an advanced user interface library for docking and toolbars and much more.</li><li>wxRichTextCtrl - a powerful rich edit control.</li><li>wxComboCtrl and wxOwnerDrawnComboBox - more combo box goodness.</li><li>wxTreebook - A property sheet dialog with a tree view to navigate.</li><li>Various picker controls such as wxColourPickerCtrl, wxHyperlinkCtrl.</li><li>Partial right-to-left language support.</li><li>Support for Core Graphics on Mac OS X.</li><li>TAR archive support.</li><li>Plus more.</li></ul>More details are available from this thread on the <a href="http://wxforum.shadonet.com/">wxWidgets Forum</a> - <a href="http://wxforum.shadonet.com/viewtopic.php?t=11530">click here to view the thread</a>.<br /><br />Platforms supported:<ul><li>Windows 95/98/ME, NT, 2000, XP, Vista</li><li>Windows 64 on Itanium and x86-64 architectures</li><li>Windows CE, including Pocket PC 2003, Smartphone 2003, Mobile 5</li><li>Unix (Linux, *BSD, Solaris, AIX, HP-UX, IRIX, Tru64) and VMS with GTK+</li><li>Unix with Motif/Lesstif</li><li>Unix with X11 (beta)</li><li>Mac OS X using Carbon</li><li>Mac OS X using Cocoa (alpha)</li><li>MGL for Linux and DOS</li><li>OS/2 (beta)</li><li>Direct Frame Buffer (alpha) </li></ul></div>
+
+]]></content>
+  </entry>
+  
+</feed>

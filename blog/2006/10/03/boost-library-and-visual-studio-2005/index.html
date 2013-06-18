@@ -1,0 +1,184 @@
+
+<!DOCTYPE HTML>
+<html lang="en-gb">
+<head>
+  <meta charset="UTF-8">
+  <title>Fragmented Memory</title>
+
+  <meta name="author" content="Garry Bodsworth">
+  
+  <meta name="description" content="Boost Library and Visual Studio 2005 Oct 3rd, 2006 This will set you up with a top notch development environment for C++ in Windows. Also this will &hellip;">
+  
+  
+
+  <link rel="canonical" href="http://www.fragmentedmemory.com/blog/2006/10/03/boost-library-and-visual-studio-2005">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/atom.xml" rel="alternate" title="Fragmented Memory" type="application/atom+xml">
+</head>
+  
+<body class="default">
+  <div id="wrapper">
+    <div id="header">
+  <h1><a href="/">Fragmented Memory</a></h1>
+  
+    <p>Garry Bodsworth's Blog (formerly Garry's Bit Patterns &amp; Programmer's Log)</p>
+  
+</div>
+<ul id="social-links">
+  
+    <li><a class="feed" href="/atom.xml" title="RSS">RSS</a></li>
+  
+  
+    <li><a class="twitter" href="http://twitter.com/garrybodsworth" title="Twitter">Twitter</a></li>
+  
+  
+    <li> <a class="github" href="https://github.com/garrybodsworth" title="GitHub">GitHub</a> </li>
+  
+</ul>
+<div class="clear"></div>
+<ul id="nav">
+  
+    <li> <a href="/">blog</a> </li>
+  
+
+  
+    <li><a href="/blog/archives">archives</a></li>
+  
+</ul>
+
+    <div id="main"> <div class="post-header">
+  
+    <h1 class="post-title">Boost Library and Visual Studio 2005</h1>
+  
+  
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2006-10-03T22:50:00+01:00" pubdate data-updated="true">Oct 3<span>rd</span>, 2006</time>
+</div>
+
+<div class="post-content"><div class='post'>
+This will set you up with a top notch development environment for C++ in Windows.  Also this will tell you how to get the Boost::Python libraries to work with as well (which can never be a bad thing).<br /><ol><li>Download Visual C++ 2005 Express from <a href="http://msdn.microsoft.com/vstudio/express/visualc/download/">here</a>.</li><li>Then go and install the <a href="http://msdn.microsoft.com/vstudio/express/visualc/usingpsdk/">Platform SDK</a>.  I recommend installing it into <span style="font-style: italic;">C:\Program Files\Microsoft Visual Studio 8\VC\PlatformSDK</span> as then the environment variables are already set up for you in VC8.</li><li>Go and download <a href="http://www.python.org/">Python</a> where the latest version is 2.5.  Install Python 2.5 to the default installation directory of <span style="font-style: italic;">c:\Python25</span>.</li><li>Now it is time to download <a href="http://www.boost.org/">Boost</a> and make sure you download the <a href="http://sourceforge.net/project/showfiles.php?group_id=7586&package_id=8041">source</a> and a precompiled <a href="http://sourceforge.net/project/showfiles.php?group_id=7586&amp;package_id=72941">bjam build tool</a>.</li><li>Extract Boost to a temporary directory on your hard drive, and copy the <span style="font-style: italic;">bjam.exe</span> into the Boost directory.</li><li>Open a command prompt in the Boost root directory(where you copied <span style="font-style: italic;">bjam.exe</span> to).</li><li>Run the batch file for registering Visual Studio commandline variables : <span style="font-style: italic;">C:\Program Files\Microsoft Visual Studio 8\Common7\Tools\vsvars32.bat</span></li><li>Run the following command line to compile and install Boost in &#8220;c:\Boost&#8221; with no checked iterators:<span style="font-style: italic;">bjam &#8220;-sTOOLS=vc-8_0&#8221; &#8220;-sPYTHON_VERSION=2.5&#8221; &#8220;-sPYTHON_ROOT=c:\Python25&#8221; &#8220;-sBUILD=debug release &lt;define&gt;_CRT_NONSTDC_NO_DEPRECATE &lt;define&gt;_CRT_SECURE_NO_DEPRECATE &lt;define&gt;_SECURE_SCL=0 &lt;define&gt;_SCL_SECURE_NO_DEPRECATE &lt;define&gt;_HAS_ITERATOR_DEBUGGING=0&#8221; install</li><li>What I tend to do then is copy Boost to where my development libraries go, and then add those directories to the lib and include directories in Visual C++.</li></ol>Now you are ready to go for Boost-ified C++ development and you will have the Boost Python libraries as well for binding your code to a scripting language.  Next install TortoiseSVN and install the settings outlined in one of my previous posts for the toolbars, and then you should be ready to check some code out and develop like a demon.</div>
+<h2>Comments</h2>
+<div class='comments'>
+<div class='comment'>
+<div class='author'>Paul</div>
+<div class='content'>
+To stop things whizzing past, run it at the command line like so:<BR/><BR/>bjam blah blah &gt; build_log.txt 2&gt;&amp;1<BR/><BR/>then open up the text file in a good text editor and reload to watch the new stuff come in&#8230;</div>
+</div>
+<div class='comment'>
+<div class='author'>Garry Bodsworth</div>
+<div class='content'>
+Oh damn!  That means I have been using it without all the switched off stuff.  Thanks for the heads up.<br /><br />Unfortunately running bjam verbosely gives far too much output, but I have also fixed another problem I spotted as it whizzed past on the DOS command prompt (to do with deprecated C library functionality).<br /><br />There is still the &#8220;Og&#8221; flag warning but hopefully that will be fixed in Boost 1.34 as it is not a problem in VC++ 8 (but will be when it is removed in future versions).<br /><br />Check out the updated post.  Overall it makes the Boost library build a whole 1Mb smaller ;)<br /><br />Thanks!<br /><br />Garry</div>
+</div>
+<div class='comment'>
+<div class='author'>dtinkham</div>
+<div class='content'>
+Hi Garry,<br /><br />I don&#8217;t think that the command-line to bjam that you list is exactly right. With the preprocessor options/defines listed as you have them, bjam interprets the defines as targets, and you get 4 extra builds :)<br /><br />It looks like each define should have < define > prepended. <br /><br />e.g.<br /><br />< define >_CRT_SECURE_NO_DEPRECATE<br /><br />Note, there should not be a space between the <, >, and the word define. I had to put the space in because the blog commenter won&#8217;t allow that tag. <br /><br />Cheers.</div>
+</div>
+</div>
+</div>
+
+
+<div class="post-single">
+  <div class="post-meta">
+    
+
+<span class="categories">
+  Categories:
+  
+    <a class='category' href='/blog/categories/boost/'>Boost</a>, <a class='category' href='/blog/categories/c-plus-plus/'>C++</a>, <a class='category' href='/blog/categories/platform-sdk/'>Platform SDK</a>, <a class='category' href='/blog/categories/python/'>Python</a>, <a class='category' href='/blog/categories/visual-studio-2005/'>Visual Studio 2005</a>
+  
+</span>
+
+
+    
+      <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://www.fragmentedmemory.com/blog/2006/10/03/boost-library-and-visual-studio-2005/" data-via="garrybodsworth" data-counturl="http://www.fragmentedmemory.com/blog/2006/10/03/boost-library-and-visual-studio-2005/" >Tweet</a>
+  
+  
+  
+</div>
+
+    
+  </div>
+  <div class="clear"></div>
+
+  
+</div>
+ </div>
+    <div id="footer">
+  <div class="panels">
+    <div class="license">
+      <h2>License</h2>
+      <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-nc-sa/3.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/">Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License</a>.
+    </div>
+
+    <div class="posts">
+      <h2>Recent Posts</h2>
+      <ul>
+        
+          <li>
+            <a href="/blog/2013/06/18/new-location-and-new-blog-engine-and-old-content-restored/">New Location &amp; New Blog Engine &amp; Old Content Restored</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2013/06/13/joining-microsoft/">Joining Microsoft</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2013/06/13/leaving-bromium/">Leaving Bromium</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2013/03/05/philip-su-engineering-process-and/">Philip Su - Engineering Process And Philosophy At Facebook</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2013/03/05/more-creator-owned-comics-genocide/">More Creator-Owned Comics - Genocide: Duostar</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  <p class="powered">
+    Powered by <a href="http://octopress.org">Octopress</a> and <a href="https://github.com/iwinux/compbits">Compbits</a>
+  </p>
+</div>
+
+  </div> <!-- #wrapper end -->
+
+  
+
+  
+
+
+  
+
+  
+
+  
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+</body>
+</html>

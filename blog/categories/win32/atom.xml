@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Win32 | Fragmented Memory]]></title>
+  <link href="http://www.fragmentedmemory.com/blog/categories/win32/atom.xml" rel="self"/>
+  <link href="http://www.fragmentedmemory.com/"/>
+  <updated>2013-06-18T16:32:26+01:00</updated>
+  <id>http://www.fragmentedmemory.com/</id>
+  <author>
+    <name><![CDATA[Garry Bodsworth]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[GUI Toolkits - Win32++]]></title>
+    <link href="http://www.fragmentedmemory.com/blog/2007/02/10/gui-toolkits-win32/"/>
+    <updated>2007-02-10T14:35:00+00:00</updated>
+    <id>http://www.fragmentedmemory.com/blog/2007/02/10/gui-toolkits-win32</id>
+    <content type="html"><![CDATA[<div class='post'>
+<a href="http://users.bigpond.net.au/programming/">Win32++</a> is a GUI toolkit just for Windows.  It is a C++ toolkit providing abstraction from the base Win32 functionality, kind of like MFC, but written much better and more clearly.<br /><br />It is a small toolkit that is a thin wrapper around the Win32 API.  It is not a drop-in replacement for anything else, but provides a simplified programming platform for beginners and intermediate programmers.<br /><br />It provides facilities for MDI, rebars, toolbars, critical sections and more.  I suppose it must be relatively easy to expand the number of classes if you have greater requirements.  The advantage of this toolkit is that unlike MFC it works with the free compilers as MFC is only supplied with the professional versions of Visual Studio.  Customisation of existing classes is suggested via subclassing, which is the simplest conceptual way of adding functionality in C++.  With these classes you will not run into the problems with virtual destructors and the cobject derived class issues.<br /><br />There are a variety of examples including a notepad program, some DirectX, some multithreading, and more.<br /><br />The creator of this toolkit has written an article <a href="http://users.bigpond.net.au/programming/explanation.htm">Why Beginners Shouldn't use MFC</a>.</div>
+
+
+<h2>Comments</h2>
+
+
+<div class='comments'>
+<div class='comment'>
+<div class='author'>Adi</div>
+<div class='content'>
+<a rel="external" href="http://orientinspiration.com/2009/09/oes-tsetnoc.html" rel="nofollow">Oes  Tsetnoc</a> one of the ways in which we can learn seo besides <a rel="external" href="http://duniasoer.com/archives/mengembalikan-jati-diri-bangsa.html" rel="nofollow">Mengembalikan Jati Diri Bangsa</a>.  By participating in the <a rel="external" href="http://mncmakina.com/2009/09/oes-tsetnoc-seo-contest/" rel="nofollow">Oes Tsetnoc</a> or <a rel="external" href="http://ulaznice.info/mengembalikan-jati-diri-bangsa.html" rel="nofollow">Mengembalikan Jati Diri Bangsa</a> we can improve our seo skills. To find more information about <a rel="external" href="http://catatanblogger.info/738688-Oes-Tsetnoc.html" rel="nofollow">Oest Tsetnoc</a> please visit my <a rel="external" href="http://kusukaseo.info/981750-Oes-Tsetnoc-Support.html" rel="nofollow">Oes Tsetnoc</a> pages. And to find more information about <a rel="external" href="http://duniasoer.com" rel="nofollow">Mengembalikan Jati Diri Bangsa</a> please visit my <a rel="external" href="http://catatanblogger.info/464655-Mengembalikan-Jati-Diri-Bangsa.html" rel="nofollow">Mengembalikan Jati Diri Bangsa</a> pages. Thank you So much.</div>
+</div>
+</div>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[GUI Toolkits Again - a bit of MFC]]></title>
+    <link href="http://www.fragmentedmemory.com/blog/2006/10/09/gui-toolkits-again-bit-of-mfc/"/>
+    <updated>2006-10-09T20:58:00+01:00</updated>
+    <id>http://www.fragmentedmemory.com/blog/2006/10/09/gui-toolkits-again-bit-of-mfc</id>
+    <content type="html"><![CDATA[<div class='post'>
+At work, I only use MFC and the antiquated design features in Visual Studio for working on resources.  These interfaces still feel like they haven't moved on for a lifetime (and are in fact pretty much unchanged from Visual Studio 6.0).<br /><br />The most annoying part about working with the resources is I have to resort to handcoding most of the time.  It is especially necessary in order to follow the <a href="http://msdn.microsoft.com/library/default.asp?url=/library/en-us/dnwue/html/ch14e.asp">Official Guidelines for User Interface Developers and Designers</a> (self-inflicted myself, but you need some level of consistency).  Also the IDE design features have an uncanny knack for orphaned <span style="font-style:italic;">#defines</span> and controls.<br /><br />MFC doesn't really feel like an API as most of the stuff I want to do I end up having to subclass and write lots of specific code.  There are subclasses for just about every type of control, and in that a lot of it is direct access to the Win32 API.<br /><br />I must admit that I don't have an intense hatred for MFC like a lot of developers.  It seems to serve its purpose well, and there are so many extensions and large applications built on it.  I don't think Microsoft envisioned being unable to kill it off because it is used by too many applications.  It will still be developed and have some new "managed" features which strikes me as odd...  MFC is a thin wrapper around the Win32 API, but .NET is a wrapper around the Win32 API, so there would be a double level of indirection for these new features.<br /><br />A lot of people would love to migrate away from MFC, but they are too integrally tied into their applications.  The cause of that is normally the initial codebase grew from a small code-generated wizard application.  I know I would love to do move away from MFC, but it is first necessary to find a new GUI toolkit that is capable of doing every feature you have probably handcoded in extensions to MFC, or if you have to write the extensions yourself it is no more difficult to do than the first time you wrote it.<br /><br />That is part of the reason to really look in depth at GUI toolkits.  It is really necessary to find one that will allow the most active development by the virtue of being easy to pick up.  Also, the grass is not always greener on the other side.</div>
+
+
+<h2>Comments</h2>
+
+
+<div class='comments'>
+<div class='comment'>
+<div class='author'>Garry Bodsworth</div>
+<div class='content'>
+It is quite bizarre they have never tried to make any improvements to it ever, even when they deprecate bits it never actually provides a great improvement - it is pretty much the same as when it first appeared.<br /><br />In fact in SP1 Beta of VS2005 they put in some safe library work.  It manages to break MFC to the point of being unusable thanks to making the Recent Files List throwing an exception.</div>
+</div>
+<div class='comment'>
+<div class='author'>Karthik</div>
+<div class='content'>
+It is unfortunate that Microsoft doesn't bother to improve the GUI library in MFC. MFC programmers are forced to use unreliable third party code from forums like CodeProject and CodeGuru.</div>
+</div>
+</div>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[More Vista Native API]]></title>
+    <link href="http://www.fragmentedmemory.com/blog/2006/10/06/more-vista-native-api/"/>
+    <updated>2006-10-06T08:37:00+01:00</updated>
+    <id>http://www.fragmentedmemory.com/blog/2006/10/06/more-vista-native-api</id>
+    <content type="html"><![CDATA[<div class='post'>
+Michael Dunn has posted anotehr Vista native API tutorial about <a href="http://www.codeproject.com/winfx/VGPowerMonitor.asp">monitoring the system's power</a>.  It is obviously not as whizz-bang as the first tutorial, but this is excellent stuff as I hope it means C/C++ developers are going to have a real go at messing around with the native API.<br /><br />There is an excellent and massive post from <a href="http://weblogs.asp.net/kennykerr/archive/2006/08/10/Windows-Vista-for-Developers-_1320_-Part-3-_1320_-The-Desktop-Window-Manager.aspx">Kenny Kerr available from this link</a>.  Make sure you check that out as well.<br /><br />I've now installed the Windows SDK (I think they call the Win32 API the Windows API now, but there is no definitive answer as Microsoft want to encourage people to use other technologies).</div>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Windows Vista and its API]]></title>
+    <link href="http://www.fragmentedmemory.com/blog/2006/10/04/windows-vista-and-its-api/"/>
+    <updated>2006-10-04T15:47:00+01:00</updated>
+    <id>http://www.fragmentedmemory.com/blog/2006/10/04/windows-vista-and-its-api</id>
+    <content type="html"><![CDATA[<div class='post'>
+After lots of uncertainty with Windows Vista as a developer (it's sad, I worry about such things), I breathed a huge sigh of relief today.  Windows Vista has generated such things as WPF and Aero and other things that mean very little to me as a developer.  Simply, I want to know how to access all the good stuff.<br /><br />This had me worried as they seem to want to make non-managed code a ghetto, but this is mainly from reading allt he public information and marketing.  It seems that the Win32 is still the basis of everything, although the name Win32 is ultimately misleading.  To cut to the chase, .NET sits on top of Win32, even in Vista, and you still have access to it.<br /><br />There is a great little article on the <a href="http://www.codeproject.com/winfx/VGGlassIntro.asp">CodeProject</a> that shows that you can write in what are now called the "Native APIs".  Hit the link and have a quick read.<br /><br />I find this exciting as a developer as this means that I can write my own wrappers for stuff and extend those wrappers I have written previously.<br /><br />Now I'm in the middle of downloading the <a href="http://www.microsoft.com/downloads/details.aspx?FamilyId=117ECFD3-98AD-4D67-87D2-E95A8407FA86&displaylang=en">new Windows SDK for Vista</a> and I am going to have a closer look at the native APIs in order to work out what it can do.</div>
+
+]]></content>
+  </entry>
+  
+</feed>

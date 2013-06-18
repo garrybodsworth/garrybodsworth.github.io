@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Music | Fragmented Memory]]></title>
+  <link href="http://www.fragmentedmemory.com/blog/categories/music/atom.xml" rel="self"/>
+  <link href="http://www.fragmentedmemory.com/"/>
+  <updated>2013-06-18T16:32:26+01:00</updated>
+  <id>http://www.fragmentedmemory.com/</id>
+  <author>
+    <name><![CDATA[Garry Bodsworth]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Digital Music - Songbird]]></title>
+    <link href="http://www.fragmentedmemory.com/blog/2006/10/20/digital-music-songbird/"/>
+    <updated>2006-10-20T16:11:00+01:00</updated>
+    <id>http://www.fragmentedmemory.com/blog/2006/10/20/digital-music-songbird</id>
+    <content type="html"><![CDATA[<div class='post'>
+Today I discovered a great little program called <a href="http://www.songbirdnest.com/">Songbird</a> which is an open-source rival to <a href="http://www.itunes.com">iTunes</a>.  In some of my previous posts I've been going on about the web GUI, allowing the browser to be come the front end.  Although this looks like a really good project it probably doesn't go the whole hog as it is a web-browser in itself.<br /><br />It uses the Mozilla libraries as a foundation to build a web-browser with integrated music/media functionality, or maybe it is media program with an integrated web-browser?  The advantages of using the Mozilla framework is that it is cross-platform and it is a proven technology.  It is also designed around the Firefox design of a core product with extensions to add functionality.  To that end there are plug-ins for iTunes libraries and syncing iPods.  One of the driving forces behind it is the guy behind the original WinAmp.<br /><br />All of the artwork produced for the site is excellent quality and highly amusing(!) which wins points with me.  Maybe I'm just shallow.  I'll be watching this project though as it is really an interesting integration of a heavyweight application and the web.  Click the image below to check it out.<br /><br /><a href="http://songbirdnest.com"><img src="http://songbirdnest.com/files/images/button_hungry.png" border="0" alt="Get Songbird"/></a></div>
+
+]]></content>
+  </entry>
+  
+</feed>

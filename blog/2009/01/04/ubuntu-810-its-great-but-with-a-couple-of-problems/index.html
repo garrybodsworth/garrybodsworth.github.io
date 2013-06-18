@@ -1,0 +1,182 @@
+
+<!DOCTYPE HTML>
+<html lang="en-gb">
+<head>
+  <meta charset="UTF-8">
+  <title>Fragmented Memory</title>
+
+  <meta name="author" content="Garry Bodsworth">
+  
+  <meta name="description" content="Ubuntu 8.10 &#8211; It&#8217;s Great but With a Couple of Problems Jan 4th, 2009 I am in the process of making my desktop computer into a work &hellip;">
+  
+  
+
+  <link rel="canonical" href="http://www.fragmentedmemory.com/blog/2009/01/04/ubuntu-810-its-great-but-with-a-couple-of-problems">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/atom.xml" rel="alternate" title="Fragmented Memory" type="application/atom+xml">
+</head>
+  
+<body class="default">
+  <div id="wrapper">
+    <div id="header">
+  <h1><a href="/">Fragmented Memory</a></h1>
+  
+    <p>Garry Bodsworth's Blog (formerly Garry's Bit Patterns &amp; Programmer's Log)</p>
+  
+</div>
+<ul id="social-links">
+  
+    <li><a class="feed" href="/atom.xml" title="RSS">RSS</a></li>
+  
+  
+    <li><a class="twitter" href="http://twitter.com/garrybodsworth" title="Twitter">Twitter</a></li>
+  
+  
+    <li> <a class="github" href="https://github.com/garrybodsworth" title="GitHub">GitHub</a> </li>
+  
+</ul>
+<div class="clear"></div>
+<ul id="nav">
+  
+    <li> <a href="/">blog</a> </li>
+  
+
+  
+    <li><a href="/blog/archives">archives</a></li>
+  
+</ul>
+
+    <div id="main"> <div class="post-header">
+  
+    <h1 class="post-title">Ubuntu 8.10 &#8211; It&#8217;s Great but With a Couple of Problems</h1>
+  
+  
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2009-01-04T00:00:00+00:00" pubdate data-updated="true">Jan 4<span>th</span>, 2009</time>
+</div>
+
+<div class="post-content"><p>I am in the process of making my desktop computer into a work computer by removing Windows XP and going down the Ubuntu (8.10 Intrepid Ibex) route.</p>
+
+<p>I thought I&#8217;d share some of the problems I had just in case some other people find my solutions useful since from my Googling I notice quite a few people have some issues. I think also I made the problem a bit worse because I am using 64-bit on my Core2Duo.</p>
+
+<p><strong>Problem #1</strong> : Can&#8217;t get my nVidia GeForce 6600GT to work with the nVidia binary blobs. I was using the latest out of the repositories and then tried the latest from nVidia and all I got was a blank screen and some not very helpful logs. I was getting seriously annoyed after hours of hacking at X configuration files and different nVidia drivers, almost to the point I was going to go out and buy an ATi in the hope open source or at least better drivers would be forthcoming.<br/>
+<strong>Solution #1</strong> : The way I ended up having to solve it was using the <a href="ftp://download.nvidia.com/XFree86/Linux-x86_64/">Beta 1.80 drivers from nVidia</a>. Definitely not an ideal solution because I have now discovered problem #2.</p>
+
+<p><strong>Problem #2</strong> : Songbird 1.0.0 won&#8217;t work. There are two places to get 64-bit debs for <a href="http://getsongbird.com">Songbird</a> which are both listed <a href="https://help.ubuntu.com/community/Songbird">here</a>. It won&#8217;t start though &#8211; bah! On closer investigation glibc is complaining about and invalid free() call. In the callstack you can see the <a href="http://www.nvnews.net/vbulletin/showthread.php?t=124972">culprit is the nVidia driver</a>. So now I have to ask myself do I want Songbird or a proper nVidia driver, but Firefox does work with no problems for me. There is also a report of the problem at the <a href="http://getsatisfaction.com/songbird/topics/glibc_2_8_detects_invalid_free_pointer">Songbird customer service site</a>.</p>
+
+<p><strong>Problem #3</strong> : Sound didn&#8217;t work for my motherboard. I knew the chip and driver required which was a <em>snd-via82xx</em> (serves me right for using such a cheapskate sound solution). So a quick <em>sudo nano /etc/modules</em> and adding the driver name to the end of the file fixed that problem. It just needed a restart for the kernel to pick up the change.</p>
+
+<p>But, enough about problems, I am very impressed now I have the basic system up and running. The desktop effects are extremely nice and non-intrusive. You need to install the &#8220;Advanced Desktop Effects Settings (ccsm)&#8221; and &#8220;Compiz Fusion Icon&#8221; to gain access to the UI for customisation. I did a few minor tweaks mainly to switch off wobbly windows and enable the Expose-a-like &#8220;Scale&#8221;. In general the user interface all looks great. If you don&#8217;t have the graphics card problems I have there is a good set of instructions <a href="http://reformedmusings.wordpress.com/2008/12/09/compiz-fusion-in-ubuntu-810-intrepid/">here</a> on getting the drivers and running Compiz.</p>
+
+<p>I also installed Flash 10 (for x64) and it worked flawlessly. I even managed to watch the Dr Who announcement on the iPlayer Watch BBC One Now option. Flash does eat CPU but it seems to work fine apart from the fullscreen option on iPlayer. And obviously Firefox is as good as ever. I&#8217;ve installed <a href="http://www.screenlets.org/">Screenlets</a> and used the widget layer available in Compiz for the OSX-like Dashboard.</p>
+
+<p>What I did next was to install <a href="http://www.virtualbox.org/">Virtualbox 2.1</a> using the <a href="http://www.virtualbox.org/wiki/Linux_Downloads">repository method</a> (to override the ones available from Ubuntu). Then I proceeded to install Windows XP that was on this machine in the VM. After finding the right disk installation was faster than when it was actually on the hardware as were reboots. I am really impressed with this. It even activated first time!</p>
+
+<p>Now I have a properly working system I can say that the 12 hours I spent (mostly trying to fix the unfixable) doing this was more than worthwhile because it boots fast, lets me work fast, and is completely controllable. The only hope I have is that there are some mature open-source video drivers (with 3D) out there in the future because then I will know which cards to buy for minimal hair loss. Also I swear the Ubuntu installation takes about ten minutes maximum compared to the unwieldy Windows installation.</p>
+</div>
+
+
+<div class="post-single">
+  <div class="post-meta">
+    
+
+<span class="categories">
+  Categories:
+  
+    <a class='category' href='/blog/categories/uncategorized/'>Uncategorized</a>
+  
+</span>
+
+
+    
+      <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://www.fragmentedmemory.com/blog/2009/01/04/ubuntu-810-its-great-but-with-a-couple-of-problems/" data-via="garrybodsworth" data-counturl="http://www.fragmentedmemory.com/blog/2009/01/04/ubuntu-810-its-great-but-with-a-couple-of-problems/" >Tweet</a>
+  
+  
+  
+</div>
+
+    
+  </div>
+  <div class="clear"></div>
+
+  
+</div>
+ </div>
+    <div id="footer">
+  <div class="panels">
+    <div class="license">
+      <h2>License</h2>
+      <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-nc-sa/3.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/">Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License</a>.
+    </div>
+
+    <div class="posts">
+      <h2>Recent Posts</h2>
+      <ul>
+        
+          <li>
+            <a href="/blog/2013/06/18/new-location-and-new-blog-engine-and-old-content-restored/">New Location &amp; New Blog Engine &amp; Old Content Restored</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2013/06/13/joining-microsoft/">Joining Microsoft</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2013/06/13/leaving-bromium/">Leaving Bromium</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2013/03/05/philip-su-engineering-process-and/">Philip Su - Engineering Process And Philosophy At Facebook</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2013/03/05/more-creator-owned-comics-genocide/">More Creator-Owned Comics - Genocide: Duostar</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  <p class="powered">
+    Powered by <a href="http://octopress.org">Octopress</a> and <a href="https://github.com/iwinux/compbits">Compbits</a>
+  </p>
+</div>
+
+  </div> <!-- #wrapper end -->
+
+  
+
+  
+
+
+  
+
+  
+
+  
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+</body>
+</html>

@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Computers | Fragmented Memory]]></title>
+  <link href="http://www.fragmentedmemory.com/blog/categories/computers/atom.xml" rel="self"/>
+  <link href="http://www.fragmentedmemory.com/"/>
+  <updated>2013-06-18T16:32:26+01:00</updated>
+  <id>http://www.fragmentedmemory.com/</id>
+  <author>
+    <name><![CDATA[Garry Bodsworth]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Complete Insanity In The World Of Computing]]></title>
+    <link href="http://www.fragmentedmemory.com/blog/2007/10/14/complete-insanity-in-world-of-computing/"/>
+    <updated>2007-10-14T21:30:00+01:00</updated>
+    <id>http://www.fragmentedmemory.com/blog/2007/10/14/complete-insanity-in-world-of-computing</id>
+    <content type="html"><![CDATA[<div class='post'>
+And now for something completely different...<br /><br />I thought I would share some of the more insane things I have heard in the world of computing.<br /><br /><span style="font-weight:bold;">No Source Control</span><br /><br />It's amazing to think that a company can get away without source control, let alone a company supplying closed-source library functionality.  This meant that regressions happened at an alarming rate and a bugfix could result in previous bugfixes being undone.  The "repository" was a copy of the source code on a server and developers would copy the files to their computer, edit them, and then copy the changed files back to the server.<br /><br /><span style="font-weight:bold;">C# Developers Must Be Expensive</span><br /><br />To make it easier to maintain a product when it is written in C# but you have lots of Visual Basic developers, convert the product to VB...  This was apparently done by taking the semi-colons off of the end of the lines then compiling to see where the errors are.<br /><br />It seems to me that the process is completely insane and devoid of any merit.  First you do not understand the code, this will adversely effect bugfixing.  I am sure that the fallout from that kind of development will be felt for years.<br /><br /><span style="font-weight:bold;">Visual Sourcesafe Is Fine</span><br /><br />It's easiest to witness the insanity of using Visual Sourcesafe from the sane world of proper revision control systems.  Sourcesafe does not give any data integrity, can lose stuff, is impossible to script in any meaningful fashion, has a terrible architecture, and more...<br /><br />I am talking about v6.0 and older here (I have no idea about the package that has inherited the name).<br /><br />I see things like source control as integral to the development experience and productivity of your team.<br /><br /><span style="font-weight:bold;">The Phantom Build System</span><br /><br />A developer on their own work computer has the only scripts that run the build kit.  Once that person leaves noone can do it and there is nothing to reverse engineer from.  It then takes perseverance and a small amount of brilliance to get to a working release installation kit.<br /><br />EVERYTHING to build your program should be well documented and under source control as much as possible.  It should be able to be run from any computer following the written instructions.</div>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Upcoming Computing Talks In Cambridge]]></title>
+    <link href="http://www.fragmentedmemory.com/blog/2007/09/04/upcoming-computing-talks-in-cambridge/"/>
+    <updated>2007-09-04T20:36:00+01:00</updated>
+    <id>http://www.fragmentedmemory.com/blog/2007/09/04/upcoming-computing-talks-in-cambridge</id>
+    <content type="html"><![CDATA[<div class='post'>
+There are a couple of talks coming up in Cambridge in the next couple of weeks.  We're lucky here in Cambridge that there is anything like this to go to as I can't find many instances of this throughout the country.<br /><br />First up we have <a href="http://accu.org">ACCU</a> a group striving for professionalism in programming (and there is a fair amount of emphasis on C++).  They have journals released regularly throughout the year which makes membership pretty worthwhile (also membership gives you access to the entire archive online).<br /><br />7:00pm Thursday 6th September 2007 - Peter Smith: The Missing Link, the role of a linker within a software development.  You can sign up to the talk at this <a href="http://www.accu.org/index.php/accu_branches/accu_cambridge">link</a>.<br /><br />Next up is the BCS SPA are going to start there monthly talk programme again after a summer break.  At the moment the talk next week is not known but you can keep an eye out <a href="http://www.bcs-spa.org/cgi-bin/view/SPA/SPACambridgeEveningMeetingProgramme">here</a>.<br /><br />Interestingly there will be a talk from <a href="http://www.interact-sw.co.uk/iangblog/">Ian Griffiths</a> about WPF (Windows Presentation Foundation) on the 14th November.  He is one of the architects behind the whole new graphics interface in Vista.</div>
+
+
+<h2>Comments</h2>
+
+
+<div class='comments'>
+<div class='comment'>
+<div class='author'>Garry Bodsworth</div>
+<div class='content'>
+I've put up a review of the recent ACCU talk about linkers.  The ACCU talks are definitely the most interesting since they are more technical in nature.<BR/><BR/>The first I've heard of this PTC event was from you just now(!)  I notice there is no mention of Pro/TOOLMAKER...  I don't think developers are part of this event.</div>
+</div>
+<div class='comment'>
+<div class='author'>goatchurch</div>
+<div class='content'>
+You've got to tell us how were those talks, and if there are any I should be going to?  Also, are you going to this thing 'ere which appears to have showed up in my spam folder:<BR/><BR/>http://www.ptcworld.org/uki/</div>
+</div>
+</div>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Multiple Core Madness]]></title>
+    <link href="http://www.fragmentedmemory.com/blog/2006/12/21/multiple-core-madness/"/>
+    <updated>2006-12-21T09:08:00+00:00</updated>
+    <id>http://www.fragmentedmemory.com/blog/2006/12/21/multiple-core-madness</id>
+    <content type="html"><![CDATA[<div class='post'>
+I was thinking about multiple cores, like you do.  One thing that most people haven't realise is that they have been using multiple CPUs for years, one has been your CPU and the other is the GPU - your graphics card.  The graphics card is a very specialised computational unit, but it was added in order to offload processing from your main processor to something else to allow the processor to not get bogged down with graphics processing.<br /><br />Now with the advent of dual core machines and the upcoming (or released in small quantities) quad core machines, a lot of users will probably not know they are using only a fraction of their processing power most of the time.  Maybe it is time for the GPU to become one of those cores on the CPU?<br /><br />At the moment the most likely use for multiple CPUs on Windows is one core to run your antivirus and your antispyware software and the rest you can use normally...  At least that is what an article I read said multiple cores would be used for when they come out.<br /><br />As the programmable GPUs start to become more common in the next generation of graphics cards they are becoming more and more like a general CPU, so it must be possible for the CPU with multiple cores to have a core or two behave more like a GPU?  Certainly when the 8 core processors come out it would probably be quite nice to use multiple cores as the "graphics card".<br /><br />I imagine though that there are people in labs much smarter than me already working on something like that or better.  It's nearly 2007 after all and we are living in the future (well at least it sounds like the future to me) but we still have all of these different things cobbled together making up the current PCs.  It would be sort of nice to see lots of processing converge onto the single multiple core chip as now they are more than capable of doing the tasks whereas ten years ago we still had a processor that was only capable of multitasking in a single core.</div>
+
+]]></content>
+  </entry>
+  
+</feed>

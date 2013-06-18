@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Multithreading | Fragmented Memory]]></title>
+  <link href="http://www.fragmentedmemory.com/blog/categories/multithreading/atom.xml" rel="self"/>
+  <link href="http://www.fragmentedmemory.com/"/>
+  <updated>2013-06-18T16:32:26+01:00</updated>
+  <id>http://www.fragmentedmemory.com/</id>
+  <author>
+    <name><![CDATA[Garry Bodsworth]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Interesting stuff - GPU general programming]]></title>
+    <link href="http://www.fragmentedmemory.com/blog/2008/01/30/interesting-stuff-gpu-general/"/>
+    <updated>2008-01-30T20:17:00+00:00</updated>
+    <id>http://www.fragmentedmemory.com/blog/2008/01/30/interesting-stuff-gpu-general</id>
+    <content type="html"><![CDATA[<div class='post'>
+An interesting library I stumbled across on the Internet the other day enables the user to accelerate general code by using your graphics hardware.  An open-source library <a href="http://libsh.org/">libsh</a> provides a high level metaprogramming language in C++ for programming GPUs.<br /><br />Unfortunately, libsh is no longer actively developed because the developers behind it have created a commercial business around it (those lucky guys have found a way to make programming pay!)<br /><br />It would be nice to utilise the processing power of the GPU, essentially treating the hardware like another (more specialised) processing core.  After all graphics cards have more transistors than the average CPU...  I think I mentioned something like this in my <a href="http://garrys-brain.blogspot.com/2006/12/multiple-core-madness.html">multithreading post</a> many a moon ago.  But I suppose also it ties into virtualisation of the procesing hardware available on the computer which I even <a href="http://garrys-brain.blogspot.com/2007/10/virtualisation-understanding.html">posted about before</a>.<br /><br />A great website for this type of stuff is <a href="http://www.gpgpu.org/">General-Purpose Computation Using Graphics Hardware</a> which does exactly what it says on the tin.  There are active forums and tons of news and information.<br /><br />Surprisingly there is not a huge amount of general purpose stuff out there freely available but as GPUs become more powerful and more programmable I am sure that will change.  Personally I think the future would be to use a core of these multi-core processors to do the graphics, even if it is slightly specialised for stream processing or something.  That would certainly negate the need for faster graphics buses as it would run on the processor (although other buses would still need to progress).  But yet again I have digressed....</div>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Multithreading - Make Me Parallel!]]></title>
+    <link href="http://www.fragmentedmemory.com/blog/2007/12/07/multithreading-make-me-parallel/"/>
+    <updated>2007-12-07T20:43:00+00:00</updated>
+    <id>http://www.fragmentedmemory.com/blog/2007/12/07/multithreading-make-me-parallel</id>
+    <content type="html"><![CDATA[<div class='post'>
+Sometimes even being multithreaded isn't even enough.  Obviously running multiple processes simultaneously is great and all but it depends how heavyweight the processes are as you could be spending a lot of calculation time in a single process not giving much more than a responsive GUI during calculation (not making the most of the computing power).  What you really want to do is divide those processes into their smallest components and parallelise those.<br /><br />One of the tools freely available to C++ developers to accomplish these types of tasks is <a href="http://threadingbuildingblocks.org">Threading Building Blocks</a> which was open-sourced this year by Intel.  In fact, I am pretty sure I mentioned this before, but I am nearly thirty so my brain ain't what it used to be.  There are actually two parts to the library, a thread-safe set of allocators and the multithreading library including algorithms and thread-safe containers.<br /><br />It is designed with the STL in mind (I suppose the developers would hope for an eventual inclusion into the standard library). It seems to be designed at a higher level semantically than a lot of other threading libraries and could help people to try it out much faster.<br /><br />The most obvious place to try out some of the parallelisation is the "parallel_for" loop.  It's interesting that speed optimisation can be tried out with a "grain size" as it is a trade off between the overhead of performing parallel operations and making use of the processor(s).  It all works in a similar fashion to the normal STL algorithms and containers with some additional classes like "ranges" for the begin and end of your divided up operation.  In fact it all seems so strangely easy to do, if you have to do calculations and construct new data, stick them in one of the thread-safe containers and you will be laughing.  Admittedly if you do use "normal loops" in your code, you need to STL-ise them, but that is a fairly trivial operation to turn them into functors.<br /><br />All in all though it looks quite good, and easy to use if you are parallelising simple loops.  I am sure some programs will find substantial speed-ups and blow up a few CPUs with over-use from that.  I could tell you a story that Intel tech support said we shouldn't run a Pentium III CPU at 100% use consistently back in the day...</div>
+
+
+<h2>Comments</h2>
+
+
+<div class='comments'>
+<div class='comment'>
+<div class='author'>Adi</div>
+<div class='content'>
+<a rel="external" href="http://orientinspiration.com/2009/09/oes-tsetnoc.html" rel="nofollow">Oes  Tsetnoc</a> one of the ways in which we can learn seo besides <a rel="external" href="http://duniasoer.com/archives/mengembalikan-jati-diri-bangsa.html" rel="nofollow">Mengembalikan Jati Diri Bangsa</a>.  By participating in the <a rel="external" href="http://mncmakina.com/2009/09/oes-tsetnoc-seo-contest/" rel="nofollow">Oes Tsetnoc</a> or <a rel="external" href="http://ulaznice.info/mengembalikan-jati-diri-bangsa.html" rel="nofollow">Mengembalikan Jati Diri Bangsa</a> we can improve our seo skills. To find more information about <a rel="external" href="http://catatanblogger.info/738688-Oes-Tsetnoc.html" rel="nofollow">Oest Tsetnoc</a> please visit my <a rel="external" href="http://kusukaseo.info/981750-Oes-Tsetnoc-Support.html" rel="nofollow">Oes Tsetnoc</a> pages. And to find more information about <a rel="external" href="http://duniasoer.com" rel="nofollow">Mengembalikan Jati Diri Bangsa</a> please visit my <a rel="external" href="http://catatanblogger.info/464655-Mengembalikan-Jati-Diri-Bangsa.html" rel="nofollow">Mengembalikan Jati Diri Bangsa</a> pages. Thank you So much.<br> <a rel="external" href="http://orientinspiration.com" rel="nofollow">Oes  Tsetnoc</a> | <a rel="external" href="http://duniasoer.com/archives/semangat-mengembalikan-jati-diri-bangsa.html" rel="nofollow">Semangat Mengembalikan Jati Diri Bangsa</a></div>
+</div>
+<div class='comment'>
+<div class='author'>wow gold1000</div>
+<div class='content'>
+Few have <A HREF="http://www.wowgoldvip.com/news_list.asp" REL="nofollow">wow gold</A> even heard <A HREF="http://www.wowgold1000.com" REL="nofollow">wow gold</A> of the god <A HREF="http://www.wowgoldvip.com" REL="nofollow">buy wow gold</A> called Bandos. <A HREF="http://www.wowgold1000.com" REL="nofollow">buy wow gold</A> For many <A HREF="http://www.wowgoldvip.com" REL="nofollow">cheap wow gold</A> centuries he <A HREF="http://www.wowgold1000.com" REL="nofollow">cheap wow gold</A> has been thought <A HREF="http://www.wowgoldvip.com/wow-power-leveling.asp" REL="nofollow">wow power leveling</A> to be an <A HREF="http://www.wowgold800.com" REL="nofollow">wow power leveling</A> ancestor of the <A HREF="http://www.wowgoldvip.com/powerleveling.asp" REL="nofollow">power leveling</A> ogres, perhaps <A HREF="http://www.wowgold800.com" REL="nofollow">power leveling</A> even the beast <A HREF="http://www.wowgold800.com/wow-gold.html" REL="nofollow">wow gold</A> that claimed <A HREF="http://www.wowgold800.com/wow-gold.html" REL="nofollow">buy wow gold</A> the lands of <A HREF="http://www.wowgold800.com/wow-gold.html" REL="nofollow">cheap wow gold</A> the Feldip Hills <A HREF="http://www.wowgold800.com/wow-gold.html" REL="nofollow">world of warcraft gold</A> and Jiggig.</div>
+</div>
+</div>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Intel Open-Sources Threading Bulding Blocks]]></title>
+    <link href="http://www.fragmentedmemory.com/blog/2007/07/25/intel-open-sources-threading-bulding/"/>
+    <updated>2007-07-25T21:44:00+01:00</updated>
+    <id>http://www.fragmentedmemory.com/blog/2007/07/25/intel-open-sources-threading-bulding</id>
+    <content type="html"><![CDATA[<div class='post'>
+Intel has just <a href="http://threadingbuildingblocks.org/">open-sourced their Threading Building Blocks library</a>.  Intel describe it as a "rich and complete approach to expressing parallelism in a C++ program".<br /><br />With multi-threading in general being so immature when looking at other libraries, another solution can never hurt.  So add it to Boost.Threads, OpenMP, wxThread and the myriad of others.  Admittedly the way that all of the alternatives work is very low-level and means very careful design is required.<br /><br />I'm interested to see the approach of the library to multi-threading as it looks quite complicated to wrap your head around.  The best bit though is there is apparently a cache aligned memory allocator as part of it that can be used independently.<br /><br />There is a Slashdot article about it <a href="http://developers.slashdot.org/developers/07/07/25/1324221.shtml">here</a>.  Also a bog post <a href="http://softwareblogs.intel.com/2006/12/18/threading-building-blocks-solution-looking-for-a-problem/">here</a> looks interesting covering the subject.<br /><br />All I can say is let battle commence and lets see what multi-threading packages are left standing ;)</div>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Multiple Core Madness]]></title>
+    <link href="http://www.fragmentedmemory.com/blog/2006/12/21/multiple-core-madness/"/>
+    <updated>2006-12-21T09:08:00+00:00</updated>
+    <id>http://www.fragmentedmemory.com/blog/2006/12/21/multiple-core-madness</id>
+    <content type="html"><![CDATA[<div class='post'>
+I was thinking about multiple cores, like you do.  One thing that most people haven't realise is that they have been using multiple CPUs for years, one has been your CPU and the other is the GPU - your graphics card.  The graphics card is a very specialised computational unit, but it was added in order to offload processing from your main processor to something else to allow the processor to not get bogged down with graphics processing.<br /><br />Now with the advent of dual core machines and the upcoming (or released in small quantities) quad core machines, a lot of users will probably not know they are using only a fraction of their processing power most of the time.  Maybe it is time for the GPU to become one of those cores on the CPU?<br /><br />At the moment the most likely use for multiple CPUs on Windows is one core to run your antivirus and your antispyware software and the rest you can use normally...  At least that is what an article I read said multiple cores would be used for when they come out.<br /><br />As the programmable GPUs start to become more common in the next generation of graphics cards they are becoming more and more like a general CPU, so it must be possible for the CPU with multiple cores to have a core or two behave more like a GPU?  Certainly when the 8 core processors come out it would probably be quite nice to use multiple cores as the "graphics card".<br /><br />I imagine though that there are people in labs much smarter than me already working on something like that or better.  It's nearly 2007 after all and we are living in the future (well at least it sounds like the future to me) but we still have all of these different things cobbled together making up the current PCs.  It would be sort of nice to see lots of processing converge onto the single multiple core chip as now they are more than capable of doing the tasks whereas ten years ago we still had a processor that was only capable of multitasking in a single core.</div>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Multi-Core Programming]]></title>
+    <link href="http://www.fragmentedmemory.com/blog/2006/11/08/multi-core-programming/"/>
+    <updated>2006-11-08T21:43:00+00:00</updated>
+    <id>http://www.fragmentedmemory.com/blog/2006/11/08/multi-core-programming</id>
+    <content type="html"><![CDATA[<div class='post'>
+An interesting article that passed my eyes in the past couple of days was <a href="http://arstechnica.com/articles/paedia/cpu/valve-multicore.ars">this one</a>.  It is about Valve's approach to multithreaded applications, and it seems that they fought against it for as long as they could.  Since I've worked in industry I've worked entirely on mutithreaded applications and this probably is under the coarse grained model, but it looks like the fine grained model is going to get more important in the next few years and it is something we are all going to have to work out.</div>
+
+]]></content>
+  </entry>
+  
+</feed>

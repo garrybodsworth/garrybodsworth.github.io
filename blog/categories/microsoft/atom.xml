@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Microsoft | Fragmented Memory]]></title>
+  <link href="http://www.fragmentedmemory.com/blog/categories/microsoft/atom.xml" rel="self"/>
+  <link href="http://www.fragmentedmemory.com/"/>
+  <updated>2013-06-18T16:32:26+01:00</updated>
+  <id>http://www.fragmentedmemory.com/</id>
+  <author>
+    <name><![CDATA[Garry Bodsworth]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Bill Gates Talks Some Sense - A 1986 Interview]]></title>
+    <link href="http://www.fragmentedmemory.com/blog/2008/06/17/bill-gates-talks-some-sense-1986/"/>
+    <updated>2008-06-17T08:38:00+01:00</updated>
+    <id>http://www.fragmentedmemory.com/blog/2008/06/17/bill-gates-talks-some-sense-1986</id>
+    <content type="html"><![CDATA[<div class='post'>
+The <a href="http://programmersatwork.wordpress.com/">Programmers At Work</a> blog have posted a 1986 interview with Bill Gates - you can <a href="http://programmersatwork.wordpress.com/bill-gates-1986/">read it here</a>.<br /><br />What is incredibly bizarre is that he talks a lot of sense and a lot of it is still applicable today.  Certainly 20 years later substitute assembler for C, and C with a scripting language in the article and you can believe it was a recent article.<br /><br />It's hard to believe Microsoft is the same company that Bill Gates is talking about in this interview as he has such a pragmatic outlook towards development.  With those attitudes you can see why Microsoft became successful, but it also shows you can't stay that way forever without great effort.  Most of my teenage years and adult life I have seen Microsoft as this big monopoly and it was nice to see something that shows what it was like before then.</div>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Visual C++ Orcas]]></title>
+    <link href="http://www.fragmentedmemory.com/blog/2007/04/25/visual-c-orcas/"/>
+    <updated>2007-04-25T20:42:00+01:00</updated>
+    <id>http://www.fragmentedmemory.com/blog/2007/04/25/visual-c-orcas</id>
+    <content type="html"><![CDATA[<div class='post'>
+Recently public betas for the next version of Visual Studio.NET Orcas (v9.0) were made available.  It is possible to get hold of the free Express versions.<br /><br />You can download Visual C++ Orcas <a href="http://msdn.microsoft.com/vstudio/express/future/visualc/default.aspx">here</a>.  And all the other Express versions can be accessed <a href="http://msdn.microsoft.com/vstudio/express/future/">here</a>.<br /><br />The C++ compiler with Orcas is a bug fix of the one available with v8.0 (fixing over 180 bugs).  The new rewritten compiler will be available in the version after Orcas.<br /><br />The Visual C++ Team Blog can be read <a href="http://blogs.msdn.com/vcblog/">here</a>.</div>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Visual Studio 2005 Service Pack 1]]></title>
+    <link href="http://www.fragmentedmemory.com/blog/2007/01/21/visual-studio-2005-service-pack-1/"/>
+    <updated>2007-01-21T22:09:00+00:00</updated>
+    <id>http://www.fragmentedmemory.com/blog/2007/01/21/visual-studio-2005-service-pack-1</id>
+    <content type="html"><![CDATA[<div class='post'>
+Microsoft released the first service pack for Visual Studio .NET 2005 a short while back.  You can <a href="http://msdn.microsoft.com/vstudio/support/vs2005sp1/default.aspx">download it here</a>.  It is available for all flavours including Express through to the Team editions.  Upon running it I am not finding it any faster or more stable though, at least it hasn't broken MFC like the beta version of SP1 did.<br /><br />Also this does not cover Vista compatibility, which is a right pain.  They have released the <a href="http://www.microsoft.com/downloads/details.aspx?familyid=fb6bb56a-10b7-4c05-b81c-5863284503cf&displaylang=en">Vista fixes for SP1 as a beta</a> at the moment.  It does improve a few problems like cancelling compilations actually working without needing to kill the cl.exe process from Task Manager, so it would be worthwhile if you are working on C++ in Vista.</div>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Vista Craplets]]></title>
+    <link href="http://www.fragmentedmemory.com/blog/2007/01/11/vista-craplets/"/>
+    <updated>2007-01-11T23:40:00+00:00</updated>
+    <id>http://www.fragmentedmemory.com/blog/2007/01/11/vista-craplets</id>
+    <content type="html"><![CDATA[<div class='post'>
+Nope, this isn't a post moaning about Vista...<br /><br />A senior Microsoft Corp executive is worried items he terms as "craplets" could damage the perception of Microsoft Vista.  These things he is referring to are the "added value" programs that OEMs add to their specific version of the operating system above and beyond what Microsoft supply.  These are the programs like DVD writers and other icons cluttering your new computer's desktop that are unnecessary and usually completely rubbish and destructive.<br /><br />You can read the article <a href="http://www.cbc.ca/technology/story/2007/01/10/tech-microsoft.html">here</a>.<br /><br />It's good to see someone might improve the situation as I spent some of yesterday on a new computer just do uninstalls of tens of programs on a brand new Dell.  These programs were not needed and basically served as adverts.  Also you have to remove the links to various ISPs and the suchlike that you would never switch to.<br /><br />I don't think this will fix the situation though and perhaps just make the problems more uniform, or they are the same problems with a stamp of approval from Microsoft.  If possible you should always try to get hold of a Windows disc that is Microsoft vanilla and use that for reinstalls.  But beware - you must get the right one for your registration key as there are two types of disc - the OEM and the commercial - and the keys are not interchangeable.  I found this out when finishing a reinstall it would not accept a key as it was an OEM key and it wanted a shop bought one.</div>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[More Vista Native API Examples]]></title>
+    <link href="http://www.fragmentedmemory.com/blog/2006/12/13/more-vista-native-api-examples/"/>
+    <updated>2006-12-13T08:50:00+00:00</updated>
+    <id>http://www.fragmentedmemory.com/blog/2006/12/13/more-vista-native-api-examples</id>
+    <content type="html"><![CDATA[<div class='post'>
+On the <a href="http://www.codeproject.com">CodeProject</a> there are a couple more articles about using the Vista Native API, which is actually accessing the base API through C++, bypassing the need for .NET.<br /><br />The first article is <a href="http://www.codeproject.com/vista/VGFileDialogs.asp">Using the New Vista File Dialogs</a>.  This is actually written with <a href="http://wtl.sourceforge.net/">WTL</a> in mind, but the ideas are the same whatever you are using, so long as you can access the API.  So you can now add the new Vista file dialogs to your current programs.<br /><br />The second article is <a href="http://www.codeproject.com/vista/VGTaskDialog.asp">Showing Friendly Messages with Task Dialogs</a>.  This exposes the new TaskDialog API which Microsoft want people to use for displaying information to users.  It's all fairly simple, so it is extra Vista in your program for not too much effort.</div>
+
+]]></content>
+  </entry>
+  
+</feed>

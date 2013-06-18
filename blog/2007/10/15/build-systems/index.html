@@ -1,0 +1,166 @@
+
+<!DOCTYPE HTML>
+<html lang="en-gb">
+<head>
+  <meta charset="UTF-8">
+  <title>Fragmented Memory</title>
+
+  <meta name="author" content="Garry Bodsworth">
+  
+  <meta name="description" content="Build Systems Oct 15th, 2007 I was setting up the Visual Studio build system to target not only multiple build types but multiple platforms. This is &hellip;">
+  
+  
+
+  <link rel="canonical" href="http://www.fragmentedmemory.com/blog/2007/10/15/build-systems">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/atom.xml" rel="alternate" title="Fragmented Memory" type="application/atom+xml">
+</head>
+  
+<body class="default">
+  <div id="wrapper">
+    <div id="header">
+  <h1><a href="/">Fragmented Memory</a></h1>
+  
+    <p>Garry Bodsworth's Blog (formerly Garry's Bit Patterns &amp; Programmer's Log)</p>
+  
+</div>
+<ul id="social-links">
+  
+    <li><a class="feed" href="/atom.xml" title="RSS">RSS</a></li>
+  
+  
+    <li><a class="twitter" href="http://twitter.com/garrybodsworth" title="Twitter">Twitter</a></li>
+  
+  
+    <li> <a class="github" href="https://github.com/garrybodsworth" title="GitHub">GitHub</a> </li>
+  
+</ul>
+<div class="clear"></div>
+<ul id="nav">
+  
+    <li> <a href="/">blog</a> </li>
+  
+
+  
+    <li><a href="/blog/archives">archives</a></li>
+  
+</ul>
+
+    <div id="main"> <div class="post-header">
+  
+    <h1 class="post-title">Build Systems</h1>
+  
+  
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2007-10-15T19:50:00+01:00" pubdate data-updated="true">Oct 15<span>th</span>, 2007</time>
+</div>
+
+<div class="post-content"><div class='post'>
+I was setting up the Visual Studio build system to target not only multiple build types but multiple platforms.  This is the point I discovered hand editing the solution files is the only way to maintain consistency and accuracy of the builds.  This is because the ue interface provided is antiquated, a struggle, and worst of all, unpredictable.<br /><br />Build systems are really separated into two camps, text file based, or IDE based.  The text file based ones give you the most control and flexibility, but in this day and age it is a real shame that they are the most useful.  Also you may need an unknown macro language and will probably need to know every compiler setting that you want to set.  The IDE based ones tend to require manual intervention in some undocumented or badly documented file format. This immediately negates any advantage you previously had.<br /><br />I am amazed these parts of the IDE have been so neglected since without it you will not get predictable results.  You want easy ways to compare different configurations or projects to see if they are out of step.  There is also no way of batching changes to a set of projects (you can get some sort of batch changes with configurations although you are not really sure of what you are doing).<br /><br />Maybe there is a better way?  I don&#8217;t know what else there is out there apart from premake systems (eg, CMake, Premake), script based build systems (eg, make, Boost.Build), and IDE based systems (Visual Studio et al).   You almost want the equivalent of the Apple stye reimagining for debugging/profiling like <a href="http://www.apple.com/macosx/leopard/developer/xray.html">XRay in the upcoming OS X Leopard</a>.<br /><br />One of the things I am dead proud of recently is the one touch build release kit from within the Visual Studio IDE.  This means you just need to hit build and at the end you get an installer exe with no need for any jumping through hoops.  It would be nice if you didn&#8217;t need really work hard to get to that stage.</div>
+</div>
+
+
+<div class="post-single">
+  <div class="post-meta">
+    
+
+<span class="categories">
+  Categories:
+  
+    <a class='category' href='/blog/categories/build/'>build</a>
+  
+</span>
+
+
+    
+      <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://www.fragmentedmemory.com/blog/2007/10/15/build-systems/" data-via="garrybodsworth" data-counturl="http://www.fragmentedmemory.com/blog/2007/10/15/build-systems/" >Tweet</a>
+  
+  
+  
+</div>
+
+    
+  </div>
+  <div class="clear"></div>
+
+  
+</div>
+ </div>
+    <div id="footer">
+  <div class="panels">
+    <div class="license">
+      <h2>License</h2>
+      <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-nc-sa/3.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/">Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License</a>.
+    </div>
+
+    <div class="posts">
+      <h2>Recent Posts</h2>
+      <ul>
+        
+          <li>
+            <a href="/blog/2013/06/18/new-location-and-new-blog-engine-and-old-content-restored/">New Location &amp; New Blog Engine &amp; Old Content Restored</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2013/06/13/joining-microsoft/">Joining Microsoft</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2013/06/13/leaving-bromium/">Leaving Bromium</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2013/03/05/philip-su-engineering-process-and/">Philip Su - Engineering Process And Philosophy At Facebook</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2013/03/05/more-creator-owned-comics-genocide/">More Creator-Owned Comics - Genocide: Duostar</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  <p class="powered">
+    Powered by <a href="http://octopress.org">Octopress</a> and <a href="https://github.com/iwinux/compbits">Compbits</a>
+  </p>
+</div>
+
+  </div> <!-- #wrapper end -->
+
+  
+
+  
+
+
+  
+
+  
+
+  
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+</body>
+</html>

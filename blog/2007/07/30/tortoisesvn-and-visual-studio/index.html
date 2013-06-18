@@ -1,0 +1,329 @@
+
+<!DOCTYPE HTML>
+<html lang="en-gb">
+<head>
+  <meta charset="UTF-8">
+  <title>Fragmented Memory</title>
+
+  <meta name="author" content="Garry Bodsworth">
+  
+  <meta name="description" content="TortoiseSVN and Visual Studio Integration - Visual Studio 2008 Jul 30th, 2007 Finally, I am getting around to an update to the TortoiseSVN Visual &hellip;">
+  
+  
+
+  <link rel="canonical" href="http://www.fragmentedmemory.com/blog/2007/07/30/tortoisesvn-and-visual-studio">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/atom.xml" rel="alternate" title="Fragmented Memory" type="application/atom+xml">
+</head>
+  
+<body class="default">
+  <div id="wrapper">
+    <div id="header">
+  <h1><a href="/">Fragmented Memory</a></h1>
+  
+    <p>Garry Bodsworth's Blog (formerly Garry's Bit Patterns &amp; Programmer's Log)</p>
+  
+</div>
+<ul id="social-links">
+  
+    <li><a class="feed" href="/atom.xml" title="RSS">RSS</a></li>
+  
+  
+    <li><a class="twitter" href="http://twitter.com/garrybodsworth" title="Twitter">Twitter</a></li>
+  
+  
+    <li> <a class="github" href="https://github.com/garrybodsworth" title="GitHub">GitHub</a> </li>
+  
+</ul>
+<div class="clear"></div>
+<ul id="nav">
+  
+    <li> <a href="/">blog</a> </li>
+  
+
+  
+    <li><a href="/blog/archives">archives</a></li>
+  
+</ul>
+
+    <div id="main"> <div class="post-header">
+  
+    <h1 class="post-title">TortoiseSVN and Visual Studio Integration - Visual Studio 2008</h1>
+  
+  
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2007-07-30T21:12:00+01:00" pubdate data-updated="true">Jul 30<span>th</span>, 2007</time>
+</div>
+
+<div class="post-content"><div class='post'>
+Finally, I am getting around to an update to the TortoiseSVN Visual Studio Integration.  The catalyst for this is the release of Visual Studio 2008 (formally codename Orcas) Beta 2, and making sure I can still play with Subversion through the IDE.<br /><br />I have made a new distribution ZIP file with a few more configurations inside.<br /><br /><span style="font-weight: bold;"><a href="http://garry.bodsworth.googlepages.com/Subversion.zip">Download it here.</a></span><br /><br />It has a few more features than before including some for dealing with conflicts.  The distribution itself has a few more files so you can decide whether you want to just have the menus, toolbars or context menus.<br /><br /><a onblur="try {parent.deselectBloggerImageGracefully();} catch(e) {}" href="http://4.bp.blogspot.com/_1xvreyfQ6ns/Rq5I_talWbI/AAAAAAAAAAM/55l1sNrJM7o/s1600-h/Toolbar.png"><img style="cursor:pointer; cursor:hand;" src="http://4.bp.blogspot.com/_1xvreyfQ6ns/Rq5I_talWbI/AAAAAAAAAAM/55l1sNrJM7o/s320/Toolbar.png" border="0" alt=""id="BLOGGER_PHOTO_ID_5093088487962663346" /></a><br /><br /><span style="font-weight: bold;">Supported operations</span><br /><br />The following Subversion/TortoiseSVN features are covered in the integration:<br /><ul><li><span style="font-weight: bold;">Commit</span> - Commit the files to the repository</li><li><span style="font-weight: bold;">Update</span> - Update the current working version</li><li><span style="font-weight: bold;">History</span> - Get the history for the selected file</li><li><span style="font-weight: bold;">Diff</span> - Get the diff compared to the base version</li><li><span style="font-weight: bold;">Blame</span> - Find out who committed the crimes in the file</li><li><span style="font-weight: bold;">Revert</span> - Undo changes</li><li><span style="font-weight: bold;">Modifications</span> - Check to see if any files have been modified</li><li><span style="font-weight: bold;">Edit Conflicts</span> - Edit the conflicts that arise from merging/updating</li><li><span style="font-weight: bold;">Resolve</span> - Mark the file as resolved for conflicts</li><li><span style="font-weight: bold;">Repository</span> - View the repository on the server</li><li><span style="font-weight: bold;">Project History</span> - Get the history of the entire project</li><li><span style="font-weight: bold;">Add Solution</span> - Add the solution being edited to source control</li><li><span style="font-weight: bold;">Branch/Tag</span> - Perform a branch or tag operation on the current working copy</li><li><span style="font-weight: bold;">Settings</span> - Set up TortoiseSVN</li></ul><span style="font-weight: bold;">SubversionInstall.vbs</span><br /><br />This simply installs a set of External Tools into Visual Studio for common TortoiseSVN operations.  It can be installed on versions above Visual Studio.NET (version 7.0).  Currently it is configured for Visual Studio 2008 (version 9.0), to make it work on other versions change the variable &#8220;strVisualStudioVersionNumber&#8221; as outlined in the file&#8217;s comments.<br /><br />Also, if you have installed TortoiseSVN in a non-default location, make sure that you change the variable &#8220;strTortoiseSVNBin&#8221; to the correct binary path.  Make sure that the backslashes are doubled up.<br /><br /><span style="font-weight: bold;">SubversionMenu.vssettings</span><br /><br />This is a settings file for Visual Studio 2008.<br /><br />This adds a menu to the IDE for TortoiseSVN with the appropriate icons.<br /><br /><span style="font-weight: bold;">SubversionMenuToolbar.vssettings</span><br /><br />This is a settings file for Visual Studio 2008.<br /><br />This adds a menu for TortoiseSVN as well as a toolbar using the appropriate icons.<br /><br /><span style="font-weight: bold;">SubversionMenuToolbarContexts.vssettings</span><br /><br />This is a settings file for Visual Studio 2008.<br /><br />This adds not only the menu and toolbar, but also adds the items to the appropriate context menus for files and solutions.<br /><br /><span style="font-weight: bold;">SubversionMenuToolbarContextsVS2005.vssettings</span><br /><br />This provides the menu, toolbar and context menus for TortoiseSVN in Visual Studio 2005.<br /><br />Unfortunately there is no good solution for file renaming (I always do it through Windows Explorer) since this integration uses the External tools and allows for it to work in Visual Studio Express.</div>
+<h2>Comments</h2>
+<div class='comments'>
+<div class='comment'>
+<div class='author'>Adi</div>
+<div class='content'>
+<a rel="external" href="http://orientinspiration.com/2009/09/oes-tsetnoc.html" rel="nofollow">Oes  Tsetnoc</a> one of the ways in which we can learn seo besides <a rel="external" href="http://duniasoer.com/archives/mengembalikan-jati-diri-bangsa.html" rel="nofollow">Mengembalikan Jati Diri Bangsa</a>.  By participating in the <a rel="external" href="http://mncmakina.com/2009/09/oes-tsetnoc-seo-contest/" rel="nofollow">Oes Tsetnoc</a> or <a rel="external" href="http://ulaznice.info/mengembalikan-jati-diri-bangsa.html" rel="nofollow">Mengembalikan Jati Diri Bangsa</a> we can improve our seo skills. To find more information about <a rel="external" href="http://catatanblogger.info/738688-Oes-Tsetnoc.html" rel="nofollow">Oest Tsetnoc</a> please visit my <a rel="external" href="http://kusukaseo.info/981750-Oes-Tsetnoc-Support.html" rel="nofollow">Oes Tsetnoc</a> pages. And to find more information about <a rel="external" href="http://duniasoer.com" rel="nofollow">Mengembalikan Jati Diri Bangsa</a> please visit my <a rel="external" href="http://catatanblogger.info/464655-Mengembalikan-Jati-Diri-Bangsa.html" rel="nofollow">Mengembalikan Jati Diri Bangsa</a> pages. Thank you So much.<br> <a rel="external" href="http://orientinspiration.com" rel="nofollow">Oes  Tsetnoc</a> | <a rel="external" href="http://duniasoer.com/archives/semangat-mengembalikan-jati-diri-bangsa.html" rel="nofollow">Semangat Mengembalikan Jati Diri Bangsa</a></div>
+</div>
+<div class='comment'>
+<div class='author'>The Taker</div>
+<div class='content'>
+i cant understand how to install this.can someone tell me how to install this????</div>
+</div>
+<div class='comment'>
+<div class='author'>Nigwoko</div>
+<div class='content'>
+Thanks for this great tool</div>
+</div>
+<div class='comment'>
+<div class='author'>Anthony</div>
+<div class='content'>
+Any way to get this to install into Visual Web Developer Express Edition 2008?</div>
+</div>
+<div class='comment'>
+<div class='author'>cakesy</div>
+<div class='content'>
+So, how do I install those vsetting files in VS??</div>
+</div>
+<div class='comment'>
+<div class='author'>Baljeetsingh</div>
+<div class='content'>
+Hey<BR/> <A HREF="http://www.blogger.com/profile/06424543930869218613" REL="nofollow">Bluehorse</A> uninstall is not that difficult after removing all the registry you must set ToolNumKeys=2 you will find this in External tools only.<BR/><BR/>This means no need to remove registry entry just keep playing with the ToolNumKeys.<BR/><BR/>:)</div>
+</div>
+<div class='comment'>
+<div class='author'>Baljeetsingh</div>
+<div class='content'>
+This comment has been removed by the author.</div>
+</div>
+<div class='comment'>
+<div class='author'>Bluehorse</div>
+<div class='content'>
+Hello, regarding uninstall, editing the registry is a pain and not simple in this case, I end up with 21 grayed out menu items &#8216;External command&#8217; in Vs2008 in the Tools menu. Would be absolutely great if you could include an uninstall script.<BR/><BR/>Would also be nice if the svn commands could be grouped into a submenu.<BR/><BR/>Great approach anyway :)<BR/>2 cents</div>
+</div>
+<div class='comment'>
+<div class='author'>Joshua</div>
+<div class='content'>
+Gary, thanks for your work. On start up, I still get the error,<BR/><BR/>&#8220;The project MyProject.vcproj appears to be under source control, but the associated source control plug-in is not installed on this computer. Source control will be disabled for this project.&#8221;<BR/><BR/>Even though the toolbar seems to work. Can you help me understand why that might be? I installed the seetings for VS2005. Thanks!!</div>
+</div>
+<div class='comment'>
+<div class='author'>AndrewP</div>
+<div class='content'>
+Would you be able to write better installation steps? As you say what the files are but not how to actually install it. <BR/>What do I do with the .vbs? does it need to go into a project? Why not put it together more, even an exe would be better.<BR/><BR/>Cheers<BR/><BR/>Andrew</div>
+</div>
+<div class='comment'>
+<div class='author'>Wasatch Wizard</div>
+<div class='content'>
+I&#8217;m pretty sure you must have TortoiseSVN installed on the same machine you&#8217;re running Visual Studio from. <BR/><BR/>I use SSH over the network without any problems.</div>
+</div>
+<div class='comment'>
+<div class='author'>i-nstein</div>
+<div class='content'>
+Ok. this looks like a good alternative to VSS but am a little stuck&#8230;<BR/>Am setting up a LAN environment, the TortoiseSVN in on another machine.<BR/>I mapped the tortoisesvn to a local drive and chaged the path accordingly but all i have is grayed out menus&#8230;and all of them are a premade menu, kind of cluttering things. Can someone help me?<BR/><BR/>For the guys that have this working, has anyone tried a LAN setting?</div>
+</div>
+<div class='comment'>
+<div class='author'>i-nstein</div>
+<div class='content'>
+This comment has been removed by the author.</div>
+</div>
+<div class='comment'>
+<div class='author'>lightwaver</div>
+<div class='content'>
+Hi,<BR/><BR/>Thanks - That&#8217;s (also for me) what i&#8217;ve bee searchimg for&#8230;<BR/><BR/>There is only a simple suggestion for the VBS-Script:<BR/>If you use %ProgramFiles% at Line  15 the Script can be used without any modifications in non-english Win-Installations&#8230;</div>
+</div>
+<div class='comment'>
+<div class='author'>Wasatch Wizard</div>
+<div class='content'>
+This is exactly what I was hoping to find! Thank you for sharing your work!!</div>
+</div>
+<div class='comment'>
+<div class='author'>dmitry39</div>
+<div class='content'>
+thx, good article<BR/><BR/><A HREF="http://www.progblog.ru/" REL="nofollow">ASP.NET C# .Net Framework<BR/></A></div>
+</div>
+<div class='comment'>
+<div class='author'>Marcin</div>
+<div class='content'>
+Hi, I have small problem. External tools working fine but in VS 2005 Commit from Subversion menu runs dotfuscator? What can be a reason?</div>
+</div>
+<div class='comment'>
+<div class='author'>Mehmet</div>
+<div class='content'>
+I installed your setting files and also installed tortoiseSVN but i can add the solution to the repository, i can&#8217;t commit the solution. It gives me this error &#8220;C:\Documents and Settings\gilbert\Belgelerim\Visual Studio 2008\Projects\denemeninkrali is no a working copy. Can&#8217;t open file: C:\Documents and Settings\gilbert\Belgelerim\Visual Studio 2008\Projects\denemeninkrali&#46;svn\entries: System cannot find the path&#8221;. So i checked the document over and over to make sure if i make something wrong but everything was ok. What should i do now?</div>
+</div>
+<div class='comment'>
+<div class='author'>jayant</div>
+<div class='content'>
+hi<BR/><BR/>i am install it in visual studio 9.0<BR/>i want to know that why commit,update and some important options are not enable in subversion menu and also toolbar<BR/><BR/>jayant</div>
+</div>
+<div class='comment'>
+<div class='author'>Ryan</div>
+<div class='content'>
+In the screenshot, it displays a separate toolbar for Subversion.  When I installed this, however, it just dropped all of the options into the pre-existing Tools toolbar, in a rather unattractive manner.  Did I do something wrong, or is there an easy fix for this? Thanks.</div>
+</div>
+<div class='comment'>
+<div class='author'>ssboisen</div>
+<div class='content'>
+Commercial alternative: VisualSVN (www.visualsvn.com)</div>
+</div>
+<div class='comment'>
+<div class='author'>ssboisen</div>
+<div class='content'>
+Regarding uninstalling: Clean out regedit at <BR/><BR/>HKEY_CURRENT_USER\Software\Microsoft\VisualStudio&#34;<BR/>     \External Tools\</div>
+</div>
+<div class='comment'>
+<div class='author'>Ian</div>
+<div class='content'>
+Hi there - how would you uninstall this?<BR/><BR/>Cheers<BR/><BR/>Ian</div>
+</div>
+<div class='comment'>
+<div class='author'>mep</div>
+<div class='content'>
+Garry,<BR/><BR/>I quickly tested it and it looks great!  Very light-weight and usable.    It&#8217;s missing branch/tag and a few lesser used items but I can deal with these externally.  Thanks for making this available.</div>
+</div>
+<div class='comment'>
+<div class='author'>Julius</div>
+<div class='content'>
+Hello jorge,<BR/><BR/>I&#8217;ve tried opening the settings file in wordpad, i&#8217;ve found out that the related directories is hard coded as &#8220;c:&#92;program files&#92;&#8221;&#8230; What I did is I replaced the directory string into the target directory of tortoise SVN, and it just works fine. Hope this helps.</div>
+</div>
+<div class='comment'>
+<div class='author'>Jorge Maia</div>
+<div class='content'>
+Dear Garry, <BR/>I&#8217;ve been installed all settings and the vbs, because my opetrational system is in portuguese i change the &#8220;program files&#8221; to &#8220;Arquivos de programas&#8221; in the script vbs and the settings file. <BR/>BUT there isnt working, all icons are disabled and the menus too! any idea to help me ??</div>
+</div>
+<div class='comment'>
+<div class='author'>Josh Blair</div>
+<div class='content'>
+Awesome contribution.  Thanks for your efforts.  Huge dev workflow improvement.</div>
+</div>
+<div class='comment'>
+<div class='author'>dan</div>
+<div class='content'>
+Cheers for posting these settings, you have made my life much easier :)<BR/>I have just nixed VSS in our predominately MS shop, so this gives us another option of SVN integration in Visual Studio. Thanks again</div>
+</div>
+<div class='comment'>
+<div class='author'>Garry Bodsworth</div>
+<div class='content'>
+Sorry, forgot to say how to add it to the context menus.<BR/><BR/>Right click on the toolbars backgrounds and select &#8220;Customize&#8221;.  From the list in the toolbars tick &#8220;Context Menus&#8221; - this option is hidden when not in Customize mode.<BR/><BR/>From the new toolbar select &#8220;Project and Solution Context Menus&#8221;.  The &#8220;Item&#8221; context menu is for an individual file, and the &#8220;Solution&#8221; is for the solution.  You can probably ignore the rest.<BR/><BR/>To add one of the external tools you need to know which External Tools number maps to the TortoiseSVN command - you can see this in &#8220;Customize&#8221; mode when looking at the &#8220;Tools&#8221; menu.  On the &#8220;Commands&#8221; tab on the &#8220;Customize&#8221; dialog select &#8220;Tools&#8221; then drag the items named External Command (number) to the menu/toolbar.<BR/><BR/>Hope this helps.</div>
+</div>
+<div class='comment'>
+<div class='author'>Bjørnar</div>
+<div class='content'>
+I have no problems creating the additional external tools for item Commit/Update, but am at a loss on how to assosiate them with the context menu. The only thing missing is the actual ID for the command. I could copy and paste the rest in the settings.<BR/><BR/>Personally I use Tortoise directly from Explorer, however, I have coworkers who are more into the good old VSS UI and would like the icon overlays. I downloaded the Ankh source yesterday and skimmed through the filenames looking for a n instant clue where to look for the overlays, but didn&#8217;t have the time to look more into it. I guess figuring it out when I have the time shouldn&#8217;t cause too much trouble creating a simple addin with the functionality of using the correct overlay.<BR/><BR/>However, I like the simplicity of the integration (no coding) and expect to use it frequently.<BR/><BR/>Thank you for your work so far.</div>
+</div>
+<div class='comment'>
+<div class='author'>Garry Bodsworth</div>
+<div class='content'>
+In order to have a commit/update for an individual file you would need to create a new commit/update command that uses $(ItemPath) and $(ItemDir).  Then you can easily add these to the context menus.<BR/><BR/>Doing the icon overlay is not necessary for me as I use Check For Modifications infrequently.  What I prefer about this integration is that it is a very thin layer wrapping the functionality that really does not get in the way.  I never really care what I&#8217;ve edited or anything like that until I commit.  I&#8217;ve changed the way I work with source control now in comparison to my days battling with VSS, it is actually almost a case of I don&#8217;t need to even think about the source control.<BR/><BR/>If you want a more comprehensive VSS style integration I recommend having a look at AnkhSVN:<BR/>http://ankhsvn.tigris.org/<BR/>This could also give you a hint at how to do icon overlays ;)</div>
+</div>
+<div class='comment'>
+<div class='author'>Bjørnar</div>
+<div class='content'>
+I wouldn&#8217;t mind having an additional context menu for Commit/Update/etc for individual files/folders. I tried fixing it myself, but couldn&#8217;t figure out how to refer to commands (or find the id for a command).<BR/><BR/>I&#8217;ve also started looking into a way of making solution explorer use overlay icons from Tortoise/Explorer, but VS extensibility isn&#8217;t my area ;o) <BR/><BR/>So far I have found this integration to be very sweet ;o)</div>
+</div>
+</div>
+</div>
+
+
+<div class="post-single">
+  <div class="post-meta">
+    
+
+<span class="categories">
+  Categories:
+  
+    <a class='category' href='/blog/categories/integration/'>Integration</a>, <a class='category' href='/blog/categories/subversion/'>Subversion</a>, <a class='category' href='/blog/categories/tortoisesvn/'>TortoiseSVN</a>, <a class='category' href='/blog/categories/visual-studio-2005/'>Visual Studio 2005</a>, <a class='category' href='/blog/categories/visual-studio-2008/'>Visual Studio 2008</a>
+  
+</span>
+
+
+    
+      <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://www.fragmentedmemory.com/blog/2007/07/30/tortoisesvn-and-visual-studio/" data-via="garrybodsworth" data-counturl="http://www.fragmentedmemory.com/blog/2007/07/30/tortoisesvn-and-visual-studio/" >Tweet</a>
+  
+  
+  
+</div>
+
+    
+  </div>
+  <div class="clear"></div>
+
+  
+</div>
+ </div>
+    <div id="footer">
+  <div class="panels">
+    <div class="license">
+      <h2>License</h2>
+      <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-nc-sa/3.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/">Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License</a>.
+    </div>
+
+    <div class="posts">
+      <h2>Recent Posts</h2>
+      <ul>
+        
+          <li>
+            <a href="/blog/2013/06/18/new-location-and-new-blog-engine-and-old-content-restored/">New Location &amp; New Blog Engine &amp; Old Content Restored</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2013/06/13/joining-microsoft/">Joining Microsoft</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2013/06/13/leaving-bromium/">Leaving Bromium</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2013/03/05/philip-su-engineering-process-and/">Philip Su - Engineering Process And Philosophy At Facebook</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2013/03/05/more-creator-owned-comics-genocide/">More Creator-Owned Comics - Genocide: Duostar</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  <p class="powered">
+    Powered by <a href="http://octopress.org">Octopress</a> and <a href="https://github.com/iwinux/compbits">Compbits</a>
+  </p>
+</div>
+
+  </div> <!-- #wrapper end -->
+
+  
+
+  
+
+
+  
+
+  
+
+  
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+</body>
+</html>

@@ -1,0 +1,404 @@
+
+<!DOCTYPE HTML>
+<html lang="en-gb">
+<head>
+  <meta charset="UTF-8">
+  <title>Fragmented Memory</title>
+
+  <meta name="author" content="Garry Bodsworth">
+  
+  <meta name="description" content="Static Code Analysis - PREFast Oct 20th, 2007 At work we use Gimpel PC-Lint to analyse our source code for defects that the compiler does not pick &hellip;">
+  
+  
+
+  <link rel="canonical" href="http://www.fragmentedmemory.com/blog/page/28">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/atom.xml" rel="alternate" title="Fragmented Memory" type="application/atom+xml">
+</head>
+  
+<body class="default">
+  <div id="wrapper">
+    <div id="header">
+  <h1><a href="/">Fragmented Memory</a></h1>
+  
+    <p>Garry Bodsworth's Blog (formerly Garry's Bit Patterns &amp; Programmer's Log)</p>
+  
+</div>
+<ul id="social-links">
+  
+    <li><a class="feed" href="/atom.xml" title="RSS">RSS</a></li>
+  
+  
+    <li><a class="twitter" href="http://twitter.com/garrybodsworth" title="Twitter">Twitter</a></li>
+  
+  
+    <li> <a class="github" href="https://github.com/garrybodsworth" title="GitHub">GitHub</a> </li>
+  
+</ul>
+<div class="clear"></div>
+<ul id="nav">
+  
+    <li> <a href="/" class="current">blog</a> </li>
+  
+
+  
+    <li><a href="/blog/archives">archives</a></li>
+  
+</ul>
+
+    <div id="main"> 
+
+  
+  <div class="post"> <div class="post-header">
+  
+    <h1 class="post-title">
+      <a href="/blog/2007/10/20/static-code-analysis-prefast/">Static Code Analysis - PREFast</a>
+    </h1>
+  
+  
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2007-10-20T08:27:00+01:00" pubdate data-updated="true">Oct 20<span>th</span>, 2007</time>
+</div>
+
+<div class="post-content"><div class='post'>
+At work we use <a href="http://www.gimpel.com/">Gimpel PC-Lint</a> to analyse our source code for defects that the compiler does not pick up.  We use it on quite a strict level even after bolting it on to a legacy code-base.  There are some tools to make your life a little easier when using it from <a href="http://www.riverblade.co.uk/">Riverblade Software</a>.  Gimpel Lint is not a perfect tool for an IDE as it is commandline based and these types of checks should honestly be part of a good quality compiler as additional warning levels.<br /><br />What I have found out though is that in Visual Studio Team System there is a static code analysis tool that isn&#8217;t even available in the Professional version.  It&#8217;s internally called PREFast at Microsoft and apparently they use it to ensure code quality.  Apparently in the Windows Driver Development Kit (WDK) it is available so it is possible to use that to do some code analysis.  Check out <a href="http://buildingsecurecode.blogspot.com/2007/08/security-code-scanning-with-microsoft.html">this blog post for instructions</a>.  There are plenty of blog posts about it on the rest of Steve Dispensa&#8217;s blog.<br /><br />There is a small Microsoft Research Article available <a href="http://research.microsoft.com/displayArticle.aspx?id=634">here</a> about PREFast.<br /><br />I&#8217;ve downloaded VS Team System to give it a go and to see how good it is.  Or maybe I will try out the PSDK hack&#8230;</div>
+</div>
+ </div>
+
+  
+  <div class="post"> <div class="post-header">
+  
+    <h1 class="post-title">
+      <a href="/blog/2007/10/17/tools-to-make-developers-life-easier/">Tools to Make a Developers Life Easier - Trac</a>
+    </h1>
+  
+  
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2007-10-17T20:24:00+01:00" pubdate data-updated="true">Oct 17<span>th</span>, 2007</time>
+</div>
+
+<div class="post-content"><div class='post'>
+<a href="http://trac.edgewall.org/">Trac by Edgewall Software</a> is at its most simplistic level an issue tracker that provides source control integration (mainly for Subversion).  But it is much more than that, it also has a built-in wiki, source browser, and project management through the ticketing system.<br /><br />It&#8217;s a really decent tool for make developer&#8217;s lives much easier and it looks nice too.  As you start doing more with it you can really see the power in there.  You can work out a roadmap/timeline from your tickets and also generate changelogs.<br /><br />But all this isn&#8217;y new to the world out there, what I discovered today was <a href="http://trac-hacks.org/">Trac Hacks</a> which is a repository of Trac add-ins and enhancements.  There is a <a href="http://trac-hacks.org/wiki/PeerReviewPlugin">code review plug-in</a>, a blog plug-in, and simply too many others to list.<br /><br />So combine Subversion with Trac for a good experience, then add plug-ins to fill the holes in the development process.</div>
+</div>
+ </div>
+
+  
+  <div class="post"> <div class="post-header">
+  
+    <h1 class="post-title">
+      <a href="/blog/2007/10/16/gui-toolkits-ultimate/">GUI Toolkits - Ultimate++</a>
+    </h1>
+  
+  
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2007-10-16T23:06:00+01:00" pubdate data-updated="true">Oct 16<span>th</span>, 2007</time>
+</div>
+
+<div class="post-content"><div class='post'>
+<a href="http://www.ultimatepp.org/">Ultimate++</a> is a GUI toolkit with its own IDE, GUI designer, build system, collections, and more.  In the recent past it has improved its integration into the operating system with its Chameleon technology for native look and feel.<br /><br />Unfortunately at the moment it is not 100% geared to be used as a library and you have to use the supplied IDE and development tools to use Ultimate++.  <a href="http://www.ultimatepp.org/forum/index.php?t=msg&th=2700&start=0&">Someone has been working on it</a> though and maybe there will be a full released solution soon.  If this does come to fruition it will be seriously interesting.<br /><br />I had a quick read through the Ultimate++ forums recently and came across some interesting things that would make it a more desirable GUI toolkit to use.<br /><br />First up you have an <a href="http://www.ultimatepp.org/forum/index.php?t=msg&th=2741&start=0&">Office 2007 look skin</a>.  This won&#8217;t be the full ribbon-based UI or anything but it should be interesting to see how it looks and maybe be extended.<br /><br />Secondly there is the <a href="http://www.ultimatepp.org/forum/index.php?t=msg&th=2716&start=0&">docking toolkit</a>.  This looks like a fairly comprehensive docking kit written very quickly.  Some of teh examples even had the HUD style docking of Visual Studio.  Also, if this does come to fruition this is a very important feature for people evaluating the system.<br /><br />This toolkit will certainly be moving very fast in teh near future and if these features are suitably polished then it may look like a competitive toolkit to use.</div>
+<h2>Comments</h2>
+<div class='comments'>
+<div class='comment'>
+<div class='author'>Adi</div>
+<div class='content'>
+<a rel="external" href="http://orientinspiration.com/2009/09/oes-tsetnoc.html" rel="nofollow">Oes  Tsetnoc</a> one of the ways in which we can learn seo besides <a rel="external" href="http://duniasoer.com/archives/mengembalikan-jati-diri-bangsa.html" rel="nofollow">Mengembalikan Jati Diri Bangsa</a>.  By participating in the <a rel="external" href="http://mncmakina.com/2009/09/oes-tsetnoc-seo-contest/" rel="nofollow">Oes Tsetnoc</a> or <a rel="external" href="http://ulaznice.info/mengembalikan-jati-diri-bangsa.html" rel="nofollow">Mengembalikan Jati Diri Bangsa</a> we can improve our seo skills. To find more information about <a rel="external" href="http://catatanblogger.info/738688-Oes-Tsetnoc.html" rel="nofollow">Oest Tsetnoc</a> please visit my <a rel="external" href="http://kusukaseo.info/981750-Oes-Tsetnoc-Support.html" rel="nofollow">Oes Tsetnoc</a> pages. And to find more information about <a rel="external" href="http://duniasoer.com" rel="nofollow">Mengembalikan Jati Diri Bangsa</a> please visit my <a rel="external" href="http://catatanblogger.info/464655-Mengembalikan-Jati-Diri-Bangsa.html" rel="nofollow">Mengembalikan Jati Diri Bangsa</a> pages. Thank you So much.</div>
+</div>
+</div>
+</div>
+ </div>
+
+  
+  <div class="post"> <div class="post-header">
+  
+    <h1 class="post-title">
+      <a href="/blog/2007/10/15/build-systems/">Build Systems</a>
+    </h1>
+  
+  
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2007-10-15T19:50:00+01:00" pubdate data-updated="true">Oct 15<span>th</span>, 2007</time>
+</div>
+
+<div class="post-content"><div class='post'>
+I was setting up the Visual Studio build system to target not only multiple build types but multiple platforms.  This is the point I discovered hand editing the solution files is the only way to maintain consistency and accuracy of the builds.  This is because the ue interface provided is antiquated, a struggle, and worst of all, unpredictable.<br /><br />Build systems are really separated into two camps, text file based, or IDE based.  The text file based ones give you the most control and flexibility, but in this day and age it is a real shame that they are the most useful.  Also you may need an unknown macro language and will probably need to know every compiler setting that you want to set.  The IDE based ones tend to require manual intervention in some undocumented or badly documented file format. This immediately negates any advantage you previously had.<br /><br />I am amazed these parts of the IDE have been so neglected since without it you will not get predictable results.  You want easy ways to compare different configurations or projects to see if they are out of step.  There is also no way of batching changes to a set of projects (you can get some sort of batch changes with configurations although you are not really sure of what you are doing).<br /><br />Maybe there is a better way?  I don&#8217;t know what else there is out there apart from premake systems (eg, CMake, Premake), script based build systems (eg, make, Boost.Build), and IDE based systems (Visual Studio et al).   You almost want the equivalent of the Apple stye reimagining for debugging/profiling like <a href="http://www.apple.com/macosx/leopard/developer/xray.html">XRay in the upcoming OS X Leopard</a>.<br /><br />One of the things I am dead proud of recently is the one touch build release kit from within the Visual Studio IDE.  This means you just need to hit build and at the end you get an installer exe with no need for any jumping through hoops.  It would be nice if you didn&#8217;t need really work hard to get to that stage.</div>
+</div>
+ </div>
+
+  
+  <div class="post"> <div class="post-header">
+  
+    <h1 class="post-title">
+      <a href="/blog/2007/10/14/c-and-64-bits/">C++ and 64-bits</a>
+    </h1>
+  
+  
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2007-10-14T22:01:00+01:00" pubdate data-updated="true">Oct 14<span>th</span>, 2007</time>
+</div>
+
+<div class="post-content"><div class='post'>
+When pursuing the development of a 64-bit native program you realise that everything is not what you thought it was.  Somehow I had convinced myself of the wrong sizes for the built in types.  This wasn&#8217;t due to ignorance but due to the plethora of 64-bit implementations.<br /><br />I&#8217;d somehow convinced myself the data model I was programming to was ILP64, but for Windows as it turns out uses LLP64.  Normally you don&#8217;t discover it until you get to the point your program collapses in a heap under heavy load.<br /><br />Here are some relevant articles <a href="http://www.gamedev.net/reference/articles/article2419.asp">here</a>, <a href="http://developer.apple.com/documentation/Darwin/Conceptual/64bitPorting/transition/chapter_3_section_5.html">here</a>, <a href="http://www.codeproject.com/useritems/Test_64-bit_applications.asp">here</a>, and <a href="http://www.codeproject.com/useritems/20ISSUES64BIT.asp">here</a>.  The good thing is if you statically check your code with something like Lint pretty strictly a lot of the problems you would normally encounter don&#8217;t exist.<br /><br />For the data models have a look at this <a href="http://www.gamedev.net/reference/articles/article2419.asp">article</a>.  For some reason the table won&#8217;t display correctly in my blog.</div>
+</div>
+ </div>
+
+  
+  <div class="post"> <div class="post-header">
+  
+    <h1 class="post-title">
+      <a href="/blog/2007/10/14/complete-insanity-in-world-of-computing/">Complete Insanity in the World of Computing</a>
+    </h1>
+  
+  
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2007-10-14T21:30:00+01:00" pubdate data-updated="true">Oct 14<span>th</span>, 2007</time>
+</div>
+
+<div class="post-content"><div class='post'>
+And now for something completely different&#8230;<br /><br />I thought I would share some of the more insane things I have heard in the world of computing.<br /><br /><span style="font-weight:bold;">No Source Control</span><br /><br />It&#8217;s amazing to think that a company can get away without source control, let alone a company supplying closed-source library functionality.  This meant that regressions happened at an alarming rate and a bugfix could result in previous bugfixes being undone.  The &#8220;repository&#8221; was a copy of the source code on a server and developers would copy the files to their computer, edit them, and then copy the changed files back to the server.<br /><br /><span style="font-weight:bold;">C# Developers Must Be Expensive</span><br /><br />To make it easier to maintain a product when it is written in C# but you have lots of Visual Basic developers, convert the product to VB&#8230;  This was apparently done by taking the semi-colons off of the end of the lines then compiling to see where the errors are.<br /><br />It seems to me that the process is completely insane and devoid of any merit.  First you do not understand the code, this will adversely effect bugfixing.  I am sure that the fallout from that kind of development will be felt for years.<br /><br /><span style="font-weight:bold;">Visual Sourcesafe Is Fine</span><br /><br />It&#8217;s easiest to witness the insanity of using Visual Sourcesafe from the sane world of proper revision control systems.  Sourcesafe does not give any data integrity, can lose stuff, is impossible to script in any meaningful fashion, has a terrible architecture, and more&#8230;<br /><br />I am talking about v6.0 and older here (I have no idea about the package that has inherited the name).<br /><br />I see things like source control as integral to the development experience and productivity of your team.<br /><br /><span style="font-weight:bold;">The Phantom Build System</span><br /><br />A developer on their own work computer has the only scripts that run the build kit.  Once that person leaves noone can do it and there is nothing to reverse engineer from.  It then takes perseverance and a small amount of brilliance to get to a working release installation kit.<br /><br />EVERYTHING to build your program should be well documented and under source control as much as possible.  It should be able to be run from any computer following the written instructions.</div>
+</div>
+ </div>
+
+  
+  <div class="post"> <div class="post-header">
+  
+    <h1 class="post-title">
+      <a href="/blog/2007/10/13/spa-cambridge-talk-test-drive/">SPA Cambridge Talk - Test Driven Development</a>
+    </h1>
+  
+  
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2007-10-13T10:27:00+01:00" pubdate data-updated="true">Oct 13<span>th</span>, 2007</time>
+</div>
+
+<div class="post-content"><div class='post'>
+After an extended summer break the <a href="http://www.bcs-spa.org/cgi-bin/view/SPA/SpaCambridge">SPA Cambridge talks</a> are back.  A change of venue to Anglia Ruskin University has now happened which is much better due to close vicinity to many pubs which was a problem with the Microsoft Research venue.  Thee events are organised by Mark Dalgarno and you can <a href="http://blog.software-acumen.com/">read his blog here</a>.<br /><br />This month&#8217;s talk was about Test Driven Development by Ivan Moore.  It was an interactive session requiring a laptop and Eclipse.  Unfortunately I discovered I must have the only copy of Eclipse in existence not set up for Java development (I have used it for Python and C/C++) a bit too late to rectify that.<br /><br />The exercise was to solve a blocks world problem with test driven development.  We used Java and JMock for this.  I also got to show my Java ineptitude since I haven&#8217;t used it for 7 years properly, so I was learning on the fly.  To be honest now I go back to Java it is a lot more inelegant than I remember.  At least after all that I managed to get the tests to pass&#8230;<br /><br />The interactive sessions are a bit more fun when you are sharing a computer, especially when all three of us huddled around it have very little practical Java experience.<br /><br />The next <a href="http://www.bcs-spa.org/cgi-bin/view/SPA/SpaCambridge">talk will be from Ian Griffiths about WPF</a> (Windows Presentation Foundation) on the 14th November.</div>
+</div>
+ </div>
+
+  
+  <div class="post"> <div class="post-header">
+  
+    <h1 class="post-title">
+      <a href="/blog/2007/10/13/accu-cambridge-talk-closing-case-for/">ACCU Cambridge Talk - Closing the Case for Groovy</a>
+    </h1>
+  
+  
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2007-10-13T10:16:00+01:00" pubdate data-updated="true">Oct 13<span>th</span>, 2007</time>
+</div>
+
+<div class="post-content"><div class='post'>
+Two weeks ago I attended the latest <a href="http://www.accu.org/index.php/accu_branches/accu_cambridge">ACCU Cambridge meeting</a> called Closing The Case For Groovy presented by Russel Winder.  It was very kindly hosted by <a href="http://www.displaylink.com/">Displaylink</a> again.<br /><br />This talk was about dynamic languages concentrating mainly on <a href="http://groovy.codehaus.org/">Groovy</a>.  It is a dynamic language which is compiled into JVM bytecode meaning it can interact very nicely with Java.  What was particularly refreshing about his talk was Russel not talking about language wars but how they can cooperate together.  Overall the talk was entertaining and informative especially from the point of <a href="http://en.wikipedia.org/wiki/Closure_(computer_science)">Closures</a> which I really needed to learn about.<br /><br />Obviously the pub visit afterwards was essential.<br /><br />The next talk will be on Thursday 1st November by Allan Kelly.  If you like technology and development and live in or around Cambridge then these talks are essential.</div>
+</div>
+ </div>
+
+  
+  <div class="post"> <div class="post-header">
+  
+    <h1 class="post-title">
+      <a href="/blog/2007/10/13/virtualisation-understanding/">Virtualisation - an Understanding</a>
+    </h1>
+  
+  
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2007-10-13T09:37:00+01:00" pubdate data-updated="true">Oct 13<span>th</span>, 2007</time>
+</div>
+
+<div class="post-content"><div class='post'>
+It&#8217;s amazing how many mistakes it is possible to make when attempting to understand a concept.  Up until a couple of weeks ago I had some misconceptions about virtualisation.  I&#8217;ve used it through VMWare and have viewed it as a way to have a virtual layer on top of your processor.<br /><br />Then some concepts coalesced from various articles I was reading.<br /><br />Virtualisation is the abstraction of resources away from their use.  At the moment the most common use of virtualisation would be memory.  You get a virtual address space from your operating system - this can be mad up of RAM, ROM, cache, hard drive, flash memory, and probably more.  You don&#8217;t know what you are accessing but the virtualisation of those resources and their access makes it easy to use.<br /><br />One of the catalysts for my understanding was iD Software new iD Tech 5.  There was mention of Megtexture which was texture virtualisation allowing the use of massive amounts of textures for the rendering.  This would no doubt be a way of not needing to know about the basic building blocks of the textures, but to use them through a virtualised interface.<br /><br />Then this comes to the processor virtualisation.  My misconception was because of the examples I had seen from Parallels and VMWare.  It allows you to run multiple computers on a single processor.  But what processor virtualisation should do is abstract away the processor resources allowing the program to run.  This would mean that you would not care about multiple cores or even computers, you could in their run one virtual machine which has a backend of a massive cluster of computers.  I don&#8217;t know if this is the case yet as when you do parallel processing you still nee to know too much about the parallelism in order to develop a solution but I imagine some solutions must be able to do it.</div>
+</div>
+ </div>
+
+  
+  <div class="post"> <div class="post-header">
+  
+    <h1 class="post-title">
+      <a href="/blog/2007/10/03/gui-toolkits-mfc-v9-visual-studio-2008/">GUI Toolkits - MFC V9 - Visual Studio 2008</a>
+    </h1>
+  
+  
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2007-10-03T19:45:00+01:00" pubdate data-updated="true">Oct 3<span>rd</span>, 2007</time>
+</div>
+
+<div class="post-content"><div class='post'>
+This is a sad thing to get me excited but Microsoft seems to have been keeping something up its sleeve for Visual Studio 2008.  Normally nothing is a surprise with Microsoft and I had assumed that we had seen all we would from VS2008 in the latest beta.<br /><br />As it turns out they have a massive update for MFC dropping for Visual Studio 2008.  It had been alluded to <a href="http://blogs.msdn.com/somasegar/archive/2007/08/08/visual-c-futures.aspx">here</a> and <a href="http://herbsutter.spaces.live.com/blog/cns%212D4327CC297151BB%21278.entry">by Herb Sutter here</a>.  I assumed that we would have to wait for the version after VS2008 since the beta was largely the same as VS2005.<br /><br />At Technet 2007 in Spain there is a talk:<br /><span style="font-style: italic;">Title/Code: TLA404 MFC Updates for Visual Studio 2008 and Beyond  <br /><br />Presenter: Ale Contenti  <br /><br />Abstract: This session will demonstrate the new features added to MFC in Visual Studio 2008, including support for Vista Common Dialogs, Vista Common Controls, the Microsoft Office 2007 Look and Feel (including support for an Office Ribbon style interface), Office and Visual Studio style Docking Toolbars and Tabbed Documents. We will also talk about our plans to evolve the MFC library for Visual C++ 10 and beyond. This is an in-depth session designed for experienced C++/MFC programmers. (C)   <br /></span><br /><br />Do a search for the speaker <a href="http://www.mseventseurope.com/OnlinePub/Public/sessions.aspx?EventId=HbLEvtKcPE4%3d">here</a>.<br /><br />So it looks like the people using MFC will be getting some very powerful UI features as standard.  I&#8217;m not so bothered about Vista standard controls but more powerful docking would be very nice and would go hand in hand with tabbed document interfaces.  The most exciting part is the Office 2007 look &#8216;n&#8217; feel along with the ribbon user interface (is it RibbonBar? I don&#8217;t know&#8230;).  I guess we will find out more in November but this is good news for people maintaining MFC systems.</div>
+</div>
+ </div>
+
+
+<div id="pagination">
+  
+    <a class="prev" href="/blog/page/29/">&laquo;Previous</a>
+  
+  
+    <a class="next" href="/blog/page/27/">Next&raquo;</a>
+  
+</div>
+ </div>
+    <div id="footer">
+  <div class="panels">
+    <div class="license">
+      <h2>License</h2>
+      <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-nc-sa/3.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/">Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License</a>.
+    </div>
+
+    <div class="posts">
+      <h2>Recent Posts</h2>
+      <ul>
+        
+          <li>
+            <a href="/blog/2013/06/18/new-location-and-new-blog-engine-and-old-content-restored/">New Location &amp; New Blog Engine &amp; Old Content Restored</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2013/06/13/joining-microsoft/">Joining Microsoft</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2013/06/13/leaving-bromium/">Leaving Bromium</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2013/03/05/philip-su-engineering-process-and/">Philip Su - Engineering Process And Philosophy At Facebook</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2013/03/05/more-creator-owned-comics-genocide/">More Creator-Owned Comics - Genocide: Duostar</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  <p class="powered">
+    Powered by <a href="http://octopress.org">Octopress</a> and <a href="https://github.com/iwinux/compbits">Compbits</a>
+  </p>
+</div>
+
+  </div> <!-- #wrapper end -->
+
+  
+
+  
+
+
+  
+
+  
+
+  
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+</body>
+</html>
