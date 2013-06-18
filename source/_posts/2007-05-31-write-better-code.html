@@ -1,0 +1,19 @@
+---
+layout: post
+title: "Write better code"
+date: 2007-05-31T19:50:00+00:00
+categories:
+ - Development
+alias: /2007/05/write-better-code.html
+---
+
+<div class='post'>
+There is an interesting talk on Slashdot about coding <a href="http://developers.slashdot.org/developers/07/05/30/1813247.shtml">here</a>.  It's good to see that there is still occasionally some discussions about programming on there.<br /><br />The article is about <a href="http://www.ibm.com/developerworks/linux/library/l-clear-code/?ca=dgr-FClnxw01linuxcodetips">Six Ways To Write More Comprehensible Code</a>.  It makes size points:<br /><ol><li>Comment well and often.</li><li>Use sensible names not obscure constants.</li><li>Use variables with descriptive names.</li><li>Do error checking.</li><li><a name="N101BF"><span class="atitle">"Premature optimization is the         root of all evil." - Donald Knuth</span></a></li><li><a name="N101BF">Don't be too clever.</a></li></ol><br /><br />The article is a nice little bit about writing better code.  Personally I rate number 5 very highly, in fact I should write an article about writing better code from my point of view.</div>
+<h2>Comments</h2>
+<div class='comments'>
+<div class='comment'>
+<div class='author'>goatchurch</div>
+<div class='content'>
+ditto that on number 5.  <BR/><BR/>"comment well" is a bit of a tautology.  It's like saying: <BR/><BR/>"Rule 1 for writing good code is to write good code!"<BR/><BR/>I've heard it said that comments are a crutch and a sign that you aren't applying rules 2 and 3 properly.  Often we stick comments above distinct chunks or paragraphs of code.  This style recommends you split each paragraph into a little function of its own with a descriptive name.  <BR/><BR/>I also want it to be understood that not all variables are the same.  Often variables are structural -- created on one line and passed as an argument on the next.  It's a distraction to give them descriptive names.  They act as pronouns.  Like using "she" instead of repeating the name in the next sentence.</div>
+</div>
+</div>

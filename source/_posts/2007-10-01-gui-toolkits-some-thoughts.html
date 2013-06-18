@@ -1,0 +1,30 @@
+---
+layout: post
+title: "GUI Toolkits - Some thoughts"
+date: 2007-10-01T18:57:00+00:00
+categories:
+ - Toolkits
+ - GUI
+alias: /2007/10/gui-toolkits-some-thoughts.html
+---
+
+<div class='post'>
+I mentioned a couple of posts back that I was going to put some thought into GUI subjects and maybe trying out writing a simple toolkit.<br /><br />I was thinking abut which way to jump with trying to write a toolkit.  First of all what should it be based on?  Should it just wrap Win32?  Cocoa?  Should it be entirely implemented on top of OpenGL from scratch?  Should it be cross-platform in design?  Just these questions could cause anyone to run away screaming.<br /><br />Thinking about building it on top of OpenGL I encountered a couple of interesting GUI libraries <a href="http://glui.sourceforge.net/">GLUI</a> and <a href="http://glow.sourceforge.net/">GLOW</a>.  In these projects the windows are completely rendered by OpenGL which is an interesting approach.  I suppose <a href="http://www.rawmaterialsoftware.com/juce/">Juce</a> is built from similar roots as well where it implements its own toolkits.<br /><br />I was thinking about writing a nice C++ wrapper for Win32 but then I started to think even Microsoft products don't use the standard widget rendering.  Then you start to think about built in custom drawn widget rendering, then you think why are you using standard widgets...<br /><br />The whole idea about implementing a simple GUI toolkit is an education about the design decisions and pitfalls that you can get into.  You also need to decide which subset you decide to implement first.  The problem is most toolkits go for the same 10% and that is normally as far as they get.<br /><br />The main idea I want to try out for an experimental GUI toolkit is some DSL (domain specific language).  What I mean is embedding a language in C++ in order to implement the user interface in a readable fashion.  It is certainly possible using modern C++ idioms as demonstrated in Boost.  I suppose the type of thing I want to do is (in some kid of C++ like pseudo code):<br /><pre><br />dialog(...) +<br />widget<static>("Number", sizeX, sizeY) | widget<edit>(RESIZE_X) ||<br />widget<static>("Name", sizeX, sizeY)   | widget<edit>(RESIZE_X) ||<br />widget<list>("Blah", sizeX, sizeY, RESIZE_XY)<br />;<br />toolbar() +<br />button("image1", ...) |<br />button("image2", ...) |<br />separator() |<br />button("image3", ...) |<br />button("image4", ...)<br />;<br /></pre><br />Complete and utter insanity?  Probably, but could be fun to try out.  It would certainly be something different and would create a parallel in your source in comparison to what you would see on screen.  I don't think anything quit like it has been tried before, so feel free to steal the idea - it would save me implementing it(!)<br /><br />Enough rambling for today I think...</div>
+<h2>Comments</h2>
+<div class='comments'>
+<div class='comment'>
+<div class='author'>Adi</div>
+<div class='content'>
+<a rel="external" href="http://orientinspiration.com/2009/09/oes-tsetnoc.html" rel="nofollow">Oes  Tsetnoc</a> one of the ways in which we can learn seo besides <a rel="external" href="http://duniasoer.com/archives/mengembalikan-jati-diri-bangsa.html" rel="nofollow">Mengembalikan Jati Diri Bangsa</a>.  By participating in the <a rel="external" href="http://mncmakina.com/2009/09/oes-tsetnoc-seo-contest/" rel="nofollow">Oes Tsetnoc</a> or <a rel="external" href="http://ulaznice.info/mengembalikan-jati-diri-bangsa.html" rel="nofollow">Mengembalikan Jati Diri Bangsa</a> we can improve our seo skills. To find more information about <a rel="external" href="http://catatanblogger.info/738688-Oes-Tsetnoc.html" rel="nofollow">Oest Tsetnoc</a> please visit my <a rel="external" href="http://kusukaseo.info/981750-Oes-Tsetnoc-Support.html" rel="nofollow">Oes Tsetnoc</a> pages. And to find more information about <a rel="external" href="http://duniasoer.com" rel="nofollow">Mengembalikan Jati Diri Bangsa</a> please visit my <a rel="external" href="http://catatanblogger.info/464655-Mengembalikan-Jati-Diri-Bangsa.html" rel="nofollow">Mengembalikan Jati Diri Bangsa</a> pages. Thank you So much.<br> <a rel="external" href="http://orientinspiration.com" rel="nofollow">Oes  Tsetnoc</a> | <a rel="external" href="http://duniasoer.com/archives/semangat-mengembalikan-jati-diri-bangsa.html" rel="nofollow">Semangat Mengembalikan Jati Diri Bangsa</a></div>
+</div>
+<div class='comment'>
+<div class='author'>Garry Bodsworth</div>
+<div class='content'>
+Hi Mark,<BR/><BR/>That looks realy interesting.<BR/><BR/>Thanks,<BR/>Garry</div>
+</div>
+<div class='comment'>
+<div class='author'>Mark Dalgarno</div>
+<div class='content'>
+"The main idea I want to try out for an experimental GUI toolkit is some DSL (domain specific language)."<BR/><BR/>Hi Gary,<BR/><BR/>Don't know if it'll help but one of the speakers at my Code Generation 2007 conference ran a tutorial on Code Generation from Conceptual User Interface Patterns.<BR/><BR/>The PDF is available here:<BR/>http://www.codegeneration.net/cg2007/sessions/slides/CGfromCUIP.pdf and I can put you in touch with the speaker if you like.<BR/><BR/>Regards,<BR/>Mark Dalgarno<BR/><BR/>Writing (mainly) about software at The Variation Point:<BR/>http://blog.software-acumen.com/</div>
+</div>
+</div>

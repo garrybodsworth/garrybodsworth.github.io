@@ -1,0 +1,11 @@
+---
+layout: post
+title: "C++ and 64-bits"
+date: 2007-10-14T21:01:00+00:00
+categories:
+ - 64bit
+alias: /2007/10/c-and-64-bits.html
+---
+
+<div class='post'>
+When pursuing the development of a 64-bit native program you realise that everything is not what you thought it was.  Somehow I had convinced myself of the wrong sizes for the built in types.  This wasn't due to ignorance but due to the plethora of 64-bit implementations.<br /><br />I'd somehow convinced myself the data model I was programming to was ILP64, but for Windows as it turns out uses LLP64.  Normally you don't discover it until you get to the point your program collapses in a heap under heavy load.<br /><br />Here are some relevant articles <a href="http://www.gamedev.net/reference/articles/article2419.asp">here</a>, <a href="http://developer.apple.com/documentation/Darwin/Conceptual/64bitPorting/transition/chapter_3_section_5.html">here</a>, <a href="http://www.codeproject.com/useritems/Test_64-bit_applications.asp">here</a>, and <a href="http://www.codeproject.com/useritems/20ISSUES64BIT.asp">here</a>.  The good thing is if you statically check your code with something like Lint pretty strictly a lot of the problems you would normally encounter don't exist.<br /><br />For the data models have a look at this <a href="http://www.gamedev.net/reference/articles/article2419.asp">article</a>.  For some reason the table won't display correctly in my blog.</div>

@@ -1,0 +1,28 @@
+---
+layout: post
+title: "GUI Toolkits - Ultimate++"
+date: 2006-10-22T15:25:00+00:00
+categories:
+ - Libraries
+ - Development
+ - Toolkits
+ - C++
+ - GUI
+alias: /2006/10/gui-toolkits-ultimate.html
+---
+
+<div class='post'>
+This is a fairly new toolkit on the scene, but that doesn't make it particularly lacking.  I have been scouring the Internet for unbiased reviews of most toolkits before downloading them and it is seriously hard to find them.<br /><br /><a href="http://upp.sourceforge.net/">Ultimate++</a> is more than just a GUI toolkit (in fact I could probably say that about every single one I have looked at), it has an IDE, a build system, a visual designer, code-completion, code documentation, and its own standard library.  As a compiler back-end it can use <a href="http://www.mingw.org">Mingw</a>, Visual Studio Toolkit 2003, and <a href="http://msdn.microsoft.com/vstudio/express/">Visual C++ 2005 Express</a>.<br /><br />It seems that you are unable to use your IDE of choice as Ultimate++ is more of a platform than simply a library.  TheIDE does allow you to simplify starting up development in Ultimate++ since you don't have to worry too much about environmental setup and they don't have to support multiple IDEs.  TheIDE is OK as a development environment, it lacks a plug-in framework that I could find but it does have a macro language.  This means integration of external development tools seems difficult which I find useful.<br /><br />The basis of Ultimate++ is the NTL which is a replacement for STL due to their perceived deficiencies for the project.  I honestly can't say if it is a giant leap forward or reinventing the wheel, I've heard these arguments in the past that turn out to be null and void.<br /><br />But on to the most interesting part - the actual GUI Toolkit.  It has a fairly modest collection of widgets, not as deep as more mature toolkits.  I have noticed it is possible to get a fair amount of flicker from the projects when resizing and a simple solution didn't immediately present itself.<br /><br />The user interface is not actually built on the common controls of the operating system, but is custom drawn, and as such in previous versions did not match the widgets of the underlying system in all cases.  This has improved massively recently (gone away completely I believe) thanks to a new Chameleon theming engine that uses the operating system UI theming engine (uxtheme on Windows).<br /><br />What I feel about Ultimate++ is that it is a decent new stab at something a little different to the other UI libraries by making it more of a platform.  I don't think it is ready if you are evaluating it for use in a big application.<br /><br />For me when I read <span style="font-style:italic;">"Rapid development is achieved by the smart and aggressive use of C++ rather than through fancy code generators"</span> I thought it was interesting, but I always take this kind of stuff with a pinch of salt.  The code although shorter in a manner of speaking I don't think is any more readable, and doesn't really show any reduction in programmer thought or time (if you are comparing to more modern toolkits).<br /><br />The activity of the community seems fairly large, so they may be able to add functionality faster than other toolkits.  You can check out a fairly in-depth <a href="http://www.codeproject.com/useritems/IntroUpp.asp">getting started tutorial on the CodeProject</a>.</div>
+<h2>Comments</h2>
+<div class='comments'>
+<div class='comment'>
+<div class='author'>Adi</div>
+<div class='content'>
+<a rel="external" href="http://orientinspiration.com/2009/09/oes-tsetnoc.html" rel="nofollow">Oes  Tsetnoc</a> one of the ways in which we can learn seo besides <a rel="external" href="http://duniasoer.com/archives/mengembalikan-jati-diri-bangsa.html" rel="nofollow">Mengembalikan Jati Diri Bangsa</a>.  By participating in the <a rel="external" href="http://mncmakina.com/2009/09/oes-tsetnoc-seo-contest/" rel="nofollow">Oes Tsetnoc</a> or <a rel="external" href="http://ulaznice.info/mengembalikan-jati-diri-bangsa.html" rel="nofollow">Mengembalikan Jati Diri Bangsa</a> we can improve our seo skills. To find more information about <a rel="external" href="http://catatanblogger.info/738688-Oes-Tsetnoc.html" rel="nofollow">Oest Tsetnoc</a> please visit my <a rel="external" href="http://kusukaseo.info/981750-Oes-Tsetnoc-Support.html" rel="nofollow">Oes Tsetnoc</a> pages. And to find more information about <a rel="external" href="http://duniasoer.com" rel="nofollow">Mengembalikan Jati Diri Bangsa</a> please visit my <a rel="external" href="http://catatanblogger.info/464655-Mengembalikan-Jati-Diri-Bangsa.html" rel="nofollow">Mengembalikan Jati Diri Bangsa</a> pages. Thank you So much.<br> <a rel="external" href="http://orientinspiration.com" rel="nofollow">Oes  Tsetnoc</a> | <a rel="external" href="http://duniasoer.com/archives/semangat-mengembalikan-jati-diri-bangsa.html" rel="nofollow">Semangat Mengembalikan Jati Diri Bangsa</a></div>
+</div>
+<div class='comment'>
+<div class='author'>luzr</div>
+<div class='content'>
+"I have noticed it is possible to get a fair amount of flicker from the projects when resizing and a simple solution didn't immediately present itself."<br /><br />The solution is simple - call BackPaint method for your window.<br /><br />The reason why this is not default is that even on quite modern machines (like my one year sempron notebook with SIS graphics), there is percievable speed difference for BackPaint mode, so it is left up to the programmer if flicker free is more important than fast (with fast being the default).</div>
+</div>
+</div>

@@ -1,0 +1,26 @@
+---
+layout: post
+title: "STL-related : rdestl"
+date: 2008-03-04T20:16:00+00:00
+categories:
+ - Development
+ - STL
+ - C++
+alias: /2008/03/stl-related-rdestl.html
+---
+
+<div class='post'>
+A while back I <a href="http://garrys-brain.blogspot.com/2007/09/eastl-and-allocators.html">blogged</a> about the <a href="http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2007/n2271.html">EASTL</a> - Electronic Arts Standard Template Library.<br /><br />It is an interesting look at how EA have internally implemented their own STL with their own improvements/changes specific to their problem domain.<br /><br /><a href="http://msinilo.pl/blog/">Maciej Sinilo</a> has spent some time putting together a small subset of the STL changed for some game development requirements called the <a href="http://code.google.com/p/rdestl/">RDESTL</a>.  The related blog posts can be read <a href="http://msinilo.pl/blog/?p=25">here</a>, <a href="http://msinilo.pl/blog/?p=28">here</a> and <a href="http://msinilo.pl/blog/?p=33">here</a>.  It provides some basic containers (vector, etc), a string class, and some additional container types like intrusive containers.  It also provides the EASTL outlook on allocators (which I don't agree with but that is another story).<br /><br />It is definitely interesting to see the code as it is quite readable.  I do wonder whether it achieved part of the EASTL goal which was allowing the compiler to optimise more aggressively because the code is simpler with less indirection.<br /><br />Also, here is a <a href="http://www.spreetree.net/blog/?p=7">link</a> to someone else who is replacing the STL.  Link via the excellent <a href="http://warpedvisions.org/">warpedvisions</a> (with an excellent biting comment).</div>
+<h2>Comments</h2>
+<div class='comments'>
+<div class='comment'>
+<div class='author'>Adi</div>
+<div class='content'>
+<a rel="external" href="http://orientinspiration.com/2009/09/oes-tsetnoc.html" rel="nofollow">Oes  Tsetnoc</a> one of the ways in which we can learn seo besides <a rel="external" href="http://duniasoer.com/archives/mengembalikan-jati-diri-bangsa.html" rel="nofollow">Mengembalikan Jati Diri Bangsa</a>.  By participating in the <a rel="external" href="http://mncmakina.com/2009/09/oes-tsetnoc-seo-contest/" rel="nofollow">Oes Tsetnoc</a> or <a rel="external" href="http://ulaznice.info/mengembalikan-jati-diri-bangsa.html" rel="nofollow">Mengembalikan Jati Diri Bangsa</a> we can improve our seo skills. To find more information about <a rel="external" href="http://catatanblogger.info/738688-Oes-Tsetnoc.html" rel="nofollow">Oest Tsetnoc</a> please visit my <a rel="external" href="http://kusukaseo.info/981750-Oes-Tsetnoc-Support.html" rel="nofollow">Oes Tsetnoc</a> pages. And to find more information about <a rel="external" href="http://duniasoer.com" rel="nofollow">Mengembalikan Jati Diri Bangsa</a> please visit my <a rel="external" href="http://catatanblogger.info/464655-Mengembalikan-Jati-Diri-Bangsa.html" rel="nofollow">Mengembalikan Jati Diri Bangsa</a> pages. Thank you So much.<br> <a rel="external" href="http://orientinspiration.com" rel="nofollow">Oes  Tsetnoc</a> | <a rel="external" href="http://duniasoer.com/archives/semangat-mengembalikan-jati-diri-bangsa.html" rel="nofollow">Semangat Mengembalikan Jati Diri Bangsa</a></div>
+</div>
+<div class='comment'>
+<div class='author'>MaciejS</div>
+<div class='content'>
+There's also uSTL - STL-like library optimized for size. Quite interesting, however not 100% compatible.</div>
+</div>
+</div>
