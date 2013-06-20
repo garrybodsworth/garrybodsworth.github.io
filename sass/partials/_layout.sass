@@ -28,27 +28,73 @@ body
     text-transform: uppercase
 
 #social-links
-  $social-link-width: 48px
-  $social-link-height: 49px
+  $social-link-width: 28px
+  $social-link-height: 28px
   $social-link-gap: 5px
   @extend .flat-list
   float: right
-  width: ($social-link-width + $social-link-gap) * 3
+  width: ($social-link-width + $social-link-gap) * 6
   li
     margin-right: $social-link-gap
     a
-      display: block
-      +replace-text("../images/icons.png", $social-link-width, $social-link-height)
-      &.github:hover
-        background-position: 0 (-$social-link-height)
-      &.feed
-        background-position: (-$social-link-width) 0
+      @include border-radius(50%)
+      @include inline-block
+      text-indent: -9999px
+      margin-right: 15px
+      opacity: 0.5
+      width: 28px
+      height: 28px
+      @include transition(0.3s)
+      &:hover
+        opacity: 1
+      &.facebook
+        background: image-url('social/facebook.png') center no-repeat #3B5998
+        border: 1px solid #3B5998
         &:hover
-          background-position: (-$social-link-width) (-$social-link-height)
+          border: 1px solid darken(#3B5998, 10%)
+      &.google
+        background: image-url('social/google.png') center no-repeat #C83D20
+        border: 1px solid #C83D20
+        &:hover
+          border: 1px solid darken(#C83D20, 10%)
       &.twitter
-        background-position: -($social-link-width * 2) 0
+        background: image-url('social/twitter.png') center no-repeat #55CFF8
+        border: 1px solid #55CFF8
         &:hover
-          background-position: -($social-link-width * 2) (-$social-link-height)
+          border: 1px solid darken(#55CFF8, 10%)
+      &.github
+        background: image-url('social/github.png') center no-repeat rgb(175,182,202)
+        border: 1px solid rgb(175,182,202)
+        &:hover
+          border: 1px solid darken(rgb(175,182,202), 10%)
+      &.coderwall
+        background: image-url('social/coderwall.png') center no-repeat #3E8DCC
+        border: 1px solid #3E8DCC
+        &:hover
+          border: 1px solid darken(#3E8DCC, 10%)
+      &.linkedin
+        background: image-url('social/linkedin.png') center no-repeat #005A87
+        border: 1px solid #005A87
+      &.pinterest
+        background: image-url('social/pinterest.png') center no-repeat rgb(190,64,55)
+        border: 1px solid rgb(190,64,55)
+        &:hover
+          border: 1px solid darken(rgb(190,64,55), 10%)
+      &.delicious
+        background: image-url('social/delicious.png') center no-repeat rgb(50,113,203)
+        border: 1px solid rgb(50,113,203)
+        &:hover
+          border: 1px solid darken(rgb(50,113,203), 10%)
+      &.pinboard
+        background: image-url('social/pinboard.png') center no-repeat rgb(0,102,200)
+        border: 1px solid rgb(58,114,159)
+        &:hover
+          border: 1px solid darken(rgb(0,102,255), 10%)
+      &.rss
+        background: image-url('social/rss.png') center no-repeat #EF7522
+        border: 1px solid #EF7522
+        &:hover
+          border: 1px solid darken(#EF7522, 10%)
 
 #nav
   @extend .flat-list

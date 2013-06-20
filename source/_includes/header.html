@@ -6,13 +6,34 @@
 </div>
 <ul id="social-links">
   {% if site.subscribe_rss %}
-    <li><a class="feed" href="{{ site.subscribe_rss }}" title="RSS">RSS</a></li>
+    <li><a class="rss" href="{{ site.subscribe_rss }}" title="RSS">RSS</a></li>
+  {% endif %}
+  {% if site.facebook_user %}
+    <li><a class="facebook" href="http://www.facebook.com/{{ site.facebook_user }}" title="Facebook">Facebook</a></li>
+  {% endif %}
+  {% if site.googleplus_user and site.googleplus_hidden == false %}
+    <li><a class="google" href="https://plus.google.com/{{ site.googleplus_user }}" rel="author" title="Google+">Google+</a></li>
   {% endif %}
   {% if site.twitter_user %}
     <li><a class="twitter" href="http://twitter.com/{{ site.twitter_user }}" title="Twitter">Twitter</a></li>
   {% endif %}
   {% if site.github_user %}
-    <li> <a class="github" href="https://github.com/{{ site.github_user }}" title="GitHub">GitHub</a> </li>
+    <li><a class="github" href="https://github.com/{{ site.github_user }}" title="GitHub">GitHub</a></li>
+  {% endif %}
+  {% if site.coderwall_user %}
+    <li><a class="coderwall" href="https://coderwall.com/{{ site.coderwall_user }}" title="Coderwall">Coderwall</a></li>
+  {% endif %}
+  {% if site.linkedin_user %}
+    <li><a class="linkedin" href="http://www.linkedin.com/in/{{ site.linkedin_user }}">LinkedIn</a></li>
+  {% endif %}
+  {% if site.pinterest_user %}
+    <li><a class="pinterest" href="https://pinterest.com/{{ site.pinterest_user }}" title="Pinterest">Pinterest</a></li>
+  {% endif %}
+  {% if site.delicious_user %}
+    <li><a class="delicious" href="http://delicious.com/{{ site.delicious_user }}" title="Delicious">Delicious</a></li>
+  {% endif %}
+  {% if site.pinboard_user %}
+    <li><a class="pinboard" href="https://pinboard.in/u:{{ site.pinboard_user }}" title="Pinboard">Pinboard</a></li>
   {% endif %}
 </ul>
 <div class="clear"></div>
