@@ -2351,12 +2351,18 @@
         <lastmod>2013-06-20T22:51:37+01:00</lastmod>
     </url>
     <url>
+        <loc>
+            http://www.fragmentedmemory.com/blog/2013/06/22/rss-feed-moved-to-http-slash-slash-www-dot-fragmentedmemory-dot-com-slash-feed-slash/
+        </loc>
+        <lastmod>2013-06-22T22:32:10+01:00</lastmod>
+    </url>
+    <url>
         <loc>http://www.fragmentedmemory.com/about/</loc>
         <lastmod>2013-06-20T22:51:37+01:00</lastmod>
     </url>
     <url>
         <loc>http://www.fragmentedmemory.com/blog/archives/</loc>
-        <lastmod>2013-06-20T22:51:37+01:00</lastmod>
+        <lastmod>2013-06-22T22:32:10+01:00</lastmod>
     </url>
     <url>
         <loc>http://www.fragmentedmemory.com/feed/index.xml</loc>
@@ -2364,7 +2370,7 @@
     </url>
     <url>
         <loc>http://www.fragmentedmemory.com/</loc>
-        <lastmod>2013-06-20T22:51:37+01:00</lastmod>
+        <lastmod>2013-06-22T22:32:10+01:00</lastmod>
     </url>
     <url>
         <loc>http://www.fragmentedmemory.com/robots.txt</loc>

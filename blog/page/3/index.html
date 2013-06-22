@@ -7,7 +7,7 @@
 
   <meta name="author" content="Garry Bodsworth">
   
-  <meta name="description" content="Pycon UK 2011 Aug 24th, 2011 Unfortunately I was unable to make it to EuroPython 2011 due to its location (no longer being in Birmingham).&nbsp; The &hellip;">
+  <meta name="description" content="Linux at 20 Aug 26th, 2011 If it didn&#8217;t exist I somehow think computing would be a much less fun place and I probably wouldn&#8217;t be able &hellip;">
   
   
 
@@ -61,6 +61,33 @@
 </ul>
 
     <div id="main"> 
+
+  
+  <div class="post"> <div class="post-header">
+  
+    <h1 class="post-title">
+      <a href="/blog/2011/08/26/linux-at-20/">Linux at 20</a>
+    </h1>
+  
+  
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-08-26T08:32:00+01:00" pubdate data-updated="true">Aug 26<span>th</span>, 2011</time>
+</div>
+
+<div class="post-content"><div class='post'>
+If it didn&#8217;t exist I somehow think computing would be a much less fun place and I probably wouldn&#8217;t be able to do my job so well.<br /><br /><a href="http://www.linuxfoundation.org/20th/">Linux Foundation</a><br /><a href="http://www.linuxfoundation.org/ 20th" target="_blank"><img src="http://www.linuxfoundation.org/ 20th/images/lf_linux20_webbadge.png" width="300" height="250" alt="I'll be celebrating 20 years of Linux with The Linux Foundation!" border="0"></a></div>
+</div>
+ </div>
 
   
   <div class="post"> <div class="post-header">
@@ -815,63 +842,6 @@ I did a talk about <a href="http://github.com/garrybodsworth/coda_network">coda_
 </div>
  </div>
 
-  
-  <div class="post"> <div class="post-header">
-  
-    <h1 class="post-title">
-      <a href="/blog/2010/07/11/virtual-on-screen-keyboards-on-linux/">Virtual On-Screen Keyboards on Linux</a>
-    </h1>
-  
-  
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2010-07-11T00:00:00+01:00" pubdate data-updated="true">Jul 11<span>th</span>, 2010</time>
-</div>
-
-<div class="post-content"><p>With a <a href="http://thejoojoo.com">tablet</a> awaiting a better operating system I decided I had to evaluate the landscape on on-screen virtual keyboards on Linux. Obviously the ideal would be iPad/iPhone-esque, but that would be really frighteningly good, I had much lower expectations.</p>
-
-<p>I was not sure if the tech was there to even show the keyboards automatically when an input field was selected. GTK are well ahead of the game on this with their IMContext base class to encapsulate input mainly for complex languages or disability accessibility, but a good side-effect is the ability to hook in an on-screen keyboard when a text input is focused. In that case the on-screen keyboard needs to know about GTK in order to know when to show.</p>
-
-<p>I tested all these on a VM that has now run out of hard disk space thanks to having to compile lots of stuff. Most of the keyboards I completely failed to make automatically appear on the screen when a text input was selected, it was either me or them&#8230;.</p>
-
-<p>So in no particular order&#8230;.</p>
-
-<p><a href="http://matchbox-project.org/?p=1">Matchbox Keyboard</a><br/>
-Some people are using this actively. It requires hacking to be able to toggle the display of it which makes it pretty much a no-go as it would always be on top of the screen. The GUI looks all right though. Some good info <a href="http://japiblog.dddgames.com/?p=15">here</a>.</p>
-
-<p><a href="http://homepage3.nifty.com/tsato/xvkbd/">xvkbd</a><br/>
-The venerable old man of the line up. It&#8217;s been around the block and does exactly what it says on the tin. It has lots of good features and hacks (like making it appear for login windows). As far as I could see I couldn&#8217;t hook it up to the IMContext but I could be missing something.</p>
-
-<p><a href="http://www.gok.ca/">Gnome On-Screen Keyboard</a><br/>
-The oldest GTK based one and seems to be showing its age thanks to the UI.</p>
-
-<p><a href="https://wiki.ubuntu.com/Accessibility/Projects/onBoard">onboard</a><br/>
-This is the Ubuntu one. I couldn&#8217;t get it to automatically appear on focus. It looks OK, but seems to be lacking some features. At least it is easily hackable in Python. Some more interesting information <a href="http://www.combibo.net/articles/using_an_onscreen_keyboard_in_ubuntu/">is here</a>.</p>
-
-<p><a href="http://florence.sourceforge.net/english.html">Florence</a><br/>
-This is the most recommended one and it is pretty good. The main pain was I had to compile it as their were no packages for it.</p>
-
-<p><a href="http://gitorious.org/fvkbd">fvkbd</a><br/>
-This looks fairly promising as it is very skinnable on configurable. Unfortunately I could not work out how to hide or autohide the keyboard. Also this had no packages and requires compiling. This provides the basis for the OLPC virtual keyboard test and also the Meego/Maemo virtual keyboard.</p>
-
-<p><a href="http://live.gnome.org/Caribou">Caribou</a><br/>
-This is the virtual keyboard testbed for Gnome 3.0. It is written in Python and needs packaging so I had to compile it. This was the one that got closest to what I want because it worked. It shows a small keyboard by the input with current focus. In my VM I had to disable the Clutter code for whizzy animations before getting it to work.</p>
-
-<p>I&#8217;ve probably missed some but there are only so many not quite ready applications you can test before going completely and utterly bonkers.</p>
-
-<p>Another thing I discovered was Google Chromium&#8217;s addressbar is accessibility implemented, but none of the content in webpages is. Firefox on the other hand and anything WebkitGTK based (like Epiphany) all work properly with their accessibility. Part of the Chrome problem is the multiprocess rendering and that they have not prioritised accessibility according the bug reports I have read.</p>
-</div>
- </div>
-
 
 <div id="pagination">
   
@@ -894,6 +864,10 @@ This is the virtual keyboard testbed for Gnome 3.0. It is written in Python and 
       <ul>
         
           <li>
+            <a href="/blog/2013/06/22/rss-feed-moved-to-http-slash-slash-www-dot-fragmentedmemory-dot-com-slash-feed-slash/">RSS Feed Moved To http://www.fragmentedmemory.com/feed/</a>
+          </li>
+        
+          <li>
             <a href="/blog/2013/06/18/new-location-and-new-blog-engine-and-old-content-restored/">New Location &amp; New Blog Engine &amp; Old Content Restored</a>
           </li>
         
@@ -907,10 +881,6 @@ This is the virtual keyboard testbed for Gnome 3.0. It is written in Python and 
         
           <li>
             <a href="/blog/2013/03/05/philip-su-engineering-process-and/">Philip Su - Engineering Process And Philosophy At Facebook</a>
-          </li>
-        
-          <li>
-            <a href="/blog/2013/03/05/more-creator-owned-comics-genocide/">More Creator-Owned Comics - Genocide: Duostar</a>
           </li>
         
       </ul>

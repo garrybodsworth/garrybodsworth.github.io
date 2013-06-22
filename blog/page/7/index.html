@@ -7,7 +7,7 @@
 
   <meta name="author" content="Garry Bodsworth">
   
-  <meta name="description" content="How to Install the Latest Intel Drivers on Ubuntu Jun 20th, 2009 This is a fairly painless process to get the latest and greatest drivers for Intel &hellip;">
+  <meta name="description" content="Installing the Latest Intel Drivers &#8211; the Kernel Jun 21st, 2009 So installing the drivers, latest X-server, mesa and so on is only part of the &hellip;">
   
   
 
@@ -61,6 +61,55 @@
 </ul>
 
     <div id="main"> 
+
+  
+  <div class="post"> <div class="post-header">
+  
+    <h1 class="post-title">
+      <a href="/blog/2009/06/21/installing-the-latest-intel-drivers-the-kernel/">Installing the Latest Intel Drivers &#8211; the Kernel</a>
+    </h1>
+  
+  
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2009-06-21T00:00:00+01:00" pubdate data-updated="true">Jun 21<span>st</span>, 2009</time>
+</div>
+
+<div class="post-content"><p>So installing the drivers, latest X-server, mesa and so on is only part of the puzzle to use the latest Intel graphics drivers. You also need to update your kernel for more features like better kernel memory management, kernel mode switching, and other basic things. The driver can work (for differing levels of working) for older kernels, but the bugfixes tend to be on the latest version. I have tried this on an Intel 945GM.</p>
+
+<p>So this is how you update your kernel for Jaunty (and other Ubuntus would probably work). A really handy repository of kernels is maintained by Ubuntu called <a href="http://kernel.ubuntu.com/~kernel-ppa/mainline/">Mainline PPA</a> where you can download pretty much any version of the kernel.</p>
+
+<p>So for kernel 2.6.30 you need to download the following file : <a href="http://kernel.ubuntu.com/~kernel-ppa/mainline/v2.6.30/linux-image-2.6.30-020630-generic_2.6.30-020630_i386.deb">linux-image-2.6.30-020630-generic_2.6.30-020630_i386.deb</a><br/>
+You need to install this by calling:<pre colla="+" lang=”Bash”> sudo dpkg -i linux-image-2.6.30-020630-generic_2.6.30-020630_i386.deb </pre></p>
+
+<p>As part of the install it should have run update-grub. If not run <strong>sudo update-grub</strong></p>
+
+<p>To get kernel modesetting working as well as fixing a couple of minor issues you need to edit the file <strong>/boot/grub/menu.lst</strong> for some extra parameters. You need to edit the line that looks like:</p>
+
+<pre colla="+" lang="Bash">kernel      /vmlinuz-2.6.30-020630-generic root=/dev/sda7 ro 
+</pre>
+
+
+<p>And add the following between &#8220;generic&#8221; and &#8220;root&#8221;:</p>
+
+<pre colla="+" lang="Bash">nopat enable_mtrr_cleanup i915.modeset=1
+</pre>
+
+
+<p>The first two sort out some hardware bugs on the Intel 945 depending on the hardware platform which can vary. Acer Aspire Ones don&#8217;t necessarily have the same mtrr bugs as MSI Winds and so on. The modeset parameter switches on kernel modesetting which you will hopefully not notice many changes with.</p>
+
+<p>I did find kernel modesetting played a lot better running X without any monitor connected and dealt with a lot of odd mode issues.</p>
+</div>
+ </div>
 
   
   <div class="post"> <div class="post-header">
@@ -362,38 +411,6 @@
 </div>
  </div>
 
-  
-  <div class="post"> <div class="post-header">
-  
-    <h1 class="post-title">
-      <a href="/blog/2009/05/16/displaylink-open-source/">DisplayLink Open Source</a>
-    </h1>
-  
-  
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2009-05-16T00:00:00+01:00" pubdate data-updated="true">May 16<span>th</span>, 2009</time>
-</div>
-
-<div class="post-content"><p>Yesterday <a href="http://www.displaylink.com">Displaylink</a> released Linux source code for its USB display adapters. The project is LGPL and available on <a href="http://freedesktop.org">FreeDesktop</a>. The project itself is called libdlo and is available from <a href="http://freedesktop.org/wiki/Software/libdlo">this link</a> with the Git repository <a href="http://cgit.freedesktop.org/libdlo/">here</a>. You can see DisplayLink&#8217;s announcement <a href="http://www.displaylink.com/news/news150509.htm">here</a>.</p>
-
-<p>At the moment it is a low-level library for speaking to the device and is not yet wrapped in a Xorg driver. The code itself supports ASIC devices and only the USB versions (if that means something to you then you have probably worked for DisplayLink at some point).</p>
-
-<p>The code itself is impressively documented, and means people should be able to get something up and running pretty fast. I&#8217;m sure some interesting and exciting projects will come out of this.</p>
-
-<p>Well done to DisplayLink on doing this &#8211; this is going to be a really good thing for getting content onto displays. USB is a really good solution &#8211; imagine daisy-chaining lots of displays controlled by a single computer.</p>
-</div>
- </div>
-
 
 <div id="pagination">
   
@@ -416,6 +433,10 @@
       <ul>
         
           <li>
+            <a href="/blog/2013/06/22/rss-feed-moved-to-http-slash-slash-www-dot-fragmentedmemory-dot-com-slash-feed-slash/">RSS Feed Moved To http://www.fragmentedmemory.com/feed/</a>
+          </li>
+        
+          <li>
             <a href="/blog/2013/06/18/new-location-and-new-blog-engine-and-old-content-restored/">New Location &amp; New Blog Engine &amp; Old Content Restored</a>
           </li>
         
@@ -429,10 +450,6 @@
         
           <li>
             <a href="/blog/2013/03/05/philip-su-engineering-process-and/">Philip Su - Engineering Process And Philosophy At Facebook</a>
-          </li>
-        
-          <li>
-            <a href="/blog/2013/03/05/more-creator-owned-comics-genocide/">More Creator-Owned Comics - Genocide: Duostar</a>
           </li>
         
       </ul>

@@ -7,7 +7,7 @@
 
   <meta name="author" content="Garry Bodsworth">
   
-  <meta name="description" content="Binary Blobs&#8230; Apr 28th, 2010 I discovered a way to consistently crash xorg using the nvidia driver.  Open webkitgtk, close it, wait fiver &hellip;">
+  <meta name="description" content="The Many Faces of WebKit Apr 29th, 2010 I&#8217;ve been back into the belly of the beast investigating different implementations of WebKit again. So &hellip;">
   
   
 
@@ -61,6 +61,55 @@
 </ul>
 
     <div id="main"> 
+
+  
+  <div class="post"> <div class="post-header">
+  
+    <h1 class="post-title">
+      <a href="/blog/2010/04/29/the-many-faces-of-webkit/">The Many Faces of WebKit</a>
+    </h1>
+  
+  
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-04-29T00:00:00+01:00" pubdate data-updated="true">Apr 29<span>th</span>, 2010</time>
+</div>
+
+<div class="post-content"><p>I&#8217;ve been back into the belly of the beast investigating different implementations of WebKit again. So I thought I&#8217;d share some of the things I picked up about them.</p>
+
+<p>Obviously the Apple implementation is the cream of the crop for speed an features. In fact the Mac OSX version isn&#8217;t top of the tree, it&#8217;s the <a href="http://www.satine.org/archives/2008/11/06/coverflow-for-safari-on-iphone/">iPhone/iPad version</a> that has been furthest ahead. It got the accelerated compositing of web elements first and could do all kinds of funky 3D transforms using OpenGL. The OS X version got those features only in the <a href="http://www.satine.org/archives/2009/07/11/snow-stack-is-here/">middle of last year</a>.</p>
+
+<p>Other ports vary in stability, features and usefulness.</p>
+
+<p><a href="http://www.webkitgtk.org/">WebkitGTK</a><br/>
+This is the port of WebKit to the GTK+ widget set. It has been through a lot of changes like where the network backend moved to a new library which meant that proxies could not work for a fair while. The rendering itself uses Cairo (good stuff), but it is just a shame you can&#8217;t easily switch backend (like swapping from xlib to opengl). It uses Pango for font rendering which I know is very good, but it has a serious limitation, it can&#8217;t load temporary fonts directly from a file, this means that the new font-face features in HTML will be a long way off.</p>
+
+<p><a href="http://trac.webkit.org/wiki/QtWebKit">QtWebKit</a><br/>
+The rendering quality does look seriously good, but as usual with Qt I am finding very bad performance metrics. I&#8217;ve tried changing rendering backends where &#8220;native&#8221; seems to perform best and &#8220;opengl&#8221; fails then segfaults (which is even more surprising when you consider I am using the nvidia binary drivers on Linux which are pretty full featured).</p>
+
+<p>HTML5support seems a bit flaky at best with one of my sample set completely freezing the process. On the plus side there is integration work already done for compositing, and fonts look seriously good. I got Flash working and it seems OK, but not quite as fast as WebkitGTK.</p>
+
+<p>The biggest advantage though is <a href="http://www.pyside.org/">PySide</a> which are comprehensive generated Python bindings for Qt. It allowed me to a do a very quick integration with the gobject mainloop in Python as well.</p>
+
+<p>They have also broken away from the protracted Qt release process which allow them to release WebKit features much faster. This makes life a lot easier and they are allowing targetting of more than one version (although not officially supported).</p>
+
+<p><a href="http://trac.webkit.org/wiki/EFLWebKit">EFL Webkit</a><br/>
+I have a soft spot for EFL and <a href="http://www.enlightenment.org/">Enlightenment</a>, it gets a lot of the basics very right (small reusable components and fast and low footprint). EFL Webkit shares a majority of infrastructure with GTK including the Cairo rendering and network backend. The project has also recently picked up sponsorship from Samsung.</p>
+
+<p>There is a really cool demo of the web browser being drawn on a 3D surface using the EFL libraries. You can see it <a href="http://blog.gustavobarbieri.com.br/2009/11/04/evas-uv-mapping-and-webkit-efl/">here</a>. It&#8217;s got gstreamer integration for HTML5 video and plugin support for Flash (oh well).</p>
+
+<p>Now that just covers those main ones available on Linux. There is still the <a href="http://opensource.palm.com/1.4.1.1/index.html">Palm WebOS</a> version, Blackberry, <a href="http://www.sand-labs.org/owb">OWB</a>, and tons more. OWB looks the simplest for enabling porting to new platforms and I have built the SDL version in the past. Then there is the Windows version of WebKit and the standalone Mac build&#8230;</p>
+</div>
+ </div>
 
   
   <div class="post"> <div class="post-header">
@@ -393,55 +442,6 @@
 </div>
  </div>
 
-  
-  <div class="post"> <div class="post-header">
-  
-    <h1 class="post-title">
-      <a href="/blog/2009/06/21/installing-the-latest-intel-drivers-the-kernel/">Installing the Latest Intel Drivers &#8211; the Kernel</a>
-    </h1>
-  
-  
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2009-06-21T00:00:00+01:00" pubdate data-updated="true">Jun 21<span>st</span>, 2009</time>
-</div>
-
-<div class="post-content"><p>So installing the drivers, latest X-server, mesa and so on is only part of the puzzle to use the latest Intel graphics drivers. You also need to update your kernel for more features like better kernel memory management, kernel mode switching, and other basic things. The driver can work (for differing levels of working) for older kernels, but the bugfixes tend to be on the latest version. I have tried this on an Intel 945GM.</p>
-
-<p>So this is how you update your kernel for Jaunty (and other Ubuntus would probably work). A really handy repository of kernels is maintained by Ubuntu called <a href="http://kernel.ubuntu.com/~kernel-ppa/mainline/">Mainline PPA</a> where you can download pretty much any version of the kernel.</p>
-
-<p>So for kernel 2.6.30 you need to download the following file : <a href="http://kernel.ubuntu.com/~kernel-ppa/mainline/v2.6.30/linux-image-2.6.30-020630-generic_2.6.30-020630_i386.deb">linux-image-2.6.30-020630-generic_2.6.30-020630_i386.deb</a><br/>
-You need to install this by calling:<pre colla="+" lang=”Bash”> sudo dpkg -i linux-image-2.6.30-020630-generic_2.6.30-020630_i386.deb </pre></p>
-
-<p>As part of the install it should have run update-grub. If not run <strong>sudo update-grub</strong></p>
-
-<p>To get kernel modesetting working as well as fixing a couple of minor issues you need to edit the file <strong>/boot/grub/menu.lst</strong> for some extra parameters. You need to edit the line that looks like:</p>
-
-<pre colla="+" lang="Bash">kernel      /vmlinuz-2.6.30-020630-generic root=/dev/sda7 ro 
-</pre>
-
-
-<p>And add the following between &#8220;generic&#8221; and &#8220;root&#8221;:</p>
-
-<pre colla="+" lang="Bash">nopat enable_mtrr_cleanup i915.modeset=1
-</pre>
-
-
-<p>The first two sort out some hardware bugs on the Intel 945 depending on the hardware platform which can vary. Acer Aspire Ones don&#8217;t necessarily have the same mtrr bugs as MSI Winds and so on. The modeset parameter switches on kernel modesetting which you will hopefully not notice many changes with.</p>
-
-<p>I did find kernel modesetting played a lot better running X without any monitor connected and dealt with a lot of odd mode issues.</p>
-</div>
- </div>
-
 
 <div id="pagination">
   
@@ -464,6 +464,10 @@ You need to install this by calling:<pre colla="+" lang=”Bash”> sudo dpkg -i
       <ul>
         
           <li>
+            <a href="/blog/2013/06/22/rss-feed-moved-to-http-slash-slash-www-dot-fragmentedmemory-dot-com-slash-feed-slash/">RSS Feed Moved To http://www.fragmentedmemory.com/feed/</a>
+          </li>
+        
+          <li>
             <a href="/blog/2013/06/18/new-location-and-new-blog-engine-and-old-content-restored/">New Location &amp; New Blog Engine &amp; Old Content Restored</a>
           </li>
         
@@ -477,10 +481,6 @@ You need to install this by calling:<pre colla="+" lang=”Bash”> sudo dpkg -i
         
           <li>
             <a href="/blog/2013/03/05/philip-su-engineering-process-and/">Philip Su - Engineering Process And Philosophy At Facebook</a>
-          </li>
-        
-          <li>
-            <a href="/blog/2013/03/05/more-creator-owned-comics-genocide/">More Creator-Owned Comics - Genocide: Duostar</a>
           </li>
         
       </ul>

@@ -7,7 +7,7 @@
 
   <meta name="author" content="Garry Bodsworth">
   
-  <meta name="description" content="JooJoo Technical Details Jul 10th, 2010 For those of you as nerdy as me I thought I would try a virtual teardown of the JooJoo to gather information &hellip;">
+  <meta name="description" content="Virtual On-Screen Keyboards on Linux Jul 11th, 2010 With a tablet awaiting a better operating system I decided I had to evaluate the landscape on on &hellip;">
   
   
 
@@ -61,6 +61,63 @@
 </ul>
 
     <div id="main"> 
+
+  
+  <div class="post"> <div class="post-header">
+  
+    <h1 class="post-title">
+      <a href="/blog/2010/07/11/virtual-on-screen-keyboards-on-linux/">Virtual On-Screen Keyboards on Linux</a>
+    </h1>
+  
+  
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-07-11T00:00:00+01:00" pubdate data-updated="true">Jul 11<span>th</span>, 2010</time>
+</div>
+
+<div class="post-content"><p>With a <a href="http://thejoojoo.com">tablet</a> awaiting a better operating system I decided I had to evaluate the landscape on on-screen virtual keyboards on Linux. Obviously the ideal would be iPad/iPhone-esque, but that would be really frighteningly good, I had much lower expectations.</p>
+
+<p>I was not sure if the tech was there to even show the keyboards automatically when an input field was selected. GTK are well ahead of the game on this with their IMContext base class to encapsulate input mainly for complex languages or disability accessibility, but a good side-effect is the ability to hook in an on-screen keyboard when a text input is focused. In that case the on-screen keyboard needs to know about GTK in order to know when to show.</p>
+
+<p>I tested all these on a VM that has now run out of hard disk space thanks to having to compile lots of stuff. Most of the keyboards I completely failed to make automatically appear on the screen when a text input was selected, it was either me or them&#8230;.</p>
+
+<p>So in no particular order&#8230;.</p>
+
+<p><a href="http://matchbox-project.org/?p=1">Matchbox Keyboard</a><br/>
+Some people are using this actively. It requires hacking to be able to toggle the display of it which makes it pretty much a no-go as it would always be on top of the screen. The GUI looks all right though. Some good info <a href="http://japiblog.dddgames.com/?p=15">here</a>.</p>
+
+<p><a href="http://homepage3.nifty.com/tsato/xvkbd/">xvkbd</a><br/>
+The venerable old man of the line up. It&#8217;s been around the block and does exactly what it says on the tin. It has lots of good features and hacks (like making it appear for login windows). As far as I could see I couldn&#8217;t hook it up to the IMContext but I could be missing something.</p>
+
+<p><a href="http://www.gok.ca/">Gnome On-Screen Keyboard</a><br/>
+The oldest GTK based one and seems to be showing its age thanks to the UI.</p>
+
+<p><a href="https://wiki.ubuntu.com/Accessibility/Projects/onBoard">onboard</a><br/>
+This is the Ubuntu one. I couldn&#8217;t get it to automatically appear on focus. It looks OK, but seems to be lacking some features. At least it is easily hackable in Python. Some more interesting information <a href="http://www.combibo.net/articles/using_an_onscreen_keyboard_in_ubuntu/">is here</a>.</p>
+
+<p><a href="http://florence.sourceforge.net/english.html">Florence</a><br/>
+This is the most recommended one and it is pretty good. The main pain was I had to compile it as their were no packages for it.</p>
+
+<p><a href="http://gitorious.org/fvkbd">fvkbd</a><br/>
+This looks fairly promising as it is very skinnable on configurable. Unfortunately I could not work out how to hide or autohide the keyboard. Also this had no packages and requires compiling. This provides the basis for the OLPC virtual keyboard test and also the Meego/Maemo virtual keyboard.</p>
+
+<p><a href="http://live.gnome.org/Caribou">Caribou</a><br/>
+This is the virtual keyboard testbed for Gnome 3.0. It is written in Python and needs packaging so I had to compile it. This was the one that got closest to what I want because it worked. It shows a small keyboard by the input with current focus. In my VM I had to disable the Clutter code for whizzy animations before getting it to work.</p>
+
+<p>I&#8217;ve probably missed some but there are only so many not quite ready applications you can test before going completely and utterly bonkers.</p>
+
+<p>Another thing I discovered was Google Chromium&#8217;s addressbar is accessibility implemented, but none of the content in webpages is. Firefox on the other hand and anything WebkitGTK based (like Epiphany) all work properly with their accessibility. Part of the Chrome problem is the multiprocess rendering and that they have not prioritised accessibility according the bug reports I have read.</p>
+</div>
+ </div>
 
   
   <div class="post"> <div class="post-header">
@@ -726,38 +783,6 @@ So the JooJoo is good and bad, I couldn&#8217;t recommend it to &#8220;normal&#8
 </div>
  </div>
 
-  
-  <div class="post"> <div class="post-header">
-  
-    <h1 class="post-title">
-      <a href="/blog/2010/05/19/video-codecs-that-dont-make-you-go-grey/">Video Codecs That Don&#8217;t Make You Go Grey</a>
-    </h1>
-  
-  
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2010-05-19T00:00:00+01:00" pubdate data-updated="true">May 19<span>th</span>, 2010</time>
-</div>
-
-<div class="post-content"><p>Great news today, <a href="http://googleblog.blogspot.com/2010/05/google-io-2010-day-1-more-powerful-web.html">Google are open-sourcing and more importantly free patent licensing</a> the VP8 codec. As part of this they are creating the <a href="http://www.webmproject.org/">WebM</a> project with a new container format that uses the open-source <a href="http://www.vorbis.com/">Vorbis</a> audio codec.</p>
-
-<p>As someone who has to deal with video codecs every day and the horrors they induce (not just from a technical standpoint but legal) this is a very good thing. Unfortunately it does have some way to go to depose the incumbent codecs, and to reach parity with respect to hardware acceleration, but I am sure it will happen swifter than we can imagine. The main reasons for this is that Youtube will be using it which is a large portion of the web&#8217;s video, and th enames that are all on board to support it in both software and hardware.</p>
-
-<p>I can tell you as soon as gstreamer gets support <a href="http://www.camvine.com">CODA</a> will be getting WebM.</p>
-
-<p>There is also now a technical analysis from an x264 developer which can be read <a href="http://x264dev.multimedia.cx/?p=377">here</a>.</p>
-</div>
- </div>
-
 
 <div id="pagination">
   
@@ -780,6 +805,10 @@ So the JooJoo is good and bad, I couldn&#8217;t recommend it to &#8220;normal&#8
       <ul>
         
           <li>
+            <a href="/blog/2013/06/22/rss-feed-moved-to-http-slash-slash-www-dot-fragmentedmemory-dot-com-slash-feed-slash/">RSS Feed Moved To http://www.fragmentedmemory.com/feed/</a>
+          </li>
+        
+          <li>
             <a href="/blog/2013/06/18/new-location-and-new-blog-engine-and-old-content-restored/">New Location &amp; New Blog Engine &amp; Old Content Restored</a>
           </li>
         
@@ -793,10 +822,6 @@ So the JooJoo is good and bad, I couldn&#8217;t recommend it to &#8220;normal&#8
         
           <li>
             <a href="/blog/2013/03/05/philip-su-engineering-process-and/">Philip Su - Engineering Process And Philosophy At Facebook</a>
-          </li>
-        
-          <li>
-            <a href="/blog/2013/03/05/more-creator-owned-comics-genocide/">More Creator-Owned Comics - Genocide: Duostar</a>
           </li>
         
       </ul>
