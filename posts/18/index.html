@@ -1,0 +1,626 @@
+
+<!DOCTYPE HTML>
+<html lang="en-gb">
+<head>
+  <meta charset="UTF-8">
+  <title>Fragmented Memory</title>
+
+  <meta name="author" content="Garry Bodsworth">
+  
+  <meta name="description" content="How a C++ Developer Writes Python I&#8217;ve been writing Python professionally for about a month and I am still in the process of shaking out my C &hellip;">
+  
+  
+
+  <link rel="canonical" href="http://www.fragmentedmemory.com/posts/18">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/feed/" rel="alternate" title="Fragmented Memory" type="application/atom+xml">
+</head>
+  
+<body class="default">
+  <div id="wrapper">
+    <div id="header">
+  <h1><a href="/">Fragmented Memory</a></h1>
+  
+    <p>Garry Bodsworth's Blog (formerly Garry's Bit Patterns &amp; Programmer's Log)</p>
+  
+</div>
+<ul id="social-links">
+  
+    <li><a class="rss" href="/feed/" title="RSS">RSS</a></li>
+  
+  
+  
+  
+    <li><a class="twitter" href="http://twitter.com/garrybodsworth" title="Twitter">Twitter</a></li>
+  
+  
+    <li><a class="github" href="https://github.com/garrybodsworth" title="GitHub">GitHub</a></li>
+  
+  
+  
+    <li><a class="linkedin" href="http://www.linkedin.com/in/garrybodsworth">LinkedIn</a></li>
+  
+  
+  
+  
+    <li><a class="pinboard" href="https://pinboard.in/u:garrybodsworth" title="Pinboard">Pinboard</a></li>
+  
+</ul>
+<div class="clear"></div>
+<ul id="nav">
+  
+    <li> <a href="/" class="current">blog</a> </li>
+  
+
+  
+    <li><a href="/blog/archives">archives</a></li>
+  
+
+  
+    <li><a href="/about">about</a></li>
+  
+</ul>
+
+    <div id="main"> 
+
+  
+  <div class="post"> <div class="post-header">
+  
+    <h1 class="post-title">
+      <a href="/blog/2008/08/20/how-a-c-developer-writes-python/">How a C++ Developer Writes Python</a>
+    </h1>
+  
+  
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2008-08-20T00:00:00+01:00" pubdate data-updated="true"></time>
+</div>
+
+<div class="post-content"><p>I&#8217;ve been writing Python professionally for about a month and I am still in the process of shaking out my C++isms. This is not a diatribe about how C++ is rubbish, because I think C++ is great. I am making some &#8220;mistakes&#8221; as I am in the learning process.</p>
+
+<p>So today I was writing a function to parse a URL into the useful parts that make it up. I&#8217;d laid it out all nicely, written some unit-tests and it did its job exactly how I wanted. Then I was asked did the Python <a href="http://docs.python.org/lib/module-urlparse.html">urlparse</a> module not do what I wanted. Damn &#8211; as a C++ developer I&#8217;m used to rolling a lot of stuff that make up the building blocks of the software, so what I did was pretty natural. What I need to learn is to check the Python libraries first before doing obvious things.</p>
+
+<p>The other thing I am rapidly unlearning is writing verbose loops. In C++ I am used to writing loops int he way I am expecting them to be executed. In Python you need to express them differently using list comprehension, which I am liking a lot. I even rewrote some loops today I wrote in my first week where I replaced seven lines with one that expressed the intent of the statement perfectly.</p>
+
+<p>Another thing that weirded me out was creating threads. You create the variables for them, start them off and they know when to clean themselves up&#8230; I think it is because I am still thinking about the C++ scoping rules rather than garbage collecting.</p>
+
+<p>I am sure these Python-ing mistakes won&#8217;t be my last, but it is interesting to wrap your head around some new things. I do miss manually managing my memory and knowing when stuff gets destroyed, I think it probably is because I&#8217;m paranoid and need to relax and go with the flow.</p>
+</div>
+ </div>
+
+  
+  <div class="post"> <div class="post-header">
+  
+    <h1 class="post-title">
+      <a href="/blog/2008/08/18/links-quotes-more-links/">Links, Quotes, More Links</a>
+    </h1>
+  
+  
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2008-08-18T00:00:00+01:00" pubdate data-updated="true"></time>
+</div>
+
+<div class="post-content"><p><a href="http://gigaom.com/2008/08/17/fr-how-to-avoid-feature-creep-with-your-software-apps/">F|R: How to Avoid Feature Creep with Your Software Apps</a><br/>
+A look at how to avoid letting your product run out of control and to main focus on providing a good solution.</p>
+
+<p><a href="http://www.juixe.com/techknow/index.php/2008/08/17/favorite-programming-quotes/">Favorite Programming Quotes</a><br/>
+If you can remember some of these quotes you can trot them out at the right time and seem better read than you really are <img src='http://localhost:8888/wordpress/wp-includes/images/smilies/icon_wink.gif' alt=';)' class='wp-smiley' /></p>
+
+<p><a href="http://www.boost.org/users/news/version_1_36_0">Boost 1.36 Released</a><br/>
+The latest version of the Boost library is out adding some new libraries like exceptions and unordered containers. A must for all C++ developers.</p>
+
+<p><a href="http://arstechnica.com/news.ars/post/20080818-nokia-helps-port-firefox-to-qt.html">Nokia helps port Firefox to Qt</a><br/>
+More web rendering engines than you can shake a stick at.</p>
+
+<p><a href="http://effectize.com/jquery-developer-guide">The Complete Guide for You to Become an Almighty jQuery Developer</a><br/>
+Or at least a good collection of links about jQuery.</p>
+
+<p><a href="http://zerias.blogspot.com/2008/08/why-fud-against-opengl-30.html">Why the F.U.D. against OpenGL 3.0?</a><br/>
+A good article that isn&#8217;t so &#8220;sky is falling&#8221; about OpenGL 3.0.</p>
+
+<p><a href="http://www.engadget.com/2008/08/14/nvidia-ships-out-beta-opengl-3-0-drivers-in-record-speed/">NVIDIA ships out beta OpenGL 3.0 drivers in record speed</a><br/>
+Drivers out in double-quick time.</p>
+
+<p><a href="http://fireuser.com/blog/opengl_30_a_big_step_in_the_right_direction/">OpenGL 3.0 &#8211; A Big Step in the Right Direction</a><br/>
+Another good look at OpenGL 3.0.</p>
+
+<p><a href="http://jonreagan.wordpress.com/2008/08/14/the-ubuntu-artwork-circus/">The Ubuntu Artwork Circus</a><br/>
+A look at Ubuntu default theming.</p>
+
+<p><a href="http://gooddayandgoodmentalhealth.blogspot.com/2008/08/from-firefox-to-flock-and-back.html">From Firefox to Flock&#8230; and back!</a><br/>
+A user goes from Firefox to Flock (the social web browser) and back again.</p>
+
+<p><a href="http://www.smashingmagazine.com/2008/08/17/10-futuristic-user-interfaces/">10 Futuristic User Interfaces</a><br/>
+The concept ones are less interesting than what has actually been accomplished.</p>
+
+<p><a href="http://www.kde.org/announcements/4.1/inthepress.php">KDE 4.1.0 in the Press</a><br/>
+Lots of links to write-ups and reviews for the newly released desktop environment.</p>
+
+<p><a href="http://www.businessweek.com/magazine/content/08_34/b4097022701166.htm?campaign_id=rss_tech">Dell vs. Apple: Why It May Be Personal</a><br/>
+I guess you should measure success by how many people want to beat you&#8230;</p>
+
+<p><a href="http://www.digitalreviews.net/reviews/video/popcorn-for-all-syabas-popcorn-hour-a-110-and-b-110-network-media-tanks-rev.html">Popcorn For All &#8211; Syabas Popcorn Hour A-110 and B-110 Network Media Tanks Reviewed</a><br/>
+A well specified high definition media streamer gets reviewed.</p>
+
+<p><a href="http://www.linux.com/feature/144179">Using Windows, Xbox, and iPod as alternative MythTV front ends</a><br/>
+Probably the best architected media centre software out there is MythTV with the ability to have a server back-end and many front-ends. Even the single computer installation is a back-end and front-end on one computer. Because the front-end is a viewer you can view on X-Boxes, iPods, Windows machines, and even access it over a web interface.</p>
+
+<p><a href="http://www.cambridge-news.co.uk/cn_news_home/DisplayArticle.asp?ID=338658">War On Terror board game seized by police</a><br/>
+Be careful when playing <a href="http://www.waronterrortheboardgame.com/">this board game</a> because satire really its withering.</p>
+</div>
+ </div>
+
+  
+  <div class="post"> <div class="post-header">
+  
+    <h1 class="post-title">
+      <a href="/blog/2008/08/15/what-should-be-built-into-an-operating-system/">What Should Be Built Into an Operating System?</a>
+    </h1>
+  
+  
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2008-08-15T00:00:00+01:00" pubdate data-updated="true"></time>
+</div>
+
+<div class="post-content"><p>This post is otherwise known as &#8220;Why multiple monitor support in Windows sucks&#8221;&#8230;</p>
+
+<p>Noah Coad, one of the Program Managers on the Visual Studio team blogged about <a href="http://blogs.msdn.com/noahc/archive/2007/10/10/multi-monitor-support-in-vs10.aspx">Multi Monitor Support in VS10</a> and it is confirmed on the <a href="https://connect.microsoft.com/VisualStudio/feedback/ViewFeedback.aspx?FeedbackID=351965">Microsoft Connect site</a>. When I worked at <a href="http://displaylink.com">DisplayLink</a> we obviously used multiple monitors on Windows in development so any help in that regard is welcomed. When you use multiple monitors every day you do discover the deficiencies in the operation of such set-ups (even on the latest Windows Vista). Things like disappearing windows, incorrect sizing, incorrect windows flags (saying its maximised when it isn&#8217;t leading to all kinds of bizarre effects), losing display configurations, and the most important &#8211; that virtually all Windows applications are designed to be operated when the parent frame is full-screen.</p>
+
+<p>These features that are being suggested should be in the operating system, not just support in certain applications that never even make it into the higher level APIs (how many implementations should there be of ribbon? one provided by the API). These features are also not just the realm of developers, I am sure artists, sound engineers and many other disciplines would like to see better multiple monitor support. Also, when it is in the operating system it is consistent across all applications rather than having similar or completely different behaviour between applications. The main problem with Windows in this regard is if there is a good feature that is applicable to more situations it never propagates up to the API level within the organisation.</p>
+
+<p>By operating system I mean graphical user interface <img src='http://localhost:8888/wordpress/wp-includes/images/smilies/icon_wink.gif' alt=';)' class='wp-smiley' /></p>
+</div>
+ </div>
+
+  
+  <div class="post"> <div class="post-header">
+  
+    <h1 class="post-title">
+      <a href="/blog/2008/08/15/blogging-at-70mph/">Blogging at 70mph</a>
+    </h1>
+  
+  
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2008-08-15T00:00:00+01:00" pubdate data-updated="true"></time>
+</div>
+
+<div class="post-content"><p>I&#8217;m in a car travelling at 70mph and I can blog (I&#8217;m not driving &#8211; honest). Welcome to the future. I&#8217;m writing this on a 3G iPhone using the WordPress free app.</p>
+
+<p>It&#8217;s nice and simple to use, even offering photoblogging facilities. I like the pared down nature of it because it simply lets you write. It could do with some tweaking in the how to publish or save drafts department though.</p>
+
+<p>All I need now is my jetpack.</p>
+</div>
+ </div>
+
+  
+  <div class="post"> <div class="post-header">
+  
+    <h1 class="post-title">
+      <a href="/blog/2008/08/14/wikis-for-development-documentation/">Wikis for Development Documentation</a>
+    </h1>
+  
+  
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2008-08-14T00:00:00+01:00" pubdate data-updated="true"></time>
+</div>
+
+<div class="post-content"><p>A couple of years back when migrating from Visual SourceSafe to Subversion for NC Graphics I decided to piggyback an install of <a href="http://www.mediawiki.org/wiki/MediaWiki">MediaWiki</a> onto the Apache install (I was using it to serve Subversion and it worked a treat). Initially it was just me playing around with it with some feedback from others. At some point we decided to use the wiki for internal documentation and Tristan Day took on the mantle of Benevolent Wiki Dictator. Without him the wiki wouldn&#8217;t have been as well organised or useful.</p>
+
+<p>We put everything on there including Tristan&#8217;s horrific task of porting over old documents that were in various formats like Word or text. When they were online and it was the way they were supposed to be edited they became &#8220;living documents&#8221; that are continually updated. Some areas became repositories of information for what we were currently working on and what was done with some very nice tabe formatting.</p>
+
+<p>It also meant the information was available anywhere with an Internet connection and since it was up to and was well presented if anyone had a question we could say &#8220;look at the wiki&#8221;. The wiki pages were even used for management presentations because it clearly showed our project progress and planning.</p>
+
+<p>One of the things I do nowadays is whenever I do something and make a note of it, say a development process or carefully constructed command line, I put it in the wiki. I do that rather than having loads of notebooks because they are also useful for other developers, even the noddy stuff. The problem is you do need a housekeeper or Benevolent Wiki Dictator to keep it all well organised.</p>
+
+<p>The thing is once you have reached critical mass with the documentation on a wiki then it takes on a life of its own and becomes a communal and extremely important resource. They get even more interesting when you have something like <a href="http://trac.edgewall.org/">Trac</a> or <a href="http://www.redmine.org/">Redmine</a> that integrate bug tracking and source control (and more via plug-ins).</p>
+
+<p>The types of things you should have on a development wiki are:</p>
+
+<ul>
+<li>Setting Up A New Computer &#8211; A well defined process for when you have a new starter that they can follow.</li>
+<li>Setting Up A Development Environment &#8211; What you need to do to build and run a product.</li>
+<li>Debugging Information &#8211; How to debug the system.</li>
+<li>Coding Guidelines &#8211; Which have to be kept up to date making them perfect for a wiki.</li>
+<li>Software Licences &#8211; An audit of licences (like GPL etc) used to achieve a product. It&#8217;s always important to know this information.</li>
+</ul>
+
+
+<p>There is tons more but you get the idea of where to start.</p>
+</div>
+ </div>
+
+  
+  <div class="post"> <div class="post-header">
+  
+    <h1 class="post-title">
+      <a href="/blog/2008/08/14/links-will-eat-themselves/">Links Will Eat Themselves</a>
+    </h1>
+  
+  
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2008-08-14T00:00:00+01:00" pubdate data-updated="true"></time>
+</div>
+
+<div class="post-content"><p><strong>Computery Stuff</strong></p>
+
+<p><a href="http://business.timesonline.co.uk/tol/business/industry_sectors/technology/article4488157.ece">The Nintendo gaming world awaits another Mario</a><br/>
+Shigeru Miyamoto&#8217;s hobbies are now top secret because it influences his choice of games to develop. Kind of suggests games development should look outside of its own insular little world of first-person shooters.</p>
+
+<p><a href="http://mashable.com/2008/08/13/scanlife-iphone-app-2/">Turn Your iPhone into a Barcode Scanner with ScanLife’s App</a><br/>
+Barcode scanning on the iPhone &#8211; could have some interesting applications.</p>
+
+<p><a href="http://blogs.pcworld.com/communityvoices/archives/2008/08/interview_with.html">Interview with Andrew Tanenbaum, Creator of MINIX</a><br/>
+Does exactly what it says on the tin.</p>
+
+<p><a href="http://www.theregister.co.uk/2008/08/13/opengl_firestorm/">OpenGL 3.1 promise follows gamer revolt</a><br/>
+I&#8217;m left thinking if some people are so narced by all of this why don&#8217;t they get involved in the process rather than shouting into the ether? Looking at the <a href="http://www.khronos.org/about/">Khronos</a> membership I guess they think it is somebody else&#8217;s problem.</p>
+
+<p><a href="http://www.readwriteweb.com/archives/12_unit_testing_tips_for_software_engineers.php">12 Unit Testing Tips for Software Engineers</a><br/>
+I don&#8217;t know about the concurrent code one, see <a href="http://goodliffe.blogspot.com/2008/06/unit-testing-threads-is-hard-part-4.html">here</a> for a good write up and solutions.</p>
+
+<p><a href="http://www.reghardware.co.uk/2008/08/14/intel_posts_usb_3_hci_spec/">Intel releases USB 3.0 controller interface spec</a><br/>
+Should be interesting to see how <a href="http://displaylink.com">DisplayLink</a> exploit the extra bandwidth.</p>
+
+<p><a href="http://coccinella.im/tcl-tk-recent-advances">Tcl/Tk &#8211; Recent Advances</a><br/>
+Tcl/Tk gets theming and so has progressed rapidly in the looks department which is good news for anyone who uses the Git UIs.</p>
+
+<p><a href="http://developer.mozilla.org/en/docs/Firefox_3.1_for_developers">Firefox 3.1 For Developers</a><br/>
+3.1 gives us support for the audio and video tags.</p>
+
+<p><a href="http://ajaxian.com/archives/iphone-safari-flick-navigation-by-example">iPhone Safari Flick Navigation By Example</a><br/>
+The iPhone flick interface in pure CSS.</p>
+
+<p><strong>Development Applications</strong></p>
+
+<p><a href="http://editra.org/">Editra</a><br/>
+A cross-platform text editor that has support for loads of languages (and even with support for more esoteric stuff like Django templates).</p>
+
+<p><strong>The Business Of Takeovers</strong></p>
+
+<p><a href="http://www.37signals.com/svn/posts/1197-big-companies-are-where-small-companies-go-to-die">Big companies are where small companies go to die</a><br/>
+It&#8217;s all true I tells ya!</p>
+
+<p><strong>Apple And Designing Stuff</strong></p>
+
+<p><a href="http://www.time.com/time/magazine/article/0,9171,1118384,00.html">How Apple Does It</a><br/>
+A bit of an old article about how Apple approach design and engineering. This segues into the next couple of links:<br/>
+<a href="http://www.bigcontrarian.com/2008/08/12/the-great-divide/">The Great Divide</a><br/>
+<a href="http://counternotions.com/2008/08/12/concept-products/">Why Apple doesn’t do “Concept Products”</a></p>
+
+<p><strong>Creative</strong></p>
+
+<p><a href="http://www.bryan-talbot.com/grandville/index.html">Bryan Talbot&#8217;s Grandville</a><br/>
+Images from Bryan Talbot&#8217;s (one of the most talented comics creators on the planet) upcoming graphic novel Grandville. His <a href="http://www.amazon.co.uk/Alice-Sunderland-Entertainment-Bryan-Talbot/dp/0224080768">Alice In Sunderland</a> is a masterclass in graphics storytelling (in fact anything he has done).</p>
+
+<p><strong>Random Junk</strong></p>
+
+<p><a href="http://gwei.org/index.php">Google Will Eat Itself</a></p>
+
+<blockquote><p>We generate money by serving Google text advertisments on a network of hidden Websites. With this money we automatically buy Google shares. We buy Google via their own advertisment! Google eats itself &#8211; but in the end &#8220;we&#8221; own it!</p></blockquote>
+
+<p>This may take some time&#8230;</p>
+
+<p><a href="http://www.youtube.com/watch?v=q4HvQbkoXxw&amp;eurl=http://www.google.com/reader/view/">Darth Thriller</a><br/>
+Michael Jackson + Darth Vader = Funky Moves</p>
+</div>
+ </div>
+
+  
+  <div class="post"> <div class="post-header">
+  
+    <h1 class="post-title">
+      <a href="/blog/2008/08/12/opengl-30-specification-now-available/">OpenGL 3.0 Specification Now Available</a>
+    </h1>
+  
+  
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2008-08-12T00:00:00+01:00" pubdate data-updated="true"></time>
+</div>
+
+<div class="post-content"><p>I used to track what was going on in <a href="http://www.opengl.org">OpenGL</a> very closely because I was in the CAD/CAM industry and 3D graphics are important there. It doesn&#8217;t seem that the changes were as radical as everyone was expecting as it was mentioned that there was a new object model being designed (I seem to remember <a href="http://garrys-brain.blogspot.com/2006/11/opengl-future-looks-rosey.html">blogging about it</a> nearly two years ago).</p>
+
+<p>You can see the proposed specification from the <a href="http://www.opengl.org/pipeline/article/vol004_1/">OpenGL Pipeline Newsletter 004</a>.</p>
+
+<p>Apparently certain developers are furious about it with some very long and vitriolic discussions. If you really want to inflict them on your brain you can see them <a href="http://www.opengl.org/discussion_boards/ubbthreads.php?ubb=showflat&amp;Number=243195&amp;Main=45784#Post243195">here</a>, <a href="http://www.opengl.org/discussion_boards/ubbthreads.php?ubb=showflat&amp;Number=243193#Post243193">here</a>, and <a href="http://www.gamedev.net/community/forums/topic.asp?topic_id=504547&amp;PageSize=25&amp;WhichPage=1">here</a>. It seems the games developers are making the CAD industry scapegoats for any of the problems with the process.</p>
+
+<p>It may not be the radical change but it is at least incremental, and provides a basis to deprecate and add some functionality. I still like the simplicity of using OpenGL, but then again I was never trying out any of the cutting edge features available on the graphics cards. OpenGL and OpenGL|ES are still being used on the Mac, Linux/Unix derivatives, Nintendo (DS and Wii), Playstation, and the iPhone.</p>
+
+<p>You can check out a summaries <a href="http://www.phoronix.com/scan.php?page=article&amp;item=opengl_3&amp;num=1">here</a> and <a href="http://liquidat.wordpress.com/2008/08/11/opengl-30-released/">here</a> for the main changes with the full spec <a href="http://www.opengl.org/registry/doc/glspec30.20080811.pdf">here (PDF)</a>.</p>
+</div>
+ </div>
+
+  
+  <div class="post"> <div class="post-header">
+  
+    <h1 class="post-title">
+      <a href="/blog/2008/08/12/blue-link-of-death/">Blue Link of Death</a>
+    </h1>
+  
+  
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2008-08-12T00:00:00+01:00" pubdate data-updated="true"></time>
+</div>
+
+<div class="post-content"><p><strong>Public BSODs</strong></p>
+
+<p><a href="http://www.smh.com.au/news/off-the-field/bills-blue-screen-of-death-malfunction/2008/08/12/1218306871673.html">CTRL+ALT+DEL: software malfunction at the opening ceremony</a><br/>
+A very public Blue Screen Of Death. We collect these at <a href="http://www.camvine.com">Camvine</a> although this one isn&#8217;t quite an application of our technology.</p>
+
+<p><strong>Apple Innovation And User Experience</strong></p>
+
+<p><a href="http://counternotions.com/2008/08/12/concept-products/">Why Apple doesn’t do “Concept Products”</a><br/>
+Actual innovation or faux innovation? Actual innovation is something you actually sell and users can actually use.</p>
+
+<p><a href="http://www.smashingmagazine.com/2008/08/12/top-10-usability-highs-of-the-mac-os/">Top 10 Usability Highs Of Mac OS</a><br/>
+Number 10 is &#8220;Even kernel panics look nice&#8221; is interesting because I haven&#8217;t seen one yet!</p>
+
+<p><strong>Accessibility</strong></p>
+
+<p><a href="http://www.alistapart.com/articles/deafnessandtheuserexperience">Deafness and the User Experience</a><br/>
+An in-depth article on web accessibility for the Deaf.</p>
+
+<p><strong>Development</strong></p>
+
+<p><a href="http://benjamin-meyer.blogspot.com/2008/08/code-review-should-be-free.html">Code Review Should Be Free</a><br/>
+An article covering different ways of doing code reviews.</p>
+
+<p><a href="http://www.lifehack.org/articles/technology/10-free-tools-for-collaboration.html">10 Free Tools for Collaboration</a><br/>
+An article with some technologies that will hep you collaborate.</p>
+
+<p><a href="http://dmitry.baranovskiy.com/raphael/">Raphaël Javascript Library</a><br/>
+A vector graphics library in Javascript with some nice demos.</p>
+
+<p><a href="http://code.google.com/p/iphone-universal/">iphone-universal</a><br/>
+Another iPhone web user interface library.</p>
+
+<p><a href="http://dot.kde.org/1218353987/">Akademy Day 1</a> and <a href="http://dot.kde.org/1218497374/">Akademy Day 2</a><br/>
+A write up of this year&#8217;s KDE Desktop Summit.</p>
+</div>
+ </div>
+
+  
+  <div class="post"> <div class="post-header">
+  
+    <h1 class="post-title">
+      <a href="/blog/2008/08/11/tickbox-driven-design/">Tickbox-Driven Design</a>
+    </h1>
+  
+  
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2008-08-11T00:00:00+01:00" pubdate data-updated="true"></time>
+</div>
+
+<div class="post-content"><p>During the <a href="http://barcamp.org/BarCamb-2">Barcamb</a> talk &#8220;Panic-Driven Design&#8221;, I realised that it was an umbrella for a whole host of wrongheaded &#8220;something-driven design&#8221;. The one I coined during the talk was one of my pet peeves which is Tickbox-Driven Design.</p>
+
+<p>Tickbox-Driven Design is a close relation of Marketing-Driven Design, it is driven by market conditions and the competitors that you have. It involves having to tick off features that are &#8220;essential&#8221; to be able to sell (in the perception of marketing/sales), they don&#8217;t have to be good, or even complete, but they have to be there yesterday. If a competitor has a certain feature it simply has to be implemented by even diverting resources. These features tend to be poorly specified and probably don&#8217;t even address the underlying requirements.</p>
+
+<p>When tickbox driven design takes over you are constantly playing catch-up and not innovating, and the longer it goes on the harder it becomes to break the cycle. It normally suggests that the problem can&#8217;t be solved by development alone.</p>
+
+<p>As the development tends to be rushed, poorly specified, and pointless (not the greatest motivating factor when you are the person attempting the implementation) the overhead of maintenance becomes much greater than expected. It can also severely affect morale because you constantly have the perception that your product is no good and behind the curve, when in reality it isn&#8217;t always a lost cause.</p>
+</div>
+ </div>
+
+  
+  <div class="post"> <div class="post-header">
+  
+    <h1 class="post-title">
+      <a href="/blog/2008/08/10/there-is-no-link/">There Is No Link</a>
+    </h1>
+  
+  
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2008-08-10T00:00:00+01:00" pubdate data-updated="true"></time>
+</div>
+
+<div class="post-content"><p><strong>Technology</strong></p>
+
+<p><a href="http://www.guardian.co.uk/business/2008/aug/10/telecoms.mediabusiness">You wait for a packet of ideas, then two arrive at once</a><br/>
+A look at the invention of the packet-switched network, and an interesting perspective on how an idea can spring to life in two places independently.</p>
+
+<p><a href="http://news.oreilly.com/2008/08/how-copyright-got-to-its-curre.html">How copyright got to its current state</a><br/>
+How did we get here?</p>
+
+<p><strong>Articles For Startups</strong></p>
+
+<p><a href="http://www.techcrunch.com/2008/08/09/how-to-demo-your-startup/">How To Demo Your Startup</a><br/>
+Advice on how to present your start-up and the rules of thumb that can help. I like the concise and quick demo, if you can&#8217;t get the idea across quickly then it is most likely all is lost. My favourite one also works well in creative writing as well, &#8220;leave them wanting more&#8221;, people try to cover everything but it is always good to not show all your cards leaving even more room to impress. This is a well thought out article that also touches on the best practices on presentation skills.</p>
+
+<p><a href="http://gigaom.com/2008/08/10/fr-zoho-founder-offers-5-rules-for-recruiting-well/">Zoho Founder Offers 5 Rules for Recruiting Well</a><br/>
+Yet another article on how to recruit. Some good advice, but don&#8217;t make it into a mantra or stand still or you wil find it starts to not work.</p>
+
+<p><strong>Tools Of The Trade</strong></p>
+
+<p>A couple of articles about what people use to get their job done. Always interesting from the point of view of whether there are some good ideas to improve my own workflow.<br/>
+<a href="http://afreshcup.com/?p=916">A Fresh Cup &#8211; My Tools of the Trade</a><br/>
+<a href="http://www.nullislove.com/2008/08/07/my-tools-of-the-trade/">Null Is Love &#8211; My Tools of the Trade</a></p>
+
+<p><strong>Cool Stuff</strong></p>
+
+<p><a href="http://www.kilian-nakamura.com/blog-english/index.php/space-invaders-invades-tokyo-retail/">Space Invaders invades Tokyo retail</a><br/>
+30-years old like me but I only put on weight, this game puts on merchandise.</p>
+
+<p><a href="http://brendanmccarthy.co.uk/subsite/gallery/index.htm">Brendan McCarthy Gallery</a><br/>
+One of the UK&#8217;s most creative artists now has an online gallery.</p>
+</div>
+ </div>
+
+
+<div id="pagination">
+  
+    <a class="prev" href="19">&laquo;Previous</a>
+  
+  
+    <a class="next" href="17">Next&raquo;</a>
+  
+</div>
+ </div>
+    <div id="footer">
+  <div class="panels">
+    <div class="license">
+      <h2>License</h2>
+      <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-nc-sa/3.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/">Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License</a>.
+    </div>
+
+    <div class="posts">
+      <h2>Recent Posts</h2>
+      <ul>
+        
+          <li>
+            <a href="/blog/2014/07/13/slash-dev-slash-summer-talk-security-is-hard/">/dev/summer talk - Security Is Hard</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2014/07/13/djugl-talk-the-trojan-unicorn/">DJUGL Talk - The Trojan Unicorn</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2014/07/13/back-at-bromium/">Back at Bromium</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2013/06/22/rss-feed-moved-to-http-slash-slash-www-dot-fragmentedmemory-dot-com-slash-feed-slash/">RSS Feed Moved To http://www.fragmentedmemory.com/feed/</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2013/06/18/new-location-and-new-blog-engine-and-old-content-restored/">New Location &amp; New Blog Engine &amp; Old Content Restored</a>
+          </li>
+        
+      </ul>
+    </div>
+
+    <div class="posts">
+      <h2>Links</h2>
+      <a href='https://alpha.app.net/gjb' class='adn-button' target='_blank' data-type='follow' data-width='277' data-height='27' data-user-id='@gjb' data-show-username='1' rel='me'>Follow me on App.net</a><script>(function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src='//d2zh9g63fcvyrq.cloudfront.net/adn.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'adn-button-js'));</script>
+    </div>
+  </div>
+
+  <p class="powered">
+    Powered by <a href="http://octopress.org">Octopress</a> and <a href="https://github.com/iwinux/compbits">Compbits</a>
+  </p>
+</div>
+
+  </div> <!-- #wrapper end -->
+
+  
+
+  
+
+
+  
+
+  
+
+  
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+</body>
+</html>

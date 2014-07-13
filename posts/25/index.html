@@ -1,0 +1,487 @@
+
+<!DOCTYPE HTML>
+<html lang="en-gb">
+<head>
+  <meta charset="UTF-8">
+  <title>Fragmented Memory</title>
+
+  <meta name="author" content="Garry Bodsworth">
+  
+  <meta name="description" content="Source Control - Subversion and TortoiseSVN 1.5 Mar 19th, 2008 There is no official release date for Subversion 1.5 although Alpha 2 is currently &hellip;">
+  
+  
+
+  <link rel="canonical" href="http://www.fragmentedmemory.com/posts/25">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/feed/" rel="alternate" title="Fragmented Memory" type="application/atom+xml">
+</head>
+  
+<body class="default">
+  <div id="wrapper">
+    <div id="header">
+  <h1><a href="/">Fragmented Memory</a></h1>
+  
+    <p>Garry Bodsworth's Blog (formerly Garry's Bit Patterns &amp; Programmer's Log)</p>
+  
+</div>
+<ul id="social-links">
+  
+    <li><a class="rss" href="/feed/" title="RSS">RSS</a></li>
+  
+  
+  
+  
+    <li><a class="twitter" href="http://twitter.com/garrybodsworth" title="Twitter">Twitter</a></li>
+  
+  
+    <li><a class="github" href="https://github.com/garrybodsworth" title="GitHub">GitHub</a></li>
+  
+  
+  
+    <li><a class="linkedin" href="http://www.linkedin.com/in/garrybodsworth">LinkedIn</a></li>
+  
+  
+  
+  
+    <li><a class="pinboard" href="https://pinboard.in/u:garrybodsworth" title="Pinboard">Pinboard</a></li>
+  
+</ul>
+<div class="clear"></div>
+<ul id="nav">
+  
+    <li> <a href="/" class="current">blog</a> </li>
+  
+
+  
+    <li><a href="/blog/archives">archives</a></li>
+  
+
+  
+    <li><a href="/about">about</a></li>
+  
+</ul>
+
+    <div id="main"> 
+
+  
+  <div class="post"> <div class="post-header">
+  
+    <h1 class="post-title">
+      <a href="/blog/2008/03/19/source-control-subversion-and/">Source Control - Subversion and TortoiseSVN 1.5</a>
+    </h1>
+  
+  
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2008-03-19T20:43:00+00:00" pubdate data-updated="true">Mar 19<sup>th</sup>, 2008</time>
+</div>
+
+<div class="post-content"><div class='post'>
+There is no official release date for Subversion 1.5 although Alpha 2 is currently available.  I thought I&#8217;d post about the upcoming features that will be making their way into the release.  there is also a little bit at the end about TortoiseSVN 1.5 features.<br /><br /><span style="font-weight:bold;">Merge Tracking</span><br /><br />The most important feature in the upcoming 1.5.  The initial concept is based on svnmerge.py but has gone far beyond that and is fully integrated into the repository format.  This means it will be possible to see which revisions have yet to be merged or have already been done.  For people with complex branching or regular merging it should be an indispensable feature.<br /><br />Interesting links about it are <a href="http://blogs.open.collab.net/svn/2007/05/the_subversion__1.html">here</a>, <a href="http://blogs.open.collab.net/svn/2007/11/what-about-bran.html">here</a>, and <a href="http://blogs.open.collab.net/svn/2007/11/branching-strat.html">here</a>.  The functional spec is available <a href="http://subversion.tigris.org/merge-tracking/func-spec.html">here</a>.<br /><br /><span style="font-weight:bold;">Sparse Checkouts</span><br /><br />This allows for checking out portions of a larger repository.  This means it is possible to specify the depth that the operations take into the directory structure.<br /> <br /><span style="font-weight:bold;">Conflict Resolution</span><br /><br />There are improvements to the conflict resolution for merges.  It is now possible to use the command-line to perform the resolution and a better interface for graphical clients.<br /><br /><span style="font-weight:bold;">Changelists</span><br /><br />It is possible to work on several sets of files on a single working copy.  You can associate those files together with a name in order to work on more than one problem in a single working copy.  I really needed this feature at work today trying to do more than one thing in a single working copy.<br /><br /><span style="font-weight:bold;">Externals Improvements</span><br /><br />The improvements allow svn:externals to be pegged at a revision.  Also they can use relative paths from the current directory (that will be really good in some instances with external deliverables) and if you use externals it makes managing a code tree much easier because it treats it like it is part of the current code tree.<br /><br /><span style="font-weight:bold;">Copy/Rename Improvements</span><br /><br />There is an improvement in the behaviour on copy/renaming of files (not currently directories until version 1.6) by the client trying to be smarter.  If a file has been renamed/copied then rather than the server sending the whole new file it does the copy operation so you should not lose the changes that had been made to the old file.<br /><br /><span style="font-weight:bold;">TortoiseSVN 1.5</span><br /><br />This should be released not long after the main Subversion 1.5 release.  The major changes will be the user interface work for merge tracking, changesets, and sparse checkouts.  There are some other features that will be part of the 1.5 release:<br />* Client side hook scripts – You can run some scripts before or after committing - this should help people create better processes.<br />* If a program has done some file operations like renaming and deleting without using the Subversion interface (drag-right-click) then it is possible to fix the file relationships in the UI.  This would be quite useful to inte3grate as an external tool in Visual Studio.<br />* Repository browser now has a two pane look like Windows Explorer with a tree-view and list of files.  Apparently it is much faster.<br />* A new merge wizard rather than the dialog which improves the workflow for merging.</div>
+<h2>Comments</h2>
+<div class='comments'>
+<div class='comment'>
+<div class='author'>Adi</div>
+<div class='content'>
+<a rel="external" href="http://orientinspiration.com/2009/09/oes-tsetnoc.html" rel="nofollow">Oes  Tsetnoc</a> one of the ways in which we can learn seo besides <a rel="external" href="http://duniasoer.com/archives/mengembalikan-jati-diri-bangsa.html" rel="nofollow">Mengembalikan Jati Diri Bangsa</a>.  By participating in the <a rel="external" href="http://mncmakina.com/2009/09/oes-tsetnoc-seo-contest/" rel="nofollow">Oes Tsetnoc</a> or <a rel="external" href="http://ulaznice.info/mengembalikan-jati-diri-bangsa.html" rel="nofollow">Mengembalikan Jati Diri Bangsa</a> we can improve our seo skills. To find more information about <a rel="external" href="http://catatanblogger.info/738688-Oes-Tsetnoc.html" rel="nofollow">Oest Tsetnoc</a> please visit my <a rel="external" href="http://kusukaseo.info/981750-Oes-Tsetnoc-Support.html" rel="nofollow">Oes Tsetnoc</a> pages. And to find more information about <a rel="external" href="http://duniasoer.com" rel="nofollow">Mengembalikan Jati Diri Bangsa</a> please visit my <a rel="external" href="http://catatanblogger.info/464655-Mengembalikan-Jati-Diri-Bangsa.html" rel="nofollow">Mengembalikan Jati Diri Bangsa</a> pages. Thank you So much.<br> <a rel="external" href="http://orientinspiration.com" rel="nofollow">Oes  Tsetnoc</a> | <a rel="external" href="http://duniasoer.com/archives/semangat-mengembalikan-jati-diri-bangsa.html" rel="nofollow">Semangat Mengembalikan Jati Diri Bangsa</a></div>
+</div>
+</div>
+</div>
+ </div>
+
+  
+  <div class="post"> <div class="post-header">
+  
+    <h1 class="post-title">
+      <a href="/blog/2008/03/13/gui-toolkits-gtk-30/">GUI Toolkits - GTK+ 3.0</a>
+    </h1>
+  
+  
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2008-03-13T22:23:00+00:00" pubdate data-updated="true">Mar 13<sup>th</sup>, 2008</time>
+</div>
+
+<div class="post-content"><div class='post'>
+GTK+ is used by a large variety of programs on a decent number of platforms.  It doesn&#8217;t have the best reputation for certain bits and pieces, some fairly, some unfairly.<br /><br />Discussions have begun on what will be the new version of GTK+ 3.0.  The most important news is that they will be able to break the ABI which they have heroically maintained all through the 2.0 releases, this should mean lots of good stuff now they are let off the leash.<br /><br />You can check out the start at this <a href="http://federkiel.wordpress.com/2008/03/12/gtk-30-getting-serious/">blog post</a>.<br /><br />The touchstones for the GUI toolkit will be to improve the theming abilities (which in theory will improve look and feel cross platform), animations for swishy interfaces, and proper canvas widget/window.  It will be remaining C which is excellent news for the millions of easy language bindings.<br /><br />It should be interesting to see what happens, hopefully only concentrating on the GUI rather than a lot of the other toolkits which are a bit &#8220;kitchen sink&#8221; will do for it.</div>
+<h2>Comments</h2>
+<div class='comments'>
+<div class='comment'>
+<div class='author'>Adi</div>
+<div class='content'>
+<a rel="external" href="http://orientinspiration.com/2009/09/oes-tsetnoc.html" rel="nofollow">Oes  Tsetnoc</a> one of the ways in which we can learn seo besides <a rel="external" href="http://duniasoer.com/archives/mengembalikan-jati-diri-bangsa.html" rel="nofollow">Mengembalikan Jati Diri Bangsa</a>.  By participating in the <a rel="external" href="http://mncmakina.com/2009/09/oes-tsetnoc-seo-contest/" rel="nofollow">Oes Tsetnoc</a> or <a rel="external" href="http://ulaznice.info/mengembalikan-jati-diri-bangsa.html" rel="nofollow">Mengembalikan Jati Diri Bangsa</a> we can improve our seo skills. To find more information about <a rel="external" href="http://catatanblogger.info/738688-Oes-Tsetnoc.html" rel="nofollow">Oest Tsetnoc</a> please visit my <a rel="external" href="http://kusukaseo.info/981750-Oes-Tsetnoc-Support.html" rel="nofollow">Oes Tsetnoc</a> pages. And to find more information about <a rel="external" href="http://duniasoer.com" rel="nofollow">Mengembalikan Jati Diri Bangsa</a> please visit my <a rel="external" href="http://catatanblogger.info/464655-Mengembalikan-Jati-Diri-Bangsa.html" rel="nofollow">Mengembalikan Jati Diri Bangsa</a> pages. Thank you So much.<br> <a rel="external" href="http://orientinspiration.com" rel="nofollow">Oes  Tsetnoc</a> | <a rel="external" href="http://duniasoer.com/archives/semangat-mengembalikan-jati-diri-bangsa.html" rel="nofollow">Semangat Mengembalikan Jati Diri Bangsa</a></div>
+</div>
+</div>
+</div>
+ </div>
+
+  
+  <div class="post"> <div class="post-header">
+  
+    <h1 class="post-title">
+      <a href="/blog/2008/03/13/lucasarts-good-old-days/">Lucasarts - the Good Old Days</a>
+    </h1>
+  
+  
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2008-03-13T21:43:00+00:00" pubdate data-updated="true">Mar 13<sup>th</sup>, 2008</time>
+</div>
+
+<div class="post-content"><div class='post'>
+Now I am 30 I can get away with saying things were so much better in the olden days.  Actually, no that is not even vaguely true, there is always probably the same good to crap ratio, but the marketing of the crap means you have to dig a little deeper and smarter.<br /><br />Anyway in the olden days Lucasarts the gaming arm of all things Star Wars was actually astoundingly good at making games.  They had the best and brightest and created some of the most unforgettable experiences a person could have on their computer.  Their adventure games were masterclasses for scripting and game echanics.<br /><br />Anyway on to the point of this post - some linkage - two great articles about Lucsart classics, from the very beginning and the very end of their work in adventure games:<br />* <a href="http://www.escapistmagazine.com/articles/view/issues/issue_139/2994-Walk-Don-t-Run">Grim Fandango</a> - Walk Don&#8217;t Run<br />* <a href="http://www.mixnmojo.com/features/read.php?article=maniacmansion">Maniac Mansion</a> - Lucasarts Secret history<br /><br />And also another completely unrelated gaming article is the excellent retrospective of a game developer starting his commercial career with Donkey Kong on the Atari platform.  Check out the <a href="http://www.dadhacker.com/blog/?p=987">post here</a>.</div>
+</div>
+ </div>
+
+  
+  <div class="post"> <div class="post-header">
+  
+    <h1 class="post-title">
+      <a href="/blog/2008/03/13/spa-talks-continuous-integration-and/">SPA Talks - Continuous Integration and Type Driven Testing</a>
+    </h1>
+  
+  
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2008-03-13T20:52:00+00:00" pubdate data-updated="true">Mar 13<sup>th</sup>, 2008</time>
+</div>
+
+<div class="post-content"><div class='post'>
+In the space of two weeks there have been two <a href="http://www.bcs-spa.org/cgi-bin/view/SPA/SpaCambridge">BCS SPA Cambridge</a> talks organised by <a href="http://blog.software-acumen.com/">Mark Dalgarno</a>.<br /><br /><a href="http://www.bcs-spa.org/cgi-bin/view/SPA/ContinuousIntegration">Continuous Integration</a> by <a href="http://oocode.com/">Ivan Moore</a><br /><br />The second talk by Ivan Moore after his interactive talk about Test-Drive-Development (which was a crash course on Java as well).  This time it was not as interactive but just as practical.  In addition to the slides he actually demonstrated his own continuous integration system (available from Sourceforge) <a href="http://build-o-matic.sourceforge.net/">build-o-matic</a>.  It has some interesting features like pictures to show the guilty parties when thebuild or tests break.  It also is quite a simple build system which means you can more or less build anything with it.<br /><br />He was preaching to the converted as most of the audience were practicing continuous integration anyway.  I think the main lesson to take away from the talk is to not compromise at any point on the builds or the tests even in with a heavy workload.<br /><br /><a href="http://www.bcs-spa.org/cgi-bin/view/SPA/TypeDrivenTestingInHaskell">Type Driven Development in Haskell</a> by <a href="http://research.microsoft.com/~simonpj/">Simon Peyton-Jones</a><br /><br />This talk was really about how to write more robust programs in functional programming.  The talk involved more of a discussion of functional languages and their benefits as well as how to write tests that more define the concepts and rules for inputs and the outputs.<br /><br />Mostly the testing part reminded me of the static assertions that are available in the C++ Boost Library.  I think that there must be a bridge to utilise more aspects of functional programming in a library like fashion because of the interesting optimisations that can be made.  Also mathematical correctness is a bonus.<br /><br />The lecture itself was interesting and certainly animated.  The sign of a good talk is that it makes you think, and I am certainly thinking about functional languages and their applications (after all templates can be used in that fashion but it does put a lot of strain on the compiler). I can certainly see some useful applications in the field of CAD/CAM - shame I left hat field&#8230;</div>
+</div>
+ </div>
+
+  
+  <div class="post"> <div class="post-header">
+  
+    <h1 class="post-title">
+      <a href="/blog/2008/03/06/iphone-sdk/">iPhone SDK</a>
+    </h1>
+  
+  
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2008-03-06T20:01:00+00:00" pubdate data-updated="true">Mar 6<sup>th</sup>, 2008</time>
+</div>
+
+<div class="post-content"><div class='post'>
+After nearly a decade of avoiding having a mobile phone the iPhone was the device that made me change my mind.  It is a great device that means I use my laptop a lot less because I can surf the &#8216;Net and get my imap gmail on it in a very seamless fashion.<br /><br />Today Apple announced the iPhone SDK (the website has completely crashed for me&#8230;.).  It will give a whole new ease of life to an already excellent product.  One of the greatest aspects of the iPhone is that it is constantly updated with new features like a full computer.<br /><br />There is a comprehensive <a href="http://www.engadget.com/2008/03/06/live-from-apples-iphone-press-conference/">write-up on Engadget</a> and <a href="http://arstechnica.com/journals/apple.ars/2008/03/06/developers-licking-their-fingers-over-cocoa-touch-iphone-sdk">Ars Technica</a> of all the announcements today including proper Exchange support.<br /><br />The SDK gives access via Objective-C to the OS features.  You get access to the accelerometers and multi-touch when writing your apps.  XCode provides the environment to develop in and there is an iPhone simulator. The features you have access to are:<br />* Keychain<br />* Bonjour<br />* SQLite<br />* Core Location<br />* Quicktime media layer<br />* Core Audio<br />* Core Image<br />* Core Animation<br />* PDF rendering<br />* OpenAL<br />* OpenGL ES<br /><br />The games look pretty damn good on the iPhone fromt he presentation from Super Monkey Ball to Spore to the specially designed Touch Fighter.  It looks like a Wii style changing of the game by using the advantages that the device offers rather than dwelling on what is now missing in comparison to gaming systems.<br /><br />Also the apps created will be distributed by the App Store that will be run by Apple.  If you develop free or open-source apps Apple will host them and distribute them for free.<br /><br />Also there is a leak of the BBC iPlayer for the iPhone mentioned in <a href="http://www.engadget.com/2008/03/06/live-from-apples-iphone-press-conference/comments/10866456/">this comment</a> on Engadget.</div>
+<h2>Comments</h2>
+<div class='comments'>
+<div class='comment'>
+<div class='author'>Adi</div>
+<div class='content'>
+<a rel="external" href="http://orientinspiration.com/2009/09/oes-tsetnoc.html" rel="nofollow">Oes  Tsetnoc</a> one of the ways in which we can learn seo besides <a rel="external" href="http://duniasoer.com/archives/mengembalikan-jati-diri-bangsa.html" rel="nofollow">Mengembalikan Jati Diri Bangsa</a>.  By participating in the <a rel="external" href="http://mncmakina.com/2009/09/oes-tsetnoc-seo-contest/" rel="nofollow">Oes Tsetnoc</a> or <a rel="external" href="http://ulaznice.info/mengembalikan-jati-diri-bangsa.html" rel="nofollow">Mengembalikan Jati Diri Bangsa</a> we can improve our seo skills. To find more information about <a rel="external" href="http://catatanblogger.info/738688-Oes-Tsetnoc.html" rel="nofollow">Oest Tsetnoc</a> please visit my <a rel="external" href="http://kusukaseo.info/981750-Oes-Tsetnoc-Support.html" rel="nofollow">Oes Tsetnoc</a> pages. And to find more information about <a rel="external" href="http://duniasoer.com" rel="nofollow">Mengembalikan Jati Diri Bangsa</a> please visit my <a rel="external" href="http://catatanblogger.info/464655-Mengembalikan-Jati-Diri-Bangsa.html" rel="nofollow">Mengembalikan Jati Diri Bangsa</a> pages. Thank you So much.</div>
+</div>
+</div>
+</div>
+ </div>
+
+  
+  <div class="post"> <div class="post-header">
+  
+    <h1 class="post-title">
+      <a href="/blog/2008/03/05/more-stl-ustl-and-stdcxx/">More STL - uSTL and Stdcxx</a>
+    </h1>
+  
+  
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2008-03-05T19:34:00+00:00" pubdate data-updated="true">Mar 5<sup>th</sup>, 2008</time>
+</div>
+
+<div class="post-content"><div class='post'>
+Thanks to a commenter on the <a href="http://garrys-brain.blogspot.com/2008/03/stl-related-rdestl.html">RDESTL post</a> I made yesterday, they pointed me at the <a href="http://ustl.sourceforge.net/">uSTL</a> (I assume pronounced micro-STL).<br /><br />It is a partial implementation of the STL specification.  It reduces code size by making memory allocation a non-templated base class.  As far as I can tell this reduces executable size because of less template bloat.  Whether it is faster or smaller in memory for the containers is another matter.  I suppose by reducing the executable size  cache coherency could be improved leading to some interesting speed-ups.<br /><br />It is for POSIX-based systems, and there is no maintained Windows port (a choice of the developer) although some peole have got it to work on Windows with differing levels of success.<br /><br />And another STL implementation I stumbled across is the <a href="http://stdcxx.apache.org/">Apache stdcxx</a>.  The project was started from a code donation by Rogue Wave who decided to open-source their commercial offering.<br /><br />At the end of 2007 stdcxx made it to an Apache Top-Level Project which means it should be well supported.  And apparently performance s quite good as well.</div>
+<h2>Comments</h2>
+<div class='comments'>
+<div class='comment'>
+<div class='author'>Adi</div>
+<div class='content'>
+<a rel="external" href="http://orientinspiration.com/2009/09/oes-tsetnoc.html" rel="nofollow">Oes  Tsetnoc</a> one of the ways in which we can learn seo besides <a rel="external" href="http://duniasoer.com/archives/mengembalikan-jati-diri-bangsa.html" rel="nofollow">Mengembalikan Jati Diri Bangsa</a>.  By participating in the <a rel="external" href="http://mncmakina.com/2009/09/oes-tsetnoc-seo-contest/" rel="nofollow">Oes Tsetnoc</a> or <a rel="external" href="http://ulaznice.info/mengembalikan-jati-diri-bangsa.html" rel="nofollow">Mengembalikan Jati Diri Bangsa</a> we can improve our seo skills. To find more information about <a rel="external" href="http://catatanblogger.info/738688-Oes-Tsetnoc.html" rel="nofollow">Oest Tsetnoc</a> please visit my <a rel="external" href="http://kusukaseo.info/981750-Oes-Tsetnoc-Support.html" rel="nofollow">Oes Tsetnoc</a> pages. And to find more information about <a rel="external" href="http://duniasoer.com" rel="nofollow">Mengembalikan Jati Diri Bangsa</a> please visit my <a rel="external" href="http://catatanblogger.info/464655-Mengembalikan-Jati-Diri-Bangsa.html" rel="nofollow">Mengembalikan Jati Diri Bangsa</a> pages. Thank you So much.<br> <a rel="external" href="http://orientinspiration.com" rel="nofollow">Oes  Tsetnoc</a> | <a rel="external" href="http://duniasoer.com/archives/semangat-mengembalikan-jati-diri-bangsa.html" rel="nofollow">Semangat Mengembalikan Jati Diri Bangsa</a></div>
+</div>
+<div class='comment'>
+<div class='author'>vincent</div>
+<div class='content'>
+It&#8217;s always interesting to have a STL implementation that everybody can understand. If you have already had a look at STL implementation and you haven&#8217;t a headache you are very talented.<BR/><BR/>Anyway I have ported ustl for windows platforms and windows CE is in progress.<BR/>You can find it here : http://www.smartmobili.com/index.php?option=com_content&task=view&id=35&Itemid=41&lang=english</div>
+</div>
+<div class='comment'>
+<div class='author'>Jalf</div>
+<div class='content'>
+The Visual C++ compiler is actually very good at eliminating code bloat from templates (The COMDAT folding compiler option)<BR/>Often, most instantiations of a template end up identical anyway, so merging them into a single object is a fairly obvious optimization.<BR/><BR/>In my experience, that pretty much eliminates the problem entirely on Windows, so the lack of a Windows port of uSTL doesn&#8217;t seem to be a big deal.<BR/><BR/>By contrast, GCC doesn&#8217;t (or didn&#8217;t) perform similar tricks. They had a fairly long discussion about implementing such an optimization on their dev mailing list a while back, and back then, the consensus was that it would compromise standards compliance (because it could mean multiple functions could end up with the same addresses)<BR/><BR/>I don&#8217;t know if GCC has added this optimization since then, but I doubt it.<BR/><BR/>Which makes uSTL relevant on GCC platforms, but essentially pointless on Windows.</div>
+</div>
+</div>
+</div>
+ </div>
+
+  
+  <div class="post"> <div class="post-header">
+  
+    <h1 class="post-title">
+      <a href="/blog/2008/03/04/stl-related-rdestl/">STL-related : Rdestl</a>
+    </h1>
+  
+  
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2008-03-04T20:16:00+00:00" pubdate data-updated="true">Mar 4<sup>th</sup>, 2008</time>
+</div>
+
+<div class="post-content"><div class='post'>
+A while back I <a href="http://garrys-brain.blogspot.com/2007/09/eastl-and-allocators.html">blogged</a> about the <a href="http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2007/n2271.html">EASTL</a> - Electronic Arts Standard Template Library.<br /><br />It is an interesting look at how EA have internally implemented their own STL with their own improvements/changes specific to their problem domain.<br /><br /><a href="http://msinilo.pl/blog/">Maciej Sinilo</a> has spent some time putting together a small subset of the STL changed for some game development requirements called the <a href="http://code.google.com/p/rdestl/">RDESTL</a>.  The related blog posts can be read <a href="http://msinilo.pl/blog/?p=25">here</a>, <a href="http://msinilo.pl/blog/?p=28">here</a> and <a href="http://msinilo.pl/blog/?p=33">here</a>.  It provides some basic containers (vector, etc), a string class, and some additional container types like intrusive containers.  It also provides the EASTL outlook on allocators (which I don&#8217;t agree with but that is another story).<br /><br />It is definitely interesting to see the code as it is quite readable.  I do wonder whether it achieved part of the EASTL goal which was allowing the compiler to optimise more aggressively because the code is simpler with less indirection.<br /><br />Also, here is a <a href="http://www.spreetree.net/blog/?p=7">link</a> to someone else who is replacing the STL.  Link via the excellent <a href="http://warpedvisions.org/">warpedvisions</a> (with an excellent biting comment).</div>
+<h2>Comments</h2>
+<div class='comments'>
+<div class='comment'>
+<div class='author'>Adi</div>
+<div class='content'>
+<a rel="external" href="http://orientinspiration.com/2009/09/oes-tsetnoc.html" rel="nofollow">Oes  Tsetnoc</a> one of the ways in which we can learn seo besides <a rel="external" href="http://duniasoer.com/archives/mengembalikan-jati-diri-bangsa.html" rel="nofollow">Mengembalikan Jati Diri Bangsa</a>.  By participating in the <a rel="external" href="http://mncmakina.com/2009/09/oes-tsetnoc-seo-contest/" rel="nofollow">Oes Tsetnoc</a> or <a rel="external" href="http://ulaznice.info/mengembalikan-jati-diri-bangsa.html" rel="nofollow">Mengembalikan Jati Diri Bangsa</a> we can improve our seo skills. To find more information about <a rel="external" href="http://catatanblogger.info/738688-Oes-Tsetnoc.html" rel="nofollow">Oest Tsetnoc</a> please visit my <a rel="external" href="http://kusukaseo.info/981750-Oes-Tsetnoc-Support.html" rel="nofollow">Oes Tsetnoc</a> pages. And to find more information about <a rel="external" href="http://duniasoer.com" rel="nofollow">Mengembalikan Jati Diri Bangsa</a> please visit my <a rel="external" href="http://catatanblogger.info/464655-Mengembalikan-Jati-Diri-Bangsa.html" rel="nofollow">Mengembalikan Jati Diri Bangsa</a> pages. Thank you So much.<br> <a rel="external" href="http://orientinspiration.com" rel="nofollow">Oes  Tsetnoc</a> | <a rel="external" href="http://duniasoer.com/archives/semangat-mengembalikan-jati-diri-bangsa.html" rel="nofollow">Semangat Mengembalikan Jati Diri Bangsa</a></div>
+</div>
+<div class='comment'>
+<div class='author'>MaciejS</div>
+<div class='content'>
+There&#8217;s also uSTL - STL-like library optimized for size. Quite interesting, however not 100% compatible.</div>
+</div>
+</div>
+</div>
+ </div>
+
+  
+  <div class="post"> <div class="post-header">
+  
+    <h1 class="post-title">
+      <a href="/blog/2008/03/04/upcoming-spa-cambridge-talk-type-driven/">Upcoming SPA Cambridge Talk - Type-driven Testing in Haskell</a>
+    </h1>
+  
+  
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2008-03-04T19:49:00+00:00" pubdate data-updated="true">Mar 4<sup>th</sup>, 2008</time>
+</div>
+
+<div class="post-content"><div class='post'>
+Simon Peyton Jones of Microsoft Research is doing the upcoming BCS SPA talk in Cambridge.  The subject is <span style="font-weight:bold;">&#8220;Type-driven testing in Haskell&#8221;</span> so people who have an interest in functional languages should like it.  As usual the talk is free and there is a light buffet.<br /><br />Sign up through <a href="http://www.bcs-spa.org/cgi-bin/view/SPA/TypeDrivenTestingInHaskell">this link</a>.<br /><br /><blockquote>Synopsis:<br /><br />One of the joys of functional programming is that code is so much more testable. For a start, testing pure functions is much easier than testing side-effecting procedures. Better still the auto-generation of test cases can be done by a library, without any external tools. And where we want exhaustive testing, it is possible to use lazy evaluation to cut the search space dramatically. I’ll explain these idea using demos from Quickcheck and Lazy Smallcheck, two popular libraries.<br /><br />While the focus of this talk is testing, I’ll introduce functional programming as I go along, so that you don’t already have to know Haskell to make sense of the ideas. I’ll also try to give a flavour of why I think you’ll be seeing a lot more crossover of functional programming ideas into the mainstream, over the next few years. <br /><br /><span style="font-weight:bold;">Simon Peyton Jones</span><br /><br />Simon Peyton Jones, MA, MBCS, CEng, graduated from Trinity College Cambridge in 1980. After two years in industry, he spent seven years as a lecturer at University College London, and nine years as a professor at Glasgow University, before moving to Microsoft Research (Cambridge) in 1998.<br /><br />His main research interest is in functional programming languages, their implementation, and their application. He has led a succession of research projects focused around the design and implementation of production-quality functional-language systems for both uniprocessors and parallel machines. He was a key contributor to the design of the now-standard functional language Haskell, and is the lead designer of the widely-used Glasgow Haskell Compiler (GHC). He has written two textbooks about the implementation of functional languages.<br /><br />More generally, he is interested in language design, rich type systems, software component architectures, compiler technology, code generation, runtime systems, virtual machines, and garbage collection. He is particularly motivated by direct use of principled theory to practical language design and implementation &#8211; that&#8217;s one reason he loves functional programming so much.<br /><br />His home page is at <a href="http://research.microsoft.com/~simonpj">http://research.microsoft.com/~simonpj</a>.<br /></blockquote></div>
+</div>
+ </div>
+
+  
+  <div class="post"> <div class="post-header">
+  
+    <h1 class="post-title">
+      <a href="/blog/2008/03/04/gui-toolkits-mythos/">GUI Toolkits - Mythos</a>
+    </h1>
+  
+  
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2008-03-04T19:28:00+00:00" pubdate data-updated="true">Mar 4<sup>th</sup>, 2008</time>
+</div>
+
+<div class="post-content"><div class='post'>
+A while back I <a href="http://garrys-brain.blogspot.com/2007/10/gui-toolkits-some-thoughts.html">blogged about some ideas</a> for GUI toolkits, not that I ever managed to get off my backside and do something about it.<br /><br />Well someone has done a great job with a DSEL (domain specific embedded language) with a toolkit called <a href="http://code.google.com/p/mythos/">Mythos</a>.  To quote the website <span style="font-style:italic;">&#8220;Mythos is a GUI library written in C++ using modern C++ techniques.&#8221;</span>  It does state on the website that it is more of a proof of concept than a fully-blown attempt.<br /><br />Still, it looks really interesting and has a few different components that make it up.  There is <span style="font-weight:bold;">khaos</span> which does the low level windowing bits and pieces.  <span style="font-weight:bold;">nyx</span> is the window layout library with a DSEL that lets you define the ayout in the C++ files.  <span style="font-weight:bold;">iris</span> does the event handling with another DSEL for associating events and actions.  <span style="font-weight:bold;">gaia</span> is the widget abstraction.<br /><br />Overall it looks like a very interesting use of modern C++ applied to GUI toolkits.  It is a different approach to something like <a href="http://stlab.adobe.com/">Adobe&#8217;s ASL</a> (adam and eve) but I think if the use of the code generation available through templates should be used to take the legwork out of defining user interfaces.  Mythos, which is the work of one person as far as I can tell (Benaka Moorthi) is a pretty neat accomplishment.</div>
+<h2>Comments</h2>
+<div class='comments'>
+<div class='comment'>
+<div class='author'>Adi</div>
+<div class='content'>
+<a rel="external" href="http://orientinspiration.com/2009/09/oes-tsetnoc.html" rel="nofollow">Oes  Tsetnoc</a> one of the ways in which we can learn seo besides <a rel="external" href="http://duniasoer.com/archives/mengembalikan-jati-diri-bangsa.html" rel="nofollow">Mengembalikan Jati Diri Bangsa</a>.  By participating in the <a rel="external" href="http://mncmakina.com/2009/09/oes-tsetnoc-seo-contest/" rel="nofollow">Oes Tsetnoc</a> or <a rel="external" href="http://ulaznice.info/mengembalikan-jati-diri-bangsa.html" rel="nofollow">Mengembalikan Jati Diri Bangsa</a> we can improve our seo skills. To find more information about <a rel="external" href="http://catatanblogger.info/738688-Oes-Tsetnoc.html" rel="nofollow">Oest Tsetnoc</a> please visit my <a rel="external" href="http://kusukaseo.info/981750-Oes-Tsetnoc-Support.html" rel="nofollow">Oes Tsetnoc</a> pages. And to find more information about <a rel="external" href="http://duniasoer.com" rel="nofollow">Mengembalikan Jati Diri Bangsa</a> please visit my <a rel="external" href="http://catatanblogger.info/464655-Mengembalikan-Jati-Diri-Bangsa.html" rel="nofollow">Mengembalikan Jati Diri Bangsa</a> pages. Thank you So much.<br> <a rel="external" href="http://orientinspiration.com" rel="nofollow">Oes  Tsetnoc</a> | <a rel="external" href="http://duniasoer.com/archives/semangat-mengembalikan-jati-diri-bangsa.html" rel="nofollow">Semangat Mengembalikan Jati Diri Bangsa</a></div>
+</div>
+</div>
+</div>
+ </div>
+
+  
+  <div class="post"> <div class="post-header">
+  
+    <h1 class="post-title">
+      <a href="/blog/2008/02/07/vista-graphics-hackety-hack/">Vista Graphics Hackety Hack</a>
+    </h1>
+  
+  
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2008-02-07T20:22:00+00:00" pubdate data-updated="true">Feb 7<sup>th</sup>, 2008</time>
+</div>
+
+<div class="post-content"><div class='post'>
+There is nothing more depressing than knowing you have to use a computer loaded up with Vista, especially when developing, because it is a constant battle.<br /><br />But deep in the bowels of the OS there are some interesting things, but they tend to be undocumented.  I&#8217;m not a fan of the layering of the GUI, and I always wondered if it was possible to use the base parts of the GUI DLLs which things like WP use as teir basis.<br /><br />Some exceedingly talented and clever developers have spent their brain cycles reverse engineering the completely undocumented dwm and milcore.dll (apart from the thumbnail API).  I&#8217;m not a fan of all the managed stuff especially since it mainly resoves down to the unmanaged core DLLs anyway.  Go <a href="http://siwu.info/">check out the blog here</a> with lots of videos of some exceedingly clever things.<br /><br />What is even better is that the developer has released it as <a href="http://code.google.com/p/dwmaxx/">open-source</a>.  Hopefully this will provide a basis for more adventurous and useful developments.  With this amount of flexibility available then it should be possible to create something where Vista gets some good productivity gains.</div>
+<h2>Comments</h2>
+<div class='comments'>
+<div class='comment'>
+<div class='author'>jd</div>
+<div class='content'>
+Have you seen the equivalent tricks in Linux with compositing window managers like compiz-fusion?<BR/><BR/>Check out this video http://remixtechnology.com/view/bfg-c2d-video-screenshot<BR/><BR/>Now all I need is a graphics card made in the last 5 years.<BR/><BR/>JD</div>
+</div>
+</div>
+</div>
+ </div>
+
+
+<div id="pagination">
+  
+    <a class="prev" href="26">&laquo;Previous</a>
+  
+  
+    <a class="next" href="24">Next&raquo;</a>
+  
+</div>
+ </div>
+    <div id="footer">
+  <div class="panels">
+    <div class="license">
+      <h2>License</h2>
+      <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-nc-sa/3.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/">Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License</a>.
+    </div>
+
+    <div class="posts">
+      <h2>Recent Posts</h2>
+      <ul>
+        
+          <li>
+            <a href="/blog/2014/07/13/slash-dev-slash-summer-talk-security-is-hard/">/dev/summer talk - Security Is Hard</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2014/07/13/djugl-talk-the-trojan-unicorn/">DJUGL Talk - The Trojan Unicorn</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2014/07/13/back-at-bromium/">Back at Bromium</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2013/06/22/rss-feed-moved-to-http-slash-slash-www-dot-fragmentedmemory-dot-com-slash-feed-slash/">RSS Feed Moved To http://www.fragmentedmemory.com/feed/</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2013/06/18/new-location-and-new-blog-engine-and-old-content-restored/">New Location &amp; New Blog Engine &amp; Old Content Restored</a>
+          </li>
+        
+      </ul>
+    </div>
+
+    <div class="posts">
+      <h2>Links</h2>
+      <a href='https://alpha.app.net/gjb' class='adn-button' target='_blank' data-type='follow' data-width='277' data-height='27' data-user-id='@gjb' data-show-username='1' rel='me'>Follow me on App.net</a><script>(function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src='//d2zh9g63fcvyrq.cloudfront.net/adn.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'adn-button-js'));</script>
+    </div>
+  </div>
+
+  <p class="powered">
+    Powered by <a href="http://octopress.org">Octopress</a> and <a href="https://github.com/iwinux/compbits">Compbits</a>
+  </p>
+</div>
+
+  </div> <!-- #wrapper end -->
+
+  
+
+  
+
+
+  
+
+  
+
+  
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+</body>
+</html>

@@ -1,0 +1,461 @@
+
+<!DOCTYPE HTML>
+<html lang="en-gb">
+<head>
+  <meta charset="UTF-8">
+  <title>Fragmented Memory</title>
+
+  <meta name="author" content="Garry Bodsworth">
+  
+  <meta name="description" content="Distributed Revision Control Jun 3rd, 2007 Linus Torvalds did a talk about source control the other day, more specifically about GIT. Basically he &hellip;">
+  
+  
+
+  <link rel="canonical" href="http://www.fragmentedmemory.com/posts/33">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/feed/" rel="alternate" title="Fragmented Memory" type="application/atom+xml">
+</head>
+  
+<body class="default">
+  <div id="wrapper">
+    <div id="header">
+  <h1><a href="/">Fragmented Memory</a></h1>
+  
+    <p>Garry Bodsworth's Blog (formerly Garry's Bit Patterns &amp; Programmer's Log)</p>
+  
+</div>
+<ul id="social-links">
+  
+    <li><a class="rss" href="/feed/" title="RSS">RSS</a></li>
+  
+  
+  
+  
+    <li><a class="twitter" href="http://twitter.com/garrybodsworth" title="Twitter">Twitter</a></li>
+  
+  
+    <li><a class="github" href="https://github.com/garrybodsworth" title="GitHub">GitHub</a></li>
+  
+  
+  
+    <li><a class="linkedin" href="http://www.linkedin.com/in/garrybodsworth">LinkedIn</a></li>
+  
+  
+  
+  
+    <li><a class="pinboard" href="https://pinboard.in/u:garrybodsworth" title="Pinboard">Pinboard</a></li>
+  
+</ul>
+<div class="clear"></div>
+<ul id="nav">
+  
+    <li> <a href="/" class="current">blog</a> </li>
+  
+
+  
+    <li><a href="/blog/archives">archives</a></li>
+  
+
+  
+    <li><a href="/about">about</a></li>
+  
+</ul>
+
+    <div id="main"> 
+
+  
+  <div class="post"> <div class="post-header">
+  
+    <h1 class="post-title">
+      <a href="/blog/2007/06/03/distributed-revision-control/">Distributed Revision Control</a>
+    </h1>
+  
+  
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2007-06-03T15:08:00+01:00" pubdate data-updated="true">Jun 3<sup>rd</sup>, 2007</time>
+</div>
+
+<div class="post-content"><div class='post'>
+Linus Torvalds did a talk about source control the other day, more specifically about <a href="http://git.or.cz/">GIT</a>.  Basically he has an immense dislike of centralised revision control.  You can see Linus&#8217;s talk here:<br /><br /><embed src="http://www.youtube.com/v/4XpnKHJAok8" type="application/x-shockwave-flash" wmode="transparent" height="350" width="425"></embed><br /><br />Some Slashdot discussion is available at this <a href="http://developers.slashdot.org/developers/07/06/03/004214.shtml">link</a>.<br /><br />This kind of sent me into an Internet whirlpool looking at distributed revision control.  So this post will be all about that.  I must admit I have never really thought about it since I am so pleased with <a href="http://subversion.tigris.org/">Subversion</a> and <a href="http://tortoisesvn.net/">TortoiseSVN</a>, although recent events have made me look into source control systems in general more closely.  At a high-level the distributed model has a lot of advantages in design and is capable of having a &#8220;central&#8221; server you sync against which means it can behave more like the centralised model.  On the other hand the centralised tools all seem to have much easier to use tools and have more powerful features (at least in Subversion) than they are given credit for due to their heritage.<br /><br />Mozilla development has switched to a distributed source control system recently.  They had a set of requirements like cross-platform, speed, stability and more.  Some more information can be read <a href="http://weblogs.mozillazine.org/preed/2007/04/version_control_system_shootou_1.html">here</a>. <br /><br /><a href="http://git.or.cz/">Git</a> was started by Linus Torvalds because he was no longer able to use BitKeeper.  It has quite poor Windows support because it is reliant on a POSIX system but has a lot of powerful features.  There are some UI projects but they seem quite immature at the moment and only augment the command ine rather than replace it.<br /><br /><a href="http://www.selenic.com/mercurial/wiki/">Mecurial</a> was chosen by Mozilla development for their revision control system, and in fact they have already switched to it.  There are apparently some speed issues in comparison to Git, but it has better cross-platform support.  There seems to be a few extensions including some <a href="http://www.bugzilla.org/">Bugzilla</a> integration.  I am not too sure about the UI side yet.<br /><br />Other distributed source control systems include:<br /><ul><li><a href="http://bazaar-vcs.org/">Bazaar</a> - is a GPL based system.</li><li><a href="http://monotone.ca/">Monotone</a> - is another GPL system.</li><li><a href="http://svk.bestpractical.com/view/HomePage">SVK</a> - A Subversion derived distributed system.</li><li><a href="http://www.darcs.net/">darcs</a> - yet another system.</li></ul><br /><br />Anyway these distributed systems seem to be getting traction with Mozilla, X, and other large projects starting to use it.</div>
+<h2>Comments</h2>
+<div class='comments'>
+<div class='comment'>
+<div class='author'>Ted</div>
+<div class='content'>
+Hey Garry, speaking of revision control and Subversion in particular: Have you created any updated toolbars/menus for Visual Studio Orcas yet?  The file context menu appears to be broken and I was wondering if I could pick your brain on how you created these so I could learn how to create my own ones for web site development.  Please contact me at tmilker at gmail dot com.<BR/><BR/>(sorry for the mostly off-topic comment, you do not provide any other means of contacting you)</div>
+</div>
+<div class='comment'>
+<div class='author'>Frabcus</div>
+<div class='content'>
+Yes, it is all about tools. <BR/><BR/>As far as I know none of the distributed version control systems have as good a set of, particularly Windows, interfaces as CVS and Subversion.<BR/><BR/>There is a TortoiseDarcs, however, and things are beginning to look promising.<BR/><BR/>when Subversion was started, it wasn&#8217;t obvious how distributed version control would work, or that it could work. Nobody was using it. Subversion can be forgiven for basically copying Perforce, the state of the art at the time in terms of version control functionality.</div>
+</div>
+</div>
+</div>
+ </div>
+
+  
+  <div class="post"> <div class="post-header">
+  
+    <h1 class="post-title">
+      <a href="/blog/2007/05/31/write-better-code/">Write Better Code</a>
+    </h1>
+  
+  
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2007-05-31T20:50:00+01:00" pubdate data-updated="true">May 31<sup>st</sup>, 2007</time>
+</div>
+
+<div class="post-content"><div class='post'>
+There is an interesting talk on Slashdot about coding <a href="http://developers.slashdot.org/developers/07/05/30/1813247.shtml">here</a>.  It&#8217;s good to see that there is still occasionally some discussions about programming on there.<br /><br />The article is about <a href="http://www.ibm.com/developerworks/linux/library/l-clear-code/?ca=dgr-FClnxw01linuxcodetips">Six Ways To Write More Comprehensible Code</a>.  It makes size points:<br /><ol><li>Comment well and often.</li><li>Use sensible names not obscure constants.</li><li>Use variables with descriptive names.</li><li>Do error checking.</li><li><a name="N101BF"><span class="atitle">&#8220;Premature optimization is the         root of all evil.&#8221; - Donald Knuth</span></a></li><li><a name="N101BF">Don&#8217;t be too clever.</a></li></ol><br /><br />The article is a nice little bit about writing better code.  Personally I rate number 5 very highly, in fact I should write an article about writing better code from my point of view.</div>
+<h2>Comments</h2>
+<div class='comments'>
+<div class='comment'>
+<div class='author'>goatchurch</div>
+<div class='content'>
+ditto that on number 5.  <BR/><BR/>&#8220;comment well&#8221; is a bit of a tautology.  It&#8217;s like saying: <BR/><BR/>&#8220;Rule 1 for writing good code is to write good code!&#8221;<BR/><BR/>I&#8217;ve heard it said that comments are a crutch and a sign that you aren&#8217;t applying rules 2 and 3 properly.  Often we stick comments above distinct chunks or paragraphs of code.  This style recommends you split each paragraph into a little function of its own with a descriptive name.  <BR/><BR/>I also want it to be understood that not all variables are the same.  Often variables are structural &#8211; created on one line and passed as an argument on the next.  It&#8217;s a distraction to give them descriptive names.  They act as pronouns.  Like using &#8220;she&#8221; instead of repeating the name in the next sentence.</div>
+</div>
+</div>
+</div>
+ </div>
+
+  
+  <div class="post"> <div class="post-header">
+  
+    <h1 class="post-title">
+      <a href="/blog/2007/05/30/x-box-media-center-for-linux/">X-Box Media Center - for Linux</a>
+    </h1>
+  
+  
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2007-05-30T20:09:00+01:00" pubdate data-updated="true">May 30<sup>th</sup>, 2007</time>
+</div>
+
+<div class="post-content"><div class='post'>
+The critically acclaimed <a href="http://www.xboxmediacenter.com/">X-Box Media Center</a> which is a HTPC program for the X-Box is planning to work on a Linux version.  Bizarrely some of X-Box Media Center inspired <a href="http://www.team-mediaportal.com/">Media Portal</a>, the very good and comprehensive HTPC program for Windows.<br /><br />They are looking for C/C++ developers to help with the porting to another platform.  This will require substantial work to port the functionality requiring new playback engines, 2D and 3D graphics, and no doubt lots more.<br /><br />There is a thread on their forum for developers <a href="http://www.xboxmediacenter.com/forum/showthread.php?t=26097">here</a>.  There is a post on the forum for end users <a href="http://www.xboxmediacenter.com/forum/showthread.php?t=26097">here</a>.<br /><br />On their wiki the preparations are going along.  You can read this information <a href="http://www.xboxmediacenter.com/wiki/index.php?title=Linux_port_project">here</a>.<br /><br />I have the sincerest hope this is successful because with MythTV out there things will be healthy for Linux HTPC programs.  Also, it is a good thing it will be built out of open-source and free tools.</div>
+</div>
+ </div>
+
+  
+  <div class="post"> <div class="post-header">
+  
+    <h1 class="post-title">
+      <a href="/blog/2007/05/29/good-resource-for-icons-buttons-and-so/">Good Resource for Icons, Buttons, and So On&#8230;</a>
+    </h1>
+  
+  
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2007-05-29T20:40:00+01:00" pubdate data-updated="true">May 29<sup>th</sup>, 2007</time>
+</div>
+
+<div class="post-content"><div class='post'>
+<a href="http://www.smashingmagazine.com/">Smashing Magazine</a> has a great article <a href="http://www.smashingmagazine.com/2007/05/24/freebies-round-up-icons-buttons-and-templates/">Freebies Round-Up: Icons, Buttons and Templates</a> detailing lots of sources of icons and images available for use.  Not all can be used in commercial programs but they could be used for open-source programs.</div>
+</div>
+ </div>
+
+  
+  <div class="post"> <div class="post-header">
+  
+    <h1 class="post-title">
+      <a href="/blog/2007/05/29/windows-aero-ui-development/">Windows Aero UI Development</a>
+    </h1>
+  
+  
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2007-05-29T20:18:00+01:00" pubdate data-updated="true">May 29<sup>th</sup>, 2007</time>
+</div>
+
+<div class="post-content"><div class='post'>
+There is a new article on the <a href="http://www.codeproject.com">CodeProject</a> about retrofitting Windows Aero UI elements to existing applications.  <a href="http://www.codeproject.com/vista/AeroGlassLegacyWindowsApp.asp">Adding or Retrofitting Aero Glass into Legacy Windows Applications - Stefan Kuhr</a>.<br /><br />It&#8217;s quite a comprehensive article and means someone else has done the research legwork for you - one of the beauties of the CodeProject.  This is especially useful as the Aero C++ headers have no real documentation as yet.</div>
+</div>
+ </div>
+
+  
+  <div class="post"> <div class="post-header">
+  
+    <h1 class="post-title">
+      <a href="/blog/2007/05/26/boostcon-2007-presentations/">Boostcon 2007 Presentations</a>
+    </h1>
+  
+  
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2007-05-26T21:04:00+01:00" pubdate data-updated="true">May 26<sup>th</sup>, 2007</time>
+</div>
+
+<div class="post-content"><div class='post'>
+<a href="http://www.boostcon.com/home">Boostcon 2007</a> (the conference about the splendid C++ library <a href="http://www.boost.org">Boost</a>) happened on the 14th-18th May 2007.<br /><br />I&#8217;ve been keeping an eye out for any papers/presentations that will be made public from it.  Fingers crossed someone will sort out the general public with copies of all the presentations and notes.<br /><br />Good news though since on the <a href="http://opensource.adobe.com">Adobe ASL</a> Wiki, Sean Parent one of the dead clever guys at Adobe has posted his presentations.  One of which is the keynote address.<br /><br />The first one, the keynote, is about the possible future of software development - concentrating mainly on generic programming and how we can use it to reduce errors.  You can download it <a href="http://opensource.adobe.com/wiki/index.php/Image:Boostcon_possible_future.pdf">here</a>.<br /><br />The second is about the Boost Poly library.  You can download this <a href="http://opensource.adobe.com/wiki/index.php/Image:Boost_poly.pdf">here</a>.  This is also by Sean Parent.<br /><br />On a related note I will hopefully be doing some in-depth posts about the Adobe ASL soon as I am finding it very interesting going through the documentation.</div>
+<h2>Comments</h2>
+<div class='comments'>
+<div class='comment'>
+<div class='author'>Adi</div>
+<div class='content'>
+<a rel="external" href="http://orientinspiration.com/2009/09/oes-tsetnoc.html" rel="nofollow">Oes  Tsetnoc</a> one of the ways in which we can learn seo besides <a rel="external" href="http://duniasoer.com/archives/mengembalikan-jati-diri-bangsa.html" rel="nofollow">Mengembalikan Jati Diri Bangsa</a>.  By participating in the <a rel="external" href="http://mncmakina.com/2009/09/oes-tsetnoc-seo-contest/" rel="nofollow">Oes Tsetnoc</a> or <a rel="external" href="http://ulaznice.info/mengembalikan-jati-diri-bangsa.html" rel="nofollow">Mengembalikan Jati Diri Bangsa</a> we can improve our seo skills. To find more information about <a rel="external" href="http://catatanblogger.info/738688-Oes-Tsetnoc.html" rel="nofollow">Oest Tsetnoc</a> please visit my <a rel="external" href="http://kusukaseo.info/981750-Oes-Tsetnoc-Support.html" rel="nofollow">Oes Tsetnoc</a> pages. And to find more information about <a rel="external" href="http://duniasoer.com" rel="nofollow">Mengembalikan Jati Diri Bangsa</a> please visit my <a rel="external" href="http://catatanblogger.info/464655-Mengembalikan-Jati-Diri-Bangsa.html" rel="nofollow">Mengembalikan Jati Diri Bangsa</a> pages. Thank you So much.</div>
+</div>
+</div>
+</div>
+ </div>
+
+  
+  <div class="post"> <div class="post-header">
+  
+    <h1 class="post-title">
+      <a href="/blog/2007/05/26/future-of-opengl/">The Future of OpenGL</a>
+    </h1>
+  
+  
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2007-05-26T12:55:00+01:00" pubdate data-updated="true">May 26<sup>th</sup>, 2007</time>
+</div>
+
+<div class="post-content"><div class='post'>
+The <a href="http://www.opengl.org">OpenGL</a> website has put up links to a couple of articles about the future of OpenGL 2 and 3.<br /><br /><a href="http://www.theinquirer.net/default.aspx?article=39846">This article</a> covers the next two versions of OpenGL codenamed Longs Peak (2.x) and Mount Evans (3.0).  Longs Peak concentrates on tidying up the current API, whereas Mount Evans is a rework of the API to deal with the newer concepts in 3D technology.  Mount Evans also dels with the unification of OpenGL with its ES version that is used in low powered handheld devices like mobile phones and games consoles.<br /><br />Another article is linked <a href="http://www.theinquirer.net/default.aspx?article=39830">here</a>.  Also there is an <a href="http://blogs.nvidia.com/developers/2007/05/enemy_territori_1.html#more">interview with Roy Taylor from nVidia about OpenGL</a>.</div>
+<h2>Comments</h2>
+<div class='comments'>
+<div class='comment'>
+<div class='author'>Adi</div>
+<div class='content'>
+<a rel="external" href="http://orientinspiration.com/2009/09/oes-tsetnoc.html" rel="nofollow">Oes  Tsetnoc</a> one of the ways in which we can learn seo besides <a rel="external" href="http://duniasoer.com/archives/mengembalikan-jati-diri-bangsa.html" rel="nofollow">Mengembalikan Jati Diri Bangsa</a>.  By participating in the <a rel="external" href="http://mncmakina.com/2009/09/oes-tsetnoc-seo-contest/" rel="nofollow">Oes Tsetnoc</a> or <a rel="external" href="http://ulaznice.info/mengembalikan-jati-diri-bangsa.html" rel="nofollow">Mengembalikan Jati Diri Bangsa</a> we can improve our seo skills. To find more information about <a rel="external" href="http://catatanblogger.info/738688-Oes-Tsetnoc.html" rel="nofollow">Oest Tsetnoc</a> please visit my <a rel="external" href="http://kusukaseo.info/981750-Oes-Tsetnoc-Support.html" rel="nofollow">Oes Tsetnoc</a> pages. And to find more information about <a rel="external" href="http://duniasoer.com" rel="nofollow">Mengembalikan Jati Diri Bangsa</a> please visit my <a rel="external" href="http://catatanblogger.info/464655-Mengembalikan-Jati-Diri-Bangsa.html" rel="nofollow">Mengembalikan Jati Diri Bangsa</a> pages. Thank you So much.<br> <a rel="external" href="http://orientinspiration.com" rel="nofollow">Oes  Tsetnoc</a> | <a rel="external" href="http://duniasoer.com/archives/semangat-mengembalikan-jati-diri-bangsa.html" rel="nofollow">Semangat Mengembalikan Jati Diri Bangsa</a></div>
+</div>
+</div>
+</div>
+ </div>
+
+  
+  <div class="post"> <div class="post-header">
+  
+    <h1 class="post-title">
+      <a href="/blog/2007/05/24/programming-resources/">Programming Resources</a>
+    </h1>
+  
+  
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2007-05-24T20:31:00+01:00" pubdate data-updated="true">May 24<sup>th</sup>, 2007</time>
+</div>
+
+<div class="post-content"><div class='post'>
+This post is just going to be a collection of links to interesting resources and papers on programming, mostly to do with C++.<br /><br />First up some interesting papers on programming in gerneral.  <span style="font-weight:bold;">Notes on Foundations of Programming</span> by Alex Stepanov and Mat Marcus - you can read <a href="http://www.stepanovpapers.com/PAM.pdf">Part 1 here</a> and <a href="http://www.stepanovpapers.com/FOP2.pdf">Part 2 here</a>.<br /><br />Next up there is the <a href="http://erdani.org/publications/main.html">papers of Andrei Alexandrescu</a> the template and modern C++ specialist.  He also started the <a href="http://loki-lib.sourceforge.net/">Loki library</a> as a by-product of his books which is a collection of C++ classes for useful things.<br /><br /><a href="http://mypage.bluewin.ch/yuppi/links/cheatsheets.html">Cheatsheets and reference</a> is a collection of useful links for web programmers (there are some other more general programming links like Python and C++).<br /><br />For the beginners out there here is a link to a <a href="http://www.cplusplus.com/doc/tutorial/">C++ tutorial</a> which is quite well presented.<br /><br />A good resource for peer-reviewed C++ articles is the <a href="http://www.artima.com/cppsource">C++ Source</a> although there isn&#8217;t a massive amount of recent content.</div>
+</div>
+ </div>
+
+  
+  <div class="post"> <div class="post-header">
+  
+    <h1 class="post-title">
+      <a href="/blog/2007/05/23/future-developments-subversion/">Future Developments - Subversion</a>
+    </h1>
+  
+  
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2007-05-23T22:43:00+01:00" pubdate data-updated="true">May 23<sup>rd</sup>, 2007</time>
+</div>
+
+<div class="post-content"><div class='post'>
+<a href="http://subversion.tigris.org">Subversion</a> is always a great choice for source control, and in the summer it looks like there will be an update to version 1.5 with some fairly major features.<br /><br />The most important of these features is the merge tracking which is detailed in <a href="http://blogs.open.collab.net/svn/2007/05/the_subversion__1.html">this blog post</a>.  It is not a problem for a simple life of development, but when you are maintaining multiple branches with multiple requirements and they all need to know what revisions have an haven&#8217;t been merged you really need to know what is going on.  With Subversion up until the upcoming 1.5 you would just have to be conscientious and meticulous.<br /><br />There is a list of all issue reports that are <a href="http://subversion.tigris.org/issues/buglist.cgi?component=subversion&issue_status=NEW&issue_status=STARTED&issue_status=REOPENED&target_milestone=1.5&target_milestone=1.5-consider">targeted for Subversion 1.5</a>.<br /><br />Also for Subversion resources there is a great blog <a href="http://svn-dev.blogspot.com/">here</a> which has more about what the developers are planning (or would like to ideally include).  You can see the Subversion roadmap <a href="http://subversion.tigris.org/roadmap.html">here</a>.  There is also an issue list for what <a href="http://subversion.tigris.org/issues/buglist.cgi?component=subversion&issue_status=NEW&issue_status=STARTED&issue_status=REOPENED&target_milestone=2.0">could be potentially included in 2.0</a>.  Oh and finally <a href="http://tortoisesvn.net/status">the plans for TortoiseSVN</a> in relation to Subversion 1.5.<br /><br /><span style="font-weight:bold;">Edit:</span> Thanks to hwright for the comment that <a href="http://jc.ngo.org.uk/~nik/planet-subversion/">Planet Subversion</a> is an aggregator for Subversion blogs.  Cheers!</div>
+<h2>Comments</h2>
+<div class='comments'>
+<div class='comment'>
+<div class='author'>hwright</div>
+<div class='content'>
+Hi Garry.<BR/><BR/>Another Subversion-related website that is pretty informational is <A HREF="http://jc.ngo.org.uk/~nik/planet-subversion/" REL="nofollow">Planet Subversion</A>, an aggregator of several of the developers&#8217; blogs.  There&#8217;s quite a bit of development-related stuff, with the occasional glimpse into their personal lives.</div>
+</div>
+</div>
+</div>
+ </div>
+
+  
+  <div class="post"> <div class="post-header">
+  
+    <h1 class="post-title">
+      <a href="/blog/2007/05/23/gui-toolkits-guitoolkit/">GUI Toolkits - GuiToolkit</a>
+    </h1>
+  
+  
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2007-05-23T20:20:00+01:00" pubdate data-updated="true">May 23<sup>rd</sup>, 2007</time>
+</div>
+
+<div class="post-content"><div class='post'>
+Many many moons ago there was a <a href="http://www.codeproject.com">CodeProject</a> article about something called <a href="http://www.codeproject.com/library/guitoolkit.asp">GuiToolkit</a> which was an extension to MFC adding lots of modern bits and pieces (for the time) like the Office 2003 look.<br /><br />It had lots of nice little features that people could use in their MFC apps.  Things like the flashy new icon menus and docking windows.  I found it a little heavy going looking at the code but it was interesting at least.<br /><br />The writer of GuiToolkit has just published a new article called <a href="http://www.codeproject.com/library/PrettyWinApiClass.asp">Pretty WinAPI Class</a> and covers a modern looking GUI interface by wrapping the Win32 API.  It has nice looking menus, docking windows and lots of other good looking tools.  The source looks very similar to MFC in some respects, but it seems to do the job nicely providing the &#8220;modern Windows look&#8221; since Microsoft does not see fit to provide the common controls for this in a lot of areas.<br /><br />You can see the homepage for all of these projects <a href="http://www.beyondata.com/">here</a>.</div>
+</div>
+ </div>
+
+
+<div id="pagination">
+  
+    <a class="prev" href="34">&laquo;Previous</a>
+  
+  
+    <a class="next" href="32">Next&raquo;</a>
+  
+</div>
+ </div>
+    <div id="footer">
+  <div class="panels">
+    <div class="license">
+      <h2>License</h2>
+      <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-nc-sa/3.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/">Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License</a>.
+    </div>
+
+    <div class="posts">
+      <h2>Recent Posts</h2>
+      <ul>
+        
+          <li>
+            <a href="/blog/2014/07/13/slash-dev-slash-summer-talk-security-is-hard/">/dev/summer talk - Security Is Hard</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2014/07/13/djugl-talk-the-trojan-unicorn/">DJUGL Talk - The Trojan Unicorn</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2014/07/13/back-at-bromium/">Back at Bromium</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2013/06/22/rss-feed-moved-to-http-slash-slash-www-dot-fragmentedmemory-dot-com-slash-feed-slash/">RSS Feed Moved To http://www.fragmentedmemory.com/feed/</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2013/06/18/new-location-and-new-blog-engine-and-old-content-restored/">New Location &amp; New Blog Engine &amp; Old Content Restored</a>
+          </li>
+        
+      </ul>
+    </div>
+
+    <div class="posts">
+      <h2>Links</h2>
+      <a href='https://alpha.app.net/gjb' class='adn-button' target='_blank' data-type='follow' data-width='277' data-height='27' data-user-id='@gjb' data-show-username='1' rel='me'>Follow me on App.net</a><script>(function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src='//d2zh9g63fcvyrq.cloudfront.net/adn.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'adn-button-js'));</script>
+    </div>
+  </div>
+
+  <p class="powered">
+    Powered by <a href="http://octopress.org">Octopress</a> and <a href="https://github.com/iwinux/compbits">Compbits</a>
+  </p>
+</div>
+
+  </div> <!-- #wrapper end -->
+
+  
+
+  
+
+
+  
+
+  
+
+  
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+</body>
+</html>

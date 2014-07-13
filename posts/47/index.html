@@ -1,0 +1,530 @@
+
+<!DOCTYPE HTML>
+<html lang="en-gb">
+<head>
+  <meta charset="UTF-8">
+  <title>Fragmented Memory</title>
+
+  <meta name="author" content="Garry Bodsworth">
+  
+  <meta name="description" content="Code Jenga Nov 9th, 2006 Imagine a game of Jenga except every fourth piece is booby-trapped.Anyone who has worked on a suitably mature commercial &hellip;">
+  
+  
+
+  <link rel="canonical" href="http://www.fragmentedmemory.com/posts/47">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/feed/" rel="alternate" title="Fragmented Memory" type="application/atom+xml">
+</head>
+  
+<body class="default">
+  <div id="wrapper">
+    <div id="header">
+  <h1><a href="/">Fragmented Memory</a></h1>
+  
+    <p>Garry Bodsworth's Blog (formerly Garry's Bit Patterns &amp; Programmer's Log)</p>
+  
+</div>
+<ul id="social-links">
+  
+    <li><a class="rss" href="/feed/" title="RSS">RSS</a></li>
+  
+  
+  
+  
+    <li><a class="twitter" href="http://twitter.com/garrybodsworth" title="Twitter">Twitter</a></li>
+  
+  
+    <li><a class="github" href="https://github.com/garrybodsworth" title="GitHub">GitHub</a></li>
+  
+  
+  
+    <li><a class="linkedin" href="http://www.linkedin.com/in/garrybodsworth">LinkedIn</a></li>
+  
+  
+  
+  
+    <li><a class="pinboard" href="https://pinboard.in/u:garrybodsworth" title="Pinboard">Pinboard</a></li>
+  
+</ul>
+<div class="clear"></div>
+<ul id="nav">
+  
+    <li> <a href="/" class="current">blog</a> </li>
+  
+
+  
+    <li><a href="/blog/archives">archives</a></li>
+  
+
+  
+    <li><a href="/about">about</a></li>
+  
+</ul>
+
+    <div id="main"> 
+
+  
+  <div class="post"> <div class="post-header">
+  
+    <h1 class="post-title">
+      <a href="/blog/2006/11/09/code-jenga/">Code Jenga</a>
+    </h1>
+  
+  
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2006-11-09T19:39:00+00:00" pubdate data-updated="true">Nov 9<sup>th</sup>, 2006</time>
+</div>
+
+<div class="post-content"><div class='post'>
+Imagine a game of Jenga except every fourth piece is booby-trapped.<br /><br />Anyone who has worked on a suitably mature commercial codebase knows exactly what I am on about.  You are severely restricted in what you can change and you are always having to look for unforeseen consequences.<br /><br />That is why it is like a game of Jenga, you remove one piece or replace it but you run the risk of it all toppling down.  I guess that is why clean slates are probably so appealing to programmers, as you reach a state of coding entropy where it is collapsing under its own weight.<br /><br />How many times have you tried to rewrite and replace something that was badly engineered and found that there were numerous side-effects.  Regression and unit testing are great things, but marketing and sales don&#8217;t care about that, and it all costs money after all.<br /><br />So next time you are banging your head up against a brick wall with what you are working on, it is just Code Jenga.<br /><br /><a onblur="try {parent.deselectBloggerImageGracefully();} catch(e) {}" href="http://photos1.blogger.com/blogger2/5090/4314/1600/jenga.jpg"><img style="cursor:pointer; cursor:hand;" src="http://photos1.blogger.com/blogger2/5090/4314/320/jenga.jpg" border="0" alt="" /></a></div>
+</div>
+ </div>
+
+  
+  <div class="post"> <div class="post-header">
+  
+    <h1 class="post-title">
+      <a href="/blog/2006/11/08/multi-core-programming/">Multi-Core Programming</a>
+    </h1>
+  
+  
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2006-11-08T21:43:00+00:00" pubdate data-updated="true">Nov 8<sup>th</sup>, 2006</time>
+</div>
+
+<div class="post-content"><div class='post'>
+An interesting article that passed my eyes in the past couple of days was <a href="http://arstechnica.com/articles/paedia/cpu/valve-multicore.ars">this one</a>.  It is about Valve&#8217;s approach to multithreaded applications, and it seems that they fought against it for as long as they could.  Since I&#8217;ve worked in industry I&#8217;ve worked entirely on mutithreaded applications and this probably is under the coarse grained model, but it looks like the fine grained model is going to get more important in the next few years and it is something we are all going to have to work out.</div>
+</div>
+ </div>
+
+  
+  <div class="post"> <div class="post-header">
+  
+    <h1 class="post-title">
+      <a href="/blog/2006/11/08/visual-studio-2005-and-tortoisesvn/">Visual Studio 2005 and TortoiseSVN Subversion Integration - Update</a>
+    </h1>
+  
+  
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2006-11-08T21:12:00+00:00" pubdate data-updated="true">Nov 8<sup>th</sup>, 2006</time>
+</div>
+
+<div class="post-content"><div class='post'>
+<span style="font-weight:bold;"><a href="http://garrys-brain.blogspot.com/2007/07/tortoisesvn-and-visual-studio.html">See the update here.</a></span><br /><br />Hi there everyone,<br /><br />Here is an update to the TortoiseSVN integration into Visual Studio 2005.  This update is a fairly major change since this will only have the changes to external tools, menus and toolbars.  This means when you import these settings you get a new menu at the top of the screen (with icons), a new toolbar with proper TortoiseSVN icons, and context menus for solutions and files.<br /><br />You can download the <a href="http://garry.bodsworth.googlepages.com/SubversionToolbarsAndMenus.zip">new settings file here</a> (it is 9k in size compressed).  All you need to do is go to your Tools menu and choose &#8220;Import and Export Settings&#8221; and follow the instructions.  Ensure the tick box for which settings to import are all ticked.<br /><br />Here are the original posts from the Subversion integration (and old files are still available).<br /><ul><li><a href="http://garrys-brain.blogspot.com/2006/10/subversion-and-tortoisesvn-programmers.html">Subversion and TortoiseSVN - A programmers best friend</a></li><li><a href="http://garrys-brain.blogspot.com/2006/10/subversion-tortoisesvn-integration.html">Subversion : TortoiseSVN Integration into Visual Studio</a> - A vbs script that will add Subversion to your external tools in Visual Studio 2003 and 2005.</li><li><a href="http://garrys-brain.blogspot.com/2006/10/subversion-tortoisesvn-integration_03.html">Subversion : TortoiseSVN Integration into Visual Studio.NET 2005 Again</a></li><li><a href="http://garrys-brain.blogspot.com/2006/10/tortoisesvn-vsnet-2005-good-stuff.html">TortoiseSVN + VS.NET 2005 = Good Stuff</a> - The original vssettings based integration with additional screenshots that still apply.</li><li><a href="http://garrys-brain.blogspot.com/2006/10/tools-for-tortoisesvn.html">Tools for TortoiseSVN</a> - Some recommended tools for TortoiseSVN.</li><li><a href="http://garrys-brain.blogspot.com/2006/10/updated-visual-studio-2005-express-and.html">Updated Visual Studio 2005 Express and TortoiseSVN Integration</a> - The first update to the vssettings implementation.</li></ul><br /><a href="http://garry.bodsworth.googlepages.com/SubversionToolbarsAndMenus.zip">DOWNLOAD SETTINGS FILE</a><br /><br /><span style="font-weight:bold;">Edit: </span> Now there is a yet another update - this is now 7k.  This makes a minimum of changes to your IDE as humanly (or inhumanly) possible.  There is still a deficiency in the .vssettings that messes up the build toolbar comboboxes, but this seems unfixable in the current format.<br /><br />Oh, and don&#8217;t forget to leave some comments as to whether this new stuff is all working for you (along with the new &#8220;Add Solution To Repository&#8221; functionality.</div>
+<h2>Comments</h2>
+<div class='comments'>
+<div class='comment'>
+<div class='author'>bkraul</div>
+<div class='content'>
+Just a quick question. The article mentions &#8220;Context Menus&#8221;. Are you talking about context menus that show up when right clicking a file or folder in the solution explorer? Because if that is the case, Eventhough I get everything else working fine, I cant see any context menus. Thanks for such a nice solution man!</div>
+</div>
+<div class='comment'>
+<div class='author'>Jon</div>
+<div class='content'>
+ahh my bad. sorry ;-)</div>
+</div>
+<div class='comment'>
+<div class='author'>Garry Bodsworth</div>
+<div class='content'>
+This is for TortoiseSVN, not TortoiseCVS.  It is probable that a similar solution can be used for that source control system.<BR/><BR/>Check out TortoiseSVN at http://tortoisesvn.net<BR/><BR/>The latest version of the Visual Studio settings is here:<BR/>http://garrys-brain.blogspot.com/2007/07/tortoisesvn-and-visual-studio.html</div>
+</div>
+<div class='comment'>
+<div class='author'>Jon</div>
+<div class='content'>
+I don&#8217;t know which version of TortoiseCVS you are targeting but none of the executables in your settings file is in my Tortoise installment. I use TortoiseCVS 1.8.31<BR/>Am I suppose to install another version of Tortoise?<BR/> - Jon</div>
+</div>
+<div class='comment'>
+<div class='author'>Manish Joisar</div>
+<div class='content'>
+I have done as per your setting, but i am not getting file wise Update/Commit/Get Lock/Release Lock/Revert. So i can get same way like i am doing it in VSS. It will be great if someone can solve this issue. And i am only interested in VS2005, Subverion, TortoiseSVN & vssettings. Not at all interested in any other tools. I think Garry&#8217;s Bit can solve this. Please help me.</div>
+</div>
+<div class='comment'>
+<div class='author'>sheremetyev</div>
+<div class='content'>
+If you want to get complete Subversion integration in Visual Studio please have a look at <A HREF="http://www.visualsvn.com/" REL="nofollow">VisualSVN</A>. It wraps TortoiseSVN UI too but provides also seamless support for file operations (renames, moves etc.) and shows status in Solution Explorer. Costs just $49.</div>
+</div>
+<div class='comment'>
+<div class='author'>Garry Bodsworth</div>
+<div class='content'>
+Hi there,<BR/><BR/>Just to answer a couple of previous questions:<BR/><BR/>There is no internal way to resolve a conflict at the moment.<BR/><BR/>It is impossible to add icons to the front of folders since it uses the &#8220;External Tools&#8221; feature so it can work easily with the Express Editions as well as the Professional ones.<BR/><BR/>If the command being run is wrong (Dotsfuscator) it is possible the order your External Tools is incorrect or when you imported the settings they may not have all been applied.</div>
+</div>
+<div class='comment'>
+<div class='author'>Frank</div>
+<div class='content'>
+This looks promising however when I try to execute the &#8220;Update&#8221; command from the Subversion menu it seems to launch DotFuscater and not do anything else?</div>
+</div>
+<div class='comment'>
+<div class='author'>Jack</div>
+<div class='content'>
+Wow, cool stuff. Just 2 comments:<BR/><BR/>1. How to edit conflict and resolve conflict?<BR/>2. Is there anyway to add icon in front of file/folder?<BR/><BR/>Thanks for your great work</div>
+</div>
+<div class='comment'>
+<div class='author'>malks</div>
+<div class='content'>
+I&#8217;ve just started using the whole SVN/Tortoise/VS2005 stuff&#8230; it seems to me that you can&#8217;t do a checkout from within VS and need to do it from Tortoise directly.  I just used Tortoise to check out to a working dir then opened up in VS and it seemed to work.<br /><br />Coming from an eclipse/CVS background what would be nice is the &#8220;decorators&#8221; in VS that tell you that you&#8217;re working with a checked out file.  That is in vs if you change a file, you get a red exclamation mark to remind you that you need to commit your changes.  I might be asking a bit much here though :)<br /><br />Regards,<br />Anthony.</div>
+</div>
+<div class='comment'>
+<div class='author'>brian.gullo</div>
+<div class='content'>
+I keep getting &#8220;is not working copy&#8221; error.  I&#8217;m using vs pro 2005.  How to i get a project checked out?</div>
+</div>
+<div class='comment'>
+<div class='author'>brian.gullo</div>
+<div class='content'>
+How do i implement the svn checkout functionality.</div>
+</div>
+<div class='comment'>
+<div class='author'>Jordan Elver</div>
+<div class='content'>
+I&#8217;m using professional.</div>
+</div>
+<div class='comment'>
+<div class='author'>Garry Bodsworth</div>
+<div class='content'>
+No problems, glad it works for you now.  Just out of interest are you using Professional or Express?<br /><br />Thanks,<br /><br />Garry</div>
+</div>
+<div class='comment'>
+<div class='author'>Jordan Elver</div>
+<div class='content'>
+Weird. When importing the settings file again, I selected the &#8220;External Tools List&#8221; checkbox and now everything shows up ok. Thanks :)</div>
+</div>
+<div class='comment'>
+<div class='author'>Garry Bodsworth</div>
+<div class='content'>
+They are external tools, so if the executable is not in the place it expects then it is possible that it can&#8217;t find it.  Is it also disabled on the external tools menu?<br /><br />The settings make the assumption TortoiseSVN is in the default installation location.  If this is the case then do a search and replace on the settings file for:c:&#92;program files&#92;TortoiseSVN&#92;bin&#92;tortoiseproc.exe<br />And replace it with the location that yours is installed (keeping the double slashes).<br /><br />If that is not the case then try reimporting the settings as VS2005 has this wonderful knack of getting confused when loading settings.<br /><br />Garry</div>
+</div>
+<div class='comment'>
+<div class='author'>Jordan Elver</div>
+<div class='content'>
+Hi,<br />I&#8217;ve imported the settings and everything seems to be ok, but toolbar is greyed out and the menus don&#8217;t appear. What am I doing wrong?<br /><br />Thanks for working on this :)<br /><br />Cheers, Jordan</div>
+</div>
+</div>
+</div>
+ </div>
+
+  
+  <div class="post"> <div class="post-header">
+  
+    <h1 class="post-title">
+      <a href="/blog/2006/11/08/helpful-libraries-modassert/">Helpful Libraries - ModAssert</a>
+    </h1>
+  
+  
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2006-11-08T20:50:00+00:00" pubdate data-updated="true">Nov 8<sup>th</sup>, 2006</time>
+</div>
+
+<div class="post-content"><div class='post'>
+Anyone who has programmed in MFC and ATL will have encountered the ASSERT macro.  Due to it being rather simplistic and essentially a one-size-fits-all.<br /><br />I was pleased to see someone has developed a very comprehensive assertion library which makes it into a really useful debugging tool.  I first encountered the project with <a href="http://www.codeproject.com/library/ModAssert.asp">this article on CodeProject</a>.  It allows compile time disabling/compiling out, and also run time diabling.  It also provides levels to give a granularity to your debug output.  Also you can use it to output log information which can be invaluable for debugging (with lots of useful information like threads and so on).<br /><br />The library is fairly large and comprehensive, but since you should compile it out for your final release build it isn&#8217;t really a problem at all.  It certainly should be useful for C++ developers.<br /><br />The Sourceforge Project is <a href="http://sourceforge.net/projects/modassert/">here</a>.</div>
+</div>
+ </div>
+
+  
+  <div class="post"> <div class="post-header">
+  
+    <h1 class="post-title">
+      <a href="/blog/2006/11/06/50-with-bullet/">50 With a Bullet</a>
+    </h1>
+  
+  
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2006-11-06T21:36:00+00:00" pubdate data-updated="true">Nov 6<sup>th</sup>, 2006</time>
+</div>
+
+<div class="post-content"><div class='post'>
+I didn&#8217;t even realise until just now, 50 posts down and still no idea what I should be concentrating on.  Obviously this blog has a real GUI flavour, but I can&#8217;t help writing about random computer subjects like media PCs and interesting new things.<br /><br />I still haven&#8217;t finished my trek through the new world of Vista.  Not only the guidelines, but also getting a more in-depth look at the C API headers and getting some documentation together about it.<br /><br />There are also some GUI toolkits I haven&#8217;t got round to looking at like the <a href="http://opensource.adobe.com/">Adobe Open-Source Libraries</a> and <a href="http://smartwin.sourceforge.net/">SmartWin++</a>.  Also, I still feeel like I need to look at lots of the others in more depth.  And most importantly I want to get some source code out there rather than just talking about it all the time ;)<br /><br />Anyway, here is to the next 50 posts.</div>
+</div>
+ </div>
+
+  
+  <div class="post"> <div class="post-header">
+  
+    <h1 class="post-title">
+      <a href="/blog/2006/11/06/gui-toolkits-boxely/">GUI Toolkits - Boxely</a>
+    </h1>
+  
+  
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2006-11-06T20:49:00+00:00" pubdate data-updated="true">Nov 6<sup>th</sup>, 2006</time>
+</div>
+
+<div class="post-content"><div class='post'>
+My discovery of this toolkit was from the article posted about the <a href="http://www.spectrum.ieee.org/nov06/4696">Firefox Kid</a>.  At the end it linked to the blogs of the two Parakey developers <a href="http://www.blakeross.com/">Blake Ross</a> and <a href="http://www.joehewitt.com/">Joe Hewitt</a>.  The article was abou Blake Ross but it turns out Joe Hewitt&#8217;s blog was really the more interesting.<br /><br />This is how I discovered <a href="http://dev.aol.com/boxely/">Boxely</a>.  Joe Hewitt&#8217;s posts about it are here:<br /><a href="http://www.joehewitt.com/blog/boxely_is_final.php">His post about the release of Boxely.</a><br /><a href="http://www.joehewitt.com/blog/boxely_part_1_o.php">Boxely - Part 1.</a><br /><a href="http://www.joehewitt.com/blog/boxely_part_2_o.php">Boxely - Part 2.</a><br /><a href="http://www.joehewitt.com/blog/boxely_part_3_o.php">Boxely - Part 3.</a><br /><br />Boxely was envisioned as a lighter weight more powerful XUL type UI toolkit.  It is an XML and Javascript toolkit for creating desktop applications in the same family as XUL and XAML.  It was initially put together for the AIM client, and to allow extensibility.  Reading the articles it seems that Boxely&#8217;s existence is a lucky break.  Due to being integrated with more AOL services over time it seems that it is more bloated than it started with.<br /><br />It seems to be capable of some really nice graphics and also integrated animations.  I don&#8217;t know how much XUL/XULRunner has improved to close the gap on the features that Boxely has.  It&#8217;s almost a shame that the earlier versions were not released without the COM stuff as it all sounded pretty good.<br /><br /><a href="http://dev.aol.com/boxely/">Boxely is available for download</a> now and seems pretty capable.  I, however, don&#8217;t know if it is worth investigating further as XULRunner seems to do a pretty good job with stuff like <a href="http://www.songbirdnest.com/">SongBird</a>.  In fact I think the sentiments and vision behind the initial design is more more interesting than perhaps the final product.</div>
+<h2>Comments</h2>
+<div class='comments'>
+<div class='comment'>
+<div class='author'>Garry Bodsworth</div>
+<div class='content'>
+Thanks for the heads up.  I will definitely look into this deeper and gather together some more information.<br /><br />Thanks,<br /><br />Garry</div>
+</div>
+<div class='comment'>
+<div class='author'>Twinsen</div>
+<div class='content'>
+Boxely has changed significantly since Joe&#8217;s original chapter series on its conception.  <br /><br />And in fact it is quite a bit better than XUL/XULRunner in many ways, I encourage you to download the SDK and play with the samples.<br /><br />That said, a XUL based app would be 5 or 6 times the size of a Boxely/OCP based app, fwiw (not that size matters right). As an example of a fairly tight, non-bloated Boxely app see: <br /><br /><a href="http://greenhouse.aol.com/prod.jsp?prod_id=27<br />&#8220;>AIM Lite (LAIM)</a><br /><br />Have fun&#8230;</div>
+</div>
+</div>
+</div>
+ </div>
+
+  
+  <div class="post"> <div class="post-header">
+  
+    <h1 class="post-title">
+      <a href="/blog/2006/11/05/home-theatre-pcs-mythtv/">Home Theatre PCs - MythTV</a>
+    </h1>
+  
+  
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2006-11-05T22:35:00+00:00" pubdate data-updated="true">Nov 5<sup>th</sup>, 2006</time>
+</div>
+
+<div class="post-content"><div class='post'>
+<a href="http://www.mythtv.org">MythTV</a> is a Linux-based media centre program, but it also gives you so much more than that.  I have to say that this is better than any other media centre software out there.  Why is this?<br /><br />It has been designed from the outset to provide a client/server architecture.  This probably doesn&#8217;t mean much to many people at the moment, but it is certainly the way forward.  What you have is a back-end that provides the media content, then you have front-ends that allow you to access that content.<br /><br />The simplest install is to have the back-end and front-end on the same computer, providing the same functionality as any other media system.  If you plan to have more than one front-end you have have the back-end on another computer, but both will be able to access it.  The back-end is also responsible for recording the TV and cataloguing the data, so you can stick a few TV cards in there and make simultaneous viewing and recordings.  And for your front-end you can make it as powerful or lightweight and silent as you want as you can limit the moving parts when the brute force (apart from decoding) is provided by the server.<br /><br />The real power comes from the client/server architecture, as the front-ends can be implemented in anything that you can connect to the <a href="http://www.mythtv.org/">MythTV</a> protocol.  This is most apparent because it easily has a front-end for web access (meaning you can schedule your recordings remotely), there are also other smaller front-ends to the default and even a small one for Windows which is functional.  The back-end server software is pretty much rock solid because it builds on the foundations of Apache and MySQL.<br /><br />Recently version 0.20 was released with a whole raft of new functionality including OpenGL UI rendering and a more library based architecture.  You can see the rather long <a href="http://www.mythtv.org/wiki/index.php/Release_Notes_-_0.20">changelog here</a>.<br /><br />If you want to try this out you can also do this without installing it thanks to the wonders of <a href="http://www.mysettopbox.tv/knoppmyth.html">KnoppMyth</a>.  This is a <a href="http://www.knoppix.net/">Knoppix</a> based distribution on a CD/DVD with MythTV set up so you can try it out and if you like it install it.<br /><br />There is also <a href="http://swik.net/MythDora">MythDora</a> a Fedora-based MythTV distribution.  This is based on Fedora Core 4, a little out of date.<br /><br />There is an excellent resource for getting <a href="http://www.mythtv.org/">MythTV</a> installed for Fedora <a href="http://wilsonet.com/mythtv/fcmyth.php">here</a>.  This is highly recommended and comprehensive.<br /><br />Also, for the Ubuntu people out there, you can use <a href="http://parker1.co.uk/mythtv_ubuntu.php">this resource</a> to get the information you need.<br /><br />Lets not forget the <a href="http://www.mythtv.org/modules.php?name=MythInstall">excellent documentation</a> and the <a href="http://www.mythtv.org/wiki/index.php/Main_Page">Wiki</a>.  You can see some <a href="http://www.mythtv.org/wiki/index.php/Category:Themes">themes here</a> and some <a href="http://www.mythtv.org/modules.php?name=MythFeatures">screenshots here</a>.  Also there are thriving communities including the forums and mailing lists at MythTV itself and KnoppMyth, and there is also <a href="http://www.mythtvtalk.com/">MythTV Talk</a>.<br /><br />And here is a screenshot for the curious:<br /><a onblur="try {parent.deselectBloggerImageGracefully();} catch(e) {}" href="http://photos1.blogger.com/blogger2/5090/4314/1600/Retro.jpg"><img style="cursor:pointer; cursor:hand;" src="http://photos1.blogger.com/blogger2/5090/4314/320/Retro.jpg" border="0" alt="" /></a></div>
+<h2>Comments</h2>
+<div class='comments'>
+<div class='comment'>
+<div class='author'>Garry Bodsworth</div>
+<div class='content'>
+As of the 12th November it is more up to date than KnoppMyth, unfortunately this post was done a week before that news update.  Certainly with an older Linux distribution and kernel surely some drivers would be missing.<br /><br />I personally would probably use http://wilsonet.com/mythtv/fcmyth.phpto get it all up and running Fedora, but I am that way inclined.</div>
+</div>
+<div class='comment'>
+<div class='author'>Dennis</div>
+<div class='content'>
+Why would you say that MythDora is out of date? Just because it&#8217;s FC4? Thats nothing to go by. MythDora is more up to date than KnoppMyth.</div>
+</div>
+</div>
+</div>
+ </div>
+
+  
+  <div class="post"> <div class="post-header">
+  
+    <h1 class="post-title">
+      <a href="/blog/2006/11/05/home-theatre-pcs-mediaportal/">Home Theatre PCs - MediaPortal</a>
+    </h1>
+  
+  
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2006-11-05T12:03:00+00:00" pubdate data-updated="true">Nov 5<sup>th</sup>, 2006</time>
+</div>
+
+<div class="post-content"><div class='post'>
+And now for a complete change of pace&#8230;<br /><br />One thing I particularly like doing it fiddling about with home-made HTPCs (Home Theatre PCs).  I&#8217;ve built myself a little system for a little over £200 involving an AOpen XC-Cube.  This became necessary when we moved house and the main computer was moved away from the TV.<br /><br />I decided to use Windows for the OS for expediency&#8217;s sake and as the graphics chipset on the motherboard was not well supported in Linux.  I could have gone for Windows XP MCE Edition, but I already knew of an alternative I preferred.<br /><br />Check out <a href="http://www.team-mediaportal.com/">MediaPortal</a> for a fully featured media centre system that is fully open-source.  This project actually grew out of the well respected <a href="http://www.xboxmediacenter.de/">XBox Media Centre (XBMC)</a>.  It looks and feels great and has full compatibility with things like MCE remotes.  They&#8217;ve recently updated to an unstable build of 0.2.1.0 which I have found completely stable for my own uses, but I tend to only watch TV/TV programs on it.  Also, more excitingly they have started work on the TV Server project so that the TV cards and content can be hosted on a back-end server and the actual media PC can be as trimmed down as you can make it.<br /><br />There are also a variety of skins to make it look really good, a lot of which broke with version 0.2.1.0 as there were some substantial changes to the XML format.  Here is a list of some working ones:<br /><ul><li>MCE is currently missing (the one that looks very similar to Windows Media Centre Edition) but will be reinstated to the release very soon (it is probably already accessible under solution).</li><li><a href="http://forum.team-mediaportal.com/showthread.php?t=11947">MePo skins</a> - These are fantastic featuring the new mascot type character MePo.</li><li><a href="http://forum.team-mediaportal.com/showthread.php?t=12133">Simplify</a> - A bit of an understated skin.</li><li><a href="http://www.team-mediaportal.com/files/Download/Codecs/Replicant0.2/">Replicant</a></li><li><a href="http://www.team-mediaportal.com/files/Download/Skins/4:3/SimpleMP-Beta1/">SimpleMP</a></li><li><a href="http://forum.team-mediaportal.com/showthread.php?t=5212">Vista Style MCE</a></li><li>KIS - Looks incredibly impressive but I have not had a chance to download and play with it yet.  There is <a href="http://www.team-mediaportal.com/files/Download/Skins/16:9/KISbeta/">KIS</a>, <a href="http://www.team-mediaportal.com/files/Download/Skins/16:9/KIS/">KIS Dark</a>, and the <a href="http://www.team-mediaportal.com/files/Download/Skins/16:9/SkinSourceFiles/KISSDK/">KIS SDK</a> for plug-in pages.</li></ul>MediaPortal has coverage for emulators (I had a lot of fun with this and my arcade joystick), built-in games, weather, music, DVDs, TV, radio, films, and numerous plug-ins.  Since it is also simply an application you can install and use it on any supported PC.  It may not be the most technologically advanced or have the best architecture, but it does the job more than admirably and more importantly it is as easy to use as running the installer and following the setup wizard.</div>
+</div>
+ </div>
+
+  
+  <div class="post"> <div class="post-header">
+  
+    <h1 class="post-title">
+      <a href="/blog/2006/11/03/windows-vista-user-interface-solutions/">Windows Vista - User Interface Solutions</a>
+    </h1>
+  
+  
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2006-11-03T20:23:00+00:00" pubdate data-updated="true">Nov 3<sup>rd</sup>, 2006</time>
+</div>
+
+<div class="post-content"><div class='post'>
+<br><br style="font-style: italic;"><span style="font-style: italic;">I remember reading online when Apple first released their new remote with the new Intel iMacs/MacBooks/MacMinis that people said it would be no good because it didn&#8217;t have enough buttons, and after all their Windows Media Centre remotes had 46 buttons, so it must be better.  But when people start using these user interfaces (after all that is what they are) I somehow doubt the 46 button monster is the winner.</span><br><br>So you are going to write something for Windows Vista?  I suppose you can jump in with both feet and see what you end up with, you might get lucky.  Or I suppose planning could be the best way forward.  When developing for any platform you need to follow the human computer interface (HCI) guidelines that give you the general rules. <br><br>In my previous <a title="guidelines post" href="http://garrys-brain.blogspot.com/2006/10/user-interface-guidelines.html">guidelines post</a>   I provided links to various guides that are available.  In most cases it varies from company to company as to the UI design guidelines and if you are really unlucky it comes down to you. <br><br>The problem with Windows Vista is a lack of consistency when trying to come up with design guidelines for your own project.  For such a new platform you have to look at the existing applications in order to decide what is best practice. <br><br>With Windows XP you can see the problems already.  Look at the differences between Windows Media Player, Office 2003, Visual Studio .NET, and now IE7.  They all follow different looks, different usage paradigms, and are simply inconsistent.  For IE7 they have done away with default menu usage which is completely different to what is expected for a Windows application.  Even the way toolbars and buttons look and feel is not quite the same.  I suppose that this can be seen as paving the way for the Vista UI transition, but we are using XP not Vista.  It almost suggests there is no transition path satisfactory for both platforms. <br><br>One of the eye openers when you first start using Windows Vista is a complete lack of coherency and consistency.  I know people would prefer to let their imagination run away unfettered, but guidelines are there to bring the worst applications up to the minimum standard, not drag the best ones down.<br><br>The lack of consistency is shown at its best in this <a title="excellent blog post by Dave Vronay" href="http://shellrevealed.com/blogs/shellblog/archive/2006/09/20/What-happened-to-the-menu-bars_3F00_.aspx">blog post by Dave Vronay</a>.  In the past we have had the simple yet powerful design paradigms of menus, toolbars, and recently the more extended multifunction type toolbar (like with the search bar).  Looking at the various programs available built-in to Vista they all seem to be pulling in different directions with their usage.  Sure, not every program will be shoehorned into a limited and strict user interface.<br><br>Lets have a look at three of the main applications that people will see in Windows Vista.<br><span style="font-weight: bold;"><br></span><span style="font-weight: bold;">Internet Explorer 7</span><br style="font-weight: bold;">This will be the one most people see.  There seems to be odd behaviour where a new toolbar row can be inserted with just one item on it which seems to appear when there is only one tab (apparently a PDF bar I don&#8217;t remember installing).  Whereas the tabs row seems to have loads of options and information crammed onto it.  The help is accessed via a chevron on the right hand side.  Menus still drop down when you select an item which has a triangle next to it.  I am finding the only thing that has really changed is the position of the menus, and they still exist but they do not have text - they use icons, and they have randomly grouped stuff together in an overcrowded tab row.<br><br><img title="IE7" src="http://docs.google.com/File?id=dhp3xkhx_5j9kzvc" align="bottom" border="0" height="273" hspace="0" vspace="10" width="376"><br><br><span style="font-weight: bold;">Windows Media Player 11</span><br style="font-weight: bold;">This has always been the odd application out for years, looking completely different to standard window apps, with random sporadic dynamic changes to display a proper window frame or something equally as useless.  It has no toolbar as such, although it could probably be described as at the bottom of the screen&#8230;  The menu tabs across the top switch you into different views for different operations and the proper menus are hidden away on the right click if you do not choose the standard window frame.  I think it really is a case of one application trying to perform too many tasks.<br><img title="WMP11" src="http://docs.google.com/File?id=dhp3xkhx_9fnm44z" align="bottom" border="0" height="348" hspace="0" vspace="10" width="450"><br><span style="font-weight: bold;">Office 2007</span><br style="font-weight: bold;">Now enter the ribbon as a menu and toolbar replacement.  This could be really good or really bad, I can&#8217;t make a judgement to decide what is more productive, it might turn out to be good.  But again it is another different way of controlling your application.  If these were the way forward, surely the default Microsoft developed applications would also be going down the same route?<br><img title="Office 2007" src="http://docs.google.com/File?id=dhp3xkhx_10dtsswb" align="bottom" border="0" height="294" hspace="0" vspace="10" width="450"><br><br>In summary, you can (or maybe not) have menu bars and/or toolbars, use tabs to switch functionality, do away with menu bars, mix up toolbars with tab bars, have icons instead of text for menu bars, or allow menu bars to pop up randomly, or use a ribbon which is kind of like a menu bar and a toolbar except more dynamic.  Confused?  You should be!  And that is only three applications!<br><br>So the developers making the applications have to make a decision, what is the best course forward for their program taking into consideration the bountiful supply of ideas from Microsoft?  I can guarantee not one of them will come up with the exact same answer.  I&#8217;ve always followed the K.I.S.S. (Keep It Simple, Stupid) philosophy, and I am not entirely sure how to apply it to this situation.<br><br>Over my next series of posts I will be digging my way through the UI guidelines of Vista and trying to navigate and at least get clear in my head the way forward.<br><br></div>
+</div>
+ </div>
+
+  
+  <div class="post"> <div class="post-header">
+  
+    <h1 class="post-title">
+      <a href="/blog/2006/11/02/what-to-do-after-being-ludicrously/">What to Do After Being Ludicrously Successful?</a>
+    </h1>
+  
+  
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2006-11-02T20:03:00+00:00" pubdate data-updated="true">Nov 2<sup>nd</sup>, 2006</time>
+</div>
+
+<div class="post-content"><div class='post'>
+<a href="http://www.spectrum.ieee.org/nov06/4696">Read the article: The Firefox Kid</a><br /><span style="font-style:italic;">Blake Ross helped make Firefox one of the biggest open-source success stories ever. Just wait until you see what he&#8217;s up to now.</span><br /><br />One of the founders and perhaps they should be called visionaries of the <a href="http://www.getfirefox.com">Firefox</a> project has revealed what he is working on now.  It is that integration of network and personal computer into something more useful, sometimes referred to as the web-based OS.<br /><br />He is one fo the founders of the Mozilla Firefox project (if you think about it, IE completely dominated and there was noone left to fight), a self-taught programmer, a believer in open-source, and he is only 20 years old.  Kind of depressing (if you are older than him) but uplifting (something good for the future).  I recommend reading the article which kind of reveals where he is coming from and where he wants to go.<br /><br />Anyway, the idea he has is called Parakey (no website yet), and it is supposed to be integrated and synchronised storage for offline and online work, as well as sharing information over the Internet.  It is supposed to take the headaches for getting content from whatever device and storing that content for use.  It wants to be as simple as possible for managing media and allow non-technologically minded people to use those sharing services that are otherwise out of their reach.  Then the content would be accessible from the same interface whether you are on your home computer or any other around the world.<br /><br />It seems like a decent idea providing it can come to fruition, but these things don&#8217;t always live up to the grand dreams.  It&#8217;s an interesting interview anyway.</div>
+</div>
+ </div>
+
+
+<div id="pagination">
+  
+    <a class="prev" href="48">&laquo;Previous</a>
+  
+  
+    <a class="next" href="46">Next&raquo;</a>
+  
+</div>
+ </div>
+    <div id="footer">
+  <div class="panels">
+    <div class="license">
+      <h2>License</h2>
+      <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-nc-sa/3.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/">Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License</a>.
+    </div>
+
+    <div class="posts">
+      <h2>Recent Posts</h2>
+      <ul>
+        
+          <li>
+            <a href="/blog/2014/07/13/slash-dev-slash-summer-talk-security-is-hard/">/dev/summer talk - Security Is Hard</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2014/07/13/djugl-talk-the-trojan-unicorn/">DJUGL Talk - The Trojan Unicorn</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2014/07/13/back-at-bromium/">Back at Bromium</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2013/06/22/rss-feed-moved-to-http-slash-slash-www-dot-fragmentedmemory-dot-com-slash-feed-slash/">RSS Feed Moved To http://www.fragmentedmemory.com/feed/</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2013/06/18/new-location-and-new-blog-engine-and-old-content-restored/">New Location &amp; New Blog Engine &amp; Old Content Restored</a>
+          </li>
+        
+      </ul>
+    </div>
+
+    <div class="posts">
+      <h2>Links</h2>
+      <a href='https://alpha.app.net/gjb' class='adn-button' target='_blank' data-type='follow' data-width='277' data-height='27' data-user-id='@gjb' data-show-username='1' rel='me'>Follow me on App.net</a><script>(function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src='//d2zh9g63fcvyrq.cloudfront.net/adn.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'adn-button-js'));</script>
+    </div>
+  </div>
+
+  <p class="powered">
+    Powered by <a href="http://octopress.org">Octopress</a> and <a href="https://github.com/iwinux/compbits">Compbits</a>
+  </p>
+</div>
+
+  </div> <!-- #wrapper end -->
+
+  
+
+  
+
+
+  
+
+  
+
+  
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+</body>
+</html>
