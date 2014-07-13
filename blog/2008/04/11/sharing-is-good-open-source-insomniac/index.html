@@ -1,0 +1,186 @@
+
+<!DOCTYPE HTML>
+<html lang="en-gb">
+<head>
+  <meta charset="UTF-8">
+  <title>Fragmented Memory</title>
+
+  <meta name="author" content="Garry Bodsworth">
+  
+  <meta name="description" content="Sharing Is Good - the Open-Source Insomniac Apr 11th, 2008 Insomniac Games who are behind Ratchet &amp; Clank and Resistance: Fall Of Man have &hellip;">
+  
+  
+
+  <link rel="canonical" href="http://www.fragmentedmemory.com/blog/2008/04/11/sharing-is-good-open-source-insomniac">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/feed/" rel="alternate" title="Fragmented Memory" type="application/atom+xml">
+</head>
+  
+<body class="default">
+  <div id="wrapper">
+    <div id="header">
+  <h1><a href="/">Fragmented Memory</a></h1>
+  
+    <p>Garry Bodsworth's Blog (formerly Garry's Bit Patterns &amp; Programmer's Log)</p>
+  
+</div>
+<ul id="social-links">
+  
+    <li><a class="rss" href="/feed/" title="RSS">RSS</a></li>
+  
+  
+  
+  
+    <li><a class="twitter" href="http://twitter.com/garrybodsworth" title="Twitter">Twitter</a></li>
+  
+  
+    <li><a class="github" href="https://github.com/garrybodsworth" title="GitHub">GitHub</a></li>
+  
+  
+  
+    <li><a class="linkedin" href="http://www.linkedin.com/in/garrybodsworth">LinkedIn</a></li>
+  
+  
+  
+  
+    <li><a class="pinboard" href="https://pinboard.in/u:garrybodsworth" title="Pinboard">Pinboard</a></li>
+  
+</ul>
+<div class="clear"></div>
+<ul id="nav">
+  
+    <li> <a href="/">blog</a> </li>
+  
+
+  
+    <li><a href="/blog/archives">archives</a></li>
+  
+
+  
+    <li><a href="/about">about</a></li>
+  
+</ul>
+
+    <div id="main"> <div class="post-header">
+  
+    <h1 class="post-title">Sharing Is Good - the Open-Source Insomniac</h1>
+  
+  
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2008-04-11T21:28:00+01:00" pubdate data-updated="true">Apr 11<span>th</span>, 2008</time>
+</div>
+
+<div class="post-content"><div class='post'>
+<a href="http://www.insomniacgames.com/">Insomniac Games</a> who are behind Ratchet &amp; Clank and Resistance: Fall Of Man have recently decided to start sharing knowledge.  Gaming is a notoriously secretive industry and is not well renowned for its open-ness, and Insomniac think its mad that developers keep reinvenhttp://www.blogger.com/img/gl.link.gifting the same core pieces of functionality that don&#8217;t even make up the bread&#8217;n&#8217;butter of gaming.<br /><br />First up is the <a href="http://www.insomniacgames.com/tech/techpage.php">R&amp;D section on their website</a>.  This section contains presentations and papers about various subjects including graphics, gameplay, memory and performance.<br /><br />Next up is the open-source BSD-style licensed code.  The section is called the <a href="http://nocturnal.insomniacgames.com/index.php/Main_Page">Nocturnal Initiative</a> and is a wiki.  There are links to community forums which aren&#8217;t busy yet.<br /><br />At the moment some of the source code available is:<br /><ul><li>C++ Delegate/Event System</li><li>Pointer to reference counted objects</li><li>Pointer to heap allocated arrays</li><li>Endian conversion code</li><li>Insertion ordered std::set</li><li>Reversible key and value std::map</li><li>Interprocess Communication</li><ul><li>      Fast non-blocking message-based design</li><li>      Works over BSD-style sockets (TCP) or Named Pipes</li><li>Windows platform included, additional platforms are easily added</li></ul><li>Debugging Helpers</li><ul><li>      PDB-based symbol information querying</li><li>      Capture stacks within your program making heap object tracking and leak debugging easier</li><li>      Give your application automatic crash reports dispatched via email that contain handy user/machine informaton, call stack, and memory page allocation stats</li></ul><li>Console Output Manager</li><ul><li>      Log console output to one or more trace files</li><li>      Color code the console output based on Error/Warning/Debug print statements</li><li>Throttle output verbosity (configured via command line arg or environment variable)</li><li>      Outline nested stages of processing performed by your application (for builders/exporters)</li><li>      Augment crash reports with the current outline state of your application (very useful for tracking down new crash bugs)</li></ul><li>Instrumenting Profiler</li><ul><li>      Cross platform (Windows and PS3 currently)</li><li>      Macro-instrumented stack timer based profiler</li><li>      Concise profile report printed out at program exit</li><li>      Logs instance data out to human readable log file (Profile Analyzer is in development)</li></ul><li>C++ Reflection</li><ul><li>      Instrument your application classes and register them with the type registry</li><li>      Can serialize object instances to XML or our (faster) custom binary format</li><li>      Flexible parsing mechanics allow you to read in old versions of your class</li><li>      Handles renaming member variables as well as changing member type (within reasonable limits)</li><li>      Supports serializing std::vector, std::set, and std::map containers with primitives or pointers to other reflect objects</li><li>  Supports serializing enum and bitfield members using string representation (supports reordering enum elements)</li><li>      Provides for automatic object comparison and cloning</li><li>      Implements introspection using a visitor interface</li></ul></ul><br />Some of it looks pretty good.  I hope this means that there is more sharing of C++ code which is always a good thing, maybe even some of the libraries could be Boost-ified&#8230;</div>
+</div>
+
+
+<div class="post-single">
+  <div class="post-meta">
+    
+
+<span class="categories">
+  Categories:
+  
+    <a class='category' href='/blog/categories/development/'>Development</a>, <a class='category' href='/blog/categories/open-source/'>Open-Source</a>
+  
+</span>
+
+
+    
+      <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://www.fragmentedmemory.com/blog/2008/04/11/sharing-is-good-open-source-insomniac/" data-via="garrybodsworth" data-counturl="http://www.fragmentedmemory.com/blog/2008/04/11/sharing-is-good-open-source-insomniac/" >Tweet</a>
+  
+  
+  
+</div>
+
+    
+  </div>
+  <div class="clear"></div>
+
+  
+</div>
+ </div>
+    <div id="footer">
+  <div class="panels">
+    <div class="license">
+      <h2>License</h2>
+      <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-nc-sa/3.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/">Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License</a>.
+    </div>
+
+    <div class="posts">
+      <h2>Recent Posts</h2>
+      <ul>
+        
+          <li>
+            <a href="/blog/2013/06/22/rss-feed-moved-to-http-slash-slash-www-dot-fragmentedmemory-dot-com-slash-feed-slash/">RSS Feed Moved To http://www.fragmentedmemory.com/feed/</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2013/06/18/new-location-and-new-blog-engine-and-old-content-restored/">New Location &amp; New Blog Engine &amp; Old Content Restored</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2013/06/13/joining-microsoft/">Joining Microsoft</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2013/06/13/leaving-bromium/">Leaving Bromium</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2013/03/05/philip-su-engineering-process-and/">Philip Su - Engineering Process And Philosophy At Facebook</a>
+          </li>
+        
+      </ul>
+    </div>
+
+    <div class="posts">
+      <h2>Links</h2>
+      <a href='https://alpha.app.net/gjb' class='adn-button' target='_blank' data-type='follow' data-width='277' data-height='27' data-user-id='@gjb' data-show-username='1' rel='me'>Follow me on App.net</a><script>(function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src='//d2zh9g63fcvyrq.cloudfront.net/adn.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'adn-button-js'));</script>
+    </div>
+  </div>
+
+  <p class="powered">
+    Powered by <a href="http://octopress.org">Octopress</a> and <a href="https://github.com/iwinux/compbits">Compbits</a>
+  </p>
+</div>
+
+  </div> <!-- #wrapper end -->
+
+  
+
+  
+
+
+  
+
+  
+
+  
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+</body>
+</html>

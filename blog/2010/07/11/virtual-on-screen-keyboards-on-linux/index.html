@@ -1,0 +1,216 @@
+
+<!DOCTYPE HTML>
+<html lang="en-gb">
+<head>
+  <meta charset="UTF-8">
+  <title>Fragmented Memory</title>
+
+  <meta name="author" content="Garry Bodsworth">
+  
+  <meta name="description" content="Virtual On-Screen Keyboards on Linux Jul 11th, 2010 With a tablet awaiting a better operating system I decided I had to evaluate the landscape on on &hellip;">
+  
+  
+
+  <link rel="canonical" href="http://www.fragmentedmemory.com/blog/2010/07/11/virtual-on-screen-keyboards-on-linux">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/feed/" rel="alternate" title="Fragmented Memory" type="application/atom+xml">
+</head>
+  
+<body class="default">
+  <div id="wrapper">
+    <div id="header">
+  <h1><a href="/">Fragmented Memory</a></h1>
+  
+    <p>Garry Bodsworth's Blog (formerly Garry's Bit Patterns &amp; Programmer's Log)</p>
+  
+</div>
+<ul id="social-links">
+  
+    <li><a class="rss" href="/feed/" title="RSS">RSS</a></li>
+  
+  
+  
+  
+    <li><a class="twitter" href="http://twitter.com/garrybodsworth" title="Twitter">Twitter</a></li>
+  
+  
+    <li><a class="github" href="https://github.com/garrybodsworth" title="GitHub">GitHub</a></li>
+  
+  
+  
+    <li><a class="linkedin" href="http://www.linkedin.com/in/garrybodsworth">LinkedIn</a></li>
+  
+  
+  
+  
+    <li><a class="pinboard" href="https://pinboard.in/u:garrybodsworth" title="Pinboard">Pinboard</a></li>
+  
+</ul>
+<div class="clear"></div>
+<ul id="nav">
+  
+    <li> <a href="/">blog</a> </li>
+  
+
+  
+    <li><a href="/blog/archives">archives</a></li>
+  
+
+  
+    <li><a href="/about">about</a></li>
+  
+</ul>
+
+    <div id="main"> <div class="post-header">
+  
+    <h1 class="post-title">Virtual On-Screen Keyboards on Linux</h1>
+  
+  
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-07-11T00:00:00+01:00" pubdate data-updated="true">Jul 11<span>th</span>, 2010</time>
+</div>
+
+<div class="post-content"><p>With a <a href="http://thejoojoo.com">tablet</a> awaiting a better operating system I decided I had to evaluate the landscape on on-screen virtual keyboards on Linux. Obviously the ideal would be iPad/iPhone-esque, but that would be really frighteningly good, I had much lower expectations.</p>
+
+<p>I was not sure if the tech was there to even show the keyboards automatically when an input field was selected. GTK are well ahead of the game on this with their IMContext base class to encapsulate input mainly for complex languages or disability accessibility, but a good side-effect is the ability to hook in an on-screen keyboard when a text input is focused. In that case the on-screen keyboard needs to know about GTK in order to know when to show.</p>
+
+<p>I tested all these on a VM that has now run out of hard disk space thanks to having to compile lots of stuff. Most of the keyboards I completely failed to make automatically appear on the screen when a text input was selected, it was either me or them&#8230;.</p>
+
+<p>So in no particular order&#8230;.</p>
+
+<p><a href="http://matchbox-project.org/?p=1">Matchbox Keyboard</a><br/>
+Some people are using this actively. It requires hacking to be able to toggle the display of it which makes it pretty much a no-go as it would always be on top of the screen. The GUI looks all right though. Some good info <a href="http://japiblog.dddgames.com/?p=15">here</a>.</p>
+
+<p><a href="http://homepage3.nifty.com/tsato/xvkbd/">xvkbd</a><br/>
+The venerable old man of the line up. It&#8217;s been around the block and does exactly what it says on the tin. It has lots of good features and hacks (like making it appear for login windows). As far as I could see I couldn&#8217;t hook it up to the IMContext but I could be missing something.</p>
+
+<p><a href="http://www.gok.ca/">Gnome On-Screen Keyboard</a><br/>
+The oldest GTK based one and seems to be showing its age thanks to the UI.</p>
+
+<p><a href="https://wiki.ubuntu.com/Accessibility/Projects/onBoard">onboard</a><br/>
+This is the Ubuntu one. I couldn&#8217;t get it to automatically appear on focus. It looks OK, but seems to be lacking some features. At least it is easily hackable in Python. Some more interesting information <a href="http://www.combibo.net/articles/using_an_onscreen_keyboard_in_ubuntu/">is here</a>.</p>
+
+<p><a href="http://florence.sourceforge.net/english.html">Florence</a><br/>
+This is the most recommended one and it is pretty good. The main pain was I had to compile it as their were no packages for it.</p>
+
+<p><a href="http://gitorious.org/fvkbd">fvkbd</a><br/>
+This looks fairly promising as it is very skinnable on configurable. Unfortunately I could not work out how to hide or autohide the keyboard. Also this had no packages and requires compiling. This provides the basis for the OLPC virtual keyboard test and also the Meego/Maemo virtual keyboard.</p>
+
+<p><a href="http://live.gnome.org/Caribou">Caribou</a><br/>
+This is the virtual keyboard testbed for Gnome 3.0. It is written in Python and needs packaging so I had to compile it. This was the one that got closest to what I want because it worked. It shows a small keyboard by the input with current focus. In my VM I had to disable the Clutter code for whizzy animations before getting it to work.</p>
+
+<p>I&#8217;ve probably missed some but there are only so many not quite ready applications you can test before going completely and utterly bonkers.</p>
+
+<p>Another thing I discovered was Google Chromium&#8217;s addressbar is accessibility implemented, but none of the content in webpages is. Firefox on the other hand and anything WebkitGTK based (like Epiphany) all work properly with their accessibility. Part of the Chrome problem is the multiprocess rendering and that they have not prioritised accessibility according the bug reports I have read.</p>
+</div>
+
+
+<div class="post-single">
+  <div class="post-meta">
+    
+
+<span class="categories">
+  Categories:
+  
+    <a class='category' href='/blog/categories/uncategorized/'>Uncategorized</a>
+  
+</span>
+
+
+    
+      <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://www.fragmentedmemory.com/blog/2010/07/11/virtual-on-screen-keyboards-on-linux/" data-via="garrybodsworth" data-counturl="http://www.fragmentedmemory.com/blog/2010/07/11/virtual-on-screen-keyboards-on-linux/" >Tweet</a>
+  
+  
+  
+</div>
+
+    
+  </div>
+  <div class="clear"></div>
+
+  
+</div>
+ </div>
+    <div id="footer">
+  <div class="panels">
+    <div class="license">
+      <h2>License</h2>
+      <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-nc-sa/3.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/">Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License</a>.
+    </div>
+
+    <div class="posts">
+      <h2>Recent Posts</h2>
+      <ul>
+        
+          <li>
+            <a href="/blog/2013/06/22/rss-feed-moved-to-http-slash-slash-www-dot-fragmentedmemory-dot-com-slash-feed-slash/">RSS Feed Moved To http://www.fragmentedmemory.com/feed/</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2013/06/18/new-location-and-new-blog-engine-and-old-content-restored/">New Location &amp; New Blog Engine &amp; Old Content Restored</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2013/06/13/joining-microsoft/">Joining Microsoft</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2013/06/13/leaving-bromium/">Leaving Bromium</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2013/03/05/philip-su-engineering-process-and/">Philip Su - Engineering Process And Philosophy At Facebook</a>
+          </li>
+        
+      </ul>
+    </div>
+
+    <div class="posts">
+      <h2>Links</h2>
+      <a href='https://alpha.app.net/gjb' class='adn-button' target='_blank' data-type='follow' data-width='277' data-height='27' data-user-id='@gjb' data-show-username='1' rel='me'>Follow me on App.net</a><script>(function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src='//d2zh9g63fcvyrq.cloudfront.net/adn.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'adn-button-js'));</script>
+    </div>
+  </div>
+
+  <p class="powered">
+    Powered by <a href="http://octopress.org">Octopress</a> and <a href="https://github.com/iwinux/compbits">Compbits</a>
+  </p>
+</div>
+
+  </div> <!-- #wrapper end -->
+
+  
+
+  
+
+
+  
+
+  
+
+  
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+</body>
+</html>

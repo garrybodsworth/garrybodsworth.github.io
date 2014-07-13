@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: virtualisation | Fragmented Memory]]></title>
+  <link href="http://www.fragmentedmemory.com/blog/categories/virtualisation/atom.xml" rel="self"/>
+  <link href="http://www.fragmentedmemory.com/"/>
+  <updated>2013-06-23T17:13:57+01:00</updated>
+  <id>http://www.fragmentedmemory.com/</id>
+  <author>
+    <name><![CDATA[Garry Bodsworth]]></name>
+    <email><![CDATA[blog@fragmentedmemory.com]]></email>
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Cool Use For Virtualisation]]></title>
+    <link href="http://www.fragmentedmemory.com/blog/2007/12/03/cool-use-for-virtualisation/"/>
+    <updated>2007-12-03T20:47:00+00:00</updated>
+    <id>http://www.fragmentedmemory.com/blog/2007/12/03/cool-use-for-virtualisation</id>
+    <content type="html"><![CDATA[<div class='post'>
+Virtualisation is obviously the hot computing technology of the moment.  We make good use of virtualisation where I work in order to really get around weird Windows limitations where it seems dislike multithreading.<br /><br />The good thing now is VMWare Workstation is free so you can use images anywhere.<br /><br />What impressed me though is that as part of the pursuit of X-Box Media Centre for Linux they have the entire development environment available <a href="http://xboxmediacenter.com/forum/showthread.php?t=26664">as a VMWare image</a>.  That makes life so much easier for developers!  It means you don't have to fiddle with  your settings and deal with other potential conflicts.  <br /><br />It is just a great way to use the technology and lower the barriers for development and guarantee a consistent development environment.  Obviously it is not the official way to do it but the fact it exists is pretty darn good.</div>
+
+
+<h2>Comments</h2>
+
+
+<div class='comments'>
+<div class='comment'>
+<div class='author'>Adi</div>
+<div class='content'>
+<a rel="external" href="http://orientinspiration.com/2009/09/oes-tsetnoc.html" rel="nofollow">Oes  Tsetnoc</a> one of the ways in which we can learn seo besides <a rel="external" href="http://duniasoer.com/archives/mengembalikan-jati-diri-bangsa.html" rel="nofollow">Mengembalikan Jati Diri Bangsa</a>.  By participating in the <a rel="external" href="http://mncmakina.com/2009/09/oes-tsetnoc-seo-contest/" rel="nofollow">Oes Tsetnoc</a> or <a rel="external" href="http://ulaznice.info/mengembalikan-jati-diri-bangsa.html" rel="nofollow">Mengembalikan Jati Diri Bangsa</a> we can improve our seo skills. To find more information about <a rel="external" href="http://catatanblogger.info/738688-Oes-Tsetnoc.html" rel="nofollow">Oest Tsetnoc</a> please visit my <a rel="external" href="http://kusukaseo.info/981750-Oes-Tsetnoc-Support.html" rel="nofollow">Oes Tsetnoc</a> pages. And to find more information about <a rel="external" href="http://duniasoer.com" rel="nofollow">Mengembalikan Jati Diri Bangsa</a> please visit my <a rel="external" href="http://catatanblogger.info/464655-Mengembalikan-Jati-Diri-Bangsa.html" rel="nofollow">Mengembalikan Jati Diri Bangsa</a> pages. Thank you So much.<br> <a rel="external" href="http://orientinspiration.com" rel="nofollow">Oes  Tsetnoc</a> | <a rel="external" href="http://duniasoer.com/archives/semangat-mengembalikan-jati-diri-bangsa.html" rel="nofollow">Semangat Mengembalikan Jati Diri Bangsa</a></div>
+</div>
+</div>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Virtualisation - An Understanding]]></title>
+    <link href="http://www.fragmentedmemory.com/blog/2007/10/13/virtualisation-understanding/"/>
+    <updated>2007-10-13T09:37:00+01:00</updated>
+    <id>http://www.fragmentedmemory.com/blog/2007/10/13/virtualisation-understanding</id>
+    <content type="html"><![CDATA[<div class='post'>
+It's amazing how many mistakes it is possible to make when attempting to understand a concept.  Up until a couple of weeks ago I had some misconceptions about virtualisation.  I've used it through VMWare and have viewed it as a way to have a virtual layer on top of your processor.<br /><br />Then some concepts coalesced from various articles I was reading.<br /><br />Virtualisation is the abstraction of resources away from their use.  At the moment the most common use of virtualisation would be memory.  You get a virtual address space from your operating system - this can be mad up of RAM, ROM, cache, hard drive, flash memory, and probably more.  You don't know what you are accessing but the virtualisation of those resources and their access makes it easy to use.<br /><br />One of the catalysts for my understanding was iD Software new iD Tech 5.  There was mention of Megtexture which was texture virtualisation allowing the use of massive amounts of textures for the rendering.  This would no doubt be a way of not needing to know about the basic building blocks of the textures, but to use them through a virtualised interface.<br /><br />Then this comes to the processor virtualisation.  My misconception was because of the examples I had seen from Parallels and VMWare.  It allows you to run multiple computers on a single processor.  But what processor virtualisation should do is abstract away the processor resources allowing the program to run.  This would mean that you would not care about multiple cores or even computers, you could in their run one virtual machine which has a backend of a massive cluster of computers.  I don't know if this is the case yet as when you do parallel processing you still nee to know too much about the parallelism in order to develop a solution but I imagine some solutions must be able to do it.</div>
+
+]]></content>
+  </entry>
+  
+</feed>

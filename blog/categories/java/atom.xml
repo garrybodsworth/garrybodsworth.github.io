@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Java | Fragmented Memory]]></title>
+  <link href="http://www.fragmentedmemory.com/blog/categories/java/atom.xml" rel="self"/>
+  <link href="http://www.fragmentedmemory.com/"/>
+  <updated>2013-06-23T17:13:57+01:00</updated>
+  <id>http://www.fragmentedmemory.com/</id>
+  <author>
+    <name><![CDATA[Garry Bodsworth]]></name>
+    <email><![CDATA[blog@fragmentedmemory.com]]></email>
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[MinGW GCC and all that great stuff]]></title>
+    <link href="http://www.fragmentedmemory.com/blog/2007/05/10/mingw-gcc-and-all-that-great-stuff/"/>
+    <updated>2007-05-10T20:32:00+01:00</updated>
+    <id>http://www.fragmentedmemory.com/blog/2007/05/10/mingw-gcc-and-all-that-great-stuff</id>
+    <content type="html"><![CDATA[<div class='post'>
+One of the most overlooked programs out there is GCC - <a href="http://gcc.gnu.org/">The Gnu Compiler Collection</a> - a vast array of development tools that are truly free to use unencumbered.<br /><br />It provides a suite of compilers from Fortran, to Java, to C++.<br /><br />At the moment for Windows unless you use Cygwin (not recommended) you will be using <a href="http://www.mingw.org">MinGW</a> which is currently at version 3.4.5, some way behind the version available on Unix systems (which is in 4.2 prerelease).  The good news is that once gcc 4.2 is released it will be released for MinGW, which should mean lots of good improvements, from standards compliance to OpenMP to speed ups from new optimisations.<br /><br />Obviously it does not only target specific OSes, but it also targets different platforms including 64-bit.<br /><br />Admittedly it is not as fast the the Microsoft compilers, but maybe it will get there.  One worry is that Microsoft will lose interest in their compilers for native code as they go further and further down the .NET route.</div>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Open-Source Java]]></title>
+    <link href="http://www.fragmentedmemory.com/blog/2007/05/10/open-source-java/"/>
+    <updated>2007-05-10T20:26:00+01:00</updated>
+    <id>http://www.fragmentedmemory.com/blog/2007/05/10/open-source-java</id>
+    <content type="html"><![CDATA[<div class='post'>
+<a href="http://www.eweek.com/article2/0,1895,2127458,00.asp">Sun announced the open-source Java Development Kit</a> recently.  It's under the GPLv2 license and it looks like they want to capture the open-source community.<br /><br />This could be a really interesting period since Java may start to gain even more traction as more people become involved in its development.  Hopefully meaning slicker VMs being released.<br /><br />OpenBSD are currently merging this <a href="http://undeadly.org/cgi?action=article&sid=20070508192340">release into their codebase</a>.  I imagine others will not be far behind.  I hope it means that it becomes well supported on many platforms.<br /><br />You can see the OpenJDK website <a href="http://openjdk.java.net/">here</a>.</div>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[LWJGL]]></title>
+    <link href="http://www.fragmentedmemory.com/blog/2007/02/05/lwjgl/"/>
+    <updated>2007-02-05T20:26:00+00:00</updated>
+    <id>http://www.fragmentedmemory.com/blog/2007/02/05/lwjgl</id>
+    <content type="html"><![CDATA[<div class='post'>
+Nope, I haven't forgot how to type, but it is a new Java Library for game development.  It provides access to <a href="http://www.openal.org">OpenAL</a> and <a href="http://www.opengl.org">OpenGL</a> through Java.<br /><br /><a href="http://www.lwjgl.org/">LWJGL</a> is designed to allow commercial quality game development in Java and represents many years of development.  It's not a game engine in itself but provides the framework to develop them easily on Java.  It is designed to work on anything with a JVM so it could be used in smartphones and the like.<br /><br />It's interesting from the point of view that this would enable cross-platform development and hopefully give a platform like DirectX.</div>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Cambridge SPA Meeting - Seeing SunSPOTs]]></title>
+    <link href="http://www.fragmentedmemory.com/blog/2006/12/15/cambridge-spa-meeting-seeing-sunspots/"/>
+    <updated>2006-12-15T12:43:00+00:00</updated>
+    <id>http://www.fragmentedmemory.com/blog/2006/12/15/cambridge-spa-meeting-seeing-sunspots</id>
+    <content type="html"><![CDATA[<div class='post'>
+On the 13th December I attended the <a href="http://www.bcs-spa.org/cgi-bin/view/SPA/SpaCambridge">Cambridge SPA</a> meeting.  Cambridge SPA is an offshoot (or part of) of the <a href="http://www.bcs-spa.org/cgi-bin/view/SPA/SpaCambridge">BCS</a> and they hold monthly meetings for varied presentations about lots of aspects of computing.  I decided to throw caution to the wind and see what it was like (after all it was free) and it was hosted at <a href="http://www.bcs-spa.org/cgi-bin/view/SPA/MicrosoftResearchCentreCambridge">Microsoft Research Cambridge</a> who generously provided the rooms and laid on a buffet.<br /><br />This presentation was about <a href="http://www.sunspotworld.com/">SunSPOTs</a> which are small programmable Java devices.  It is defined as Java On The Metal since there is no operating system and Java does all of the control.  When you tell Java to sleep() the device also sleeps and it is extremely power efficient.  It uses the <a href="http://research.sun.com/projects/squawk/squawk-rjvm.html">Squawk Java VM</a> which provides a version of Java ME functionality.  The device also has sensors built in like tilt and light sensors.  It communicates wirelessly or by USB.<br /><br />I got the impression that it still hasn't found its true purpose yet, but is proving that Java is a good solution for the embedded environment space.  It also provides much better debugging facilities than traditional embedded environments.  Still, all very interesting.<br /><br />It was most interesting that my old haunt <a href="http://www.essex.ac.uk">Essex University</a> is using these devices.  And it was one of my favourite masters courses that was using it <a href="http://iieg.essex.ac.uk/">The Intelligent Buildings Group</a>.  It was bizarre to hear this since when I read about the presentation initially I thought this would have been ideal for Intelligent Buildings studies at Essex Uni.  When I did my dissertation there I was looking at the TINI Java embedded board for that although it didn't amount to a great deal in the end.<br /><br />Still, I had a good time, met some people, got informed about an interesting subject, so all in all it was a good use of an evening.<br /><br />If anyone lives near Cambridge and is interested in computing in general, I can recommend you check it out.</div>
+
+
+<h2>Comments</h2>
+
+
+<div class='comments'>
+<div class='comment'>
+<div class='author'>Garry Bodsworth</div>
+<div class='content'>
+Edited and fixed.  Thanks,<br /><br />Garry</div>
+</div>
+<div class='comment'>
+<div class='author'>Eric</div>
+<div class='content'>
+As an FYI, Squawk does not "provides a cut down version of Java ME functionality", it provides full CLDC 1.1 and soon to be IMP 1.0 support.  Squawk is a very lean implementation of Java ME intended for small constrained devices with low memory.  It also runs on the metal, ie does not require an OS, which simplifies its portability and reduces its resource requirements.<br /><br />From the Squawk PI :)</div>
+</div>
+</div>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Java - Java SE 6 and NetBeans]]></title>
+    <link href="http://www.fragmentedmemory.com/blog/2006/12/11/java-java-se-6-and-netbeans/"/>
+    <updated>2006-12-11T21:57:00+00:00</updated>
+    <id>http://www.fragmentedmemory.com/blog/2006/12/11/java-java-se-6-and-netbeans</id>
+    <content type="html"><![CDATA[<div class='post'>
+Sun have <a href="http://java.sun.com/javase/">released Java SE 6</a> the latest version of Java for use in developing desktop and server applications.  This isn't the GPLed version just yet as the development of version 6 just missed the boat.<br /><br /><a href="http://www.netbeans.org/products/">NetBeans is also available</a> as a free IDE for development.  It is an excellent quality IDE which now has a <a href="http://www.netbeans.org/products/cplusplus/">C/C++ plug-in</a>.  The C/C++ plugin is a bit new so it is not perfect by any means, but has just as much potential as the <a href="http://www.eclipse.org/cdt/">Eclipse CDT</a> project.<br /><br />I am going to try out more Java programming to see how far the GUI was away from looking platform native.  Hopefully, it is not too far away right now.</div>
+
+]]></content>
+  </entry>
+  
+</feed>

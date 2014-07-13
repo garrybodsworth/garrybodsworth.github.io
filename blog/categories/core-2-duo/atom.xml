@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Core 2 Duo | Fragmented Memory]]></title>
+  <link href="http://www.fragmentedmemory.com/blog/categories/core-2-duo/atom.xml" rel="self"/>
+  <link href="http://www.fragmentedmemory.com/"/>
+  <updated>2013-06-23T17:13:57+01:00</updated>
+  <id>http://www.fragmentedmemory.com/</id>
+  <author>
+    <name><![CDATA[Garry Bodsworth]]></name>
+    <email><![CDATA[blog@fragmentedmemory.com]]></email>
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Core 2 Duo]]></title>
+    <link href="http://www.fragmentedmemory.com/blog/2006/10/06/core-2-duo/"/>
+    <updated>2006-10-06T20:39:00+01:00</updated>
+    <id>http://www.fragmentedmemory.com/blog/2006/10/06/core-2-duo</id>
+    <content type="html"><![CDATA[<div class='post'>
+In as long as I can remember I have not been impressed with the incremental steps in hardware.  The last time I went <span style="font-style:italic;">"Ooooooh!"</span> was when I bought a Voodoo card for 3D graphics (it wasn't even integrated into graphics cards at the time) for a Pention 200MMX.  The smoothness and difference in response was amazing.  I suppose the incremental steps all add up and the comparison with a few years ago is noticable, but nothing really blew my socks off.<br /><br />That was until we got a top of the range two processor (each with two cores) Core 2 Duo (Xeon).  Bloody hell, I have never seen such a leap in speed ever!  Operations that took days before now take hours, and even when it is a single process (we work on a full multithreading program) it has a massive performance gain in the order of 50%, and  there are three cores still left idle!<br /><br />I've always bought Athlon processors for my home PC builds mainly because they were cost-effective and powerful.  But I have broken with tradition and picked myself up a Core 2 Duo 6400 processor and a new motherboard (which has both AGP and PCI-Ex slots) from my Athlon XP 3200+.  For general websurfing I don't notice any difference until I try to compile something.  I am currently compiling a 114 project solution in Visual Studio in the background whilst I am typing this and it is hammering through and took about five to ten minutes to do(!)<br /><br />All I can say is if you do development the Core 2 Duo processors really make a difference.</div>
+
+]]></content>
+  </entry>
+  
+</feed>

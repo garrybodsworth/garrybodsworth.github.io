@@ -1,0 +1,193 @@
+
+<!DOCTYPE HTML>
+<html lang="en-gb">
+<head>
+  <meta charset="UTF-8">
+  <title>Fragmented Memory</title>
+
+  <meta name="author" content="Garry Bodsworth">
+  
+  <meta name="description" content="Decapitation Is Sometimes Good for You Feb 16th, 2009 Lots of people out there are looking for headless web browsers to generate things like &hellip;">
+  
+  
+
+  <link rel="canonical" href="http://www.fragmentedmemory.com/blog/2009/02/16/decapitation-is-sometimes-good-for-you">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/feed/" rel="alternate" title="Fragmented Memory" type="application/atom+xml">
+</head>
+  
+<body class="default">
+  <div id="wrapper">
+    <div id="header">
+  <h1><a href="/">Fragmented Memory</a></h1>
+  
+    <p>Garry Bodsworth's Blog (formerly Garry's Bit Patterns &amp; Programmer's Log)</p>
+  
+</div>
+<ul id="social-links">
+  
+    <li><a class="rss" href="/feed/" title="RSS">RSS</a></li>
+  
+  
+  
+  
+    <li><a class="twitter" href="http://twitter.com/garrybodsworth" title="Twitter">Twitter</a></li>
+  
+  
+    <li><a class="github" href="https://github.com/garrybodsworth" title="GitHub">GitHub</a></li>
+  
+  
+  
+    <li><a class="linkedin" href="http://www.linkedin.com/in/garrybodsworth">LinkedIn</a></li>
+  
+  
+  
+  
+    <li><a class="pinboard" href="https://pinboard.in/u:garrybodsworth" title="Pinboard">Pinboard</a></li>
+  
+</ul>
+<div class="clear"></div>
+<ul id="nav">
+  
+    <li> <a href="/">blog</a> </li>
+  
+
+  
+    <li><a href="/blog/archives">archives</a></li>
+  
+
+  
+    <li><a href="/about">about</a></li>
+  
+</ul>
+
+    <div id="main"> <div class="post-header">
+  
+    <h1 class="post-title">Decapitation Is Sometimes Good for You</h1>
+  
+  
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2009-02-16T00:00:00+00:00" pubdate data-updated="true">Feb 16<span>th</span>, 2009</time>
+</div>
+
+<div class="post-content"><p>Lots of people out there are looking for headless web browsers to generate things like thumbnails. In the end most people either roll their own or cheat (use xvfb and grab the pixmap). You could use <a href="http://labs.trolltech.com/blogs/2009/01/15/capturing-web-pages/">Qt and grab the image</a>, but it still requires xvfb, even if you write your own rendering backend (I assume for font stuff). There are a number of ways to solve the headless rendering problem, unfortunately not all of them are ideal.</p>
+
+<p>For me I am looking at <a href="http://code.staikos.net/cgi-bin/gitweb.cgi?p=webkit;a=shortlog;h=kenneth/efl-port">EFL WebKit</a> as the best solution but it is not near maturity and because I quite like the way Enlightenment Foundation Libraries seem to work.</p>
+
+<p>The latest possible solution(s) are born from the <a href="http://clutter-project.org/">Clutter Project</a> which is now under the guidance of Intel. There is <a href="http://trac.webkit.org/wiki/clutter">Clutter Webkit</a> which provides a Clutter Actor for rendering webpages essentially to a Cairo surface on the 3D surface. I got it to compile last night and ran a test program but it was pretty slow.</p>
+
+<p>The other one is <a href="http://git.o-hand.com/cgit.cgi/mozilla-headless/">mozilla-headless</a> which looks really interesting by providing a Mozilla library that renders to a Cairo surface. <a href="http://chrislord.net/">Chris Lord</a> the main developer on this made presentation to FOSDEM available <a href="http://chrislord.net/files/fosdem-09-slides.odp">here</a>. There is also a video of it in action <a href="http://chrislord.net/images/mozilla/mozilla-magic.png">here</a> (requires OGG codecs). The source is all available <a href="http://git.o-hand.com/cgit.cgi/mozilla-headless/">here</a> and the embedding into Clutter is available <a href="http://git.clutter-project.org/?r=clutter-mozembed">here</a>. The source code for testing it is <a href="http://git.clutter-project.org/cgit.cgi?url=clutter-mozembed/tree/tests">here</a>.</p>
+
+<p>On a vaguely related note there is an interesting article about using gstreamer through Clutter&#8217;s python bindings &#8211; <a href="http://luisbg.blogalia.com//historias/61951">awesome (gstreamer * clutter)</a>.</p>
+</div>
+
+
+<div class="post-single">
+  <div class="post-meta">
+    
+
+<span class="categories">
+  Categories:
+  
+    <a class='category' href='/blog/categories/uncategorized/'>Uncategorized</a>
+  
+</span>
+
+
+    
+      <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://www.fragmentedmemory.com/blog/2009/02/16/decapitation-is-sometimes-good-for-you/" data-via="garrybodsworth" data-counturl="http://www.fragmentedmemory.com/blog/2009/02/16/decapitation-is-sometimes-good-for-you/" >Tweet</a>
+  
+  
+  
+</div>
+
+    
+  </div>
+  <div class="clear"></div>
+
+  
+</div>
+ </div>
+    <div id="footer">
+  <div class="panels">
+    <div class="license">
+      <h2>License</h2>
+      <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-nc-sa/3.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/">Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License</a>.
+    </div>
+
+    <div class="posts">
+      <h2>Recent Posts</h2>
+      <ul>
+        
+          <li>
+            <a href="/blog/2013/06/22/rss-feed-moved-to-http-slash-slash-www-dot-fragmentedmemory-dot-com-slash-feed-slash/">RSS Feed Moved To http://www.fragmentedmemory.com/feed/</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2013/06/18/new-location-and-new-blog-engine-and-old-content-restored/">New Location &amp; New Blog Engine &amp; Old Content Restored</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2013/06/13/joining-microsoft/">Joining Microsoft</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2013/06/13/leaving-bromium/">Leaving Bromium</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2013/03/05/philip-su-engineering-process-and/">Philip Su - Engineering Process And Philosophy At Facebook</a>
+          </li>
+        
+      </ul>
+    </div>
+
+    <div class="posts">
+      <h2>Links</h2>
+      <a href='https://alpha.app.net/gjb' class='adn-button' target='_blank' data-type='follow' data-width='277' data-height='27' data-user-id='@gjb' data-show-username='1' rel='me'>Follow me on App.net</a><script>(function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src='//d2zh9g63fcvyrq.cloudfront.net/adn.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'adn-button-js'));</script>
+    </div>
+  </div>
+
+  <p class="powered">
+    Powered by <a href="http://octopress.org">Octopress</a> and <a href="https://github.com/iwinux/compbits">Compbits</a>
+  </p>
+</div>
+
+  </div> <!-- #wrapper end -->
+
+  
+
+  
+
+
+  
+
+  
+
+  
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+</body>
+</html>

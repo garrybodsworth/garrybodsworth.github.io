@@ -1,0 +1,198 @@
+
+<!DOCTYPE HTML>
+<html lang="en-gb">
+<head>
+  <meta charset="UTF-8">
+  <title>Fragmented Memory</title>
+
+  <meta name="author" content="Garry Bodsworth">
+  
+  <meta name="description" content="Subversion and TortoiseSVN - a Programmers Best Friend Oct 1st, 2006 Before you work in industry it is unlikely you ever use any source control. At &hellip;">
+  
+  
+
+  <link rel="canonical" href="http://www.fragmentedmemory.com/blog/page/52">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/feed/" rel="alternate" title="Fragmented Memory" type="application/atom+xml">
+</head>
+  
+<body class="default">
+  <div id="wrapper">
+    <div id="header">
+  <h1><a href="/">Fragmented Memory</a></h1>
+  
+    <p>Garry Bodsworth's Blog (formerly Garry's Bit Patterns &amp; Programmer's Log)</p>
+  
+</div>
+<ul id="social-links">
+  
+    <li><a class="rss" href="/feed/" title="RSS">RSS</a></li>
+  
+  
+  
+  
+    <li><a class="twitter" href="http://twitter.com/garrybodsworth" title="Twitter">Twitter</a></li>
+  
+  
+    <li><a class="github" href="https://github.com/garrybodsworth" title="GitHub">GitHub</a></li>
+  
+  
+  
+    <li><a class="linkedin" href="http://www.linkedin.com/in/garrybodsworth">LinkedIn</a></li>
+  
+  
+  
+  
+    <li><a class="pinboard" href="https://pinboard.in/u:garrybodsworth" title="Pinboard">Pinboard</a></li>
+  
+</ul>
+<div class="clear"></div>
+<ul id="nav">
+  
+    <li> <a href="/" class="current">blog</a> </li>
+  
+
+  
+    <li><a href="/blog/archives">archives</a></li>
+  
+
+  
+    <li><a href="/about">about</a></li>
+  
+</ul>
+
+    <div id="main"> 
+
+  
+  <div class="post"> <div class="post-header">
+  
+    <h1 class="post-title">
+      <a href="/blog/2006/10/01/subversion-and-tortoisesvn-programmers/">Subversion and TortoiseSVN - a Programmers Best Friend</a>
+    </h1>
+  
+  
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2006-10-01T19:29:00+01:00" pubdate data-updated="true">Oct 1<span>st</span>, 2006</time>
+</div>
+
+<div class="post-content"><div class='post'>
+Before you work in industry it is unlikely you ever use any source control.  At Essex Uni we were forced to use RCS (on the command-line) once and it all seemed pretty trivial and pointless.  Most of the time when you go into industry you end up having to use Visual SourceSafe, sure it does a job, but for the most part it is completely useless and scales terribly.<br /><br />Earlier this year I migrated the company I work at (<a href="http://www.ncgraphics.net">NC Graphics</a>) from Visual SourceSafe to Subversion.  I prepared a lot for this doing tons of research to make this transition as seamless as humanly possible, but as these things normally happen time was a serious factor.  Bizarrely it was done ahead of schedule and the benefits were pretty much instantaneous.  Sometimes in IT we beat deadlines(!)<br /><br /><span style="font-weight: bold;">The Migration</span><br /><br />I spent ages reading everything I could find via Google about migrating anything to Subversion.  This was necessary as there was very little covering Visual SourceSafe specifically.  In the end I had to choose the only tool even remotely capable of doing the conversion called <a href="http://vss2svn.tigris.org/">vss2svn</a> and even then there were some compromises that had to be made.  I used the orginal &#8220;legacy&#8221; script from their development repository.  It essentially gets every file you have currently in your source tree and then search each of their histories backwards in time.  This does mean you lose renames and files that have been removed.  The good thing though is that it converts the check-ins into Subversion style atomic commits by grouping them all together by time and user.<br /><br />There is a new version of <a href="http://www.pumacode.org/projects/vss2svn">vss2svn</a> (new website) but it was nowhere near being ready when I was doing this work.  This version actually reconstructs almost everything by reverse-engineering the Visual SourceSafe file format.  If you have archived portions or restored portions I found that it didn&#8217;t work.  It seems to have come a long way since I last looked, but I don&#8217;t think it would have converted our large database with all of its quirks.<br /><br />Back to the original script though&#8230;  To get it to run fast what I did was archive out the areas of SourceSafe we needed and then imported them into a brand new clean instance.  This cut the running time for the script from the test run of 14 days down to less than 2 days.<br /><br /><span style="font-weight: bold;">Using Subversion For Development</span><br /><br />Obviously you have the basic command-line tools for using <a href="http://subversion.tigris.org">Subversion</a> but there is a lot more out there as well.  Internally we use <a href="http://tortoisesvn.net/">TortoiseSVN</a> and that is about it.  Most people are looking at loads of other options, but once you use TortoiseSVN you don&#8217;t need anything else, it only takes about a day, maybe two to realise this.  Without hyperbole I can say TortoiseSVN ranks right up there as one of the greatest gifts to developers ever made.<br /><br />To make it even more useful though I did a little work to integrate it into Visual Studio.NET (2003 and 2005).  It is actually really simple to do because TortoiseSVN provides us with a commandline interface that can display the dialogs.  In the next couple of days I will give complete instructions how to set this up and even describe how to set it all up on a toolbar like I currently have it.  I&#8217;ll also cover all the clients I checked out in the course of the migration.</div>
+</div>
+ </div>
+
+  
+  <div class="post"> <div class="post-header">
+  
+    <h1 class="post-title">
+      <a href="/blog/2006/10/01/first-post/">First Post</a>
+    </h1>
+  
+  
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2006-10-01T16:52:00+01:00" pubdate data-updated="true">Oct 1<span>st</span>, 2006</time>
+</div>
+
+<div class="post-content"><div class='post'>
+I suppose at the moment I just need an outlet for all these computer-type things going round in my head.  I mainly specialise in C++ and was once known (and probably still known) as a GUI specialist.  I&#8217;ve done all kinds of random things like setting up a company-wide bug database and migrating a Visual SourceSafe (VSS) &#8220;database&#8221; to a Subversion repository.<br /><br />I tend to read loads of programming stuff in my spare time and I think should put my money where my mouth is and provide some source code on the Internet that may be of use to someone.  On numerous occasions in my programming career I have encountered bits and pieces that even Google couldn&#8217;t rescue me from, and I know for a fact MSDN help is a chocolate teapot.  I like it when the building blocks are out there and it gives you just enough to build your own solution.<br /><br />So in the future if you are interested, you can look forward to ramblings on C++, Open Source libraries that I encounter, MFC, Win32, user interface design, Open Source programs that make life easier, STL library, Boost library, template metaprogramming, code design, Python, and more.<br /><br />Thanks for listening, now it is time to get some real content&#8230;<br /><br />Garry Bodsworth</div>
+</div>
+ </div>
+
+
+<div id="pagination">
+  
+  
+    <a class="next" href="/blog/page/51/">Next&raquo;</a>
+  
+</div>
+ </div>
+    <div id="footer">
+  <div class="panels">
+    <div class="license">
+      <h2>License</h2>
+      <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-nc-sa/3.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/">Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License</a>.
+    </div>
+
+    <div class="posts">
+      <h2>Recent Posts</h2>
+      <ul>
+        
+          <li>
+            <a href="/blog/2013/06/22/rss-feed-moved-to-http-slash-slash-www-dot-fragmentedmemory-dot-com-slash-feed-slash/">RSS Feed Moved To http://www.fragmentedmemory.com/feed/</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2013/06/18/new-location-and-new-blog-engine-and-old-content-restored/">New Location &amp; New Blog Engine &amp; Old Content Restored</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2013/06/13/joining-microsoft/">Joining Microsoft</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2013/06/13/leaving-bromium/">Leaving Bromium</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2013/03/05/philip-su-engineering-process-and/">Philip Su - Engineering Process And Philosophy At Facebook</a>
+          </li>
+        
+      </ul>
+    </div>
+
+    <div class="posts">
+      <h2>Links</h2>
+      <a href='https://alpha.app.net/gjb' class='adn-button' target='_blank' data-type='follow' data-width='277' data-height='27' data-user-id='@gjb' data-show-username='1' rel='me'>Follow me on App.net</a><script>(function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src='//d2zh9g63fcvyrq.cloudfront.net/adn.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'adn-button-js'));</script>
+    </div>
+  </div>
+
+  <p class="powered">
+    Powered by <a href="http://octopress.org">Octopress</a> and <a href="https://github.com/iwinux/compbits">Compbits</a>
+  </p>
+</div>
+
+  </div> <!-- #wrapper end -->
+
+  
+
+  
+
+
+  
+
+  
+
+  
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+</body>
+</html>

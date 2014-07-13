@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: interview | Fragmented Memory]]></title>
+  <link href="http://www.fragmentedmemory.com/blog/categories/interview/atom.xml" rel="self"/>
+  <link href="http://www.fragmentedmemory.com/"/>
+  <updated>2013-06-23T17:13:57+01:00</updated>
+  <id>http://www.fragmentedmemory.com/</id>
+  <author>
+    <name><![CDATA[Garry Bodsworth]]></name>
+    <email><![CDATA[blog@fragmentedmemory.com]]></email>
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Bill Gates Talks Some Sense - A 1986 Interview]]></title>
+    <link href="http://www.fragmentedmemory.com/blog/2008/06/17/bill-gates-talks-some-sense-1986/"/>
+    <updated>2008-06-17T08:38:00+01:00</updated>
+    <id>http://www.fragmentedmemory.com/blog/2008/06/17/bill-gates-talks-some-sense-1986</id>
+    <content type="html"><![CDATA[<div class='post'>
+The <a href="http://programmersatwork.wordpress.com/">Programmers At Work</a> blog have posted a 1986 interview with Bill Gates - you can <a href="http://programmersatwork.wordpress.com/bill-gates-1986/">read it here</a>.<br /><br />What is incredibly bizarre is that he talks a lot of sense and a lot of it is still applicable today.  Certainly 20 years later substitute assembler for C, and C with a scripting language in the article and you can believe it was a recent article.<br /><br />It's hard to believe Microsoft is the same company that Bill Gates is talking about in this interview as he has such a pragmatic outlook towards development.  With those attitudes you can see why Microsoft became successful, but it also shows you can't stay that way forever without great effort.  Most of my teenage years and adult life I have seen Microsoft as this big monopoly and it was nice to see something that shows what it was like before then.</div>
+
+]]></content>
+  </entry>
+  
+</feed>

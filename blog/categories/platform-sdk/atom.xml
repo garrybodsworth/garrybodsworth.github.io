@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Platform SDK | Fragmented Memory]]></title>
+  <link href="http://www.fragmentedmemory.com/blog/categories/platform-sdk/atom.xml" rel="self"/>
+  <link href="http://www.fragmentedmemory.com/"/>
+  <updated>2013-06-23T17:13:57+01:00</updated>
+  <id>http://www.fragmentedmemory.com/</id>
+  <author>
+    <name><![CDATA[Garry Bodsworth]]></name>
+    <email><![CDATA[blog@fragmentedmemory.com]]></email>
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Boost Library And Visual Studio 2005]]></title>
+    <link href="http://www.fragmentedmemory.com/blog/2006/10/03/boost-library-and-visual-studio-2005/"/>
+    <updated>2006-10-03T22:50:00+01:00</updated>
+    <id>http://www.fragmentedmemory.com/blog/2006/10/03/boost-library-and-visual-studio-2005</id>
+    <content type="html"><![CDATA[<div class='post'>
+This will set you up with a top notch development environment for C++ in Windows.  Also this will tell you how to get the Boost::Python libraries to work with as well (which can never be a bad thing).<br /><ol><li>Download Visual C++ 2005 Express from <a href="http://msdn.microsoft.com/vstudio/express/visualc/download/">here</a>.</li><li>Then go and install the <a href="http://msdn.microsoft.com/vstudio/express/visualc/usingpsdk/">Platform SDK</a>.  I recommend installing it into <span style="font-style: italic;">C:\Program Files\Microsoft Visual Studio 8\VC\PlatformSDK</span> as then the environment variables are already set up for you in VC8.</li><li>Go and download <a href="http://www.python.org/">Python</a> where the latest version is 2.5.  Install Python 2.5 to the default installation directory of <span style="font-style: italic;">c:\Python25</span>.</li><li>Now it is time to download <a href="http://www.boost.org/">Boost</a> and make sure you download the <a href="http://sourceforge.net/project/showfiles.php?group_id=7586&package_id=8041">source</a> and a precompiled <a href="http://sourceforge.net/project/showfiles.php?group_id=7586&amp;package_id=72941">bjam build tool</a>.</li><li>Extract Boost to a temporary directory on your hard drive, and copy the <span style="font-style: italic;">bjam.exe</span> into the Boost directory.</li><li>Open a command prompt in the Boost root directory(where you copied <span style="font-style: italic;">bjam.exe</span> to).</li><li>Run the batch file for registering Visual Studio commandline variables : <span style="font-style: italic;">C:\Program Files\Microsoft Visual Studio 8\Common7\Tools\vsvars32.bat</span></li><li>Run the following command line to compile and install Boost in "c:\Boost" with no checked iterators:<span style="font-style: italic;">bjam "-sTOOLS=vc-8_0" "-sPYTHON_VERSION=2.5" "-sPYTHON_ROOT=c:\Python25" "-sBUILD=debug release &lt;define&gt;_CRT_NONSTDC_NO_DEPRECATE &lt;define&gt;_CRT_SECURE_NO_DEPRECATE &lt;define&gt;_SECURE_SCL=0 &lt;define&gt;_SCL_SECURE_NO_DEPRECATE &lt;define&gt;_HAS_ITERATOR_DEBUGGING=0" install</li><li>What I tend to do then is copy Boost to where my development libraries go, and then add those directories to the lib and include directories in Visual C++.</li></ol>Now you are ready to go for Boost-ified C++ development and you will have the Boost Python libraries as well for binding your code to a scripting language.  Next install TortoiseSVN and install the settings outlined in one of my previous posts for the toolbars, and then you should be ready to check some code out and develop like a demon.</div>
+
+
+<h2>Comments</h2>
+
+
+<div class='comments'>
+<div class='comment'>
+<div class='author'>Paul</div>
+<div class='content'>
+To stop things whizzing past, run it at the command line like so:<BR/><BR/>bjam blah blah &gt; build_log.txt 2&gt;&amp;1<BR/><BR/>then open up the text file in a good text editor and reload to watch the new stuff come in...</div>
+</div>
+<div class='comment'>
+<div class='author'>Garry Bodsworth</div>
+<div class='content'>
+Oh damn!  That means I have been using it without all the switched off stuff.  Thanks for the heads up.<br /><br />Unfortunately running bjam verbosely gives far too much output, but I have also fixed another problem I spotted as it whizzed past on the DOS command prompt (to do with deprecated C library functionality).<br /><br />There is still the "Og" flag warning but hopefully that will be fixed in Boost 1.34 as it is not a problem in VC++ 8 (but will be when it is removed in future versions).<br /><br />Check out the updated post.  Overall it makes the Boost library build a whole 1Mb smaller ;)<br /><br />Thanks!<br /><br />Garry</div>
+</div>
+<div class='comment'>
+<div class='author'>dtinkham</div>
+<div class='content'>
+Hi Garry,<br /><br />I don't think that the command-line to bjam that you list is exactly right. With the preprocessor options/defines listed as you have them, bjam interprets the defines as targets, and you get 4 extra builds :)<br /><br />It looks like each define should have < define > prepended. <br /><br />e.g.<br /><br />< define >_CRT_SECURE_NO_DEPRECATE<br /><br />Note, there should not be a space between the <, >, and the word define. I had to put the space in because the blog commenter won't allow that tag. <br /><br />Cheers.</div>
+</div>
+</div>
+
+]]></content>
+  </entry>
+  
+</feed>

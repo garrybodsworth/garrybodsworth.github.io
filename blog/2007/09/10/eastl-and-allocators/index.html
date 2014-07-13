@@ -1,0 +1,209 @@
+
+<!DOCTYPE HTML>
+<html lang="en-gb">
+<head>
+  <meta charset="UTF-8">
+  <title>Fragmented Memory</title>
+
+  <meta name="author" content="Garry Bodsworth">
+  
+  <meta name="description" content="EASTL and Allocators Sep 10th, 2007 A few months back a document appeared on the Internet about EASTL. It details alterations to the STL that &hellip;">
+  
+  
+
+  <link rel="canonical" href="http://www.fragmentedmemory.com/blog/2007/09/10/eastl-and-allocators">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/feed/" rel="alternate" title="Fragmented Memory" type="application/atom+xml">
+</head>
+  
+<body class="default">
+  <div id="wrapper">
+    <div id="header">
+  <h1><a href="/">Fragmented Memory</a></h1>
+  
+    <p>Garry Bodsworth's Blog (formerly Garry's Bit Patterns &amp; Programmer's Log)</p>
+  
+</div>
+<ul id="social-links">
+  
+    <li><a class="rss" href="/feed/" title="RSS">RSS</a></li>
+  
+  
+  
+  
+    <li><a class="twitter" href="http://twitter.com/garrybodsworth" title="Twitter">Twitter</a></li>
+  
+  
+    <li><a class="github" href="https://github.com/garrybodsworth" title="GitHub">GitHub</a></li>
+  
+  
+  
+    <li><a class="linkedin" href="http://www.linkedin.com/in/garrybodsworth">LinkedIn</a></li>
+  
+  
+  
+  
+    <li><a class="pinboard" href="https://pinboard.in/u:garrybodsworth" title="Pinboard">Pinboard</a></li>
+  
+</ul>
+<div class="clear"></div>
+<ul id="nav">
+  
+    <li> <a href="/">blog</a> </li>
+  
+
+  
+    <li><a href="/blog/archives">archives</a></li>
+  
+
+  
+    <li><a href="/about">about</a></li>
+  
+</ul>
+
+    <div id="main"> <div class="post-header">
+  
+    <h1 class="post-title">EASTL and Allocators</h1>
+  
+  
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2007-09-10T21:51:00+01:00" pubdate data-updated="true">Sep 10<span>th</span>, 2007</time>
+</div>
+
+<div class="post-content"><div class='post'>
+A few months back a document appeared on the Internet about <a href="http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2007/n2271.html">EASTL</a>.  It details alterations to the STL that Electronic Arts implemented (as well as their own version of the STL) to meet its requirements for standard containers and algorithms.  It has been published on the <a href="http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2007/n2363.html">C++ standardisation website</a> as a reference paper.<br /><br />Some of the ideas in it are very interesting and some are a little naive and lack generality, but the document itself is thoroughly worth it.  The main thrust of the document is efficiency in terms of memory and speed.  This amounts to better allocators, better control of low-level memory (alignment and so on) and intrusive type containers.<br /><br />It covers the deficiencies of std::allocator for EA&#8217;s requirements like the copy semantics and the lack of alignment controls.  It has got me thinking there is a lack of a generic allocator framework that makes it easier for writing pluggable allocators that could be thread local, or global, or thread-safe, or instance-based.  But I&#8217;ll come back to that later.<br /><br />vector bool is not a bit-based array but there is an implementation of a bitvector that gives the same behaviour.  That makes sense to me!<br /><br />The ability to resize a containers capacity to a smaller size and for the storage to respect that as most STL implementations do not do this.  Means memory can be returned back to the system.<br /><br />Apparently the implementation is easy to debug through a simple debugger with no overhead.  I don&#8217;t know whether that is the case in reality but it certainly has its appeal, but I&#8217;m sure it would make plenty of sense in open-source implementations meaning there would be more people able to contribute.<br /><br />Apparently some compilers struggle with inlining so the implementation reduces code complexity to allow less able compilers to inline more.<br /><br />A lot of the motivation behind this is cross-platform in nature and part of that is that the platforms can be limited in memory and processing power.  Some of the ideas brought up are possible in the current STL framework with some minor jumping through hoops, fortunately EA expended the manpower on implementing exactly what they want.<br /><br />Now back to the allocators&#8230;  The ideas make <a href="http://www.ogre3d.org/phpBB2/viewtopic.php?t=27220&postdays=0&postorder=asc&highlight=eastl&start=25"></a>a lot of sense in this document and I wonder how many are available to coders from the current STL framework.  One thing that requires clarity is what the alignment needs in order to align, by this I mean is it easily determined from the type you are using or is it a combination of that and the machine type.  If so some of the work could be done via type traits like those available through Boost.<br /><br />A lot of the allocator type suggestions do not even have an easy to use reference implementation in the open-source world.  Allocators are so important but there is a lack of availability of those apart from simple HOWTOs for writing allocators.<br /><br />This has got me thinking about actually writing some.  Coming up with a good framework has lead me to reading big stacks of articles online about allocators, and I think there is a good way forward but &#8216;ll leave that to another post.<br /><br />And there is some additional discussion on the Ogre forums <a href="http://www.ogre3d.org/phpBB2/viewtopic.php?t=35473&view=previous&sid=ce193664e1d3d7c4af509e6f4e2718c6">here</a> and <a href="http://www.ogre3d.org/phpBB2/viewtopic.php?p=225568&sid=ce193664e1d3d7c4af509e6f4e2718c6">here</a>.</div>
+<h2>Comments</h2>
+<div class='comments'>
+<div class='comment'>
+<div class='author'>Adi</div>
+<div class='content'>
+<a rel="external" href="http://orientinspiration.com/2009/09/oes-tsetnoc.html" rel="nofollow">Oes  Tsetnoc</a> one of the ways in which we can learn seo besides <a rel="external" href="http://duniasoer.com/archives/mengembalikan-jati-diri-bangsa.html" rel="nofollow">Mengembalikan Jati Diri Bangsa</a>.  By participating in the <a rel="external" href="http://mncmakina.com/2009/09/oes-tsetnoc-seo-contest/" rel="nofollow">Oes Tsetnoc</a> or <a rel="external" href="http://ulaznice.info/mengembalikan-jati-diri-bangsa.html" rel="nofollow">Mengembalikan Jati Diri Bangsa</a> we can improve our seo skills. To find more information about <a rel="external" href="http://catatanblogger.info/738688-Oes-Tsetnoc.html" rel="nofollow">Oest Tsetnoc</a> please visit my <a rel="external" href="http://kusukaseo.info/981750-Oes-Tsetnoc-Support.html" rel="nofollow">Oes Tsetnoc</a> pages. And to find more information about <a rel="external" href="http://duniasoer.com" rel="nofollow">Mengembalikan Jati Diri Bangsa</a> please visit my <a rel="external" href="http://catatanblogger.info/464655-Mengembalikan-Jati-Diri-Bangsa.html" rel="nofollow">Mengembalikan Jati Diri Bangsa</a> pages. Thank you So much.</div>
+</div>
+<div class='comment'>
+<div class='author'>James</div>
+<div class='content'>
+Forgive the post necromancy, but on the topic of allocators, I thought I should point you to the <a href="http://heaplayers.org" rel="nofollow">HeapLayers project</a> and <a href="http://erdani.org/publications/cuj-2005-12.pdf" rel="nofollow">an associated paper</a> authored by Andrei Alexandrescu that describes the architecture. Interesting reading to be sure.</div>
+</div>
+<div class='comment'>
+<div class='author'>Garry Bodsworth</div>
+<div class='content'>
+Perhaps naive is the wrong word.  I do wonder how much of the document is aimed at the lowest common denominator compiler, but I suppose the standards of implementation vary massively.<BR/><BR/>Looking at what the next C++ standard is proposing of which the EASTL documentation is informational for they all have a real world basis.  By that I mean almost all of the code and ideas have been tested in the open-source compilers (gcc) and libraries (Boost).  The change being effected on the C++ standard is being dictated by real code by real people.  If they wanted the ideas to become part of the standard it is unfortunate to say since it is proprietary code that some form of reference implementation for people to look at and evaluate.  Obviously there is lots of useful information as part of the document though.<BR/><BR/>EA are also a big organisation and surely can hold some sway with the compiler writers to help solve things like the template problems.  Going back to the compiler quality it is a shame that something like that would hold some better ideas back.<BR/><BR/>I completely forgot the fact that the allocators are not templated.  But I feel using template metaprogramming it must be possible to get more than enough information to construct an allocator that would work on the type traits of the type being allocated.  The platform information would also be required but that would depend which platform you are compiling for.  Maybe I am being naive or misunderstanding some of the theories used to determine type information at compile time.  Since this is done at compile time the efficiency should not take a hit, but maybe code size would.  I do feel that it must be possible to get the allocators to do most of what they want.  The STL is very generic and their use of iterators is a bit specialised.<BR/><BR/>Also things like debugging I have discovered with the very obscure implementation of STLPort you can access all the items with relative ease in Visual Studio.  I don&#8217;t know how many other debuggers have clever scripting languages though.  It is almost like solving a problem at the wrong stage of the process.<BR/><BR/>I do think C++ needs these types of open discussions generated from these types of document.  After all it is the only way any of us would learn.  I certainly wouldn&#8217;t pretend to know more than these guys because they would program me under the table.<BR/><BR/>I don&#8217;t know if I have justified my comments though ;)</div>
+</div>
+<div class='comment'>
+<div class='author'>Paul</div>
+<div class='content'>
+Regarding the question of why you need alignment information about a type, EASTL allocators are not templated and thus don&#8217;t know what they are actually allocating. With std STL allocators are templates which are &#8216;re-bound&#8217; to the allocated type and allocator code can often use a compiler &#8220;alignof&#8221; extension to tell what the native alignment of the re-bound type (e.g. node) is.<BR/><BR/>Question: Do you feel that any parts of the EASTL document in particular seem naive?</div>
+</div>
+</div>
+</div>
+
+
+<div class="post-single">
+  <div class="post-meta">
+    
+
+<span class="categories">
+  Categories:
+  
+    <a class='category' href='/blog/categories/c-plus-plus/'>C++</a>, <a class='category' href='/blog/categories/stl/'>STL</a>
+  
+</span>
+
+
+    
+      <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://www.fragmentedmemory.com/blog/2007/09/10/eastl-and-allocators/" data-via="garrybodsworth" data-counturl="http://www.fragmentedmemory.com/blog/2007/09/10/eastl-and-allocators/" >Tweet</a>
+  
+  
+  
+</div>
+
+    
+  </div>
+  <div class="clear"></div>
+
+  
+</div>
+ </div>
+    <div id="footer">
+  <div class="panels">
+    <div class="license">
+      <h2>License</h2>
+      <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-nc-sa/3.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/">Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License</a>.
+    </div>
+
+    <div class="posts">
+      <h2>Recent Posts</h2>
+      <ul>
+        
+          <li>
+            <a href="/blog/2013/06/22/rss-feed-moved-to-http-slash-slash-www-dot-fragmentedmemory-dot-com-slash-feed-slash/">RSS Feed Moved To http://www.fragmentedmemory.com/feed/</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2013/06/18/new-location-and-new-blog-engine-and-old-content-restored/">New Location &amp; New Blog Engine &amp; Old Content Restored</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2013/06/13/joining-microsoft/">Joining Microsoft</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2013/06/13/leaving-bromium/">Leaving Bromium</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2013/03/05/philip-su-engineering-process-and/">Philip Su - Engineering Process And Philosophy At Facebook</a>
+          </li>
+        
+      </ul>
+    </div>
+
+    <div class="posts">
+      <h2>Links</h2>
+      <a href='https://alpha.app.net/gjb' class='adn-button' target='_blank' data-type='follow' data-width='277' data-height='27' data-user-id='@gjb' data-show-username='1' rel='me'>Follow me on App.net</a><script>(function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src='//d2zh9g63fcvyrq.cloudfront.net/adn.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'adn-button-js'));</script>
+    </div>
+  </div>
+
+  <p class="powered">
+    Powered by <a href="http://octopress.org">Octopress</a> and <a href="https://github.com/iwinux/compbits">Compbits</a>
+  </p>
+</div>
+
+  </div> <!-- #wrapper end -->
+
+  
+
+  
+
+
+  
+
+  
+
+  
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+</body>
+</html>

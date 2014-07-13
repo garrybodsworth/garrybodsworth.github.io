@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: staticanalysis | Fragmented Memory]]></title>
+  <link href="http://www.fragmentedmemory.com/blog/categories/staticanalysis/atom.xml" rel="self"/>
+  <link href="http://www.fragmentedmemory.com/"/>
+  <updated>2013-06-23T17:13:57+01:00</updated>
+  <id>http://www.fragmentedmemory.com/</id>
+  <author>
+    <name><![CDATA[Garry Bodsworth]]></name>
+    <email><![CDATA[blog@fragmentedmemory.com]]></email>
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[C++ Static Code Analysis]]></title>
+    <link href="http://www.fragmentedmemory.com/blog/2008/01/21/c-static-code-analysis/"/>
+    <updated>2008-01-21T21:49:00+00:00</updated>
+    <id>http://www.fragmentedmemory.com/blog/2008/01/21/c-static-code-analysis</id>
+    <content type="html"><![CDATA[<div class='post'>
+I've mentioned before about the usefulness of <a href="http://www.gimpel.com/">PC-Lint</a> when doing C++ development on Windows.  It closes off a whole class of bugs that can live in a codebase and raises teh minimum standard of development.<br /><br />I came across a really decent article you can read <a href="http://powerof2games.com/node/27">here</a>.  They integrated it into their automated build process and bootstrapped Msbuild to use it.<br /><br />Also, you can't forget that there are some good tools that can make it easier to use.  There is <a href="http://www.riverblade.co.uk/products/lintproject/">LintProject</a> to run Lint across an entire project, and also there is the <a href="http://www.riverblade.co.uk/products/visual_lint/index.html">Visual Lint</a> which is a nice integration into Visual Studio.<br /><br />It would be nice however if somehow it was possible to integrate it completely with the cl.exe commandline.</div>
+
+
+<h2>Comments</h2>
+
+
+<div class='comments'>
+<div class='comment'>
+<div class='author'>Adi</div>
+<div class='content'>
+<a rel="external" href="http://orientinspiration.com/2009/09/oes-tsetnoc.html" rel="nofollow">Oes  Tsetnoc</a> one of the ways in which we can learn seo besides <a rel="external" href="http://duniasoer.com/archives/mengembalikan-jati-diri-bangsa.html" rel="nofollow">Mengembalikan Jati Diri Bangsa</a>.  By participating in the <a rel="external" href="http://mncmakina.com/2009/09/oes-tsetnoc-seo-contest/" rel="nofollow">Oes Tsetnoc</a> or <a rel="external" href="http://ulaznice.info/mengembalikan-jati-diri-bangsa.html" rel="nofollow">Mengembalikan Jati Diri Bangsa</a> we can improve our seo skills. To find more information about <a rel="external" href="http://catatanblogger.info/738688-Oes-Tsetnoc.html" rel="nofollow">Oest Tsetnoc</a> please visit my <a rel="external" href="http://kusukaseo.info/981750-Oes-Tsetnoc-Support.html" rel="nofollow">Oes Tsetnoc</a> pages. And to find more information about <a rel="external" href="http://duniasoer.com" rel="nofollow">Mengembalikan Jati Diri Bangsa</a> please visit my <a rel="external" href="http://catatanblogger.info/464655-Mengembalikan-Jati-Diri-Bangsa.html" rel="nofollow">Mengembalikan Jati Diri Bangsa</a> pages. Thank you So much.<br> <a rel="external" href="http://orientinspiration.com" rel="nofollow">Oes  Tsetnoc</a> | <a rel="external" href="http://duniasoer.com/archives/semangat-mengembalikan-jati-diri-bangsa.html" rel="nofollow">Semangat Mengembalikan Jati Diri Bangsa</a></div>
+</div>
+<div class='comment'>
+<div class='author'>Garry Bodsworth</div>
+<div class='content'>
+Hi,<BR/><BR/>It would be nice to have more options on the compiler to help with things like const-correctness, uninitialised data and the suchlike.<BR/><BR/>Admittedly Lint is on version 8.0 but it is on something like revision "v" and there is one for each letter of the alphabet ;)<BR/><BR/>I think that the tool is so simple to use that it kind of transcends the new version needed philosophy.  I imagine if they supplied the integration with lots of products there would be even less versions of Lint out...<BR/><BR/>PVCS 5.3?  Will any of the conversion scripts out there work for that to get to a new revision control system?  The one I have seen works on version 6.8 upwards...<BR/><BR/>Thanks,<BR/>Garry</div>
+</div>
+<div class='comment'>
+<div class='author'>grahamr</div>
+<div class='content'>
+What I would like is an opensource version of it. Something that has been around so long, you would of thought that the large OS developers would be in need of such a tool and thus a project be born.<BR/><BR/>When I saw the powerof2 article, I had a look at our software cupboard and there was a copy of PCLint7.5 dated 1998. So in 10 years it has advanced less than a single version:-)<BR/><BR/>Then again we are using PVCS5.3 - a horribly broken Windows 3.1 program botched to Win95 while Team Foundation Server sits in the aforementioned cupboard. But that is an article in itself.</div>
+</div>
+</div>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Static Code Analysis - PREFast]]></title>
+    <link href="http://www.fragmentedmemory.com/blog/2007/10/20/static-code-analysis-prefast/"/>
+    <updated>2007-10-20T08:27:00+01:00</updated>
+    <id>http://www.fragmentedmemory.com/blog/2007/10/20/static-code-analysis-prefast</id>
+    <content type="html"><![CDATA[<div class='post'>
+At work we use <a href="http://www.gimpel.com/">Gimpel PC-Lint</a> to analyse our source code for defects that the compiler does not pick up.  We use it on quite a strict level even after bolting it on to a legacy code-base.  There are some tools to make your life a little easier when using it from <a href="http://www.riverblade.co.uk/">Riverblade Software</a>.  Gimpel Lint is not a perfect tool for an IDE as it is commandline based and these types of checks should honestly be part of a good quality compiler as additional warning levels.<br /><br />What I have found out though is that in Visual Studio Team System there is a static code analysis tool that isn't even available in the Professional version.  It's internally called PREFast at Microsoft and apparently they use it to ensure code quality.  Apparently in the Windows Driver Development Kit (WDK) it is available so it is possible to use that to do some code analysis.  Check out <a href="http://buildingsecurecode.blogspot.com/2007/08/security-code-scanning-with-microsoft.html">this blog post for instructions</a>.  There are plenty of blog posts about it on the rest of Steve Dispensa's blog.<br /><br />There is a small Microsoft Research Article available <a href="http://research.microsoft.com/displayArticle.aspx?id=634">here</a> about PREFast.<br /><br />I've downloaded VS Team System to give it a go and to see how good it is.  Or maybe I will try out the PSDK hack...</div>
+
+]]></content>
+  </entry>
+  
+</feed>

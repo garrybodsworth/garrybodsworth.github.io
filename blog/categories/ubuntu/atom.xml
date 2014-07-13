@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Ubuntu | Fragmented Memory]]></title>
+  <link href="http://www.fragmentedmemory.com/blog/categories/ubuntu/atom.xml" rel="self"/>
+  <link href="http://www.fragmentedmemory.com/"/>
+  <updated>2013-06-23T17:13:57+01:00</updated>
+  <id>http://www.fragmentedmemory.com/</id>
+  <author>
+    <name><![CDATA[Garry Bodsworth]]></name>
+    <email><![CDATA[blog@fragmentedmemory.com]]></email>
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[For the creative types - Ubuntu Studio announced]]></title>
+    <link href="http://www.fragmentedmemory.com/blog/2007/01/21/for-creative-types-ubuntu-studio/"/>
+    <updated>2007-01-21T22:28:00+00:00</updated>
+    <id>http://www.fragmentedmemory.com/blog/2007/01/21/for-creative-types-ubuntu-studio</id>
+    <content type="html"><![CDATA[<div class='post'>
+An interesting development from <a href="http://www.ubuntu.com">Ubuntu</a> is that this April they are plaaning to release something called <a href="http://www.ubuntustudio.org">Ubuntu Studio</a>.<br /><br />It is a multimedia creation derivative of Ubuntu.  It "is aimed at the linux audio, video and graphic enthusiast as well as professional".  Sounds interesting, lowering the bar for peopel creating content in Linux, but also raising the capabilities at the same time, hopefully giving much needed exposure to some of the related projects.<br /><br />The new derivative has a <a href="https://wiki.ubuntu.com/UbuntuStudio">wiki</a> where information and planning has started.  I like the graphical design and new logo, but that is just shallow.  Packages planned to be in the distribution can be seen <a href="https://wiki.ubuntu.com/UbuntuStudio/ToPackage">here</a>.</div>
+
+]]></content>
+  </entry>
+  
+</feed>

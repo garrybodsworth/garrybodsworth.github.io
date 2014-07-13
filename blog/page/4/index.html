@@ -1,0 +1,867 @@
+
+<!DOCTYPE HTML>
+<html lang="en-gb">
+<head>
+  <meta charset="UTF-8">
+  <title>Fragmented Memory</title>
+
+  <meta name="author" content="Garry Bodsworth">
+  
+  <meta name="description" content="Virtual On-Screen Keyboards on Linux Jul 11th, 2010 With a tablet awaiting a better operating system I decided I had to evaluate the landscape on on &hellip;">
+  
+  
+
+  <link rel="canonical" href="http://www.fragmentedmemory.com/blog/page/4">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/feed/" rel="alternate" title="Fragmented Memory" type="application/atom+xml">
+</head>
+  
+<body class="default">
+  <div id="wrapper">
+    <div id="header">
+  <h1><a href="/">Fragmented Memory</a></h1>
+  
+    <p>Garry Bodsworth's Blog (formerly Garry's Bit Patterns &amp; Programmer's Log)</p>
+  
+</div>
+<ul id="social-links">
+  
+    <li><a class="rss" href="/feed/" title="RSS">RSS</a></li>
+  
+  
+  
+  
+    <li><a class="twitter" href="http://twitter.com/garrybodsworth" title="Twitter">Twitter</a></li>
+  
+  
+    <li><a class="github" href="https://github.com/garrybodsworth" title="GitHub">GitHub</a></li>
+  
+  
+  
+    <li><a class="linkedin" href="http://www.linkedin.com/in/garrybodsworth">LinkedIn</a></li>
+  
+  
+  
+  
+    <li><a class="pinboard" href="https://pinboard.in/u:garrybodsworth" title="Pinboard">Pinboard</a></li>
+  
+</ul>
+<div class="clear"></div>
+<ul id="nav">
+  
+    <li> <a href="/" class="current">blog</a> </li>
+  
+
+  
+    <li><a href="/blog/archives">archives</a></li>
+  
+
+  
+    <li><a href="/about">about</a></li>
+  
+</ul>
+
+    <div id="main"> 
+
+  
+  <div class="post"> <div class="post-header">
+  
+    <h1 class="post-title">
+      <a href="/blog/2010/07/11/virtual-on-screen-keyboards-on-linux/">Virtual On-Screen Keyboards on Linux</a>
+    </h1>
+  
+  
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-07-11T00:00:00+01:00" pubdate data-updated="true">Jul 11<span>th</span>, 2010</time>
+</div>
+
+<div class="post-content"><p>With a <a href="http://thejoojoo.com">tablet</a> awaiting a better operating system I decided I had to evaluate the landscape on on-screen virtual keyboards on Linux. Obviously the ideal would be iPad/iPhone-esque, but that would be really frighteningly good, I had much lower expectations.</p>
+
+<p>I was not sure if the tech was there to even show the keyboards automatically when an input field was selected. GTK are well ahead of the game on this with their IMContext base class to encapsulate input mainly for complex languages or disability accessibility, but a good side-effect is the ability to hook in an on-screen keyboard when a text input is focused. In that case the on-screen keyboard needs to know about GTK in order to know when to show.</p>
+
+<p>I tested all these on a VM that has now run out of hard disk space thanks to having to compile lots of stuff. Most of the keyboards I completely failed to make automatically appear on the screen when a text input was selected, it was either me or them&#8230;.</p>
+
+<p>So in no particular order&#8230;.</p>
+
+<p><a href="http://matchbox-project.org/?p=1">Matchbox Keyboard</a><br/>
+Some people are using this actively. It requires hacking to be able to toggle the display of it which makes it pretty much a no-go as it would always be on top of the screen. The GUI looks all right though. Some good info <a href="http://japiblog.dddgames.com/?p=15">here</a>.</p>
+
+<p><a href="http://homepage3.nifty.com/tsato/xvkbd/">xvkbd</a><br/>
+The venerable old man of the line up. It&#8217;s been around the block and does exactly what it says on the tin. It has lots of good features and hacks (like making it appear for login windows). As far as I could see I couldn&#8217;t hook it up to the IMContext but I could be missing something.</p>
+
+<p><a href="http://www.gok.ca/">Gnome On-Screen Keyboard</a><br/>
+The oldest GTK based one and seems to be showing its age thanks to the UI.</p>
+
+<p><a href="https://wiki.ubuntu.com/Accessibility/Projects/onBoard">onboard</a><br/>
+This is the Ubuntu one. I couldn&#8217;t get it to automatically appear on focus. It looks OK, but seems to be lacking some features. At least it is easily hackable in Python. Some more interesting information <a href="http://www.combibo.net/articles/using_an_onscreen_keyboard_in_ubuntu/">is here</a>.</p>
+
+<p><a href="http://florence.sourceforge.net/english.html">Florence</a><br/>
+This is the most recommended one and it is pretty good. The main pain was I had to compile it as their were no packages for it.</p>
+
+<p><a href="http://gitorious.org/fvkbd">fvkbd</a><br/>
+This looks fairly promising as it is very skinnable on configurable. Unfortunately I could not work out how to hide or autohide the keyboard. Also this had no packages and requires compiling. This provides the basis for the OLPC virtual keyboard test and also the Meego/Maemo virtual keyboard.</p>
+
+<p><a href="http://live.gnome.org/Caribou">Caribou</a><br/>
+This is the virtual keyboard testbed for Gnome 3.0. It is written in Python and needs packaging so I had to compile it. This was the one that got closest to what I want because it worked. It shows a small keyboard by the input with current focus. In my VM I had to disable the Clutter code for whizzy animations before getting it to work.</p>
+
+<p>I&#8217;ve probably missed some but there are only so many not quite ready applications you can test before going completely and utterly bonkers.</p>
+
+<p>Another thing I discovered was Google Chromium&#8217;s addressbar is accessibility implemented, but none of the content in webpages is. Firefox on the other hand and anything WebkitGTK based (like Epiphany) all work properly with their accessibility. Part of the Chrome problem is the multiprocess rendering and that they have not prioritised accessibility according the bug reports I have read.</p>
+</div>
+ </div>
+
+  
+  <div class="post"> <div class="post-header">
+  
+    <h1 class="post-title">
+      <a href="/blog/2010/07/10/joojoo-technical-details/">JooJoo Technical Details</a>
+    </h1>
+  
+  
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-07-10T00:00:00+01:00" pubdate data-updated="true">Jul 10<span>th</span>, 2010</time>
+</div>
+
+<div class="post-content"><p>For those of you as nerdy as me I thought I would try a virtual teardown of the JooJoo to gather information on its internals.</p>
+
+<p>First up the nvidia ION platform it is using is the MCP79 (revision b1). They are all much the same when it comes to ION motherboards with the revisions.</p>
+
+<p>lspci output:<br/>
+<code>&lt;br /&gt;
+00:00.0 Host bridge: nVidia Corporation MCP79 Host Bridge (rev b1)&lt;br /&gt;
+00:00.1 RAM memory: nVidia Corporation MCP79 Memory Controller (rev b1)&lt;br /&gt;
+00:03.0 ISA bridge: nVidia Corporation MCP79 LPC Bridge (rev b3)&lt;br /&gt;
+00:03.1 RAM memory: nVidia Corporation MCP79 Memory Controller (rev b1)&lt;br /&gt;
+00:03.2 SMBus: nVidia Corporation MCP79 SMBus (rev b1)&lt;br /&gt;
+00:03.3 RAM memory: nVidia Corporation MCP79 Memory Controller (rev b1)&lt;br /&gt;
+00:03.5 Co-processor: nVidia Corporation MCP79 Co-processor (rev b1)&lt;br /&gt;
+00:04.0 USB Controller: nVidia Corporation MCP79 OHCI USB 1.1 Controller (rev b1)&lt;br /&gt;
+00:04.1 USB Controller: nVidia Corporation MCP79 EHCI USB 2.0 Controller (rev b1)&lt;br /&gt;
+00:06.0 USB Controller: nVidia Corporation MCP79 OHCI USB 1.1 Controller (rev b1)&lt;br /&gt;
+00:06.1 USB Controller: nVidia Corporation MCP79 EHCI USB 2.0 Controller (rev b1)&lt;br /&gt;
+00:08.0 Audio device: nVidia Corporation MCP79 High Definition Audio (rev b1)&lt;br /&gt;
+00:09.0 PCI bridge: nVidia Corporation MCP79 PCI Bridge (rev b1)&lt;br /&gt;
+00:0b.0 IDE interface: nVidia Corporation MCP79 SATA Controller (rev b1)&lt;br /&gt;
+00:10.0 PCI bridge: nVidia Corporation MCP79 PCI Express Bridge (rev b1)&lt;br /&gt;
+00:15.0 PCI bridge: nVidia Corporation MCP79 PCI Express Bridge (rev b1)&lt;br /&gt;
+00:16.0 PCI bridge: nVidia Corporation MCP79 PCI Express Bridge (rev b1)&lt;br /&gt;
+02:00.0 VGA compatible controller: nVidia Corporation Device 0876 (rev b1)&lt;br /&gt;
+03:00.0 Network controller: Realtek Semiconductor Co., Ltd. Device 8172 (rev 10)&lt;br /&gt;
+</code></p>
+
+<p>The mini PCIe networking card is a Realtek 8172. Ubuntu details are <a href="https://help.ubuntu.com/community/WifiDocs/Device/Realtek%208172">here</a> and driver install instructions are <a href="http://www.linwik.com/wiki/using+the+realtek+8172+and+8192se+wireless+controller+with+ubuntu+9.10">here</a> for older kernels. I found the drivers very problematic, and according to the discussions out there on the Internet many other people struggle to get it working well on Linux.</p>
+
+<p>You&#8217;ll also notice there are no ethernet controllers listed.</p>
+
+<p>And now stuff from dmesg&#8230;.</p>
+
+<p>A normal looking Atom chip.<br/>
+<code>&lt;br /&gt;
+CPU0: Intel(R) Atom(TM) CPU N270   @ 1.60GHz stepping 02&lt;br /&gt;
+</code><br/>
+And I assume hyperthreading is enabled:<br/>
+<code>&lt;br /&gt;
+CPU1: Intel(R) Atom(TM) CPU N270   @ 1.60GHz stepping 02&lt;br /&gt;
+</code><br/>
+Bluetooth is pretty standard:<br/>
+<code>&lt;br /&gt;
+Bluetooth: Generic Bluetooth USB driver ver 0.5&lt;br /&gt;
+</code><br/>
+About 128Mb is allocated for graphics from the 1Gb total:<br/>
+<code>&lt;br /&gt;
+Memory: 888772k&lt;br /&gt;
+</code><br/>
+There is a USB hub with 6 ports somewhere:<br/>
+<code>&lt;br /&gt;
+hub 4-0:1.0: 6 ports detected&lt;br /&gt;
+</code><br/>
+The touch controller:<br/>
+<code>&lt;br /&gt;
+input: eGalax Inc. USB TouchController as /devices/pci0000:00/0000:00:06.0/usb4/4-1/4-1:1.0/input/input3&lt;br /&gt;
+</code><br/>
+The driver for the touchscreen is <a href="http://home.eeti.com.tw/web20/eGalaxTouchDriver/linuxDriver.htm">here</a>.</p>
+
+<p>There is a keyboard somewhere maybe it is used for something internally:<br/>
+<code>&lt;br /&gt;
+input: Chicony USB Keyboard as /devices/pci0000:00/0000:00:04.1/usb1/1-1/1-1.2/1-1.2:1.0/input/input4&lt;br /&gt;
+</code></p>
+
+<p>I&#8217;m still trying to work out the ambient light sensor and rotation sensor (which allegedly us ACPI through a hacked kernel that has not been GPL released yet).</p>
+</div>
+ </div>
+
+  
+  <div class="post"> <div class="post-header">
+  
+    <h1 class="post-title">
+      <a href="/blog/2010/07/09/joojoo-or-is-that-iooioo-a-review/">JooJoo or Is That Iooioo? A Review</a>
+    </h1>
+  
+  
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-07-09T00:00:00+01:00" pubdate data-updated="true">Jul 9<span>th</span>, 2010</time>
+</div>
+
+<div class="post-content"><p>So I finally managed to get myself a <a href="http://thejoojoo.com/">Fusion Garage JooJoo</a> from eBay for a reasonable price. I had previously tried to order through their online shop with multiple failures, basically their payment system does not work (I tried with three different cards). This was not a great start to my experience, so I sat it out and waited for one of them to appear on eBay.</p>
+
+<p>Why was I so keen to get hold of one? It is essentially an nVidia ION in a tablet. At <a href="http://www.camvine.com">Camvine</a> the main hardware is based on this platform, so I thought it would be a great toy to play with and get our software working on it. I can say my gut feeling was right and I had it going quickly.</p>
+
+<p>No pictures for this one as they are all over the Internet. But check out great internal photos <a href="http://thejoojooforum.com/viewtopic.php?f=4&amp;t=316">here</a>.</p>
+
+<p>And on to the review&#8230;.</p>
+
+<p><strong>HARDWARE</strong><br/>
+I&#8217;ll start with the hardware. It&#8217;s not badly done, with a nice sturdy engineered body. The quality of finish does surpass what I thought it might be. What we have is nVidia ION netbook internals crammed into a slim tablet chassis.</p>
+
+<p><strong>The Display</strong><br/>
+The screen size is just wrong, I know why they went for 16:9 (with a very respectable 1360&#215;768 720p resolution) but it just doesn&#8217;t work. When you are in portrait the top of the screen is way too far away from you. The screen is really configured for movies rather than web browsing with that shape and resolution. Ideally for a tablet you do want something closer to 4:3 and each edge being a minimum 1024 (I&#8217;ll come onto why in the software section). The viewing angle on the screen is good in one direction but then the other it is literally useless and you end up tilting it to see the content.</p>
+
+<p><strong>Heat</strong><br/>
+The tablet does get very hot. It has a fan internally which you can hear quite clearly when you hold it up to your ear. That is good, but the thing that gets really hot on the ION is the video chipset (I&#8217;ve seen it going at 70ºC). The heat seems to be at its greatest somewhere around the battery pack area which is odd since it is the other side to the processor.</p>
+
+<p><strong>Power Button</strong><br/>
+Either my fingers are too big or the power button is just not very good. It is quite good as it is orange when charging and white light when on, but it is recessed too far and seems terribly unresponsive.</p>
+
+<p><strong>Ambient light sensor</strong><br/>
+Great to have one, but unfortunately it is positioned more or less where you place your left hand when you are operating in landscape.</p>
+
+<p><strong>Weight</strong><br/>
+It is a bit more weighty than it needs to be but I put that down to the screen size. With a smaller, better screen it would have been much more of an impulse device to use.</p>
+
+<p><strong>Logo</strong><br/>
+The logo on the case appears when the JooJoo is switched on which is a real nice touch. Also it illuminates the right one depending on the orientation you are currently in.</p>
+
+<p><strong>Webcam</strong><br/>
+It has a webcam but I have not seen that it works &#8211; maybe it is for future software releases.</p>
+
+<p><strong>Overall</strong><br/>
+I simultaneously dislike and like the hardware (from an external point of view). For the internals <a href="http://mjg59.livejournal.com/124426.html">some corners have been cut</a>. The niggles take away from the final finish, so with things like ambient sensor positioning, power button, and screen physical dimensions fixed it would be a lot better.</p>
+
+<p><strong>SOFTWARE</strong><br/>
+For all of the hardware it is the software that will make or break the platform. The software is basically a web browser with a web based start page showing bookmarks, with compiz to switch between windows.</p>
+
+<p><strong>Boot Time</strong><br/>
+It is fairly quick to boot, but now lots of things boot quickly. It mainly suspends when you &#8220;power off&#8221; and then restart. This is great for speed but unfortunately the software can get upset so you need to reset hard in order to get a working system.</p>
+
+<p><strong>Main Menu</strong><br/>
+The main menu at the top I still haven&#8217;t quite worked out how you are supposed to bring it up. Sometimes it is a tap at the top and sometimes a one finger swipe near the top. Sometimes it is the top left only as well.</p>
+
+<p><strong>Wifi</strong><br/>
+It seems it can only remember the last wifi network you were connected to so you have to type in the password again and again when you change locations. For a portable internet connected device that is pretty poor.</p>
+
+<p><strong>Scrolling</strong><br/>
+The JooJoo is &#8220;multitouch&#8221; for differing values of multitouch. Essentially the only thing I have found multitouch is that webpages scroll by using two fingers (like the Apple touchpad). There is no other functionality I have found like rotate or pinch n zoom. The really annoying thing is that the main webpage that you start from uses one finger to scroll (due to the HTML implementation I am guessing) so once you are used to two-finger scrolling going back to the main page is really painful.</p>
+
+<p><strong>Web Browser</strong><br/>
+According to some <a href="http://thejoojooforum.com/viewtopic.php?f=2&amp;t=217">hackery on the JooJoo forum</a> the browser is actually Google Chrome. It is surprising it has some performance deficiencies in scrolling and browsing. The browser supports Flash as well which may please some people (my intense aversion to it does not endear me to it).</p>
+
+<p><strong>Multitasking</strong><br/>
+Because all webpages you have open are essentially live, you can end up with a Flash video playing int he background sapping CPU without even realising because it does not suspend the background processes.</p>
+
+<p><strong>Compiz</strong><br/>
+You can switch the active web browser window using a compiz based switcher. It hasn&#8217;t been nicely user tested as you can end up scrolling off the left or right and struggling to get an active window. To throw away a page simply chuck it off the top which is a nice gesture.</p>
+
+<p><strong>Rotation and Orientation</strong><br/>
+Rotation is obviously done using xrandr. This means no nice animation when changing orientation and you get the horrible destruction/creation of the framebuffer. Also the orientation seems to only have only two active edges because otherwise the illuminated logos would be upside down. This makes it inconvenient.</p>
+
+<p><strong>GTK</strong><br/>
+It obviously has some GTK in the background (for Chrome), but I have seen GTK error dialog pop up momentarily whilst whizzing around the compiz 3D bit. It looked very odd. Also in the Chrome browser it is obvious there is no GTK theme because you have the default (and off-putting) grey standard widgets for combos and the suchlike.</p>
+
+<p><strong>Webpages and Scaling and Zooming</strong><br/>
+As I mentioned earlier there is no pinch and zoom and no way to scale webpages. This is really important because of the resolution of the device. One direction it is 768 pixels, so most webpages are designed with a minimum 1024 width and this means that you have to scroll horizontally to see a whole webpage. There are two solutions &#8211; either scale a webpage (which is really easy in WebKit &#8211; even I have managed it for <a href="http://camvine.com/products/coda">CODA</a>), or supply a screen with a minimum 1024 in both directions (1280&#215;1024 is still a great resolution).</p>
+
+<p><strong>Security</strong><br/>
+Okay, I log into all of these webpages and then switch off the device. Someone else switches it on and they can just go straight into those webpages because it simply remembers the credentials. This is a wide gaping security hole and brings me onto the next thing.</p>
+
+<p><strong>Users</strong><br/>
+It is a single user device. I am pretty sure there is no particular &#8220;user&#8221; on this linux system, this means it is right pain for more than one person to check their gmail on this device.</p>
+
+<p><strong>Overall</strong><br/>
+The software is OK for a toy, but not to be used beyond an internal engineering practice. I was pretty annoyed by it after five minutes, so it is time to nuke it.</p>
+
+<p><strong>HACKY HACKETY HACK HACK</strong><br/>
+So the real reason I got it was to hack my own OS onto it and to play around writing apps for it.</p>
+
+<p>For a stand I decided to order a plate display stand which should work a treat and you can get two for a fiver(!) Also I have ordered a 2Gb PC3-8500 204 pin DIMM for £25 to up the memory. This should make it even nicer to hack on.</p>
+
+<p>The SSD storage is the biggest debacle though, it is a mini-PCIe mSATA with some flipped pins which makes it impossible to find a replacement. People have been trying for while now. However, what I have ordered is a SD card to mini-PCIe adapter so I should be able to shoe-horn in some storage.</p>
+
+<p>The wifi is also horrific, it is a Realtek card and as anyone who has tried to get these working on Linux solidly can attest they are cheap and nasty. I can&#8217;t get it to work even when compiling the module under a 2.6.31 kernel. I might find another half height mini-PCIe wireless card to replace it with, Atheros has been quite good (and maybe find a wireless N).</p>
+
+<p>The best bit is the screen and touchscreen is mounted upside down so all firmware images and media are stored upside down. Pointless attempt to avert hacking&#8230;.</p>
+
+<p><strong>IS IT THE END YET?</strong><br/>
+So the JooJoo is good and bad, I couldn&#8217;t recommend it to &#8220;normal&#8221; users, but it is a real interesting hacking platform. If some of the tablet OSes come out this year they could give it a whole new lease of life. Hardware wise it is nearly there, but needs more work (and battery life). The software is a long way from being first useful, and then good which is unfortunate.</p>
+</div>
+ </div>
+
+  
+  <div class="post"> <div class="post-header">
+  
+    <h1 class="post-title">
+      <a href="/blog/2010/06/21/coda_network-and-update-already/">Coda_network &#8211; and Update Already(!)</a>
+    </h1>
+  
+  
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-06-21T00:00:00+01:00" pubdate data-updated="true">Jun 21<span>st</span>, 2010</time>
+</div>
+
+<div class="post-content"><p>After releasing the first version of <a href="http://github.com/garrybodsworth/coda_network">coda_network</a> over the weekend I have found a few bugfixes (corner cases).</p>
+
+<p>Mainly these involved using an NTLM proxy and attempting to tunnel a socket through it. This makes sense of the proxy case where you are trying to daisy-chain sockets together. This was really an issue with keep-alive proxies where the Request object was not resetting some cached state that would only ever work once.</p>
+
+<p>The main feature now though is I have added mini_proxy.py. A multiprocess proxy server using all my code changes. Only GET, POST and CONNECT are implemented, but that should be sufficient for most tests. This mini proxy can then speak to upstream proxies of no authentication types, as well as basic. digest, and NTLM.</p>
+
+<p>The readme on the <a href="http://github.com/garrybodsworth/coda_network">github page</a> has been updated with example commandlines for the proxy and I have tested it against all kinds of proxies. Because of all the other work put into httplib and urllib2 the proxy itself is actually only 200 lines. I&#8217;ve got no idea how efficient it is, but it should work fine.</p>
+</div>
+ </div>
+
+  
+  <div class="post"> <div class="post-header">
+  
+    <h1 class="post-title">
+      <a href="/blog/2010/06/19/what-next-for-coda_network/">What Next for Coda_network</a>
+    </h1>
+  
+  
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-06-19T00:00:00+01:00" pubdate data-updated="true">Jun 19<span>th</span>, 2010</time>
+</div>
+
+<div class="post-content"><p>You can get <a href="http://github.com/garrybodsworth/coda_network">coda_network here</a> and read about it in my previous post.</p>
+
+<p>So what am I planning to do next for coda_network? To be honest it is functionally complete from my requirements but there are some less glamorous things that need doing.</p>
+
+<ul>
+<li>Finish writing up the unit test suite for proxies, downloads and requests.</li>
+<li>Add some more example scripts for downloading and the suchlike.</li>
+<li>Add an example mini_proxy that is half written right now that provides a Python based local proxy that can connect to any of the supported parent proxies.</li>
+<li>Fix any bugs I find and from any feedback.</li>
+<li>Try to egage the Python community to get these fixes or something similar pushed upstream.</li>
+<li>And when I feel really brave &#8211; go have a look at Python 3.</li>
+</ul>
+
+</div>
+ </div>
+
+  
+  <div class="post"> <div class="post-header">
+  
+    <h1 class="post-title">
+      <a href="/blog/2010/06/19/fixing-urllib2-and-httplib-python-networking-coda_network/">Fixing Urllib2 and Httplib Python Networking &#8211; Coda_network</a>
+    </h1>
+  
+  
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-06-19T00:00:00+01:00" pubdate data-updated="true">Jun 19<span>th</span>, 2010</time>
+</div>
+
+<div class="post-content"><p>You can get <strong>coda_network</strong> <a href="http://github.com/garrybodsworth/coda_network">from GitHub here</a>.</p>
+
+<p>Originally the networking code at <a href="http://www.camvine.com">Camvine</a> was based on httplib a very long time ago, then Curl was used (pycurl specifically with changes pushed upstream), but now I have been using normal Python 2.6 standard library functions which is much nicer. The default one distributed was not sufficient so I had to make some fixes through deriving classes and monkeypatching. That is a very basic history of the coda_network package&#8217;s origins.</p>
+
+<p>I&#8217;ve based these changes on the Python 2.6 maintenance branch so it should in theory work with all versions of 2.6 Python (and I suppose possibly the 2.7 release). I did maintain my changes as patched derived classes, but I decided to integrate the changes into urllib2 and httplib directly in an attempt to eventually get these changes or something similar to them upstream.</p>
+
+<p><a href="http://www.camvine.com">Camvine</a> have allowed me to publish the source code for all of these fixes so I am putting them on github with my often strange commit comments. I&#8217;ll get on to the functionality and fixes that I provide in a moment. This all stemmed from attempting to fix tunnelling HTTPS through proxies and then having to fix it for NTLM.</p>
+
+<p>In the repository there are the new httplib/urllib2 files which can be dropped in. They have been made part of a coda_network package along with a few other helper files.  Below is the readme in the <a href="http://github.com/garrybodsworth/coda_network">github repository</a>.</p>
+
+<h1>coda_network</h1>
+
+<p>Author: Garry Bodsworth Website: <a href="http://www.programmerslog.com/">http://www.programmerslog.com</a></p>
+
+<p>Thanks to Camvine <a href="http://www.camvine.com/">http://www.camvine.com</a> for allowing the source to be published.</p>
+
+<p>The changes are based on the Python 2.6 maintenance branch so it should in theory work with all versions of 2.6 Python (and I suppose possibly the 2.7 release). The changes were maintained as patched derived classes, but now they are integrated into urllib2 and httplib directly in an attempt to eventually get these changes or something similar to them upstream.</p>
+
+<p>In the repository there are the new httplib/urllib2 files which can be dropped in. They have been made part of a coda_network package along with a few other helper files.</p>
+
+<div>
+  <h2>
+    The Files
+  </h2>
+  
+  <p>
+    <strong>urllib2.py</strong> Based off <a href="http://svn.python.org/view/python/branches/release26-maint/Lib/urllib2.py?view=markup">http://svn.python.org/view/python/branches/release26-maint/Lib/urllib2.py?view=markup</a> revision 81637 The only public API change is that Request now has an optional &#8220;method&#8221; parameter.
+  </p>
+  
+  <p>
+    <strong>httplib.py</strong> Based off <a href="http://svn.python.org/view/python/branches/release26-maint/Lib/httplib.py?view=markup">http://svn.python.org/view/python/branches/release26-maint/Lib/httplib.py?view=markup</a> revision 81688 The only public API change is that the HTTPResponse object has a tunnel True/False parameter so we know if the response is from a normal request or a tunnelling request.
+  </p>
+  
+  <p>
+    <strong>utilities.py</strong> Some simple wrappers I use to expose the functionality. This also provides a really basic do_download functions to do downloading with minimum of fuss. This stuff is a bit specific to me.
+  </p>
+  
+  <p>
+    <strong>connect.py</strong> This is to allow connecting to a vanilla socket whilst reusing all the proxy auto code (rather than the rather painful process of not being able to reuse it).
+  </p>
+  
+  <p>
+    <strong>ntlm_auth.py</strong> This provides the proxy and HTTP authentication handlers.
+  </p>
+  
+  <p>
+    <strong>ntlm subdirectory</strong> This is a copy of a portion of the code from python-ntlm <a href="http://code.google.com/p/python-ntlm/">http://code.google.com/p/python-ntlm/</a>
+  </p>
+</div>
+
+
+
+
+<div>
+  <h2>
+    Fixes and features provided
+  </h2>
+  
+  <ul>
+    <li>
+      The request object now provides a method. This is handy for doing requests like OPTIONS which are necessary for cross-domain javascript or proper HEAD requests.
+    </li>
+    <li>
+      Allow digest proxy authentication to work by retrieving the correct location and the correct password because these were previously designed only for HTTP auto. Also for digest auto of proxies it requires the CONNECT information to generate the digest correctly.
+    </li>
+    <li>
+      Remove the cyclic dependency in constructing the response passed to the higher levels thanks to a member function being assigned to a member variable. This is done in the simplest way possible by wrapper the receiver in a simple class adapter, it could have been done by using weakmethods, but it works.
+    </li>
+    <li>
+      Tunnelling HTTPS through proxies is fixed.
+    </li>
+    <li>
+      Added the optional socket_keepalive in order to do deliberately long-lived connections (for long-poll). This is available for HTTP and HTTPS.
+    </li>
+    <li>
+      A very important part with CONNECT errors was to make sure it is exposed at the right time. This then allows for proxies and other things that require retrying to work. Previously a socket error was thrown immediately, whereas now it is exposed through the getresponse() function which allows the call stack to make the right judgements on the error code.
+    </li>
+    <li>
+      Allow the specification of a certificate for HTTPS connections such that secure connections to remote servers can be made.
+    </li>
+    <li>
+      Rather than using simple socket sends when doing tunnelling it now uses the standard HTTPConnection putrequest(), putheader() and endheaders().
+    </li>
+    <li>
+      Improve some of the messaging in the error handling so we can reason about some of the errors.
+    </li>
+    <li>
+      Add the ability for connections to be kept alive with Keep-Alive when the connection/proxy connection specifies it. I noticed digest is really not happy with this.
+    </li>
+    <li>
+      Add NTLM authentication using the python-ntlm files for generating the hashes which in turn is from NTLMAPS as far as I can see. This works for both proxies and www-authenticate. The connection Keep-Alive is really important for NTLM as the Windows servers require the socket connection to be kept open continually.
+    </li>
+  </ul>
+</div>
+
+
+
+
+<div>
+  <h2>
+    What coda_network can do
+  </h2>
+  
+  <ul>
+    <li>
+      Use the following proxy types &#8211; normal, basic authentication, digest authentication, NTLM authentication.
+    </li>
+    <li>
+      Authenticate websites &#8211; basic authentication, digest authentication, NTLM authentication.
+    </li>
+    <li>
+      Request types &#8211; any you can think of.
+    </li>
+  </ul>
+</div>
+
+
+
+
+<div>
+  <h2>
+    Known limitations
+  </h2>
+  
+  <p>
+    Digest authentication of a website when going through a proxy seems broken. This is probably due to the source of the request in generating the hash. It is such corner case that I am not looking into it right now.
+  </p>
+</div>
+
+
+
+
+<div>
+  <h2>
+    FAQ
+  </h2>
+  
+  <dt>
+    <strong>What versions of Python are supported?</strong>
+  </dt>
+  
+  <dd>
+    It was written and tested on a Linux system with 2.6.4. It has worked with a couple of different revisions of 2.6. In theory looking at the code for 2.7 it should also work with that.
+  </dd>
+  
+  <dt>
+    <strong>Any plans to port to Python 3.0, 3.1, 3.2, etc?</strong>
+  </dt>
+  
+  <dd>
+    Nope. I don&#8217;t have a need for it right now, but I think it should be possible to port these fixes when the time comes.
+  </dd>
+</div>
+
+
+
+</div>
+ </div>
+
+  
+  <div class="post"> <div class="post-header">
+  
+    <h1 class="post-title">
+      <a href="/blog/2010/06/11/when-your-mac-boots-slow/">When Your Mac Boots Slow&#8230;</a>
+    </h1>
+  
+  
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-06-11T00:00:00+01:00" pubdate data-updated="true">Jun 11<span>th</span>, 2010</time>
+</div>
+
+<div class="post-content"><p>I am sure I have been emitting an EM field for the past week. My router, my iPhone and my MacBook have all been playing up.</p>
+
+<p>My MacBook has been booting really slow (I&#8217;m talking 20 to 40 minutes) and the graphics and general operation have been going downhill. I thought I would take a Windows inspired fix after trying everything else I could think of (blaming the processor, hard drive, graphics chip), and reinstall the operating system.</p>
+
+<p>This failed numerous times. Something as simple as an install? Great. Eventually getting the install log shows this type of message:</p>
+
+<blockquote><p>Unable to set as boot disk: the bless tool was unable to set the current boot disk</p></blockquote>
+
+<p>This is on a completely clean install of Snow Leopard. The installer was also unable to unmount which inturn means repair the disk.</p>
+
+<p>Somehow I stumbled on <a href="http://support.apple.com/kb/HT1379">this fix on the Apple Support Site</a>. Apparently you have to reset your parameter random access memory (PRAM) and nonvolatile RAM (NVRAM). This involves the incantation Command-Option-P-R keys and restarting. Now the install took first time, this has been a public service announcement.</p>
+</div>
+ </div>
+
+  
+  <div class="post"> <div class="post-header">
+  
+    <h1 class="post-title">
+      <a href="/blog/2010/06/01/long-lived-processes/">Long-Lived Processes</a>
+    </h1>
+  
+  
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-06-01T00:00:00+01:00" pubdate data-updated="true">Jun 1<span>st</span>, 2010</time>
+</div>
+
+<div class="post-content"><p>One of the things about developing a <a href="http://www.camvine.com/">digital signage system</a> is that the software running the display has to run for a long period of time. From what I have heard some people set their digital signage players (from other companies) to reboot every night which is an odd state of affairs, whereas we just say plug it in and switch it on. That does not mean we are infallible and I am constantly hunting down strange behaviours in the long-lived process.</p>
+
+<p>What I have really found from the reality of having real operating systems out there in the big wide world is that you will always encounter that which you cannot predict. There is however a way to mitigate the risk. You need to take a leaf out of the server world. Your main process should be as simple as possible doing the absolute minimum, then spawn processes to do the donkey work.</p>
+
+<p>The advantage of this is that if anything does go wrong in the real hard work then when the process is closed or is aggressively killed the resources are returned back to the system. In Linux this is particularly good because it is really good at starting processes efficiently. I saw evidence of this when git was spawning lots of perl processes, which in Windows was a lot slower, meaning that git in Linux on a VM in Windows was much faster than on plain Windows.</p>
+
+<p>Even Python has a built-in multiprocessing library (which was really put in place to get around the GIL issues) but it gives a great framework for managing processes and inter-process-communication. This is available from 2.6 up and I must get around to porting more stuff to it rather than rolling my own.</p>
+
+<p>Another great feature of the Linux graphics stack is texture from pixmap so that you can have out-of-process rendering and composite it all together in OpenGL.</p>
+
+<p>Really the lesson I learnt by forgetting to not put something into a separate process is that the unimaginable will happen, from bizarre corruptions, to parsers that should fail but are just too robust, which then means you have memory hanging around forever.</p>
+</div>
+ </div>
+
+  
+  <div class="post"> <div class="post-header">
+  
+    <h1 class="post-title">
+      <a href="/blog/2010/05/30/twitter-weekly-updates-for-2010-05-30/">Twitter Weekly Updates for 2010-05-30</a>
+    </h1>
+  
+  
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-05-30T00:00:00+01:00" pubdate data-updated="true">May 30<span>th</span>, 2010</time>
+</div>
+
+<div class="post-content"><ul class="aktt_tweet_digest">
+  <li>
+    @<a href="http://twitter.com/mdales" class="aktt_username">mdales</a> Does the FT iPad app enable the accessibility features or is it completely locked down? <a href="http://twitter.com/mdales/statuses/14544993682" class="aktt_tweet_reply">in reply to mdales</a> <a href="http://twitter.com/garrybodsworth/statuses/14553313331" class="aktt_tweet_time">#</a>
+  </li>
+  <li>
+    Loving the HTML5 watch keeping an eye on cool examples of using the tech <a href="http://html5watch.tumblr.com/" rel="nofollow">http://html5watch.tumblr.com/</a> <a href="http://twitter.com/garrybodsworth/statuses/14553580644" class="aktt_tweet_time">#</a>
+  </li>
+  <li>
+    Software East talk in Cambridge June 24th about iPhone development <a href="http://software-east.net/events/iphone-development" rel="nofollow">http://software-east.net/events/iphone-development</a> <a href="http://twitter.com/garrybodsworth/statuses/14557296263" class="aktt_tweet_time">#</a>
+  </li>
+  <li>
+    Got up at 5am for the last ever Lost &#8211; completely worth it. <a href="http://twitter.com/garrybodsworth/statuses/14606890804" class="aktt_tweet_time">#</a>
+  </li>
+  <li>
+    Adobe Flash constantly finds new ways to suck &#8211; don&#8217;t read the monitor display resolution when the browser tells you the size to render at! <a href="http://twitter.com/garrybodsworth/statuses/14616160537" class="aktt_tweet_time">#</a>
+  </li>
+  <li>
+    Separate GUI from logic. Something simple in concept yet it seems developing in Qt encourages bad behaviour. <a href="http://twitter.com/garrybodsworth/statuses/14719023245" class="aktt_tweet_time">#</a>
+  </li>
+  <li>
+    So running a large (>500Mb) installer with UAC enabled on Windows causes a huuuuuge delay. Nice. <a href="http://twitter.com/garrybodsworth/statuses/14748547398" class="aktt_tweet_time">#</a>
+  </li>
+  <li>
+    Got 1000 pages of Doctor Who comics to read. Should be good as it&#8217;s the 8th Doctor stuff before the whiff of success. All for under £20. <a href="http://twitter.com/garrybodsworth/statuses/14852662298" class="aktt_tweet_time">#</a>
+  </li>
+  <li>
+    Ooooh yeah and by tomorrow 1000 page of classic Stan Lee and Jack Kirby Fantastic Four in full colour in Panini Pocket Books. <a href="http://twitter.com/garrybodsworth/statuses/14852744826" class="aktt_tweet_time">#</a>
+  </li>
+  <li>
+    They are bringing out a proper Transformers Unicron? <a href="http://bit.ly/b3IL80" rel="nofollow">http://bit.ly/b3IL80</a> <a href="http://bit.ly/dBrPHn" rel="nofollow">http://bit.ly/dBrPHn</a> How on earth do I smuggle this past my wife? <a href="http://twitter.com/garrybodsworth/statuses/14855002486" class="aktt_tweet_time">#</a>
+  </li>
+  <li>
+    Didn&#8217;t realise <a href="http://plugable.com/" rel="nofollow">http://plugable.com/</a> was running with the mantle of DisplayLink chips on Linux. <a href="http://twitter.com/garrybodsworth/statuses/14858127593" class="aktt_tweet_time">#</a>
+  </li>
+  <li>
+    @<a href="http://twitter.com/mdales" class="aktt_username">mdales</a> Network issues is an understatement &#8211; EPIC NETWORK FAIL <a href="http://twitter.com/mdales/statuses/14896187948" class="aktt_tweet_reply">in reply to mdales</a> <a href="http://twitter.com/garrybodsworth/statuses/14896627748" class="aktt_tweet_time">#</a>
+  </li>
+  <li>
+    Windows 7 is hatefully bad. I even had to spend time making it more Vista-like which in turn recurses to more XP like. <a href="http://twitter.com/garrybodsworth/statuses/14990774715" class="aktt_tweet_time">#</a>
+  </li>
+  <li>
+    And Dell, for shaaaame, on the number of craplets and trials I had to uninstall. <a href="http://twitter.com/garrybodsworth/statuses/14990869905" class="aktt_tweet_time">#</a>
+  </li>
+  <li>
+    You have got to be kidding me. Why the hell do I have to search the Internet to make a printer work with Windows 7? <a href="http://twitter.com/garrybodsworth/statuses/14995222516" class="aktt_tweet_time">#</a>
+  </li>
+  <li>
+    And as for scanners there hasn&#8217;t been working drivers for many years&#8230; I wonder if sane and cups work on Windows? <a href="http://twitter.com/garrybodsworth/statuses/14995311160" class="aktt_tweet_time">#</a>
+  </li>
+  <li>
+    And for those of you just tuning in this is Garry&#8217;s descent into Windows powered madness. <a href="http://twitter.com/garrybodsworth/statuses/14995367541" class="aktt_tweet_time">#</a>
+  </li>
+</ul>
+
+
+
+
+<p class="aktt_credit">
+  Powered by <a href="http://alexking.org/projects/wordpress">Twitter Tools</a>
+</p>
+
+</div>
+ </div>
+
+  
+  <div class="post"> <div class="post-header">
+  
+    <h1 class="post-title">
+      <a href="/blog/2010/05/23/twitter-weekly-updates-for-2010-05-23/">Twitter Weekly Updates for 2010-05-23</a>
+    </h1>
+  
+  
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-05-23T00:00:00+01:00" pubdate data-updated="true">May 23<span>rd</span>, 2010</time>
+</div>
+
+<div class="post-content"><ul class="aktt_tweet_digest">
+  <li>
+    I think tomorrow I&#8217;ll have to work out how to build VirtualBox Open Source Edition for Windows. Found some helpful docs <a href="http://bit.ly/bkKYY8" rel="nofollow">http://bit.ly/bkKYY8</a> <a href="http://twitter.com/garrybodsworth/statuses/14117511772" class="aktt_tweet_time">#</a>
+  </li>
+  <li>
+    And WebM gstreamer is almost ready&#8230; <a href="http://www.collabora.co.uk/press/2010/05/join-google-webm-project.html" rel="nofollow">http://www.collabora.co.uk/press/2010/05/join-google-webm-project.html</a> <a href="http://twitter.com/garrybodsworth/statuses/14317431769" class="aktt_tweet_time">#</a>
+  </li>
+  <li>
+    Some article was saying about &#8220;can one video codec win&#8221;, but don&#8217;t they know we are at Peak Codec <a href="http://bit.ly/ccEDS6" rel="nofollow">http://bit.ly/ccEDS6</a> ? <a href="http://twitter.com/garrybodsworth/statuses/14346488867" class="aktt_tweet_time">#</a>
+  </li>
+  <li>
+    #<a href="http://search.twitter.com/search?q=%23camtechmeetup" class="aktt_hashtag">camtechmeetup</a> Twitter Camvine feed all set up on wifi &#8211; phew! <a href="http://twitter.com/garrybodsworth/statuses/14376079867" class="aktt_tweet_time">#</a>
+  </li>
+  <li>
+    Maximum 3 entries in resolv.conf is not sufficient for today&#8217;s unmanaged networks&#8230;.. <a href="http://twitter.com/garrybodsworth/statuses/14433952362" class="aktt_tweet_time">#</a>
+  </li>
+</ul>
+
+
+
+
+<p class="aktt_credit">
+  Powered by <a href="http://alexking.org/projects/wordpress">Twitter Tools</a>
+</p>
+
+</div>
+ </div>
+
+
+<div id="pagination">
+  
+    <a class="prev" href="/blog/page/5/">&laquo;Previous</a>
+  
+  
+    <a class="next" href="/blog/page/3/">Next&raquo;</a>
+  
+</div>
+ </div>
+    <div id="footer">
+  <div class="panels">
+    <div class="license">
+      <h2>License</h2>
+      <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-nc-sa/3.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/">Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License</a>.
+    </div>
+
+    <div class="posts">
+      <h2>Recent Posts</h2>
+      <ul>
+        
+          <li>
+            <a href="/blog/2013/06/22/rss-feed-moved-to-http-slash-slash-www-dot-fragmentedmemory-dot-com-slash-feed-slash/">RSS Feed Moved To http://www.fragmentedmemory.com/feed/</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2013/06/18/new-location-and-new-blog-engine-and-old-content-restored/">New Location &amp; New Blog Engine &amp; Old Content Restored</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2013/06/13/joining-microsoft/">Joining Microsoft</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2013/06/13/leaving-bromium/">Leaving Bromium</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2013/03/05/philip-su-engineering-process-and/">Philip Su - Engineering Process And Philosophy At Facebook</a>
+          </li>
+        
+      </ul>
+    </div>
+
+    <div class="posts">
+      <h2>Links</h2>
+      <a href='https://alpha.app.net/gjb' class='adn-button' target='_blank' data-type='follow' data-width='277' data-height='27' data-user-id='@gjb' data-show-username='1' rel='me'>Follow me on App.net</a><script>(function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src='//d2zh9g63fcvyrq.cloudfront.net/adn.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'adn-button-js'));</script>
+    </div>
+  </div>
+
+  <p class="powered">
+    Powered by <a href="http://octopress.org">Octopress</a> and <a href="https://github.com/iwinux/compbits">Compbits</a>
+  </p>
+</div>
+
+  </div> <!-- #wrapper end -->
+
+  
+
+  
+
+
+  
+
+  
+
+  
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+</body>
+</html>

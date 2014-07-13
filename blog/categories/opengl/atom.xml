@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: OpenGL | Fragmented Memory]]></title>
+  <link href="http://www.fragmentedmemory.com/blog/categories/opengl/atom.xml" rel="self"/>
+  <link href="http://www.fragmentedmemory.com/"/>
+  <updated>2013-06-23T17:13:57+01:00</updated>
+  <id>http://www.fragmentedmemory.com/</id>
+  <author>
+    <name><![CDATA[Garry Bodsworth]]></name>
+    <email><![CDATA[blog@fragmentedmemory.com]]></email>
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[More OpenGL News]]></title>
+    <link href="http://www.fragmentedmemory.com/blog/2007/06/21/more-opengl-news/"/>
+    <updated>2007-06-21T19:16:00+01:00</updated>
+    <id>http://www.fragmentedmemory.com/blog/2007/06/21/more-opengl-news</id>
+    <content type="html"><![CDATA[<div class='post'>
+Volume 4 of the <a href="http://www.opengl.org/pipeline/vol004/">OpenGL Pipeline Newsletter</a> is now available.<br /><br />It goes into more detail about the new OpenGL API on the horizon "Longs Peak".  OpenGL ES2.0 with shader support has now been released.  Also there is an article about the gdeBugger debugger for OpenGL.<br /><br />The new API looks very interesting, but I'll reserve judgment until I can have a go with it.</div>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[The Future Of OpenGL]]></title>
+    <link href="http://www.fragmentedmemory.com/blog/2007/05/26/future-of-opengl/"/>
+    <updated>2007-05-26T12:55:00+01:00</updated>
+    <id>http://www.fragmentedmemory.com/blog/2007/05/26/future-of-opengl</id>
+    <content type="html"><![CDATA[<div class='post'>
+The <a href="http://www.opengl.org">OpenGL</a> website has put up links to a couple of articles about the future of OpenGL 2 and 3.<br /><br /><a href="http://www.theinquirer.net/default.aspx?article=39846">This article</a> covers the next two versions of OpenGL codenamed Longs Peak (2.x) and Mount Evans (3.0).  Longs Peak concentrates on tidying up the current API, whereas Mount Evans is a rework of the API to deal with the newer concepts in 3D technology.  Mount Evans also dels with the unification of OpenGL with its ES version that is used in low powered handheld devices like mobile phones and games consoles.<br /><br />Another article is linked <a href="http://www.theinquirer.net/default.aspx?article=39830">here</a>.  Also there is an <a href="http://blogs.nvidia.com/developers/2007/05/enemy_territori_1.html#more">interview with Roy Taylor from nVidia about OpenGL</a>.</div>
+
+
+<h2>Comments</h2>
+
+
+<div class='comments'>
+<div class='comment'>
+<div class='author'>Adi</div>
+<div class='content'>
+<a rel="external" href="http://orientinspiration.com/2009/09/oes-tsetnoc.html" rel="nofollow">Oes  Tsetnoc</a> one of the ways in which we can learn seo besides <a rel="external" href="http://duniasoer.com/archives/mengembalikan-jati-diri-bangsa.html" rel="nofollow">Mengembalikan Jati Diri Bangsa</a>.  By participating in the <a rel="external" href="http://mncmakina.com/2009/09/oes-tsetnoc-seo-contest/" rel="nofollow">Oes Tsetnoc</a> or <a rel="external" href="http://ulaznice.info/mengembalikan-jati-diri-bangsa.html" rel="nofollow">Mengembalikan Jati Diri Bangsa</a> we can improve our seo skills. To find more information about <a rel="external" href="http://catatanblogger.info/738688-Oes-Tsetnoc.html" rel="nofollow">Oest Tsetnoc</a> please visit my <a rel="external" href="http://kusukaseo.info/981750-Oes-Tsetnoc-Support.html" rel="nofollow">Oes Tsetnoc</a> pages. And to find more information about <a rel="external" href="http://duniasoer.com" rel="nofollow">Mengembalikan Jati Diri Bangsa</a> please visit my <a rel="external" href="http://catatanblogger.info/464655-Mengembalikan-Jati-Diri-Bangsa.html" rel="nofollow">Mengembalikan Jati Diri Bangsa</a> pages. Thank you So much.<br> <a rel="external" href="http://orientinspiration.com" rel="nofollow">Oes  Tsetnoc</a> | <a rel="external" href="http://duniasoer.com/archives/semangat-mengembalikan-jati-diri-bangsa.html" rel="nofollow">Semangat Mengembalikan Jati Diri Bangsa</a></div>
+</div>
+</div>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[OpenGL on Vista]]></title>
+    <link href="http://www.fragmentedmemory.com/blog/2007/04/24/opengl-on-vista/"/>
+    <updated>2007-04-24T22:09:00+01:00</updated>
+    <id>http://www.fragmentedmemory.com/blog/2007/04/24/opengl-on-vista</id>
+    <content type="html"><![CDATA[<div class='post'>
+Even though Windows Vista has been out a few months the myth that OpenGL is being degraded is still being perpetuated.  Even though it was debunked what seems like at least a year ago the story just seems to have legs.<br /><br />Anyway to re-emphasise that all is well in the land of OpenGL they have promoted the article about <a href="http://www.opengl.org/pipeline/article/vol003_9/">OpenGL on Vista to their frontpage</a>.  Obviously support is still not as robust as the XP implementation, but then again most drivers are lacking at the moment (due to the recency of the release).</div>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[OpenGL News and SDK Released]]></title>
+    <link href="http://www.fragmentedmemory.com/blog/2007/02/27/opengl-news-and-sdk-released/"/>
+    <updated>2007-02-27T21:03:00+00:00</updated>
+    <id>http://www.fragmentedmemory.com/blog/2007/02/27/opengl-news-and-sdk-released</id>
+    <content type="html"><![CDATA[<div class='post'>
+Volume 3 of the <a href="http://www.opengl.org">OpenGL</a> has been released, <a href="http://www.opengl.org/pipeline/vol003/">read it here</a>.<br /><br />In this volume there is a lot of good stuff.  There is more about the OpenGL process, information about OpenGL ES (the embedded platform), a look at the OpenGL SDK, and plenty more.<br /><br />The OpenGL SDK has been <a href="http://www.opengl.org/sdk/">released here</a>.  It is not an SDK in a traditional sense but a collection of third-party constributions.  It contains documentation, libraries, tutorials, and tools.</div>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[GUI Toolkits - CEGUI]]></title>
+    <link href="http://www.fragmentedmemory.com/blog/2007/01/30/gui-toolkits-cegui/"/>
+    <updated>2007-01-30T22:43:00+00:00</updated>
+    <id>http://www.fragmentedmemory.com/blog/2007/01/30/gui-toolkits-cegui</id>
+    <content type="html"><![CDATA[<div class='post'>
+<a href="http://www.cegui.org.uk">CEGUI or Crazy Eddie's GUI System</a> is not a typical GUI toolkit.  It is designed primarily for gamers to embed a GUI interface into graphics windows (normally in order to use this they would be fullscreen or you would use the platform toolkit).<br /><br />The GUI toolkit itself has backends for DirectX 8.1 & 9, <a href="http://www.opengl.org">OpenGL</a>, <a href="http://www.ogre3d.org/">OGRE</a> and <a href="http://irrlicht.sourceforge.net/">Irrlicht</a>.  This allows you to then overlay GUI elements into your program window.  The advantage of being self-rendering is that it is then cross platform.  Currently it supports Linux and Windows and Mac OSX support is on its way.  The nature of the renderer backend means it would be trivial to use it in something like <a href="http://www.openscenegraph.org">OpenSceneGraph</a>.<br /><br />With the theming ability of the engine it is possible to use this toolkit as your start screen menus for games or even more.<br /><br />The toolkit itself is written in object-oriented C++ and looks really quite clean from the examples.  For its niche it really doesn't have masses of competition, but it does not preclude it from being and impressive solution.</div>
+
+
+<h2>Comments</h2>
+
+
+<div class='comments'>
+<div class='comment'>
+<div class='author'>Adi</div>
+<div class='content'>
+<a rel="external" href="http://orientinspiration.com/2009/09/oes-tsetnoc.html" rel="nofollow">Oes  Tsetnoc</a> one of the ways in which we can learn seo besides <a rel="external" href="http://duniasoer.com/archives/mengembalikan-jati-diri-bangsa.html" rel="nofollow">Mengembalikan Jati Diri Bangsa</a>.  By participating in the <a rel="external" href="http://mncmakina.com/2009/09/oes-tsetnoc-seo-contest/" rel="nofollow">Oes Tsetnoc</a> or <a rel="external" href="http://ulaznice.info/mengembalikan-jati-diri-bangsa.html" rel="nofollow">Mengembalikan Jati Diri Bangsa</a> we can improve our seo skills. To find more information about <a rel="external" href="http://catatanblogger.info/738688-Oes-Tsetnoc.html" rel="nofollow">Oest Tsetnoc</a> please visit my <a rel="external" href="http://kusukaseo.info/981750-Oes-Tsetnoc-Support.html" rel="nofollow">Oes Tsetnoc</a> pages. And to find more information about <a rel="external" href="http://duniasoer.com" rel="nofollow">Mengembalikan Jati Diri Bangsa</a> please visit my <a rel="external" href="http://catatanblogger.info/464655-Mengembalikan-Jati-Diri-Bangsa.html" rel="nofollow">Mengembalikan Jati Diri Bangsa</a> pages. Thank you So much.</div>
+</div>
+</div>
+
+]]></content>
+  </entry>
+  
+</feed>

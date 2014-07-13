@@ -1,0 +1,612 @@
+
+<!DOCTYPE HTML>
+<html lang="en-gb">
+<head>
+  <meta charset="UTF-8">
+  <title>Fragmented Memory</title>
+
+  <meta name="author" content="Garry Bodsworth">
+  
+  <meta name="description" content="Debugging STLPort in Visual Studio - autoexp.dat Aug 30th, 2007 We use STLPort for our C++ standard library as it is substantially faster than the &hellip;">
+  
+  
+
+  <link rel="canonical" href="http://www.fragmentedmemory.com/blog/page/30">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/feed/" rel="alternate" title="Fragmented Memory" type="application/atom+xml">
+</head>
+  
+<body class="default">
+  <div id="wrapper">
+    <div id="header">
+  <h1><a href="/">Fragmented Memory</a></h1>
+  
+    <p>Garry Bodsworth's Blog (formerly Garry's Bit Patterns &amp; Programmer's Log)</p>
+  
+</div>
+<ul id="social-links">
+  
+    <li><a class="rss" href="/feed/" title="RSS">RSS</a></li>
+  
+  
+  
+  
+    <li><a class="twitter" href="http://twitter.com/garrybodsworth" title="Twitter">Twitter</a></li>
+  
+  
+    <li><a class="github" href="https://github.com/garrybodsworth" title="GitHub">GitHub</a></li>
+  
+  
+  
+    <li><a class="linkedin" href="http://www.linkedin.com/in/garrybodsworth">LinkedIn</a></li>
+  
+  
+  
+  
+    <li><a class="pinboard" href="https://pinboard.in/u:garrybodsworth" title="Pinboard">Pinboard</a></li>
+  
+</ul>
+<div class="clear"></div>
+<ul id="nav">
+  
+    <li> <a href="/" class="current">blog</a> </li>
+  
+
+  
+    <li><a href="/blog/archives">archives</a></li>
+  
+
+  
+    <li><a href="/about">about</a></li>
+  
+</ul>
+
+    <div id="main"> 
+
+  
+  <div class="post"> <div class="post-header">
+  
+    <h1 class="post-title">
+      <a href="/blog/2007/08/30/debugging-stlport-in-visual-studio/">Debugging STLPort in Visual Studio - autoexp.dat</a>
+    </h1>
+  
+  
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2007-08-30T22:28:00+01:00" pubdate data-updated="true">Aug 30<span>th</span>, 2007</time>
+</div>
+
+<div class="post-content"><div class='post'>
+We use <a href="http://stlport.sourceforge.net/">STLPort</a> for our C++ standard library as it is substantially faster than the one supplied with Visual Studio 2005.  I  have expended quite a lot of energy trying to get the Microsoft STL to speed up more, with custom allocators and the suchlike.  The reason I pursued it was to make debugging easier as there was no way (by default) to look inside the containers in a structured fashion.<br /><br />Then I realised I was approaching the problem from the wrong angle.  Perhaps Visual Studio allows us to customise the debugging visualisations, and that means using STLPort with all the debugging benefits of the in-built system.  This was where I discovered the <a href="http://www.developer.com/net/cplus/article.php/3509761">autoexp.dat</a> which is more or less undocumented by Microsoft.  The system allows you to create custom visualisers for any datatype in the debugger.  Unfortunately it requires arcane rituals to make it work and I believe the format may have changed for VS2005.<br /><br />Anyway on to the meat of this post!  I will post here the code you need to visualise map, vector, set, and list in Visual Studio 2005.  First go and open <span style="font-weight:bold;">C:\Program Files\Microsoft Visual Studio 8\Common7\Packages\Debugger\autoexp.dat</span> in a text editor.  Locate the line featuring the text <span style="font-weight:bold;">PROPVARIANT</span>.  Just above that line add the following:<br /><pre><br />;------------------------------------------------------------------------------<br />;  STLPORT visualisers<br />;------------------------------------------------------------------------------<br /><br />;------------------------------------------------------------------------------<br /><br />;  stlp_std::vector<br />;------------------------------------------------------------------------------<br />stlp_std::vector<*>{<br />    children<br />    (<br />        #array<br />        (<br />            expr :    ($c._M_start)[$i], <br /><br />            size :    $c._M_finish-$c._M_start<br />        )<br />    )<br />   <br />    preview<br />    (<br />        #(<br />            "[",<br />            $e._M_finish - $e._M_start ,<br />            "](",<br /><br />           <br />            #array<br />            (<br />                expr :     ($c._M_start)[$i], <br />                size :     $c._M_finish-$c._M_start<br />            ),<br />            ")"<br />        )<br /><br />    )<br />}<br /><br />;------------------------------------------------------------------------------<br />;  stlp_std::list<br />;------------------------------------------------------------------------------<br />stlp_std::list<*,*>{<br /><br />    children<br />    (<br />        #list<br />        (<br />         head : $c._M_node._M_data._M_next,<br />         skip : &($c._M_node._M_data),<br />         next : _M_next<br />        ) : #( *($T1 *)(sizeof(stlp_std::priv::_List_node_base)+((char*)&($e))) )<br /><br />    )<br />   <br />    preview<br />    (<br />     #(<br />      "(",<br />      #list<br />      (<br />       head : $c._M_node._M_data._M_next,<br />       skip : &($c._M_node._M_data),<br />       next : _M_next<br />      ) : *($T1 *)(sizeof(stlp_std::priv::_List_node_base)+((char*)&($e))),<br /><br />      ")"<br />     )<br />    )<br />}<br /><br />;------------------------------------------------------------------------------<br />;  stlp_std::set<br />;------------------------------------------------------------------------------<br /><br />stlp_std::set<*> {<br /> children<br /> (<br />  #tree<br />  (<br />   head : $c._M_t._M_header._M_data._M_parent,<br />   skip : $c._M_t._M_header._M_data,<br />   left : _M_left,<br />   right : _M_right,<br />   size : $c._M_t._M_node_count<br /><br />  ) : ((_Node*)(&$e))->_M_value_field<br /> )<br />}<br /><br />;------------------------------------------------------------------------------<br />;  stlp_std::map<br />;------------------------------------------------------------------------------<br /><br />stlp_std::map<*,*,*,*> {<br /> children<br /> (<br />  #(<br />   [map]: [$c,!],<br /><br />   #tree<br />   (<br />    head : $c._M_t._M_header._M_data._M_parent,<br />    left : _M_left,<br />    right : _M_right,<br />    skip : $c._M_t._M_header._M_data<br /><br />   ) : *(stlp_std::pair<$T1,$T2>*)(((char*)(&((*((stlp_std::priv::_Rb_tree_node<$T1>*)(&$e)))._M_value_field))))<br />  )<br /> )<br />}<br /></pre><br /><br />I am pretty sure I need to do some more tweaking to get it working even better.  The map implementation is certainly the best part as it displays the list of items as pairs of (key, value) which is really useful.  Some of the code for this was pilfered from the comments of <a href="http://www.virtualdub.org/blog/pivot/entry.php?id=120">this article</a> - thanks to those people who blazed the initial trail.</div>
+<h2>Comments</h2>
+<div class='comments'>
+<div class='comment'>
+<div class='author'>Leviana</div>
+<div class='content'>
+Can I apply debugging on my <a href="http://www.rxsexual.com/" rel="nofollow">Buy Generic Viagra</a> blog ?</div>
+</div>
+<div class='comment'>
+<div class='author'>Zahary Karadjov</div>
+<div class='content'>
+A more complete set of visualizers is  now available at:<BR/>http://stlport.svn.sourceforge.net/viewvc/stlport/trunk/STLport/etc/autoexp.dat?revision=HEAD</div>
+</div>
+<div class='comment'>
+<div class='author'>Laurent</div>
+<div class='content'>
+I was using your file as a starting point, trying to improve it for other types. My Stlport setup is different than yours, it does not as use a stlp_std::priv:: namespace.  <BR/>Note that the STLPort namespace can be one of stlpdmtx_std, stlpd_std, stlpdxmtx_std, stlpdx_std too.<BR/><BR/><BR/>Maybe my setup is wrong, I am still using VS2005 without the SP1 and my STLPort is quite outdated (5.0.2). I will upgrade this week and see if things goes better. <BR/><BR/><BR/>In case you need it, this is my test file:<BR/><BR/>#include &lt;map&gt;<BR/>#include &lt;set&gt;<BR/>#include &lt;list&gt;<BR/>#include &lt;vector&gt;<BR/>#include &lt;string&gt;<BR/><BR/>using namespace std;<BR/><BR/>int main(){<BR/><BR/> _Rb_tree_node&lt;int&gt; rb_t_n_int;<BR/> rb_t_n_int._M_value_field = 4;<BR/> _Rb_tree_node&lt;string&gt; rb_t_n_string;<BR/> rb_t_n_string._M_value_field = &#8220;four&#8221;;<BR/><BR/> string s(&#8220;some string&#8221;);<BR/><BR/> pair&lt;int, int &gt; pii;<BR/> pair&lt;int, string &gt; pis;<BR/> pair&lt;string, string &gt; pss;<BR/> pair&lt;string, int &gt; psi;<BR/><BR/> map&lt;int, int &gt; mii;<BR/> map&lt;int, string &gt; mis;<BR/> map&lt;string, string &gt; mss;<BR/> map&lt;string, int &gt; msi;<BR/> map&lt;double, double&gt; mdd;<BR/> set&lt;int&gt; si;<BR/> set&lt;string&gt; ss;<BR/> list&lt;int&gt; li;<BR/> list&lt;string&gt; ls;<BR/> vector&lt;int&gt; vi;<BR/> vector&lt;string&gt; vs;<BR/><BR/> vector&lt;vector&lt;string&gt; &gt; v_vs;<BR/> map&lt;string, vector&lt;string&gt; &gt; ms_vs;<BR/><BR/> set&lt; vector&lt;int&gt; &gt; s_vi;<BR/> set&lt; vector&lt;string&gt; &gt; s_vs;<BR/><BR/> pii.first = 1;<BR/> pii.second = 2;<BR/> pis.first = 1;<BR/> pis.second = &#8220;two&#8221;;<BR/> pss.first = &#8220;one&#8221;;<BR/> pss.second = &#8220;two&#8221;;<BR/> psi.first = &#8220;one&#8221;;<BR/> psi.second = 2;<BR/><BR/> mii.insert(make_pair(1, 10));<BR/> mii.insert(make_pair(2, 20));<BR/> mii.insert(make_pair(3, 30));<BR/> mii.insert(make_pair(4, 40));<BR/> <BR/> mis.insert(make_pair(1, &#8220;one&#8221;));<BR/> mis.insert(make_pair(2, &#8220;two&#8221;));<BR/> mis.insert(make_pair(3, &#8220;three&#8221;));<BR/> mis.insert(make_pair(4, &#8220;four&#8221;));<BR/> <BR/> mss.insert(make_pair(&#8220;one&#8221;, &#8220;one&#8221;));<BR/> mss.insert(make_pair(&#8220;two&#8221;, &#8220;two&#8221;));<BR/> mss.insert(make_pair(&#8220;three&#8221;, &#8220;three&#8221;));<BR/> mss.insert(make_pair(&#8220;four&#8221;, &#8220;four&#8221;));<BR/><BR/> msi.insert(make_pair(&#8220;one&#8221;, 1));<BR/> msi.insert(make_pair(&#8220;two&#8221;, 2));<BR/> msi.insert(make_pair(&#8220;three&#8221;, 3));<BR/> msi.insert(make_pair(&#8220;four&#8221;, 4));<BR/><BR/> mdd.insert(make_pair(1.1, 11.1));<BR/> mdd.insert(make_pair(2.2, 22.2));<BR/> mdd.insert(make_pair(3.3, 33.3));<BR/> mdd.insert(make_pair(4.4, 44.4));<BR/><BR/> si.insert(1);<BR/> si.insert(2);<BR/> si.insert(3);<BR/> si.insert(4);<BR/><BR/> ss.insert(&#8220;one&#8221;);<BR/> ss.insert(&#8220;two&#8221;);<BR/> ss.insert(&#8220;three&#8221;);<BR/> ss.insert(&#8220;four&#8221;);<BR/><BR/> li.push_back(1);<BR/> li.push_back(2);<BR/> li.push_back(3);<BR/> li.push_back(4);<BR/><BR/> ls.push_back(&#8220;one&#8221;);<BR/> ls.push_back(&#8220;two&#8221;);<BR/> ls.push_back(&#8220;three&#8221;);<BR/> ls.push_back(&#8220;four&#8221;);<BR/><BR/> vi.push_back(1);<BR/> vi.push_back(2);<BR/> vi.push_back(3);<BR/> vi.push_back(4);<BR/><BR/> vs.push_back(&#8220;one&#8221;);<BR/> vs.push_back(&#8220;two&#8221;);<BR/> vs.push_back(&#8220;three&#8221;);<BR/> vs.push_back(&#8220;four&#8221;);<BR/><BR/> v_vs.push_back(vs);<BR/> v_vs.resize(2);<BR/> v_vs[1].push_back(&#8220;one&#8221;);<BR/> v_vs[1].push_back(&#8220;two&#8221;);<BR/> v_vs[1].push_back(&#8220;three&#8221;);<BR/> v_vs[1].push_back(&#8220;four&#8221;);<BR/><BR/> ms_vs.insert(make_pair(&#8220;fr&#8221;, vs));<BR/> ms_vs.insert(make_pair(&#8220;en&#8221;, v_vs[1]));<BR/><BR/> s_vi.insert(vi);<BR/> s_vs.insert(vs);<BR/>}</div>
+</div>
+<div class='comment'>
+<div class='author'>Garry Bodsworth</div>
+<div class='content'>
+I misinterpreted what you said.  The one I supplied only works for you with map{int, int} right?<BR/><BR/>That is odd because I have had maps of complex types to complex types visualise in list form with this visualiser.  I&#8217;ll have a closer look at it over the next week.</div>
+</div>
+<div class='comment'>
+<div class='author'>Garry Bodsworth</div>
+<div class='content'>
+I started with an ugly hack like that before using the map implementation in the post above.  Does my implementation work for you.<BR/><BR/>The solution really came down to understanding what STLPort was doing with its pointers and then interpreting those into the proper structures/classes by casting.<BR/><BR/>You can copy and paste my implementation above in, it looks like it is truncated but all of the text for the visualiser is on the page.</div>
+</div>
+<div class='comment'>
+<div class='author'>Laurent</div>
+<div class='content'>
+My map visualizer looks like this, but it doesn&#8217;t work for every container:<BR/> map&lt;string,int&gt; or map&lt;int,int&gt; is ok but <BR/><BR/>map&lt;int, string&gt; or map&lt;string,string&gt; is not! <BR/><BR/>Any idea ?<BR/><BR/>stlp_std::map&lt;*,*,*,*&gt; {<BR/> children<BR/> (<BR/>  #(<BR/>   [map]: [$c,!],<BR/>   #tree<BR/>   (<BR/>    head : $c._M_t._M_header._M_data._M_parent,<BR/>    left : _M_left,<BR/>    right : _M_right,<BR/>    skip : $c._M_t._M_header._M_data<BR/><BR/>   ) : #( *(stlp_std::pair&lt;$T1,$T2&gt; *)(sizeof(stlp_std::_Rb_tree_node_base)+((char*)&($e))) ) ; this is an ugly hack that works for ( map&lt;string,int&gt;, map&lt;int,int&gt;, map&lt;double,double&gt; ) but not for map&lt;int,string&gt;, map&lt;string,string&gt; &#8230; )<BR/> ;  : *(stlp_std::pair&lt;$T1,$T2&gt;*)(((char*)(&((*((stlp_std::_Rb_tree_node&lt;$T1&gt;*)(&$e)))._M_value_field))))  ;   works only for map&lt;int,int&gt;<BR/>  )<BR/> )</div>
+</div>
+</div>
+</div>
+ </div>
+
+  
+  <div class="post"> <div class="post-header">
+  
+    <h1 class="post-title">
+      <a href="/blog/2007/08/25/lots-of-source-code-guis-and-mfc/">Lots of Source Code - GUIs and MFC</a>
+    </h1>
+  
+  
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2007-08-25T16:42:00+01:00" pubdate data-updated="true">Aug 25<span>th</span>, 2007</time>
+</div>
+
+<div class="post-content"><div class='post'>
+It has been difficult to find the time to blog recently, but this news is really interesting.  One of the MFC extension toolkits <a href="http://www.theultimatetoolbox.com/products/ultimatetoolbox/">Ultimate Toolbox</a> has decided to give away its product for free on the <a href="http://www.codeproject.com/">CodeProject</a>.<br /><br />It provides MFC extensions for more modern looking MFC applications like the Office 2003 theme and spiffing looking menus and tabbed interfaces.  The CodeProject now gives full access to the source code and all the articles are very useful for explaining how to use it.  This isn&#8217;t only the Toolbox (MFC classes) but also the Ultimate Grid (spreadsheet type interface) and Ultimate TCP/IP (networking).<br /><br />The source code is out there now hoping the community can take it on and then develop it further.  Unfortunately there are none of the cutting edge features like Vista support or ribbons but I bet the framework makes it much easier to develop than pure MFC.<br /><br />Check out the links here:<br /><table border="0" cellpadding="0" cellspacing="4" width="100%"><br /><tr><td><br /><a href="http://www.codeproject.com/MFC/UltimateToolbox.asp">Ultimate Toolbox Home Page</a> - The Ultimate Toolbox<br /><span style="color: rgb(102, 102, 102);font-family:Verdana;font-size:78%;"  >Ultimate Toolbox is now Open Source</span><br /></td></tr><tr><td><br /><a href="http://www.codeproject.com/MFC/UTP_MsgMapper.asp">Ultimate TCP-IP Message Mapper Demo</a> - The Ultimate Toolbox<br /><span style="color: rgb(102, 102, 102);font-family:Verdana;font-size:78%;"  >Ultimate TCP-IP Message and Encoding classes allow for Unicode representation of multiple character sets</span><br /></td></tr><tr><td><br /><a href="http://www.codeproject.com/MFC/UltimateToolbox_Url.asp">Ultimate Toolbox URL Class</a> - The Ultimate Toolbox<br /><span style="color: rgb(102, 102, 102);font-family:Verdana;font-size:78%;"  >A simple URL/UNC composition class from the Ultimate Toolbox</span><br /></td></tr><tr><td><br /><a href="http://www.codeproject.com/MFC/UltimateToolbox_ToolTip.asp">Ultimate Toolbox COXToolTipCtrl Class</a> - The Ultimate Toolbox<br /><span style="color: rgb(102, 102, 102);font-family:Verdana;font-size:78%;"  >An extended tooltip control from the Ultimate Toolbox</span><br /></td></tr><tr><td><br /><a href="http://www.codeproject.com/MFC/UltimateToolbox_TaskBar.asp">Ultimate TCP-IP Design Page</a> - The Ultimate Toolbox<br /><span style="color: rgb(102, 102, 102);font-family:Verdana;font-size:78%;"  >The Ultimate Toolbox makes it easy to configure and customize a taskbar icon for your application</span><br /></td></tr><tr><td><br /><a href="http://www.codeproject.com/MFC/UltimateToolbox_SysInfo.asp">Ultimate Toolbox System Information Class</a> - The Ultimate Toolbox<br /><span style="color: rgb(102, 102, 102);font-family:Verdana;font-size:78%;"  >The Ultimate Toolbox provides a system info class that can query various aspects of machine and network settings</span><br /></td></tr><tr><td><br /><a href="http://www.codeproject.com/MFC/UltimateToolbox_StaticTxt.asp">Ultimate Toolbox Static Text Control</a> - The Ultimate Toolbox<br /><span style="color: rgb(102, 102, 102);font-family:Verdana;font-size:78%;"  >A customizable CStatic derived class from the Ultimate Toolbox</span><br /></td></tr><tr><td><br /><a href="http://www.codeproject.com/MFC/UltimateToolbox_HyperLink.asp">Ultimate Toolbox Static Hyperlink</a> - The Ultimate Toolbox<br /><span style="color: rgb(102, 102, 102);font-family:Verdana;font-size:78%;"  >A subclassed CStatic control from the Ultimate Toolbox that provides hyperlink capabilities</span><br /></td></tr><tr><td><br /><a href="http://www.codeproject.com/MFC/UltimateToolbox_Sound.asp">Ultimate Toolbox Sound Manager</a> - The Ultimate Toolbox<br /><span style="color: rgb(102, 102, 102);font-family:Verdana;font-size:78%;"  >Classes from the Ultimate toolbox that allow configuring customized dialog item sound effects</span><br /></td></tr><tr><td><br /><a href="http://www.codeproject.com/MFC/UltimateToolbox_Resource.asp">Ultimate Toolbox Resource File</a> - The Ultimate Toolbox<br /><span style="color: rgb(102, 102, 102);font-family:Verdana;font-size:78%;"  >A class for enumerating and parsing file based resources from the Ultimate Toolbox</span><br /></td></tr><tr><td><br /><a href="http://www.codeproject.com/MFC/UltimateToolbox_PhysEdit.asp">Ultimate Toolbox Physical Unit Edit Controls</a> - The Ultimate Toolbox<br /><span style="color: rgb(102, 102, 102);font-family:Verdana;font-size:78%;"  >The Ultimate Toolbox contains several predefined CEdit derived controls for physical unit input and conversion</span><br /></td></tr><tr><td><br /><a href="http://www.codeproject.com/MFC/UltimateToolbox_OptionTre.asp">Ultimate Toolbox Option Tree Control</a> - The Ultimate Toolbox<br /><span style="color: rgb(102, 102, 102);font-family:Verdana;font-size:78%;"  >An IE style option tree control from the Ultimate Toolbox</span><br /></td></tr><tr><td><br /><a href="http://www.codeproject.com/MFC/UltimateToolbox_NetBrowse.asp">Ultimate Toolbox Net Browse Tree Control</a> - The Ultimate Toolbox<br /><span style="color: rgb(102, 102, 102);font-family:Verdana;font-size:78%;"  >A network browse tree control from the Ultimate Toolbox</span><br /></td></tr><tr><td><br /><a href="http://www.codeproject.com/MFC/UltimateToolbox_MultCombo.asp">Ultimate Toolbox Multi Combobox</a> - The Ultimate Toolbox<br /><span style="color: rgb(102, 102, 102);font-family:Verdana;font-size:78%;"  >A flexible multi-column combobox control from the Ultimate Toolbox</span><br /></td></tr><tr><td><br /><a href="http://www.codeproject.com/MFC/UltimateToolbo_MaskedEdit.asp">Ultimate Toolbox Masked Edit</a> - The Ultimate Toolbox<br /><span style="color: rgb(102, 102, 102);font-family:Verdana;font-size:78%;"  >The Ultimate Toolbox provides a generic masked edit control for validated input.</span><br /></td></tr><tr><td><br /><a href="http://www.codeproject.com/MFC/UltimateToolbox_Layout.asp">Ultimate Toolbox Layout Manager</a> - The Ultimate Toolbox<br /><span style="color: rgb(102, 102, 102);font-family:Verdana;font-size:78%;"  >The Ultimate Toolbox provides a Layout Manager that can be configured to manage control placement on resizing of forms and dialogs</span><br /></td></tr><tr><td><br /><a href="http://www.codeproject.com/MFC/UltimateToolbox_HyperBar.asp">Ultimate Toolbox HyperBar</a> - The Ultimate Toolbox<br /><span style="color: rgb(102, 102, 102);font-family:Verdana;font-size:78%;"  >The COXHyperBar control is an MFC control which will give the floating toolbar look seen in the Microsoft Expression &#8216;Hyperbar&#8217; sample</span><br /></td></tr><tr><td><br /><a href="http://www.codeproject.com/MFC/UltimateToolbox_Utility.asp">Ultimate Toolbox Utility Classes</a> - The Ultimate Toolbox<br /><span style="color: rgb(102, 102, 102);font-family:Verdana;font-size:78%;"  >The Ultimate Toolbox Utility classes deal with Memory, Clipboard, Parsing, etc.</span><br /></td></tr><tr><td><br /><a href="http://www.codeproject.com/MFC/UltimateToolbox_Shell.asp">Ultimate Toolbox Shell Related Classes</a> - The Ultimate Toolbox<br /><span style="color: rgb(102, 102, 102);font-family:Verdana;font-size:78%;"  >The Ultimate Toolbox classes for Shell Namespace navigation, an Application Bar, and more</span><br /></td></tr><tr><td><br /><a href="http://www.codeproject.com/MFC/UltimateToolbox_MAPIOLE.asp">Ultimate Toolbox MAPI OLE Classes</a> - The Ultimate Toolbox<br /><span style="color: rgb(102, 102, 102);font-family:Verdana;font-size:78%;"  >Ultimate Toolbox classes for dealing with the Messaging framework and Addressbook APIs.</span><br /></td></tr><tr><td><br /><a href="http://www.codeproject.com/MFC/UltimateToolbox_Mouse.asp">Ultimate Toolbox Intellimouse Classes</a> - The Ultimate Toolbox<br /><span style="color: rgb(102, 102, 102);font-family:Verdana;font-size:78%;"  >The Ultimate Toolbox Intellimouse classes make it easy to add advanced scrolling capabilities to your application.</span><br /></td></tr><tr><td><br /><a href="http://www.codeproject.com/MFC/UltimateToolbox_GUI.asp">Ultimate Toolbox Graphical User Interface Classes</a> - The Ultimate Toolbox<br /><span style="color: rgb(102, 102, 102);font-family:Verdana;font-size:78%;"  >The Ultimate Toolbox GUI classes offer a wide range of MFC control extensions.</span><br /></td></tr><tr><td><br /><a href="http://www.codeproject.com/MFC/UltimateToolbox_Graphics.asp">Ultimate Toolbox Graphics Classes</a> - The Ultimate Toolbox<br /><span style="color: rgb(102, 102, 102);font-family:Verdana;font-size:78%;"  >Ultimate Toolbox classes that help with DIBs, MetaFiles, and more.</span><br /></td></tr><tr><td><br /><a href="http://www.codeproject.com/MFC/UltimateToolbox_GrphFmts.asp">Ultimate Toolbox Graphic Format Classes</a> - The Ultimate Toolbox<br /><span style="color: rgb(102, 102, 102);font-family:Verdana;font-size:78%;"  >The Ultimate Toolbox contains classes for dealing with Bitmap and JPEG files.</span><br /></td></tr><tr><td><br /><a href="http://www.codeproject.com/MFC/UltimateToolbox_FileMgmt.asp">Ultimate Toolbox File Management</a> - The Ultimate Toolbox<br /><span style="color: rgb(102, 102, 102);font-family:Verdana;font-size:78%;"  >Ultimate Toolbox classes that deal with Binary Difference, Search and Replace, Compression, and more.</span><br /></td></tr><tr><td><br /><a href="http://www.codeproject.com/MFC/UltimateToolbox_Database.asp">Ultimate Toolbox Database Classes</a> - The Ultimate Toolbox<br /><span style="color: rgb(102, 102, 102);font-family:Verdana;font-size:78%;"  >Ultimate Toolbox Database classes include DAO and CSV file classes.</span><br /></td></tr><tr><td><br /><a href="http://www.codeproject.com/MFC/UltimateToolbox_Comm.asp">Ultimate Toolbox Communication Classes</a> - The Ultimate Toolbox<br /><span style="color: rgb(102, 102, 102);font-family:Verdana;font-size:78%;"  >The Ultimate Toolbox provides additional classes to help with serial and socket communication.</span><br /></td></tr><tr><td><br /><a href="http://www.codeproject.com/MFC/UltimateToolbox_FontPick.asp">Ultimate Toolbox Font Pickers</a> - The Ultimate Toolbox<br /><span style="color: rgb(102, 102, 102);font-family:Verdana;font-size:78%;"  >Two convenient font selection controls from the Ultimate Toolbox for MFC</span><br /></td></tr><td><br /><a href="http://www.codeproject.com/MFC/UltimateToolbox_FileWatch.asp">Ultimate Toolbox File Watcher</a> - The Ultimate Toolbox<br /><span style="color: rgb(102, 102, 102);font-family:Verdana;font-size:78%;"  >An easy to use file watcher from the Ultimate Toolbox</span><br /></td></tr><tr><td><br /><a href="http://www.codeproject.com/MFC/UltimateToolbox_ListBoxEx.asp">Ultimate Toolbox Extended Listbox</a> - The Ultimate Toolbox<br /><span style="color: rgb(102, 102, 102);font-family:Verdana;font-size:78%;"  >The Ultimate Toolbox provides an extensible COXListBox CListBox derived class that can be easily customized</span><br /></td></tr><tr><td><br /><a href="http://www.codeproject.com/MFC/UltimateToolbox_EditExt.asp">Ultimate Toolbox Edit Control Extensions</a> - The Ultimate Toolbox<br /><span style="color: rgb(102, 102, 102);font-family:Verdana;font-size:78%;"  >The Ultimate Toolbox fetures a number of edit control extensions, some of which are described here</span><br /><br /></td></tr><tr><td><br /><a href="http://www.codeproject.com/MFC/UltimateToolbox_DateTime.asp">Ultimate Toolbox Date Time Picker Control</a> - The Ultimate Toolbox<br /><span style="color: rgb(102, 102, 102);font-family:Verdana;font-size:78%;"  >COXDateTimeCtrl provides a handy and flexible method of Date/Time entry and display.</span><br /></td></tr><tr><td><br /><a href="http://www.codeproject.com/MFC/UltimateToolbox_Customize.asp">Ultimate Toolbox Application Customization</a> - The Ultimate Toolbox<br /><span style="color: rgb(102, 102, 102);font-family:Verdana;font-size:78%;"  >Ultimate Toolbox provides a set of classes to allow for application state management and customization.</span><br /></td></tr><tr><td><br /><a href="http://www.codeproject.com/MFC/UltimateToolbox_ColorPick.asp">Ultimate Toolbox Color Picker</a> - The Ultimate Toolbox<br /><span style="color: rgb(102, 102, 102);font-family:Verdana;font-size:78%;"  >An easy to use Color Picker button included with the Ultimate Toolbox</span><br /></td></tr><tr><td><br /><a href="http://www.codeproject.com/MFC/UltimateToolbox_Skins.asp">Ultimate Toolbox Application Skins</a> - The Ultimate Toolbox<br /><span style="color: rgb(102, 102, 102);font-family:Verdana;font-size:78%;"  >The Ultimate Toolbox supports Office XP, Office 2003, and Classic application skins</span><br /></td></tr><tr><td><br /><a href="http://www.codeproject.com/MFC/UltimateToolbox_3DTabView.asp">Ultimate Toolbox 3D Tab Views</a> - The Ultimate Toolbox<br /><span style="color: rgb(102, 102, 102);font-family:Verdana;font-size:78%;"  >COX3DTabViewContainer can be used to provide tabbed window support to document views and control bars</span><br /></td></tr><tr><td><br /><a href="http://www.codeproject.com/MFC/UG_Start.asp">Ultimate Grid Beginner&#8217;s Guide</a> - The Ultimate Toolbox<br /><span style="color: rgb(102, 102, 102);font-family:Verdana;font-size:78%;"  >Getting started with the Ultimate Grid</span><br /></td></tr><tr><td><br /><a href="http://www.codeproject.com/MFC/UG_Editing.asp">Ultimate Grid Edit Functionality</a> - The Ultimate Toolbox<br /><span style="color: rgb(102, 102, 102);font-family:Verdana;font-size:78%;"  >The Ultimate Grid provides for built-in edit notifications as well as customizable edit functionality</span><br /></td></tr><tr><td><br /><a href="http://www.codeproject.com/MFC/UG_DataSources.asp">Ultimate Grid Datasources</a> - The Ultimate Toolbox<br /><span style="color: rgb(102, 102, 102);font-family:Verdana;font-size:78%;"  >An introduction to using custom datasources with the Ultimate Grid</span><br /></td></tr><tr><td><br /><a href="http://www.codeproject.com/MFC/UG_CellTypes.asp">Ultimate Grid Cell Types</a> - The Ultimate Toolbox<br /><span style="color: rgb(102, 102, 102);font-family:Verdana;font-size:78%;"  >An introduction to using built-in and custom cell types with the Ultimate Grid</span><br /></td></tr><tr><td><br /><a href="http://www.codeproject.com/MFC/UltimateGridHome.asp">Ultimate Grid Home Page</a> - The Ultimate Toolbox<br /><span style="color: rgb(102, 102, 102);font-family:Verdana;font-size:78%;"  >The Ultimate Grid is now Open Source</span><br /></td></tr><tr><td><br /><a href="http://www.codeproject.com/MFC/UltimateTCPIP.asp">Ultimate TCP-IP Home Page</a> - The Ultimate Toolbox<br /><span style="color: rgb(102, 102, 102);font-family:Verdana;font-size:78%;"  >Ultimate TCP-IP is now Open Source</span><br /></td></tr></table><br /><br />Edit : Okay, all the links should work now&#8230;</div>
+</div>
+ </div>
+
+  
+  <div class="post"> <div class="post-header">
+  
+    <h1 class="post-title">
+      <a href="/blog/2007/08/09/gui-toolkits-qt-and-eclipse/">GUI Toolkits: Qt and Eclipse</a>
+    </h1>
+  
+  
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2007-08-09T21:26:00+01:00" pubdate data-updated="true">Aug 9<span>th</span>, 2007</time>
+</div>
+
+<div class="post-content"><div class='post'>
+There is now a <a href="http://www.trolltech.com/qt">Qt</a> integration into <a href="http://www.eclipse.org">Eclipse</a> provided by the good folks at Trolltech.<br /><br />You can check out the press release <a href="http://trolltech.com/company/newsroom/announcements/press.2007-05-24.8884335791">here</a>.<br /><br />There is a sneak peak article <a href="http://trolltech.com/company/tt/contents/issue3/eclipse-integration">here</a> and you can download it <a href="http://trolltech.com/developer/downloads/qt/eclipse-integration-download">here</a>.  The best thing about it is certainly the integrated form editor.<br /><br />There is a little run-through/review type thing <a href="http://www.thelins.se/index.php?title=Qt_from_Eclipse">here</a> and even more info <a href="http://labs.trolltech.com/blogs/2007/07/11/develop-qt-applications-in-eclipse/">here</a>.<br /><br />Unfortunately I don&#8217;t think I will ever get to use it in a commercial environment due to the cost, but it could be good to try out for cross-platform development.</div>
+</div>
+ </div>
+
+  
+  <div class="post"> <div class="post-header">
+  
+    <h1 class="post-title">
+      <a href="/blog/2007/08/09/eclipse-cdt-for-windows-wascana/">Eclipse CDT for Windows - Wascana</a>
+    </h1>
+  
+  
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2007-08-09T21:20:00+01:00" pubdate data-updated="true">Aug 9<span>th</span>, 2007</time>
+</div>
+
+<div class="post-content"><div class='post'>
+<a href="http://wascana.sourceforge.net/">Wascana</a> is the name of the CDT for Windows project run by the excellent <a href="http://cdtdoug.blogspot.com/">Doug Schaefer</a>.  It provides an installer with Eclipse, the compiler and loads of exras.  The plan is to create a really good Windows desktop IDE.<br /><br />Keep an eye on it over the next few weeks as it should be updating to GCC 4.2.1 and some form of <a href="http://www.wxwidgets.org">wxWidgets</a> support.<br /><br />Certainly if it all comes together there is a powerful argument to use it instead of Visual Studio.</div>
+</div>
+ </div>
+
+  
+  <div class="post"> <div class="post-header">
+  
+    <h1 class="post-title">
+      <a href="/blog/2007/08/09/mingw-gcc-42-released/">MinGW GCC 4.2 Released</a>
+    </h1>
+  
+  
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2007-08-09T21:13:00+01:00" pubdate data-updated="true">Aug 9<span>th</span>, 2007</time>
+</div>
+
+<div class="post-content"><div class='post'>
+Well, it&#8217;s not a full release, but a beta type release.  <a href="http://www.mingw.org">MinGW</a> has <a href="http://article.gmane.org/gmane.comp.gnu.mingw.user/23358">released GCC 4.2</a> on Windows is now available.<br /><br />The first proper version 4 release will be 4.3 when it is released.  This is because Windows will become a properly supported platform as historically MinGW have done loads of work making it work on Windows.<br /><br />The jump from 3.4 to the version 4 codebase will provide massive improvements including OpenMP for multithreading, better and more powerful optimisations and better language support.</div>
+</div>
+ </div>
+
+  
+  <div class="post"> <div class="post-header">
+  
+    <h1 class="post-title">
+      <a href="/blog/2007/08/02/more-llvm-and-clang/">More LLVM and Clang</a>
+    </h1>
+  
+  
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2007-08-02T21:48:00+01:00" pubdate data-updated="true">Aug 2<span>nd</span>, 2007</time>
+</div>
+
+<div class="post-content"><div class='post'>
+Check out the Google Talk and slides about LLVM and Clang <a href="http://llvm.org/pubs/2007-07-25-LLVM-2.0-and-Beyond.html">here</a>.<br /><br /><embed style="width:400px; height:326px;" id="VideoPlayback" type="application/x-shockwave-flash" src="http://video.google.com/googleplayer.swf?docId=1921156852099786640&hl=en-GB" flashvars=""> </embed></div>
+</div>
+ </div>
+
+  
+  <div class="post"> <div class="post-header">
+  
+    <h1 class="post-title">
+      <a href="/blog/2007/08/02/c-boostcon/">C++ - Boostcon</a>
+    </h1>
+  
+  
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2007-08-02T20:53:00+01:00" pubdate data-updated="true">Aug 2<span>nd</span>, 2007</time>
+</div>
+
+<div class="post-content"><div class='post'>
+Back in May <a href="http://www.boostcon.com/home">Boostcon</a> took placein May this year.  I have posted previously about some of the already available talk slides (see the <a href="http://opensource.adobe.com/wiki/index.php/Papers_and_Presentations">Adobe ones here</a>).  See my previous post <a href="http://garrys-brain.blogspot.com/2007/05/boostcon-2007-presentations.html">here</a>.<br /><br />There are a couple of new articles <a href="http://www.artima.com/cppsource/boost_con_07.html">here</a> and <a href="http://www.artima.com/cppsource/boost_con_07_up_close.html">here</a> that make interesting reading.  Also an attendee has some write ups <a href="http://blog.emptycrate.com/">here</a>.  Some more slides <a href="http://www.nabble.com/BoostCon-2007-Slides-t3849974.html">are also available</a>.  More write-ups <a href="http://jeffandhoa.com/blog/">here</a>.<br /><br />Fingers crossed one day I&#8217;ll be able to attend something as interesting as this.</div>
+</div>
+ </div>
+
+  
+  <div class="post"> <div class="post-header">
+  
+    <h1 class="post-title">
+      <a href="/blog/2007/07/30/tortoisesvn-and-visual-studio/">TortoiseSVN and Visual Studio Integration - Visual Studio 2008</a>
+    </h1>
+  
+  
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2007-07-30T21:12:00+01:00" pubdate data-updated="true">Jul 30<span>th</span>, 2007</time>
+</div>
+
+<div class="post-content"><div class='post'>
+Finally, I am getting around to an update to the TortoiseSVN Visual Studio Integration.  The catalyst for this is the release of Visual Studio 2008 (formally codename Orcas) Beta 2, and making sure I can still play with Subversion through the IDE.<br /><br />I have made a new distribution ZIP file with a few more configurations inside.<br /><br /><span style="font-weight: bold;"><a href="http://garry.bodsworth.googlepages.com/Subversion.zip">Download it here.</a></span><br /><br />It has a few more features than before including some for dealing with conflicts.  The distribution itself has a few more files so you can decide whether you want to just have the menus, toolbars or context menus.<br /><br /><a onblur="try {parent.deselectBloggerImageGracefully();} catch(e) {}" href="http://4.bp.blogspot.com/_1xvreyfQ6ns/Rq5I_talWbI/AAAAAAAAAAM/55l1sNrJM7o/s1600-h/Toolbar.png"><img style="cursor:pointer; cursor:hand;" src="http://4.bp.blogspot.com/_1xvreyfQ6ns/Rq5I_talWbI/AAAAAAAAAAM/55l1sNrJM7o/s320/Toolbar.png" border="0" alt=""id="BLOGGER_PHOTO_ID_5093088487962663346" /></a><br /><br /><span style="font-weight: bold;">Supported operations</span><br /><br />The following Subversion/TortoiseSVN features are covered in the integration:<br /><ul><li><span style="font-weight: bold;">Commit</span> - Commit the files to the repository</li><li><span style="font-weight: bold;">Update</span> - Update the current working version</li><li><span style="font-weight: bold;">History</span> - Get the history for the selected file</li><li><span style="font-weight: bold;">Diff</span> - Get the diff compared to the base version</li><li><span style="font-weight: bold;">Blame</span> - Find out who committed the crimes in the file</li><li><span style="font-weight: bold;">Revert</span> - Undo changes</li><li><span style="font-weight: bold;">Modifications</span> - Check to see if any files have been modified</li><li><span style="font-weight: bold;">Edit Conflicts</span> - Edit the conflicts that arise from merging/updating</li><li><span style="font-weight: bold;">Resolve</span> - Mark the file as resolved for conflicts</li><li><span style="font-weight: bold;">Repository</span> - View the repository on the server</li><li><span style="font-weight: bold;">Project History</span> - Get the history of the entire project</li><li><span style="font-weight: bold;">Add Solution</span> - Add the solution being edited to source control</li><li><span style="font-weight: bold;">Branch/Tag</span> - Perform a branch or tag operation on the current working copy</li><li><span style="font-weight: bold;">Settings</span> - Set up TortoiseSVN</li></ul><span style="font-weight: bold;">SubversionInstall.vbs</span><br /><br />This simply installs a set of External Tools into Visual Studio for common TortoiseSVN operations.  It can be installed on versions above Visual Studio.NET (version 7.0).  Currently it is configured for Visual Studio 2008 (version 9.0), to make it work on other versions change the variable &#8220;strVisualStudioVersionNumber&#8221; as outlined in the file&#8217;s comments.<br /><br />Also, if you have installed TortoiseSVN in a non-default location, make sure that you change the variable &#8220;strTortoiseSVNBin&#8221; to the correct binary path.  Make sure that the backslashes are doubled up.<br /><br /><span style="font-weight: bold;">SubversionMenu.vssettings</span><br /><br />This is a settings file for Visual Studio 2008.<br /><br />This adds a menu to the IDE for TortoiseSVN with the appropriate icons.<br /><br /><span style="font-weight: bold;">SubversionMenuToolbar.vssettings</span><br /><br />This is a settings file for Visual Studio 2008.<br /><br />This adds a menu for TortoiseSVN as well as a toolbar using the appropriate icons.<br /><br /><span style="font-weight: bold;">SubversionMenuToolbarContexts.vssettings</span><br /><br />This is a settings file for Visual Studio 2008.<br /><br />This adds not only the menu and toolbar, but also adds the items to the appropriate context menus for files and solutions.<br /><br /><span style="font-weight: bold;">SubversionMenuToolbarContextsVS2005.vssettings</span><br /><br />This provides the menu, toolbar and context menus for TortoiseSVN in Visual Studio 2005.<br /><br />Unfortunately there is no good solution for file renaming (I always do it through Windows Explorer) since this integration uses the External tools and allows for it to work in Visual Studio Express.</div>
+<h2>Comments</h2>
+<div class='comments'>
+<div class='comment'>
+<div class='author'>Adi</div>
+<div class='content'>
+<a rel="external" href="http://orientinspiration.com/2009/09/oes-tsetnoc.html" rel="nofollow">Oes  Tsetnoc</a> one of the ways in which we can learn seo besides <a rel="external" href="http://duniasoer.com/archives/mengembalikan-jati-diri-bangsa.html" rel="nofollow">Mengembalikan Jati Diri Bangsa</a>.  By participating in the <a rel="external" href="http://mncmakina.com/2009/09/oes-tsetnoc-seo-contest/" rel="nofollow">Oes Tsetnoc</a> or <a rel="external" href="http://ulaznice.info/mengembalikan-jati-diri-bangsa.html" rel="nofollow">Mengembalikan Jati Diri Bangsa</a> we can improve our seo skills. To find more information about <a rel="external" href="http://catatanblogger.info/738688-Oes-Tsetnoc.html" rel="nofollow">Oest Tsetnoc</a> please visit my <a rel="external" href="http://kusukaseo.info/981750-Oes-Tsetnoc-Support.html" rel="nofollow">Oes Tsetnoc</a> pages. And to find more information about <a rel="external" href="http://duniasoer.com" rel="nofollow">Mengembalikan Jati Diri Bangsa</a> please visit my <a rel="external" href="http://catatanblogger.info/464655-Mengembalikan-Jati-Diri-Bangsa.html" rel="nofollow">Mengembalikan Jati Diri Bangsa</a> pages. Thank you So much.<br> <a rel="external" href="http://orientinspiration.com" rel="nofollow">Oes  Tsetnoc</a> | <a rel="external" href="http://duniasoer.com/archives/semangat-mengembalikan-jati-diri-bangsa.html" rel="nofollow">Semangat Mengembalikan Jati Diri Bangsa</a></div>
+</div>
+<div class='comment'>
+<div class='author'>The Taker</div>
+<div class='content'>
+i cant understand how to install this.can someone tell me how to install this????</div>
+</div>
+<div class='comment'>
+<div class='author'>Nigwoko</div>
+<div class='content'>
+Thanks for this great tool</div>
+</div>
+<div class='comment'>
+<div class='author'>Anthony</div>
+<div class='content'>
+Any way to get this to install into Visual Web Developer Express Edition 2008?</div>
+</div>
+<div class='comment'>
+<div class='author'>cakesy</div>
+<div class='content'>
+So, how do I install those vsetting files in VS??</div>
+</div>
+<div class='comment'>
+<div class='author'>Baljeetsingh</div>
+<div class='content'>
+Hey<BR/> <A HREF="http://www.blogger.com/profile/06424543930869218613" REL="nofollow">Bluehorse</A> uninstall is not that difficult after removing all the registry you must set ToolNumKeys=2 you will find this in External tools only.<BR/><BR/>This means no need to remove registry entry just keep playing with the ToolNumKeys.<BR/><BR/>:)</div>
+</div>
+<div class='comment'>
+<div class='author'>Baljeetsingh</div>
+<div class='content'>
+This comment has been removed by the author.</div>
+</div>
+<div class='comment'>
+<div class='author'>Bluehorse</div>
+<div class='content'>
+Hello, regarding uninstall, editing the registry is a pain and not simple in this case, I end up with 21 grayed out menu items &#8216;External command&#8217; in Vs2008 in the Tools menu. Would be absolutely great if you could include an uninstall script.<BR/><BR/>Would also be nice if the svn commands could be grouped into a submenu.<BR/><BR/>Great approach anyway :)<BR/>2 cents</div>
+</div>
+<div class='comment'>
+<div class='author'>Joshua</div>
+<div class='content'>
+Gary, thanks for your work. On start up, I still get the error,<BR/><BR/>&#8220;The project MyProject.vcproj appears to be under source control, but the associated source control plug-in is not installed on this computer. Source control will be disabled for this project.&#8221;<BR/><BR/>Even though the toolbar seems to work. Can you help me understand why that might be? I installed the seetings for VS2005. Thanks!!</div>
+</div>
+<div class='comment'>
+<div class='author'>AndrewP</div>
+<div class='content'>
+Would you be able to write better installation steps? As you say what the files are but not how to actually install it. <BR/>What do I do with the .vbs? does it need to go into a project? Why not put it together more, even an exe would be better.<BR/><BR/>Cheers<BR/><BR/>Andrew</div>
+</div>
+<div class='comment'>
+<div class='author'>Wasatch Wizard</div>
+<div class='content'>
+I&#8217;m pretty sure you must have TortoiseSVN installed on the same machine you&#8217;re running Visual Studio from. <BR/><BR/>I use SSH over the network without any problems.</div>
+</div>
+<div class='comment'>
+<div class='author'>i-nstein</div>
+<div class='content'>
+Ok. this looks like a good alternative to VSS but am a little stuck&#8230;<BR/>Am setting up a LAN environment, the TortoiseSVN in on another machine.<BR/>I mapped the tortoisesvn to a local drive and chaged the path accordingly but all i have is grayed out menus&#8230;and all of them are a premade menu, kind of cluttering things. Can someone help me?<BR/><BR/>For the guys that have this working, has anyone tried a LAN setting?</div>
+</div>
+<div class='comment'>
+<div class='author'>i-nstein</div>
+<div class='content'>
+This comment has been removed by the author.</div>
+</div>
+<div class='comment'>
+<div class='author'>lightwaver</div>
+<div class='content'>
+Hi,<BR/><BR/>Thanks - That&#8217;s (also for me) what i&#8217;ve bee searchimg for&#8230;<BR/><BR/>There is only a simple suggestion for the VBS-Script:<BR/>If you use %ProgramFiles% at Line  15 the Script can be used without any modifications in non-english Win-Installations&#8230;</div>
+</div>
+<div class='comment'>
+<div class='author'>Wasatch Wizard</div>
+<div class='content'>
+This is exactly what I was hoping to find! Thank you for sharing your work!!</div>
+</div>
+<div class='comment'>
+<div class='author'>dmitry39</div>
+<div class='content'>
+thx, good article<BR/><BR/><A HREF="http://www.progblog.ru/" REL="nofollow">ASP.NET C# .Net Framework<BR/></A></div>
+</div>
+<div class='comment'>
+<div class='author'>Marcin</div>
+<div class='content'>
+Hi, I have small problem. External tools working fine but in VS 2005 Commit from Subversion menu runs dotfuscator? What can be a reason?</div>
+</div>
+<div class='comment'>
+<div class='author'>Mehmet</div>
+<div class='content'>
+I installed your setting files and also installed tortoiseSVN but i can add the solution to the repository, i can&#8217;t commit the solution. It gives me this error &#8220;C:\Documents and Settings\gilbert\Belgelerim\Visual Studio 2008\Projects\denemeninkrali is no a working copy. Can&#8217;t open file: C:\Documents and Settings\gilbert\Belgelerim\Visual Studio 2008\Projects\denemeninkrali&#46;svn\entries: System cannot find the path&#8221;. So i checked the document over and over to make sure if i make something wrong but everything was ok. What should i do now?</div>
+</div>
+<div class='comment'>
+<div class='author'>jayant</div>
+<div class='content'>
+hi<BR/><BR/>i am install it in visual studio 9.0<BR/>i want to know that why commit,update and some important options are not enable in subversion menu and also toolbar<BR/><BR/>jayant</div>
+</div>
+<div class='comment'>
+<div class='author'>Ryan</div>
+<div class='content'>
+In the screenshot, it displays a separate toolbar for Subversion.  When I installed this, however, it just dropped all of the options into the pre-existing Tools toolbar, in a rather unattractive manner.  Did I do something wrong, or is there an easy fix for this? Thanks.</div>
+</div>
+<div class='comment'>
+<div class='author'>ssboisen</div>
+<div class='content'>
+Commercial alternative: VisualSVN (www.visualsvn.com)</div>
+</div>
+<div class='comment'>
+<div class='author'>ssboisen</div>
+<div class='content'>
+Regarding uninstalling: Clean out regedit at <BR/><BR/>HKEY_CURRENT_USER\Software\Microsoft\VisualStudio&#34;<BR/>     \External Tools\</div>
+</div>
+<div class='comment'>
+<div class='author'>Ian</div>
+<div class='content'>
+Hi there - how would you uninstall this?<BR/><BR/>Cheers<BR/><BR/>Ian</div>
+</div>
+<div class='comment'>
+<div class='author'>mep</div>
+<div class='content'>
+Garry,<BR/><BR/>I quickly tested it and it looks great!  Very light-weight and usable.    It&#8217;s missing branch/tag and a few lesser used items but I can deal with these externally.  Thanks for making this available.</div>
+</div>
+<div class='comment'>
+<div class='author'>Julius</div>
+<div class='content'>
+Hello jorge,<BR/><BR/>I&#8217;ve tried opening the settings file in wordpad, i&#8217;ve found out that the related directories is hard coded as &#8220;c:&#92;program files&#92;&#8221;&#8230; What I did is I replaced the directory string into the target directory of tortoise SVN, and it just works fine. Hope this helps.</div>
+</div>
+<div class='comment'>
+<div class='author'>Jorge Maia</div>
+<div class='content'>
+Dear Garry, <BR/>I&#8217;ve been installed all settings and the vbs, because my opetrational system is in portuguese i change the &#8220;program files&#8221; to &#8220;Arquivos de programas&#8221; in the script vbs and the settings file. <BR/>BUT there isnt working, all icons are disabled and the menus too! any idea to help me ??</div>
+</div>
+<div class='comment'>
+<div class='author'>Josh Blair</div>
+<div class='content'>
+Awesome contribution.  Thanks for your efforts.  Huge dev workflow improvement.</div>
+</div>
+<div class='comment'>
+<div class='author'>dan</div>
+<div class='content'>
+Cheers for posting these settings, you have made my life much easier :)<BR/>I have just nixed VSS in our predominately MS shop, so this gives us another option of SVN integration in Visual Studio. Thanks again</div>
+</div>
+<div class='comment'>
+<div class='author'>Garry Bodsworth</div>
+<div class='content'>
+Sorry, forgot to say how to add it to the context menus.<BR/><BR/>Right click on the toolbars backgrounds and select &#8220;Customize&#8221;.  From the list in the toolbars tick &#8220;Context Menus&#8221; - this option is hidden when not in Customize mode.<BR/><BR/>From the new toolbar select &#8220;Project and Solution Context Menus&#8221;.  The &#8220;Item&#8221; context menu is for an individual file, and the &#8220;Solution&#8221; is for the solution.  You can probably ignore the rest.<BR/><BR/>To add one of the external tools you need to know which External Tools number maps to the TortoiseSVN command - you can see this in &#8220;Customize&#8221; mode when looking at the &#8220;Tools&#8221; menu.  On the &#8220;Commands&#8221; tab on the &#8220;Customize&#8221; dialog select &#8220;Tools&#8221; then drag the items named External Command (number) to the menu/toolbar.<BR/><BR/>Hope this helps.</div>
+</div>
+<div class='comment'>
+<div class='author'>Bjørnar</div>
+<div class='content'>
+I have no problems creating the additional external tools for item Commit/Update, but am at a loss on how to assosiate them with the context menu. The only thing missing is the actual ID for the command. I could copy and paste the rest in the settings.<BR/><BR/>Personally I use Tortoise directly from Explorer, however, I have coworkers who are more into the good old VSS UI and would like the icon overlays. I downloaded the Ankh source yesterday and skimmed through the filenames looking for a n instant clue where to look for the overlays, but didn&#8217;t have the time to look more into it. I guess figuring it out when I have the time shouldn&#8217;t cause too much trouble creating a simple addin with the functionality of using the correct overlay.<BR/><BR/>However, I like the simplicity of the integration (no coding) and expect to use it frequently.<BR/><BR/>Thank you for your work so far.</div>
+</div>
+<div class='comment'>
+<div class='author'>Garry Bodsworth</div>
+<div class='content'>
+In order to have a commit/update for an individual file you would need to create a new commit/update command that uses $(ItemPath) and $(ItemDir).  Then you can easily add these to the context menus.<BR/><BR/>Doing the icon overlay is not necessary for me as I use Check For Modifications infrequently.  What I prefer about this integration is that it is a very thin layer wrapping the functionality that really does not get in the way.  I never really care what I&#8217;ve edited or anything like that until I commit.  I&#8217;ve changed the way I work with source control now in comparison to my days battling with VSS, it is actually almost a case of I don&#8217;t need to even think about the source control.<BR/><BR/>If you want a more comprehensive VSS style integration I recommend having a look at AnkhSVN:<BR/>http://ankhsvn.tigris.org/<BR/>This could also give you a hint at how to do icon overlays ;)</div>
+</div>
+<div class='comment'>
+<div class='author'>Bjørnar</div>
+<div class='content'>
+I wouldn&#8217;t mind having an additional context menu for Commit/Update/etc for individual files/folders. I tried fixing it myself, but couldn&#8217;t figure out how to refer to commands (or find the id for a command).<BR/><BR/>I&#8217;ve also started looking into a way of making solution explorer use overlay icons from Tortoise/Explorer, but VS extensibility isn&#8217;t my area ;o) <BR/><BR/>So far I have found this integration to be very sweet ;o)</div>
+</div>
+</div>
+</div>
+ </div>
+
+  
+  <div class="post"> <div class="post-header">
+  
+    <h1 class="post-title">
+      <a href="/blog/2007/07/25/c-front-end-for-llvm-open-sourced/">C Front-End for LLVM Open-Sourced</a>
+    </h1>
+  
+  
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2007-07-25T21:59:00+01:00" pubdate data-updated="true">Jul 25<span>th</span>, 2007</time>
+</div>
+
+<div class="post-content"><div class='post'>
+I covered <a href="http://garrys-brain.blogspot.com/2007/07/llvm-low-level-virtual-machine.html">LLVM briefly earlier</a>.  I did mention Apple were working on a new C front-end called Clang.<br /><br />Now the C front-end has been open-sourced there is a small website for CFE/Clang <a href="http://llvm.org/cfe/">here</a>.<br /><br />There is a post about it <a href="http://lists.cs.uiuc.edu/pipermail/llvmdev/2007-July/009817.html">here</a>.  This is a good step in open-source tools, and hopefully will spur other tool developments on.</div>
+</div>
+ </div>
+
+  
+  <div class="post"> <div class="post-header">
+  
+    <h1 class="post-title">
+      <a href="/blog/2007/07/25/intel-open-sources-threading-bulding/">Intel Open-Sources Threading Bulding Blocks</a>
+    </h1>
+  
+  
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2007-07-25T21:44:00+01:00" pubdate data-updated="true">Jul 25<span>th</span>, 2007</time>
+</div>
+
+<div class="post-content"><div class='post'>
+Intel has just <a href="http://threadingbuildingblocks.org/">open-sourced their Threading Building Blocks library</a>.  Intel describe it as a &#8220;rich and complete approach to expressing parallelism in a C++ program&#8221;.<br /><br />With multi-threading in general being so immature when looking at other libraries, another solution can never hurt.  So add it to Boost.Threads, OpenMP, wxThread and the myriad of others.  Admittedly the way that all of the alternatives work is very low-level and means very careful design is required.<br /><br />I&#8217;m interested to see the approach of the library to multi-threading as it looks quite complicated to wrap your head around.  The best bit though is there is apparently a cache aligned memory allocator as part of it that can be used independently.<br /><br />There is a Slashdot article about it <a href="http://developers.slashdot.org/developers/07/07/25/1324221.shtml">here</a>.  Also a bog post <a href="http://softwareblogs.intel.com/2006/12/18/threading-building-blocks-solution-looking-for-a-problem/">here</a> looks interesting covering the subject.<br /><br />All I can say is let battle commence and lets see what multi-threading packages are left standing ;)</div>
+</div>
+ </div>
+
+
+<div id="pagination">
+  
+    <a class="prev" href="/blog/page/31/">&laquo;Previous</a>
+  
+  
+    <a class="next" href="/blog/page/29/">Next&raquo;</a>
+  
+</div>
+ </div>
+    <div id="footer">
+  <div class="panels">
+    <div class="license">
+      <h2>License</h2>
+      <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-nc-sa/3.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/">Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License</a>.
+    </div>
+
+    <div class="posts">
+      <h2>Recent Posts</h2>
+      <ul>
+        
+          <li>
+            <a href="/blog/2013/06/22/rss-feed-moved-to-http-slash-slash-www-dot-fragmentedmemory-dot-com-slash-feed-slash/">RSS Feed Moved To http://www.fragmentedmemory.com/feed/</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2013/06/18/new-location-and-new-blog-engine-and-old-content-restored/">New Location &amp; New Blog Engine &amp; Old Content Restored</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2013/06/13/joining-microsoft/">Joining Microsoft</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2013/06/13/leaving-bromium/">Leaving Bromium</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2013/03/05/philip-su-engineering-process-and/">Philip Su - Engineering Process And Philosophy At Facebook</a>
+          </li>
+        
+      </ul>
+    </div>
+
+    <div class="posts">
+      <h2>Links</h2>
+      <a href='https://alpha.app.net/gjb' class='adn-button' target='_blank' data-type='follow' data-width='277' data-height='27' data-user-id='@gjb' data-show-username='1' rel='me'>Follow me on App.net</a><script>(function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src='//d2zh9g63fcvyrq.cloudfront.net/adn.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'adn-button-js'));</script>
+    </div>
+  </div>
+
+  <p class="powered">
+    Powered by <a href="http://octopress.org">Octopress</a> and <a href="https://github.com/iwinux/compbits">Compbits</a>
+  </p>
+</div>
+
+  </div> <!-- #wrapper end -->
+
+  
+
+  
+
+
+  
+
+  
+
+  
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+</body>
+</html>

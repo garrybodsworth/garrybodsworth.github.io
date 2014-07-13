@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: STL | Fragmented Memory]]></title>
+  <link href="http://www.fragmentedmemory.com/blog/categories/stl/atom.xml" rel="self"/>
+  <link href="http://www.fragmentedmemory.com/"/>
+  <updated>2013-06-23T17:13:57+01:00</updated>
+  <id>http://www.fragmentedmemory.com/</id>
+  <author>
+    <name><![CDATA[Garry Bodsworth]]></name>
+    <email><![CDATA[blog@fragmentedmemory.com]]></email>
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Microsoft STL Performance]]></title>
+    <link href="http://www.fragmentedmemory.com/blog/2008/04/13/microsoft-stl-performance/"/>
+    <updated>2008-04-13T21:28:00+01:00</updated>
+    <id>http://www.fragmentedmemory.com/blog/2008/04/13/microsoft-stl-performance</id>
+    <content type="html"><![CDATA[<div class='post'>
+On the <a href="http://www.boost.org">Boost</a> discussion group there is a discussion started about <a href="http://www.nabble.com/High-Cost-of-MS-"Safe"-STL-for-Release-Builds-td16642449.html#a16642449">High Cost of MS "Safe" STL for Release Builds</a>.  It is an interesting look at the massive differences between "safe" and "non-safe" options in Microsoft STL.<br /><br />I don't think there has been a clear look at the efficiencies and inefficiencies in the MS-STL implementation, especially with the different options (iterator debugging and safe options).  There have been some looks at comparing different STL implementations but it always difficult to do a good comparison, the main problem being comparing the correct "latest versions".<br /><br />Going back a while I was justifying the use of <a href="http://stlport.sourceforge.net/">STLPort</a> instead of Microsoft STL supplied with Visual Studio.  Simply, it was a performance thing with both memory and efficiency.  Certainly with the new STLPort visualisers for the Microsoft debugger it is an even playing field for ease of use.<br /><br />You can read those here:<br />* <a href="http://garrys-brain.blogspot.com/2006/10/visual-studio-2005-lets-break.html">Visual Studio 2005 - Lets Break Everything!</a> - a bit about how to switch off some of the more annoying "features".<br />* <a href="http://garrys-brain.blogspot.com/2007/01/development-stlport-versus-microsoft.html">Development - STLPort versus Microsoft STL performance</a> - A quick summary of my observations on the performance in a real-world complex application.<br />* <a href="http://garrys-brain.blogspot.com/2007/01/more-on-stlport-and-microsoft-stl.html">More on STLPort and Microsoft STL performance</a> - A little more background.</div>
+
+
+<h2>Comments</h2>
+
+
+<div class='comments'>
+<div class='comment'>
+<div class='author'>Adi</div>
+<div class='content'>
+<a rel="external" href="http://orientinspiration.com/2009/09/oes-tsetnoc.html" rel="nofollow">Oes  Tsetnoc</a> one of the ways in which we can learn seo besides <a rel="external" href="http://duniasoer.com/archives/mengembalikan-jati-diri-bangsa.html" rel="nofollow">Mengembalikan Jati Diri Bangsa</a>.  By participating in the <a rel="external" href="http://mncmakina.com/2009/09/oes-tsetnoc-seo-contest/" rel="nofollow">Oes Tsetnoc</a> or <a rel="external" href="http://ulaznice.info/mengembalikan-jati-diri-bangsa.html" rel="nofollow">Mengembalikan Jati Diri Bangsa</a> we can improve our seo skills. To find more information about <a rel="external" href="http://catatanblogger.info/738688-Oes-Tsetnoc.html" rel="nofollow">Oest Tsetnoc</a> please visit my <a rel="external" href="http://kusukaseo.info/981750-Oes-Tsetnoc-Support.html" rel="nofollow">Oes Tsetnoc</a> pages. And to find more information about <a rel="external" href="http://duniasoer.com" rel="nofollow">Mengembalikan Jati Diri Bangsa</a> please visit my <a rel="external" href="http://catatanblogger.info/464655-Mengembalikan-Jati-Diri-Bangsa.html" rel="nofollow">Mengembalikan Jati Diri Bangsa</a> pages. Thank you So much.</div>
+</div>
+<div class='comment'>
+<div class='author'>Felipe V. Rigo</div>
+<div class='content'>
+Hi Garry,<BR/><BR/>I came to ur blog looking for TortoiseSVN and Visual Studio Integration.<BR/><BR/>I need a fast connection on source control system throught the world. There are developers in South America and Japan.<BR/><BR/>I'm looking for a good and cheap solution.<BR/><BR/>What do u recommend?<BR/><BR/>I would appreciate any help.<BR/>Thank You</div>
+</div>
+</div>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[More STL - MCSTL and STXXL]]></title>
+    <link href="http://www.fragmentedmemory.com/blog/2008/04/11/more-stl-mcstl-and-stxxl/"/>
+    <updated>2008-04-11T20:22:00+01:00</updated>
+    <id>http://www.fragmentedmemory.com/blog/2008/04/11/more-stl-mcstl-and-stxxl</id>
+    <content type="html"><![CDATA[<div class='post'>
+In a few previous posts I have mentioned some alternative STL implementations.  You can read about <a href="http://garrys-brain.blogspot.com/2008/03/stl-related-rdestl.html">rdestl here</a> as well as <a href="http://garrys-brain.blogspot.com/2008/03/more-stl-ustl-and-stdcxx.html">uSTL and stdcxx here</a>.<br /><br />I've stumbled across a couple of other STL implementations for more specific purposes that I thought some people might find useful.<br /><br />First up is <a href="http://algo2.iti.uni-karlsruhe.de/singler/mcstl/">MCSTL - The Multi-Core Standard Template Library</a> which is a multi-core implementation of certain STL algorithms.  This has actually been integrated into the GCC STL implementation with version 4.3.  It uses OpenMP internally for the multi-threading so would be limited to compilers with valid implementations of that functionality.<br /><br />Next up there is <a href="http://stxxl.sourceforge.net/">STXXL: Standard Template Library for Extra Large Data Sets</a>.  I think the blurb sums it up:<br /><blockquote>The core of STXXL is an implementation of the C++ standard template library STL for external memory (out-of-core) computations, i.e., STXXL implements containers and algorithms that can process huge volumes of data that only fit on disks. While the compatibility to the STL supports ease of use and compatibility with existing applications, another design priority is high performance.</blockquote>After seeing some extra long and large computations on huge data sets this can be used to get around limitations of the platform with less addressable space.</div>
+
+
+<h2>Comments</h2>
+
+
+<div class='comments'>
+<div class='comment'>
+<div class='author'>Adi</div>
+<div class='content'>
+<a rel="external" href="http://orientinspiration.com/2009/09/oes-tsetnoc.html" rel="nofollow">Oes  Tsetnoc</a> one of the ways in which we can learn seo besides <a rel="external" href="http://duniasoer.com/archives/mengembalikan-jati-diri-bangsa.html" rel="nofollow">Mengembalikan Jati Diri Bangsa</a>.  By participating in the <a rel="external" href="http://mncmakina.com/2009/09/oes-tsetnoc-seo-contest/" rel="nofollow">Oes Tsetnoc</a> or <a rel="external" href="http://ulaznice.info/mengembalikan-jati-diri-bangsa.html" rel="nofollow">Mengembalikan Jati Diri Bangsa</a> we can improve our seo skills. To find more information about <a rel="external" href="http://catatanblogger.info/738688-Oes-Tsetnoc.html" rel="nofollow">Oest Tsetnoc</a> please visit my <a rel="external" href="http://kusukaseo.info/981750-Oes-Tsetnoc-Support.html" rel="nofollow">Oes Tsetnoc</a> pages. And to find more information about <a rel="external" href="http://duniasoer.com" rel="nofollow">Mengembalikan Jati Diri Bangsa</a> please visit my <a rel="external" href="http://catatanblogger.info/464655-Mengembalikan-Jati-Diri-Bangsa.html" rel="nofollow">Mengembalikan Jati Diri Bangsa</a> pages. Thank you So much.<br> <a rel="external" href="http://orientinspiration.com" rel="nofollow">Oes  Tsetnoc</a> | <a rel="external" href="http://duniasoer.com/archives/semangat-mengembalikan-jati-diri-bangsa.html" rel="nofollow">Semangat Mengembalikan Jati Diri Bangsa</a></div>
+</div>
+<div class='comment'>
+<div class='author'>kevin p.</div>
+<div class='content'>
+Very interesting.  I've been reading about STXXL, then found your post in a related search.<BR/><BR/>It would cool to see these two merged together - STMCXXL or something.</div>
+</div>
+</div>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Visual C++ 2008 Feature Pack Released]]></title>
+    <link href="http://www.fragmentedmemory.com/blog/2008/04/10/visual-c-2008-feature-pack-released/"/>
+    <updated>2008-04-10T20:31:00+01:00</updated>
+    <id>http://www.fragmentedmemory.com/blog/2008/04/10/visual-c-2008-feature-pack-released</id>
+    <content type="html"><![CDATA[<div class='post'>
+Good news for Windows C++ developers the update to Visual Studio 2008 <a href="http://blogs.msdn.com/somasegar/archive/2008/04/07/visual-c-2008-feature-pack-shipped.aspx">has been released</a>.  This "Feature Pack" contains some of the new TR1 C++ standard library as well as a major MFC update.<br /><br />Details from the Visual C++ Team Weblog can be found <a href="http://blogs.msdn.com/vcblog/archive/2008/04/07/visual-c-2008-feature-pack-released.aspx">here</a> with some videos and links.<br /><br /><span style="font-weight:bold;">TR1 Update</span><br /><br />The TR1 update is an integration of some more <a href="http://www.dinkumware.com/">Dinkumware</a> library functionality.  The features available are:<br />* array - Defines the container template class array and several supporting templates.<br />* functional - Defines several templates that help construct function objects, which are objects of a type that defines operator(). A function object can be a function pointer, but more typically, the object is used to store additional information that can be accessed during a function call.<br />* memory - Defines a class, an operator, and several templates that help allocate and free objects.<br />* random - Defines many random number generators.<br />* regex - Defines a template class to parse regular expressions, and several template classes and functions to search text for matches to a regular expression object.<br />* tuple - Defines a template tuple Class whose instances hold objects of varying types.<br />* type_traits - Defines templates that provide compile-time constants that give information about the properties of their type arguments.<br />* unordered_map - Defines the container template classes unordered_map and unordered_multimap and their supporting templates.<br />* unordered_set - Defines the container template classes unordered_multiset and unordered_set and their supporting templates.<br />* utility - Defines several general templates that can be used throughout the Standard Template Library.<br /><br /><span style="font-weight:bold;">MFC Update</span><br /><br />The MFC Update integrates BCGSoft's libraries into the base MFC and provides masses of useful user interface constructs for native developers.  Details from the Visual C++ Weblog is <a href="http://blogs.msdn.com/vcblog/archive/2008/04/07/mfc-update-powered-by-bcgsoft.aspx">here</a>.<br /><br />Some of the new features are:<br />* Office 2007 Ribbon Bar:  Ribbon, Pearl, Quick Access Toolbar, Status Bar, etc.<br />* Office 2003 and XP look:  Office-style toolbars and menus, Outlook-style shortcut bar, print preview, live font picker, color picker, etc.<br />* Visual Studio look:  sophisticated docking functionality, auto hide windows, property grids, MDI tabs, tab groups, etc.<br />* Internet Explorer look:  Rebars and task panes.<br />* Vista theme support.<br />* “On the fly” menus and toolbar customization:  users can customize the running application through live drag and drop of menu items and toolbar buttons.<br />* Shell management classes:  use these classes to enumerate folders, drives and items, browse for folders and more.<br /><br /><br />You can download all this from <a href="http://www.microsoft.com/downloads/details.aspx?FamilyId=D466226B-8DAB-445F-A7B4-448B326C48E7&displaylang=en">here</a>.</div>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[More STL - uSTL and stdcxx]]></title>
+    <link href="http://www.fragmentedmemory.com/blog/2008/03/05/more-stl-ustl-and-stdcxx/"/>
+    <updated>2008-03-05T19:34:00+00:00</updated>
+    <id>http://www.fragmentedmemory.com/blog/2008/03/05/more-stl-ustl-and-stdcxx</id>
+    <content type="html"><![CDATA[<div class='post'>
+Thanks to a commenter on the <a href="http://garrys-brain.blogspot.com/2008/03/stl-related-rdestl.html">RDESTL post</a> I made yesterday, they pointed me at the <a href="http://ustl.sourceforge.net/">uSTL</a> (I assume pronounced micro-STL).<br /><br />It is a partial implementation of the STL specification.  It reduces code size by making memory allocation a non-templated base class.  As far as I can tell this reduces executable size because of less template bloat.  Whether it is faster or smaller in memory for the containers is another matter.  I suppose by reducing the executable size  cache coherency could be improved leading to some interesting speed-ups.<br /><br />It is for POSIX-based systems, and there is no maintained Windows port (a choice of the developer) although some peole have got it to work on Windows with differing levels of success.<br /><br />And another STL implementation I stumbled across is the <a href="http://stdcxx.apache.org/">Apache stdcxx</a>.  The project was started from a code donation by Rogue Wave who decided to open-source their commercial offering.<br /><br />At the end of 2007 stdcxx made it to an Apache Top-Level Project which means it should be well supported.  And apparently performance s quite good as well.</div>
+
+
+<h2>Comments</h2>
+
+
+<div class='comments'>
+<div class='comment'>
+<div class='author'>Adi</div>
+<div class='content'>
+<a rel="external" href="http://orientinspiration.com/2009/09/oes-tsetnoc.html" rel="nofollow">Oes  Tsetnoc</a> one of the ways in which we can learn seo besides <a rel="external" href="http://duniasoer.com/archives/mengembalikan-jati-diri-bangsa.html" rel="nofollow">Mengembalikan Jati Diri Bangsa</a>.  By participating in the <a rel="external" href="http://mncmakina.com/2009/09/oes-tsetnoc-seo-contest/" rel="nofollow">Oes Tsetnoc</a> or <a rel="external" href="http://ulaznice.info/mengembalikan-jati-diri-bangsa.html" rel="nofollow">Mengembalikan Jati Diri Bangsa</a> we can improve our seo skills. To find more information about <a rel="external" href="http://catatanblogger.info/738688-Oes-Tsetnoc.html" rel="nofollow">Oest Tsetnoc</a> please visit my <a rel="external" href="http://kusukaseo.info/981750-Oes-Tsetnoc-Support.html" rel="nofollow">Oes Tsetnoc</a> pages. And to find more information about <a rel="external" href="http://duniasoer.com" rel="nofollow">Mengembalikan Jati Diri Bangsa</a> please visit my <a rel="external" href="http://catatanblogger.info/464655-Mengembalikan-Jati-Diri-Bangsa.html" rel="nofollow">Mengembalikan Jati Diri Bangsa</a> pages. Thank you So much.<br> <a rel="external" href="http://orientinspiration.com" rel="nofollow">Oes  Tsetnoc</a> | <a rel="external" href="http://duniasoer.com/archives/semangat-mengembalikan-jati-diri-bangsa.html" rel="nofollow">Semangat Mengembalikan Jati Diri Bangsa</a></div>
+</div>
+<div class='comment'>
+<div class='author'>vincent</div>
+<div class='content'>
+It's always interesting to have a STL implementation that everybody can understand. If you have already had a look at STL implementation and you haven't a headache you are very talented.<BR/><BR/>Anyway I have ported ustl for windows platforms and windows CE is in progress.<BR/>You can find it here : http://www.smartmobili.com/index.php?option=com_content&task=view&id=35&Itemid=41&lang=english</div>
+</div>
+<div class='comment'>
+<div class='author'>Jalf</div>
+<div class='content'>
+The Visual C++ compiler is actually very good at eliminating code bloat from templates (The COMDAT folding compiler option)<BR/>Often, most instantiations of a template end up identical anyway, so merging them into a single object is a fairly obvious optimization.<BR/><BR/>In my experience, that pretty much eliminates the problem entirely on Windows, so the lack of a Windows port of uSTL doesn't seem to be a big deal.<BR/><BR/>By contrast, GCC doesn't (or didn't) perform similar tricks. They had a fairly long discussion about implementing such an optimization on their dev mailing list a while back, and back then, the consensus was that it would compromise standards compliance (because it could mean multiple functions could end up with the same addresses)<BR/><BR/>I don't know if GCC has added this optimization since then, but I doubt it.<BR/><BR/>Which makes uSTL relevant on GCC platforms, but essentially pointless on Windows.</div>
+</div>
+</div>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[STL-related : rdestl]]></title>
+    <link href="http://www.fragmentedmemory.com/blog/2008/03/04/stl-related-rdestl/"/>
+    <updated>2008-03-04T20:16:00+00:00</updated>
+    <id>http://www.fragmentedmemory.com/blog/2008/03/04/stl-related-rdestl</id>
+    <content type="html"><![CDATA[<div class='post'>
+A while back I <a href="http://garrys-brain.blogspot.com/2007/09/eastl-and-allocators.html">blogged</a> about the <a href="http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2007/n2271.html">EASTL</a> - Electronic Arts Standard Template Library.<br /><br />It is an interesting look at how EA have internally implemented their own STL with their own improvements/changes specific to their problem domain.<br /><br /><a href="http://msinilo.pl/blog/">Maciej Sinilo</a> has spent some time putting together a small subset of the STL changed for some game development requirements called the <a href="http://code.google.com/p/rdestl/">RDESTL</a>.  The related blog posts can be read <a href="http://msinilo.pl/blog/?p=25">here</a>, <a href="http://msinilo.pl/blog/?p=28">here</a> and <a href="http://msinilo.pl/blog/?p=33">here</a>.  It provides some basic containers (vector, etc), a string class, and some additional container types like intrusive containers.  It also provides the EASTL outlook on allocators (which I don't agree with but that is another story).<br /><br />It is definitely interesting to see the code as it is quite readable.  I do wonder whether it achieved part of the EASTL goal which was allowing the compiler to optimise more aggressively because the code is simpler with less indirection.<br /><br />Also, here is a <a href="http://www.spreetree.net/blog/?p=7">link</a> to someone else who is replacing the STL.  Link via the excellent <a href="http://warpedvisions.org/">warpedvisions</a> (with an excellent biting comment).</div>
+
+
+<h2>Comments</h2>
+
+
+<div class='comments'>
+<div class='comment'>
+<div class='author'>Adi</div>
+<div class='content'>
+<a rel="external" href="http://orientinspiration.com/2009/09/oes-tsetnoc.html" rel="nofollow">Oes  Tsetnoc</a> one of the ways in which we can learn seo besides <a rel="external" href="http://duniasoer.com/archives/mengembalikan-jati-diri-bangsa.html" rel="nofollow">Mengembalikan Jati Diri Bangsa</a>.  By participating in the <a rel="external" href="http://mncmakina.com/2009/09/oes-tsetnoc-seo-contest/" rel="nofollow">Oes Tsetnoc</a> or <a rel="external" href="http://ulaznice.info/mengembalikan-jati-diri-bangsa.html" rel="nofollow">Mengembalikan Jati Diri Bangsa</a> we can improve our seo skills. To find more information about <a rel="external" href="http://catatanblogger.info/738688-Oes-Tsetnoc.html" rel="nofollow">Oest Tsetnoc</a> please visit my <a rel="external" href="http://kusukaseo.info/981750-Oes-Tsetnoc-Support.html" rel="nofollow">Oes Tsetnoc</a> pages. And to find more information about <a rel="external" href="http://duniasoer.com" rel="nofollow">Mengembalikan Jati Diri Bangsa</a> please visit my <a rel="external" href="http://catatanblogger.info/464655-Mengembalikan-Jati-Diri-Bangsa.html" rel="nofollow">Mengembalikan Jati Diri Bangsa</a> pages. Thank you So much.<br> <a rel="external" href="http://orientinspiration.com" rel="nofollow">Oes  Tsetnoc</a> | <a rel="external" href="http://duniasoer.com/archives/semangat-mengembalikan-jati-diri-bangsa.html" rel="nofollow">Semangat Mengembalikan Jati Diri Bangsa</a></div>
+</div>
+<div class='comment'>
+<div class='author'>MaciejS</div>
+<div class='content'>
+There's also uSTL - STL-like library optimized for size. Quite interesting, however not 100% compatible.</div>
+</div>
+</div>
+
+]]></content>
+  </entry>
+  
+</feed>

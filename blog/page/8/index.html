@@ -1,0 +1,562 @@
+
+<!DOCTYPE HTML>
+<html lang="en-gb">
+<head>
+  <meta charset="UTF-8">
+  <title>Fragmented Memory</title>
+
+  <meta name="author" content="Garry Bodsworth">
+  
+  <meta name="description" content="DisplayLink Open Source May 16th, 2009 Yesterday Displaylink released Linux source code for its USB display adapters. The project is LGPL and &hellip;">
+  
+  
+
+  <link rel="canonical" href="http://www.fragmentedmemory.com/blog/page/8">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/feed/" rel="alternate" title="Fragmented Memory" type="application/atom+xml">
+</head>
+  
+<body class="default">
+  <div id="wrapper">
+    <div id="header">
+  <h1><a href="/">Fragmented Memory</a></h1>
+  
+    <p>Garry Bodsworth's Blog (formerly Garry's Bit Patterns &amp; Programmer's Log)</p>
+  
+</div>
+<ul id="social-links">
+  
+    <li><a class="rss" href="/feed/" title="RSS">RSS</a></li>
+  
+  
+  
+  
+    <li><a class="twitter" href="http://twitter.com/garrybodsworth" title="Twitter">Twitter</a></li>
+  
+  
+    <li><a class="github" href="https://github.com/garrybodsworth" title="GitHub">GitHub</a></li>
+  
+  
+  
+    <li><a class="linkedin" href="http://www.linkedin.com/in/garrybodsworth">LinkedIn</a></li>
+  
+  
+  
+  
+    <li><a class="pinboard" href="https://pinboard.in/u:garrybodsworth" title="Pinboard">Pinboard</a></li>
+  
+</ul>
+<div class="clear"></div>
+<ul id="nav">
+  
+    <li> <a href="/" class="current">blog</a> </li>
+  
+
+  
+    <li><a href="/blog/archives">archives</a></li>
+  
+
+  
+    <li><a href="/about">about</a></li>
+  
+</ul>
+
+    <div id="main"> 
+
+  
+  <div class="post"> <div class="post-header">
+  
+    <h1 class="post-title">
+      <a href="/blog/2009/05/16/displaylink-open-source/">DisplayLink Open Source</a>
+    </h1>
+  
+  
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2009-05-16T00:00:00+01:00" pubdate data-updated="true">May 16<span>th</span>, 2009</time>
+</div>
+
+<div class="post-content"><p>Yesterday <a href="http://www.displaylink.com">Displaylink</a> released Linux source code for its USB display adapters. The project is LGPL and available on <a href="http://freedesktop.org">FreeDesktop</a>. The project itself is called libdlo and is available from <a href="http://freedesktop.org/wiki/Software/libdlo">this link</a> with the Git repository <a href="http://cgit.freedesktop.org/libdlo/">here</a>. You can see DisplayLink&#8217;s announcement <a href="http://www.displaylink.com/news/news150509.htm">here</a>.</p>
+
+<p>At the moment it is a low-level library for speaking to the device and is not yet wrapped in a Xorg driver. The code itself supports ASIC devices and only the USB versions (if that means something to you then you have probably worked for DisplayLink at some point).</p>
+
+<p>The code itself is impressively documented, and means people should be able to get something up and running pretty fast. I&#8217;m sure some interesting and exciting projects will come out of this.</p>
+
+<p>Well done to DisplayLink on doing this &#8211; this is going to be a really good thing for getting content onto displays. USB is a really good solution &#8211; imagine daisy-chaining lots of displays controlled by a single computer.</p>
+</div>
+ </div>
+
+  
+  <div class="post"> <div class="post-header">
+  
+    <h1 class="post-title">
+      <a href="/blog/2009/04/13/xbmc-mythtv-bridge/">XBMC MythTV Bridge</a>
+    </h1>
+  
+  
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2009-04-13T00:00:00+01:00" pubdate data-updated="true">Apr 13<span>th</span>, 2009</time>
+</div>
+
+<div class="post-content"><p>It seems I spoke to soon, I stumbled across <a href="http://code.google.com/p/mythbox/">MythBox</a> just after posting about MythTV. It seems it will let me schedule through XBMC my MythTV recordings and let me watch live TV.</p>
+
+<p>The <a href="http://code.google.com/p/mythbox/wiki/Screenshots">screenshots here</a> look really good. And it seems then I will be able to leave behind MythFrontend. I&#8217;m not too sure where the Subversion repository lives, but you get all the python files in the tar.gz, which makes it look pretty hackable.</p>
+</div>
+ </div>
+
+  
+  <div class="post"> <div class="post-header">
+  
+    <h1 class="post-title">
+      <a href="/blog/2009/04/13/nvidia-linux-acpi-borked/">nVidia + Linux + ACPI = Borked</a>
+    </h1>
+  
+  
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2009-04-13T00:00:00+01:00" pubdate data-updated="true">Apr 13<span>th</span>, 2009</time>
+</div>
+
+<div class="post-content"><p>It&#8217;s a simple equation and has cost me a day of trying to get ACPI suspend/hibernate working on Linux. It took me long enough to realise it was the nVidia driver causing the issue.</p>
+
+<p>Whenever I tried suspend or hibernate I would get a black screen with a flashing cursor in the top left. After working out it was the nVidia driver I tried all the remedies I could find on the Internet by other people with the same bug. What I discovered was this problem has been around for going on at least three years and no solution is being worked on.</p>
+
+<p>The obvious articles are <a href="http://www.amitsrivastava.net/2008-03-23-hibernate-suspend-resolved-ubuntu-gutsy-nvidia-dell-vostro/">here</a>, <a href="https://help.ubuntu.com/community/NvidiaLaptopBinaryDriverSuspend">here</a>, <a href="http://us.download.nvidia.com/XFree86/Linux-x86/1.0-9755/README/appendix-f.html">here</a>, <a href="http://en.opensuse.org/Talk:NVidia_Suspend_HOWTO">here</a>, and <a href="http://susewiki.org/index.php?title=Suspending_with_the_NVidia_drivers">here</a>.</p>
+
+<p>All solutions provide slightly different but the same solution, you need to set NvAGP in your xorg.conf to either 0 or 1 and optionally use agp=off for your kernel. I tried various concoctions and none of them worked.</p>
+
+<p>I think I worked out what the problem is though. If your motherboard chipset is not nVidia (I think they call them nForce) then NvAGP will never work because mine always drops back to agpgart. This must be why most of the success is seen on laptops where the IGP must be using nVidia chipsets. My motherboard has a VIA chipset (old and crusty I know) with a GeForce 8500GT hence my complete and utter lack of success.</p>
+
+<p>Like I said this problem has been around for quite a while and the chipset problem could be why the only responses I have read from nVidia is that they are unable to reproduce it. So for me it will be a new sensible graphics card with hopefully fairly open drivers.</p>
+</div>
+ </div>
+
+  
+  <div class="post"> <div class="post-header">
+  
+    <h1 class="post-title">
+      <a href="/blog/2009/04/13/how-to-ruin-a-long-weekend/">How to Ruin a Long Weekend</a>
+    </h1>
+  
+  
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2009-04-13T00:00:00+01:00" pubdate data-updated="true">Apr 13<span>th</span>, 2009</time>
+</div>
+
+<div class="post-content"><p>One of the things I was looking forward to this long weekend was watching DVDs. So I come back home on Thursday plonk my Tales Of The Black Freighter into my Windows Media Center 2005 box and I get jerky video and crackly sound. So I then spend a day trying to diagnose the problem&#8230;. Starting with making sure my Windows install is up to date with patches, new nVidia drivers (which managed to successfully break everything so I tried multiple versions), and new versions of the codecs I use. The best part was in Media Player I got no sound and fine video, but on Media Center I got jerky video and crackly sound. All from the same codec.</p>
+
+<p>So, I decided it was time try MythTV properly, so I nuked the drive with a Xubuntu install which crashed halfway through showing me the true nature of my problem when there was no turning back &#8211; the DVD drive was dying. So I decided to proceed with my Linux install because I was on my way and liked the philosophy behind MythTV&#8217;s design.</p>
+
+<p>Now three days later I have a mostly working system, but I have had a number of casualties. First my DVD drive, then I blew up my monitor which I had to drive all the way to the office to collect, and now my graphics card is living on borrowed time (I will post about that in a bit). None of it is MythTV&#8217;s or Ubuntu&#8217;s fault, but I should of known when the weekend starts badly it can only get worse. I even got so desperate I considered installing Vista, but I am now really close to getting the whole system up and running.</p>
+
+<p>As for MythTV itself &#8211; the features it provides were exactly what I wanted, DVD, TV, CD music, random downloaded videos. But it has proved to be such a pain, some of it Xubuntu&#8217;s fault, some of it is MythTV&#8217;s, and my greatest share of pain has come from nVidia.</p>
+
+<p>The backend design of MythTV is a real good idea but it is painful to get up and running &#8211; even with the nicely supplied packages. Especially if you decide to change your IP address or XMLTV stops working briefly. The setup user interface is designed to be used from a big screen, but is extremely unintuitive and counter to any GUI guidelines you have ever seen. It took about three attempts to get the hook up between XMLTV and my DVB-T card correct and in the database.</p>
+
+<p>The frontend is okay, but is at least five years behind anything you have seen for media centers (they have a new version they are working on but there is no planned release yet). You have to fiddle around so you can successfully eject DVDs, get your remote set up (involving text configuration files) which works okay but not intuitively (the stop button doesn&#8217;t do what I expect on a Windows MCE remote), watch DVDs (enable the correct repositories), and getting your Samba mounts working (why on earth aren&#8217;t Samba shares an optional directory rather than having to mess around with fstab?)</p>
+
+<p>I did try X-Box Media Center as a front-end for the MythTV backend. It is much nicer to look at, provides some real good features (with a great iPlayer plug-in), worked with the MCE remote flawlessly and sensibly, and is only lacking the ability to schedule recordings. If that was possible I would use that as a frontend, because it seems much more stable than the MythTV UI. I did also try Boxee, the commercial version of XBMC, but although it looked quite nice I found it was not as good as XBMC it is derived from and its MythTV frontend refused to work as it is broken.</p>
+
+<p>My thoughts this weekend have gone from MCE2005 to MythTV to XBMC to Boxee to XBMC to MythTV&#8230;. That also discounts the amount of time I sat down considering how I would write my own.</p>
+
+<p>My main work now is to get hibernate and suspend working, but that requires a post all of its own. At least at that point I will be functionally equivalent to my Windows MCE2005 install that I nuked.</p>
+</div>
+ </div>
+
+  
+  <div class="post"> <div class="post-header">
+  
+    <h1 class="post-title">
+      <a href="/blog/2009/03/22/watchmen/">Watchmen</a>
+    </h1>
+  
+  
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2009-03-22T00:00:00+00:00" pubdate data-updated="true">Mar 22<span>nd</span>, 2009</time>
+</div>
+
+<div class="post-content"><p>Since I am so behind the times I finally saw Watchmen the movie today&#8230;. I didn&#8217;t know what to expect because it is a masterpiece of comic storytelling, but there are plenty of reviews out there to tell you whether they liked it or not.</p>
+
+<p>What got me was a small part in the film when Rorschach goes into the bathroom to exact punishment on Big Figure and you can only see what the swinging door lets you. It was a masterful piece of storytelling which lets your imagination conjure up all kinds of terrible deaths. If noone has used this technique of the swinging door in films before then I applaud Zack Snyder for a piece of genuine cinema brilliance.</p>
+</div>
+ </div>
+
+  
+  <div class="post"> <div class="post-header">
+  
+    <h1 class="post-title">
+      <a href="/blog/2009/03/22/python-programming-dojo-cambridge/">Python Programming Dojo &#8211; Cambridge</a>
+    </h1>
+  
+  
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2009-03-22T00:00:00+00:00" pubdate data-updated="true">Mar 22<span>nd</span>, 2009</time>
+</div>
+
+<div class="post-content"><p>Yesterday I ran the Python Programming Dojo in Cambridge. It was my first time running such a public speaking event. We had four people in attendance which made it a bit easier on me after four or five last minute drop-outs.</p>
+
+<p>Basically, it was to cover getting started in Python development from first concepts through to more advanced ones. I can hardly believe I talked more or less continually for six hours(!) I had prepared cue cards so I didn&#8217;t forget any subjects I wanted to cover and had smushed together a load of examples to go with each subject.</p>
+
+<p>One of the most bizarre things was I didn&#8217;t get onto the fact Python had classes until lunchtime at 1pm&#8230;. It was hard to try and cover the basics because everything relied on something else, so I was dynamically juggling the order of the subjects.</p>
+
+<p>The best bit was the interaction where people were coding whilst I was talking and the discussion points and questions came out of that.</p>
+
+<p>I found it really hard to explain list comprehensions because I kind of instinctively knew them, but I had managed up until now to never need to explain them.</p>
+
+<p>The benefits of doing this class were many for me. First, up I had programmed in Python for a while but I just did it and didn&#8217;t really think about why and how much I had used. Organising those thoughts was invaluable. Also, had to do speaking at the front of the room and I think I did okay apart from waving my hands too much and using the word &#8220;mad&#8221; too often in the description of Python features&#8230; The other benefit was I learnt some things as well.</p>
+
+<p>The main Python feature I learnt was the <a href="http://en.wikipedia.org/wiki/Flyweight_pattern">flyweight</a> pattern feature of Python classes. Basically if you define a variable as part of the class you maximise reuse of that object. If you defined a variable using self, it will be added to the class dictionary. We checked this by writing code which is the best way to learn.</p>
+
+<p>I don&#8217;t know if I will end up running one again or if it is a one-off, but I will try to update my examples and subjects to reflect what I discovered throughout the day (if I actually transfer them to digital format rather than hand-written cards I&#8217;ll post it on here).</p>
+
+<p>Finally, I&#8217;d like to thank <a href="http://www.red-gate.com/">Red Gate Software</a> for supplying refreshments and somewhere to host it, <a href="http://blog.software-acumen.com/">Mark Dalgarno</a> for organising it, and Clive Tong of Red Gate for making sure we could get in (and not forgetting the attendees).</p>
+</div>
+ </div>
+
+  
+  <div class="post"> <div class="post-header">
+  
+    <h1 class="post-title">
+      <a href="/blog/2009/03/05/20-days-of-coda-the-last-ten/">20 Days of CODA &#8211; the Last Ten</a>
+    </h1>
+  
+  
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2009-03-05T00:00:00+00:00" pubdate data-updated="true">Mar 5<span>th</span>, 2009</time>
+</div>
+
+<div class="post-content"><p>The developers here at <a href="http://www.camvine.com">Camvine</a> held on to the <a href="http://twitter.com/camvine">Camvine Twitter Feed</a> for the full month with twenty examples of cool uses of the CODA digital signage system.</p>
+
+<h1>11 &#8211; <a href="http://bit.ly/HLEAv">Entertain and educate people whilst they wait using Wikipedia and CODA</a></h1>
+
+<h1>12 &#8211; <a href="http://bit.ly/12xSKm">Monitor your Asterisk Phone System in real time with CODA</a></h1>
+
+<h1>13 &#8211; <a href="http://bit.ly/qKxpc">See who&#8217;s in, who&#8217;s out, and who&#8217;s busy with Skype statuses on CODA</a></h1>
+
+<h1>14 &#8211; <a href="http://bit.ly/MiEY9">Help everyone countdown to important events CODA</a></h1>
+
+<h1>15 &#8211; <a href="http://bit.ly/AwzIV">Publish straight to your CODA screen from your desktop with Dropbox</a></h1>
+
+<h1>16 &#8211; <a href="http://bit.ly/25AZS">Keep up with the last.fm music charts on CODA</a></h1>
+
+<h1>17 &#8211; <a href="http://bit.ly/qvmDu">Controlling a screen is child&#8217;s play &#8211; using Nabaztag to control CODA</a></h1>
+
+<h1>18 &#8211; <a href="http://bit.ly/sz9wN">Using content scheduling to let your screen&#8217;s purpose change over time</a></h1>
+
+<h1>19 &#8211; <a href="http://bit.ly/XVz9P">Find out what&#8217;s on the TV and Radio tonight using BBC&#8217;s Backstage APIs</a></h1>
+
+<h1>20 &#8211; <a href="http://bit.ly/1607gL">Use CODA to help everyone keep an eye on their energy usage</a></h1>
+
+<p>Here is the video of teh RFID bunny controlling the CODA screens:</p>
+
+<p>You can see the <a href="http://blog.programmerslog.com/?p=309">first ten here</a>.</p>
+</div>
+ </div>
+
+  
+  <div class="post"> <div class="post-header">
+  
+    <h1 class="post-title">
+      <a href="/blog/2009/02/17/pre-links/">Pre Links</a>
+    </h1>
+  
+  
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2009-02-17T00:00:00+00:00" pubdate data-updated="true">Feb 17<span>th</span>, 2009</time>
+</div>
+
+<div class="post-content"><p><a href="http://developer.palm.com/webos_book/book1.html">Overview of webOS</a><br/>
+An in-depth look at the Palm Pre&#8217;s OS.</p>
+
+<p><a href="http://lifehacker.com/5154130/elisa-is-a-simple-streamlined-media-center">Elisa is a Simple, Streamlined Media Center</a><br/>
+A basic multi-platform media centre which is based on the <a href="https://code.fluendo.com/pigment/trac">Pigment</a> toolkit (a bit like Clutter).</p>
+
+<p><a href="http://www.joystiq.com/2009/02/13/half-life-2-mini-series-blows-minds-on-a-dime/">Half-Life 2 mini-series blows minds on a dime</a><br/>
+Half Life 2 miniseries, on a budget, and still looks great.</p>
+
+<p><a href="http://stlab.adobe.com/">Adobe ASL &#8211; 1.0.41 Release</a><br/>
+The latest version of the very useful C++ library.</p>
+
+<p><a href="http://lewstringer.blogspot.com/2009/02/kevin-oneill-early-days.html">Kevin O&#8217;Neill: The Early Days</a><br/>
+A look at the early years of the League Of Extraordinary Gentlemen artist. He&#8217;s still the only artist who was banned by the Comics Code Authority.</p>
+
+<p><a href="http://www.offworld.com/2009/02/introversions-defconar-mutuall.html">Introversion&#8217;s DefconAR: mutually destructive augmented reality</a><br/>
+Introversion&#8217;s great <a href="http://en.wikipedia.org/wiki/Mutual_Assured_Destruction">MAD</a> game as an augmented reality globe.</p>
+
+<p><a href="http://caterercomic.blogspot.com/">The Caterer Comic</a><br/>
+Read Jeff Lint&#8217;s The Caterer online.</p>
+
+<p><a href="http://www.fantagraphics.com/index.php?option=com_myblog&amp;show=SLIDE-SHOW-part-two.html&amp;Itemid=113">SLIDE SHOW part two</a><br/>
+A look at what must be the most insane (and cool) comic shop not only in Paris, but the world. I wish I&#8217;d known about it when I was there.</p>
+</div>
+ </div>
+
+  
+  <div class="post"> <div class="post-header">
+  
+    <h1 class="post-title">
+      <a href="/blog/2009/02/16/decapitation-is-sometimes-good-for-you/">Decapitation Is Sometimes Good for You</a>
+    </h1>
+  
+  
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2009-02-16T00:00:00+00:00" pubdate data-updated="true">Feb 16<span>th</span>, 2009</time>
+</div>
+
+<div class="post-content"><p>Lots of people out there are looking for headless web browsers to generate things like thumbnails. In the end most people either roll their own or cheat (use xvfb and grab the pixmap). You could use <a href="http://labs.trolltech.com/blogs/2009/01/15/capturing-web-pages/">Qt and grab the image</a>, but it still requires xvfb, even if you write your own rendering backend (I assume for font stuff). There are a number of ways to solve the headless rendering problem, unfortunately not all of them are ideal.</p>
+
+<p>For me I am looking at <a href="http://code.staikos.net/cgi-bin/gitweb.cgi?p=webkit;a=shortlog;h=kenneth/efl-port">EFL WebKit</a> as the best solution but it is not near maturity and because I quite like the way Enlightenment Foundation Libraries seem to work.</p>
+
+<p>The latest possible solution(s) are born from the <a href="http://clutter-project.org/">Clutter Project</a> which is now under the guidance of Intel. There is <a href="http://trac.webkit.org/wiki/clutter">Clutter Webkit</a> which provides a Clutter Actor for rendering webpages essentially to a Cairo surface on the 3D surface. I got it to compile last night and ran a test program but it was pretty slow.</p>
+
+<p>The other one is <a href="http://git.o-hand.com/cgit.cgi/mozilla-headless/">mozilla-headless</a> which looks really interesting by providing a Mozilla library that renders to a Cairo surface. <a href="http://chrislord.net/">Chris Lord</a> the main developer on this made presentation to FOSDEM available <a href="http://chrislord.net/files/fosdem-09-slides.odp">here</a>. There is also a video of it in action <a href="http://chrislord.net/images/mozilla/mozilla-magic.png">here</a> (requires OGG codecs). The source is all available <a href="http://git.o-hand.com/cgit.cgi/mozilla-headless/">here</a> and the embedding into Clutter is available <a href="http://git.clutter-project.org/?r=clutter-mozembed">here</a>. The source code for testing it is <a href="http://git.clutter-project.org/cgit.cgi?url=clutter-mozembed/tree/tests">here</a>.</p>
+
+<p>On a vaguely related note there is an interesting article about using gstreamer through Clutter&#8217;s python bindings &#8211; <a href="http://luisbg.blogalia.com//historias/61951">awesome (gstreamer * clutter)</a>.</p>
+</div>
+ </div>
+
+  
+  <div class="post"> <div class="post-header">
+  
+    <h1 class="post-title">
+      <a href="/blog/2009/02/15/the-little-box-that-almost-could/">The Little Box That Almost Could</a>
+    </h1>
+  
+  
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2009-02-15T00:00:00+00:00" pubdate data-updated="true">Feb 15<span>th</span>, 2009</time>
+</div>
+
+<div class="post-content"><p>A few weeks back I was looking at some small low-powered computer units. One was really interesting, a passively cooled ultra low voltage tiny computer you could VESA mount to the back of monitors.</p>
+
+<p>It goes under a number of different names, <a href="http://www.bvm-store.com/ProductDetail.asp?fdProductId=486">BVM&#8217;s EPC-500</a>, <a href="http://www.compactpc.com.tw/ebox-4300.htm">the eBox-4300 / 4310</a>, and <a href="MicroClient">the MicroClient Sr</a>. They all seem to be rebranded versions of the same platform, and I think the eBox is the original although I could be proved wrong.</p>
+
+<p><strong>Features</strong><br/>
+* 500MHz VIA Eden ULV CPU with 512Mbyte/1Gbyte DDR2 RAM<br/>
+* Bootable from Compact Flash or USB<br/>
+* Internal HDD option<br/>
+* Linux port available on CF or USB Pendrive<br/>
+* Low power consumption<br/>
+* VESA mounting capability</p>
+
+<p><strong>Specifications</strong><br/>
+* CPU: VIA Eden ULV 500MHz.<br/>
+* BIOS: AMI BIOS.<br/>
+* System Chipset: VIA CX700M.<br/>
+* I/O Chip: Winbond W83697.<br/>
+* System Memory: Onboard 512MB/1GB DDR2.<br/>
+* I/O: 1 x EIDE, 1 x PS/2 K/B/Mouse; 1 x Type I/II CF slot<br/>
+* 2 x RS-232 Port (option); USB 3 x USB 2.0 Ports (two on front).<br/>
+* Display Chipset: Integrated VIA UniChrome 2D/3D Graphics with MPEG4/WMV9 decoding accelerator.<br/>
+* Display Memory: up to 128MBytes sharing system memory.<br/>
+* Resolution: up to 1920 x 1440.<br/>
+* Audio: AC97 2.2 (Codec); VIA Vinyl VT1708.<br/>
+* Audio Interface: Line out, Mic in.<br/>
+* Ethernet: Chipset Realtek 8100B 10/100 Base-T<br/>
+* Remote Boot ROM built-in boot ROM function, supports PXE boot and Wake-up on LAN.<br/>
+* Mechanical &amp; Environment:<br/>
+* Power Requirement: +5V @ 3.0A.<br/>
+* Operating Temperature: 0 ~ 60°C.<br/>
+* Operating Humidity: 0% &#8211; 90% relative humidity, non-condensing.<br/>
+* Size (W x H x D): 115x 115 x 35mm.<br/>
+* Weight: 505g</p>
+
+<p>Also the <a href="http://www.liantec.com/product/emboard/EMB-3700.htm">motherboards are available on their own</a> with much more power processors (up to 1.5GHz passively cooled and 2.0GHz with a fan using VIA Eden ULV processors). The spec sheet is <a href="http://download.liantec.com/download/datasheet/EMB-3700.pdf">available</a>.</p>
+
+<p>I was looking quite deeply into this platform to test its potential. I wanted to run Linux on this and it had an in-built video decoding co-processor as well as 3D support through the CX700M chipset. Anyway I eventually managed to get <a href="http://www.xubuntu.org/">Xubuntu</a> running with Compiz effects.</p>
+
+<p>The problem I found with the system is that the drivers are thoroughly inadequate and that the open-source support is nowhere to be seen without VIA helping by supplying the documentation for the video decoding acceleration. The GPU is a <a href="http://www.via.com.tw/en/products/chipsets/c-series/cx700m/">CX700M</a> and the binary drivers are <a href="http://www.viaarena.com/default.aspx?PageID=420&amp;OSID=25&amp;CatID=2580&amp;SubCatID=184">available</a> and the official drivers are <a href="http://linux.via.com.tw/support/downloadFiles.action">available from VIA</a> (Ubuntu 8.10 currently). With these the 3D support is okay apart from some font rendering issues when using Compiz.</p>
+
+<p>Some of the older drivers supply the support for the video decoding co-processor. Unfortunately I could not get a version working with a current version of Ubuntu, which in turn even if it did work would not have supported the 3D graphics properly. Also in order to make use of it you have to jump through a number of extra hoops and also operate as root which is a good security risk(!)</p>
+
+<p>There are two specialised version of the media players that VIA has customised to make use of the drivers that supply the MPEG-2/4/h.264 and WMV9 acceleration. These are <a href="http://sourceforge.net/projects/viaexp">VeXP (Via Xine Player)</a> and <a href="http://sourceforge.net/projects/vemp">VeMP (the VIA enhanced mPlayer)</a>. I did put them into Git repositories starting from the base they branched from so I could work out what the patches did. They rely on closed-source library called libddmpeg.so that is part of some of the older drivers which provides the interface to the video acceleration hardware. This in turn relies n <a href="http://www.trilithium.com/johan/2005/08/linux-gate/">linuxgate.so.1</a> which provides a direct interface into the kernel for interrupts and the suchlike. This probably explains why all these things if you can get them to work require root access. I did try grabbing the library from an older driver and using it on a newer driver, which would have been too good to be true if it worked (it didn&#8217;t but at least I didn&#8217;t kill the system).</p>
+
+<p>The place to go for drivers and utilities is <a href="http://www.viaarena.com/">VIA Arena</a> where they maintain all the older legacy downloads as only the bleeding edge are available on the official VIA website.</p>
+
+<p>There is a special version of <a href="http://www.puppylinux.org/downloads/puplets/mcpup">Puppy Linux</a> that is optimised for the platform. The development website is <a href="http://www.mcpup.org/">here</a>. Unfortunately the media player supplied is not the one that makes use of the co-processor functionality, well it didn&#8217;t for me anyway. Maybe this s worth revisiting again at some point.</p>
+
+<p>There is a blog covering the Microclient Sr <a href="http://microclient.wordpress.com/">here</a> and a Google Group discussin it <a href="http://groups.google.com/group/microclient">here</a>. There is also a good <a href="http://nettops.fr/index.php">comprehensive website (in French)</a>. Finally, a couple of reviews are <a href="http://www.linuxdevices.com/news/NS9828354233.html">here</a> and <a href="http://www.linuxdevices.com/articles/AT4708024578.html">here</a>.</p>
+
+<p>This is a really cool bit of it with nothing else in its price range/features. Unfortunately the Linux support is such a headache, if it worked I would be extremely happy and it would be very interesting to see how it functions with video and 3D. The tiny little box can even do insanely high resolutions of 1920&#215;1440 which would be very useful.</p>
+</div>
+ </div>
+
+
+<div id="pagination">
+  
+    <a class="prev" href="/blog/page/9/">&laquo;Previous</a>
+  
+  
+    <a class="next" href="/blog/page/7/">Next&raquo;</a>
+  
+</div>
+ </div>
+    <div id="footer">
+  <div class="panels">
+    <div class="license">
+      <h2>License</h2>
+      <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-nc-sa/3.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/">Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License</a>.
+    </div>
+
+    <div class="posts">
+      <h2>Recent Posts</h2>
+      <ul>
+        
+          <li>
+            <a href="/blog/2013/06/22/rss-feed-moved-to-http-slash-slash-www-dot-fragmentedmemory-dot-com-slash-feed-slash/">RSS Feed Moved To http://www.fragmentedmemory.com/feed/</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2013/06/18/new-location-and-new-blog-engine-and-old-content-restored/">New Location &amp; New Blog Engine &amp; Old Content Restored</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2013/06/13/joining-microsoft/">Joining Microsoft</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2013/06/13/leaving-bromium/">Leaving Bromium</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2013/03/05/philip-su-engineering-process-and/">Philip Su - Engineering Process And Philosophy At Facebook</a>
+          </li>
+        
+      </ul>
+    </div>
+
+    <div class="posts">
+      <h2>Links</h2>
+      <a href='https://alpha.app.net/gjb' class='adn-button' target='_blank' data-type='follow' data-width='277' data-height='27' data-user-id='@gjb' data-show-username='1' rel='me'>Follow me on App.net</a><script>(function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src='//d2zh9g63fcvyrq.cloudfront.net/adn.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'adn-button-js'));</script>
+    </div>
+  </div>
+
+  <p class="powered">
+    Powered by <a href="http://octopress.org">Octopress</a> and <a href="https://github.com/iwinux/compbits">Compbits</a>
+  </p>
+</div>
+
+  </div> <!-- #wrapper end -->
+
+  
+
+  
+
+
+  
+
+  
+
+  
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+</body>
+</html>

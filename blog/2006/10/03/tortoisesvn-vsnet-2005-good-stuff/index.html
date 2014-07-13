@@ -1,0 +1,324 @@
+
+<!DOCTYPE HTML>
+<html lang="en-gb">
+<head>
+  <meta charset="UTF-8">
+  <title>Fragmented Memory</title>
+
+  <meta name="author" content="Garry Bodsworth">
+  
+  <meta name="description" content="TortoiseSVN + VS.NET 2005 = Good Stuff Oct 3rd, 2006 See the update here.As promised it is time to integrate TortoiseSVN into Visual Studio 2005. &hellip;">
+  
+  
+
+  <link rel="canonical" href="http://www.fragmentedmemory.com/blog/2006/10/03/tortoisesvn-vsnet-2005-good-stuff">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/feed/" rel="alternate" title="Fragmented Memory" type="application/atom+xml">
+</head>
+  
+<body class="default">
+  <div id="wrapper">
+    <div id="header">
+  <h1><a href="/">Fragmented Memory</a></h1>
+  
+    <p>Garry Bodsworth's Blog (formerly Garry's Bit Patterns &amp; Programmer's Log)</p>
+  
+</div>
+<ul id="social-links">
+  
+    <li><a class="rss" href="/feed/" title="RSS">RSS</a></li>
+  
+  
+  
+  
+    <li><a class="twitter" href="http://twitter.com/garrybodsworth" title="Twitter">Twitter</a></li>
+  
+  
+    <li><a class="github" href="https://github.com/garrybodsworth" title="GitHub">GitHub</a></li>
+  
+  
+  
+    <li><a class="linkedin" href="http://www.linkedin.com/in/garrybodsworth">LinkedIn</a></li>
+  
+  
+  
+  
+    <li><a class="pinboard" href="https://pinboard.in/u:garrybodsworth" title="Pinboard">Pinboard</a></li>
+  
+</ul>
+<div class="clear"></div>
+<ul id="nav">
+  
+    <li> <a href="/">blog</a> </li>
+  
+
+  
+    <li><a href="/blog/archives">archives</a></li>
+  
+
+  
+    <li><a href="/about">about</a></li>
+  
+</ul>
+
+    <div id="main"> <div class="post-header">
+  
+    <h1 class="post-title">TortoiseSVN + VS.NET 2005 = Good Stuff</h1>
+  
+  
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2006-10-03T20:56:00+01:00" pubdate data-updated="true">Oct 3<span>rd</span>, 2006</time>
+</div>
+
+<div class="post-content"><div class='post'>
+<span style="font-weight:bold;"><a href="http://garrys-brain.blogspot.com/2007/07/tortoisesvn-and-visual-studio.html">See the update here.</a></span><br /><br />As promised it is time to integrate TortoiseSVN into Visual Studio 2005.  The easiest way I have found to do this is to post the vsettings files from Visual Studio once the environment is set up.<br /><br />Here are the zipped settings files:<br /><a href="http://garry.bodsworth.googlepages.com/SubversionSettingsVS2005.zip">This link is for Visual Studio.NET 2005.</a><br /><a href="http://garry.bodsworth.googlepages.com/SubversionSettingsVC2005Express.zip">This link is for Visual C++ 2005 Express.</a><br /><br />You need to go to <span style="font-style:italic;">Tools->Import and Export Settings</span> and load the files from wizard dialog that pops up.  There are differences between the free Visual C++ Express and Visual Studio settings files, so please make sure you use the correct one.  It would also be an idea to say yes when the wizard asks you to back up your current settings.<br /><br />There is one thing the settings get wrong on the build toolbar which is the size of some controls, so once the settings have loaded make sure you resize the items on the build toolbar by right-clicking and choosing <span style="font-style:italic;">Customise&#8230;</span>.  Then you can select the items and make them smaller.<br /><br />The settings have some of my own personal changes as well as the Subversion changes I am afraid, but you can choose which bits to load in on the settings wizard dialog.  There are some assumptions made also, the PlatformSDK is assumed to be in the default environment location under <span style="font-style:italic;">c:\Program Files\Microsoft Visual Studio 8\VC\PlatformSDK</span>.  Also it assumes that TortoiseSVN is installed in the default directory.  The settings files are just XML so you could alter those directories by hand before loading it in.<br /><br />Once you have loaded these settings you will have:<br /><ul><li>A Subversion Menu.</li><li>A consolidated help menu so the same number of menus is still there at the top.</li><li>A Subversion toolbar.</li><li>All Subversion options in menus and toolbars have icons associated with them that will look familiar to users of TortoiseSVN.</li><li>The context menu for Solutions has relevant Subversion options.</li><li>As do individual files context menus - Diff, Log, Blame.</li><li>Since Subversion has its own menu they are no longer present in the External Tools.</li><li>Made the build bar actually have build options on it.</li><li>Trimmed down the main file toolbar.</li><li>All of the moving around of items means you get all the toolbars across the top of the screen in one row.</li><li>Added quickwatch to the debug menu as it annoys me they removed it after Visual Studio 6.0.</li></li></ul><span style="font-weight:bold;">Menu screenshot:</span><br /><a onblur="try {parent.deselectBloggerImageGracefully();} catch(e) {}" href="http://photos1.blogger.com/blogger/3420/3930/1600/SubversionMenu.png"><img style="cursor:pointer; cursor:hand;" src="http://photos1.blogger.com/blogger/3420/3930/320/SubversionMenu.png" border="0" alt="" /></a><br /><span style="font-weight:bold;">Toolbar screenshot:</span><br /><a onblur="try {parent.deselectBloggerImageGracefully();} catch(e) {}" href="http://photos1.blogger.com/blogger/3420/3930/1600/SubversionToolbar.png"><img style="cursor:pointer; cursor:hand;" src="http://photos1.blogger.com/blogger/3420/3930/320/SubversionToolbar.png" border="0" alt="" /></a><br /><span style="font-weight:bold;">Solution context menu:</span><br /><a onblur="try {parent.deselectBloggerImageGracefully();} catch(e) {}" href="http://photos1.blogger.com/blogger/3420/3930/1600/ContextSolution.png"><img style="cursor:pointer; cursor:hand;" src="http://photos1.blogger.com/blogger/3420/3930/320/ContextSolution.png" border="0" alt="" /></a><br /><span style="font-weight:bold;">File context menu:</span><br /><a onblur="try {parent.deselectBloggerImageGracefully();} catch(e) {}" href="http://photos1.blogger.com/blogger/3420/3930/1600/ContextFile.png"><img style="cursor:pointer; cursor:hand;" src="http://photos1.blogger.com/blogger/3420/3930/320/ContextFile.png" border="0" alt="" /></a><br />Well, if anyone has any improvements let me know&#8230;</div>
+<h2>Comments</h2>
+<div class='comments'>
+<div class='comment'>
+<div class='author'>SewhatSneev</div>
+<div class='content'>
+cheap products for man <A HREF="http://www.idealmedic.com/" REL="nofollow"> penis enlargement  </A> ideal penis enlargement<BR/><A HREF="http://www.idealmedic.com/order.html" REL="nofollow"> penis enlargement pills  </A>  penis enlargement pills<BR/><A HREF="http://www.idealmedic.com/exercises.html" REL="nofollow"> penis enlargement exercises </A> fast weight loss supplements <A HREF="http://www.pro-weight-loss.com/" REL="nofollow"> fast weight loss </A> <BR/><A HREF="http://www.idealmedic.com/about_prosolution_pills.html" REL="nofollow"> penis enhancement  </A>  <BR/><A HREF="http://www.idealmedic.com/benefits.html" REL="nofollow"> natural penis enlargement  </A></div>
+</div>
+<div class='comment'>
+<div class='author'>ASPX Beginner</div>
+<div class='content'>
+Is it possible to use this with Visual Studio 2008?</div>
+</div>
+<div class='comment'>
+<div class='author'>uiyui</div>
+<div class='content'>
+welcome to the <A HREF="http://www.igsstar.com" REL="nofollow">wow power leveling</A>, cheap service site, buy cheap wow gold,<A HREF="http://www.wotlkgolds.com" REL="nofollow">wow gold</A>,world of warcraft power leveling  buy <A HREF="http://www.xowow.com" REL="nofollow">wow power leveling</A></div>
+</div>
+<div class='comment'>
+<div class='author'>Jorge Fernando</div>
+<div class='content'>
+if i want to c# 2008 how integrate the svn.. :$</div>
+</div>
+<div class='comment'>
+<div class='author'>Khánh Đỗ</div>
+<div class='content'>
+Very very useful! Thanks for your sharing very much.</div>
+</div>
+<div class='comment'>
+<div class='author'>unRheal</div>
+<div class='content'>
+As pre what nkerkin said&#8230; <BR/>You at the very least *have* to select the &#8220;External Tools List&#8221; - even though it&#8217;s both *NOT* selected by default, and it also has a mysterious yellow exclamation icon beside it!<BR/><BR/>Leaving it at the default unselected, will give you all the options except &#8220;commit&#8221; grayed out, as some people complained about!<BR/><BR/>(and maybe only selecting the two options as nkerkin indicated will prevent the other undesired changes that someone else complained about, while still giving the desired SVN functionality - I just haven&#8217;t tested the full functionality yet&#8230;)</div>
+</div>
+<div class='comment'>
+<div class='author'>PRADEEP</div>
+<div class='content'>
+Use ankh SVN. Makes life siimpler</div>
+</div>
+<div class='comment'>
+<div class='author'>Earthly</div>
+<div class='content'>
+Does this modify the &#8216;Delete&#8217; command on a file? hence delete should be performed as a combination of &#8216;ExcludeFromProject&#8217;+&#8217;SVN.Delete&#8217;<BR/><BR/>I&#8217;m just very curious - i&#8217;m evaluating my options and would be making the move to VS 2008 very soon.</div>
+</div>
+<div class='comment'>
+<div class='author'>Yury</div>
+<div class='content'>
+Hi Garry!<BR/>Great job, thanks.<BR/>I also got a problem with the greyed out items.<BR/>It happens because of that some &#8220;assumptions&#8221; are hard-coded and in localized OS vesrion the &#8220;Program Files&#8221; folder doesn&#8217;t alway appear to be like that.  E.g. in German one it is &#8220;Programme&#8221;.<BR/>So, the resolution is obvious.  Either to edit the corresponding part of the path name for the commands under the External Tools or to change it in the .vssettings file.<BR/>To have a universal solution this part of the path should contain the system variable %programfiles%<BR/><BR/>BR,<BR/>Yury</div>
+</div>
+<div class='comment'>
+<div class='author'>John Black</div>
+<div class='content'>
+Hi Garry, <BR/>Thanks a lot for this. It is exactly what I need, I&#8217;ve done as your guide, and I have a problem that I can&#8217;t see any changes in the file context menu on the Solution Explorer windows (the Toolbar and Solution context menu work well). I&#8217;ve also tried your update, but it&#8217;s still not work.<BR/>Please help me.<BR/>Thanks again.</div>
+</div>
+<div class='comment'>
+<div class='author'>Yasith</div>
+<div class='content'>
+nice stuff! good work this is gonna help a lot of people&#8230;</div>
+</div>
+<div class='comment'>
+<div class='author'>Bjørnar</div>
+<div class='content'>
+Is there a way to get the Tortoise icons in Solution Explorer with this solution? That would be very nice ;o)</div>
+</div>
+<div class='comment'>
+<div class='author'>Garry Bodsworth</div>
+<div class='content'>
+To get the file based Revert/Commit/etc. you need to alter your external tools.<BR/><BR/>What you should do is go to the &#8220;Tools&#8221; menu, and click on &#8220;External Tools&#8230;&#8221;.  For instance, select commit and change the &#8220;arguments&#8221; from:<BR/><B>/command:commit /path:&#8221;$(SolutionDir)&#8221; /notempfile</B><BR/>to:<BR/><B>/command:commit /path:&#8221;$(ItemPath)&#8221; /notempfile</B><BR/><BR/>And then change &#8220;Initial Directory&#8221; from <B>$(SolutionDir)</B> to <B>&#8221;$(ItemDir)&#8221;</B><BR/><BR/>Repeating similar edits (replacing Solution with Item) will worki for most of the TortoiseSVN commandline tools in the External Tools.</div>
+</div>
+<div class='comment'>
+<div class='author'>Manish Joisar</div>
+<div class='content'>
+I have done as per your setting, but i am not getting file wise Update/Commit/Get Lock/Release Lock/Revert. So i can get same way like i am doing it in VSS. It will be great if someone can solve this issue. And i am only interested in VS2005, Subverion, TortoiseSVN & vssettings. Not at all interested in any other tools. I think Garry&#8217;s Bit can solve this. Please help me.</div>
+</div>
+<div class='comment'>
+<div class='author'>Michael</div>
+<div class='content'>
+First of all thanks for nice solution. It is very useful.<BR/> I had also part of menu greyed out when imported all setting (default). After going back and trying nkerkin&#8217;s suggestion solved that problem. I works great</div>
+</div>
+<div class='comment'>
+<div class='author'>cogitative</div>
+<div class='content'>
+Thank you for doing this this is exactly what I am looking for, but when I install I am also getting the buttons greyed out. I checked the vssettings file and the path to tortoise is correct. I also have my source control plug-ins set to none. I have tried to import the settings many times. Any other suggestions?</div>
+</div>
+<div class='comment'>
+<div class='author'>nkerkin</div>
+<div class='content'>
+I had a few problems setting this up. My recommendation is to only select <BR/>All settings<BR/>&#8212;>General Settings<BR/>&#8212;&#8212;>External Tools List<BR/>&#8212;&#8212;>Menu and command Bar Customizations<BR/>Ignore the little yellow warning icon on External Tools list, it won&#8217;t work if you don&#8217;t select it.</div>
+</div>
+<div class='comment'>
+<div class='author'>Nikola</div>
+<div class='content'>
+Wanned to try your approach but it doesn&#8217;t seem to work with VS2005 SP1?</div>
+</div>
+<div class='comment'>
+<div class='author'>Garry Bodsworth</div>
+<div class='content'>
+AnkhSVN is too heavyweight.  It is fine for people who don&#8217;t want to leave the SourceSafe working methodology.<BR/><BR/>When you realise you are no longer working in SourceSafe, all of the items like ticking items in the tree view are purely incidental.  You can now edit anything, undo your changes easily, and work in a seamless manner.<BR/><BR/>The reason for integrating it in this manner was so I didn&#8217;t need to swap from VS2005 to Windows Explorer to perform operations.  Plus the TortoiseSVN UI is a accomplished.</div>
+</div>
+<div class='comment'>
+<div class='author'>Nikola</div>
+<div class='content'>
+and why don&#8217;t you use Ankh?<BR/><BR/>http://ankhsvn.tigris.org/</div>
+</div>
+<div class='comment'>
+<div class='author'>spthorn</div>
+<div class='content'>
+You need to set your Source Control Plug-in Selection (in Tools | Options) to None, else certain menu options will be disabled.</div>
+</div>
+<div class='comment'>
+<div class='author'>Garry Bodsworth</div>
+<div class='content'>
+Make sure you are using the updated version, but it shouldn&#8217;t have anything greyed out (that tends to happen if the application - TortoiseSVN in this case - is not installed).<BR/><BR/>What you need to do is first install TortoiseSVN in the default location, then import the settings.  There are some quite odd issues with settings in VS2005, so sometimes you have to import the settings more than once before they take permanently.</div>
+</div>
+<div class='comment'>
+<div class='author'>Echo</div>
+<div class='content'>
+Hi,<BR/><BR/>I&#8217;m new to both VS.NET 2005 and TortoiseSVN (formula for disaster). I tried your setting, it seems worked, but in visual studio I only get &#8220;Commit&#8221; option available, with all the others greyed out. All the options are available after the installation of TortoiseSVN. Where else should I check in order to get other options work in the visual studio? Thank you very much for your help!<BR/><BR/>Cheers,<BR/><BR/>Echo</div>
+</div>
+<div class='comment'>
+<div class='author'>Frank</div>
+<div class='content'>
+Any chance that we could get a version with only those changes related to TortoiseSVN? even importing only &#8220;External Tools List&#8221; and &#8220;Menu and Command Bar Customizations&#8221; fools with things that I dont want fooled with.</div>
+</div>
+<div class='comment'>
+<div class='author'>bral</div>
+<div class='content'>
+This is just what the doctor ordered.  Very useful.</div>
+</div>
+<div class='comment'>
+<div class='author'>Garry Bodsworth</div>
+<div class='content'>
+Hi there Dean,<br /><br />Thanks for trying this out, it&#8217;s great to know it works on other platforms.<br /><br />I&#8217;ll look at adding the &#8220;Add to repository&#8221; functionality today as it would be useful.  I&#8217;ve always imported via the commandline in the past.<br /><br />Thanks,<br /><br />Garry</div>
+</div>
+<div class='comment'>
+<div class='author'>Dean</div>
+<div class='content'>
+Works like a charm!<br /><br />On Vista Build 5744 (RC2) x64, it&#8217;s brilliant, the only thing i would say is missing is an &#8216;Add to repository&#8217; function for the solution, but you know what i wouldn&#8217;t know where to start with that so i&#8217;m happy with it as it is!<br /><br />Superstar, thanks mate.</div>
+</div>
+</div>
+</div>
+
+
+<div class="post-single">
+  <div class="post-meta">
+    
+
+<span class="categories">
+  Categories:
+  
+    <a class='category' href='/blog/categories/integration/'>Integration</a>, <a class='category' href='/blog/categories/subversion/'>Subversion</a>, <a class='category' href='/blog/categories/tortoisesvn/'>TortoiseSVN</a>, <a class='category' href='/blog/categories/visual-studio-2005/'>Visual Studio 2005</a>
+  
+</span>
+
+
+    
+      <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://www.fragmentedmemory.com/blog/2006/10/03/tortoisesvn-vsnet-2005-good-stuff/" data-via="garrybodsworth" data-counturl="http://www.fragmentedmemory.com/blog/2006/10/03/tortoisesvn-vsnet-2005-good-stuff/" >Tweet</a>
+  
+  
+  
+</div>
+
+    
+  </div>
+  <div class="clear"></div>
+
+  
+</div>
+ </div>
+    <div id="footer">
+  <div class="panels">
+    <div class="license">
+      <h2>License</h2>
+      <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-nc-sa/3.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/">Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License</a>.
+    </div>
+
+    <div class="posts">
+      <h2>Recent Posts</h2>
+      <ul>
+        
+          <li>
+            <a href="/blog/2013/06/22/rss-feed-moved-to-http-slash-slash-www-dot-fragmentedmemory-dot-com-slash-feed-slash/">RSS Feed Moved To http://www.fragmentedmemory.com/feed/</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2013/06/18/new-location-and-new-blog-engine-and-old-content-restored/">New Location &amp; New Blog Engine &amp; Old Content Restored</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2013/06/13/joining-microsoft/">Joining Microsoft</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2013/06/13/leaving-bromium/">Leaving Bromium</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2013/03/05/philip-su-engineering-process-and/">Philip Su - Engineering Process And Philosophy At Facebook</a>
+          </li>
+        
+      </ul>
+    </div>
+
+    <div class="posts">
+      <h2>Links</h2>
+      <a href='https://alpha.app.net/gjb' class='adn-button' target='_blank' data-type='follow' data-width='277' data-height='27' data-user-id='@gjb' data-show-username='1' rel='me'>Follow me on App.net</a><script>(function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src='//d2zh9g63fcvyrq.cloudfront.net/adn.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'adn-button-js'));</script>
+    </div>
+  </div>
+
+  <p class="powered">
+    Powered by <a href="http://octopress.org">Octopress</a> and <a href="https://github.com/iwinux/compbits">Compbits</a>
+  </p>
+</div>
+
+  </div> <!-- #wrapper end -->
+
+  
+
+  
+
+
+  
+
+  
+
+  
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+</body>
+</html>

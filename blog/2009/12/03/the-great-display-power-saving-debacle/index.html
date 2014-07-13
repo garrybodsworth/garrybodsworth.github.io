@@ -1,0 +1,201 @@
+
+<!DOCTYPE HTML>
+<html lang="en-gb">
+<head>
+  <meta charset="UTF-8">
+  <title>Fragmented Memory</title>
+
+  <meta name="author" content="Garry Bodsworth">
+  
+  <meta name="description" content="The Great Display Power Saving Debacle Dec 3rd, 2009 We are supposed to be concerned with our power consumption. After all California has enshrined &hellip;">
+  
+  
+
+  <link rel="canonical" href="http://www.fragmentedmemory.com/blog/2009/12/03/the-great-display-power-saving-debacle">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/feed/" rel="alternate" title="Fragmented Memory" type="application/atom+xml">
+</head>
+  
+<body class="default">
+  <div id="wrapper">
+    <div id="header">
+  <h1><a href="/">Fragmented Memory</a></h1>
+  
+    <p>Garry Bodsworth's Blog (formerly Garry's Bit Patterns &amp; Programmer's Log)</p>
+  
+</div>
+<ul id="social-links">
+  
+    <li><a class="rss" href="/feed/" title="RSS">RSS</a></li>
+  
+  
+  
+  
+    <li><a class="twitter" href="http://twitter.com/garrybodsworth" title="Twitter">Twitter</a></li>
+  
+  
+    <li><a class="github" href="https://github.com/garrybodsworth" title="GitHub">GitHub</a></li>
+  
+  
+  
+    <li><a class="linkedin" href="http://www.linkedin.com/in/garrybodsworth">LinkedIn</a></li>
+  
+  
+  
+  
+    <li><a class="pinboard" href="https://pinboard.in/u:garrybodsworth" title="Pinboard">Pinboard</a></li>
+  
+</ul>
+<div class="clear"></div>
+<ul id="nav">
+  
+    <li> <a href="/">blog</a> </li>
+  
+
+  
+    <li><a href="/blog/archives">archives</a></li>
+  
+
+  
+    <li><a href="/about">about</a></li>
+  
+</ul>
+
+    <div id="main"> <div class="post-header">
+  
+    <h1 class="post-title">The Great Display Power Saving Debacle</h1>
+  
+  
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2009-12-03T00:00:00+00:00" pubdate data-updated="true">Dec 3<span>rd</span>, 2009</time>
+</div>
+
+<div class="post-content"><p>We are supposed to be concerned with our power consumption. After all <a href="http://www.latimes.com/business/la-fi-big-screen-tvs19-2009nov19,0,4027697.story">California has enshrined in law</a> restrictions on the power usage of televisions.</p>
+
+<p>Working for a <a href="http://www.camvine.com">digital signage company</a> I have to deal with a lot of displays. The initial hardware platform only had VGA output, great, power saving worked using DPMS. The <a href="http://en.wikipedia.org/wiki/VESA_Display_Power_Management_Signaling">VESA Display Power Management Signaling</a> standard version 1.0 was released in 1993, even since moving from CRTs to the flat screen world we live in nowadays (making some of hsync and vsync options surplus to requirements on new flat screens, but it simply maps to &#8220;off&#8221;). The monitors people used behaved themselves. The next platform we used briefly had DVI and VGA output and monitors that supported those inputs all adhered to the teenage standard.</p>
+
+<p>But this is where problems now creep in. DVI can be plugged into an HDMI port very easily. The current hardware platform has native HDMI so it is fairly obvious to suggest that customers use this rather than the VGA output that is also available.</p>
+
+<p>This is where I stepped through the looking glass. Apparently because HDMI and DVI are electrically equivalent then there is nothing to stop the manufacturer having DPMS support. I was developing thinking that HDMI would be great for users since they would also get audio transport built into the single cable. I kind of assumed DPMS was still working.</p>
+
+<p>I have yet to find a single display that does respect DPMS. Of course most people want to use cheap consumer televisions so they don&#8217;t stand a chance of this support.</p>
+
+<p>The most worrying thing I have found about those cheap consumer displays is that they do supply VGA ports that don&#8217;t even support DPMS. A lot of these displays also have a &#8220;feature&#8221; to power off after a ten minute (or so) period of inactivity and the only way to power it on is to physically press the power button or the remote, it doesn&#8217;t even notice when a signal starts again(!)</p>
+
+<p>There are two possible solutions. One is <a href="http://en.wikipedia.org/wiki/HDMI#CEC">HDMI-CEC</a>, which is Consumer Electronic Control. One or two of the pins (depending on the HDMI version) is essentially a serial port, and this provides the standard for communication on this. This would be good but you need extra chips built into your HDMI output which only one computer has (a Toshiba laptop &#8211; and it only works on Windows&#8230;). Also the even larger problem is that every manufacturer seems to have their own standard, RegzaLink, SIMPLink, VIERAlink, BRAVIAsync, and a myriad of others. If you buy all your equipment from the same manufacturer you will end up with some benefit.</p>
+
+<p>The other solution at least in the digital signage use is to use the RS232 service port for controlling the display. Each monitor tends to have its own way of doing it and can even vary between model numbers. Also it has been heard from the manufacturers that they will be phasing this out and most new TVs don&#8217;t even have it.</p>
+
+<p>In summary? Display power saving used to work for most people, now it doesn&#8217;t. So, it is all well and good reducing the power consumption of the devices but there is a way of removing a lot of power from the equation by switching off the panel when it isn&#8217;t being used. This was a solved problem that has been unsolved by engineering madness. Because some TVs are unable to wake from their power saving state over any connection I ended up having to add a &#8220;power saving&#8221; option that doesn&#8217;t actually save any power&#8230;.</p>
+</div>
+
+
+<div class="post-single">
+  <div class="post-meta">
+    
+
+<span class="categories">
+  Categories:
+  
+    <a class='category' href='/blog/categories/uncategorized/'>Uncategorized</a>
+  
+</span>
+
+
+    
+      <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://www.fragmentedmemory.com/blog/2009/12/03/the-great-display-power-saving-debacle/" data-via="garrybodsworth" data-counturl="http://www.fragmentedmemory.com/blog/2009/12/03/the-great-display-power-saving-debacle/" >Tweet</a>
+  
+  
+  
+</div>
+
+    
+  </div>
+  <div class="clear"></div>
+
+  
+</div>
+ </div>
+    <div id="footer">
+  <div class="panels">
+    <div class="license">
+      <h2>License</h2>
+      <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-nc-sa/3.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/">Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License</a>.
+    </div>
+
+    <div class="posts">
+      <h2>Recent Posts</h2>
+      <ul>
+        
+          <li>
+            <a href="/blog/2013/06/22/rss-feed-moved-to-http-slash-slash-www-dot-fragmentedmemory-dot-com-slash-feed-slash/">RSS Feed Moved To http://www.fragmentedmemory.com/feed/</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2013/06/18/new-location-and-new-blog-engine-and-old-content-restored/">New Location &amp; New Blog Engine &amp; Old Content Restored</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2013/06/13/joining-microsoft/">Joining Microsoft</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2013/06/13/leaving-bromium/">Leaving Bromium</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2013/03/05/philip-su-engineering-process-and/">Philip Su - Engineering Process And Philosophy At Facebook</a>
+          </li>
+        
+      </ul>
+    </div>
+
+    <div class="posts">
+      <h2>Links</h2>
+      <a href='https://alpha.app.net/gjb' class='adn-button' target='_blank' data-type='follow' data-width='277' data-height='27' data-user-id='@gjb' data-show-username='1' rel='me'>Follow me on App.net</a><script>(function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src='//d2zh9g63fcvyrq.cloudfront.net/adn.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'adn-button-js'));</script>
+    </div>
+  </div>
+
+  <p class="powered">
+    Powered by <a href="http://octopress.org">Octopress</a> and <a href="https://github.com/iwinux/compbits">Compbits</a>
+  </p>
+</div>
+
+  </div> <!-- #wrapper end -->
+
+  
+
+  
+
+
+  
+
+  
+
+  
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+</body>
+</html>

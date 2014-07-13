@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Icons | Fragmented Memory]]></title>
+  <link href="http://www.fragmentedmemory.com/blog/categories/icons/atom.xml" rel="self"/>
+  <link href="http://www.fragmentedmemory.com/"/>
+  <updated>2013-06-23T17:13:57+01:00</updated>
+  <id>http://www.fragmentedmemory.com/</id>
+  <author>
+    <name><![CDATA[Garry Bodsworth]]></name>
+    <email><![CDATA[blog@fragmentedmemory.com]]></email>
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Good resource for icons, buttons, and so on...]]></title>
+    <link href="http://www.fragmentedmemory.com/blog/2007/05/29/good-resource-for-icons-buttons-and-so/"/>
+    <updated>2007-05-29T20:40:00+01:00</updated>
+    <id>http://www.fragmentedmemory.com/blog/2007/05/29/good-resource-for-icons-buttons-and-so</id>
+    <content type="html"><![CDATA[<div class='post'>
+<a href="http://www.smashingmagazine.com/">Smashing Magazine</a> has a great article <a href="http://www.smashingmagazine.com/2007/05/24/freebies-round-up-icons-buttons-and-templates/">Freebies Round-Up: Icons, Buttons and Templates</a> detailing lots of sources of icons and images available for use.  Not all can be used in commercial programs but they could be used for open-source programs.</div>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Icons Icons Icons]]></title>
+    <link href="http://www.fragmentedmemory.com/blog/2006/10/05/icons-icons-icons/"/>
+    <updated>2006-10-05T09:34:00+01:00</updated>
+    <id>http://www.fragmentedmemory.com/blog/2006/10/05/icons-icons-icons</id>
+    <content type="html"><![CDATA[<div class='post'>
+In my last company I redesigned every icon in the system from a 16 colour pallette into full 32-bit alpha-blended glory.  I also wrote the support functions for cool looking disabled and hover (hot) looks.<br /><br />In total I think that was 250-300 icons.  Probably more.  I didn't follow any guidelines apart from my own consistency of design.  To be honest the Microsoft Guidelines were very difficult to follow if you wanted to produce a substantial number of toolbar and tree view icons.<br /><br />There are a few guidelines out there now:<br /><ul><li><a href="http://msdn.microsoft.com/library/default.asp?url=/library/en-us/dnwxp/html/winxpicons.asp">Windows XP Icon Guidelines</a></li><li><a href="http://msdn.microsoft.com/library/default.asp?url=/library/en-us/UxGuide/UXGuide/Resources/WhatsNewInVista/Aero.asp">Windows Vista Icon Guidelines</a> - still not implemented.</li><li><a href="http://developer.apple.com/documentation/UserExperience/Conceptual/OSXHIGuidelines/XHIGIcons/chapter_14_section_2.html">Apple OS X Icon Guidelines</a></li></ul><br /><br />The reason I am writing this today is that Apple have recently added a style guide for their icons, and it is part of their <a href="http://developer.apple.com/documentation/UserExperience/Conceptual/OSXHIGuidelines/XHIGIntro/chapter_1_section_1.html#//apple_ref/doc/uid/TP30000894-TP6">Apple Human Interface Guidelines</a> which is essentially an online book and is very in-depth.<br /><br />I find it interesting that OS makers can chastise the applications for not being consistent and so on, but without providing developers with the information and tools to go and do it, they surely can't be surprised...  Hell, you can't even edit 32-bit icons in Visual Studio or even through an add-on.</div>
+
+]]></content>
+  </entry>
+  
+</feed>

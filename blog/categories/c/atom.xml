@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: C | Fragmented Memory]]></title>
+  <link href="http://www.fragmentedmemory.com/blog/categories/c/atom.xml" rel="self"/>
+  <link href="http://www.fragmentedmemory.com/"/>
+  <updated>2013-06-23T17:13:57+01:00</updated>
+  <id>http://www.fragmentedmemory.com/</id>
+  <author>
+    <name><![CDATA[Garry Bodsworth]]></name>
+    <email><![CDATA[blog@fragmentedmemory.com]]></email>
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Goings On In The Land Of Eclipse]]></title>
+    <link href="http://www.fragmentedmemory.com/blog/2008/05/19/goings-on-in-land-of-eclipse/"/>
+    <updated>2008-05-19T21:00:00+01:00</updated>
+    <id>http://www.fragmentedmemory.com/blog/2008/05/19/goings-on-in-land-of-eclipse</id>
+    <content type="html"><![CDATA[<div class='post'>
+I've been playing around with some of the Alpha/Beta releases of <a href="http://www.eclipse.org">Eclipse</a>.  I haven't played around with it for quite a while but some of the advancements look really interesting.<br /><br />Currently Eclipse has <a href="http://update.eclipse.org/downloads/drops/S-3.4M7-200805020100/index.php">3.4.M7</a> is available for download.  One of the most interesting features is that the user interface now supports WPF on Vista.  The Java toolkit <a href="http://en.wikipedia.org/wiki/Standard_Widget_Toolkit">SWT</a> now has a <a href="http://en.wikipedia.org/wiki/Windows_Presentation_Foundation">WPF</a> back-end, you can see its resolution independence if you look at it through the Magnifier application on Windows.  Also, in general, the user interface looks much more integrated into the native platform.<br /><br />You can see a list of new and newsworthy items for Eclipse <a href="http://www.eclipsecon.com/swt/R3_3/new_and_noteworthy.html">3.3 here</a> and <a href="http://download.eclipse.org/eclipse/downloads/drops/S-3.4M3-200711012000/eclipse-news-M3.html">3.4 here</a>.<br /><br />The main reason I was trying out the new version was to give the C/C++ toolkit <a href="http://wiki.eclipse.org/CDT/User/NewIn50">CDT 5.0</a> a go.  Doug Schaefer has blogged about it <a href="http://cdtdoug.blogspot.com/2008/05/cdt-50-looks-good-now-looking-ahead.html">here</a>.<br /><br />I was just playing a little with it to see how it compared to the older version and it seems a bit faster.  It has the beginnings of some nice refactorings and templates which should make some common coding tasks a bit simpler.<br /><br />Hopefully when this all comes out <a href="http://wascana.sourceforge.net/">Wascana</a> will have a new version released with a nicely packaged C/C++ development environment for Windows.  It could make a compelling alternative to other IDEs, as well as giving you access to other great tools like PyDev (for Python), Mylyn (task and bug management), and I suppose Java as well...</div>
+
+
+<h2>Comments</h2>
+
+
+<div class='comments'>
+<div class='comment'>
+<div class='author'>Doug Schaefer</div>
+<div class='content'>
+No worries. I'm working in the CDT 5.0 based-Wascana right now :)</div>
+</div>
+</div>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[C Front-End For LLVM Open-Sourced]]></title>
+    <link href="http://www.fragmentedmemory.com/blog/2007/07/25/c-front-end-for-llvm-open-sourced/"/>
+    <updated>2007-07-25T21:59:00+01:00</updated>
+    <id>http://www.fragmentedmemory.com/blog/2007/07/25/c-front-end-for-llvm-open-sourced</id>
+    <content type="html"><![CDATA[<div class='post'>
+I covered <a href="http://garrys-brain.blogspot.com/2007/07/llvm-low-level-virtual-machine.html">LLVM briefly earlier</a>.  I did mention Apple were working on a new C front-end called Clang.<br /><br />Now the C front-end has been open-sourced there is a small website for CFE/Clang <a href="http://llvm.org/cfe/">here</a>.<br /><br />There is a post about it <a href="http://lists.cs.uiuc.edu/pipermail/llvmdev/2007-July/009817.html">here</a>.  This is a good step in open-source tools, and hopefully will spur other tool developments on.</div>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[LLVM - Low-Level Virtual Machine]]></title>
+    <link href="http://www.fragmentedmemory.com/blog/2007/07/01/llvm-low-level-virtual-machine/"/>
+    <updated>2007-07-01T15:15:00+01:00</updated>
+    <id>http://www.fragmentedmemory.com/blog/2007/07/01/llvm-low-level-virtual-machine</id>
+    <content type="html"><![CDATA[<div class='post'>
+Recently there has been a lot of development on the <a href="http://llvm.org/">Low-Level Virtual Machine (LLVM)</a>.  It provides a back-end for compilers to allow for optimisation for the entire lifetime of the program.<br /><br />The GLSL in Mesa has been implemented using LLVM.  You can read a little about it <a href="http://zrusin.blogspot.com/2007/05/mesa-and-llvm.html">here</a>.  The OpenGL implementation in <a href="http://macslash.org/article.pl?sid=06/08/18/1248220">Mac OSX Leopard will be implemented using LLVM</a>.<br /><br />There is an interesting article <a href="http://cliffhacks.blogspot.com/2007/03/experimenting-with-llvm.html">here</a> about the speed of LLVM.  It is surprising how close it gets in speed as things currently stand to GCC.<br /><br />Recently there was a development meeting for LLVM in May and the presentations are available <a href="http://llvm.org/devmtg/2007-05/index.html">here</a>.  Of particular interest is the presentation by Apple about a new C front-end for LLVM called Clang with plans to support Objective C and C++.  You can read the slides <a href="http://llvm.org/devmtg/2007-05/09-Naroff-CFE.pdf">here</a> and see the presentation <a href="http://llvm.org/devmtg/2007-05/09-Naroff-CFE.mov">here</a>.  The new frontend is called Clang and probably won't be production ready for a while but it is interesting to see where compiler technologies are heading.<br /><br />The most interesting area of LLVM is definitely the whole program optimisation potential of it.  Anyone who has seen the performance gains from using it knows this is good thing.</div>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[A bit of hardcore programming]]></title>
+    <link href="http://www.fragmentedmemory.com/blog/2006/12/11/bit-of-hardcore-programming/"/>
+    <updated>2006-12-11T18:51:00+00:00</updated>
+    <id>http://www.fragmentedmemory.com/blog/2006/12/11/bit-of-hardcore-programming</id>
+    <content type="html"><![CDATA[<div class='post'>
+Last week <a href="http://games.slashdot.org/article.pl?sid=06/12/01/184205">Slashdot</a> drew attention to an article about <a href="http://www.beyond3d.com/articles/fastinvsqrt/">the origin of the fast approximation of the inverse square root in Quake 3</a>.  For anyone who likes obscure bits of code it is really quite interesting and I think really understanding the code does make you a better programmer even if you never use it.<blockquote><br />float InvSqrt (float x) {<br />float xhalf = 0.5f*x;<br />int i = *(int*)&x;<br />i = 0x5f3759df - (i>>1);<br />x = *(float*)&i;<br />x = x*(1.5f - xhalf*x*x);<br />return x;<br />}</blockquote>It computes the result using integer maths instead of floating point operations because back in the day that was faster.  This function does the operation to an approximation which is fine when it is used in graphics where the human eye finds it impossible to differentiate small changes in colour.  It is one of those functions where the more you iterate the more accurate the result it.<br /><br />It works by reinterpreting the float bit pattern as an integer then using bit shifting to get at the mantissa.  The "magic seed value" is an approximation of the result (it is easier to get a good approximation when the result is in a mostly predictable range).<br /><br />Anyway a useful tome about this kind of trickery is <a href="http://en.wikipedia.org/wiki/HAKMEM">HACKMEM</a>, you can read it online <a href="http://home.pipeline.com/~hbaker1/hakmem/hakmem.html">here</a>.<br /><br />It would also be a good idea to check out <a href="http://www.hackersdelight.org/">Hacker's Delight</a>.</div>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Visual Studio 2005 - Lets Break Everything!]]></title>
+    <link href="http://www.fragmentedmemory.com/blog/2006/10/04/visual-studio-2005-lets-break/"/>
+    <updated>2006-10-04T21:05:00+01:00</updated>
+    <id>http://www.fragmentedmemory.com/blog/2006/10/04/visual-studio-2005-lets-break</id>
+    <content type="html"><![CDATA[<div class='post'>
+Since I've been using Visual Studio.NET 2005 I have discovered a myriad of undocumented (or documented in such a way as to seem inoccuous) breaks in the compilation of most code.<br /><br /><span style="font-weight:bold;">Standard C - the CRT</span><br /><br />I should start with the simplest and probably most common breaks that would effect you if you use C or C++ with the Visual C++ 8.0 (VC8) compiler.  If you have used swprintf or any of its relations you will find your code no longer compiles, or it does and gives an odd warning.  This is extremely dangerous as to make it more conforming they have added an extra parameter for the buffer size.  All well and good, but you find most of the code you download of the Internet no longer compiles. Simply adding <span style="font-style:italic;">#define _CRT_NONSTDC_NO_DEPRECATE 1</span><br /> won't make a difference.  You need to add:<br />   <span style="font-style:italic;">#define _CRT_NON_CONFORMING_SWPRINTFS</span><br /><br />Make sure this all gets added as the first thing in the <span style="font-style:italic;">stdafx.h</span> or in the pre-processor definitions in the project settings.<br /><br />The <span style="font-style:italic;">_CRT_NONSTDC_NO_DEPRECATE</span> will deal with the instances of other C runtime library code that has also changed.  This is because Microsoft have replaced all of the functions that you will get all the warnings about with "secure" functions.  This means that the function names are appended with <span style="font-style:italic;">_s</span>.<br /><br /><span style="font-weight:bold;">Floating Point Operations</span><br /><br />There are three options now:<br /><ul><li><span style="font-weight:bold;">fp:fast</span> - The fastest implementation.</li><li><span style="font-weight:bold;">fp:precise</span> - slower but more "precise".</li><li><span style="font-weight:bold;">fp:strict</span> - the strictest implementation.</li></ul>You have to make a choice - faster or more precise.  I still haven't discovered how imprecise <span style="font-style:italic;">fp:fast</span> is yet.<br /><br /><span style="font-weight:bold;">C++ Standard Template Library</span><br /><br />You'll probably find that any code you use will fall over in some obscure and not so obscure instances, as well as being much slower.  And that goes double for Debug builds.<br /><br />So you need to add these to the top of your stdafx.h or your pre-processor definitions (or to your command line).  To get up and running use:<br />   <span style="font-style:italic;">#define _SECURE_SCL 0</span><br />   <span style="font-style:italic;">#define _SCL_SECURE_NO_DEPRECATE</span><br />   <span style="font-style:italic;">#define _HAS_ITERATOR_DEBUGGING 0</span><br /><br /><span style="font-weight:bold;">How to define these values.</span><br /><br />The options to add these things:<ol><li>Add to your stdafx.h as plain preprocessor definitions.  This option seems to be the most hit-and-miss.</li><li>Add to your pre-processor definitions in your project settings.  This is done with semi-colon separated values, eg, <span style="font-style:italic;">_SECURE_SCL=0</span></li><li>Add it to your commandline.  Do this in the project settings commandline tab.  Add /D_SECURE_SL=0 for instance, you simply add /D then the preprocessor symbol without a space with an optional assignment.</li></ol>In some instances one option may not work but one of the three will.</div>
+
+
+<h2>Comments</h2>
+
+
+<div class='comments'>
+<div class='comment'>
+<div class='author'>Manoj</div>
+<div class='content'>
+sadsdf</div>
+</div>
+</div>
+
+]]></content>
+  </entry>
+  
+</feed>

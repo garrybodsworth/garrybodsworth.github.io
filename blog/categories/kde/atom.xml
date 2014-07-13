@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: KDE | Fragmented Memory]]></title>
+  <link href="http://www.fragmentedmemory.com/blog/categories/kde/atom.xml" rel="self"/>
+  <link href="http://www.fragmentedmemory.com/"/>
+  <updated>2013-06-23T17:13:57+01:00</updated>
+  <id>http://www.fragmentedmemory.com/</id>
+  <author>
+    <name><![CDATA[Garry Bodsworth]]></name>
+    <email><![CDATA[blog@fragmentedmemory.com]]></email>
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[KDE4 Alpha 1 - Knut]]></title>
+    <link href="http://www.fragmentedmemory.com/blog/2007/05/11/kde4-alpha-1/"/>
+    <updated>2007-05-11T20:26:00+01:00</updated>
+    <id>http://www.fragmentedmemory.com/blog/2007/05/11/kde4-alpha-1</id>
+    <content type="html"><![CDATA[<div class='post'>
+The first <a href="http://dot.kde.org/1178891375/">alpha release of KDE</a> 4.0 has <a href="http://www.kde.org/announcements/visualguide-4.0-alpha1.php">just been released</a>.  Exciting times are certainly ahead for this desktop environment.<br /><br />At the link you'll see some pictures, which are not radically different but do contain the spiffy new Oxygen icon set.  There are improvements to the backend including being based on the latest <a href="http://www.trolltech.com">Qt</a>, and multimedia and hardware support through projects like <a href="http://phonon.kde.org/">Phonon</a> and <a href="http://solid.kde.org/">Solid</a>.<br /><br />The release is expected in October 2007.  Most of the work looks like it will start to concentrate on bringing the apps and the look up to scratch.<br /><br />They are also asking for help to make sure the apps follow the Human Interface Guidelines <a href="http://dot.kde.org/1178743323/">here</a>.</div>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[KDE desktop news]]></title>
+    <link href="http://www.fragmentedmemory.com/blog/2007/04/20/kde-desktop-news/"/>
+    <updated>2007-04-20T21:37:00+01:00</updated>
+    <id>http://www.fragmentedmemory.com/blog/2007/04/20/kde-desktop-news</id>
+    <content type="html"><![CDATA[<div class='post'>
+With the release of KDE4 planned for October the KDE development is certainly motoring along.<br /><ul><li><span style="font-weight: bold;">kdesvn</span> is covered in the <a href="http://kde.org.uk/apps/kdesvn/">KDE app of the month</a>.</li><li>For anyone that can read German there is a new <a href="http://dot.kde.org/1176768033/">KDevelop book available</a>.</li><li>There is now a <a href="http://www.kdevelop.org/mediawiki/index.php/KDevelop_4">page for KDevelop 4.0</a>.</li><li>More details of the new <a href="http://arstechnica.com/news.ars/post/20070405-afirst-look-at-dolphin-the-kde-4-file-manager.html">Dolphin file manager</a> are covered in a first look article.</li></ul></div>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[KDE News Roundup]]></title>
+    <link href="http://www.fragmentedmemory.com/blog/2007/02/26/kde-news-roundup/"/>
+    <updated>2007-02-26T21:51:00+00:00</updated>
+    <id>http://www.fragmentedmemory.com/blog/2007/02/26/kde-news-roundup</id>
+    <content type="html"><![CDATA[<div class='post'>
+There has been even more KDE information flying about recently.  All very exciting leading up to the eventual release of KDE4 which is shaping up to be pretty impressive.<br /><br /><a href="http://enzosworld.gmxhome.de/">Dolphin</a> has made its way into kdebase.  There is talk of it now becoming the new default file manager.<br /><br />The <a href="http://dot.kde.org/1172083974/">new KDE build system</a> which uses <a href="http://cmake.org/">CMake</a> which is a fantastic open-source project.<br /><br />The third KDE4 development snapshot has been released which has been christened <a href="http://dot.kde.org/1172249109/">Kludge</a> (I don't know if that is better than Krash ;) ).<br /><br />There is a possibility there could be a <a href="http://webkit.org/">WebKit</a> based Qt browser <a href="http://zrusin.blogspot.com/2007/02/browsers-performance-and-interventions.html">in the works</a>.<br /><br />There is a bit of news about Krita, the image manipulation program in KDE, for the upcoming KDE4 <a href="http://www.valdyas.org/fading/index.cgi/hacking/krita/kritashape.html">here</a> and <a href="http://www.valdyas.org/fading/index.cgi/hacking/krita/progress_2007_2.comments">here</a>.</div>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[KDE4 - More Information]]></title>
+    <link href="http://www.fragmentedmemory.com/blog/2007/02/01/kde4-more-information/"/>
+    <updated>2007-02-01T19:39:00+00:00</updated>
+    <id>http://www.fragmentedmemory.com/blog/2007/02/01/kde4-more-information</id>
+    <content type="html"><![CDATA[<div class='post'>
+The steady stream of information about KDE4 is still flowing.  <br /><br />There is a new interview with some of the developers porting KDE to Mac and Windows that can be read <a href="http://lxer.com/module/newswire/view/79007/index.html">here</a>.  It covers the near future of being able to run KDE applications natively on all three platforms.<br /><br />There is a small article <a href="http://dot.kde.org/1170113778/">here</a> about some f the education tools to do with graphing and chemistry.<br /><br /><a href="http://dot.kde.org/1169902218/">KDevelop 3.4 was released</a> recently as well.</div>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[KDE Happenings and Version 4]]></title>
+    <link href="http://www.fragmentedmemory.com/blog/2007/01/24/kde-happenings-and-version-4/"/>
+    <updated>2007-01-24T22:15:00+00:00</updated>
+    <id>http://www.fragmentedmemory.com/blog/2007/01/24/kde-happenings-and-version-4</id>
+    <content type="html"><![CDATA[<div class='post'>
+Recently there has been a wealth of information about <a href="http://wiki.kde.org/tiki-index.php?page=KDE4">KDE4</a> which is going to be the new version based on <a href="http://www.trolltech.com/products/qt/whatsnew">Qt4</a> with loads of new technologies.  I thought I'd put all of the recent good links into one handy place.<br /><br />KDE in Suse Linux 10.2 is reviewed <a href="http://blogbeebe.blogspot.com/2006/12/suse-102-part-3-looking-at-kde.html">here</a>.  It has some really impressive screenshots of version 3.5 which doesn't even have the splendid new features.  It features the new start menu type thing called <a href="http://home.kde.org/~binner/kickoff/sneak_preview.html">Kickoff</a>, check out the link to see it animated.<br /><br />Bizarrely what kicked off this wealth of information about the progress of KDE4 was someone making a blog post saying there was no progress and no future progress in desktop Linux.  It was completely misguided, but it started an avalanche waking up a dozing beast, one of the KDE developers made this <a href="http://aseigo.blogspot.com/2006/12/website-does-not-make-you-smart.html">post</a>.<br /><br />A list of features targeted at KDE4 can be viewed <a href="http://linuxhelp.blogspot.com/2007/01/sneek-preview-of-expected-features-in.html">here</a>.<br /><br />There is an article about the SVG rendering in applications <a href="http://dot.kde.org/1167723426/">here</a>.<br /><br />You can view an article about the KOffice 2.0 technologies <a href="http://dot.kde.org/1168284615/">here</a>.<br /><br />There is now a proper installer for running KDE on Windows seamlessly.  This is detailed in <a href="http://commit-digest.org/issues/2007-01-14/">this article</a>.  Also there is now KDE for Mac (so it integrates properly into OSX and not like those X11 applications).  There is some coverage of this <a href="http://dot.kde.org/1168899755/">here</a>.  Both of these are possible thanks to Qt being GPL on both platforms now at version 4.<br /><br />Finally there is an article about the new <a href="http://dot.kde.org/1169588301/">job progress user interface</a>.  It looks like it could be quite useful.<br /><br />Overall, exciting times are ahead for KDE and the Linux desktop.</div>
+
+]]></content>
+  </entry>
+  
+</feed>

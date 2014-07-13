@@ -1,0 +1,235 @@
+
+<!DOCTYPE HTML>
+<html lang="en-gb">
+<head>
+  <meta charset="UTF-8">
+  <title>Fragmented Memory</title>
+
+  <meta name="author" content="Garry Bodsworth">
+  
+  <meta name="description" content="The Little Box That Almost Could Feb 15th, 2009 A few weeks back I was looking at some small low-powered computer units. One was really interesting &hellip;">
+  
+  
+
+  <link rel="canonical" href="http://www.fragmentedmemory.com/blog/2009/02/15/the-little-box-that-almost-could">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/feed/" rel="alternate" title="Fragmented Memory" type="application/atom+xml">
+</head>
+  
+<body class="default">
+  <div id="wrapper">
+    <div id="header">
+  <h1><a href="/">Fragmented Memory</a></h1>
+  
+    <p>Garry Bodsworth's Blog (formerly Garry's Bit Patterns &amp; Programmer's Log)</p>
+  
+</div>
+<ul id="social-links">
+  
+    <li><a class="rss" href="/feed/" title="RSS">RSS</a></li>
+  
+  
+  
+  
+    <li><a class="twitter" href="http://twitter.com/garrybodsworth" title="Twitter">Twitter</a></li>
+  
+  
+    <li><a class="github" href="https://github.com/garrybodsworth" title="GitHub">GitHub</a></li>
+  
+  
+  
+    <li><a class="linkedin" href="http://www.linkedin.com/in/garrybodsworth">LinkedIn</a></li>
+  
+  
+  
+  
+    <li><a class="pinboard" href="https://pinboard.in/u:garrybodsworth" title="Pinboard">Pinboard</a></li>
+  
+</ul>
+<div class="clear"></div>
+<ul id="nav">
+  
+    <li> <a href="/">blog</a> </li>
+  
+
+  
+    <li><a href="/blog/archives">archives</a></li>
+  
+
+  
+    <li><a href="/about">about</a></li>
+  
+</ul>
+
+    <div id="main"> <div class="post-header">
+  
+    <h1 class="post-title">The Little Box That Almost Could</h1>
+  
+  
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2009-02-15T00:00:00+00:00" pubdate data-updated="true">Feb 15<span>th</span>, 2009</time>
+</div>
+
+<div class="post-content"><p>A few weeks back I was looking at some small low-powered computer units. One was really interesting, a passively cooled ultra low voltage tiny computer you could VESA mount to the back of monitors.</p>
+
+<p>It goes under a number of different names, <a href="http://www.bvm-store.com/ProductDetail.asp?fdProductId=486">BVM&#8217;s EPC-500</a>, <a href="http://www.compactpc.com.tw/ebox-4300.htm">the eBox-4300 / 4310</a>, and <a href="MicroClient">the MicroClient Sr</a>. They all seem to be rebranded versions of the same platform, and I think the eBox is the original although I could be proved wrong.</p>
+
+<p><strong>Features</strong><br/>
+* 500MHz VIA Eden ULV CPU with 512Mbyte/1Gbyte DDR2 RAM<br/>
+* Bootable from Compact Flash or USB<br/>
+* Internal HDD option<br/>
+* Linux port available on CF or USB Pendrive<br/>
+* Low power consumption<br/>
+* VESA mounting capability</p>
+
+<p><strong>Specifications</strong><br/>
+* CPU: VIA Eden ULV 500MHz.<br/>
+* BIOS: AMI BIOS.<br/>
+* System Chipset: VIA CX700M.<br/>
+* I/O Chip: Winbond W83697.<br/>
+* System Memory: Onboard 512MB/1GB DDR2.<br/>
+* I/O: 1 x EIDE, 1 x PS/2 K/B/Mouse; 1 x Type I/II CF slot<br/>
+* 2 x RS-232 Port (option); USB 3 x USB 2.0 Ports (two on front).<br/>
+* Display Chipset: Integrated VIA UniChrome 2D/3D Graphics with MPEG4/WMV9 decoding accelerator.<br/>
+* Display Memory: up to 128MBytes sharing system memory.<br/>
+* Resolution: up to 1920 x 1440.<br/>
+* Audio: AC97 2.2 (Codec); VIA Vinyl VT1708.<br/>
+* Audio Interface: Line out, Mic in.<br/>
+* Ethernet: Chipset Realtek 8100B 10/100 Base-T<br/>
+* Remote Boot ROM built-in boot ROM function, supports PXE boot and Wake-up on LAN.<br/>
+* Mechanical &amp; Environment:<br/>
+* Power Requirement: +5V @ 3.0A.<br/>
+* Operating Temperature: 0 ~ 60°C.<br/>
+* Operating Humidity: 0% &#8211; 90% relative humidity, non-condensing.<br/>
+* Size (W x H x D): 115x 115 x 35mm.<br/>
+* Weight: 505g</p>
+
+<p>Also the <a href="http://www.liantec.com/product/emboard/EMB-3700.htm">motherboards are available on their own</a> with much more power processors (up to 1.5GHz passively cooled and 2.0GHz with a fan using VIA Eden ULV processors). The spec sheet is <a href="http://download.liantec.com/download/datasheet/EMB-3700.pdf">available</a>.</p>
+
+<p>I was looking quite deeply into this platform to test its potential. I wanted to run Linux on this and it had an in-built video decoding co-processor as well as 3D support through the CX700M chipset. Anyway I eventually managed to get <a href="http://www.xubuntu.org/">Xubuntu</a> running with Compiz effects.</p>
+
+<p>The problem I found with the system is that the drivers are thoroughly inadequate and that the open-source support is nowhere to be seen without VIA helping by supplying the documentation for the video decoding acceleration. The GPU is a <a href="http://www.via.com.tw/en/products/chipsets/c-series/cx700m/">CX700M</a> and the binary drivers are <a href="http://www.viaarena.com/default.aspx?PageID=420&amp;OSID=25&amp;CatID=2580&amp;SubCatID=184">available</a> and the official drivers are <a href="http://linux.via.com.tw/support/downloadFiles.action">available from VIA</a> (Ubuntu 8.10 currently). With these the 3D support is okay apart from some font rendering issues when using Compiz.</p>
+
+<p>Some of the older drivers supply the support for the video decoding co-processor. Unfortunately I could not get a version working with a current version of Ubuntu, which in turn even if it did work would not have supported the 3D graphics properly. Also in order to make use of it you have to jump through a number of extra hoops and also operate as root which is a good security risk(!)</p>
+
+<p>There are two specialised version of the media players that VIA has customised to make use of the drivers that supply the MPEG-2/4/h.264 and WMV9 acceleration. These are <a href="http://sourceforge.net/projects/viaexp">VeXP (Via Xine Player)</a> and <a href="http://sourceforge.net/projects/vemp">VeMP (the VIA enhanced mPlayer)</a>. I did put them into Git repositories starting from the base they branched from so I could work out what the patches did. They rely on closed-source library called libddmpeg.so that is part of some of the older drivers which provides the interface to the video acceleration hardware. This in turn relies n <a href="http://www.trilithium.com/johan/2005/08/linux-gate/">linuxgate.so.1</a> which provides a direct interface into the kernel for interrupts and the suchlike. This probably explains why all these things if you can get them to work require root access. I did try grabbing the library from an older driver and using it on a newer driver, which would have been too good to be true if it worked (it didn&#8217;t but at least I didn&#8217;t kill the system).</p>
+
+<p>The place to go for drivers and utilities is <a href="http://www.viaarena.com/">VIA Arena</a> where they maintain all the older legacy downloads as only the bleeding edge are available on the official VIA website.</p>
+
+<p>There is a special version of <a href="http://www.puppylinux.org/downloads/puplets/mcpup">Puppy Linux</a> that is optimised for the platform. The development website is <a href="http://www.mcpup.org/">here</a>. Unfortunately the media player supplied is not the one that makes use of the co-processor functionality, well it didn&#8217;t for me anyway. Maybe this s worth revisiting again at some point.</p>
+
+<p>There is a blog covering the Microclient Sr <a href="http://microclient.wordpress.com/">here</a> and a Google Group discussin it <a href="http://groups.google.com/group/microclient">here</a>. There is also a good <a href="http://nettops.fr/index.php">comprehensive website (in French)</a>. Finally, a couple of reviews are <a href="http://www.linuxdevices.com/news/NS9828354233.html">here</a> and <a href="http://www.linuxdevices.com/articles/AT4708024578.html">here</a>.</p>
+
+<p>This is a really cool bit of it with nothing else in its price range/features. Unfortunately the Linux support is such a headache, if it worked I would be extremely happy and it would be very interesting to see how it functions with video and 3D. The tiny little box can even do insanely high resolutions of 1920&#215;1440 which would be very useful.</p>
+</div>
+
+
+<div class="post-single">
+  <div class="post-meta">
+    
+
+<span class="categories">
+  Categories:
+  
+    <a class='category' href='/blog/categories/uncategorized/'>Uncategorized</a>
+  
+</span>
+
+
+    
+      <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://www.fragmentedmemory.com/blog/2009/02/15/the-little-box-that-almost-could/" data-via="garrybodsworth" data-counturl="http://www.fragmentedmemory.com/blog/2009/02/15/the-little-box-that-almost-could/" >Tweet</a>
+  
+  
+  
+</div>
+
+    
+  </div>
+  <div class="clear"></div>
+
+  
+</div>
+ </div>
+    <div id="footer">
+  <div class="panels">
+    <div class="license">
+      <h2>License</h2>
+      <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-nc-sa/3.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/">Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License</a>.
+    </div>
+
+    <div class="posts">
+      <h2>Recent Posts</h2>
+      <ul>
+        
+          <li>
+            <a href="/blog/2013/06/22/rss-feed-moved-to-http-slash-slash-www-dot-fragmentedmemory-dot-com-slash-feed-slash/">RSS Feed Moved To http://www.fragmentedmemory.com/feed/</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2013/06/18/new-location-and-new-blog-engine-and-old-content-restored/">New Location &amp; New Blog Engine &amp; Old Content Restored</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2013/06/13/joining-microsoft/">Joining Microsoft</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2013/06/13/leaving-bromium/">Leaving Bromium</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2013/03/05/philip-su-engineering-process-and/">Philip Su - Engineering Process And Philosophy At Facebook</a>
+          </li>
+        
+      </ul>
+    </div>
+
+    <div class="posts">
+      <h2>Links</h2>
+      <a href='https://alpha.app.net/gjb' class='adn-button' target='_blank' data-type='follow' data-width='277' data-height='27' data-user-id='@gjb' data-show-username='1' rel='me'>Follow me on App.net</a><script>(function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src='//d2zh9g63fcvyrq.cloudfront.net/adn.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'adn-button-js'));</script>
+    </div>
+  </div>
+
+  <p class="powered">
+    Powered by <a href="http://octopress.org">Octopress</a> and <a href="https://github.com/iwinux/compbits">Compbits</a>
+  </p>
+</div>
+
+  </div> <!-- #wrapper end -->
+
+  
+
+  
+
+
+  
+
+  
+
+  
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+</body>
+</html>

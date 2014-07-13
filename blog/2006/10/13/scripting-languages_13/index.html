@@ -1,0 +1,179 @@
+
+<!DOCTYPE HTML>
+<html lang="en-gb">
+<head>
+  <meta charset="UTF-8">
+  <title>Fragmented Memory</title>
+
+  <meta name="author" content="Garry Bodsworth">
+  
+  <meta name="description" content="Scripting Languages Oct 13th, 2006 At work I use a proprietary scripting language written using a version of Lex and Yacc (the neat Windows &hellip;">
+  
+  
+
+  <link rel="canonical" href="http://www.fragmentedmemory.com/blog/2006/10/13/scripting-languages_13">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/feed/" rel="alternate" title="Fragmented Memory" type="application/atom+xml">
+</head>
+  
+<body class="default">
+  <div id="wrapper">
+    <div id="header">
+  <h1><a href="/">Fragmented Memory</a></h1>
+  
+    <p>Garry Bodsworth's Blog (formerly Garry's Bit Patterns &amp; Programmer's Log)</p>
+  
+</div>
+<ul id="social-links">
+  
+    <li><a class="rss" href="/feed/" title="RSS">RSS</a></li>
+  
+  
+  
+  
+    <li><a class="twitter" href="http://twitter.com/garrybodsworth" title="Twitter">Twitter</a></li>
+  
+  
+    <li><a class="github" href="https://github.com/garrybodsworth" title="GitHub">GitHub</a></li>
+  
+  
+  
+    <li><a class="linkedin" href="http://www.linkedin.com/in/garrybodsworth">LinkedIn</a></li>
+  
+  
+  
+  
+    <li><a class="pinboard" href="https://pinboard.in/u:garrybodsworth" title="Pinboard">Pinboard</a></li>
+  
+</ul>
+<div class="clear"></div>
+<ul id="nav">
+  
+    <li> <a href="/">blog</a> </li>
+  
+
+  
+    <li><a href="/blog/archives">archives</a></li>
+  
+
+  
+    <li><a href="/about">about</a></li>
+  
+</ul>
+
+    <div id="main"> <div class="post-header">
+  
+    <h1 class="post-title">Scripting Languages</h1>
+  
+  
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2006-10-13T21:43:00+01:00" pubdate data-updated="true">Oct 13<span>th</span>, 2006</time>
+</div>
+
+<div class="post-content"><div class='post'>
+At work I use a proprietary scripting language written using a version of Lex and Yacc (the neat Windows implementation from <a href="http://www.bumblebeesoftware.com/index.htm">Bumblebee Software</a> called Parser Generator 2).  Unfortunately it is not as well documented as I would like (although it is in a much beter state with some recent work), and also difficult to maintain.  It has been fun messing around with Lex and Yacc, but Parser Generator 2 hasn&#8217;t been updated since 2003 so I had to spend some time getting it ready for Visual Studio 2005 (I don&#8217;t know what will happen for 64 bit&#8230;)<br /><br />Admittedly this is not an ideal situation, but when this macro language was first dropped in there was not quite the thriving community of different scripting languages available.  I find the whole scripting language thing intensely interesting, so I thought I&#8217;d ruminate on a few.<br /><br /><a href="http://www.python.org">Python</a><br /><br />Python is well-known, mature and well respected programming language.  It was designed as a programming language not a scripting language so it has a really solid foundation, as it is always harder to retrofit complexity rather than preparing for it at the start.  It has been used in the web domain extensively as well as embedding and a programming language in its own right.<br /><br />It is really extensible with a well defined C API, and also this API allows you to embed an interpreter within your program.  There are arguments that you should extend and not embed Python as a language, but this is a moot point as the design of your program will normally dictate the course you take.<br /><br />Extending the language with your own C++ functionality is almost trivial thanks to projects like <a href="http://www.boost.org/libs/python">Boost Python</a> and <a href="http://www.swig.org/">SWIG</a>. There are also many other tools for extending and embedding.  I am definitely a big fan of Boost Python after success playing with it and understanding how it all fits together (and I don&#8217;t forget I promised to go into more detail on setting it up and designing your program around it).<br /><br />Python extensions also include the absolutely brilliant <a href="http://www.wxpython.org/">wxPython</a> which exposes the wxWindows library.  The thing about wxPython is that it is widely regarded as a better API than the actual macro based <a href="http://www.wxwidgets.org">wxWidgets</a> C++ API.<br /><br /><a href="http://www.lua.org/">Lua</a><br /><br />This was designed as a scripting language.  It is lightweight and fast.  The language has grown to accomodate the features people wanted or needed, and the community around it is massive and thriving.  It is normally the option people go for when they consider Python too &#8220;heavyweight&#8221;, and as such is popular with game developers (for instance the MMORPG Worlds Of Warcraft).<br /><br />This language also has an excellently designed way of binding C++ to the language called <a href="http://luabind.sourceforge.net/">LuaBind</a>.  This is born from the same roots as the Boost Python design, there are plans afoot for the <a href="http://sourceforge.net/mailarchive/forum.php?forum_id=34093">Boost Langbinding</a> project (which would also encompass binding to other languages like <a href="http://www.ruby-lang.org">Ruby</a>).<br /><br />There are also many other tools and more available from the <a href="http://lua-users.org/">community</a>, make sure you take a look at the wiki.<br /><br /><a href="http://www.squirrel-lang.org">Squirrel</a><br /><br />I must admit I have been keeping an eye on this project.  It was born from someone&#8217;s frustrations with Lua and they created their own language.  It&#8217;s a young language, but it is surprisingly robust and mature for its age.  The active maintenance also means that it is always working for the latest compilers.<br /><br />Since it is so new it does lack the size of community, but it does have some nice tools.  Squirrel has a C++ language binding tool like LuaBind and Boost Python called <a href="http://wiki.squirrel-lang.org/default.aspx/SquirrelWiki/SqPlus.html">SqPlus</a> which is never normally far behind the release of Squirrel.  I recommend going to have a look at the <a href="http://wiki.squirrel-lang.org/">Squirrel Wiki</a> for a lot more information.<br /><br /><br />Well, that is three languages so far.  Others include <a href="http://www.angelcode.com/angelscript/">AngelScript</a>, <a href="http://www.somedude.net/gamemonkey/">GameMonkey</a>, <a href="http://www.nicollet.net/meta/xhed">XHed</a>, <a href="http://eosscript.sourceforge.net/">EO scripting language</a>, <a href="http://www.gnu.org/software/guile/guile.html">Guile</a>, <a href="http://www.mozilla.org/js/">Javascript</a>, <a href="http://www.ruby-lang.org/en/">Ruby</a>, <a href="http://www.compuphase.com/pawn/pawn.htm">Pawn</a>, <a href="http://www.iolanguage.com/about/">io</a>, and no doubt I am missing some others.  (I&#8217;ve deliberately missed off the CLI based ones.)</div>
+</div>
+
+
+<div class="post-single">
+  <div class="post-meta">
+    
+
+
+    
+      <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://www.fragmentedmemory.com/blog/2006/10/13/scripting-languages_13/" data-via="garrybodsworth" data-counturl="http://www.fragmentedmemory.com/blog/2006/10/13/scripting-languages_13/" >Tweet</a>
+  
+  
+  
+</div>
+
+    
+  </div>
+  <div class="clear"></div>
+
+  
+</div>
+ </div>
+    <div id="footer">
+  <div class="panels">
+    <div class="license">
+      <h2>License</h2>
+      <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-nc-sa/3.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/">Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License</a>.
+    </div>
+
+    <div class="posts">
+      <h2>Recent Posts</h2>
+      <ul>
+        
+          <li>
+            <a href="/blog/2013/06/22/rss-feed-moved-to-http-slash-slash-www-dot-fragmentedmemory-dot-com-slash-feed-slash/">RSS Feed Moved To http://www.fragmentedmemory.com/feed/</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2013/06/18/new-location-and-new-blog-engine-and-old-content-restored/">New Location &amp; New Blog Engine &amp; Old Content Restored</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2013/06/13/joining-microsoft/">Joining Microsoft</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2013/06/13/leaving-bromium/">Leaving Bromium</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2013/03/05/philip-su-engineering-process-and/">Philip Su - Engineering Process And Philosophy At Facebook</a>
+          </li>
+        
+      </ul>
+    </div>
+
+    <div class="posts">
+      <h2>Links</h2>
+      <a href='https://alpha.app.net/gjb' class='adn-button' target='_blank' data-type='follow' data-width='277' data-height='27' data-user-id='@gjb' data-show-username='1' rel='me'>Follow me on App.net</a><script>(function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src='//d2zh9g63fcvyrq.cloudfront.net/adn.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'adn-button-js'));</script>
+    </div>
+  </div>
+
+  <p class="powered">
+    Powered by <a href="http://octopress.org">Octopress</a> and <a href="https://github.com/iwinux/compbits">Compbits</a>
+  </p>
+</div>
+
+  </div> <!-- #wrapper end -->
+
+  
+
+  
+
+
+  
+
+  
+
+  
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+</body>
+</html>

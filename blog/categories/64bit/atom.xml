@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: 64bit | Fragmented Memory]]></title>
+  <link href="http://www.fragmentedmemory.com/blog/categories/64bit/atom.xml" rel="self"/>
+  <link href="http://www.fragmentedmemory.com/"/>
+  <updated>2013-06-23T17:13:57+01:00</updated>
+  <id>http://www.fragmentedmemory.com/</id>
+  <author>
+    <name><![CDATA[Garry Bodsworth]]></name>
+    <email><![CDATA[blog@fragmentedmemory.com]]></email>
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[C++ and 64-bits]]></title>
+    <link href="http://www.fragmentedmemory.com/blog/2007/10/14/c-and-64-bits/"/>
+    <updated>2007-10-14T22:01:00+01:00</updated>
+    <id>http://www.fragmentedmemory.com/blog/2007/10/14/c-and-64-bits</id>
+    <content type="html"><![CDATA[<div class='post'>
+When pursuing the development of a 64-bit native program you realise that everything is not what you thought it was.  Somehow I had convinced myself of the wrong sizes for the built in types.  This wasn't due to ignorance but due to the plethora of 64-bit implementations.<br /><br />I'd somehow convinced myself the data model I was programming to was ILP64, but for Windows as it turns out uses LLP64.  Normally you don't discover it until you get to the point your program collapses in a heap under heavy load.<br /><br />Here are some relevant articles <a href="http://www.gamedev.net/reference/articles/article2419.asp">here</a>, <a href="http://developer.apple.com/documentation/Darwin/Conceptual/64bitPorting/transition/chapter_3_section_5.html">here</a>, <a href="http://www.codeproject.com/useritems/Test_64-bit_applications.asp">here</a>, and <a href="http://www.codeproject.com/useritems/20ISSUES64BIT.asp">here</a>.  The good thing is if you statically check your code with something like Lint pretty strictly a lot of the problems you would normally encounter don't exist.<br /><br />For the data models have a look at this <a href="http://www.gamedev.net/reference/articles/article2419.asp">article</a>.  For some reason the table won't display correctly in my blog.</div>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Porting C++ Applications To 64-Bit]]></title>
+    <link href="http://www.fragmentedmemory.com/blog/2007/05/22/porting-c-applications-to-64-bit/"/>
+    <updated>2007-05-22T21:32:00+01:00</updated>
+    <id>http://www.fragmentedmemory.com/blog/2007/05/22/porting-c-applications-to-64-bit</id>
+    <content type="html"><![CDATA[<div class='post'>
+A couple of recent articles on the <a href="http://www.codeproject.com">CodeProject</a> cover the porting of applications to 64-bit.  It does mention the datatype problem where the size changes.<br /><br />The first one is <a href="http://www.codeproject.com/useritems/Test_64-bit_applications.asp">Problems Of Testing 64-bit Applications</a>.  The second is <a href="http://www.codeproject.com/useritems/20ISSUES64BIT.asp">20 issues of porting C++ code on the 64-bit platform</a>.<br /><br />The second one is the more comprehensive and provides practical solutions to the problem.</div>
+
+]]></content>
+  </entry>
+  
+</feed>

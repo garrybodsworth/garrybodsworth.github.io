@@ -1,0 +1,214 @@
+
+<!DOCTYPE HTML>
+<html lang="en-gb">
+<head>
+  <meta charset="UTF-8">
+  <title>Fragmented Memory</title>
+
+  <meta name="author" content="Garry Bodsworth">
+  
+  <meta name="description" content="Starting a New Development Project Jan 14th, 2008 With all the tools out there to make developer&#8217;s lives easier, what would I do when starting &hellip;">
+  
+  
+
+  <link rel="canonical" href="http://www.fragmentedmemory.com/blog/2008/01/14/starting-new-development-project">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/feed/" rel="alternate" title="Fragmented Memory" type="application/atom+xml">
+</head>
+  
+<body class="default">
+  <div id="wrapper">
+    <div id="header">
+  <h1><a href="/">Fragmented Memory</a></h1>
+  
+    <p>Garry Bodsworth's Blog (formerly Garry's Bit Patterns &amp; Programmer's Log)</p>
+  
+</div>
+<ul id="social-links">
+  
+    <li><a class="rss" href="/feed/" title="RSS">RSS</a></li>
+  
+  
+  
+  
+    <li><a class="twitter" href="http://twitter.com/garrybodsworth" title="Twitter">Twitter</a></li>
+  
+  
+    <li><a class="github" href="https://github.com/garrybodsworth" title="GitHub">GitHub</a></li>
+  
+  
+  
+    <li><a class="linkedin" href="http://www.linkedin.com/in/garrybodsworth">LinkedIn</a></li>
+  
+  
+  
+  
+    <li><a class="pinboard" href="https://pinboard.in/u:garrybodsworth" title="Pinboard">Pinboard</a></li>
+  
+</ul>
+<div class="clear"></div>
+<ul id="nav">
+  
+    <li> <a href="/">blog</a> </li>
+  
+
+  
+    <li><a href="/blog/archives">archives</a></li>
+  
+
+  
+    <li><a href="/about">about</a></li>
+  
+</ul>
+
+    <div id="main"> <div class="post-header">
+  
+    <h1 class="post-title">Starting a New Development Project</h1>
+  
+  
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2008-01-14T21:22:00+00:00" pubdate data-updated="true">Jan 14<span>th</span>, 2008</time>
+</div>
+
+<div class="post-content"><div class='post'>
+With all the tools out there to make developer&#8217;s lives easier, what would I do when starting a new project.  When starting a new development project the initial decisions you make reflect throughout the life of the codebase because once the ship is in sail it is hard to change direction without real willingness.<br /><br />There are really two areas that this would cover, first the tools you use, and then how you use those tools.<br /><br />Lets say that you are developing on Windows.  You would use Visual Studio instinctively, unfortunately the build system sucks in the worst way when it comes to project dependencies and command-line operations. You could use something like CMake or bjam or any one of the other build systems available.  The problem then is that the features always lag behind what is available within the IDE.<br /><br />But I am going off on a tangent.  I am deciding on a development environment for a new project (C++).  Right then what could we use that is more or less free&#8230;<br />* Source control : Subversion<br />    The main reason to use this is that there are so many tools available (most specifically TortoiseSVN).<br />* Bug tracking : Trac<br />    I would rather a more powerful bug tracking system (I am a big fan of Bugzilla) but the tight integration with Subversion is a major plus point.  Plus you get a wiki for free, and with the plug-ins you can have continuous integration and a myriad of other things integrated in one Intranet website.<br />* Compiler : Visual Studio<br />    This means you can support 32 and 64-bit (which MinGW sadly lacks at the moment) targets.<br />* Continuous Integration : Cruise Control.NET<br />    Regular builds make sure that you haven&#8217;t gone too far down the wrong path.  It can also be used to do other processes like testing or analysis.  You can integrate it with Trac as well here http://syntactic.org/2007/7/23/cruisecontrol-net-trac-integration or here https://oss.werkbold.de/trac-cc/.<br />* Wiki : Trac<br />    Developer documentation should be quick and easy to edit and should be encourages.  It&#8217;s good news it is also part of Trac.<br />* Unit testing : Boost<br />    Using Boost in a C++ project makes perfect sense, so using their unit testing framework would therefore be a good idea.  It can be difficult to drive but other C++ unit testing frameworks are as much a pain so rolling your own could also be an idea.<br />* Batch testing : Python<br />    Python scripting would be a good idea for doing actual system testing.  What would be even better is the ability to run the program due to Python being embedded in the program to drive it.  Get the output well formed and I think it can be integrated with Trac as well.<br /><br />When you start:<br />* All commits must have a comment and preferably a bug number so you can always work out the reasoning behind all edits.  Being able to work out why is always useful to a developer.<br />* Compile with the warning levels on the maximum available level and have warnings as errors.<br />* Try to use some static analysis like Lint to improve the baseline coe quality.<br /><br />By building in high standards in the beginning you don&#8217;t have to go through laborious and error-prone tasks later in the day retrofitting some standard process.  Also, I like the idea of having Trac as a port of call or documentation, source code, and analysis means as a developer you can&#8217;t complain any of the process is too difficult.<br /><br />I&#8217;ve probably left out loads but its a start at least&#8230;</div>
+<h2>Comments</h2>
+<div class='comments'>
+<div class='comment'>
+<div class='author'>Garry Bodsworth</div>
+<div class='content'>
+Hi, it certainly looks interesting.  Than ks for the comment!</div>
+</div>
+<div class='comment'>
+<div class='author'>Corey</div>
+<div class='content'>
+For folks developing on Windows who might prefer less Python, more C#, an alternative to Trac might be <A HREF="http://ifdefined.com/bugtrackernet.html" REL="nofollow">BugTracker.NET</A>.  Free, open-source.  (I&#8217;m the author). It supports <A HREF="http://ifdefined.com/doc_bug_tracker_subversion.html" REL="nofollow">Subversion integration</A> much like Trac. According to a paper somebody wrote for his college class, it can be <A HREF="http://www.scs.carleton.ca/~deugo/comp5900/papers/BugTrackerAndCCNet.pdf" REL="nofollow">integrated with CruiseControl.NET</A>, although I don&#8217;t have any experience with that.</div>
+</div>
+<div class='comment'>
+<div class='author'>Garry Bodsworth</div>
+<div class='content'>
+On Subversion at least you can force people to give comments (and with TortoiseSVN force them to supply bug numbers!)</div>
+</div>
+<div class='comment'>
+<div class='author'>grahamr</div>
+<div class='content'>
+Regarding CruiseControl: You may want to see Len Holgate&#8217;s view on it: http://www.lenholgate.com/<BR/><BR/>&#8221;* All commits must have a comment and preferably a bug number so you can always work out the reasoning behind all edits. Being able to work out why is always useful to a developer.&#8221; We did this at a previous company. You can also extract the information out when a build was successful and append it to an email and send it to the testers so they knew what WinRunner/Mercury scripts to run. Unfortunately this was many years ago and the email rarely turned up, and certain colleagues never commented their check-ins.<BR/><BR/>(forgot to attach link)</div>
+</div>
+<div class='comment'>
+<div class='author'>grahamr</div>
+<div class='content'>
+This comment has been removed by the author.</div>
+</div>
+</div>
+</div>
+
+
+<div class="post-single">
+  <div class="post-meta">
+    
+
+<span class="categories">
+  Categories:
+  
+    <a class='category' href='/blog/categories/development/'>Development</a>
+  
+</span>
+
+
+    
+      <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://www.fragmentedmemory.com/blog/2008/01/14/starting-new-development-project/" data-via="garrybodsworth" data-counturl="http://www.fragmentedmemory.com/blog/2008/01/14/starting-new-development-project/" >Tweet</a>
+  
+  
+  
+</div>
+
+    
+  </div>
+  <div class="clear"></div>
+
+  
+</div>
+ </div>
+    <div id="footer">
+  <div class="panels">
+    <div class="license">
+      <h2>License</h2>
+      <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-nc-sa/3.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/">Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License</a>.
+    </div>
+
+    <div class="posts">
+      <h2>Recent Posts</h2>
+      <ul>
+        
+          <li>
+            <a href="/blog/2013/06/22/rss-feed-moved-to-http-slash-slash-www-dot-fragmentedmemory-dot-com-slash-feed-slash/">RSS Feed Moved To http://www.fragmentedmemory.com/feed/</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2013/06/18/new-location-and-new-blog-engine-and-old-content-restored/">New Location &amp; New Blog Engine &amp; Old Content Restored</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2013/06/13/joining-microsoft/">Joining Microsoft</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2013/06/13/leaving-bromium/">Leaving Bromium</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2013/03/05/philip-su-engineering-process-and/">Philip Su - Engineering Process And Philosophy At Facebook</a>
+          </li>
+        
+      </ul>
+    </div>
+
+    <div class="posts">
+      <h2>Links</h2>
+      <a href='https://alpha.app.net/gjb' class='adn-button' target='_blank' data-type='follow' data-width='277' data-height='27' data-user-id='@gjb' data-show-username='1' rel='me'>Follow me on App.net</a><script>(function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src='//d2zh9g63fcvyrq.cloudfront.net/adn.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'adn-button-js'));</script>
+    </div>
+  </div>
+
+  <p class="powered">
+    Powered by <a href="http://octopress.org">Octopress</a> and <a href="https://github.com/iwinux/compbits">Compbits</a>
+  </p>
+</div>
+
+  </div> <!-- #wrapper end -->
+
+  
+
+  
+
+
+  
+
+  
+
+  
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+</body>
+</html>

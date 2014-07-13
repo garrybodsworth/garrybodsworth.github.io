@@ -1,0 +1,199 @@
+
+<!DOCTYPE HTML>
+<html lang="en-gb">
+<head>
+  <meta charset="UTF-8">
+  <title>Fragmented Memory</title>
+
+  <meta name="author" content="Garry Bodsworth">
+  
+  <meta name="description" content="More Vista and OpenGL Nov 24th, 2006 I finally got to the bottom of my outstanding OpenGL problem on Vista. It seems that the drivers were throwing &hellip;">
+  
+  
+
+  <link rel="canonical" href="http://www.fragmentedmemory.com/blog/2006/11/24/more-vista-and-opengl">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/feed/" rel="alternate" title="Fragmented Memory" type="application/atom+xml">
+</head>
+  
+<body class="default">
+  <div id="wrapper">
+    <div id="header">
+  <h1><a href="/">Fragmented Memory</a></h1>
+  
+    <p>Garry Bodsworth's Blog (formerly Garry's Bit Patterns &amp; Programmer's Log)</p>
+  
+</div>
+<ul id="social-links">
+  
+    <li><a class="rss" href="/feed/" title="RSS">RSS</a></li>
+  
+  
+  
+  
+    <li><a class="twitter" href="http://twitter.com/garrybodsworth" title="Twitter">Twitter</a></li>
+  
+  
+    <li><a class="github" href="https://github.com/garrybodsworth" title="GitHub">GitHub</a></li>
+  
+  
+  
+    <li><a class="linkedin" href="http://www.linkedin.com/in/garrybodsworth">LinkedIn</a></li>
+  
+  
+  
+  
+    <li><a class="pinboard" href="https://pinboard.in/u:garrybodsworth" title="Pinboard">Pinboard</a></li>
+  
+</ul>
+<div class="clear"></div>
+<ul id="nav">
+  
+    <li> <a href="/">blog</a> </li>
+  
+
+  
+    <li><a href="/blog/archives">archives</a></li>
+  
+
+  
+    <li><a href="/about">about</a></li>
+  
+</ul>
+
+    <div id="main"> <div class="post-header">
+  
+    <h1 class="post-title">More Vista and OpenGL</h1>
+  
+  
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2006-11-24T21:53:00+00:00" pubdate data-updated="true">Nov 24<span>th</span>, 2006</time>
+</div>
+
+<div class="post-content"><div class='post'>
+I finally got to the bottom of my outstanding OpenGL problem on Vista.  It seems that the drivers were throwing floating point exceptions in random places, I tidied up the code as much as possible but it still happened.  The only way to get around this problem was to not unmask the floating point exceptions in the thread performing the OpenGL rendering (although most applications seem not to unmask floating point exceptions as I have discovered).<br /><br />I imagine when the drivers are as mature as the XP drivers these will be but a distant memory, as in the olden days the way the OpenGL drivers handled exceptions was pretty random.<br /><br />One thing I want to reiterate is that OpenGL works seamlessly on Vista with the dwm Aero experience.  People still think they have to migrate away from OpenGL to DirectX/Direct3D, I cannot emphasise enough this is not the case.  I know some companies still haven&#8217;t managed to filter through that information, but it is the case and the computer I am using is evidence of that.<br /><br />So spread the word OpenGL is fully compatible and runs natively with Windows Vista!</div>
+<h2>Comments</h2>
+<div class='comments'>
+<div class='comment'>
+<div class='author'>Garry Bodsworth</div>
+<div class='content'>
+Sorry for the delay in replying.<br /><br />That phrase was the best terminology I could some up with.  What Microsoft originally said was it would only run through emulation or if you wanted full acceleration then you would have a compromised Windows graphical experience (only a metter of concern for non fullscreen applications).<br /><br />Anyway, they removed the artificial barrier for OpenGL (as the limitations were strategic not technical) so that you canrun hardware accelerated OpenGL with minimal abstraction for the hardware without compromising the look of Windows Vista.  Microsoft would still prefer you to use DirectX/Direct3D though.</div>
+</div>
+<div class='comment'>
+<div class='author'>vortic</div>
+<div class='content'>
+Garry wrote:<br />&#8220;So spread the word OpenGL is fully compatible and runs natively with Windows Vista!&#8221;<br /><br />Cool. Can you explain exactly what you mean by &#8220;runs natively with Windows Vista&#8221;?  Does the &#8220;Vista API&#8221; have OpenGL fcts. built into it?<br /><br />I guess I should dust off my copy of &#8220;Computer Graphics with OpenGL&#8221; that is collecting dust on my shelf.<br /><br />Cheers.</div>
+</div>
+</div>
+</div>
+
+
+<div class="post-single">
+  <div class="post-meta">
+    
+
+<span class="categories">
+  Categories:
+  
+    <a class='category' href='/blog/categories/opengl/'>OpenGL</a>, <a class='category' href='/blog/categories/vista/'>Vista</a>, <a class='category' href='/blog/categories/windows/'>Windows</a>
+  
+</span>
+
+
+    
+      <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://www.fragmentedmemory.com/blog/2006/11/24/more-vista-and-opengl/" data-via="garrybodsworth" data-counturl="http://www.fragmentedmemory.com/blog/2006/11/24/more-vista-and-opengl/" >Tweet</a>
+  
+  
+  
+</div>
+
+    
+  </div>
+  <div class="clear"></div>
+
+  
+</div>
+ </div>
+    <div id="footer">
+  <div class="panels">
+    <div class="license">
+      <h2>License</h2>
+      <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-nc-sa/3.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/">Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License</a>.
+    </div>
+
+    <div class="posts">
+      <h2>Recent Posts</h2>
+      <ul>
+        
+          <li>
+            <a href="/blog/2013/06/22/rss-feed-moved-to-http-slash-slash-www-dot-fragmentedmemory-dot-com-slash-feed-slash/">RSS Feed Moved To http://www.fragmentedmemory.com/feed/</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2013/06/18/new-location-and-new-blog-engine-and-old-content-restored/">New Location &amp; New Blog Engine &amp; Old Content Restored</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2013/06/13/joining-microsoft/">Joining Microsoft</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2013/06/13/leaving-bromium/">Leaving Bromium</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2013/03/05/philip-su-engineering-process-and/">Philip Su - Engineering Process And Philosophy At Facebook</a>
+          </li>
+        
+      </ul>
+    </div>
+
+    <div class="posts">
+      <h2>Links</h2>
+      <a href='https://alpha.app.net/gjb' class='adn-button' target='_blank' data-type='follow' data-width='277' data-height='27' data-user-id='@gjb' data-show-username='1' rel='me'>Follow me on App.net</a><script>(function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src='//d2zh9g63fcvyrq.cloudfront.net/adn.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'adn-button-js'));</script>
+    </div>
+  </div>
+
+  <p class="powered">
+    Powered by <a href="http://octopress.org">Octopress</a> and <a href="https://github.com/iwinux/compbits">Compbits</a>
+  </p>
+</div>
+
+  </div> <!-- #wrapper end -->
+
+  
+
+  
+
+
+  
+
+  
+
+  
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+</body>
+</html>

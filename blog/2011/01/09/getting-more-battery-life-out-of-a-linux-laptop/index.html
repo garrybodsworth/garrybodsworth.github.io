@@ -1,0 +1,367 @@
+
+<!DOCTYPE HTML>
+<html lang="en-gb">
+<head>
+  <meta charset="UTF-8">
+  <title>Fragmented Memory</title>
+
+  <meta name="author" content="Garry Bodsworth">
+  
+  <meta name="description" content="Getting More Battery Life Out of a Linux Laptop Jan 9th, 2011 On my ASUS UL20A out of the box power management is pretty good but it still does not &hellip;">
+  
+  
+
+  <link rel="canonical" href="http://www.fragmentedmemory.com/blog/2011/01/09/getting-more-battery-life-out-of-a-linux-laptop">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/feed/" rel="alternate" title="Fragmented Memory" type="application/atom+xml">
+</head>
+  
+<body class="default">
+  <div id="wrapper">
+    <div id="header">
+  <h1><a href="/">Fragmented Memory</a></h1>
+  
+    <p>Garry Bodsworth's Blog (formerly Garry's Bit Patterns &amp; Programmer's Log)</p>
+  
+</div>
+<ul id="social-links">
+  
+    <li><a class="rss" href="/feed/" title="RSS">RSS</a></li>
+  
+  
+  
+  
+    <li><a class="twitter" href="http://twitter.com/garrybodsworth" title="Twitter">Twitter</a></li>
+  
+  
+    <li><a class="github" href="https://github.com/garrybodsworth" title="GitHub">GitHub</a></li>
+  
+  
+  
+    <li><a class="linkedin" href="http://www.linkedin.com/in/garrybodsworth">LinkedIn</a></li>
+  
+  
+  
+  
+    <li><a class="pinboard" href="https://pinboard.in/u:garrybodsworth" title="Pinboard">Pinboard</a></li>
+  
+</ul>
+<div class="clear"></div>
+<ul id="nav">
+  
+    <li> <a href="/">blog</a> </li>
+  
+
+  
+    <li><a href="/blog/archives">archives</a></li>
+  
+
+  
+    <li><a href="/about">about</a></li>
+  
+</ul>
+
+    <div id="main"> <div class="post-header">
+  
+    <h1 class="post-title">Getting More Battery Life Out of a Linux Laptop</h1>
+  
+  
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-01-09T00:00:00+00:00" pubdate data-updated="true">Jan 9<span>th</span>, 2011</time>
+</div>
+
+<div class="post-content"><p>On my ASUS UL20A out of the box power management is pretty good but it still does not reach the heady climbs of Windows.  In running [powertop][1] it gave a lot of useful suggestions like SATA, soundcard and USB, but when you apply these you only get it for that session.  You need some way of making these power saving settings permanent.</p>
+
+<p>Here are a few power management scripts that have increased my battery life by about 20-40% as a rough estimate.  The best way to increase battery life dramatically is to reduce the brightness of your monitor which obviously diminishes the usefulness of your display at a certain point.</p>
+
+<p>Here are the files you need to create (all derived from [this forum post][2]).</p>
+
+<p><strong>vm_dirty_writeback</strong><br/>
+`<br />
+[sourcecode language=&ldquo;bash&rdquo;]<br /></p>
+
+<h1>!/bin/sh</p></h1>
+
+<p>path_dwc=&#8221;/proc/sys/vm/dirty_writeback_centisecs&#8221;<br />
+val=500</p>
+
+
+<p>case &#8220;$1&#8221; in<br />
+    true)<br />
+        echo &#8220;**VM dirty writeback 15 seconds&#8221;<br />
+        val=1500<br />
+        ;;<br />
+    false)<br />
+        echo &#8220;**VM dirty writeback 5 seconds&#8221;<br />
+        val=500<br />
+        ;;<br />
+esac</p>
+
+
+<p># 5 seconds on AC, 15 seconds on battery</p>
+
+
+<p>if [ -w &#8220;$path_dwc&#8221; ] ; then<br />
+    echo $val > $path_dwc<br />
+fi</p>
+
+
+<p>exit 0<br />
+[/sourcecode]<br />
+`
+
+**link\_pm\_policy**  
+`<br />
+[sourcecode language=&#8221;bash&#8221;]<br />
+#!/bin/sh</p>
+
+
+<p>path_host0=&#8221;/sys/class/scsi_host/host0/link_power_management_policy&#8221;<br />
+path_host1=&#8221;/sys/class/scsi_host/host1/link_power_management_policy&#8221;<br />
+path_host2=&#8221;/sys/class/scsi_host/host2/link_power_management_policy&#8221;<br />
+path_host3=&#8221;/sys/class/scsi_host/host3/link_power_management_policy&#8221;<br />
+val=max_performance</p>
+
+
+<p>case &#8220;$1&#8221; in<br />
+    true)<br />
+        echo &#8220;**lpm policy powersave ON&#8221;<br />
+        val=min_power<br />
+        ;;<br />
+    false)<br />
+        echo &#8220;**lpm policy powersave OFF&#8221;<br />
+        val=max_performance<br />
+        ;;<br />
+esac</p>
+
+
+<p># max_performance on AC min_power on battery</p>
+
+
+<p>if [ -w &#8220;$path_host0&#8221; ] ; then<br />
+    echo $val > $path_host0<br />
+fi</p>
+
+
+<p>if [ -w &#8220;$path_host1&#8221; ] ; then<br />
+    echo $val > $path_host1<br />
+fi</p>
+
+
+<p>if [ -w &#8220;$path_host2&#8221; ] ; then<br />
+    echo $val > $path_host2<br />
+fi</p>
+
+
+<p>if [ -w &#8220;$path_host3&#8221; ] ; then<br />
+    echo $val > $path_host3<br />
+fi</p>
+
+
+<p>exit 0<br />
+[/sourcecode]<br />
+`
+
+**snd_suspend**  
+`<br />
+[sourcecode language=&#8221;bash&#8221;]<br />
+#!/bin/sh</p>
+
+
+<p>path_dwc=&#8221;/sys/module/snd_hda_intel/parameters/power_save&#8221;<br />
+val=1</p>
+
+
+<p>case &#8220;$1&#8221; in<br />
+    true)<br />
+        echo &#8220;**Intel HD sound suspend&#8221;<br />
+        val=1<br />
+        ;;<br />
+    false)<br />
+        echo &#8220;**Intel HD sound on power&#8221;<br />
+        val=0<br />
+        ;;<br />
+esac</p>
+
+
+<p># 5 seconds on AC, 15 seconds on battery</p>
+
+
+<p>if [ -w &#8220;$path_dwc&#8221; ] ; then<br />
+    echo $val > $path_dwc<br />
+fi</p>
+
+
+<p>exit 0<br />
+[/sourcecode]<br />
+`
+
+**network_powersave**  
+`<br />
+[sourcecode language=&#8221;bash&#8221;]<br />
+#!/bin/sh</p>
+
+
+<p>if [ &#8220;$1&#8221; = &#8220;true&#8221; ]; then<br />
+            iwconfig wlan0 power on<br />
+fi</p>
+
+
+<p>if [ &#8220;$1&#8221; = &#8220;false&#8221; ]; then<br />
+            iwconfig wlan0 power off<br />
+fi</p>
+
+
+<p>exit 0<br />
+[/sourcecode]<br />
+`
+
+**usb_autosuspend**  
+`<br />
+[sourcecode language=&#8221;bash&#8221;]<br />
+#!/bin/bash<br />
+if [ &#8220;$1&#8221; = &#8220;true&#8221; ]; then</p>
+
+
+<p>  for i in /sys/bus/usb/devices/*/power/level; do<br />
+    [ &#8220;$(cat $i)&#8221; = &#8220;auto&#8221; ] && continue<br />
+    echo &#8220;auto&#8221; > $i<br />
+  done</p>
+
+
+<p>  for i in /sys/bus/usb/devices/*/power/autosuspend; do<br />
+    [ &#8220;$(cat $i)&#8221; -ge 0 2>/dev/null ] && continue<br />
+    echo &#8220;2&#8221; > $i<br />
+  done</p>
+
+
+<p><p>fi<br />
+[/sourcecode]<br />
+`</p>
+
+<p>Then do:</p>
+
+<ul>
+<li>Put all the files above in a directory and cd into it.</li>
+<li>chmod 755 *</li>
+<li>sudo install * /usr/lib/pm-utils/power.d/</li>
+<li>Do a reboot here.</li>
+</ul>
+
+
+<p>You can check how it is running by looking at the log in /var/log/pm-powersave.log</p>
+
+<p> [1]: <a href="http://www.lesswatts.org/projects/powertop/">http://www.lesswatts.org/projects/powertop/</a>
+ [2]: <a href="http://ubuntuforums.org/showthread.php?t=1326333">http://ubuntuforums.org/showthread.php?t=1326333</a></p>
+</div>
+
+
+<div class="post-single">
+  <div class="post-meta">
+    
+
+<span class="categories">
+  Categories:
+  
+    <a class='category' href='/blog/categories/uncategorized/'>Uncategorized</a>
+  
+</span>
+
+
+    
+      <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://www.fragmentedmemory.com/blog/2011/01/09/getting-more-battery-life-out-of-a-linux-laptop/" data-via="garrybodsworth" data-counturl="http://www.fragmentedmemory.com/blog/2011/01/09/getting-more-battery-life-out-of-a-linux-laptop/" >Tweet</a>
+  
+  
+  
+</div>
+
+    
+  </div>
+  <div class="clear"></div>
+
+  
+</div>
+ </div>
+    <div id="footer">
+  <div class="panels">
+    <div class="license">
+      <h2>License</h2>
+      <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-nc-sa/3.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/">Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License</a>.
+    </div>
+
+    <div class="posts">
+      <h2>Recent Posts</h2>
+      <ul>
+        
+          <li>
+            <a href="/blog/2013/06/22/rss-feed-moved-to-http-slash-slash-www-dot-fragmentedmemory-dot-com-slash-feed-slash/">RSS Feed Moved To http://www.fragmentedmemory.com/feed/</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2013/06/18/new-location-and-new-blog-engine-and-old-content-restored/">New Location &amp; New Blog Engine &amp; Old Content Restored</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2013/06/13/joining-microsoft/">Joining Microsoft</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2013/06/13/leaving-bromium/">Leaving Bromium</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2013/03/05/philip-su-engineering-process-and/">Philip Su - Engineering Process And Philosophy At Facebook</a>
+          </li>
+        
+      </ul>
+    </div>
+
+    <div class="posts">
+      <h2>Links</h2>
+      <a href='https://alpha.app.net/gjb' class='adn-button' target='_blank' data-type='follow' data-width='277' data-height='27' data-user-id='@gjb' data-show-username='1' rel='me'>Follow me on App.net</a><script>(function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src='//d2zh9g63fcvyrq.cloudfront.net/adn.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'adn-button-js'));</script>
+    </div>
+  </div>
+
+  <p class="powered">
+    Powered by <a href="http://octopress.org">Octopress</a> and <a href="https://github.com/iwinux/compbits">Compbits</a>
+  </p>
+</div>
+
+  </div> <!-- #wrapper end -->
+
+  
+
+  
+
+
+  
+
+  
+
+  
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+</body>
+</html>

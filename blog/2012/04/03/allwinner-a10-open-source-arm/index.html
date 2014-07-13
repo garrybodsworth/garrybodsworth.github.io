@@ -1,0 +1,179 @@
+
+<!DOCTYPE HTML>
+<html lang="en-gb">
+<head>
+  <meta charset="UTF-8">
+  <title>Fragmented Memory</title>
+
+  <meta name="author" content="Garry Bodsworth">
+  
+  <meta name="description" content="Allwinner A10 - Open-source ARM Apr 3rd, 2012 Developing on ARM is a minefield.&nbsp; Each platform is different (even if they look the same) and &hellip;">
+  
+  
+
+  <link rel="canonical" href="http://www.fragmentedmemory.com/blog/2012/04/03/allwinner-a10-open-source-arm">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/feed/" rel="alternate" title="Fragmented Memory" type="application/atom+xml">
+</head>
+  
+<body class="default">
+  <div id="wrapper">
+    <div id="header">
+  <h1><a href="/">Fragmented Memory</a></h1>
+  
+    <p>Garry Bodsworth's Blog (formerly Garry's Bit Patterns &amp; Programmer's Log)</p>
+  
+</div>
+<ul id="social-links">
+  
+    <li><a class="rss" href="/feed/" title="RSS">RSS</a></li>
+  
+  
+  
+  
+    <li><a class="twitter" href="http://twitter.com/garrybodsworth" title="Twitter">Twitter</a></li>
+  
+  
+    <li><a class="github" href="https://github.com/garrybodsworth" title="GitHub">GitHub</a></li>
+  
+  
+  
+    <li><a class="linkedin" href="http://www.linkedin.com/in/garrybodsworth">LinkedIn</a></li>
+  
+  
+  
+  
+    <li><a class="pinboard" href="https://pinboard.in/u:garrybodsworth" title="Pinboard">Pinboard</a></li>
+  
+</ul>
+<div class="clear"></div>
+<ul id="nav">
+  
+    <li> <a href="/">blog</a> </li>
+  
+
+  
+    <li><a href="/blog/archives">archives</a></li>
+  
+
+  
+    <li><a href="/about">about</a></li>
+  
+</ul>
+
+    <div id="main"> <div class="post-header">
+  
+    <h1 class="post-title">Allwinner A10 - Open-source ARM</h1>
+  
+  
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-04-03T21:14:00+01:00" pubdate data-updated="true">Apr 3<span>rd</span>, 2012</time>
+</div>
+
+<div class="post-content"><div class='post'>
+Developing on ARM is a minefield.&nbsp; Each platform is different (even if they look the same) and you are lucky if any of the software is not covered by NDA or some prohibitive SDK cost for experimentation.<br /><br />People have obviously heard of the Raspberry Pi but mid-to-lat 2011 there was anotehr project starting with a company called <a href="http://rhombus-tech.net/">Rhombus-Tech</a> where they wanted to create a proper CPU card and also have all the software GPL compliant.&nbsp; This is exciting because you can then get the hardware and with the software available create what you want to.&nbsp; They went around trying to find the hardware that could potentially have GPL compliant software.&nbsp; The project has become a CPU card that uses the legacy PCMCIA form factor but re-tasks it entirely for a pluggable processor.&nbsp; The spec is called the <a href="http://elinux.org/Embedded_Open_Modular_Architecture/EOMA-68">EOMA-68</a>.<br /><br />Enter the Allwinner A10, a seriously cheap piece of kit ($7 per chip in volume) which is a Cortex A8 with MALI 400 graphics, DDR3 memory and has a BSP capable of decoding 2160p video.&nbsp; The company behind it Allwinner want to be GPL compliant and have been providing source code for the kernel and the other bits.&nbsp; The A10 has started to appear in tablets and set-top boxes and the fully integrated platforms are very cheap.&nbsp; I picked a capacitive touch 7 inch tablet off eBay for £86 including next day postage.&nbsp; The <a href="http://www.cnx-software.com/2012/03/20/allwinner-a10-cortex-a8-based-hackable-mele-a1000-android-stb/">Mele A1000</a> set top box is the platform of choice that people have started to pre-emptively use whilst waiting for the Rhombus Tech project to take off and it costs about £80.<br /><br />The Rhombus Tech spec for the Allwinner A10 is <a href="http://rhombus-tech.net/allwinner_a10/">here</a> and you can sign up for <a href="http://rhombus-tech.net/allwinner_a10/orders/">preorders for the alpha/beta/release boards here</a>.<br /><br />So the real exciting bit about this is potentially all the software is out there to construct a decent Linux distribution to build toys and products on.<br /><br />The main kernel development and tidying up is occurring <a href="https://github.com/amery/linux-allwinner">here</a> and is even being rebased on the 3.3 kenel as well as the Android one.&nbsp; The u-boot repository for getting it booting is <a href="https://github.com/amery/uboot-allwinner">here</a>.&nbsp; There is a partial code dump for the hardware video decoding <a href="https://github.com/amery/allwinner-a10-video">here</a> although it looks like it is some of the user space code.&nbsp; There are some repositories of core Android libraries <a href="https://github.com/arpandeb">here</a> and there are some board files for the Allwinner <a href="https://github.com/arpandeb/allwinner_board_files">here</a>.&nbsp; It looks like in the board files there is the OpenGL ES 2.0 and EGL shared objects <a href="https://github.com/arpandeb/allwinner_board_files/tree/master/crane-common/egl">here</a>.<br /><br />There are also a couple of good articles about building a custom Android for Allwinner A10 based appliances - <a href="http://arpandeb.com/03/2012/tech-guides/how-to-build-custom-rom-for-allwinner-a10-based-android-tablets-a-tutorial-and-guide.html">part 1</a> and <a href="http://arpandeb.com/03/2012/android-how-to-guides/how-to-build-custom-rom-for-allwinner-a10-based-android-tablets-part-ii.html">part 2</a>.&nbsp; There are also lots of resources for board hacking at the <a href="http://rhombus-tech.net/">Rhombus Tech</a> website and also some on the <a href="http://elinux.org/Hack_A10_devices">Embedded Linux wiki</a>.<br /><br />So if you fancy some cheap ARM development its worth signing up on the <a href="http://rhombus-tech.net/allwinner_a10/orders/">orders page</a>.<br /><br />Now I need to get hacking on that tablet&#8230;.</div>
+</div>
+
+
+<div class="post-single">
+  <div class="post-meta">
+    
+
+
+    
+      <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://www.fragmentedmemory.com/blog/2012/04/03/allwinner-a10-open-source-arm/" data-via="garrybodsworth" data-counturl="http://www.fragmentedmemory.com/blog/2012/04/03/allwinner-a10-open-source-arm/" >Tweet</a>
+  
+  
+  
+</div>
+
+    
+  </div>
+  <div class="clear"></div>
+
+  
+</div>
+ </div>
+    <div id="footer">
+  <div class="panels">
+    <div class="license">
+      <h2>License</h2>
+      <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-nc-sa/3.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/">Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License</a>.
+    </div>
+
+    <div class="posts">
+      <h2>Recent Posts</h2>
+      <ul>
+        
+          <li>
+            <a href="/blog/2013/06/22/rss-feed-moved-to-http-slash-slash-www-dot-fragmentedmemory-dot-com-slash-feed-slash/">RSS Feed Moved To http://www.fragmentedmemory.com/feed/</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2013/06/18/new-location-and-new-blog-engine-and-old-content-restored/">New Location &amp; New Blog Engine &amp; Old Content Restored</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2013/06/13/joining-microsoft/">Joining Microsoft</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2013/06/13/leaving-bromium/">Leaving Bromium</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2013/03/05/philip-su-engineering-process-and/">Philip Su - Engineering Process And Philosophy At Facebook</a>
+          </li>
+        
+      </ul>
+    </div>
+
+    <div class="posts">
+      <h2>Links</h2>
+      <a href='https://alpha.app.net/gjb' class='adn-button' target='_blank' data-type='follow' data-width='277' data-height='27' data-user-id='@gjb' data-show-username='1' rel='me'>Follow me on App.net</a><script>(function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src='//d2zh9g63fcvyrq.cloudfront.net/adn.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'adn-button-js'));</script>
+    </div>
+  </div>
+
+  <p class="powered">
+    Powered by <a href="http://octopress.org">Octopress</a> and <a href="https://github.com/iwinux/compbits">Compbits</a>
+  </p>
+</div>
+
+  </div> <!-- #wrapper end -->
+
+  
+
+  
+
+
+  
+
+  
+
+  
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+</body>
+</html>

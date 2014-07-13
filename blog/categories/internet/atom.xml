@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Internet | Fragmented Memory]]></title>
+  <link href="http://www.fragmentedmemory.com/blog/categories/internet/atom.xml" rel="self"/>
+  <link href="http://www.fragmentedmemory.com/"/>
+  <updated>2013-06-23T17:13:57+01:00</updated>
+  <id>http://www.fragmentedmemory.com/</id>
+  <author>
+    <name><![CDATA[Garry Bodsworth]]></name>
+    <email><![CDATA[blog@fragmentedmemory.com]]></email>
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[AJAX - The Hot New Thang]]></title>
+    <link href="http://www.fragmentedmemory.com/blog/2006/10/12/ajax-hot-new-thang/"/>
+    <updated>2006-10-12T20:33:00+01:00</updated>
+    <id>http://www.fragmentedmemory.com/blog/2006/10/12/ajax-hot-new-thang</id>
+    <content type="html"><![CDATA[<div class='post'>
+I can't be the only one.  <a href="http://en.wikipedia.org/wiki/AJAX">AJAX</a> has taken off, so I took a closer look at it and realised I have essentially been doing AJAX for years.  I referred to it as XML and Javascript to render a web page (not using XSLT).<br /><br />Maybe I've completely missed the point, but the only difference between what AJAX is now (in simplistic terms) and what I did a while back was the way the XML was being retrieved.  Admittedly my Javascript was way simpler than these new flashy whizz-bang sites, but the same data/view separation was there.  I am pretty sure it was referred to as DHTML (although I think that also encompassed <a href="http://en.wikipedia.org/wiki/VBScript">VBScript</a>).<br /><br />I must admit these Javascript platforms are really impressive, especially as the browser support gets better, like with WYSIWYG editors embedded in webpages which is what I am typing this with.  I just realised this post seemed a bit negative, but I think it's all FANTASTIC! (Fast Show fans will know what I am on about)</div>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Web Browsers Of The Future]]></title>
+    <link href="http://www.fragmentedmemory.com/blog/2006/10/11/google-provider-of-everything/"/>
+    <updated>2006-10-11T16:00:00+01:00</updated>
+    <id>http://www.fragmentedmemory.com/blog/2006/10/11/google-provider-of-everything</id>
+    <content type="html"><![CDATA[<div class='post'>
+I realised the other day how many Google products I was using...<ul><li>Analytics</li><li>Blogger</li><li>Browser Sync</li><li>Calendar</li><li>Google</li><li>Mail</li><li>Notebook</li><li>Page Creator</li><li>Personalized Homepage</li></ul>Also I use the search and now the code search.<br /><br />And now I have just signed up for:<ul><li>Spreadsheets</li><li>Writely</li></ul>It's great all these things are free and freely provided, but now I think I am getting too reliant on it all...  Admittedly I only use some of the things I am signed up to, and signed up to other things just to try them out.<br /><br />But I wasn't going to discuss my addiction to trying things out.  Something occurred to me when I was looking at the new <a href="http://docs.google.com/">Google Office</a>, browsers are providing all this functionality, but we are still using an ancient paradigm.<br /><br />Microsoft are releasing Internet Explorer 7.0 very soon, and it is attempting to catch up with Firefox by adding features like tabbed browsing, but it is just playing catch-up to an idea that was born before all of the AJAX applications started leaping out of the woodwork.<br /><br />As these AJAX applications become more prevalent the web browser starts to become a hindrance.  Do you use multiple tabs or do you use multiple windows, and how do you arrange and manage those windows (especially since they all have the same taskbar icon)?  Are the bookmark user interfaces moving with the times?  The web browser needs a rethink for these new uses as it is still designed more for viewing static data (and now that is only part of its repetoire, a specialisation of its more generalised use).<br /><br />Most web browsers have their rendering engine a different layer, so that is easy to break out.  Do these applications become a separate window?  Do we get a new kind of application launcher?  I've never really put much thought into it as until recently I never saw the web as a platform.<br /><br />Certainly I am finding the current browser technology very limiting as tabbed browsing, multiple windows, bookmarks are not allowing me to use all of these new applications to their maximum potential.  Just having GMail and Blogger open in web browsers is harder than it should be to manage as I have to do a double take on the task bar or think before switching tabs.<br /><br />Maybe the web browser needs a rethink, or maybe my ideas aren't so outlandish...  The main web browser application is some sort of navigator/task bar and the pages are shown in their own easily recognisable windows, perhaps even without borders as they currently exist.  I suppose some of these ideas are being integrated into these new "sidebars" in operating systems, but do they go far enough and take the new AJAX applications into account?</div>
+
+]]></content>
+  </entry>
+  
+</feed>

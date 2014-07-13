@@ -1,0 +1,199 @@
+
+<!DOCTYPE HTML>
+<html lang="en-gb">
+<head>
+  <meta charset="UTF-8">
+  <title>Fragmented Memory</title>
+
+  <meta name="author" content="Garry Bodsworth">
+  
+  <meta name="description" content="Distributed Revision Control Jun 3rd, 2007 Linus Torvalds did a talk about source control the other day, more specifically about GIT. Basically he &hellip;">
+  
+  
+
+  <link rel="canonical" href="http://www.fragmentedmemory.com/blog/2007/06/03/distributed-revision-control">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/feed/" rel="alternate" title="Fragmented Memory" type="application/atom+xml">
+</head>
+  
+<body class="default">
+  <div id="wrapper">
+    <div id="header">
+  <h1><a href="/">Fragmented Memory</a></h1>
+  
+    <p>Garry Bodsworth's Blog (formerly Garry's Bit Patterns &amp; Programmer's Log)</p>
+  
+</div>
+<ul id="social-links">
+  
+    <li><a class="rss" href="/feed/" title="RSS">RSS</a></li>
+  
+  
+  
+  
+    <li><a class="twitter" href="http://twitter.com/garrybodsworth" title="Twitter">Twitter</a></li>
+  
+  
+    <li><a class="github" href="https://github.com/garrybodsworth" title="GitHub">GitHub</a></li>
+  
+  
+  
+    <li><a class="linkedin" href="http://www.linkedin.com/in/garrybodsworth">LinkedIn</a></li>
+  
+  
+  
+  
+    <li><a class="pinboard" href="https://pinboard.in/u:garrybodsworth" title="Pinboard">Pinboard</a></li>
+  
+</ul>
+<div class="clear"></div>
+<ul id="nav">
+  
+    <li> <a href="/">blog</a> </li>
+  
+
+  
+    <li><a href="/blog/archives">archives</a></li>
+  
+
+  
+    <li><a href="/about">about</a></li>
+  
+</ul>
+
+    <div id="main"> <div class="post-header">
+  
+    <h1 class="post-title">Distributed Revision Control</h1>
+  
+  
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2007-06-03T15:08:00+01:00" pubdate data-updated="true">Jun 3<span>rd</span>, 2007</time>
+</div>
+
+<div class="post-content"><div class='post'>
+Linus Torvalds did a talk about source control the other day, more specifically about <a href="http://git.or.cz/">GIT</a>.  Basically he has an immense dislike of centralised revision control.  You can see Linus&#8217;s talk here:<br /><br /><embed src="http://www.youtube.com/v/4XpnKHJAok8" type="application/x-shockwave-flash" wmode="transparent" height="350" width="425"></embed><br /><br />Some Slashdot discussion is available at this <a href="http://developers.slashdot.org/developers/07/06/03/004214.shtml">link</a>.<br /><br />This kind of sent me into an Internet whirlpool looking at distributed revision control.  So this post will be all about that.  I must admit I have never really thought about it since I am so pleased with <a href="http://subversion.tigris.org/">Subversion</a> and <a href="http://tortoisesvn.net/">TortoiseSVN</a>, although recent events have made me look into source control systems in general more closely.  At a high-level the distributed model has a lot of advantages in design and is capable of having a &#8220;central&#8221; server you sync against which means it can behave more like the centralised model.  On the other hand the centralised tools all seem to have much easier to use tools and have more powerful features (at least in Subversion) than they are given credit for due to their heritage.<br /><br />Mozilla development has switched to a distributed source control system recently.  They had a set of requirements like cross-platform, speed, stability and more.  Some more information can be read <a href="http://weblogs.mozillazine.org/preed/2007/04/version_control_system_shootou_1.html">here</a>. <br /><br /><a href="http://git.or.cz/">Git</a> was started by Linus Torvalds because he was no longer able to use BitKeeper.  It has quite poor Windows support because it is reliant on a POSIX system but has a lot of powerful features.  There are some UI projects but they seem quite immature at the moment and only augment the command ine rather than replace it.<br /><br /><a href="http://www.selenic.com/mercurial/wiki/">Mecurial</a> was chosen by Mozilla development for their revision control system, and in fact they have already switched to it.  There are apparently some speed issues in comparison to Git, but it has better cross-platform support.  There seems to be a few extensions including some <a href="http://www.bugzilla.org/">Bugzilla</a> integration.  I am not too sure about the UI side yet.<br /><br />Other distributed source control systems include:<br /><ul><li><a href="http://bazaar-vcs.org/">Bazaar</a> - is a GPL based system.</li><li><a href="http://monotone.ca/">Monotone</a> - is another GPL system.</li><li><a href="http://svk.bestpractical.com/view/HomePage">SVK</a> - A Subversion derived distributed system.</li><li><a href="http://www.darcs.net/">darcs</a> - yet another system.</li></ul><br /><br />Anyway these distributed systems seem to be getting traction with Mozilla, X, and other large projects starting to use it.</div>
+<h2>Comments</h2>
+<div class='comments'>
+<div class='comment'>
+<div class='author'>Ted</div>
+<div class='content'>
+Hey Garry, speaking of revision control and Subversion in particular: Have you created any updated toolbars/menus for Visual Studio Orcas yet?  The file context menu appears to be broken and I was wondering if I could pick your brain on how you created these so I could learn how to create my own ones for web site development.  Please contact me at tmilker at gmail dot com.<BR/><BR/>(sorry for the mostly off-topic comment, you do not provide any other means of contacting you)</div>
+</div>
+<div class='comment'>
+<div class='author'>Frabcus</div>
+<div class='content'>
+Yes, it is all about tools. <BR/><BR/>As far as I know none of the distributed version control systems have as good a set of, particularly Windows, interfaces as CVS and Subversion.<BR/><BR/>There is a TortoiseDarcs, however, and things are beginning to look promising.<BR/><BR/>when Subversion was started, it wasn&#8217;t obvious how distributed version control would work, or that it could work. Nobody was using it. Subversion can be forgiven for basically copying Perforce, the state of the art at the time in terms of version control functionality.</div>
+</div>
+</div>
+</div>
+
+
+<div class="post-single">
+  <div class="post-meta">
+    
+
+<span class="categories">
+  Categories:
+  
+    <a class='category' href='/blog/categories/development/'>Development</a>, <a class='category' href='/blog/categories/source-control/'>Source Control</a>
+  
+</span>
+
+
+    
+      <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://www.fragmentedmemory.com/blog/2007/06/03/distributed-revision-control/" data-via="garrybodsworth" data-counturl="http://www.fragmentedmemory.com/blog/2007/06/03/distributed-revision-control/" >Tweet</a>
+  
+  
+  
+</div>
+
+    
+  </div>
+  <div class="clear"></div>
+
+  
+</div>
+ </div>
+    <div id="footer">
+  <div class="panels">
+    <div class="license">
+      <h2>License</h2>
+      <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-nc-sa/3.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/">Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License</a>.
+    </div>
+
+    <div class="posts">
+      <h2>Recent Posts</h2>
+      <ul>
+        
+          <li>
+            <a href="/blog/2013/06/22/rss-feed-moved-to-http-slash-slash-www-dot-fragmentedmemory-dot-com-slash-feed-slash/">RSS Feed Moved To http://www.fragmentedmemory.com/feed/</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2013/06/18/new-location-and-new-blog-engine-and-old-content-restored/">New Location &amp; New Blog Engine &amp; Old Content Restored</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2013/06/13/joining-microsoft/">Joining Microsoft</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2013/06/13/leaving-bromium/">Leaving Bromium</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2013/03/05/philip-su-engineering-process-and/">Philip Su - Engineering Process And Philosophy At Facebook</a>
+          </li>
+        
+      </ul>
+    </div>
+
+    <div class="posts">
+      <h2>Links</h2>
+      <a href='https://alpha.app.net/gjb' class='adn-button' target='_blank' data-type='follow' data-width='277' data-height='27' data-user-id='@gjb' data-show-username='1' rel='me'>Follow me on App.net</a><script>(function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src='//d2zh9g63fcvyrq.cloudfront.net/adn.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'adn-button-js'));</script>
+    </div>
+  </div>
+
+  <p class="powered">
+    Powered by <a href="http://octopress.org">Octopress</a> and <a href="https://github.com/iwinux/compbits">Compbits</a>
+  </p>
+</div>
+
+  </div> <!-- #wrapper end -->
+
+  
+
+  
+
+
+  
+
+  
+
+  
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+</body>
+</html>

@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Open-Source | Fragmented Memory]]></title>
+  <link href="http://www.fragmentedmemory.com/blog/categories/open-source/atom.xml" rel="self"/>
+  <link href="http://www.fragmentedmemory.com/"/>
+  <updated>2013-06-23T17:13:57+01:00</updated>
+  <id>http://www.fragmentedmemory.com/</id>
+  <author>
+    <name><![CDATA[Garry Bodsworth]]></name>
+    <email><![CDATA[blog@fragmentedmemory.com]]></email>
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Firefox 3 On The Mac]]></title>
+    <link href="http://www.fragmentedmemory.com/blog/2008/05/18/firefox-3-on-mac/"/>
+    <updated>2008-05-18T20:45:00+01:00</updated>
+    <id>http://www.fragmentedmemory.com/blog/2008/05/18/firefox-3-on-mac</id>
+    <content type="html"><![CDATA[<div class='post'>
+I've been using Firefox 3 on the Mac for the past month so I thought I'd share some of my experiences when using it.  There release candidate download page is <a href="http://www.mozilla.com/en-US/firefox/all-rc.html">here</a>.<br /><br />The reason I didn't start using it beforehand was because I was waiting for a supported version of the <a href="http://www.delicious.com">Del.icio.us</a> bookmarks add-on as it has become indespensible to me.  You can get this <a href="http://blog.delicious.com/blog/2008/04/firefox-3-delicious-and-you.html">here</a>.<br /><br />I run a few add-ons to make it look more integrated with Mac OSX:<br />* <a href="http://en.design-noir.de/mozilla/locationbar2/">Locationbar 2</a> for improving the recognition of URLs.<br />* <a href="https://addons.mozilla.org/en-US/firefox/addon/1951">Fission</a> for the progress in the URL field like Safari.<br />* <a href="http://www.takebacktheweb.org/">GrApple Delicious (Blue)</a> theme which looks very good (and integrated on the Mac).<br />* And don't forget <a href="https://addons.mozilla.org/en-US/firefox/addon/1865">AdBlock Plus</a> whichever platform you are running on!<br /><br />With all of those add-ons working (you can also force add-ons to work by using the <a href="https://addons.mozilla.org/en-US/firefox/addon/6543">Nightly Tester Tools</a>) I was ready to use Firefox 3.  For a Beta (and now the Release Candidate) it is amazingly stable.<br /><br />The entire program is much more responsive and lighter on the system resources.  The integration and look and feel (with the add-ons) is excellent, although I would prefer if spell-checking with edit fields to be on by default (although there is a hack <a href="http://www.osxdaily.com/2007/06/06/enable-spell-checking-in-firefox-text-input-fields/">here</a>).<br /><br />In general it is a large step forward although I am not using the biggest new feature - the bookmarks replacement "Places".  As usual though the major feather in Firefox's cap is the add-ons and once you have them you find it impossible to use anything else.<br /><br />Also, I am using it on Windows Vista at work and it is fast, responsive and looks much better, although I would prefer not to have the blue tinge to the window.  I'd recommend upgrading now because once you've tried 3 you can't go back.</div>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Sharing Is Good - The Open-Source Insomniac]]></title>
+    <link href="http://www.fragmentedmemory.com/blog/2008/04/11/sharing-is-good-open-source-insomniac/"/>
+    <updated>2008-04-11T21:28:00+01:00</updated>
+    <id>http://www.fragmentedmemory.com/blog/2008/04/11/sharing-is-good-open-source-insomniac</id>
+    <content type="html"><![CDATA[<div class='post'>
+<a href="http://www.insomniacgames.com/">Insomniac Games</a> who are behind Ratchet &amp; Clank and Resistance: Fall Of Man have recently decided to start sharing knowledge.  Gaming is a notoriously secretive industry and is not well renowned for its open-ness, and Insomniac think its mad that developers keep reinvenhttp://www.blogger.com/img/gl.link.gifting the same core pieces of functionality that don't even make up the bread'n'butter of gaming.<br /><br />First up is the <a href="http://www.insomniacgames.com/tech/techpage.php">R&amp;D section on their website</a>.  This section contains presentations and papers about various subjects including graphics, gameplay, memory and performance.<br /><br />Next up is the open-source BSD-style licensed code.  The section is called the <a href="http://nocturnal.insomniacgames.com/index.php/Main_Page">Nocturnal Initiative</a> and is a wiki.  There are links to community forums which aren't busy yet.<br /><br />At the moment some of the source code available is:<br /><ul><li>C++ Delegate/Event System</li><li>Pointer to reference counted objects</li><li>Pointer to heap allocated arrays</li><li>Endian conversion code</li><li>Insertion ordered std::set</li><li>Reversible key and value std::map</li><li>Interprocess Communication</li><ul><li>      Fast non-blocking message-based design</li><li>      Works over BSD-style sockets (TCP) or Named Pipes</li><li>Windows platform included, additional platforms are easily added</li></ul><li>Debugging Helpers</li><ul><li>      PDB-based symbol information querying</li><li>      Capture stacks within your program making heap object tracking and leak debugging easier</li><li>      Give your application automatic crash reports dispatched via email that contain handy user/machine informaton, call stack, and memory page allocation stats</li></ul><li>Console Output Manager</li><ul><li>      Log console output to one or more trace files</li><li>      Color code the console output based on Error/Warning/Debug print statements</li><li>Throttle output verbosity (configured via command line arg or environment variable)</li><li>      Outline nested stages of processing performed by your application (for builders/exporters)</li><li>      Augment crash reports with the current outline state of your application (very useful for tracking down new crash bugs)</li></ul><li>Instrumenting Profiler</li><ul><li>      Cross platform (Windows and PS3 currently)</li><li>      Macro-instrumented stack timer based profiler</li><li>      Concise profile report printed out at program exit</li><li>      Logs instance data out to human readable log file (Profile Analyzer is in development)</li></ul><li>C++ Reflection</li><ul><li>      Instrument your application classes and register them with the type registry</li><li>      Can serialize object instances to XML or our (faster) custom binary format</li><li>      Flexible parsing mechanics allow you to read in old versions of your class</li><li>      Handles renaming member variables as well as changing member type (within reasonable limits)</li><li>      Supports serializing std::vector, std::set, and std::map containers with primitives or pointers to other reflect objects</li><li>  Supports serializing enum and bitfield members using string representation (supports reordering enum elements)</li><li>      Provides for automatic object comparison and cloning</li><li>      Implements introspection using a visitor interface</li></ul></ul><br />Some of it looks pretty good.  I hope this means that there is more sharing of C++ code which is always a good thing, maybe even some of the libraries could be Boost-ified...</div>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Useful Free Mac Applications]]></title>
+    <link href="http://www.fragmentedmemory.com/blog/2008/01/30/useful-free-mac-applications/"/>
+    <updated>2008-01-30T20:55:00+00:00</updated>
+    <id>http://www.fragmentedmemory.com/blog/2008/01/30/useful-free-mac-applications</id>
+    <content type="html"><![CDATA[<div class='post'>
+I'm tight, if there is a free tool to do something I will find it.  It is a bit harder work to find those applications when you use a Mac, but I have over my time using my Macbook Pro found plenty of stuff to help me get full use out of my computer.  So I thought I would share them:<br /><ul><li><a href="http://www.adiumx.com/">Adium</a> - Instant messaging with the GAIM base.</li><li><a href="http://metaquark.de/appfresh/">AppFresh</a> - Make sure that installed programs are up to date.</li><li><a href="http://audacity.sourceforge.net/">Audacity</a> - Edit audio files (I used it to make iPhone ringtones).</li><li><a href="http://www.bean-osx.com/">Bean</a> - Simple and easy to use document editing.</li><li><a href="http://sourceforge.net/projects/chamonix/">Chamonix</a> - A CHM reader for OSX.</li><li><a href="http://projects.digitalwaters.net/index.php?q=cocopad">Cocopad</a> - A simple scribbler application.</li><li><a href="http://cord.sourceforge.net/">CoRD</a> - Connect to other computers using the MS remote desktop protocol.</li><li><a href="http://www.blocksoft.net/docker.html">Docker</a> - Lots of settings for the dock on Leopard.</li><li><a href="http://eclipse.org">Eclipse</a> - The ubiquitous platform for IDEs.</li><li><a href="http://getfirefox.com">Firefox</a> - Because I love the plug-ins.  I'll doa post about them another time to geta more integrated Firefox (could be moot with v3.0).</li><li><a href="http://earth.google.com/">Google Earth</a> - Because i wanted to see old maps wrapped around the globe.</li><li><a href="http://toolbar.google.com/gmail-helper/notifier_mac.html">Google Notifier</a> - Keep an eye on your Google inbox.</li><li><a href="http://gridwars.marune.de/">Gridwars</a> - Free game allegedly like Geometry Wars.</li><li><a href="http://handbrake.fr/">Handbrake</a> - Rip movies to your desired format.</li><li><a href="http://www.inkscape.org/">Inkscape</a> - Vector drawing.</li><li><a href="http://www.macports.org/">MacPorts</a> - Package manager for thousands of open-source programs.  I have mentioned <a href="http://garrys-brain.blogspot.com/2007/07/great-free-software-macports.html">this before</a>.<br /></li><li><a href="http://www.mactheripper.org/">MacTheRipper</a> - DVD ripping.</li><li><a href="http://sbooth.org/Max/">Max</a> - CD ripping software.</li><li><a href="http://www.neooffice.org">NeoOffice</a> - OpenOffice integrated Aqua style.</li><li><a href="http://www.titanium.free.fr/pgs2/english/download.html">Onyx</a> - More settings for your Mac!</li><li><a href="http://perian.org/">Perian</a> - Loads of codecs for OSX.<br /></li><li><a href="http://opensword.org/Pixen/">Pixen</a> - Simple art package.</li><li><a href="http://porticus.alittledrop.com/">Porticus</a> - Great Cocoa front-end for MacPorts.</li><li><a href="http://www.fadingred.org/senuti/">Senuti</a> - Get music from your iPod back to your computer.</li><li><a href="http://www.lachoseinteractive.net/en/community/subversion/svnx/features/">SvnX</a> - Graphical front-end for Subversion.</li><li><a href="http://scplugin.tigris.org/">scplugin</a> - TortoiseSVN style integration for the Mac.</li><li><a href="http://www.bresink.de/osx/TinkerTool.html">TinkerTool</a> - More settings for the Mac.</li><li><a href="http://www.videolan.org/vlc/">VLC</a> - Great open-source video player.</li></ul>I tend to prefer open-source to free in most instances, and MacPorts (with Porticus) gives so much that it deserves more than a one line description...  oh well ;)</div>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[C Front-End For LLVM Open-Sourced]]></title>
+    <link href="http://www.fragmentedmemory.com/blog/2007/07/25/c-front-end-for-llvm-open-sourced/"/>
+    <updated>2007-07-25T21:59:00+01:00</updated>
+    <id>http://www.fragmentedmemory.com/blog/2007/07/25/c-front-end-for-llvm-open-sourced</id>
+    <content type="html"><![CDATA[<div class='post'>
+I covered <a href="http://garrys-brain.blogspot.com/2007/07/llvm-low-level-virtual-machine.html">LLVM briefly earlier</a>.  I did mention Apple were working on a new C front-end called Clang.<br /><br />Now the C front-end has been open-sourced there is a small website for CFE/Clang <a href="http://llvm.org/cfe/">here</a>.<br /><br />There is a post about it <a href="http://lists.cs.uiuc.edu/pipermail/llvmdev/2007-July/009817.html">here</a>.  This is a good step in open-source tools, and hopefully will spur other tool developments on.</div>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Intel Open-Sources Threading Bulding Blocks]]></title>
+    <link href="http://www.fragmentedmemory.com/blog/2007/07/25/intel-open-sources-threading-bulding/"/>
+    <updated>2007-07-25T21:44:00+01:00</updated>
+    <id>http://www.fragmentedmemory.com/blog/2007/07/25/intel-open-sources-threading-bulding</id>
+    <content type="html"><![CDATA[<div class='post'>
+Intel has just <a href="http://threadingbuildingblocks.org/">open-sourced their Threading Building Blocks library</a>.  Intel describe it as a "rich and complete approach to expressing parallelism in a C++ program".<br /><br />With multi-threading in general being so immature when looking at other libraries, another solution can never hurt.  So add it to Boost.Threads, OpenMP, wxThread and the myriad of others.  Admittedly the way that all of the alternatives work is very low-level and means very careful design is required.<br /><br />I'm interested to see the approach of the library to multi-threading as it looks quite complicated to wrap your head around.  The best bit though is there is apparently a cache aligned memory allocator as part of it that can be used independently.<br /><br />There is a Slashdot article about it <a href="http://developers.slashdot.org/developers/07/07/25/1324221.shtml">here</a>.  Also a bog post <a href="http://softwareblogs.intel.com/2006/12/18/threading-building-blocks-solution-looking-for-a-problem/">here</a> looks interesting covering the subject.<br /><br />All I can say is let battle commence and lets see what multi-threading packages are left standing ;)</div>
+
+]]></content>
+  </entry>
+  
+</feed>

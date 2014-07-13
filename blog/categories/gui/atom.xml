@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: GUI | Fragmented Memory]]></title>
+  <link href="http://www.fragmentedmemory.com/blog/categories/gui/atom.xml" rel="self"/>
+  <link href="http://www.fragmentedmemory.com/"/>
+  <updated>2013-06-23T17:13:57+01:00</updated>
+  <id>http://www.fragmentedmemory.com/</id>
+  <author>
+    <name><![CDATA[Garry Bodsworth]]></name>
+    <email><![CDATA[blog@fragmentedmemory.com]]></email>
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[GUI Toolkits - eGUI++ Easy GUI]]></title>
+    <link href="http://www.fragmentedmemory.com/blog/2008/06/10/gui-toolkits-egui-easy-gui/"/>
+    <updated>2008-06-10T22:10:00+01:00</updated>
+    <id>http://www.fragmentedmemory.com/blog/2008/06/10/gui-toolkits-egui-easy-gui</id>
+    <content type="html"><![CDATA[<div class='post'>
+I've blogged a few times in the past about <a href="http://torjo.com">John Torjo</a>'s <a href="http://torjo.com/win32gui/index.html">Win32 GUI Generics</a>.  It was really quite an impressive accomplishment using the advanced C++ techniques in Windows development, but was a bit of a rough diamond. I did do some minor changes to my local copy when I was playing around with it to make sure that the widgets used the correct Windows theming engine, and it was surprisingly easy to add which is a testament to the quality of the code.  It did take ages to compile though with all those templates.<br /><br />I notice that now John Torjo has posted <a href="http://torjo.blogspot.com/2008/06/egui-easy-gui-for-c.html">eGUI++ to his blog</a>.  Hopefully this is a progression using all he learnt with his previous iteration in Win32 GUI Generics.<br /><br />There is an article about eGUI++ on the <a href="http://msdn.microsoft.com/en-us/magazine/cc534994.aspx">MSDN here</a> written by John.  It covers the basics of what he has done and covers some of the features.  It is typesafe at compile time which is great for catching errors early as most GUI toolkits you rarely find those types of problems until runtime (especially when using Windows resources).<br /><br />You can download it from <a href="http://torjo.com/egui/">here</a>.  The example presented on that page is quick and to the point.  Hopefully this is a toolkit to watch.</div>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Visual C++ 2008 Feature Pack Released]]></title>
+    <link href="http://www.fragmentedmemory.com/blog/2008/04/10/visual-c-2008-feature-pack-released/"/>
+    <updated>2008-04-10T20:31:00+01:00</updated>
+    <id>http://www.fragmentedmemory.com/blog/2008/04/10/visual-c-2008-feature-pack-released</id>
+    <content type="html"><![CDATA[<div class='post'>
+Good news for Windows C++ developers the update to Visual Studio 2008 <a href="http://blogs.msdn.com/somasegar/archive/2008/04/07/visual-c-2008-feature-pack-shipped.aspx">has been released</a>.  This "Feature Pack" contains some of the new TR1 C++ standard library as well as a major MFC update.<br /><br />Details from the Visual C++ Team Weblog can be found <a href="http://blogs.msdn.com/vcblog/archive/2008/04/07/visual-c-2008-feature-pack-released.aspx">here</a> with some videos and links.<br /><br /><span style="font-weight:bold;">TR1 Update</span><br /><br />The TR1 update is an integration of some more <a href="http://www.dinkumware.com/">Dinkumware</a> library functionality.  The features available are:<br />* array - Defines the container template class array and several supporting templates.<br />* functional - Defines several templates that help construct function objects, which are objects of a type that defines operator(). A function object can be a function pointer, but more typically, the object is used to store additional information that can be accessed during a function call.<br />* memory - Defines a class, an operator, and several templates that help allocate and free objects.<br />* random - Defines many random number generators.<br />* regex - Defines a template class to parse regular expressions, and several template classes and functions to search text for matches to a regular expression object.<br />* tuple - Defines a template tuple Class whose instances hold objects of varying types.<br />* type_traits - Defines templates that provide compile-time constants that give information about the properties of their type arguments.<br />* unordered_map - Defines the container template classes unordered_map and unordered_multimap and their supporting templates.<br />* unordered_set - Defines the container template classes unordered_multiset and unordered_set and their supporting templates.<br />* utility - Defines several general templates that can be used throughout the Standard Template Library.<br /><br /><span style="font-weight:bold;">MFC Update</span><br /><br />The MFC Update integrates BCGSoft's libraries into the base MFC and provides masses of useful user interface constructs for native developers.  Details from the Visual C++ Weblog is <a href="http://blogs.msdn.com/vcblog/archive/2008/04/07/mfc-update-powered-by-bcgsoft.aspx">here</a>.<br /><br />Some of the new features are:<br />* Office 2007 Ribbon Bar:  Ribbon, Pearl, Quick Access Toolbar, Status Bar, etc.<br />* Office 2003 and XP look:  Office-style toolbars and menus, Outlook-style shortcut bar, print preview, live font picker, color picker, etc.<br />* Visual Studio look:  sophisticated docking functionality, auto hide windows, property grids, MDI tabs, tab groups, etc.<br />* Internet Explorer look:  Rebars and task panes.<br />* Vista theme support.<br />* “On the fly” menus and toolbar customization:  users can customize the running application through live drag and drop of menu items and toolbar buttons.<br />* Shell management classes:  use these classes to enumerate folders, drives and items, browse for folders and more.<br /><br /><br />You can download all this from <a href="http://www.microsoft.com/downloads/details.aspx?FamilyId=D466226B-8DAB-445F-A7B4-448B326C48E7&displaylang=en">here</a>.</div>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[GTK+  The Future]]></title>
+    <link href="http://www.fragmentedmemory.com/blog/2008/04/10/gtk-future/"/>
+    <updated>2008-04-10T19:03:00+01:00</updated>
+    <id>http://www.fragmentedmemory.com/blog/2008/04/10/gtk-future</id>
+    <content type="html"><![CDATA[<div class='post'>
+Lots of information has been revealed recently about possible future directions for GTK+.  There is a comprehensive article on <a href="http://arstechnica.com/articles/culture/reinventing-gtk.ars">ArsTechnica here</a>.<br /><br />Imendio, one of the active developers of GTK+ made a recent presentation you can see <a href="http://developer.imendio.com/sites/developer.imendio.com/files/gtk-hackfest-berlin2008.pdf">here</a>.  This outlines what they see as the future direction and release plans for GTK+ in the future, with more detail available in the <a href="http://developer.imendio.com/sites/developer.imendio.com/files/imendio-gtk-vision.pdf">position document</a>.  Essentially it involves taking it forward by having a clear roadmap to break the ABI which has been stable for a long time, but has limited leaps forward in development.<br /><br /><a href="http://ometer.com/">Havoc Pennington</a> had a proposal also, this is available <a href="http://docs.google.com/Present?docid=dgn6j4pg_50dw7wh6vt#0">here</a>.  His proposal did not necessarily overlap the Imendio one but involved using a scenegraph API for defining the UI.  He also suggests looking at the OpenGL based <a href="http://www.clutter-project.org/">Clutter</a> which uses a GObject API for its rich user interface experience.<br /><br />Some additional experimentation has been made with <a href="http://arstechnica.com/news.ars/post/20071028-making-linux-application-user-interfaces-richer-with-opengl.html">integrating OpenGL with GTK+</a>.  A lot of work has been done to try and keep GTK+ up to date with theming and transparency but it can look off the pace especially when attempting to mimic the look of a native platform.  Hopefully all these changes will improve the situation on push the GUI even further since Windows development tools seem to be pushing the "every application looks different" paradigm, Apple making iTunes look the same on all platforms and applications like Songbird using the same theme on all platforms (and still looking good).</div>
+
+
+<h2>Comments</h2>
+
+
+<div class='comments'>
+<div class='comment'>
+<div class='author'>Adi</div>
+<div class='content'>
+<a rel="external" href="http://orientinspiration.com/2009/09/oes-tsetnoc.html" rel="nofollow">Oes  Tsetnoc</a> one of the ways in which we can learn seo besides <a rel="external" href="http://duniasoer.com/archives/mengembalikan-jati-diri-bangsa.html" rel="nofollow">Mengembalikan Jati Diri Bangsa</a>.  By participating in the <a rel="external" href="http://mncmakina.com/2009/09/oes-tsetnoc-seo-contest/" rel="nofollow">Oes Tsetnoc</a> or <a rel="external" href="http://ulaznice.info/mengembalikan-jati-diri-bangsa.html" rel="nofollow">Mengembalikan Jati Diri Bangsa</a> we can improve our seo skills. To find more information about <a rel="external" href="http://catatanblogger.info/738688-Oes-Tsetnoc.html" rel="nofollow">Oest Tsetnoc</a> please visit my <a rel="external" href="http://kusukaseo.info/981750-Oes-Tsetnoc-Support.html" rel="nofollow">Oes Tsetnoc</a> pages. And to find more information about <a rel="external" href="http://duniasoer.com" rel="nofollow">Mengembalikan Jati Diri Bangsa</a> please visit my <a rel="external" href="http://catatanblogger.info/464655-Mengembalikan-Jati-Diri-Bangsa.html" rel="nofollow">Mengembalikan Jati Diri Bangsa</a> pages. Thank you So much.</div>
+</div>
+<div class='comment'>
+<div class='author'>Pac</div>
+<div class='content'>
+Just use Qt</div>
+</div>
+</div>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[GUI Toolkits - GTK+ 3.0]]></title>
+    <link href="http://www.fragmentedmemory.com/blog/2008/03/13/gui-toolkits-gtk-30/"/>
+    <updated>2008-03-13T22:23:00+00:00</updated>
+    <id>http://www.fragmentedmemory.com/blog/2008/03/13/gui-toolkits-gtk-30</id>
+    <content type="html"><![CDATA[<div class='post'>
+GTK+ is used by a large variety of programs on a decent number of platforms.  It doesn't have the best reputation for certain bits and pieces, some fairly, some unfairly.<br /><br />Discussions have begun on what will be the new version of GTK+ 3.0.  The most important news is that they will be able to break the ABI which they have heroically maintained all through the 2.0 releases, this should mean lots of good stuff now they are let off the leash.<br /><br />You can check out the start at this <a href="http://federkiel.wordpress.com/2008/03/12/gtk-30-getting-serious/">blog post</a>.<br /><br />The touchstones for the GUI toolkit will be to improve the theming abilities (which in theory will improve look and feel cross platform), animations for swishy interfaces, and proper canvas widget/window.  It will be remaining C which is excellent news for the millions of easy language bindings.<br /><br />It should be interesting to see what happens, hopefully only concentrating on the GUI rather than a lot of the other toolkits which are a bit "kitchen sink" will do for it.</div>
+
+
+<h2>Comments</h2>
+
+
+<div class='comments'>
+<div class='comment'>
+<div class='author'>Adi</div>
+<div class='content'>
+<a rel="external" href="http://orientinspiration.com/2009/09/oes-tsetnoc.html" rel="nofollow">Oes  Tsetnoc</a> one of the ways in which we can learn seo besides <a rel="external" href="http://duniasoer.com/archives/mengembalikan-jati-diri-bangsa.html" rel="nofollow">Mengembalikan Jati Diri Bangsa</a>.  By participating in the <a rel="external" href="http://mncmakina.com/2009/09/oes-tsetnoc-seo-contest/" rel="nofollow">Oes Tsetnoc</a> or <a rel="external" href="http://ulaznice.info/mengembalikan-jati-diri-bangsa.html" rel="nofollow">Mengembalikan Jati Diri Bangsa</a> we can improve our seo skills. To find more information about <a rel="external" href="http://catatanblogger.info/738688-Oes-Tsetnoc.html" rel="nofollow">Oest Tsetnoc</a> please visit my <a rel="external" href="http://kusukaseo.info/981750-Oes-Tsetnoc-Support.html" rel="nofollow">Oes Tsetnoc</a> pages. And to find more information about <a rel="external" href="http://duniasoer.com" rel="nofollow">Mengembalikan Jati Diri Bangsa</a> please visit my <a rel="external" href="http://catatanblogger.info/464655-Mengembalikan-Jati-Diri-Bangsa.html" rel="nofollow">Mengembalikan Jati Diri Bangsa</a> pages. Thank you So much.<br> <a rel="external" href="http://orientinspiration.com" rel="nofollow">Oes  Tsetnoc</a> | <a rel="external" href="http://duniasoer.com/archives/semangat-mengembalikan-jati-diri-bangsa.html" rel="nofollow">Semangat Mengembalikan Jati Diri Bangsa</a></div>
+</div>
+</div>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[GUI Toolkits - Mythos]]></title>
+    <link href="http://www.fragmentedmemory.com/blog/2008/03/04/gui-toolkits-mythos/"/>
+    <updated>2008-03-04T19:28:00+00:00</updated>
+    <id>http://www.fragmentedmemory.com/blog/2008/03/04/gui-toolkits-mythos</id>
+    <content type="html"><![CDATA[<div class='post'>
+A while back I <a href="http://garrys-brain.blogspot.com/2007/10/gui-toolkits-some-thoughts.html">blogged about some ideas</a> for GUI toolkits, not that I ever managed to get off my backside and do something about it.<br /><br />Well someone has done a great job with a DSEL (domain specific embedded language) with a toolkit called <a href="http://code.google.com/p/mythos/">Mythos</a>.  To quote the website <span style="font-style:italic;">"Mythos is a GUI library written in C++ using modern C++ techniques."</span>  It does state on the website that it is more of a proof of concept than a fully-blown attempt.<br /><br />Still, it looks really interesting and has a few different components that make it up.  There is <span style="font-weight:bold;">khaos</span> which does the low level windowing bits and pieces.  <span style="font-weight:bold;">nyx</span> is the window layout library with a DSEL that lets you define the ayout in the C++ files.  <span style="font-weight:bold;">iris</span> does the event handling with another DSEL for associating events and actions.  <span style="font-weight:bold;">gaia</span> is the widget abstraction.<br /><br />Overall it looks like a very interesting use of modern C++ applied to GUI toolkits.  It is a different approach to something like <a href="http://stlab.adobe.com/">Adobe's ASL</a> (adam and eve) but I think if the use of the code generation available through templates should be used to take the legwork out of defining user interfaces.  Mythos, which is the work of one person as far as I can tell (Benaka Moorthi) is a pretty neat accomplishment.</div>
+
+
+<h2>Comments</h2>
+
+
+<div class='comments'>
+<div class='comment'>
+<div class='author'>Adi</div>
+<div class='content'>
+<a rel="external" href="http://orientinspiration.com/2009/09/oes-tsetnoc.html" rel="nofollow">Oes  Tsetnoc</a> one of the ways in which we can learn seo besides <a rel="external" href="http://duniasoer.com/archives/mengembalikan-jati-diri-bangsa.html" rel="nofollow">Mengembalikan Jati Diri Bangsa</a>.  By participating in the <a rel="external" href="http://mncmakina.com/2009/09/oes-tsetnoc-seo-contest/" rel="nofollow">Oes Tsetnoc</a> or <a rel="external" href="http://ulaznice.info/mengembalikan-jati-diri-bangsa.html" rel="nofollow">Mengembalikan Jati Diri Bangsa</a> we can improve our seo skills. To find more information about <a rel="external" href="http://catatanblogger.info/738688-Oes-Tsetnoc.html" rel="nofollow">Oest Tsetnoc</a> please visit my <a rel="external" href="http://kusukaseo.info/981750-Oes-Tsetnoc-Support.html" rel="nofollow">Oes Tsetnoc</a> pages. And to find more information about <a rel="external" href="http://duniasoer.com" rel="nofollow">Mengembalikan Jati Diri Bangsa</a> please visit my <a rel="external" href="http://catatanblogger.info/464655-Mengembalikan-Jati-Diri-Bangsa.html" rel="nofollow">Mengembalikan Jati Diri Bangsa</a> pages. Thank you So much.<br> <a rel="external" href="http://orientinspiration.com" rel="nofollow">Oes  Tsetnoc</a> | <a rel="external" href="http://duniasoer.com/archives/semangat-mengembalikan-jati-diri-bangsa.html" rel="nofollow">Semangat Mengembalikan Jati Diri Bangsa</a></div>
+</div>
+</div>
+
+]]></content>
+  </entry>
+  
+</feed>

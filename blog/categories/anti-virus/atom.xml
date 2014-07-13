@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Anti-Virus | Fragmented Memory]]></title>
+  <link href="http://www.fragmentedmemory.com/blog/categories/anti-virus/atom.xml" rel="self"/>
+  <link href="http://www.fragmentedmemory.com/"/>
+  <updated>2013-06-23T17:13:57+01:00</updated>
+  <id>http://www.fragmentedmemory.com/</id>
+  <author>
+    <name><![CDATA[Garry Bodsworth]]></name>
+    <email><![CDATA[blog@fragmentedmemory.com]]></email>
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Free Anti-Virus]]></title>
+    <link href="http://www.fragmentedmemory.com/blog/2006/11/11/free-anti-virus/"/>
+    <updated>2006-11-11T09:38:00+00:00</updated>
+    <id>http://www.fragmentedmemory.com/blog/2006/11/11/free-anti-virus</id>
+    <content type="html"><![CDATA[<div class='post'>
+<span style="font-weight:bold;">UPDATED</span><br /><br />Damn, I wake up this morning and switch on the computer to discover that AVG are discontinuing the <a href="http://free.grisoft.com/">free edition of their anti-virus suite</a> as of January 2007.<br /><br /><span style="font-weight:bold;">START UPDATE</span><br />Well, the message as it turns out was a bit misleading.  They are discontinuing 7.1 free edition and are advising the users to update to 7.5 which is still free.  Click the link in the first paragraph to download - incidentally it uses <a href="http://www.wxwidgets.org">wxWidgets</a> for its user interface.<br /><span style="font-weight:bold;">END UPDATE</span><br /><br />It has been a fairly decent product, especially for the price, and has meant that I don't have to install one of the myriad of Norton Security packages that I own (normally given away free with computer parts).  I suppose I could go and install those, but I am not really pleased with the software when I have used it.  Mainly due to <a href="http://www.getfirefox.com/">Firefox</a> AVG Free Edition has only spotted one virus attempting to get on my PC in the past few years - and this is definitely not from being a poor anti-virus.<br /><br />Anyway here is a list of free alternatives for all of you in the same position:<br /><ul><li>It seems <a href="http://www.avast.com/eng/avast_4_home.html">Avast</a> is the most fully featured and professional program you could choose.</li><li><a href="http://www.free-av.com/">Avira AntiVir</a> is also a well respected free anti-virus alternative.</li><li>And now an open-source alternative:</li><li><a href="http://www.clamwin.com/">Clamwin</a> - A free open-source anti-virus engine. It is a static scanner... but pair it up with...</li><li><a href="http://winpooch.free.fr/">WinPooch</a> is a dynamic monitoring engine that you can use with ClamWin which gives you all the benefits of dynamic monitoring.</li></ul><br />Well, that is at least a list to be getting on with.  Or you could believe <a href="http://www.betanews.com/article/Allchin_Suggests_Vista_Wont_Need_Antivirus/1163104965">Microsoft's Jim Allchin that you do not need Anti-virus in Windows Vista</a>...</div>
+
+
+<h2>Comments</h2>
+
+
+<div class='comments'>
+<div class='comment'>
+<div class='author'>untouched</div>
+<div class='content'>
+hi, came across your blog while Googling. i don't think they're discontinuing the free antivirus <em>per se</em>, just the 7.1 version of the free antivirus. users are advised to upgrade to 7.5, that's all.<br />as you said, i've had some experience with AVG and i think it's really good. it traps quite a number of the bugs that circulate, including a number that infect via autorun, which is a rather large issue where i am at the moment.</div>
+</div>
+</div>
+
+]]></content>
+  </entry>
+  
+</feed>

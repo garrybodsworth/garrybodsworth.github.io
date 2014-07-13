@@ -1,0 +1,201 @@
+
+<!DOCTYPE HTML>
+<html lang="en-gb">
+<head>
+  <meta charset="UTF-8">
+  <title>Fragmented Memory</title>
+
+  <meta name="author" content="Garry Bodsworth">
+  
+  <meta name="description" content="How to Ruin a Long Weekend Apr 13th, 2009 One of the things I was looking forward to this long weekend was watching DVDs. So I come back home on &hellip;">
+  
+  
+
+  <link rel="canonical" href="http://www.fragmentedmemory.com/blog/2009/04/13/how-to-ruin-a-long-weekend">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/feed/" rel="alternate" title="Fragmented Memory" type="application/atom+xml">
+</head>
+  
+<body class="default">
+  <div id="wrapper">
+    <div id="header">
+  <h1><a href="/">Fragmented Memory</a></h1>
+  
+    <p>Garry Bodsworth's Blog (formerly Garry's Bit Patterns &amp; Programmer's Log)</p>
+  
+</div>
+<ul id="social-links">
+  
+    <li><a class="rss" href="/feed/" title="RSS">RSS</a></li>
+  
+  
+  
+  
+    <li><a class="twitter" href="http://twitter.com/garrybodsworth" title="Twitter">Twitter</a></li>
+  
+  
+    <li><a class="github" href="https://github.com/garrybodsworth" title="GitHub">GitHub</a></li>
+  
+  
+  
+    <li><a class="linkedin" href="http://www.linkedin.com/in/garrybodsworth">LinkedIn</a></li>
+  
+  
+  
+  
+    <li><a class="pinboard" href="https://pinboard.in/u:garrybodsworth" title="Pinboard">Pinboard</a></li>
+  
+</ul>
+<div class="clear"></div>
+<ul id="nav">
+  
+    <li> <a href="/">blog</a> </li>
+  
+
+  
+    <li><a href="/blog/archives">archives</a></li>
+  
+
+  
+    <li><a href="/about">about</a></li>
+  
+</ul>
+
+    <div id="main"> <div class="post-header">
+  
+    <h1 class="post-title">How to Ruin a Long Weekend</h1>
+  
+  
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2009-04-13T00:00:00+01:00" pubdate data-updated="true">Apr 13<span>th</span>, 2009</time>
+</div>
+
+<div class="post-content"><p>One of the things I was looking forward to this long weekend was watching DVDs. So I come back home on Thursday plonk my Tales Of The Black Freighter into my Windows Media Center 2005 box and I get jerky video and crackly sound. So I then spend a day trying to diagnose the problem&#8230;. Starting with making sure my Windows install is up to date with patches, new nVidia drivers (which managed to successfully break everything so I tried multiple versions), and new versions of the codecs I use. The best part was in Media Player I got no sound and fine video, but on Media Center I got jerky video and crackly sound. All from the same codec.</p>
+
+<p>So, I decided it was time try MythTV properly, so I nuked the drive with a Xubuntu install which crashed halfway through showing me the true nature of my problem when there was no turning back &#8211; the DVD drive was dying. So I decided to proceed with my Linux install because I was on my way and liked the philosophy behind MythTV&#8217;s design.</p>
+
+<p>Now three days later I have a mostly working system, but I have had a number of casualties. First my DVD drive, then I blew up my monitor which I had to drive all the way to the office to collect, and now my graphics card is living on borrowed time (I will post about that in a bit). None of it is MythTV&#8217;s or Ubuntu&#8217;s fault, but I should of known when the weekend starts badly it can only get worse. I even got so desperate I considered installing Vista, but I am now really close to getting the whole system up and running.</p>
+
+<p>As for MythTV itself &#8211; the features it provides were exactly what I wanted, DVD, TV, CD music, random downloaded videos. But it has proved to be such a pain, some of it Xubuntu&#8217;s fault, some of it is MythTV&#8217;s, and my greatest share of pain has come from nVidia.</p>
+
+<p>The backend design of MythTV is a real good idea but it is painful to get up and running &#8211; even with the nicely supplied packages. Especially if you decide to change your IP address or XMLTV stops working briefly. The setup user interface is designed to be used from a big screen, but is extremely unintuitive and counter to any GUI guidelines you have ever seen. It took about three attempts to get the hook up between XMLTV and my DVB-T card correct and in the database.</p>
+
+<p>The frontend is okay, but is at least five years behind anything you have seen for media centers (they have a new version they are working on but there is no planned release yet). You have to fiddle around so you can successfully eject DVDs, get your remote set up (involving text configuration files) which works okay but not intuitively (the stop button doesn&#8217;t do what I expect on a Windows MCE remote), watch DVDs (enable the correct repositories), and getting your Samba mounts working (why on earth aren&#8217;t Samba shares an optional directory rather than having to mess around with fstab?)</p>
+
+<p>I did try X-Box Media Center as a front-end for the MythTV backend. It is much nicer to look at, provides some real good features (with a great iPlayer plug-in), worked with the MCE remote flawlessly and sensibly, and is only lacking the ability to schedule recordings. If that was possible I would use that as a frontend, because it seems much more stable than the MythTV UI. I did also try Boxee, the commercial version of XBMC, but although it looked quite nice I found it was not as good as XBMC it is derived from and its MythTV frontend refused to work as it is broken.</p>
+
+<p>My thoughts this weekend have gone from MCE2005 to MythTV to XBMC to Boxee to XBMC to MythTV&#8230;. That also discounts the amount of time I sat down considering how I would write my own.</p>
+
+<p>My main work now is to get hibernate and suspend working, but that requires a post all of its own. At least at that point I will be functionally equivalent to my Windows MCE2005 install that I nuked.</p>
+</div>
+
+
+<div class="post-single">
+  <div class="post-meta">
+    
+
+<span class="categories">
+  Categories:
+  
+    <a class='category' href='/blog/categories/uncategorized/'>Uncategorized</a>
+  
+</span>
+
+
+    
+      <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://www.fragmentedmemory.com/blog/2009/04/13/how-to-ruin-a-long-weekend/" data-via="garrybodsworth" data-counturl="http://www.fragmentedmemory.com/blog/2009/04/13/how-to-ruin-a-long-weekend/" >Tweet</a>
+  
+  
+  
+</div>
+
+    
+  </div>
+  <div class="clear"></div>
+
+  
+</div>
+ </div>
+    <div id="footer">
+  <div class="panels">
+    <div class="license">
+      <h2>License</h2>
+      <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-nc-sa/3.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/">Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License</a>.
+    </div>
+
+    <div class="posts">
+      <h2>Recent Posts</h2>
+      <ul>
+        
+          <li>
+            <a href="/blog/2013/06/22/rss-feed-moved-to-http-slash-slash-www-dot-fragmentedmemory-dot-com-slash-feed-slash/">RSS Feed Moved To http://www.fragmentedmemory.com/feed/</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2013/06/18/new-location-and-new-blog-engine-and-old-content-restored/">New Location &amp; New Blog Engine &amp; Old Content Restored</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2013/06/13/joining-microsoft/">Joining Microsoft</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2013/06/13/leaving-bromium/">Leaving Bromium</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2013/03/05/philip-su-engineering-process-and/">Philip Su - Engineering Process And Philosophy At Facebook</a>
+          </li>
+        
+      </ul>
+    </div>
+
+    <div class="posts">
+      <h2>Links</h2>
+      <a href='https://alpha.app.net/gjb' class='adn-button' target='_blank' data-type='follow' data-width='277' data-height='27' data-user-id='@gjb' data-show-username='1' rel='me'>Follow me on App.net</a><script>(function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src='//d2zh9g63fcvyrq.cloudfront.net/adn.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'adn-button-js'));</script>
+    </div>
+  </div>
+
+  <p class="powered">
+    Powered by <a href="http://octopress.org">Octopress</a> and <a href="https://github.com/iwinux/compbits">Compbits</a>
+  </p>
+</div>
+
+  </div> <!-- #wrapper end -->
+
+  
+
+  
+
+
+  
+
+  
+
+  
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+</body>
+</html>

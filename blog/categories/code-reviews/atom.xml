@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Code Reviews | Fragmented Memory]]></title>
+  <link href="http://www.fragmentedmemory.com/blog/categories/code-reviews/atom.xml" rel="self"/>
+  <link href="http://www.fragmentedmemory.com/"/>
+  <updated>2013-06-23T17:13:57+01:00</updated>
+  <id>http://www.fragmentedmemory.com/</id>
+  <author>
+    <name><![CDATA[Garry Bodsworth]]></name>
+    <email><![CDATA[blog@fragmentedmemory.com]]></email>
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Online Code Reviews - Codestriker]]></title>
+    <link href="http://www.fragmentedmemory.com/blog/2007/03/29/online-code-reviews-codestriker/"/>
+    <updated>2007-03-29T20:33:00+01:00</updated>
+    <id>http://www.fragmentedmemory.com/blog/2007/03/29/online-code-reviews-codestriker</id>
+    <content type="html"><![CDATA[<div class='post'>
+Part of the development process at work is code reviews.  It is a peer review working as a sanity checker, and provides more than one set of eyes looking at the problem.  The process itself is fairly simply governed by an excellent source control system in <a href="http://subversion.tigris.org">Subversion</a> (with additional excellent tools like <a href="http://www.tortoisesvn.net">TortoiseSVN</a>).<br /><br />There is an online tool to help with the annotations and code reviews process.  It's called <a href="http://codestriker.sourceforge.net/">Codestriker</a> and provides a web interface and access to the source control through it.  Basically the system provides the ability to annotate source code and allow others to read those notes.<br /><br />It's good for a formalised system, but is a very comprehensive system.  This means that it does take a lot more user interface interaction than a simple email detailing any changes.  For a large system with many developers it could be more of an invaluable tool, especially for large quantities of comments.  It is also useful if your code is really bad and you need lots of comments ;)<br /><br />The system also has Bugzilla integration, so stick together this, Subversion, and Bugzilla and you have quite a powerful open-source system.</div>
+
+
+<h2>Comments</h2>
+
+
+<div class='comments'>
+<div class='comment'>
+<div class='author'>Jason</div>
+<div class='content'>
+My company makes another code review tool called Code Collaborator (<A HREF="http://codecollab.com" REL="nofollow">http://codecollab.com</A>).  It's free for open source projects.<BR/><BR/>CodeStriker is not bad -- certainly better than emails.  But some people like the fact that we have integrations with Eclipse, command-line, GUI, and more comprehensive support for version control integration.<BR/><BR/>It's just good to see more and more people interested in code review in general.  As long as the process doesn't become burdensome it's a great way to find bugs.</div>
+</div>
+</div>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Code Reviews]]></title>
+    <link href="http://www.fragmentedmemory.com/blog/2006/12/02/code-reviews/"/>
+    <updated>2006-12-02T09:38:00+00:00</updated>
+    <id>http://www.fragmentedmemory.com/blog/2006/12/02/code-reviews</id>
+    <content type="html"><![CDATA[<div class='post'>
+At work we do code reviews as part of our development process.  This means every commit has to have an additional set of eyes go over it and confirm the edits are good and adhere to the coding standards.<br /><br />This can be an intrusive process, but also can be priceless.  The creator of <a href="http://www.python.org">Python</a> Guido van Rossum has developed a code review system whilst working for Google.  The system is called Mondrian and there is some more information <a href="http://www.niallkennedy.com/blog/archives/2006/11/google-mondrian.html">here on a blog interview</a>.  Currently it uses Perforce but in order for it to be released as open-source it will also work for Subversion and different database backends.</div>
+
+]]></content>
+  </entry>
+  
+</feed>

@@ -1,0 +1,194 @@
+
+<!DOCTYPE HTML>
+<html lang="en-gb">
+<head>
+  <meta charset="UTF-8">
+  <title>Fragmented Memory</title>
+
+  <meta name="author" content="Garry Bodsworth">
+  
+  <meta name="description" content="Source Control - Subversion and TortoiseSVN 1.5 Mar 19th, 2008 There is no official release date for Subversion 1.5 although Alpha 2 is currently &hellip;">
+  
+  
+
+  <link rel="canonical" href="http://www.fragmentedmemory.com/blog/2008/03/19/source-control-subversion-and">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/feed/" rel="alternate" title="Fragmented Memory" type="application/atom+xml">
+</head>
+  
+<body class="default">
+  <div id="wrapper">
+    <div id="header">
+  <h1><a href="/">Fragmented Memory</a></h1>
+  
+    <p>Garry Bodsworth's Blog (formerly Garry's Bit Patterns &amp; Programmer's Log)</p>
+  
+</div>
+<ul id="social-links">
+  
+    <li><a class="rss" href="/feed/" title="RSS">RSS</a></li>
+  
+  
+  
+  
+    <li><a class="twitter" href="http://twitter.com/garrybodsworth" title="Twitter">Twitter</a></li>
+  
+  
+    <li><a class="github" href="https://github.com/garrybodsworth" title="GitHub">GitHub</a></li>
+  
+  
+  
+    <li><a class="linkedin" href="http://www.linkedin.com/in/garrybodsworth">LinkedIn</a></li>
+  
+  
+  
+  
+    <li><a class="pinboard" href="https://pinboard.in/u:garrybodsworth" title="Pinboard">Pinboard</a></li>
+  
+</ul>
+<div class="clear"></div>
+<ul id="nav">
+  
+    <li> <a href="/">blog</a> </li>
+  
+
+  
+    <li><a href="/blog/archives">archives</a></li>
+  
+
+  
+    <li><a href="/about">about</a></li>
+  
+</ul>
+
+    <div id="main"> <div class="post-header">
+  
+    <h1 class="post-title">Source Control - Subversion and TortoiseSVN 1.5</h1>
+  
+  
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2008-03-19T20:43:00+00:00" pubdate data-updated="true">Mar 19<span>th</span>, 2008</time>
+</div>
+
+<div class="post-content"><div class='post'>
+There is no official release date for Subversion 1.5 although Alpha 2 is currently available.  I thought I&#8217;d post about the upcoming features that will be making their way into the release.  there is also a little bit at the end about TortoiseSVN 1.5 features.<br /><br /><span style="font-weight:bold;">Merge Tracking</span><br /><br />The most important feature in the upcoming 1.5.  The initial concept is based on svnmerge.py but has gone far beyond that and is fully integrated into the repository format.  This means it will be possible to see which revisions have yet to be merged or have already been done.  For people with complex branching or regular merging it should be an indispensable feature.<br /><br />Interesting links about it are <a href="http://blogs.open.collab.net/svn/2007/05/the_subversion__1.html">here</a>, <a href="http://blogs.open.collab.net/svn/2007/11/what-about-bran.html">here</a>, and <a href="http://blogs.open.collab.net/svn/2007/11/branching-strat.html">here</a>.  The functional spec is available <a href="http://subversion.tigris.org/merge-tracking/func-spec.html">here</a>.<br /><br /><span style="font-weight:bold;">Sparse Checkouts</span><br /><br />This allows for checking out portions of a larger repository.  This means it is possible to specify the depth that the operations take into the directory structure.<br /> <br /><span style="font-weight:bold;">Conflict Resolution</span><br /><br />There are improvements to the conflict resolution for merges.  It is now possible to use the command-line to perform the resolution and a better interface for graphical clients.<br /><br /><span style="font-weight:bold;">Changelists</span><br /><br />It is possible to work on several sets of files on a single working copy.  You can associate those files together with a name in order to work on more than one problem in a single working copy.  I really needed this feature at work today trying to do more than one thing in a single working copy.<br /><br /><span style="font-weight:bold;">Externals Improvements</span><br /><br />The improvements allow svn:externals to be pegged at a revision.  Also they can use relative paths from the current directory (that will be really good in some instances with external deliverables) and if you use externals it makes managing a code tree much easier because it treats it like it is part of the current code tree.<br /><br /><span style="font-weight:bold;">Copy/Rename Improvements</span><br /><br />There is an improvement in the behaviour on copy/renaming of files (not currently directories until version 1.6) by the client trying to be smarter.  If a file has been renamed/copied then rather than the server sending the whole new file it does the copy operation so you should not lose the changes that had been made to the old file.<br /><br /><span style="font-weight:bold;">TortoiseSVN 1.5</span><br /><br />This should be released not long after the main Subversion 1.5 release.  The major changes will be the user interface work for merge tracking, changesets, and sparse checkouts.  There are some other features that will be part of the 1.5 release:<br />* Client side hook scripts – You can run some scripts before or after committing - this should help people create better processes.<br />* If a program has done some file operations like renaming and deleting without using the Subversion interface (drag-right-click) then it is possible to fix the file relationships in the UI.  This would be quite useful to inte3grate as an external tool in Visual Studio.<br />* Repository browser now has a two pane look like Windows Explorer with a tree-view and list of files.  Apparently it is much faster.<br />* A new merge wizard rather than the dialog which improves the workflow for merging.</div>
+<h2>Comments</h2>
+<div class='comments'>
+<div class='comment'>
+<div class='author'>Adi</div>
+<div class='content'>
+<a rel="external" href="http://orientinspiration.com/2009/09/oes-tsetnoc.html" rel="nofollow">Oes  Tsetnoc</a> one of the ways in which we can learn seo besides <a rel="external" href="http://duniasoer.com/archives/mengembalikan-jati-diri-bangsa.html" rel="nofollow">Mengembalikan Jati Diri Bangsa</a>.  By participating in the <a rel="external" href="http://mncmakina.com/2009/09/oes-tsetnoc-seo-contest/" rel="nofollow">Oes Tsetnoc</a> or <a rel="external" href="http://ulaznice.info/mengembalikan-jati-diri-bangsa.html" rel="nofollow">Mengembalikan Jati Diri Bangsa</a> we can improve our seo skills. To find more information about <a rel="external" href="http://catatanblogger.info/738688-Oes-Tsetnoc.html" rel="nofollow">Oest Tsetnoc</a> please visit my <a rel="external" href="http://kusukaseo.info/981750-Oes-Tsetnoc-Support.html" rel="nofollow">Oes Tsetnoc</a> pages. And to find more information about <a rel="external" href="http://duniasoer.com" rel="nofollow">Mengembalikan Jati Diri Bangsa</a> please visit my <a rel="external" href="http://catatanblogger.info/464655-Mengembalikan-Jati-Diri-Bangsa.html" rel="nofollow">Mengembalikan Jati Diri Bangsa</a> pages. Thank you So much.<br> <a rel="external" href="http://orientinspiration.com" rel="nofollow">Oes  Tsetnoc</a> | <a rel="external" href="http://duniasoer.com/archives/semangat-mengembalikan-jati-diri-bangsa.html" rel="nofollow">Semangat Mengembalikan Jati Diri Bangsa</a></div>
+</div>
+</div>
+</div>
+
+
+<div class="post-single">
+  <div class="post-meta">
+    
+
+<span class="categories">
+  Categories:
+  
+    <a class='category' href='/blog/categories/source-control/'>Source Control</a>, <a class='category' href='/blog/categories/subversion/'>Subversion</a>
+  
+</span>
+
+
+    
+      <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://www.fragmentedmemory.com/blog/2008/03/19/source-control-subversion-and/" data-via="garrybodsworth" data-counturl="http://www.fragmentedmemory.com/blog/2008/03/19/source-control-subversion-and/" >Tweet</a>
+  
+  
+  
+</div>
+
+    
+  </div>
+  <div class="clear"></div>
+
+  
+</div>
+ </div>
+    <div id="footer">
+  <div class="panels">
+    <div class="license">
+      <h2>License</h2>
+      <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-nc-sa/3.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/">Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License</a>.
+    </div>
+
+    <div class="posts">
+      <h2>Recent Posts</h2>
+      <ul>
+        
+          <li>
+            <a href="/blog/2013/06/22/rss-feed-moved-to-http-slash-slash-www-dot-fragmentedmemory-dot-com-slash-feed-slash/">RSS Feed Moved To http://www.fragmentedmemory.com/feed/</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2013/06/18/new-location-and-new-blog-engine-and-old-content-restored/">New Location &amp; New Blog Engine &amp; Old Content Restored</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2013/06/13/joining-microsoft/">Joining Microsoft</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2013/06/13/leaving-bromium/">Leaving Bromium</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2013/03/05/philip-su-engineering-process-and/">Philip Su - Engineering Process And Philosophy At Facebook</a>
+          </li>
+        
+      </ul>
+    </div>
+
+    <div class="posts">
+      <h2>Links</h2>
+      <a href='https://alpha.app.net/gjb' class='adn-button' target='_blank' data-type='follow' data-width='277' data-height='27' data-user-id='@gjb' data-show-username='1' rel='me'>Follow me on App.net</a><script>(function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src='//d2zh9g63fcvyrq.cloudfront.net/adn.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'adn-button-js'));</script>
+    </div>
+  </div>
+
+  <p class="powered">
+    Powered by <a href="http://octopress.org">Octopress</a> and <a href="https://github.com/iwinux/compbits">Compbits</a>
+  </p>
+</div>
+
+  </div> <!-- #wrapper end -->
+
+  
+
+  
+
+
+  
+
+  
+
+  
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+</body>
+</html>

@@ -1,0 +1,207 @@
+
+<!DOCTYPE HTML>
+<html lang="en-gb">
+<head>
+  <meta charset="UTF-8">
+  <title>Fragmented Memory</title>
+
+  <meta name="author" content="Garry Bodsworth">
+  
+  <meta name="description" content="Google Open Source Jul 10th, 2008 Recently Google has been opening up more and more of its code, obviously hosting it on Google Code. I thought I&# &hellip;">
+  
+  
+
+  <link rel="canonical" href="http://www.fragmentedmemory.com/blog/2008/07/10/google-open-source">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/feed/" rel="alternate" title="Fragmented Memory" type="application/atom+xml">
+</head>
+  
+<body class="default">
+  <div id="wrapper">
+    <div id="header">
+  <h1><a href="/">Fragmented Memory</a></h1>
+  
+    <p>Garry Bodsworth's Blog (formerly Garry's Bit Patterns &amp; Programmer's Log)</p>
+  
+</div>
+<ul id="social-links">
+  
+    <li><a class="rss" href="/feed/" title="RSS">RSS</a></li>
+  
+  
+  
+  
+    <li><a class="twitter" href="http://twitter.com/garrybodsworth" title="Twitter">Twitter</a></li>
+  
+  
+    <li><a class="github" href="https://github.com/garrybodsworth" title="GitHub">GitHub</a></li>
+  
+  
+  
+    <li><a class="linkedin" href="http://www.linkedin.com/in/garrybodsworth">LinkedIn</a></li>
+  
+  
+  
+  
+    <li><a class="pinboard" href="https://pinboard.in/u:garrybodsworth" title="Pinboard">Pinboard</a></li>
+  
+</ul>
+<div class="clear"></div>
+<ul id="nav">
+  
+    <li> <a href="/">blog</a> </li>
+  
+
+  
+    <li><a href="/blog/archives">archives</a></li>
+  
+
+  
+    <li><a href="/about">about</a></li>
+  
+</ul>
+
+    <div id="main"> <div class="post-header">
+  
+    <h1 class="post-title">Google Open Source</h1>
+  
+  
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2008-07-10T00:00:00+01:00" pubdate data-updated="true">Jul 10<span>th</span>, 2008</time>
+</div>
+
+<div class="post-content"><p>Recently <a href="http://www.google.com">Google</a> has been opening up more and more of its code, obviously hosting it on <a href="http://code.google.com/">Google Code</a>. I thought I&#8217;d highlight a few of them.</p>
+
+<p><a href="http://code.google.com/p/googletest/">Google C++ Testing Framework</a><br/>
+<em>Google&#8217;s framework for writing C++ tests on a variety of platforms (Linux, Mac OS X, Windows, Windows CE, and Symbian). Based on the xUnit architecture. Supports automatic test discovery, a rich set of assertions, user-defined assertions, death tests, fatal and non-fatal failures, various options for running the tests, and XML test report generation.</em></p>
+
+<p>There are a number of C++ unit testing frameworks out there. A good article navigating the minefield can be read <a href="http://www.gamesfromwithin.com/articles/0412/000061.html">here</a>. Advantages of the this framework is mainly it is backed by Google, it is mature, supplies a lot of functionality, and that it is portable.</p>
+
+<p><a href="http://code.google.com/apis/protocolbuffers/">Protocol Buffers</a><br/>
+<em>Protocol buffers are Google&#8217;s language-neutral, platform-neutral, extensible mechanism for serializing structured data – think XML, but smaller, faster, and simpler. You define how you want your data to be structured once, then you can use special generated source code to easily write and read your structured data to and from a variety of data streams and using a variety of languages – Java, C++, or Python.</em></p>
+
+<p>There are obviously loads of ways to serialise data, but it seems to support a number of languages and is space efficient (at least in comparison to XML). I&#8217;m not too sure how much it would offer over JSON although this does mean you don&#8217;t have to write or find some of the code yourself in the various languages.</p>
+
+<p><a href="http://code.google.com/p/ratproxy/">Ratproxy</a><br/>
+*A semi-automated, largely passive web application security audit tool, optimized for an accurate and sensitive detection, and automatic annotation, of potential problems and security-relevant design patterns based on the observation of existing, user-initiated traffic in complex web 2.0 environments. Detects and prioritizes broad classes of security problems, such as dynamic cross-site trust model considerations, script inclusion issues, content serving problems, insufficient XSRF and XSS defenses, and much more. *</p>
+
+<p>I mainly included this because I like the name&#8230; But it is also a useful tool for discovering weaknesses in your website&#8217;s security. I&#8217;ve read about commercial apps that do this but not too many open-source ones, so this release from Google can only be a good thing.</p>
+
+<p><strong>Some other quick ones:</strong><br/>
+<a href="http://code.google.com/p/dom-checker/">Browser DOM Checker</a><br/>
+*A simple utility to thoroughly validate DOM, XMLHttpRequest, and cookie security restriction handling in modern web browsers. Notable features include exhaustive hierarchy crawling, cross-domain IPC system for blind write verification, page transition checks, and more. *</p>
+
+<p><a href="http://code.google.com/p/bunny-the-fuzzer/">Bunny the Fuzzer</a><br/>
+*A closed loop, high-performance, general purpose protocol-blind fuzzer for C programs. Uses compiler-level integration to seamlessly inject precise and reliable instrumentation hooks into the traced program. These hooks enable the fuzzer to receive real-time feedback on changes to the function call path, call parameters, and return values in response to variations in input data. This architecture makes it possible to significantly improve the coverage of the testing process without a noticeable performance impact usually associated with other attempts to peek into run-time internals. *</p>
+</div>
+
+
+<div class="post-single">
+  <div class="post-meta">
+    
+
+<span class="categories">
+  Categories:
+  
+    <a class='category' href='/blog/categories/uncategorized/'>Uncategorized</a>
+  
+</span>
+
+
+    
+      <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://www.fragmentedmemory.com/blog/2008/07/10/google-open-source/" data-via="garrybodsworth" data-counturl="http://www.fragmentedmemory.com/blog/2008/07/10/google-open-source/" >Tweet</a>
+  
+  
+  
+</div>
+
+    
+  </div>
+  <div class="clear"></div>
+
+  
+</div>
+ </div>
+    <div id="footer">
+  <div class="panels">
+    <div class="license">
+      <h2>License</h2>
+      <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-nc-sa/3.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/">Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License</a>.
+    </div>
+
+    <div class="posts">
+      <h2>Recent Posts</h2>
+      <ul>
+        
+          <li>
+            <a href="/blog/2013/06/22/rss-feed-moved-to-http-slash-slash-www-dot-fragmentedmemory-dot-com-slash-feed-slash/">RSS Feed Moved To http://www.fragmentedmemory.com/feed/</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2013/06/18/new-location-and-new-blog-engine-and-old-content-restored/">New Location &amp; New Blog Engine &amp; Old Content Restored</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2013/06/13/joining-microsoft/">Joining Microsoft</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2013/06/13/leaving-bromium/">Leaving Bromium</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2013/03/05/philip-su-engineering-process-and/">Philip Su - Engineering Process And Philosophy At Facebook</a>
+          </li>
+        
+      </ul>
+    </div>
+
+    <div class="posts">
+      <h2>Links</h2>
+      <a href='https://alpha.app.net/gjb' class='adn-button' target='_blank' data-type='follow' data-width='277' data-height='27' data-user-id='@gjb' data-show-username='1' rel='me'>Follow me on App.net</a><script>(function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src='//d2zh9g63fcvyrq.cloudfront.net/adn.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'adn-button-js'));</script>
+    </div>
+  </div>
+
+  <p class="powered">
+    Powered by <a href="http://octopress.org">Octopress</a> and <a href="https://github.com/iwinux/compbits">Compbits</a>
+  </p>
+</div>
+
+  </div> <!-- #wrapper end -->
+
+  
+
+  
+
+
+  
+
+  
+
+  
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+</body>
+</html>

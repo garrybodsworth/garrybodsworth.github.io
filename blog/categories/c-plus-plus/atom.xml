@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: C++ | Fragmented Memory]]></title>
+  <link href="http://www.fragmentedmemory.com/blog/categories/c-plus-plus/atom.xml" rel="self"/>
+  <link href="http://www.fragmentedmemory.com/"/>
+  <updated>2013-06-23T17:13:57+01:00</updated>
+  <id>http://www.fragmentedmemory.com/</id>
+  <author>
+    <name><![CDATA[Garry Bodsworth]]></name>
+    <email><![CDATA[blog@fragmentedmemory.com]]></email>
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[GUI Toolkits - eGUI++ Easy GUI]]></title>
+    <link href="http://www.fragmentedmemory.com/blog/2008/06/10/gui-toolkits-egui-easy-gui/"/>
+    <updated>2008-06-10T22:10:00+01:00</updated>
+    <id>http://www.fragmentedmemory.com/blog/2008/06/10/gui-toolkits-egui-easy-gui</id>
+    <content type="html"><![CDATA[<div class='post'>
+I've blogged a few times in the past about <a href="http://torjo.com">John Torjo</a>'s <a href="http://torjo.com/win32gui/index.html">Win32 GUI Generics</a>.  It was really quite an impressive accomplishment using the advanced C++ techniques in Windows development, but was a bit of a rough diamond. I did do some minor changes to my local copy when I was playing around with it to make sure that the widgets used the correct Windows theming engine, and it was surprisingly easy to add which is a testament to the quality of the code.  It did take ages to compile though with all those templates.<br /><br />I notice that now John Torjo has posted <a href="http://torjo.blogspot.com/2008/06/egui-easy-gui-for-c.html">eGUI++ to his blog</a>.  Hopefully this is a progression using all he learnt with his previous iteration in Win32 GUI Generics.<br /><br />There is an article about eGUI++ on the <a href="http://msdn.microsoft.com/en-us/magazine/cc534994.aspx">MSDN here</a> written by John.  It covers the basics of what he has done and covers some of the features.  It is typesafe at compile time which is great for catching errors early as most GUI toolkits you rarely find those types of problems until runtime (especially when using Windows resources).<br /><br />You can download it from <a href="http://torjo.com/egui/">here</a>.  The example presented on that page is quick and to the point.  Hopefully this is a toolkit to watch.</div>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Goings On In The Land Of Eclipse]]></title>
+    <link href="http://www.fragmentedmemory.com/blog/2008/05/19/goings-on-in-land-of-eclipse/"/>
+    <updated>2008-05-19T21:00:00+01:00</updated>
+    <id>http://www.fragmentedmemory.com/blog/2008/05/19/goings-on-in-land-of-eclipse</id>
+    <content type="html"><![CDATA[<div class='post'>
+I've been playing around with some of the Alpha/Beta releases of <a href="http://www.eclipse.org">Eclipse</a>.  I haven't played around with it for quite a while but some of the advancements look really interesting.<br /><br />Currently Eclipse has <a href="http://update.eclipse.org/downloads/drops/S-3.4M7-200805020100/index.php">3.4.M7</a> is available for download.  One of the most interesting features is that the user interface now supports WPF on Vista.  The Java toolkit <a href="http://en.wikipedia.org/wiki/Standard_Widget_Toolkit">SWT</a> now has a <a href="http://en.wikipedia.org/wiki/Windows_Presentation_Foundation">WPF</a> back-end, you can see its resolution independence if you look at it through the Magnifier application on Windows.  Also, in general, the user interface looks much more integrated into the native platform.<br /><br />You can see a list of new and newsworthy items for Eclipse <a href="http://www.eclipsecon.com/swt/R3_3/new_and_noteworthy.html">3.3 here</a> and <a href="http://download.eclipse.org/eclipse/downloads/drops/S-3.4M3-200711012000/eclipse-news-M3.html">3.4 here</a>.<br /><br />The main reason I was trying out the new version was to give the C/C++ toolkit <a href="http://wiki.eclipse.org/CDT/User/NewIn50">CDT 5.0</a> a go.  Doug Schaefer has blogged about it <a href="http://cdtdoug.blogspot.com/2008/05/cdt-50-looks-good-now-looking-ahead.html">here</a>.<br /><br />I was just playing a little with it to see how it compared to the older version and it seems a bit faster.  It has the beginnings of some nice refactorings and templates which should make some common coding tasks a bit simpler.<br /><br />Hopefully when this all comes out <a href="http://wascana.sourceforge.net/">Wascana</a> will have a new version released with a nicely packaged C/C++ development environment for Windows.  It could make a compelling alternative to other IDEs, as well as giving you access to other great tools like PyDev (for Python), Mylyn (task and bug management), and I suppose Java as well...</div>
+
+
+<h2>Comments</h2>
+
+
+<div class='comments'>
+<div class='comment'>
+<div class='author'>Doug Schaefer</div>
+<div class='content'>
+No worries. I'm working in the CDT 5.0 based-Wascana right now :)</div>
+</div>
+</div>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Microsoft STL Performance]]></title>
+    <link href="http://www.fragmentedmemory.com/blog/2008/04/13/microsoft-stl-performance/"/>
+    <updated>2008-04-13T21:28:00+01:00</updated>
+    <id>http://www.fragmentedmemory.com/blog/2008/04/13/microsoft-stl-performance</id>
+    <content type="html"><![CDATA[<div class='post'>
+On the <a href="http://www.boost.org">Boost</a> discussion group there is a discussion started about <a href="http://www.nabble.com/High-Cost-of-MS-"Safe"-STL-for-Release-Builds-td16642449.html#a16642449">High Cost of MS "Safe" STL for Release Builds</a>.  It is an interesting look at the massive differences between "safe" and "non-safe" options in Microsoft STL.<br /><br />I don't think there has been a clear look at the efficiencies and inefficiencies in the MS-STL implementation, especially with the different options (iterator debugging and safe options).  There have been some looks at comparing different STL implementations but it always difficult to do a good comparison, the main problem being comparing the correct "latest versions".<br /><br />Going back a while I was justifying the use of <a href="http://stlport.sourceforge.net/">STLPort</a> instead of Microsoft STL supplied with Visual Studio.  Simply, it was a performance thing with both memory and efficiency.  Certainly with the new STLPort visualisers for the Microsoft debugger it is an even playing field for ease of use.<br /><br />You can read those here:<br />* <a href="http://garrys-brain.blogspot.com/2006/10/visual-studio-2005-lets-break.html">Visual Studio 2005 - Lets Break Everything!</a> - a bit about how to switch off some of the more annoying "features".<br />* <a href="http://garrys-brain.blogspot.com/2007/01/development-stlport-versus-microsoft.html">Development - STLPort versus Microsoft STL performance</a> - A quick summary of my observations on the performance in a real-world complex application.<br />* <a href="http://garrys-brain.blogspot.com/2007/01/more-on-stlport-and-microsoft-stl.html">More on STLPort and Microsoft STL performance</a> - A little more background.</div>
+
+
+<h2>Comments</h2>
+
+
+<div class='comments'>
+<div class='comment'>
+<div class='author'>Adi</div>
+<div class='content'>
+<a rel="external" href="http://orientinspiration.com/2009/09/oes-tsetnoc.html" rel="nofollow">Oes  Tsetnoc</a> one of the ways in which we can learn seo besides <a rel="external" href="http://duniasoer.com/archives/mengembalikan-jati-diri-bangsa.html" rel="nofollow">Mengembalikan Jati Diri Bangsa</a>.  By participating in the <a rel="external" href="http://mncmakina.com/2009/09/oes-tsetnoc-seo-contest/" rel="nofollow">Oes Tsetnoc</a> or <a rel="external" href="http://ulaznice.info/mengembalikan-jati-diri-bangsa.html" rel="nofollow">Mengembalikan Jati Diri Bangsa</a> we can improve our seo skills. To find more information about <a rel="external" href="http://catatanblogger.info/738688-Oes-Tsetnoc.html" rel="nofollow">Oest Tsetnoc</a> please visit my <a rel="external" href="http://kusukaseo.info/981750-Oes-Tsetnoc-Support.html" rel="nofollow">Oes Tsetnoc</a> pages. And to find more information about <a rel="external" href="http://duniasoer.com" rel="nofollow">Mengembalikan Jati Diri Bangsa</a> please visit my <a rel="external" href="http://catatanblogger.info/464655-Mengembalikan-Jati-Diri-Bangsa.html" rel="nofollow">Mengembalikan Jati Diri Bangsa</a> pages. Thank you So much.</div>
+</div>
+<div class='comment'>
+<div class='author'>Felipe V. Rigo</div>
+<div class='content'>
+Hi Garry,<BR/><BR/>I came to ur blog looking for TortoiseSVN and Visual Studio Integration.<BR/><BR/>I need a fast connection on source control system throught the world. There are developers in South America and Japan.<BR/><BR/>I'm looking for a good and cheap solution.<BR/><BR/>What do u recommend?<BR/><BR/>I would appreciate any help.<BR/>Thank You</div>
+</div>
+</div>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[More STL - MCSTL and STXXL]]></title>
+    <link href="http://www.fragmentedmemory.com/blog/2008/04/11/more-stl-mcstl-and-stxxl/"/>
+    <updated>2008-04-11T20:22:00+01:00</updated>
+    <id>http://www.fragmentedmemory.com/blog/2008/04/11/more-stl-mcstl-and-stxxl</id>
+    <content type="html"><![CDATA[<div class='post'>
+In a few previous posts I have mentioned some alternative STL implementations.  You can read about <a href="http://garrys-brain.blogspot.com/2008/03/stl-related-rdestl.html">rdestl here</a> as well as <a href="http://garrys-brain.blogspot.com/2008/03/more-stl-ustl-and-stdcxx.html">uSTL and stdcxx here</a>.<br /><br />I've stumbled across a couple of other STL implementations for more specific purposes that I thought some people might find useful.<br /><br />First up is <a href="http://algo2.iti.uni-karlsruhe.de/singler/mcstl/">MCSTL - The Multi-Core Standard Template Library</a> which is a multi-core implementation of certain STL algorithms.  This has actually been integrated into the GCC STL implementation with version 4.3.  It uses OpenMP internally for the multi-threading so would be limited to compilers with valid implementations of that functionality.<br /><br />Next up there is <a href="http://stxxl.sourceforge.net/">STXXL: Standard Template Library for Extra Large Data Sets</a>.  I think the blurb sums it up:<br /><blockquote>The core of STXXL is an implementation of the C++ standard template library STL for external memory (out-of-core) computations, i.e., STXXL implements containers and algorithms that can process huge volumes of data that only fit on disks. While the compatibility to the STL supports ease of use and compatibility with existing applications, another design priority is high performance.</blockquote>After seeing some extra long and large computations on huge data sets this can be used to get around limitations of the platform with less addressable space.</div>
+
+
+<h2>Comments</h2>
+
+
+<div class='comments'>
+<div class='comment'>
+<div class='author'>Adi</div>
+<div class='content'>
+<a rel="external" href="http://orientinspiration.com/2009/09/oes-tsetnoc.html" rel="nofollow">Oes  Tsetnoc</a> one of the ways in which we can learn seo besides <a rel="external" href="http://duniasoer.com/archives/mengembalikan-jati-diri-bangsa.html" rel="nofollow">Mengembalikan Jati Diri Bangsa</a>.  By participating in the <a rel="external" href="http://mncmakina.com/2009/09/oes-tsetnoc-seo-contest/" rel="nofollow">Oes Tsetnoc</a> or <a rel="external" href="http://ulaznice.info/mengembalikan-jati-diri-bangsa.html" rel="nofollow">Mengembalikan Jati Diri Bangsa</a> we can improve our seo skills. To find more information about <a rel="external" href="http://catatanblogger.info/738688-Oes-Tsetnoc.html" rel="nofollow">Oest Tsetnoc</a> please visit my <a rel="external" href="http://kusukaseo.info/981750-Oes-Tsetnoc-Support.html" rel="nofollow">Oes Tsetnoc</a> pages. And to find more information about <a rel="external" href="http://duniasoer.com" rel="nofollow">Mengembalikan Jati Diri Bangsa</a> please visit my <a rel="external" href="http://catatanblogger.info/464655-Mengembalikan-Jati-Diri-Bangsa.html" rel="nofollow">Mengembalikan Jati Diri Bangsa</a> pages. Thank you So much.<br> <a rel="external" href="http://orientinspiration.com" rel="nofollow">Oes  Tsetnoc</a> | <a rel="external" href="http://duniasoer.com/archives/semangat-mengembalikan-jati-diri-bangsa.html" rel="nofollow">Semangat Mengembalikan Jati Diri Bangsa</a></div>
+</div>
+<div class='comment'>
+<div class='author'>kevin p.</div>
+<div class='content'>
+Very interesting.  I've been reading about STXXL, then found your post in a related search.<BR/><BR/>It would cool to see these two merged together - STMCXXL or something.</div>
+</div>
+</div>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Visual C++ 2008 Feature Pack Released]]></title>
+    <link href="http://www.fragmentedmemory.com/blog/2008/04/10/visual-c-2008-feature-pack-released/"/>
+    <updated>2008-04-10T20:31:00+01:00</updated>
+    <id>http://www.fragmentedmemory.com/blog/2008/04/10/visual-c-2008-feature-pack-released</id>
+    <content type="html"><![CDATA[<div class='post'>
+Good news for Windows C++ developers the update to Visual Studio 2008 <a href="http://blogs.msdn.com/somasegar/archive/2008/04/07/visual-c-2008-feature-pack-shipped.aspx">has been released</a>.  This "Feature Pack" contains some of the new TR1 C++ standard library as well as a major MFC update.<br /><br />Details from the Visual C++ Team Weblog can be found <a href="http://blogs.msdn.com/vcblog/archive/2008/04/07/visual-c-2008-feature-pack-released.aspx">here</a> with some videos and links.<br /><br /><span style="font-weight:bold;">TR1 Update</span><br /><br />The TR1 update is an integration of some more <a href="http://www.dinkumware.com/">Dinkumware</a> library functionality.  The features available are:<br />* array - Defines the container template class array and several supporting templates.<br />* functional - Defines several templates that help construct function objects, which are objects of a type that defines operator(). A function object can be a function pointer, but more typically, the object is used to store additional information that can be accessed during a function call.<br />* memory - Defines a class, an operator, and several templates that help allocate and free objects.<br />* random - Defines many random number generators.<br />* regex - Defines a template class to parse regular expressions, and several template classes and functions to search text for matches to a regular expression object.<br />* tuple - Defines a template tuple Class whose instances hold objects of varying types.<br />* type_traits - Defines templates that provide compile-time constants that give information about the properties of their type arguments.<br />* unordered_map - Defines the container template classes unordered_map and unordered_multimap and their supporting templates.<br />* unordered_set - Defines the container template classes unordered_multiset and unordered_set and their supporting templates.<br />* utility - Defines several general templates that can be used throughout the Standard Template Library.<br /><br /><span style="font-weight:bold;">MFC Update</span><br /><br />The MFC Update integrates BCGSoft's libraries into the base MFC and provides masses of useful user interface constructs for native developers.  Details from the Visual C++ Weblog is <a href="http://blogs.msdn.com/vcblog/archive/2008/04/07/mfc-update-powered-by-bcgsoft.aspx">here</a>.<br /><br />Some of the new features are:<br />* Office 2007 Ribbon Bar:  Ribbon, Pearl, Quick Access Toolbar, Status Bar, etc.<br />* Office 2003 and XP look:  Office-style toolbars and menus, Outlook-style shortcut bar, print preview, live font picker, color picker, etc.<br />* Visual Studio look:  sophisticated docking functionality, auto hide windows, property grids, MDI tabs, tab groups, etc.<br />* Internet Explorer look:  Rebars and task panes.<br />* Vista theme support.<br />* “On the fly” menus and toolbar customization:  users can customize the running application through live drag and drop of menu items and toolbar buttons.<br />* Shell management classes:  use these classes to enumerate folders, drives and items, browse for folders and more.<br /><br /><br />You can download all this from <a href="http://www.microsoft.com/downloads/details.aspx?FamilyId=D466226B-8DAB-445F-A7B4-448B326C48E7&displaylang=en">here</a>.</div>
+
+]]></content>
+  </entry>
+  
+</feed>
