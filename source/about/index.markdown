@@ -27,7 +27,9 @@ Then I worked at at [Cambridge Visual Networks (Camvine)][7] which was tangentia
 
 Next up I worked at [Bromium][8] to revolutionise computer security.  I worked on the network driver stack in C, user space and browsers in C++, two webservices (one in node.js and a proper one in Django), and then protecting Safari with Objective-C/C++/Javascript.
 
-My new adventure is at [Lift London][9] a new computer game start-up funded by Microsoft.  I'm very excited to get started!
+I had a new adventure in London at [Lift London][9] a new computer game start-up funded by Microsoft.
+
+I'm now back at [Bromium][8] in Cambridge working on the Mac team doing things very insane to protect the end user from the security threats out there.
 
  [1]: http://garrys-brain.blogspot.com
  [2]: http://www.octopress.org
