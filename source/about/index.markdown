@@ -29,7 +29,7 @@ Next up I worked at [Bromium][8] to revolutionise computer security.  I worked o
 
 I had a new adventure in London at [Lift London][9] a new computer game start-up funded by Microsoft.
 
-I'm now back at [Bromium][8] in Cambridge working on the Mac team doing things very insane to protect the end user from the security threats out there.
+I'm now back at [Bromium][8] in Cambridge working on the Mac team doing things difficult things to protect the end user from the security threats out there.
 
  [1]: http://garrys-brain.blogspot.com
  [2]: http://www.octopress.org
