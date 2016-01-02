@@ -1,0 +1,10 @@
+Title: GUI Toolkits - MFC v9 - Visual Studio 2008 - Yet Another Update
+Date: 2007-11-09T09:33:00+00:00
+Slug: gui-toolkits-mfc-v9-visual-studio-2008_09
+Category: 
+Tags: 
+Authors: Garry Bodsworth
+
+Well, as it turns out the new features for MFC in Visual Studio 2008 are actually a license of the <a href="http://www.bcgsoft.com/">BCGSoft</a> interface toolkits.  I guess this might be similar to the deal with Dinkumware for the STL implementation that Microsoft license a version of and then bolt their own things into.  Obviously it is not as good as having the actual implementation used by Microsoft in their modern products (Office 2007) but it is a start.
+
+There is a thread on <a href="https://forum.codejock.com/forum_posts.asp?TID=8232">Codejock here</a> explaining some of the history.  I do agree with them that Codejock has looked better than BCGSoft when I evaluated them, but I suppose the tools that are free will always win out.  Also it explains the lack of ribbon designer integration, although it is amazing MS don't have a pluggable back-end for the forms and ribbon designer.

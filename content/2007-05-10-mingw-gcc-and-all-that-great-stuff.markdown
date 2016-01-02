@@ -1,0 +1,16 @@
+Title: MinGW GCC and all that great stuff
+Date: 2007-05-10T19:32:00+00:00
+Slug: mingw-gcc-and-all-that-great-stuff
+Category: 
+Tags: 
+Authors: Garry Bodsworth
+
+One of the most overlooked programs out there is GCC - <a href="http://gcc.gnu.org/">The Gnu Compiler Collection</a> - a vast array of development tools that are truly free to use unencumbered.
+
+It provides a suite of compilers from Fortran, to Java, to C++.
+
+At the moment for Windows unless you use Cygwin (not recommended) you will be using <a href="http://www.mingw.org">MinGW</a> which is currently at version 3.4.5, some way behind the version available on Unix systems (which is in 4.2 prerelease).  The good news is that once gcc 4.2 is released it will be released for MinGW, which should mean lots of good improvements, from standards compliance to OpenMP to speed ups from new optimisations.
+
+Obviously it does not only target specific OSes, but it also targets different platforms including 64-bit.
+
+Admittedly it is not as fast the the Microsoft compilers, but maybe it will get there.  One worry is that Microsoft will lose interest in their compilers for native code as they go further and further down the .NET route.

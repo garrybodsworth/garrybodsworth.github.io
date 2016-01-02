@@ -1,0 +1,14 @@
+Title: Core 2 Duo
+Date: 2006-10-06T19:39:00+00:00
+Slug: core-2-duo
+Category: 
+Tags: 
+Authors: Garry Bodsworth
+
+In as long as I can remember I have not been impressed with the incremental steps in hardware.  The last time I went <span style="font-style:italic;">"Ooooooh!"</span> was when I bought a Voodoo card for 3D graphics (it wasn't even integrated into graphics cards at the time) for a Pention 200MMX.  The smoothness and difference in response was amazing.  I suppose the incremental steps all add up and the comparison with a few years ago is noticable, but nothing really blew my socks off.
+
+That was until we got a top of the range two processor (each with two cores) Core 2 Duo (Xeon).  Bloody hell, I have never seen such a leap in speed ever!  Operations that took days before now take hours, and even when it is a single process (we work on a full multithreading program) it has a massive performance gain in the order of 50%, and  there are three cores still left idle!
+
+I've always bought Athlon processors for my home PC builds mainly because they were cost-effective and powerful.  But I have broken with tradition and picked myself up a Core 2 Duo 6400 processor and a new motherboard (which has both AGP and PCI-Ex slots) from my Athlon XP 3200+.  For general websurfing I don't notice any difference until I try to compile something.  I am currently compiling a 114 project solution in Visual Studio in the background whilst I am typing this and it is hammering through and took about five to ten minutes to do(!)
+
+All I can say is if you do development the Core 2 Duo processors really make a difference.

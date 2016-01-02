@@ -1,0 +1,14 @@
+Title: User Interfaces - Vector Icons and Toolbars
+Date: 2006-11-14T22:39:00+00:00
+Slug: user-interfaces-vector-icons-and
+Category: 
+Tags: 
+Authors: Garry Bodsworth
+
+I'm sitting here wondering if there is anything out there to use vector based graphics to render some icons or toolbars.  I've been Googling for something like that out of curiosity - and I seem to have come up dry.
+
+The only one I have found that seems to do what I am expecting is the <a href="http://www.rawmaterialsoftware.com/juce/">Juce Library</a>.  In fact in most libraries creating and maintaining toolbars and icons is pretty laborious (especially in MFC), so you tend to write your own wrappers for functionality.  Myself, I have written code to automatically generate hot and disabled image lists in MFC so only one bitmap needs to be edited (I have also written this code more than once - problems of proprietary code).
+
+I know there is talk that Vista wants everyone to use vector icons (which is a problem for all those people who currently use bitmaps), but there seems to be very little information out there about it.
+
+I realise most people try to write fully featured GUI toolkits, but there must be smaller implementations of specialised functionality out there?  Kind of like common building blocks?  I suppose one would be a rendering engine using system theming, another being resource management, another rendering those resources...

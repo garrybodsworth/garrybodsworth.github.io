@@ -1,0 +1,59 @@
+Title: BarCamb 2
+Date: 2008-08-08T09:00:00+00:00
+Category: 
+Tags: 
+Authors: Garry Bodsworth
+
+A week ago I attended the second [BarCamb][1] (which is the Cambridge name for [BarCamp][2]) which is an interactive conference where the attendees create the schedule.
+
+It was hosted at the [Sanger Institute][3] which is part of the very impressive Wellcome Trust Genome Campus.
+
+**The Chip With Potential**  
+To be honest this talk was over my head but it was about a new way of testing blood at a much lower cost than traditional methods.
+
+**Panic-Driven Design**  
+This was an interactive session, where ideas from the crowd got divided into Test-Driven Development and Panic-Driven Development. It did get sidetracked for a while when exploring the deficiencies of TDD, but it was much more fun to go into where development goes wrong.
+
+**SWIFT**  
+Currently the Wellcome Trust use a proprietary system for genome analysis which has a number of shortcomings. So they embarked on a new system that is open-source and written in C++ to be as performant as possible. It sounds like it is a good step forward with such a large contribution in an industry that tries to be very secretive as to its methods. Sounds like it will save money and time when it is online.
+
+**It&#8217;s Too Much Information For Me**  
+Related tot he previous talk, this one talks about the output. The system currently used generates 11,000 PNG and text files for each run bearing in mind there are numerous simultaneous runs. You are ending up with 320Tb of data to sift through. This talk was a story of attempting to parse porrly formed data that people may not even want to look at. Then when the SWIFT system comes online most of this intermediate information will not be generated.
+
+**Talking About talks.cam**  
+[talks.cam][4] is a website that aggregates the talks happening in Cambridge, both for the University and in general. This looks like a very useful resource. Some of the talk went into plans for the future including trying more integration with social networking for education.
+
+**The Wireless Epidemic**  
+This was a talk from an academic paper looking into the propogation of data using only wireless devices. Basically the devices become routers and forward packets when they have the ability to do so due to proximity. Part of this was a study into the movement of data within a group rather than a completely random pattern as most of the simulations have used in the past. I think [this][5] is a related paper to do with pocket-switched networks.
+
+**Analysis Workflows**  
+Using Rakefiles (Ruby Makefiles) 
+
+**Coda Demo**  
+A demonstration of [Camvine][6]&#8216;s Coda system for digital content delivery (that I am now working on). This talk went really well and we let the attendees have access to the screens for the rest of the day which meant we had &#8220;about&#8221; screens for the talks from this point on. It even had my Feedburner API interface page to who the number of readers, unfortunately my blog showed zero subscribers <img src='http://localhost:8888/wordpress/wp-includes/images/smilies/icon_sad.gif' alt=':(' class='wp-smiley' /> 
+
+**The Cloud And The Community**  
+Attempting to bring the community interaction online like Neighbourhood Watch. Unfortunately the take-up hasn&#8217;t been too high possibly because of the technical ability of the members of the community.
+
+**Embedded Can Do The Internet Too**  
+This was a really good talk about small computers that are used as microcontrollers. They can even support a webserver. Some of the applications were power monitoring and supplying the information via a webpage. Simon can sum it up better on his blog [here][7].
+
+**What Bjork Has Done For Us (Tangible User Interfaces On The Cheap)**  
+Since swishy multi-touch is all the rage, this talk was about hacking up a tangible UI for musical purposes (or chemistry purposes for laying out molecules). You can hack up the UIs using [reacTIVision][8] which is open-source.
+
+**Distributed Version Control With Git (Panel)**  
+This was unfortunately the weakest talk of the day, but I think that happens when you choose a fashionable topic with a fashionable solution. I actually started daydreaming because I forgot to go on a rant about my merging problems of the week.
+
+I also remember the talk about superimposing the government&#8217;s statistical data onto Google Maps (unfortunately I forgot to write down the title) which was an excellent talk. It was interesting to see coloured maps of people&#8217;s age ranges in the UK. Unfortunately the developer had to jump through a number of API and data hoops just to get what should be freely available Google Maps information (like polygon areas of the counties or parishes).
+
+Overall it was a great day with a very high quality of talks and I am looking forward to next year&#8217;s.  
+#barcamb
+
+ [1]: http://barcamp.org/BarCamb-2
+ [2]: http://barcamp.org/
+ [3]: http://www.sanger.ac.uk/
+ [4]: http://talks.cam.ac.uk/
+ [5]: http://conferences.sigcomm.org/sigcomm/2005/paper-HuiCha.pdf
+ [6]: http://www.camvine.com
+ [7]: http://mookstar.wordpress.com/2008/08/08/barcamb-2-embedded-can-do-the-internet-too/
+ [8]: http://reactable.iua.upf.edu/?software

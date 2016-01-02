@@ -1,0 +1,40 @@
+Title: Link Dump 23/7
+Date: 2008-07-23T10:00:00+00:00
+Category: 
+Tags: 
+Authors: Garry Bodsworth
+
+Some more interesting links from the net of the inter.
+
+[Django 1.0 Alpha Released!][1]  
+The release gets closer.
+
+[Optimus Pultius OLED Keypad][2]  
+The cut-down Optimus Maximus keypad thingy. At least it should be much cheaper.
+
+[AVR demo platform rocks the color VGA +audio][3]  
+Home-made with 4-channel audio and 3D graphics.
+
+[&#8220;Internet Explorer 7 is the best release we ever did&#8221;][4]  
+Some interesting information about Mozilla&#8217;s plans for the future.
+
+[We Want A Dead Simple Web Tablet For $200. Help Us Build It][5]  
+Techcrunch want to create an open-source touchscreen tablet and are looking for help.
+
+[BBtv &#8211; Syd Mead with Joel Johnson, part 3: BLADE RUNNER.][6]  
+Third part of the Syd Mead interview.
+
+[WarGames: A Look Back at the Film That Turned Geeks and Phreaks Into Stars][7]  
+All geeks have a soft spot for this film.
+
+[Knol is open to everyone][8]  
+Google release Knol, for community driven &#8220;units of knowledge&#8221;.
+
+ [1]: http://www.djangoproject.com/weblog/2008/jul/21/10-alpha/
+ [2]: http://uk.gizmodo.com/2008/07/22/optimus_pultius_oled_keypad.html
+ [3]: http://blog.makezine.com/archive/2008/07/avr_demo_platform_rocks_t.html?CMP=OTC-0D6B48984890
+ [4]: http://derstandard.at/?url=/?id=1216325195040
+ [5]: http://www.techcrunch.com/2008/07/21/we-want-a-dead-simple-web-tablet-help-us-build-it/
+ [6]: http://www.boingboing.net/2008/07/23/bbtv-syd-mead-with-j.html
+ [7]: http://www.wired.com/entertainment/hollywood/magazine/16-08/ff_wargames?currentPage=all
+ [8]: http://googleblog.blogspot.com/2008/07/knol-is-open-to-everyone.html

@@ -1,0 +1,16 @@
+Title: Bromium - Out Of Stealth
+Date: 2012-06-21T21:01:00+00:00
+Slug: bromium-out-of-stealth
+Category: 
+Tags: 
+Authors: Garry Bodsworth
+
+Yesterday <a href="http://www.bromium.com/">Bromium </a>(the company, not what the product will be) came out of stealth mode.&nbsp; This was a very exciting time around the office because we can give a bit more context on what we've been secretly working away on.
+
+During the proceeding months before this release of information a huge amount of work was going on behind the scenes briefing analysts and news outlets by our top team of Gaurav, Simon, Ian, Tal, and many more.&nbsp; The avalanche of coverage actually happened to have been prepared a while in advance.
+
+You can see Simon Crosby's presentation "Secure Everything" from GigaOM Structure <a href="http://www.livestream.com/gigaomstructure/video?clipId=pla_44bb05bf-522b-4003-aab3-25f76827fe2f">here</a> and also the Q&amp;A interview afterwards <a href="http://www.livestream.com/gigaomstructure/video?clipId=pla_9668f060-4355-41c7-a573-d648277bbe7e">here</a>.&nbsp; This lays the groundwork for the approach to security that we have pursued at Bromium.&nbsp; The <a href="http://www.bromium.com/">new website</a> also went live with a couple of videos explaining what we are building.&nbsp; Lots of new terminology like Microvisors.
+
+A few good articles about Bromium are on <a href="http://www.wired.com/wiredenterprise/2012/06/crosby-bromium-microvisor/">Wired</a> and also <a href="http://www.businessweek.com/articles/2012-06-20/bromiums-tiny-prisons-for-malware">BloombergBusinessWeek</a>.&nbsp; The Register has an <a href="http://www.theregister.co.uk/2012/06/20/bromium_microvisor_security/">excellent piece here</a>.
+
+In the meantime I'm going to be plugging away writing code as we hurtle towards our next announcements that will reveal the actual product!

@@ -1,0 +1,16 @@
+Title: Windows Vista - User Access Control - UAC
+Date: 2006-11-20T21:10:00+00:00
+Slug: windows-vista-user-access-control-uac
+Category: 
+Tags: 
+Authors: Garry Bodsworth
+
+User Access Control (UAC) is the crux of Windows Vista's improved security.  Unfortunately it is cumbersome and intrusive, to the point that I already have it disabled.
+
+When something tries to alter the registry expect at least three confirmation dialogs to get this to happen.
+
+Directory permissions are very odd, mainly due to the restructuring of how everything is stored on the main hard drive.  In order to provide a level of backward compatibility of directories symlinks are used (<a href="http://neosmart.net/blog/archives/285">which aren't apparently as good as Microsoft were promising</a>), but unfortunately it is completely impossible to follow them as access is always denied.  This is a pain when you want to access your program data.
+
+Finding where the data is actually stored, you'll end up using the search functionality.
+
+Also, Microsoft have you hiding system files by default, which has been the case for years, but you always end up having to switch it on to perform basic tasks.  Unfortunately with the symlinks and the sheer amount of files it is an attempt to make it unusable.  This is trying to make people use the default because the option is so hideous rather than trying to make the option so good you simply must hide the files, which I feel is the wrong way to approach just about anything.

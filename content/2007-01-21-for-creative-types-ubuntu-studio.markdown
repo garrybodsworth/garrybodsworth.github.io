@@ -1,0 +1,12 @@
+Title: For the creative types - Ubuntu Studio announced
+Date: 2007-01-21T22:28:00+00:00
+Slug: for-creative-types-ubuntu-studio
+Category: 
+Tags: 
+Authors: Garry Bodsworth
+
+An interesting development from <a href="http://www.ubuntu.com">Ubuntu</a> is that this April they are plaaning to release something called <a href="http://www.ubuntustudio.org">Ubuntu Studio</a>.
+
+It is a multimedia creation derivative of Ubuntu.  It "is aimed at the linux audio, video and graphic enthusiast as well as professional".  Sounds interesting, lowering the bar for peopel creating content in Linux, but also raising the capabilities at the same time, hopefully giving much needed exposure to some of the related projects.
+
+The new derivative has a <a href="https://wiki.ubuntu.com/UbuntuStudio">wiki</a> where information and planning has started.  I like the graphical design and new logo, but that is just shallow.  Packages planned to be in the distribution can be seen <a href="https://wiki.ubuntu.com/UbuntuStudio/ToPackage">here</a>.

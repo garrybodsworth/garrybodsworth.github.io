@@ -1,0 +1,18 @@
+Title: Sabayon Linux
+Date: 2007-02-07T20:27:00+00:00
+Slug: sabayon-linux
+Category: 
+Tags: 
+Authors: Garry Bodsworth
+
+A new distribution on the block is <a href="http://www.sabayonlinux.org/">Sabayon Linux</a>.  I don't normally make a habit of talking about Linux distributions, but I found it quite interesting.
+
+Sabayon is based on Gentoo, the infamous source-based Linux distribution.  What makes it interesting is it is a <a href="http://dot.kde.org">KDE</a> distribution with <a href="http://garrys-brain.blogspot.com/2007/02/beryl-020-preview.html">Beryl</a> installed by default.  This gives lots of eye candy.
+
+It is a live CD/DVD which means you can try it out with no risk, but also it provides the facilities to install to the hard drive.  This is much like most modern Linux distributions (like Ubuntu).
+
+The whole design looks really quite good with transparent menu bars and a unified theme throughout.  You can see some screenshots <a href="http://shots.osdir.com/slideshows/slideshow.php?release=758&slide=16&title=sabayonlinux+3.2+screenshots/">here</a> and <a href="http://shots.linuxquestions.org/?linux_distribution_sm=SabayonLinux%203.25">here</a>.
+
+What I also noticed from the screenshots is that they are using <a href="http://home.kde.org/~binner/kickoff/sneak_preview.html">Kickoff</a> for the main program navigation.  I mentioned it previously <a href="http://garrys-brain.blogspot.com/2007/01/kde-happenings-and-version-4.html">here</a>.  It fits in really nicely with all of the work that has obviously been lavished on the UI.  Unfortunately it looks like the default theme is trying to make the window borders look like Windows Vista.
+
+And finally the point of this post is there is a nice review of this distribution by <a href="http://www.linuxtechdaily.com/2007/02/review-sabayon-linux/">Linux Tech Daily here</a>.

@@ -1,0 +1,18 @@
+Title: Not Invented Here Syndrome
+Date: 2007-12-13T21:34:00+00:00
+Slug: not-invented-here-syndrome
+Category: 
+Tags: 
+Authors: Garry Bodsworth
+
+This is something I definitely don't have.  I'm a bit of a hoarder, a magpie maybe, collecting shiny things.  When I encounter a seemingly useful piece of code on the Internet I would download it and dump it into my downloads directory.  I've probably got gigabytes of the stuff.
+
+I don't know what it is.  I certainly feel that whatever I try to do someone must have at least tried it out before, so Google is my best friend in that respect.
+
+You could say it is because C++ has so much not in the standard library that is available in frameworks like .NET and others.  Maybe, but then that gives you choice and encourages you to think about the problem you are trying to solve and the best solution that you can come up with.
+
+Fortunately loads of these tools and libraries are open-source so it is possible to help improve the baseline of thee libraries.  Unfortunately you need to know where to look to find these as there is no central resource that can point you in the right direction to find the libraries that would be best for you.  The closest I have found is the <a href="http://www.twilightsembrace.com/personal/gamelibs.php">Free Game Development Libraries Page</a>.
+
+I think one of the skills I have picked up from being such a magpie is the ability to look at other people's code and to bend it to my own devices.  Say for instance there is something useful, but not quite what I want on CodeProject, I'd refactor the code (way too much avoids <a href="http://www.kirit.com/On following rules/Encapsulation is a Good Thing™">encapsulation</a> over there) and bring it in line with my own coding guidelines.  I am then in a position to use and extend the code further.
+
+Not Invented Here Syndrome I don't see as a good thing or at least a strict adherence to it is a weaknes.  By reusing code you also have the possibility of giving something back as well to the potential "state of the art".  Certainly not all code should be off-the-shelf and cookie cutter simplified implementations but it should provide the basis of what you are doing in order to avoid reinventing the wheel.  I certainly see understanding someone else's code as an important skill in development.

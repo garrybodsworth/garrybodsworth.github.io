@@ -1,0 +1,12 @@
+Title: Development - Testing
+Date: 2006-12-19T14:31:00+00:00
+Slug: development-testing
+Category: 
+Tags: 
+Authors: Garry Bodsworth
+
+Testing is probably the first thing to go in commercial development as a preventative measure since it adds to development time and also adds to the cost of development.  Lots of companies do testing at a later stage like QA or beta testing, but it would be nice to iron out more kinks before we get to that stage, after all it is much more different to retrofit the fixes rather than designing the functionality correctly.
+
+One of the preventative ways of testing is unit testing.  This is a great way to stop regressions of behaviour as well as ensuring correct code.  Hopefully this would allow the developers to create well tested bulletproof base libraries that support the entire system with well documented behaviour.
+
+There is a great article you should check out reviewing unit testing frameworks : <a href="http://www.gamesfromwithin.com/articles/0412/000061.html">go read it here</a>.

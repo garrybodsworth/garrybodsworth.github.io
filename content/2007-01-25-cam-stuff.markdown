@@ -1,0 +1,12 @@
+Title: CAM stuff
+Date: 2007-01-25T20:14:00+00:00
+Slug: cam-stuff
+Category: 
+Tags: 
+Authors: Garry Bodsworth
+
+My day job is spent writing <a href="http://en.wikipedia.org/wiki/Computer-aided_manufacturing">CAM software</a>.  There is a great little hacking site called <a href="http://www.hackaday.com">Hackaday</a>.  Those two sentences may look completely unrelated but it has some great articles about making your own tools (CNC machines) to do machining.
+
+Here is a list of CAM related articles:<br /><a href="http://www.hackaday.com/2006/07/12/how-to-build-your-own-cnc-mill/">How to build your own CNC mill</a><br /><a href="http://www.hackaday.com/2006/11/12/make-a-badass-cnc-mill/">Make a badass CNC mill</a><br /><a href="http://www.hackaday.com/2006/12/08/fab-home/">Fab@Home</a><br /><a href="http://www.hackaday.com/2007/01/01/snowboard-cnc-machine/">Snowboard CNC machine</a>
+
+Fab@home looks really interesting as it is open-source and it is planned to manufacture itself.

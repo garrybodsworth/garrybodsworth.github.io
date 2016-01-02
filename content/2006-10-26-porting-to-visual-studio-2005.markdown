@@ -1,0 +1,12 @@
+Title: Porting to Visual Studio 2005
+Date: 2006-10-26T10:56:00+00:00
+Slug: porting-to-visual-studio-2005
+Category: 
+Tags: 
+Authors: Garry Bodsworth
+
+I've covered a variety of the areas for porting to Visual Studio 2005 in some previous posts, as it is not as simple as it should be.  It seems that although it is relatively easy to get it compiled there is a lot of performance and stability work to be undertaken.
+
+The posts are:<ul><li><a href="http://garrys-brain.blogspot.com/2006/10/boost-library-and-visual-studio-2005.html">Boost and VS2005</a></li><li><a href="http://garrys-brain.blogspot.com/2006/10/visual-studio-2005-lets-break.html">VS2005 floating point and STL</a></li></ul>There is also one area that needs looking at as you may notice you are not getting the Windows XP look and feel.  This is a pain because the way manifests work has changed.  You need to go to your <span style="font-style:italic;">stdafx.h</span> file or the main <span style="font-style:italic;">.cpp</span> file and add the following:
+
+<table style="font-size:75%;border: 1px dashed #2f6fab; background-color: #f9f9f9;"><tr><td><code><pre width=80>#if _MSC_VER >= 1400<br />#ifdef _UNICODE<br /> #if defined _M_IX86<br />  #pragma comment(linker,"/manifestdependency:\"type='win32' name='Microsoft.Windows.Common-Controls' version='6.0.0.0' processorArchitecture='x86' publicKeyToken='6595b64144ccf1df' language='*'\"")<br /> #elif defined _M_IA64<br />  #pragma comment(linker,"/manifestdependency:\"type='win32' name='Microsoft.Windows.Common-Controls' version='6.0.0.0' processorArchitecture='ia64' publicKeyToken='6595b64144ccf1df' language='*'\"")<br /> #elif defined _M_X64<br />  #pragma comment(linker,"/manifestdependency:\"type='win32' name='Microsoft.Windows.Common-Controls' version='6.0.0.0' processorArchitecture='amd64' publicKeyToken='6595b64144ccf1df' language='*'\"")<br /> #else<br />  #pragma comment(linker,"/manifestdependency:\"type='win32' name='Microsoft.Windows.Common-Controls' version='6.0.0.0' processorArchitecture='*' publicKeyToken='6595b64144ccf1df' language='*'\"")<br /> #endif<br />#endif //_UNICODE<br />#endif //_MSC_VER >= 1400</pre></code></td></tr></table>Just copy and paste this, the formatting will be correct.

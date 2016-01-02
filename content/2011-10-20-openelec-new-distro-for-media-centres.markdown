@@ -1,0 +1,18 @@
+Title: OpenELEC - New Distro For Media Centres
+Date: 2011-10-20T20:17:00+00:00
+Slug: openelec-new-distro-for-media-centres
+Category: 
+Tags: 
+Authors: Garry Bodsworth
+
+I saw that a project called <a href="http://www.openelec.tv/">OpenELEC</a> (Open Embedded Linux Entertainment Centre) got released released recently.&nbsp; What is interesting about it is not so much the fact that it is a fast booting XBMC distribution, but the fact that it is an embedded Linux system for x86 platforms with minimal size and uses the latest components.
+
+I can vouch for the most important thing when dealig with media is having the latest graphics dependencies on Linux.&nbsp; You tend not to have long-lived stable releases and most issues and advances are done in the day-to-day development.
+
+The source code is available on Github <a href="https://github.com/OpenELEC/OpenELEC.tv">here</a>.&nbsp; Going through I can see it has Python, GTK+, and Python gobject bindings, Linux 3.1rc10 kernel and lots more.&nbsp; Even though it is a cut-down minimal system it doesn't lack handy things like ssh and a text editor.
+
+The final images are a mere 100MB or there about in size.&nbsp; There are scripts to create the USB install key and it even has an automated update system.&nbsp; There are optimised builds for ION and AMD Fusion as well as a few other platforms.
+
+If you want an XBMC computer then I can think of more heavyweight ways to get it, but if you want it to boot in 10 seconds and you don't need to cusomise it too much then this would be a really good choice.
+
+To me it looks like an ideal platform for trying out different media type applications (say kiosks or other media centres) with not a huge amount of code as the base system looks pretty solid.&nbsp; I reckon something like Clutter's <a href="http://media-explorer.github.com/">Media Explorer</a> could be quite good on it.

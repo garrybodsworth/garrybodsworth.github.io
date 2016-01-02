@@ -1,0 +1,38 @@
+Title: USBLinks
+Date: 2008-10-22T09:00:00+00:00
+Category: 
+Tags: 
+Authors: Garry Bodsworth
+
+[Visiting Thanko&#8217;s Tokyo Mecca of USB Weirdness][1]  
+Because you can never have too much USB powered junk laying all over your house and workplace.
+
+[Movie Posters with brand integration][2]  
+Alternate movie posters with brand integration. I guess the James Bond one was probably too big for the Internet.
+
+[Four Feet From a Twit ][3]  
+The Boris Johnson comic book by Roger Langridge.
+
+[7 Terrible Early Versions of Great Movies][4]  
+The beautiful flowers that have flourished from manure.
+
+[A Closer Look at Fennec, the Mobile Firefox Browser][5]  
+A closer look at the mobile Fireox browser. The AwesomeBar definitely looks like a plus point.
+
+[AppLoop Transforms Blogs Into Native iPhone Applications][6]  
+Basically it converts RSS feeds into swish looking iPhone apps. Anyone who has ever seen RSS parsing code knows this is a bloody nightmare to get right.
+
+[Mocha VNC and G.ho.st: Mobile Access to Your Desktop][7]  
+Remote control your desktop with an iPhone.
+
+[Watch This: MACs vs. PCs][8]  
+This is getting violent now.
+
+ [1]: http://gizmodo.com/5065959/visiting-thankos-tokyo-mecca-of-usb-weirdness
+ [2]: http://a2591.blogspot.com/2008/09/movie-posters-with-brand-integration.html
+ [3]: http://hotelfred.blogspot.com/2008/10/four-feet-from-twit.html
+ [4]: http://www.cracked.com/article_16716_7-terrible-early-versions-great-movies.html
+ [5]: http://lifehacker.com/5065863/a-closer-look-at-fennec-the-mobile-firefox-browser
+ [6]: http://www.techcrunch.com/2008/10/20/apploop-transforms-blogs-into-native-iphone-applications/
+ [7]: http://webworkerdaily.com/2008/10/20/mocha-vnc-ghost/
+ [8]: http://www.cinematical.com/2008/10/21/watch-this-macs-vs-pcs/

@@ -1,0 +1,22 @@
+Title: PyCon UK 2008
+Date: 2008-08-10T09:00:00+00:00
+Category: 
+Tags: 
+Authors: Garry Bodsworth
+
+PyCon UK is a convention for the Python programming language in sunny old Birmingham. This year it is from the 12th to 14th of September and it only costs £75 for all three days.
+
+Now I am using Python every day I think maybe I should attend this year. Looking at the talks that are going on it should be an extremely interesting conference. For a start they have [Mark Shuttleworth][1] (of Canonical/Ubuntu fame) and [Ted Leung][2] to deliver the keynotes.
+
+So far the talks scheduled are the tutorials one Friday which include PyQt4, Django, and Google App Engine. The Django talk will be hosted by [Jacob Kaplan-Moss][3] who is one of the benevolent dictators of the project (and creator) and he will be outlining version 1.0 (due in September).
+
+The accepted talks can all be viewed [here][4]. It certainly looks like there is a lot of variety.
+
+Last year [Julian Todd][5] did a talk on [Public Whip][6] and I believe an impromptu one on CAM development. It was a shame to miss those.
+
+ [1]: http://www.markshuttleworth.com/
+ [2]: http://www.sauria.com/blog/
+ [3]: http://www.jacobian.org/
+ [4]: http://www.pyconuk.org/talk_abstracts.html
+ [5]: http://www.freesteel.co.uk/wpblog/
+ [6]: http://www.publicwhip.org.uk/

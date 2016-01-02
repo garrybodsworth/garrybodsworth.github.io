@@ -1,0 +1,24 @@
+Title: Distributed Revision Control
+Date: 2007-06-03T14:08:00+00:00
+Slug: distributed-revision-control
+Category: 
+Tags: 
+Authors: Garry Bodsworth
+
+Linus Torvalds did a talk about source control the other day, more specifically about <a href="http://git.or.cz/">GIT</a>.  Basically he has an immense dislike of centralised revision control.  You can see Linus's talk here:
+
+<embed src="http://www.youtube.com/v/4XpnKHJAok8" type="application/x-shockwave-flash" wmode="transparent" height="350" width="425"></embed>
+
+Some Slashdot discussion is available at this <a href="http://developers.slashdot.org/developers/07/06/03/004214.shtml">link</a>.
+
+This kind of sent me into an Internet whirlpool looking at distributed revision control.  So this post will be all about that.  I must admit I have never really thought about it since I am so pleased with <a href="http://subversion.tigris.org/">Subversion</a> and <a href="http://tortoisesvn.net/">TortoiseSVN</a>, although recent events have made me look into source control systems in general more closely.  At a high-level the distributed model has a lot of advantages in design and is capable of having a "central" server you sync against which means it can behave more like the centralised model.  On the other hand the centralised tools all seem to have much easier to use tools and have more powerful features (at least in Subversion) than they are given credit for due to their heritage.
+
+Mozilla development has switched to a distributed source control system recently.  They had a set of requirements like cross-platform, speed, stability and more.  Some more information can be read <a href="http://weblogs.mozillazine.org/preed/2007/04/version_control_system_shootou_1.html">here</a>. 
+
+<a href="http://git.or.cz/">Git</a> was started by Linus Torvalds because he was no longer able to use BitKeeper.  It has quite poor Windows support because it is reliant on a POSIX system but has a lot of powerful features.  There are some UI projects but they seem quite immature at the moment and only augment the command ine rather than replace it.
+
+<a href="http://www.selenic.com/mercurial/wiki/">Mecurial</a> was chosen by Mozilla development for their revision control system, and in fact they have already switched to it.  There are apparently some speed issues in comparison to Git, but it has better cross-platform support.  There seems to be a few extensions including some <a href="http://www.bugzilla.org/">Bugzilla</a> integration.  I am not too sure about the UI side yet.
+
+Other distributed source control systems include:<br /><ul><li><a href="http://bazaar-vcs.org/">Bazaar</a> - is a GPL based system.</li><li><a href="http://monotone.ca/">Monotone</a> - is another GPL system.</li><li><a href="http://svk.bestpractical.com/view/HomePage">SVK</a> - A Subversion derived distributed system.</li><li><a href="http://www.darcs.net/">darcs</a> - yet another system.</li></ul>
+
+Anyway these distributed systems seem to be getting traction with Mozilla, X, and other large projects starting to use it.

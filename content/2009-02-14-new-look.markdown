@@ -1,0 +1,15 @@
+Title: New Look
+Date: 2009-02-14T09:00:00+00:00
+Category: 
+Tags: 
+Authors: Garry Bodsworth
+
+I decided it was time for a new look so I grabbed the [iNove][1] theme for WordPress. I&#8217;ve made a few minor hacks for it which I will publish in due course (although I&#8217;ve got no idea what license these themes are available under. The changes I&#8217;ve made are the code tag now using different formatting, different font for the title, and making the hover on the subscribe link show the number of subscribers on Feedburner.
+
+The website for the guy that supplied this theme is [here][2].
+
+I&#8217;ve also now installed [WP-Codebox][3] to make posting code much easier and configurable.
+
+ [1]: http://wordpress.org/extend/themes/inove
+ [2]: http://www.neoease.com/
+ [3]: http://wordpress.org/extend/plugins/wp-codebox/

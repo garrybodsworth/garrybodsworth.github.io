@@ -1,0 +1,12 @@
+Title: MinGW GCC 4.2 released
+Date: 2007-08-09T20:13:00+00:00
+Slug: mingw-gcc-42-released
+Category: 
+Tags: 
+Authors: Garry Bodsworth
+
+Well, it's not a full release, but a beta type release.  <a href="http://www.mingw.org">MinGW</a> has <a href="http://article.gmane.org/gmane.comp.gnu.mingw.user/23358">released GCC 4.2</a> on Windows is now available.
+
+The first proper version 4 release will be 4.3 when it is released.  This is because Windows will become a properly supported platform as historically MinGW have done loads of work making it work on Windows.
+
+The jump from 3.4 to the version 4 codebase will provide massive improvements including OpenMP for multithreading, better and more powerful optimisations and better language support.

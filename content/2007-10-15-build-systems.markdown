@@ -1,0 +1,16 @@
+Title: Build Systems
+Date: 2007-10-15T18:50:00+00:00
+Slug: build-systems
+Category: 
+Tags: 
+Authors: Garry Bodsworth
+
+I was setting up the Visual Studio build system to target not only multiple build types but multiple platforms.  This is the point I discovered hand editing the solution files is the only way to maintain consistency and accuracy of the builds.  This is because the ue interface provided is antiquated, a struggle, and worst of all, unpredictable.
+
+Build systems are really separated into two camps, text file based, or IDE based.  The text file based ones give you the most control and flexibility, but in this day and age it is a real shame that they are the most useful.  Also you may need an unknown macro language and will probably need to know every compiler setting that you want to set.  The IDE based ones tend to require manual intervention in some undocumented or badly documented file format. This immediately negates any advantage you previously had.
+
+I am amazed these parts of the IDE have been so neglected since without it you will not get predictable results.  You want easy ways to compare different configurations or projects to see if they are out of step.  There is also no way of batching changes to a set of projects (you can get some sort of batch changes with configurations although you are not really sure of what you are doing).
+
+Maybe there is a better way?  I don't know what else there is out there apart from premake systems (eg, CMake, Premake), script based build systems (eg, make, Boost.Build), and IDE based systems (Visual Studio et al).   You almost want the equivalent of the Apple stye reimagining for debugging/profiling like <a href="http://www.apple.com/macosx/leopard/developer/xray.html">XRay in the upcoming OS X Leopard</a>.
+
+One of the things I am dead proud of recently is the one touch build release kit from within the Visual Studio IDE.  This means you just need to hit build and at the end you get an installer exe with no need for any jumping through hoops.  It would be nice if you didn't need really work hard to get to that stage.

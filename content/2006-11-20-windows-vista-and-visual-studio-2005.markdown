@@ -1,0 +1,16 @@
+Title: Windows Vista and Visual Studio 2005
+Date: 2006-11-20T20:57:00+00:00
+Slug: windows-vista-and-visual-studio-2005
+Category: 
+Tags: 
+Authors: Garry Bodsworth
+
+This is the most important aspect of my Windows Vista installation.  You have to confirm that you want to run the installation - par-for-the-course - but you have to run it as administrator.
+
+Once installed I knew there were issues with Visual Studio 2005 and Windows Vista after the numerous warning dialogs that Windows Vista pops up.  So you use this to look at the Microsoft website like it suggests, but all you get is a place-holder.  Not really a lot of good for the developer trying to confirm all is well in Vista-Land.
+
+Well, I loaded the C++ project up and built it.  Incremental rebuilds seem completely broken for some reason, somehow the pch (pre-compiled header) gets corrupted.  Then the next problem is you can't compile individual C++ files.
+
+What I have tried doing is increasing the access by running the devenv.exe as administrator, that didn't seem to help.
+
+So I thought I would try out the Visual Studio 2005 SP1 Beta since it was available for download and after all couldn't make it that much more useless.  This was a nightmare to install, make sure that you run it as administrator by using the right-click context menu.  Be aware that this took an hour and a half to install, and I won't know until tomorrow whether it was successful or not.  I hope this fixes the problems with the C++ elements in VS2005.

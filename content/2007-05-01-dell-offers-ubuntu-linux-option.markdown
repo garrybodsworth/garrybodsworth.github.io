@@ -1,0 +1,12 @@
+Title: Dell Offers Ubuntu Linux Option
+Date: 2007-05-01T18:46:00+00:00
+Slug: dell-offers-ubuntu-linux-option
+Category: 
+Tags: 
+Authors: Garry Bodsworth
+
+Dell has <a href="http://searchenterpriselinux.techtarget.com/originalContent/0,289142,sid39_gci1253364,00.html">officially announced</a> they will be making Linux based computers.
+
+Dell are going to offer certain computers with the option of Ubuntu 7.04 (Feisty Fawn) as the pre-installed OS.  This is a good thing because it will at least guarantee the hardware and support of those platforms will be well catered for in the Linux environment.
+
+All in all this is a good thing, and I hope it spurs other computer makers into the same area.

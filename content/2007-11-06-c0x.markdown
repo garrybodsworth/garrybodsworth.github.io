@@ -1,0 +1,10 @@
+Title: C++0x
+Date: 2007-11-06T22:19:00+00:00
+Slug: c0x
+Category: 
+Tags: 
+Authors: Garry Bodsworth
+
+As the standard for the next version of C++ gets closer to being finalised, more details are emerging.  In October was the Kona meeting for the C++ committee and you can read about it <a href="http://herbsutter.spaces.live.com/blog/cns!2D4327CC297151BB!330.entry">from Herb Sutter on this post</a>.
+
+Lots of good stuff has been voted in like nullptr, explicit conversion operators, atomic types, and a threading library.  It's certainly a slow process but the improvements should all be pretty good, although not everyone is a fan of C++, but hey, I like it.

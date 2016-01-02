@@ -1,0 +1,10 @@
+Title: Source Control Madness At Microsoft
+Date: 2006-12-03T18:36:00+00:00
+Slug: source-control-madness-at-microsoft
+Category: 
+Tags: 
+Authors: Garry Bodsworth
+
+Joel On Software has an interesting little post <a href="http://www.joelonsoftware.com/items/2006/11/29.html">about source control</a> and how Microsoft does it (specifically with the Vista codebase).
+
+You can see how it can all get out of control, and how it is easy to find yourself stuck as part of a process that doesn't scale, and how this can adversely effect an entire project.  It also shows a lack of modularity since other projects of a large size do not necessarily have similar problems.

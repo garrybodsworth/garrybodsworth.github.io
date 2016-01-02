@@ -1,0 +1,24 @@
+Title: Subversion and TortoiseSVN - A programmers best friend
+Date: 2006-10-01T18:29:00+00:00
+Category: 
+Tags: 
+Authors: Garry Bodsworth
+Slug: subversion-and-tortoisesvn-programmers
+
+Before you work in industry it is unlikely you ever use any source control.  At Essex Uni we were forced to use RCS (on the command-line) once and it all seemed pretty trivial and pointless.  Most of the time when you go into industry you end up having to use Visual SourceSafe, sure it does a job, but for the most part it is completely useless and scales terribly.
+
+Earlier this year I migrated the company I work at (<a href="http://www.ncgraphics.net">NC Graphics</a>) from Visual SourceSafe to Subversion.  I prepared a lot for this doing tons of research to make this transition as seamless as humanly possible, but as these things normally happen time was a serious factor.  Bizarrely it was done ahead of schedule and the benefits were pretty much instantaneous.  Sometimes in IT we beat deadlines(!)
+
+<span style="font-weight: bold;">The Migration</span>
+
+I spent ages reading everything I could find via Google about migrating anything to Subversion.  This was necessary as there was very little covering Visual SourceSafe specifically.  In the end I had to choose the only tool even remotely capable of doing the conversion called <a href="http://vss2svn.tigris.org/">vss2svn</a> and even then there were some compromises that had to be made.  I used the orginal "legacy" script from their development repository.  It essentially gets every file you have currently in your source tree and then search each of their histories backwards in time.  This does mean you lose renames and files that have been removed.  The good thing though is that it converts the check-ins into Subversion style atomic commits by grouping them all together by time and user.
+
+There is a new version of <a href="http://www.pumacode.org/projects/vss2svn">vss2svn</a> (new website) but it was nowhere near being ready when I was doing this work.  This version actually reconstructs almost everything by reverse-engineering the Visual SourceSafe file format.  If you have archived portions or restored portions I found that it didn't work.  It seems to have come a long way since I last looked, but I don't think it would have converted our large database with all of its quirks.
+
+Back to the original script though...  To get it to run fast what I did was archive out the areas of SourceSafe we needed and then imported them into a brand new clean instance.  This cut the running time for the script from the test run of 14 days down to less than 2 days.
+
+<span style="font-weight: bold;">Using Subversion For Development</span>
+
+Obviously you have the basic command-line tools for using <a href="http://subversion.tigris.org">Subversion</a> but there is a lot more out there as well.  Internally we use <a href="http://tortoisesvn.net/">TortoiseSVN</a> and that is about it.  Most people are looking at loads of other options, but once you use TortoiseSVN you don't need anything else, it only takes about a day, maybe two to realise this.  Without hyperbole I can say TortoiseSVN ranks right up there as one of the greatest gifts to developers ever made.
+
+To make it even more useful though I did a little work to integrate it into Visual Studio.NET (2003 and 2005).  It is actually really simple to do because TortoiseSVN provides us with a commandline interface that can display the dialogs.  In the next couple of days I will give complete instructions how to set this up and even describe how to set it all up on a toolbar like I currently have it.  I'll also cover all the clients I checked out in the course of the migration.

@@ -1,0 +1,22 @@
+Title: Web Browsers Of The Future
+Date: 2006-10-11T15:00:00+00:00
+Slug: google-provider-of-everything
+Category: 
+Tags: 
+Authors: Garry Bodsworth
+
+I realised the other day how many Google products I was using...<ul><li>Analytics</li><li>Blogger</li><li>Browser Sync</li><li>Calendar</li><li>Google</li><li>Mail</li><li>Notebook</li><li>Page Creator</li><li>Personalized Homepage</li></ul>Also I use the search and now the code search.
+
+And now I have just signed up for:<ul><li>Spreadsheets</li><li>Writely</li></ul>It's great all these things are free and freely provided, but now I think I am getting too reliant on it all...  Admittedly I only use some of the things I am signed up to, and signed up to other things just to try them out.
+
+But I wasn't going to discuss my addiction to trying things out.  Something occurred to me when I was looking at the new <a href="http://docs.google.com/">Google Office</a>, browsers are providing all this functionality, but we are still using an ancient paradigm.
+
+Microsoft are releasing Internet Explorer 7.0 very soon, and it is attempting to catch up with Firefox by adding features like tabbed browsing, but it is just playing catch-up to an idea that was born before all of the AJAX applications started leaping out of the woodwork.
+
+As these AJAX applications become more prevalent the web browser starts to become a hindrance.  Do you use multiple tabs or do you use multiple windows, and how do you arrange and manage those windows (especially since they all have the same taskbar icon)?  Are the bookmark user interfaces moving with the times?  The web browser needs a rethink for these new uses as it is still designed more for viewing static data (and now that is only part of its repetoire, a specialisation of its more generalised use).
+
+Most web browsers have their rendering engine a different layer, so that is easy to break out.  Do these applications become a separate window?  Do we get a new kind of application launcher?  I've never really put much thought into it as until recently I never saw the web as a platform.
+
+Certainly I am finding the current browser technology very limiting as tabbed browsing, multiple windows, bookmarks are not allowing me to use all of these new applications to their maximum potential.  Just having GMail and Blogger open in web browsers is harder than it should be to manage as I have to do a double take on the task bar or think before switching tabs.
+
+Maybe the web browser needs a rethink, or maybe my ideas aren't so outlandish...  The main web browser application is some sort of navigator/task bar and the pages are shown in their own easily recognisable windows, perhaps even without borders as they currently exist.  I suppose some of these ideas are being integrated into these new "sidebars" in operating systems, but do they go far enough and take the new AJAX applications into account?

@@ -1,0 +1,14 @@
+Title: More Java
+Date: 2006-11-13T20:45:00+00:00
+Slug: more-java
+Category: 
+Tags: 
+Authors: Garry Bodsworth
+
+Here are a couple more articles to do with the open-sourcing of Java with a bit more substance.  One from <a href="http://www.infoq.com/news/2006/11/open-source-java">InfoQ</a> and another from <a href="http://www.eweek.com/article2/0,1895,2055770,00.asp">eWeek</a>.
+
+But that isn't what this post is about.  I've discovered an XP look and feel style for Java called <a href="https://winlaf.dev.java.net/">WinLAF</a> as it was felt the native look was not sufficient.  Reading about Java 6.0 though suggests that a big leap forward for native Windows look and feel is being made for this version called Mustang, also taking into account Windows Vista.
+
+There are a myriad of enhancements for the new version of Java here including lots of alterations for Swing <a href="http://java.sun.com/developer/technicalArticles/J2SE/Desktop/javase6/">here</a>.  It links to all the related bug/enhancement reports.  An outline from <a href="http://www.regdeveloper.co.uk/2006/09/22/jse_bling/">The Register is also available</a>.  The new rendering engine uses the Windows UxTheme DLL.
+
+There is an article with plenty of <a href="http://www.ffnn.nl/pages/articles/java/java-2-se-6.0-aesthetics-preview.php">screenshots of Java 6.0 aesthetics</a>.

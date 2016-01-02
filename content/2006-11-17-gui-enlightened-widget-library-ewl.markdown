@@ -1,0 +1,14 @@
+Title: GUI - Enlightened Widget Library (EWL) - Enlightenment
+Date: 2006-11-17T20:12:00+00:00
+Slug: gui-enlightened-widget-library-ewl
+Category: 
+Tags: 
+Authors: Garry Bodsworth
+
+The <a href="http://www.enlightenment.org">Enlightenment</a> project has been a cutting edge desktop environment for many years.  Although it is not seen as cutting edge any more due mainly to 3D accelerated eye candy, it is still very powerful and interesting, also it is really very efficient.
+
+Currently the entire product is in heavy development but it is relatively stable (see <a href="http://www.elivecd.org/">eLive to try it out with a Live CD</a>).  The system is designed around a series of libraries some of which are more complete than others.  Recently it was also revealed that <a href="http://www.terrasoftsolutions.com/">Yellow Dog Linux</a> was putting together a Linux for PS3 and it was <a href="http://www.terrasoftsolutions.com/news/2006/2006-10-17.shtml">using Enlightenment as the default desktop manager</a>.  This also will help provide funding for the project.
+
+Anyway, on to the point of this post...  A series of tutorials have just become available for the <a href="http://wiki.edevelop.org/index.php/EWL">Enlightened Widget Library (EWL)</a> portion of Enlightenment.  This provides the widget toolkit for the environment.  These are introductory tutorials and can be seen here:<br /><a href="http://wiki.edevelop.org/index.php/EWL_Introduction">Part 1</a><br /><a href="http://wiki.edevelop.org/index.php/EWL_Introduction_II">Part 2</a><br /><a href="http://wiki.edevelop.org/index.php/EWL_Introduction_III">Part 3</a>
+
+The main development community can be accessed <a href="http://www.edevelop.org/">here</a>.  The way that Enlightenment has been put together shows obvious care and thought, after all you don't have to necessarily have the full desktop environment to use just some of the libraries.

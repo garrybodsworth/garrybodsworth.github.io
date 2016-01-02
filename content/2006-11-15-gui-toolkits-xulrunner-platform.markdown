@@ -1,0 +1,18 @@
+Title: GUI Toolkits - XULRunner platform
+Date: 2006-11-15T15:05:00+00:00
+Slug: gui-toolkits-xulrunner-platform
+Category: 
+Tags: 
+Authors: Garry Bodsworth
+
+You can't have escaped this platform, you might not have heard about it, but it provides the basis for <a href="http://www.getfirefox.com">Firefox</a>, <a href="http://www.mozilla.com/en-US/thunderbird/">Thunderbird</a>, <a href="http://www.getdemocracy.com/">Democracy Player</a>, and <a href="http://www.songbirdnest.com/">SongBird</a> (which I mentioned <a href="http://garrys-brain.blogspot.com/2006/10/digital-music-songbird.html">before</a> and it's continuing apace).  A good place to start is the <a href="http://en.wikipedia.org/wiki/XULRunner">Wikipedia article on XULRunner</a>, it provides the links you need to get started.
+
+XULRunner is not simply a user interface but probably could be described as a platform like Microsoft's <a href="http://en.wikipedia.org/wiki/Extensible_Application_Markup_Language">XAML/.NET</a> or like <a href="http://www.java.net/">Java's virtual machine</a> (very loosely) or <a href="http://dev.aol.com/boxely/">Boxely from AOL</a>.  Essentially it provides a layer of abstraction from the underlying architecture in order to allow the developer to work on the actual coding.  XULRunner is the framework to allow standalone applications to be developed using the XUL language used for Firefox extensions.
+
+Currently <a href="http://developer.mozilla.org/en/docs/XULRunner">XULRunner</a> is in beta with version 1.8, but with version 1.9 next year they recommend that for production releases.  Along with the 1.9 release the Gecko rendering engine is also getting updated with some additional nice vector rendering.
+
+The framework provides a myriad of features.  There is built-in spell-checking, networking, the aforementioned Gecko engine, web services, storage/SQLie interfaces, UI, the ability to embed in another application, and also the Python bindings (full version forthcoming).  I think the reason that I find this quite interesting is the two applications I have used most at home and work in the past couple of years have been based on this.  I just wonder how far it can all be pushed for heavyweight desktop application development.
+
+You can view a list of applications based on XULRunner <a href="http://developer.mozilla.org/en/docs/XULRunner_Hall_of_Fame">here</a>.  When the final proper release of 1.9 is out I imagine there will be more people willing to use it as it won't be all belt and braces, there can be solid tutorials and the suchlike.
+
+With so many of these types of projects around at the moment, I am wondering when the "survival of the fittest" will start to kick in.  Admittedly, XULRunner has a very strong chance since it is a platform for Thunderbird and Firefox.

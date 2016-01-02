@@ -1,0 +1,12 @@
+Title: Windows Vista - Menus
+Date: 2007-02-06T22:00:00+00:00
+Slug: windows-vista-menus
+Category: 
+Tags: 
+Authors: Garry Bodsworth
+
+Way back in November I made a post about <a href="http://garrys-brain.blogspot.com/2006/11/more-vista-menus.html">menus on Windows Vista</a>.  Essentially it came down to the fact that custom drawing did not draw menu items correctly, and even Windows Explorer on Vista had the same rendering problems.
+
+There is a <a href="http://shellrevealed.com/blogs/shellblog/archive/2007/02/06/Vista-Style-Menus_2C00_-Part-1-_2D00_-Adding-icons-to-standard-menus.aspx">post on Shell Blog about Vista style menus</a> which starts a series about getting the menus to render correctly.  The first part provides a solution for those people that want icons next to the menu items where custom drawing previously provided the solution.  The most useful bit is there is a small bit of code to convert the HICON to a HBITMAP which is the main stumbling block for people trying to make the transition.
+
+You will notice the difference in style once the custom drawing is removed and it will look much more integrated.

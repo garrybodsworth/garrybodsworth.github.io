@@ -1,0 +1,18 @@
+Title: Random Bits Of News
+Date: 2007-06-21T18:27:00+00:00
+Slug: random-bits-of-news
+Category: 
+Tags: 
+Authors: Garry Bodsworth
+
+The latest version of the <a href="http://www.continuousphysics.com/Bullet/">Bullet physics SDK</a> has been released.  Version 2.3 contains C++ and C# versions (witht he C# version being available also for the X-Box 360 devkit).  It now has a unified multithreaded implementation and a variety of bugfixes.
+
+In related news <a href="http://gimpact.sourceforge.net/">GImpact</a> which uses the Bullet Physics library internally for solving collision detection has just released a new version.  Version 0.2.0 is more object-oriented andlots of additionals for triangle meshes and different types of collisions.
+
+<a href="http://trolltech.com/">Trolltech</a> released <a href="http://trolltech.com/products/qt">Qt 4.3</a>.  It contains additional Vista extensions, a new scripting engine, an OpenGL engine, and more SVG functionality.
+
+There is a new Digg-style game development site available.  Go see <a href="http://www.devbump.com/">DevBump here</a>.
+
+And for something non-news there is a spiffing Cocoa tutorial from Apple <a href="http://developer.apple.com/documentation/Cocoa/Conceptual/ObjCTutorial/chapter01/chapter_1_section_1.html">here</a>.
+
+And on a final note there is a <a href="http://apcmag.com/6458/dont_wait_for_vista_sp1_pleads_microsoft">voice of desperation from Microsoft on Windows Vista</a>.

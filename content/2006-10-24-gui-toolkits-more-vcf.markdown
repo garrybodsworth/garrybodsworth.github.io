@@ -1,0 +1,24 @@
+Title: GUI Toolkits - More VCF
+Date: 2006-10-24T20:40:00+00:00
+Slug: gui-toolkits-more-vcf
+Category: 
+Tags: 
+Authors: Garry Bodsworth
+
+I've already covered the <a href="http://www.vcf-online.org/">Visual Component Framework (VCF)</a>, but I feel like talking about it a bit more.
+
+Before starting make sure you check out the <a href="http://vcf-online.org/docs/ref_manual/ch01.html">list of features</a> from the VCF documentation, as I won't repeat them all here (after all it is what hyperlinking is invented for).
+
+There are three core libraries in the VCF:<ul><li><span style="font-weight: bold;">FoundationKit</span> - The base library for the VCF providing the lower level building blocks for the other libraries.  It provides the RTTI system, string support, threading, and much more.</li><li><span style="font-weight: bold;">GraphicsKit</span> - It's the library that provides the graphic rendering and graphics formats.  It has some great functionality from <a href="http://www.antigrain.com/">libAGG (The Anti-Grain Geometry Tookit)</a> which I have mentioined in some previous posts.</li><li><span style="font-weight: bold;">ApplicationKit</span> - The GUI functionality itself.  Obviously this is the largest component and covers the widgets, events, focus, and more.  It's almost so big there must be a thought to break it down further into smaller functional components.</li></ul>There are more libraries (kits) that contribute functionality including HTML, OpenGL, the upcoming Regex, and a few more.
+
+One compaint I hear is that the libraries are too large (in file size) which I have never understood as an argument for or against a toolkit (unless we are talking MASSIVE).  It is rare that a toolkit has a small amount of dependencies, plus with the VCF you don't need everything if you are into that (but it is obviously more work to do).
+
+I have found writing code in VCF is surprisingly concise and easy to understand.  If you have come from an MFC or wxWidgets background, the event system will need some understanding.  I was trying out writing something to simulate docking with a small amount of success, although I haven't done as much coding for it as I probably should have.  It wasn't more than a little experiment to try out something in the VCF.
+
+I probably should list the major features that it lacks, which are docking windows (and toolbars), fully implemented cross-platform support, scripting language bindings (<span style="font-weight:bold;">Edit:</span> There is a basic Javascript engine that has not made it into the release yet), and the finished documentation.
+
+The cross platform aspect remains incomplete for Linux and Mac although the Linux version has pushed on in the recent past.  Actually I find it a bit disappointing that it does not have a large community built up around it like some other toolkits.  The foundations seem so solid that the system is begging to be extended more.
+
+Make sure you read the documentation <a href="http://vcf-online.org/docs/ref_manual/">here</a> which is excellent although not comprehensive, and not completely finished.  Also check out the VCF articles on the <a href="http://www.codeproject.com/">CodeProject</a> (do a search for VCF).
+
+As you can tell I am quite positive about this toolkit, it is almost too understated for its own good.  I can imagine developing something quite complex in it and being able to extend it for more complex things.

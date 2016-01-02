@@ -1,0 +1,14 @@
+Title: SPA Cambridge Meeting - CMMI
+Date: 2007-05-10T19:08:00+00:00
+Slug: spa-cambridge-meeting-cmmi
+Category: 
+Tags: 
+Authors: Garry Bodsworth
+
+Went to another talk from the <a href="http://www.bcs-spa.org/cgi-bin/view/SPA/SpaCambridge">BCS SPA Cambridge group</a>.  There is a talk every month and they are normally well worth attending, there is certainly nothing else I have found like it elsewhere.  As usual they are hosted at <a href="http://research.microsoft.com/cambridge/">Microsoft Research, Cambridge</a> with a buffet.
+
+This month's talk was about <a href="http://en.wikipedia.org/wiki/CMMI">CMMI</a> hosted by  Kieran Doyle of Lamri.  I must admit I had no idea what CMMI was before going to this talk, only what it was an acronym for.  For the first half of the talk I had no idea what was going on as it covered the history of it, and did not explain what it actually was.
+
+Eventually we got onto the nitty gritty of this thing was.  I'd have to see what the benefits were in reality but the premise of itself is admirable, especially in a larger corporation.  Overall, I actually learnt something that is a plus, and also the at the talk we got free 512Mb USB keys - not half bad.
+
+Anyone interested in computing in the Cambridge area should check out these talks.

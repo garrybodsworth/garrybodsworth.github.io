@@ -1,0 +1,8 @@
+Title: Crystal Space 1.0 Released
+Date: 2007-01-19T20:35:00+00:00
+Slug: crystal-space-10-released
+Category: 
+Tags: 
+Authors: Garry Bodsworth
+
+Back in the olden days when I was at university I remember one of the projects I had a play with was <a href="http://www.crystalspace3d.org/main/Main_Page">Crystal Space</a>.  I think I discovered it through the old <a href="http://cg.cs.tu-berlin.de/~ki/engines.html">3D Engines List</a>.<br /><br />Finally after ten years <a href="http://www.crystalspace3d.org/main/Crystal_Space_1.0_and_New_Site">version 1.0 of the Crystal Space library has been released</a>.  It's great to this see this finally happen as it has been so close for so long (in fat it was pretty usable not long into its development).  One of my favourite technologies it has is <a href="http://en.wikipedia.org/wiki/Portal_(computer_graphics)">Portal Rendering</a>, this was added because the original version of <a href="http://www.3drealms.com/">Prey</a> (before it got canned and eventually released recently).  At the time it was going to be revolutionary, but I think that style of rendering can produce some cool and crazy effects.

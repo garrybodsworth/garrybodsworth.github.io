@@ -1,0 +1,14 @@
+Title: C++ Is Great
+Date: 2008-03-30T20:10:00+00:00
+Slug: c-is-great
+Category: 
+Tags: 
+Authors: Garry Bodsworth
+
+There is an interesting <a href="http://www.ddj.com/cpp/207000124;jsessionid=W2ECYFA310PC2QSNDLOSKHSCJUNN2JVN?_requestid=444830">interview with Bjarne Stroustrop on DDJ</a>.  It covers mainly how to train people in C++ and the future of C++.
+
+The most interesting part of the entire interview is the bit about the ISO standard committee and how it all works.  People seem to complain C++ doesn't move fast enough (although the same people also complain there is too much as well).  What interested me is that it is lacking in funds.  Now I am pretty sure that every software company in the world has some C++ to varying degrees with most of them being critical to the company itself.  Yet, there is no funding or involvement in what is an open process for the language, the most I have seen by some is some people write one of those whitepapers (for instance the EASTL) and then chuck it into the ether.  It looks like it is a lot of hard work to really be serious about and to succeed at improving the language, and even Microsoft couldn't succeed in circumventing the process.
+
+I know this could be considered pot calling the kettle black because I have no involvement and nor does my employer(or my previous employers), but I am still fresh at knowing exactly what is going on (even at the age of 30!).
+
+I suppose in an ideal world there would be less Not-Invented-Here (NIH) Syndrome and more participation in helping to improve the libraries and the core language.  I am not saying though that the people who use it are to blame as the committee should really have some form of outreach better than they currently have.  Boost is being moderately successful in its outreach which is helped by the mailing lists/forums and website as well as participating in things like the Google Summer Of Code.  Just imagine if the C++ Standards Committee could get the talented top 1% of C++ developers involved...  As developers we could help shape the future of the language and provide real solutions, which is more than could be said for something that is commercially controlled (even if it is published as an open standard).

@@ -1,0 +1,10 @@
+Title: Visual Studio 2005 Service Pack 1
+Date: 2007-01-21T22:09:00+00:00
+Slug: visual-studio-2005-service-pack-1
+Category: 
+Tags: 
+Authors: Garry Bodsworth
+
+Microsoft released the first service pack for Visual Studio .NET 2005 a short while back.  You can <a href="http://msdn.microsoft.com/vstudio/support/vs2005sp1/default.aspx">download it here</a>.  It is available for all flavours including Express through to the Team editions.  Upon running it I am not finding it any faster or more stable though, at least it hasn't broken MFC like the beta version of SP1 did.
+
+Also this does not cover Vista compatibility, which is a right pain.  They have released the <a href="http://www.microsoft.com/downloads/details.aspx?familyid=fb6bb56a-10b7-4c05-b81c-5863284503cf&displaylang=en">Vista fixes for SP1 as a beta</a> at the moment.  It does improve a few problems like cancelling compilations actually working without needing to kill the cl.exe process from Task Manager, so it would be worthwhile if you are working on C++ in Vista.</div>

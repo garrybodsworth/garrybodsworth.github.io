@@ -1,0 +1,14 @@
+Title: GUI Toolkits - wxWidgets - The Future?
+Date: 2007-01-19T19:43:00+00:00
+Slug: gui-toolkits-wxwidgets-future
+Category: 
+Tags: 
+Authors: Garry Bodsworth
+
+<a href="http://www.wxwidgets.org">wxWidgets</a> has been going now for getting on to 15 years.  Some of the people developing it and some people using or evaluating it have said that it is old fashioned in design.  This is part of the legacy from being based on a similar design to MFC.
+
+Currently wxWidgets makes heavy use of macros in C++, and it also makes a tiny use of STL (after all when development started the STL was not even formalised).  I don't think the code is particularly unintuitive or difficult to use, but so much of the API has been set in stone.  One particular area of discussion is the event handling because of the advent of signals and slots.
+
+There is a page on the wiki for <a href="http://www.wxwidgets.org/wiki/index.php/Development:_wxWidgets_3">wxWidgets: The Next Generation</a>.  It is not really actively edited.  I don't know whether it will ever get out of the planning stages, I think this is probably due to the fact that the current version is simply good enough to use.  There are other priorities that want/need to be developed, and redesigning the API is not really hugely useful.
+
+Other GUI toolkits use some of the more powerful C++ features, but most only use small areas of it.  I think the main advantage of developing a clean API is that it is possible to make many different language bindings.  In fact I think that is what should be aimed at for most modern libraries being developed, because if you can do it in a suitably abstract fashion you'll end up with something easily maintainable and as close to future-proof as possible.

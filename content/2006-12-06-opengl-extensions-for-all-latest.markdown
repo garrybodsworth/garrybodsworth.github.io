@@ -1,0 +1,12 @@
+Title: OpenGL - Extensions for all the latest features
+Date: 2006-12-06T20:32:00+00:00
+Slug: opengl-extensions-for-all-latest
+Category: 
+Tags: 
+Authors: Garry Bodsworth
+
+When a new graphics card (generation) is released they normally have lots of new shiny features.  These are added to the OpenGL drivers by the extension mechanism until they are either forgotten about or become part of the standard.
+
+Luckily there are two projects out there to try and make it easier, the <a href="http://glew.sourceforge.net/">OpenGL Extension Wrangler (Glew)</a> and also the <a href="http://elf-stone.com/glee.php">GL Easy Extension Library (Glee)</a>.  These both provide the ability to enumerate and then use the extensions provided.  They are also cross-platform which is always a bonus.
+
+It is not the easiest way to maintain code as it requires specialist code depending on the graphics card's capabilities, but if you want to be on the bleeding edge they will allow you to code there.  You will also have to be aware that the function names could change if they become part of the main OpenGL library.

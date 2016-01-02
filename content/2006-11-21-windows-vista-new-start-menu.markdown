@@ -1,0 +1,12 @@
+Title: Windows Vista - The new start menu
+Date: 2006-11-21T18:30:00+00:00
+Slug: windows-vista-new-start-menu
+Category: 
+Tags: 
+Authors: Garry Bodsworth
+
+<a href="http://www.joelonsoftware.com/">Joel on Software</a> has a little post about <a href="http://www.joelonsoftware.com/items/2006/11/21.html">"Choices = Headaches"</a> about UI design.
+
+It looks at the start menu and the number of choices to shut down a computer.  I personally was even more concerned about the bad design presenting it to the user (and to a lesser degree there were far too many options), in fact XP did it better.  I realise that there are lots of options, but initially I missed where <span style="font-style:italic;">Restart</span> was.
+
+Simply cutting down the number of options is not enough I feel, someone should have sat down and actually used the design that they have foisted on the user.

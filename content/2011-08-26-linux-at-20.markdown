@@ -1,0 +1,11 @@
+Title: Linux at 20
+Date: 2011-08-26T07:32:00+00:00
+Slug: linux-at-20
+Category: 
+Tags: 
+Authors: Garry Bodsworth
+
+If it didn't exist I somehow think computing would be a much less fun place and I probably wouldn't be able to do my job so well.
+
+<a href="http://www.linuxfoundation.org/20th/">Linux Foundation</a>
+<a href="http://www.linuxfoundation.org/ 20th" target="_blank"><img src="http://www.linuxfoundation.org/ 20th/images/lf_linux20_webbadge.png" width="300" height="250" alt="I'll be celebrating 20 years of Linux with The Linux Foundation!" border="0"></a>

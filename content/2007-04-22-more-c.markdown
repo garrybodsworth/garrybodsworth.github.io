@@ -1,0 +1,12 @@
+Title: More C++
+Date: 2007-04-22T20:16:00+00:00
+Slug: more-c
+Category: 
+Tags: 
+Authors: Garry Bodsworth
+
+The <a href="http://opensource.adobe.com/">ASL project</a> is run by Adobe where it is an attempt to create a cross-platform GUI library.  It uses pure C++ with many advanced concepts being used.  The GIL (Generic Image Library) part of the project was recently accepted into the <a href="http://www.boost.org">Boost</a> project.
+
+The <a href="http://opensource.adobe.com/wiki/index.php/Main_Page">ASL Wiki</a> has a fair amount of interesting information.  On the <a href="http://opensource.adobe.com/wiki/index.php/Supplementary_ASL_Documentation">Supplementary Documentation</a> page there is some interesting links, especially the coding guidelines information.
+
+The <a href="http://opensource.adobe.com/wiki/index.php/Papers_and_Presentations">Papers and Presentations page</a> has some interesting C++ tidbits.

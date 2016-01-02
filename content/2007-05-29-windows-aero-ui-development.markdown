@@ -1,0 +1,10 @@
+Title: Windows Aero UI Development
+Date: 2007-05-29T19:18:00+00:00
+Slug: windows-aero-ui-development
+Category: 
+Tags: 
+Authors: Garry Bodsworth
+
+There is a new article on the <a href="http://www.codeproject.com">CodeProject</a> about retrofitting Windows Aero UI elements to existing applications.  <a href="http://www.codeproject.com/vista/AeroGlassLegacyWindowsApp.asp">Adding or Retrofitting Aero Glass into Legacy Windows Applications - Stefan Kuhr</a>.
+
+It's quite a comprehensive article and means someone else has done the research legwork for you - one of the beauties of the CodeProject.  This is especially useful as the Aero C++ headers have no real documentation as yet.

@@ -1,0 +1,10 @@
+Title: Adobe ASL
+Date: 2007-05-08T19:21:00+00:00
+Slug: adobe-asl
+Category: 
+Tags: 
+Authors: Garry Bodsworth
+
+A new version of the <a href="http://opensource.adobe.com/">Adobe ASL</a> open-source GUI library came out on the 3rd May.  The releases of this library seem to be steaming ahead at a monthly rate.  As far as I can tell it is not in production use at Adobe but provides a testing ground for theory.
+
+You can see the changelog <a href="http://opensource.adobe.com/asl_release_notes.html">here</a>.

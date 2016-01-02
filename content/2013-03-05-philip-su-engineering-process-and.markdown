@@ -1,0 +1,13 @@
+Title: Philip Su - Engineering Process And Philosophy At Facebook
+Date: 2013-03-05T21:59:00+00:00
+Slug: philip-su-engineering-process-and
+Category: 
+Tags: 
+Authors: Garry Bodsworth
+
+Last week I was representing Bromium at the Hacker News London event, and there was an excellent talk by Philip Su from Facebook's London office. &nbsp;It was about the engineering culture at Facebook and how they have kept it working up to their current 1000 engineers. &nbsp;Whatever you think of Facebook this is a great window into how they have kept the engineering culture thriving and fully operational despite the issues of engineer numbers and the scale of their operations.
+
+Also, Philip Su is a really great speaker.
+
+&nbsp;  <iframe allowfullscreen="" frameborder="0" height="281" mozallowfullscreen="" src="http://player.vimeo.com/video/60896034" webkitallowfullscreen="" width="500"></iframe>
+<a href="http://vimeo.com/60896034">Philip Su: Site Lead at Facebook - Engineering process and philosophy at Facebook</a> from <a href="http://vimeo.com/hnlondon">HN London</a> on <a href="http://vimeo.com/">Vimeo</a>.

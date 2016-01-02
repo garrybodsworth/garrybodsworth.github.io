@@ -1,0 +1,12 @@
+Title: GUI Toolkits - wxWidgets 2.8 Released
+Date: 2006-12-14T21:53:00+00:00
+Slug: gui-toolkits-wxwidgets-28-released
+Category: 
+Tags: 
+Authors: Garry Bodsworth
+
+The latest stable release of <a href="http://www.wxwidgets.org/">wxWidgets</a> has been released.  You can view the announcement <a href="http://sourceforge.net/forum/forum.php?forum_id=644606">here</a>.
+
+Version 2.8 is the latest stable branch of wxWidgets taking over from 2.6.  The new features it offers includes:<ul><li>wxAUI - an advanced user interface library for docking and toolbars and much more.</li><li>wxRichTextCtrl - a powerful rich edit control.</li><li>wxComboCtrl and wxOwnerDrawnComboBox - more combo box goodness.</li><li>wxTreebook - A property sheet dialog with a tree view to navigate.</li><li>Various picker controls such as wxColourPickerCtrl, wxHyperlinkCtrl.</li><li>Partial right-to-left language support.</li><li>Support for Core Graphics on Mac OS X.</li><li>TAR archive support.</li><li>Plus more.</li></ul>More details are available from this thread on the <a href="http://wxforum.shadonet.com/">wxWidgets Forum</a> - <a href="http://wxforum.shadonet.com/viewtopic.php?t=11530">click here to view the thread</a>.
+
+Platforms supported:<ul><li>Windows 95/98/ME, NT, 2000, XP, Vista</li><li>Windows 64 on Itanium and x86-64 architectures</li><li>Windows CE, including Pocket PC 2003, Smartphone 2003, Mobile 5</li><li>Unix (Linux, *BSD, Solaris, AIX, HP-UX, IRIX, Tru64) and VMS with GTK+</li><li>Unix with Motif/Lesstif</li><li>Unix with X11 (beta)</li><li>Mac OS X using Carbon</li><li>Mac OS X using Cocoa (alpha)</li><li>MGL for Linux and DOS</li><li>OS/2 (beta)</li><li>Direct Frame Buffer (alpha) </li></ul>

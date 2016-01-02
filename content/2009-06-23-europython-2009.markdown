@@ -1,0 +1,15 @@
+Title: EuroPython 2009
+Date: 2009-06-23T09:00:00+00:00
+Category: 
+Tags: 
+Authors: Garry Bodsworth
+
+The [EuroPython 2009][1] conference is less than a week away, I have no idea where June went. It should be a great time in sunny Birmingham. I am going to the conference days Tuesday through Thursday.
+
+There are [loads of talks][2] so my brain should be crammed after three days of that. I might also try out doing a lightning talk whilst I am there. although I would have to put some thought into what I&#8217;d talk about.
+
+You can register [here][3] with the three conference days costing £190.
+
+ [1]: http://www.europython.eu/
+ [2]: http://www.europython.eu/talks/timetable/
+ [3]: http://www.europython.eu/registration/

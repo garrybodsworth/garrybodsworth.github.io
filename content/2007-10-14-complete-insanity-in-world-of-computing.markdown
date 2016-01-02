@@ -1,0 +1,34 @@
+Title: Complete Insanity In The World Of Computing
+Date: 2007-10-14T20:30:00+00:00
+Slug: complete-insanity-in-world-of-computing
+Category: 
+Tags: 
+Authors: Garry Bodsworth
+
+And now for something completely different...
+
+I thought I would share some of the more insane things I have heard in the world of computing.
+
+<span style="font-weight:bold;">No Source Control</span>
+
+It's amazing to think that a company can get away without source control, let alone a company supplying closed-source library functionality.  This meant that regressions happened at an alarming rate and a bugfix could result in previous bugfixes being undone.  The "repository" was a copy of the source code on a server and developers would copy the files to their computer, edit them, and then copy the changed files back to the server.
+
+<span style="font-weight:bold;">C# Developers Must Be Expensive</span>
+
+To make it easier to maintain a product when it is written in C# but you have lots of Visual Basic developers, convert the product to VB...  This was apparently done by taking the semi-colons off of the end of the lines then compiling to see where the errors are.
+
+It seems to me that the process is completely insane and devoid of any merit.  First you do not understand the code, this will adversely effect bugfixing.  I am sure that the fallout from that kind of development will be felt for years.
+
+<span style="font-weight:bold;">Visual Sourcesafe Is Fine</span>
+
+It's easiest to witness the insanity of using Visual Sourcesafe from the sane world of proper revision control systems.  Sourcesafe does not give any data integrity, can lose stuff, is impossible to script in any meaningful fashion, has a terrible architecture, and more...
+
+I am talking about v6.0 and older here (I have no idea about the package that has inherited the name).
+
+I see things like source control as integral to the development experience and productivity of your team.
+
+<span style="font-weight:bold;">The Phantom Build System</span>
+
+A developer on their own work computer has the only scripts that run the build kit.  Once that person leaves noone can do it and there is nothing to reverse engineer from.  It then takes perseverance and a small amount of brilliance to get to a working release installation kit.
+
+EVERYTHING to build your program should be well documented and under source control as much as possible.  It should be able to be run from any computer following the written instructions.
