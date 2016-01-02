@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Fragmented Memory</title>
+    <meta name="description" content="">
+    <meta name="author" content="Garry Bodsworth">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+    <!--[if lt IE 9]>
+    <script src="http://www.fragmentedmemory.com/theme/html5.js"></script>
+    <![endif]-->
+
+    <!-- Le styles -->
+    <link href="http://www.fragmentedmemory.com/theme/bootstrap.min.css" rel="stylesheet">
+    <link href="http://www.fragmentedmemory.com/theme/bootstrap.min.responsive.css" rel="stylesheet">
+    <link href="http://www.fragmentedmemory.com/theme/local.css" rel="stylesheet">
+    <link href="http://www.fragmentedmemory.com/theme/pygments.css" rel="stylesheet">
+
+    <!-- So Firefox can bookmark->"abo this site" -->
+        <link href="http://www.fragmentedmemory.com/feed/index.xml" rel="alternate" title="Fragmented Memory" type="application/atom+xml">
+
+</head>
+
+<body>
+
+<div class="navbar">
+    <div class="navbar-inner">
+    <div class="container">
+
+         <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+             <span class="icon-bar"></span>
+             <span class="icon-bar"></span>
+             <span class="icon-bar"></span>
+         </a>
+
+        <a class="brand" href="http://www.fragmentedmemory.com">Fragmented Memory</a>
+
+        <div class="nav-collapse">
+        <ul class="nav">
+            
+            <li><a href="http://www.fragmentedmemory.com/pages/about.html">About</a></li>
+            <li><a href="http://www.fragmentedmemory.com/pages/cv.html">CV</a></li>
+        </ul>
+        </div>
+        
+    </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="content">
+    <div class="row">
+
+        <div class="span9">
+    <div class='article'>
+        <div class="content-title">
+            <h1>TortoiseSVN + VS.NET 2005 = Good Stuff</h1>
+Tue 03 October 2006
+
+by <a class="url fn" href="http://www.fragmentedmemory.com/author/garry-bodsworth.html">Garry Bodsworth</a>
+ 
+
+
+        </div>
+	
+        <div><p><span style="font-weight:bold;"><a href="/2007/07/tortoisesvn-and-visual-studio/">See the update here.</a></span></p>
+<p>As promised it is time to integrate TortoiseSVN into Visual Studio 2005.  The easiest way I have found to do this is to post the vsettings files from Visual Studio once the environment is set up.</p>
+<p>Here are the zipped settings files:<br /><a href="http://garry.bodsworth.googlepages.com/SubversionSettingsVS2005.zip">This link is for Visual Studio.NET 2005.</a><br /><a href="http://garry.bodsworth.googlepages.com/SubversionSettingsVC2005Express.zip">This link is for Visual C++ 2005 Express.</a></p>
+<p>You need to go to <span style="font-style:italic;">Tools-&gt;Import and Export Settings</span> and load the files from wizard dialog that pops up.  There are differences between the free Visual C++ Express and Visual Studio settings files, so please make sure you use the correct one.  It would also be an idea to say yes when the wizard asks you to back up your current settings.</p>
+<p>There is one thing the settings get wrong on the build toolbar which is the size of some controls, so once the settings have loaded make sure you resize the items on the build toolbar by right-clicking and choosing <span style="font-style:italic;">Customise...</span>.  Then you can select the items and make them smaller.</p>
+<p>The settings have some of my own personal changes as well as the Subversion changes I am afraid, but you can choose which bits to load in on the settings wizard dialog.  There are some assumptions made also, the PlatformSDK is assumed to be in the default environment location under <span style="font-style:italic;">c:\Program Files\Microsoft Visual Studio 8\VC\PlatformSDK</span>.  Also it assumes that TortoiseSVN is installed in the default directory.  The settings files are just XML so you could alter those directories by hand before loading it in.</p>
+<p>Once you have loaded these settings you will have:<br /><ul><li>A Subversion Menu.</li><li>A consolidated help menu so the same number of menus is still there at the top.</li><li>A Subversion toolbar.</li><li>All Subversion options in menus and toolbars have icons associated with them that will look familiar to users of TortoiseSVN.</li><li>The context menu for Solutions has relevant Subversion options.</li><li>As do individual files context menus - Diff, Log, Blame.</li><li>Since Subversion has its own menu they are no longer present in the External Tools.</li><li>Made the build bar actually have build options on it.</li><li>Trimmed down the main file toolbar.</li><li>All of the moving around of items means you get all the toolbars across the top of the screen in one row.</li><li>Added quickwatch to the debug menu as it annoys me they removed it after Visual Studio 6.0.</li></li></ul><span style="font-weight:bold;">Menu screenshot:</span><br /><a onblur="try {parent.deselectBloggerImageGracefully();} catch(e) {}" href="http://photos1.blogger.com/blogger/3420/3930/1600/SubversionMenu.png"><img style="cursor:pointer; cursor:hand;" src="http://photos1.blogger.com/blogger/3420/3930/320/SubversionMenu.png" border="0" alt="" /></a><br /><span style="font-weight:bold;">Toolbar screenshot:</span><br /><a onblur="try {parent.deselectBloggerImageGracefully();} catch(e) {}" href="http://photos1.blogger.com/blogger/3420/3930/1600/SubversionToolbar.png"><img style="cursor:pointer; cursor:hand;" src="http://photos1.blogger.com/blogger/3420/3930/320/SubversionToolbar.png" border="0" alt="" /></a><br /><span style="font-weight:bold;">Solution context menu:</span><br /><a onblur="try {parent.deselectBloggerImageGracefully();} catch(e) {}" href="http://photos1.blogger.com/blogger/3420/3930/1600/ContextSolution.png"><img style="cursor:pointer; cursor:hand;" src="http://photos1.blogger.com/blogger/3420/3930/320/ContextSolution.png" border="0" alt="" /></a><br /><span style="font-weight:bold;">File context menu:</span><br /><a onblur="try {parent.deselectBloggerImageGracefully();} catch(e) {}" href="http://photos1.blogger.com/blogger/3420/3930/1600/ContextFile.png"><img style="cursor:pointer; cursor:hand;" src="http://photos1.blogger.com/blogger/3420/3930/320/ContextFile.png" border="0" alt="" /></a><br />Well, if anyone has any improvements let me know...</p></div>
+	
+        <hr>
+
+    </div>
+        </div>
+        
+        <div class="span3">
+
+            <div class="well" style="padding: 8px 0; background-color: #FBFBFB;">
+            <ul class="nav nav-list">
+                <li class="nav-header"> 
+                Site
+                </li>
+            
+                <li><a href="http://www.fragmentedmemory.com/archives.html">Archives</a>
+                <li><a href="http://www.fragmentedmemory.com/tags.html">Tags</a>
+
+
+
+                <li><a href="http://www.fragmentedmemory.com/feed/index.xml" rel="alternate">Atom feed</a></li>
+
+            </ul>
+            </div>
+
+
+            <div class="well" style="padding: 8px 0; background-color: #FBFBFB;">
+            <ul class="nav nav-list">
+                <li class="nav-header"> 
+                Categories
+                </li>
+                
+                <li><a href="http://www.fragmentedmemory.com/category/misc.html">misc</a></li>
+                   
+            </ul>
+            </div>
+
+
+
+
+            <div class="social">
+            <div class="well" style="padding: 8px 0; background-color: #FBFBFB;">
+            <ul class="nav nav-list">
+                <li class="nav-header"> 
+                Social
+                </li>
+           
+                <li><a href="http://www.fragmentedmemory.com/feed/">rss</a></li>
+                <li><a href="https://github.com/garrybodsworth">github-alt</a></li>
+                <li><a href="https://twitter.com/garrybodsworth">twitter</a></li>
+                <li><a href="https://uk.linkedin.com/in/garrybodsworth">linkedin</a></li>
+                <li><a href="http://stackoverflow.com/cv/garrybodsworth">stack-overflow</a></li>
+                <li><a href="http://pinboard.in/u:garrybodsworth">pinboard</a></li>
+            </ul>
+            </div>
+            </div>
+
+        </div>  
+    </div>     </div> 
+<footer>
+<br />
+<p><a href="http://www.fragmentedmemory.com">Fragmented Memory</a> &copy; Garry Bodsworth 2014</p>
+</footer>
+
+</div> <!-- /container -->
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+<script src="http://www.fragmentedmemory.com/theme/bootstrap-collapse.js"></script>
+ 
+</body>
+</html>

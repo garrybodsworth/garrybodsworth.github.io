@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Fragmented Memory</title>
+    <meta name="description" content="">
+    <meta name="author" content="Garry Bodsworth">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+    <!--[if lt IE 9]>
+    <script src="http://www.fragmentedmemory.com/theme/html5.js"></script>
+    <![endif]-->
+
+    <!-- Le styles -->
+    <link href="http://www.fragmentedmemory.com/theme/bootstrap.min.css" rel="stylesheet">
+    <link href="http://www.fragmentedmemory.com/theme/bootstrap.min.responsive.css" rel="stylesheet">
+    <link href="http://www.fragmentedmemory.com/theme/local.css" rel="stylesheet">
+    <link href="http://www.fragmentedmemory.com/theme/pygments.css" rel="stylesheet">
+
+    <!-- So Firefox can bookmark->"abo this site" -->
+        <link href="http://www.fragmentedmemory.com/feed/index.xml" rel="alternate" title="Fragmented Memory" type="application/atom+xml">
+
+</head>
+
+<body>
+
+<div class="navbar">
+    <div class="navbar-inner">
+    <div class="container">
+
+         <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+             <span class="icon-bar"></span>
+             <span class="icon-bar"></span>
+             <span class="icon-bar"></span>
+         </a>
+
+        <a class="brand" href="http://www.fragmentedmemory.com">Fragmented Memory</a>
+
+        <div class="nav-collapse">
+        <ul class="nav">
+            
+            <li><a href="http://www.fragmentedmemory.com/pages/about.html">About</a></li>
+            <li><a href="http://www.fragmentedmemory.com/pages/cv.html">CV</a></li>
+        </ul>
+        </div>
+        
+    </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="content">
+    <div class="row">
+
+        <div class="span9">
+    <div class='article'>
+        <div class="content-title">
+            <h1>Asus UL20A &#8211; Hints And Tips For Running Linux</h1>
+Sun 09 January 2011
+
+by <a class="url fn" href="http://www.fragmentedmemory.com/author/garry-bodsworth.html">Garry Bodsworth</a>
+ 
+
+
+        </div>
+	
+        <div><ul>
+<li>yes
+aktt_tweeted:</li>
+<li>1
+categories:</li>
+<li>Uncategorized
+tags:</li>
+<li>install</li>
+<li>laptop</li>
+<li>Linux</li>
+<li>mint</li>
+<li>setup</li>
+</ul>
+<hr />
+<p>My MacBook Pro developed the <a href="http://support.apple.com/kb/TS2377">nVidia graphics failure problem</a> and I got the motherboard replaced, it has never been the same since and when I asked I basically had no warranty for it. So after three-and-a-half years I decided to buy myself a new laptop. Lacking the riches required for another Apple I decided to go where I am really most comfortable &#8211; Linux. So after a lot of research and fingers crossing I picked up an <a href="http://www.amazon.com/UL20A-A1-Light-12-1-Inch-Silver-Laptop/dp/B002PAQXAE">Asus UL20A</a> off of eBay for 318 quid including postage.</p>
+<p>The specs are as follows:</p>
+<ul>
+<li>Core2Duo SU7300 (dual core 1.3GHz)</li>
+<li>12 inch display at 1366&#215;768</li>
+<li>Quoting something like 8 hours battery life.</li>
+<li>4GB RAM (upgraded by me for 25 quid)</li>
+<li>60GB solid state drive (upgraded by me for 95 quid) &#8211; an OCZ Vertex 2E with the respected Sandisk controller.</li>
+</ul>
+<p>The point of this post, however, is not to review a piece of hardware, but to get Linux working flawlessly on it.</p>
+<p><strong>Linux Mint 10</strong></p>
+<p>I decided to use<a href="http://www.linuxmint.com/"> Linux Mint 10</a> (Ubuntu base), this is instead of stock Ubuntu which I find very cluttered on initial install and also requires me to do loads of fiddling to get a normal looking and clean desktop environment.  Linux Mint 10 is based on the latest Ubuntu but presents the user a very nicely set up session after the first install.  The desktop is uncluttered, there is only one panel at the bottom, and theme is head and shoulders above the Ubuntu default.</p>
+<p>Linux Mint does have a Debian based edition which I will switch to later but the packages are a lot further behind the latest Ubuntu and since I was going to use some more modern features for the SSD I would have to have done a lot more hacking.</p>
+<p><strong>Installing</strong></p>
+<p>I partitioned the SSD the following way:</p>
+<ul>
+<li>256MB ext2 /boot partition</li>
+<li>4.1GB /swap partition</li>
+<li>15GB btrfs / partition</li>
+<li>40GB btrfs /home partition</li>
+</ul>
+<p>I decided to use btrfs because it is the latest and greatest available file system for Linux.  This means it has things like TRIM support for SSDs and can do cool stuff like snapshots, but this also requires a newer kernel for better support hence not using the Linux Mint Debian Edition.</p>
+<p>The ext2 boot partition is required as you can&#8217;t boot directly from btrfs according to the information I found out there.  The swap partition is memory + 100MB for supporting hibernate.  The main partition is separate from the home partition &#8211; <strong>this is very important when you use Ubuntu</strong>.  Because Ubuntu does releases every six months you can attempt upgrades, but I have seen and experienced this failing with catastrophic consequences.  Luckily having a separate home partition means you can tell Ubuntu to reinstall to the main partition but just mount and use you home directory without formatting it.</p>
+<p>Installation took me about 10-15 minutes before I was there in my freshly installed desktop.  Now, almost everything works straight out of the box, it is case of tweaking to get some of the more hidden features working.</p>
+<p><strong>Two Finger Scrolling</strong></p>
+<p>Two finger scrolling on the Synaptics touchpad requires a little bit of tweaking.   Create a file called /usr/share/X11/xorg.conf.d/50-twofingerscroll.conf with the folling contents:<br />
+<code>&lt;br /&gt;
+Section "InputClass"&lt;br /&gt;
+Identifier "touchpad catchall"&lt;br /&gt;
+MatchProduct "SynPS/2 Synaptics TouchPad"&lt;br /&gt;
+Option "VertTwoFingerScroll" "on"&lt;br /&gt;
+Option "HorizTwoFingerScroll" "on"&lt;br /&gt;
+Option "EmulateTwoFingerMinW" "5"&lt;br /&gt;
+Option "EmulateTwoFingerMinZ" "48"&lt;br /&gt;
+EndSection</code></p>
+<p>Then start up<em> gconf-editor</em> and change<em> /desktop/gnome/peripherals/touchpad/scroll_method</em> to the value <em>2</em>.</p>
+<p>Now you have two finger scrolling working and also two finger right click!</p>
+<p><strong>The LCD Brightness Keys</strong></p>
+<p>This requires a small change to your boot settings so that you can use the function keys to set the screen brightness.</p>
+<p>Edit <em>/etc/default/grub</em> so that the line with <em>GRUB_CMDLINE_LINUX = &#8220;&#8221;</em> says:<br />
+<code>&lt;br /&gt;
+GRUB_CMDLINE_LINUX="acpi_backlight=vendor"</code></p>
+<p>Then run <em>sudo update-grub </em>and reboot.</p>
+<p><strong>Power Settings</strong></p>
+<p>To help improve battery life install powertop by using <em>sudo apt-get install powertop</em> then run <em>sudo powertop</em> and follow its instructions.  You should be able to help squeeze precious minutes out of your battery.</p>
+<p><strong>Mistakes</strong></p>
+<p>I did attempt installing the latest kernel along with the latest graphics drivers.  This was mainly for graphical hacking and trying out newer btrfs options.  This is a big mistake.  For a start the battery monitoring stops working although I managed to solve that, then shutdown stopped working consistently.  So for all the benefits don&#8217;t bother if you prefer your system to be properly functioning.</p>
+<p><strong>What I Did Next&#8230;.</strong></p>
+<p>I always use <a href="http://ubuntu-tweak.com/">Ubuntu Tweak</a> and it works on Linux Mint 10.  This allows you to get some more interesting packages and also update to cutting edge versions.</p>
+<p>There is something I don&#8217;t like about Google Chrome despite its super-speed, so I always go back to Firefox.  Unfortunately distros currently use 3.6 but I have been using 4.0 for about six months, it is much quicker, better looking and more robust.  Through Ubuntu Tweak enable the Minefield repositories and get it.  Also install the Nightly Tools Addon to help get your Addons all working.</p>
+<p>I install ttf-droid fonts normally and switch all my desktop to use that as it gives more space, but for people who don&#8217;t like small fonts you probably should avoid it.</p>
+<p>I have also installed and am running the theme from the <a href="http://www.elementary-project.com/">elementary project</a> which gives a less Minty user interface for Linux Mint.  It&#8217;s purely aesthetical, although the elementary Nautilus file browser is much better than the default.</p>
+<p><strong>All In All</strong></p>
+<p>At the end of it I have a fully working Linux laptop that boots in less than 20 seconds and shuts down in about a second.  It is easy to use and responsive which makes me really happy.  From what I have been trying to work out the ASUS laptops seem to have fairly decent Linux support.</p>
+<p>Next up I am going to have to get hacking on <a href="http://www.libimobiledevice.org/">libimobiledevice</a> because I have an iPhone and I would like to avoid running updates via a virtual machine or something.</p></div>
+	
+        <hr>
+
+    </div>
+        </div>
+        
+        <div class="span3">
+
+            <div class="well" style="padding: 8px 0; background-color: #FBFBFB;">
+            <ul class="nav nav-list">
+                <li class="nav-header"> 
+                Site
+                </li>
+            
+                <li><a href="http://www.fragmentedmemory.com/archives.html">Archives</a>
+                <li><a href="http://www.fragmentedmemory.com/tags.html">Tags</a>
+
+
+
+                <li><a href="http://www.fragmentedmemory.com/feed/index.xml" rel="alternate">Atom feed</a></li>
+
+            </ul>
+            </div>
+
+
+            <div class="well" style="padding: 8px 0; background-color: #FBFBFB;">
+            <ul class="nav nav-list">
+                <li class="nav-header"> 
+                Categories
+                </li>
+                
+                <li><a href="http://www.fragmentedmemory.com/category/misc.html">misc</a></li>
+                   
+            </ul>
+            </div>
+
+
+
+
+            <div class="social">
+            <div class="well" style="padding: 8px 0; background-color: #FBFBFB;">
+            <ul class="nav nav-list">
+                <li class="nav-header"> 
+                Social
+                </li>
+           
+                <li><a href="http://www.fragmentedmemory.com/feed/">rss</a></li>
+                <li><a href="https://github.com/garrybodsworth">github-alt</a></li>
+                <li><a href="https://twitter.com/garrybodsworth">twitter</a></li>
+                <li><a href="https://uk.linkedin.com/in/garrybodsworth">linkedin</a></li>
+                <li><a href="http://stackoverflow.com/cv/garrybodsworth">stack-overflow</a></li>
+                <li><a href="http://pinboard.in/u:garrybodsworth">pinboard</a></li>
+            </ul>
+            </div>
+            </div>
+
+        </div>  
+    </div>     </div> 
+<footer>
+<br />
+<p><a href="http://www.fragmentedmemory.com">Fragmented Memory</a> &copy; Garry Bodsworth 2014</p>
+</footer>
+
+</div> <!-- /container -->
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+<script src="http://www.fragmentedmemory.com/theme/bootstrap-collapse.js"></script>
+ 
+</body>
+</html>

@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Fragmented Memory</title>
+    <meta name="description" content="">
+    <meta name="author" content="Garry Bodsworth">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+    <!--[if lt IE 9]>
+    <script src="http://www.fragmentedmemory.com/theme/html5.js"></script>
+    <![endif]-->
+
+    <!-- Le styles -->
+    <link href="http://www.fragmentedmemory.com/theme/bootstrap.min.css" rel="stylesheet">
+    <link href="http://www.fragmentedmemory.com/theme/bootstrap.min.responsive.css" rel="stylesheet">
+    <link href="http://www.fragmentedmemory.com/theme/local.css" rel="stylesheet">
+    <link href="http://www.fragmentedmemory.com/theme/pygments.css" rel="stylesheet">
+
+    <!-- So Firefox can bookmark->"abo this site" -->
+        <link href="http://www.fragmentedmemory.com/feed/index.xml" rel="alternate" title="Fragmented Memory" type="application/atom+xml">
+
+</head>
+
+<body>
+
+<div class="navbar">
+    <div class="navbar-inner">
+    <div class="container">
+
+         <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+             <span class="icon-bar"></span>
+             <span class="icon-bar"></span>
+             <span class="icon-bar"></span>
+         </a>
+
+        <a class="brand" href="http://www.fragmentedmemory.com">Fragmented Memory</a>
+
+        <div class="nav-collapse">
+        <ul class="nav">
+            
+            <li><a href="http://www.fragmentedmemory.com/pages/about.html">About</a></li>
+            <li><a href="http://www.fragmentedmemory.com/pages/cv.html">CV</a></li>
+        </ul>
+        </div>
+        
+    </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="content">
+    <div class="row">
+
+        <div class="span9">
+    <div class='article'>
+        <div class="content-title">
+            <h1>Virtualisation - An Understanding</h1>
+Sat 13 October 2007
+
+by <a class="url fn" href="http://www.fragmentedmemory.com/author/garry-bodsworth.html">Garry Bodsworth</a>
+ 
+
+
+        </div>
+	
+        <div><p>It's amazing how many mistakes it is possible to make when attempting to understand a concept.  Up until a couple of weeks ago I had some misconceptions about virtualisation.  I've used it through VMWare and have viewed it as a way to have a virtual layer on top of your processor.</p>
+<p>Then some concepts coalesced from various articles I was reading.</p>
+<p>Virtualisation is the abstraction of resources away from their use.  At the moment the most common use of virtualisation would be memory.  You get a virtual address space from your operating system - this can be mad up of RAM, ROM, cache, hard drive, flash memory, and probably more.  You don't know what you are accessing but the virtualisation of those resources and their access makes it easy to use.</p>
+<p>One of the catalysts for my understanding was iD Software new iD Tech 5.  There was mention of Megtexture which was texture virtualisation allowing the use of massive amounts of textures for the rendering.  This would no doubt be a way of not needing to know about the basic building blocks of the textures, but to use them through a virtualised interface.</p>
+<p>Then this comes to the processor virtualisation.  My misconception was because of the examples I had seen from Parallels and VMWare.  It allows you to run multiple computers on a single processor.  But what processor virtualisation should do is abstract away the processor resources allowing the program to run.  This would mean that you would not care about multiple cores or even computers, you could in their run one virtual machine which has a backend of a massive cluster of computers.  I don't know if this is the case yet as when you do parallel processing you still nee to know too much about the parallelism in order to develop a solution but I imagine some solutions must be able to do it.</p></div>
+	
+        <hr>
+
+    </div>
+        </div>
+        
+        <div class="span3">
+
+            <div class="well" style="padding: 8px 0; background-color: #FBFBFB;">
+            <ul class="nav nav-list">
+                <li class="nav-header"> 
+                Site
+                </li>
+            
+                <li><a href="http://www.fragmentedmemory.com/archives.html">Archives</a>
+                <li><a href="http://www.fragmentedmemory.com/tags.html">Tags</a>
+
+
+
+                <li><a href="http://www.fragmentedmemory.com/feed/index.xml" rel="alternate">Atom feed</a></li>
+
+            </ul>
+            </div>
+
+
+            <div class="well" style="padding: 8px 0; background-color: #FBFBFB;">
+            <ul class="nav nav-list">
+                <li class="nav-header"> 
+                Categories
+                </li>
+                
+                <li><a href="http://www.fragmentedmemory.com/category/misc.html">misc</a></li>
+                   
+            </ul>
+            </div>
+
+
+
+
+            <div class="social">
+            <div class="well" style="padding: 8px 0; background-color: #FBFBFB;">
+            <ul class="nav nav-list">
+                <li class="nav-header"> 
+                Social
+                </li>
+           
+                <li><a href="http://www.fragmentedmemory.com/feed/">rss</a></li>
+                <li><a href="https://github.com/garrybodsworth">github-alt</a></li>
+                <li><a href="https://twitter.com/garrybodsworth">twitter</a></li>
+                <li><a href="https://uk.linkedin.com/in/garrybodsworth">linkedin</a></li>
+                <li><a href="http://stackoverflow.com/cv/garrybodsworth">stack-overflow</a></li>
+                <li><a href="http://pinboard.in/u:garrybodsworth">pinboard</a></li>
+            </ul>
+            </div>
+            </div>
+
+        </div>  
+    </div>     </div> 
+<footer>
+<br />
+<p><a href="http://www.fragmentedmemory.com">Fragmented Memory</a> &copy; Garry Bodsworth 2014</p>
+</footer>
+
+</div> <!-- /container -->
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+<script src="http://www.fragmentedmemory.com/theme/bootstrap-collapse.js"></script>
+ 
+</body>
+</html>

@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Fragmented Memory</title>
+    <meta name="description" content="">
+    <meta name="author" content="Garry Bodsworth">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+    <!--[if lt IE 9]>
+    <script src="http://www.fragmentedmemory.com/theme/html5.js"></script>
+    <![endif]-->
+
+    <!-- Le styles -->
+    <link href="http://www.fragmentedmemory.com/theme/bootstrap.min.css" rel="stylesheet">
+    <link href="http://www.fragmentedmemory.com/theme/bootstrap.min.responsive.css" rel="stylesheet">
+    <link href="http://www.fragmentedmemory.com/theme/local.css" rel="stylesheet">
+    <link href="http://www.fragmentedmemory.com/theme/pygments.css" rel="stylesheet">
+
+    <!-- So Firefox can bookmark->"abo this site" -->
+        <link href="http://www.fragmentedmemory.com/feed/index.xml" rel="alternate" title="Fragmented Memory" type="application/atom+xml">
+
+</head>
+
+<body>
+
+<div class="navbar">
+    <div class="navbar-inner">
+    <div class="container">
+
+         <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+             <span class="icon-bar"></span>
+             <span class="icon-bar"></span>
+             <span class="icon-bar"></span>
+         </a>
+
+        <a class="brand" href="http://www.fragmentedmemory.com">Fragmented Memory</a>
+
+        <div class="nav-collapse">
+        <ul class="nav">
+            
+            <li><a href="http://www.fragmentedmemory.com/pages/about.html">About</a></li>
+            <li><a href="http://www.fragmentedmemory.com/pages/cv.html">CV</a></li>
+        </ul>
+        </div>
+        
+    </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="content">
+    <div class="row">
+
+        <div class="span9">
+    <div class='article'>
+        <div class="content-title">
+            <h1>Subversion and TortoiseSVN - A programmers best friend</h1>
+Sun 01 October 2006
+
+by <a class="url fn" href="http://www.fragmentedmemory.com/author/garry-bodsworth.html">Garry Bodsworth</a>
+ 
+
+
+        </div>
+	
+        <div><p>Before you work in industry it is unlikely you ever use any source control.  At Essex Uni we were forced to use RCS (on the command-line) once and it all seemed pretty trivial and pointless.  Most of the time when you go into industry you end up having to use Visual SourceSafe, sure it does a job, but for the most part it is completely useless and scales terribly.</p>
+<p>Earlier this year I migrated the company I work at (<a href="http://www.ncgraphics.net">NC Graphics</a>) from Visual SourceSafe to Subversion.  I prepared a lot for this doing tons of research to make this transition as seamless as humanly possible, but as these things normally happen time was a serious factor.  Bizarrely it was done ahead of schedule and the benefits were pretty much instantaneous.  Sometimes in IT we beat deadlines(!)</p>
+<p><span style="font-weight: bold;">The Migration</span></p>
+<p>I spent ages reading everything I could find via Google about migrating anything to Subversion.  This was necessary as there was very little covering Visual SourceSafe specifically.  In the end I had to choose the only tool even remotely capable of doing the conversion called <a href="http://vss2svn.tigris.org/">vss2svn</a> and even then there were some compromises that had to be made.  I used the orginal "legacy" script from their development repository.  It essentially gets every file you have currently in your source tree and then search each of their histories backwards in time.  This does mean you lose renames and files that have been removed.  The good thing though is that it converts the check-ins into Subversion style atomic commits by grouping them all together by time and user.</p>
+<p>There is a new version of <a href="http://www.pumacode.org/projects/vss2svn">vss2svn</a> (new website) but it was nowhere near being ready when I was doing this work.  This version actually reconstructs almost everything by reverse-engineering the Visual SourceSafe file format.  If you have archived portions or restored portions I found that it didn't work.  It seems to have come a long way since I last looked, but I don't think it would have converted our large database with all of its quirks.</p>
+<p>Back to the original script though...  To get it to run fast what I did was archive out the areas of SourceSafe we needed and then imported them into a brand new clean instance.  This cut the running time for the script from the test run of 14 days down to less than 2 days.</p>
+<p><span style="font-weight: bold;">Using Subversion For Development</span></p>
+<p>Obviously you have the basic command-line tools for using <a href="http://subversion.tigris.org">Subversion</a> but there is a lot more out there as well.  Internally we use <a href="http://tortoisesvn.net/">TortoiseSVN</a> and that is about it.  Most people are looking at loads of other options, but once you use TortoiseSVN you don't need anything else, it only takes about a day, maybe two to realise this.  Without hyperbole I can say TortoiseSVN ranks right up there as one of the greatest gifts to developers ever made.</p>
+<p>To make it even more useful though I did a little work to integrate it into Visual Studio.NET (2003 and 2005).  It is actually really simple to do because TortoiseSVN provides us with a commandline interface that can display the dialogs.  In the next couple of days I will give complete instructions how to set this up and even describe how to set it all up on a toolbar like I currently have it.  I'll also cover all the clients I checked out in the course of the migration.</p></div>
+	
+        <hr>
+
+    </div>
+        </div>
+        
+        <div class="span3">
+
+            <div class="well" style="padding: 8px 0; background-color: #FBFBFB;">
+            <ul class="nav nav-list">
+                <li class="nav-header"> 
+                Site
+                </li>
+            
+                <li><a href="http://www.fragmentedmemory.com/archives.html">Archives</a>
+                <li><a href="http://www.fragmentedmemory.com/tags.html">Tags</a>
+
+
+
+                <li><a href="http://www.fragmentedmemory.com/feed/index.xml" rel="alternate">Atom feed</a></li>
+
+            </ul>
+            </div>
+
+
+            <div class="well" style="padding: 8px 0; background-color: #FBFBFB;">
+            <ul class="nav nav-list">
+                <li class="nav-header"> 
+                Categories
+                </li>
+                
+                <li><a href="http://www.fragmentedmemory.com/category/misc.html">misc</a></li>
+                   
+            </ul>
+            </div>
+
+
+
+
+            <div class="social">
+            <div class="well" style="padding: 8px 0; background-color: #FBFBFB;">
+            <ul class="nav nav-list">
+                <li class="nav-header"> 
+                Social
+                </li>
+           
+                <li><a href="http://www.fragmentedmemory.com/feed/">rss</a></li>
+                <li><a href="https://github.com/garrybodsworth">github-alt</a></li>
+                <li><a href="https://twitter.com/garrybodsworth">twitter</a></li>
+                <li><a href="https://uk.linkedin.com/in/garrybodsworth">linkedin</a></li>
+                <li><a href="http://stackoverflow.com/cv/garrybodsworth">stack-overflow</a></li>
+                <li><a href="http://pinboard.in/u:garrybodsworth">pinboard</a></li>
+            </ul>
+            </div>
+            </div>
+
+        </div>  
+    </div>     </div> 
+<footer>
+<br />
+<p><a href="http://www.fragmentedmemory.com">Fragmented Memory</a> &copy; Garry Bodsworth 2014</p>
+</footer>
+
+</div> <!-- /container -->
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+<script src="http://www.fragmentedmemory.com/theme/bootstrap-collapse.js"></script>
+ 
+</body>
+</html>

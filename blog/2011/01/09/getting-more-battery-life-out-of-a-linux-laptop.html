@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Fragmented Memory</title>
+    <meta name="description" content="">
+    <meta name="author" content="Garry Bodsworth">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+    <!--[if lt IE 9]>
+    <script src="http://www.fragmentedmemory.com/theme/html5.js"></script>
+    <![endif]-->
+
+    <!-- Le styles -->
+    <link href="http://www.fragmentedmemory.com/theme/bootstrap.min.css" rel="stylesheet">
+    <link href="http://www.fragmentedmemory.com/theme/bootstrap.min.responsive.css" rel="stylesheet">
+    <link href="http://www.fragmentedmemory.com/theme/local.css" rel="stylesheet">
+    <link href="http://www.fragmentedmemory.com/theme/pygments.css" rel="stylesheet">
+
+    <!-- So Firefox can bookmark->"abo this site" -->
+        <link href="http://www.fragmentedmemory.com/feed/index.xml" rel="alternate" title="Fragmented Memory" type="application/atom+xml">
+
+</head>
+
+<body>
+
+<div class="navbar">
+    <div class="navbar-inner">
+    <div class="container">
+
+         <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+             <span class="icon-bar"></span>
+             <span class="icon-bar"></span>
+             <span class="icon-bar"></span>
+         </a>
+
+        <a class="brand" href="http://www.fragmentedmemory.com">Fragmented Memory</a>
+
+        <div class="nav-collapse">
+        <ul class="nav">
+            
+            <li><a href="http://www.fragmentedmemory.com/pages/about.html">About</a></li>
+            <li><a href="http://www.fragmentedmemory.com/pages/cv.html">CV</a></li>
+        </ul>
+        </div>
+        
+    </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="content">
+    <div class="row">
+
+        <div class="span9">
+    <div class='article'>
+        <div class="content-title">
+            <h1>Getting More Battery Life Out Of A Linux Laptop</h1>
+Sun 09 January 2011
+
+by <a class="url fn" href="http://www.fragmentedmemory.com/author/garry-bodsworth.html">Garry Bodsworth</a>
+ 
+
+
+        </div>
+	
+        <div><p>On my ASUS UL20A out of the box power management is pretty good but it still does not reach the heady climbs of Windows.  In running <a href="http://www.lesswatts.org/projects/powertop/">powertop</a> it gave a lot of useful suggestions like SATA, soundcard and USB, but when you apply these you only get it for that session.  You need some way of making these power saving settings permanent.</p>
+<p>Here are a few power management scripts that have increased my battery life by about 20-40% as a rough estimate.  The best way to increase battery life dramatically is to reduce the brightness of your monitor which obviously diminishes the usefulness of your display at a certain point.</p>
+<p>Here are the files you need to create (all derived from <a href="http://ubuntuforums.org/showthread.php?t=1326333">this forum post</a>).</p>
+<p><strong>vm_dirty_writeback</strong><br />
+`<br />
+[sourcecode language="bash"]<br /></p>
+<h1>!/bin/sh</p></h1>
+<p><p>path_dwc="/proc/sys/vm/dirty_writeback_centisecs"<br />
+val=500</p>
+<p>case "$1" in<br />
+    true)<br />
+        echo "<strong>VM dirty writeback 15 seconds"<br />
+        val=1500<br />
+        ;;<br />
+    false)<br />
+        echo "</strong>VM dirty writeback 5 seconds"<br />
+        val=500<br />
+        ;;<br />
+esac</p>
+<p># 5 seconds on AC, 15 seconds on battery</p>
+<p>if [ -w "$path_dwc" ] ; then<br />
+    echo $val &gt; $path_dwc<br />
+fi</p>
+<p>exit 0<br />
+[/sourcecode]<br />
+`</p>
+<p><strong>link_pm_policy</strong><br />
+`<br />
+[sourcecode language="bash"]<br /></p>
+<h1>!/bin/sh</p></h1>
+<p><p>path_host0="/sys/class/scsi_host/host0/link_power_management_policy"<br />
+path_host1="/sys/class/scsi_host/host1/link_power_management_policy"<br />
+path_host2="/sys/class/scsi_host/host2/link_power_management_policy"<br />
+path_host3="/sys/class/scsi_host/host3/link_power_management_policy"<br />
+val=max_performance</p>
+<p>case "$1" in<br />
+    true)<br />
+        echo "<strong>lpm policy powersave ON"<br />
+        val=min_power<br />
+        ;;<br />
+    false)<br />
+        echo "</strong>lpm policy powersave OFF"<br />
+        val=max_performance<br />
+        ;;<br />
+esac</p>
+<p># max_performance on AC min_power on battery</p>
+<p>if [ -w "$path_host0" ] ; then<br />
+    echo $val &gt; $path_host0<br />
+fi</p>
+<p>if [ -w "$path_host1" ] ; then<br />
+    echo $val &gt; $path_host1<br />
+fi</p>
+<p>if [ -w "$path_host2" ] ; then<br />
+    echo $val &gt; $path_host2<br />
+fi</p>
+<p>if [ -w "$path_host3" ] ; then<br />
+    echo $val &gt; $path_host3<br />
+fi</p>
+<p>exit 0<br />
+[/sourcecode]<br />
+`</p>
+<p><strong>snd_suspend</strong><br />
+`<br />
+[sourcecode language="bash"]<br /></p>
+<h1>!/bin/sh</p></h1>
+<p><p>path_dwc="/sys/module/snd_hda_intel/parameters/power_save"<br />
+val=1</p>
+<p>case "$1" in<br />
+    true)<br />
+        echo "<strong>Intel HD sound suspend"<br />
+        val=1<br />
+        ;;<br />
+    false)<br />
+        echo "</strong>Intel HD sound on power"<br />
+        val=0<br />
+        ;;<br />
+esac</p>
+<p># 5 seconds on AC, 15 seconds on battery</p>
+<p>if [ -w "$path_dwc" ] ; then<br />
+    echo $val &gt; $path_dwc<br />
+fi</p>
+<p>exit 0<br />
+[/sourcecode]<br />
+`</p>
+<p><strong>network_powersave</strong><br />
+`<br />
+[sourcecode language="bash"]<br /></p>
+<h1>!/bin/sh</p></h1>
+<p><p>if [ "$1" = "true" ]; then<br />
+            iwconfig wlan0 power on<br />
+fi</p>
+<p>if [ "$1" = "false" ]; then<br />
+            iwconfig wlan0 power off<br />
+fi</p>
+<p>exit 0<br />
+[/sourcecode]<br />
+`</p>
+<p><strong>usb_autosuspend</strong><br />
+`<br />
+[sourcecode language="bash"]<br /></p>
+<h1>!/bin/bash<br /></h1>
+<p>if [ "$1" = "true" ]; then</p>
+<p>  for i in /sys/bus/usb/devices/<em>/power/level; do<br />
+    [ "$(cat $i)" = "auto" ] &amp;&amp; continue<br />
+    echo "auto" &gt; $i<br />
+  done</p>
+<p>  for i in /sys/bus/usb/devices/</em>/power/autosuspend; do<br />
+    [ "$(cat $i)" -ge 0 2&gt;/dev/null ] &amp;&amp; continue<br />
+    echo "2" &gt; $i<br />
+  done</p>
+<p>fi<br />
+[/sourcecode]<br />
+`</p>
+<p>Then do:</p>
+<ul>
+<li>Put all the files above in a directory and cd into it.</li>
+<li>chmod 755 *</li>
+<li>sudo install * /usr/lib/pm-utils/power.d/</li>
+<li>Do a reboot here.</li>
+</ul>
+<p>You can check how it is running by looking at the log in /var/log/pm-powersave.log</p></div>
+	
+        <hr>
+
+    </div>
+        </div>
+        
+        <div class="span3">
+
+            <div class="well" style="padding: 8px 0; background-color: #FBFBFB;">
+            <ul class="nav nav-list">
+                <li class="nav-header"> 
+                Site
+                </li>
+            
+                <li><a href="http://www.fragmentedmemory.com/archives.html">Archives</a>
+                <li><a href="http://www.fragmentedmemory.com/tags.html">Tags</a>
+
+
+
+                <li><a href="http://www.fragmentedmemory.com/feed/index.xml" rel="alternate">Atom feed</a></li>
+
+            </ul>
+            </div>
+
+
+            <div class="well" style="padding: 8px 0; background-color: #FBFBFB;">
+            <ul class="nav nav-list">
+                <li class="nav-header"> 
+                Categories
+                </li>
+                
+                <li><a href="http://www.fragmentedmemory.com/category/misc.html">misc</a></li>
+                   
+            </ul>
+            </div>
+
+
+
+
+            <div class="social">
+            <div class="well" style="padding: 8px 0; background-color: #FBFBFB;">
+            <ul class="nav nav-list">
+                <li class="nav-header"> 
+                Social
+                </li>
+           
+                <li><a href="http://www.fragmentedmemory.com/feed/">rss</a></li>
+                <li><a href="https://github.com/garrybodsworth">github-alt</a></li>
+                <li><a href="https://twitter.com/garrybodsworth">twitter</a></li>
+                <li><a href="https://uk.linkedin.com/in/garrybodsworth">linkedin</a></li>
+                <li><a href="http://stackoverflow.com/cv/garrybodsworth">stack-overflow</a></li>
+                <li><a href="http://pinboard.in/u:garrybodsworth">pinboard</a></li>
+            </ul>
+            </div>
+            </div>
+
+        </div>  
+    </div>     </div> 
+<footer>
+<br />
+<p><a href="http://www.fragmentedmemory.com">Fragmented Memory</a> &copy; Garry Bodsworth 2014</p>
+</footer>
+
+</div> <!-- /container -->
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+<script src="http://www.fragmentedmemory.com/theme/bootstrap-collapse.js"></script>
+ 
+</body>
+</html>

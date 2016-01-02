@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Fragmented Memory</title>
+    <meta name="description" content="">
+    <meta name="author" content="Garry Bodsworth">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+    <!--[if lt IE 9]>
+    <script src="http://www.fragmentedmemory.com/theme/html5.js"></script>
+    <![endif]-->
+
+    <!-- Le styles -->
+    <link href="http://www.fragmentedmemory.com/theme/bootstrap.min.css" rel="stylesheet">
+    <link href="http://www.fragmentedmemory.com/theme/bootstrap.min.responsive.css" rel="stylesheet">
+    <link href="http://www.fragmentedmemory.com/theme/local.css" rel="stylesheet">
+    <link href="http://www.fragmentedmemory.com/theme/pygments.css" rel="stylesheet">
+
+    <!-- So Firefox can bookmark->"abo this site" -->
+        <link href="http://www.fragmentedmemory.com/feed/index.xml" rel="alternate" title="Fragmented Memory" type="application/atom+xml">
+
+</head>
+
+<body>
+
+<div class="navbar">
+    <div class="navbar-inner">
+    <div class="container">
+
+         <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+             <span class="icon-bar"></span>
+             <span class="icon-bar"></span>
+             <span class="icon-bar"></span>
+         </a>
+
+        <a class="brand" href="http://www.fragmentedmemory.com">Fragmented Memory</a>
+
+        <div class="nav-collapse">
+        <ul class="nav">
+            
+            <li><a href="http://www.fragmentedmemory.com/pages/about.html">About</a></li>
+            <li><a href="http://www.fragmentedmemory.com/pages/cv.html">CV</a></li>
+        </ul>
+        </div>
+        
+    </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="content">
+    <div class="row">
+
+        <div class="span9">
+    <div class='article'>
+        <div class="content-title">
+            <h1>GUI Toolkits - In Defence Of MFC...</h1>
+Thu 07 December 2006
+
+by <a class="url fn" href="http://www.fragmentedmemory.com/author/garry-bodsworth.html">Garry Bodsworth</a>
+ 
+
+
+        </div>
+	
+        <div><p>...Or you are stuck with legacy code.</p>
+<p>I've already said that MFC isn't as bad as most diatribes make it sound.  The macros although seen as antiquated do actually make the code pretty easy to read.</p>
+<p>Well, a lot of large and mature applications use MFC as the basis of their user interface, and normally due to the time and number of developers on the application the blurring between UI and the rest of the code might be a bit fuzzy.  Some products would have had a clear design from the start to abstract the UI behind a company designed layer of abstraction, but the scary thing is most of these MFC based applications probably started using the built-in app wizard.</p>
+<p>With Microsoft trying to force everyone into .NET framework applications they start to avoid putting functionality in MFC and only allowing it through .NET.  Fortunately it is still built on the Win32 API and means writing in standard C++ all the new features will be available so long as you roll your sleeves up and dig.</p>
+<p>Since Vista will probably be the dominant Windows platform for the forseeable future if you can make your MFC application look good on that platform and look well integrated then you are good to go for another five years at least.  It would certainly be worthwhile if you would never be allowed to port your app to another language or another GUI toolkit, be it from time or cost constraints or external pressures.  The benefits would be not developing your own solution and also not having the headache of maintenance, which would be critical if the size of your team does not allow for UI type fun.  It's certainly the path of least resistance.</p>
+<p>With this in mind I decided to investigate MFC extension libraries.  There are four I found that are commercially supported.  Most of these offerings are simply a case of changing what classes you inherit from.  These libraries typically come with source code when you buy a licence.</p>
+<p><a href="http://www.codejock.com/">CodeJock XTreme ToolkitPro</a><br />This is the best out of all the ones I have had a look at.  Simply it works the smoothest, it looks the nicest and most integrated, and it provides a rich wealth of components.  Recent versions have added the Office 2007 style ribbon-bar.  The upcoming version 10.4 fixes some outstanding issues with DWM on Vista although they certainly aren't critical.  The demo version was certainly a breeze to get up and running.</p>
+<p><a href="http://www.prof-uis.com/">Prof-UIS</a><br />This looks second best.  It certainly renders as nice as the CodeJock offering and possibly is not so skinned so it can look more integrated, but when resizing the rendering can take a while to catch up and leaves black areas (this is on Vista).  Overall the rendering speed does not seem fast enough.  Still, it is a stylish toolkit.</p>
+<p><a href="http://www.bcgsoft.com/">BCGControlBarPro</a><br />I think this offering is on par with Prof-UIS, it runs okay and looks good.  This one didn't look quite right on Vista but runs fine on XP.</p>
+<p><a href="http://www.theultimatetoolbox.com/">ULTIMATE toolbox</a><br />This isn't quite as up to date with the latest features like the previous three but it seems to be well respected and seems to be the most mature.</p></div>
+	
+        <hr>
+
+    </div>
+        </div>
+        
+        <div class="span3">
+
+            <div class="well" style="padding: 8px 0; background-color: #FBFBFB;">
+            <ul class="nav nav-list">
+                <li class="nav-header"> 
+                Site
+                </li>
+            
+                <li><a href="http://www.fragmentedmemory.com/archives.html">Archives</a>
+                <li><a href="http://www.fragmentedmemory.com/tags.html">Tags</a>
+
+
+
+                <li><a href="http://www.fragmentedmemory.com/feed/index.xml" rel="alternate">Atom feed</a></li>
+
+            </ul>
+            </div>
+
+
+            <div class="well" style="padding: 8px 0; background-color: #FBFBFB;">
+            <ul class="nav nav-list">
+                <li class="nav-header"> 
+                Categories
+                </li>
+                
+                <li><a href="http://www.fragmentedmemory.com/category/misc.html">misc</a></li>
+                   
+            </ul>
+            </div>
+
+
+
+
+            <div class="social">
+            <div class="well" style="padding: 8px 0; background-color: #FBFBFB;">
+            <ul class="nav nav-list">
+                <li class="nav-header"> 
+                Social
+                </li>
+           
+                <li><a href="http://www.fragmentedmemory.com/feed/">rss</a></li>
+                <li><a href="https://github.com/garrybodsworth">github-alt</a></li>
+                <li><a href="https://twitter.com/garrybodsworth">twitter</a></li>
+                <li><a href="https://uk.linkedin.com/in/garrybodsworth">linkedin</a></li>
+                <li><a href="http://stackoverflow.com/cv/garrybodsworth">stack-overflow</a></li>
+                <li><a href="http://pinboard.in/u:garrybodsworth">pinboard</a></li>
+            </ul>
+            </div>
+            </div>
+
+        </div>  
+    </div>     </div> 
+<footer>
+<br />
+<p><a href="http://www.fragmentedmemory.com">Fragmented Memory</a> &copy; Garry Bodsworth 2014</p>
+</footer>
+
+</div> <!-- /container -->
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+<script src="http://www.fragmentedmemory.com/theme/bootstrap-collapse.js"></script>
+ 
+</body>
+</html>

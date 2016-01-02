@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Fragmented Memory</title>
+    <meta name="description" content="">
+    <meta name="author" content="Garry Bodsworth">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+    <!--[if lt IE 9]>
+    <script src="http://www.fragmentedmemory.com/theme/html5.js"></script>
+    <![endif]-->
+
+    <!-- Le styles -->
+    <link href="http://www.fragmentedmemory.com/theme/bootstrap.min.css" rel="stylesheet">
+    <link href="http://www.fragmentedmemory.com/theme/bootstrap.min.responsive.css" rel="stylesheet">
+    <link href="http://www.fragmentedmemory.com/theme/local.css" rel="stylesheet">
+    <link href="http://www.fragmentedmemory.com/theme/pygments.css" rel="stylesheet">
+
+    <!-- So Firefox can bookmark->"abo this site" -->
+        <link href="http://www.fragmentedmemory.com/feed/index.xml" rel="alternate" title="Fragmented Memory" type="application/atom+xml">
+
+</head>
+
+<body>
+
+<div class="navbar">
+    <div class="navbar-inner">
+    <div class="container">
+
+         <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+             <span class="icon-bar"></span>
+             <span class="icon-bar"></span>
+             <span class="icon-bar"></span>
+         </a>
+
+        <a class="brand" href="http://www.fragmentedmemory.com">Fragmented Memory</a>
+
+        <div class="nav-collapse">
+        <ul class="nav">
+            
+            <li><a href="http://www.fragmentedmemory.com/pages/about.html">About</a></li>
+            <li><a href="http://www.fragmentedmemory.com/pages/cv.html">CV</a></li>
+        </ul>
+        </div>
+        
+    </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="content">
+    <div class="row">
+
+        <div class="span9">
+    <div class='article'>
+        <div class="content-title">
+            <h1>TortoiseSVN Visual Studio Integration</h1>
+Wed 09 July 2008
+
+by <a class="url fn" href="http://www.fragmentedmemory.com/author/garry-bodsworth.html">Garry Bodsworth</a>
+ 
+
+
+        </div>
+	
+        <div><p>I developed this Visual Studio integration whilst migrating a previous company (NC Graphics) from Visual SourceSafe to the brave new world of <a href="http://subversion.tigris.org/">Subversion</a>.  Developing is a bit of a strong word since it is only a settings file for Visual Studio, but it does the job admirably in a non-intrusive way and has no performance effects at all on the IDE.</p>
+<p>The settings file gives you a new toolbar, a new menu, and new items on the context menus in the solution view.  You get some nice <a href="http://tortoisesvn.net/">TortoiseSVN</a> standard icons to make it even easier.</p>
+<p>This all works with Visual Studio 2005 and 2008 (and even the Express Editions), along with a standard installation of TortoiseSVN.  Unless you want to edit the commandline in the External Tools I recommend installing TortoiseSVN to the default location.</p>
+<p>It&#8217;s quick to set up, just go to your &#8220;Tools&#8221; menu and choose &#8220;Import and Export Settings&#8221; and follow the instructions. Ensure the tick box for which settings to import are all ticked.  If the settings don&#8217;t work first time, try again, as Visual Studio can be a bit flaky when loading.  It will replace your External Tools because they have to be stored in the correct numbered slot due to the way they are implemented in Visual Studio.</p>
+<p>Unfortunately renaming is well beyond the external tools implementation I have used.  TortoiseSVN 1.5 does have some additional functionality to rebuild the links for renamed files which is really useful.</p>
+<p><a href="http://upload.programmerslog.com/subversion.zip">Download Here</a></p>
+<div class="imageframe alignleft">
+  <a title="Subversion Toolbar" rel="lightbox[pics4]" href="http://upload.programmerslog.com/toolbar.png"><img class="attachment wp-att-5" src="http://upload.programmerslog.com/toolbar.png" alt="Subversion Toolbar" /></a></p> <p>
+    <strong>Supported TortoiseSVN operations</strong>
+  </p>
+
+  <p>
+    The following Subversion/TortoiseSVN features are covered in the integration:
+  </p>
+
+  <ul>
+    <li>
+      <em>Commit</em> &#8211; Commit the files to the repository
+    </li>
+    <li>
+      <em>Update</em> &#8211; Update the current working version
+    </li>
+    <li>
+      <em>History</em> &#8211; Get the history for the selected file
+    </li>
+    <li>
+      <em>Diff</em> &#8211; Get the diff compared to the base version
+    </li>
+    <li>
+      <em>Blame</em> &#8211; Find out who committed the crimes in the file
+    </li>
+    <li>
+      <em>Revert</em> &#8211; Undo local changes
+    </li>
+    <li>
+      <em>Modifications</em> &#8211; Check to see if any files have been modified
+    </li>
+    <li>
+      <em>Edit Conflicts</em> &#8211; Edit the conflicts that arise from merging/updating
+    </li>
+    <li>
+      <em>Resolve</em> &#8211; Mark the file as resolved for conflicts
+    </li>
+    <li>
+      <em>Repository</em> &#8211; View the repository on the server
+    </li>
+    <li>
+      <em>Project History</em> &#8211; Get the history of the entire project
+    </li>
+    <li>
+      <em>Add Solution</em> &#8211; Add the solution being edited to source control
+    </li>
+    <li>
+      <em>Branch/Tag</em> &#8211; Perform a branch or tag on the current working copy
+    </li>
+    <li>
+      <em>Settings</em> &#8211; Set up TortoiseSVN
+    </li>
+  </ul>
+
+  <p>
+    <strong>Files In The Distribution</strong>
+  </p>
+
+  <p>
+    <strong>SubversionMenu.vssettings</strong>
+  </p>
+
+  <p>
+    This is a settings file for Visual Studio 2008.  This adds a menu to the IDE for TortoiseSVN with the appropriate icons.
+  </p>
+
+  <p>
+    <strong>SubversionMenuToolbar.vssettings</strong>
+  </p>
+
+  <p>
+    This is a settings file for Visual Studio 2008.  This adds a menu for TortoiseSVN as well as a toolbar using the appropriate icons.
+  </p>
+
+  <p>
+    <strong>SubversionMenuToolbarContexts.vssettings</strong>
+  </p>
+
+  <p>
+    This is a settings file for Visual Studio 2008.  This adds not only the menu and toolbar, but also adds the items to the appropriate context menus for files and solutions.
+  </p>
+
+  <p>
+    <strong>SubversionMenuToolbarContextsVS2005.vssettings</strong>
+  </p>
+
+  <p>
+    This provides the menu, toolbar and context menus for TortoiseSVN in Visual Studio 2005.
+  </p>
+
+  <p>
+    <strong>SubversionInstall.vbs</strong>
+  </p>
+
+  <p>
+    Use this file if you want the external tools only.  These will be appended to the list, otherwise use the settings files.  Don&#8217;t use in addition to the settings file.
+  </p>
+
+  <p>
+    This simply installs a set of External Tools into Visual Studio for common TortoiseSVN operations. It can be installed on versions above Visual Studio.NET (version 7.0). Currently it is configured for Visual Studio 2008 (version 9.0), to make it work on other versions change the variable &#8220;strVisualStudioVersionNumber&#8221; as outlined in the file&#8217;s comments.
+  </p>
+
+  <p>
+    Also, if you have installed TortoiseSVN in a non-default location, make sure that you change the variable &#8220;strTortoiseSVNBin&#8221; to the correct binary path. Make sure that the backslashes are doubled up.
+  </p>
+
+  <p>
+    <a href="http://upload.programmerslog.com/subversion.zip">Download Here</a>
+  </p>
+</div>
+
+<p><a rel="license" href="http://creativecommons.org/licenses/by/3.0/"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by/3.0/88x31.png" /></a><br />
+This work is licenced under a <a rel="license" href="http://creativecommons.org/licenses/by/3.0/">Creative Commons Licence</a>.</p></div>
+	
+        <hr>
+
+    </div>
+        </div>
+        
+        <div class="span3">
+
+            <div class="well" style="padding: 8px 0; background-color: #FBFBFB;">
+            <ul class="nav nav-list">
+                <li class="nav-header"> 
+                Site
+                </li>
+            
+                <li><a href="http://www.fragmentedmemory.com/archives.html">Archives</a>
+                <li><a href="http://www.fragmentedmemory.com/tags.html">Tags</a>
+
+
+
+                <li><a href="http://www.fragmentedmemory.com/feed/index.xml" rel="alternate">Atom feed</a></li>
+
+            </ul>
+            </div>
+
+
+            <div class="well" style="padding: 8px 0; background-color: #FBFBFB;">
+            <ul class="nav nav-list">
+                <li class="nav-header"> 
+                Categories
+                </li>
+                
+                <li><a href="http://www.fragmentedmemory.com/category/misc.html">misc</a></li>
+                   
+            </ul>
+            </div>
+
+
+
+
+            <div class="social">
+            <div class="well" style="padding: 8px 0; background-color: #FBFBFB;">
+            <ul class="nav nav-list">
+                <li class="nav-header"> 
+                Social
+                </li>
+           
+                <li><a href="http://www.fragmentedmemory.com/feed/">rss</a></li>
+                <li><a href="https://github.com/garrybodsworth">github-alt</a></li>
+                <li><a href="https://twitter.com/garrybodsworth">twitter</a></li>
+                <li><a href="https://uk.linkedin.com/in/garrybodsworth">linkedin</a></li>
+                <li><a href="http://stackoverflow.com/cv/garrybodsworth">stack-overflow</a></li>
+                <li><a href="http://pinboard.in/u:garrybodsworth">pinboard</a></li>
+            </ul>
+            </div>
+            </div>
+
+        </div>  
+    </div>     </div> 
+<footer>
+<br />
+<p><a href="http://www.fragmentedmemory.com">Fragmented Memory</a> &copy; Garry Bodsworth 2014</p>
+</footer>
+
+</div> <!-- /container -->
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+<script src="http://www.fragmentedmemory.com/theme/bootstrap-collapse.js"></script>
+ 
+</body>
+</html>

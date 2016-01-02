@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Fragmented Memory</title>
+    <meta name="description" content="">
+    <meta name="author" content="Garry Bodsworth">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+    <!--[if lt IE 9]>
+    <script src="http://www.fragmentedmemory.com/theme/html5.js"></script>
+    <![endif]-->
+
+    <!-- Le styles -->
+    <link href="http://www.fragmentedmemory.com/theme/bootstrap.min.css" rel="stylesheet">
+    <link href="http://www.fragmentedmemory.com/theme/bootstrap.min.responsive.css" rel="stylesheet">
+    <link href="http://www.fragmentedmemory.com/theme/local.css" rel="stylesheet">
+    <link href="http://www.fragmentedmemory.com/theme/pygments.css" rel="stylesheet">
+
+    <!-- So Firefox can bookmark->"abo this site" -->
+        <link href="http://www.fragmentedmemory.com/feed/index.xml" rel="alternate" title="Fragmented Memory" type="application/atom+xml">
+
+</head>
+
+<body>
+
+<div class="navbar">
+    <div class="navbar-inner">
+    <div class="container">
+
+         <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+             <span class="icon-bar"></span>
+             <span class="icon-bar"></span>
+             <span class="icon-bar"></span>
+         </a>
+
+        <a class="brand" href="http://www.fragmentedmemory.com">Fragmented Memory</a>
+
+        <div class="nav-collapse">
+        <ul class="nav">
+            
+            <li><a href="http://www.fragmentedmemory.com/pages/about.html">About</a></li>
+            <li><a href="http://www.fragmentedmemory.com/pages/cv.html">CV</a></li>
+        </ul>
+        </div>
+        
+    </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="content">
+    <div class="row">
+
+        <div class="span9">
+    <div class='article'>
+        <div class="content-title">
+            <h1>GUI Toolkits - Some thoughts</h1>
+Mon 01 October 2007
+
+by <a class="url fn" href="http://www.fragmentedmemory.com/author/garry-bodsworth.html">Garry Bodsworth</a>
+ 
+
+
+        </div>
+	
+        <div><p>I mentioned a couple of posts back that I was going to put some thought into GUI subjects and maybe trying out writing a simple toolkit.</p>
+<p>I was thinking abut which way to jump with trying to write a toolkit.  First of all what should it be based on?  Should it just wrap Win32?  Cocoa?  Should it be entirely implemented on top of OpenGL from scratch?  Should it be cross-platform in design?  Just these questions could cause anyone to run away screaming.</p>
+<p>Thinking about building it on top of OpenGL I encountered a couple of interesting GUI libraries <a href="http://glui.sourceforge.net/">GLUI</a> and <a href="http://glow.sourceforge.net/">GLOW</a>.  In these projects the windows are completely rendered by OpenGL which is an interesting approach.  I suppose <a href="http://www.rawmaterialsoftware.com/juce/">Juce</a> is built from similar roots as well where it implements its own toolkits.</p>
+<p>I was thinking about writing a nice C++ wrapper for Win32 but then I started to think even Microsoft products don't use the standard widget rendering.  Then you start to think about built in custom drawn widget rendering, then you think why are you using standard widgets...</p>
+<p>The whole idea about implementing a simple GUI toolkit is an education about the design decisions and pitfalls that you can get into.  You also need to decide which subset you decide to implement first.  The problem is most toolkits go for the same 10% and that is normally as far as they get.</p>
+<p>The main idea I want to try out for an experimental GUI toolkit is some DSL (domain specific language).  What I mean is embedding a language in C++ in order to implement the user interface in a readable fashion.  It is certainly possible using modern C++ idioms as demonstrated in Boost.  I suppose the type of thing I want to do is (in some kid of C++ like pseudo code):
+<pre>
+dialog(...) +
+widget<static>("Number", sizeX, sizeY) | widget<edit>(RESIZE_X) ||
+widget<static>("Name", sizeX, sizeY)   | widget<edit>(RESIZE_X) ||
+widget<list>("Blah", sizeX, sizeY, RESIZE_XY)
+;
+toolbar() +
+button("image1", ...) |
+button("image2", ...) |
+separator() |
+button("image3", ...) |
+button("image4", ...)
+;
+</pre>
+Complete and utter insanity?  Probably, but could be fun to try out.  It would certainly be something different and would create a parallel in your source in comparison to what you would see on screen.  I don't think anything quit like it has been tried before, so feel free to steal the idea - it would save me implementing it(!)</p>
+<p>Enough rambling for today I think...</p></div>
+	
+        <hr>
+
+    </div>
+        </div>
+        
+        <div class="span3">
+
+            <div class="well" style="padding: 8px 0; background-color: #FBFBFB;">
+            <ul class="nav nav-list">
+                <li class="nav-header"> 
+                Site
+                </li>
+            
+                <li><a href="http://www.fragmentedmemory.com/archives.html">Archives</a>
+                <li><a href="http://www.fragmentedmemory.com/tags.html">Tags</a>
+
+
+
+                <li><a href="http://www.fragmentedmemory.com/feed/index.xml" rel="alternate">Atom feed</a></li>
+
+            </ul>
+            </div>
+
+
+            <div class="well" style="padding: 8px 0; background-color: #FBFBFB;">
+            <ul class="nav nav-list">
+                <li class="nav-header"> 
+                Categories
+                </li>
+                
+                <li><a href="http://www.fragmentedmemory.com/category/misc.html">misc</a></li>
+                   
+            </ul>
+            </div>
+
+
+
+
+            <div class="social">
+            <div class="well" style="padding: 8px 0; background-color: #FBFBFB;">
+            <ul class="nav nav-list">
+                <li class="nav-header"> 
+                Social
+                </li>
+           
+                <li><a href="http://www.fragmentedmemory.com/feed/">rss</a></li>
+                <li><a href="https://github.com/garrybodsworth">github-alt</a></li>
+                <li><a href="https://twitter.com/garrybodsworth">twitter</a></li>
+                <li><a href="https://uk.linkedin.com/in/garrybodsworth">linkedin</a></li>
+                <li><a href="http://stackoverflow.com/cv/garrybodsworth">stack-overflow</a></li>
+                <li><a href="http://pinboard.in/u:garrybodsworth">pinboard</a></li>
+            </ul>
+            </div>
+            </div>
+
+        </div>  
+    </div>     </div> 
+<footer>
+<br />
+<p><a href="http://www.fragmentedmemory.com">Fragmented Memory</a> &copy; Garry Bodsworth 2014</p>
+</footer>
+
+</div> <!-- /container -->
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+<script src="http://www.fragmentedmemory.com/theme/bootstrap-collapse.js"></script>
+ 
+</body>
+</html>

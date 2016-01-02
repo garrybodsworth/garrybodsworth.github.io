@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Fragmented Memory</title>
+    <meta name="description" content="">
+    <meta name="author" content="Garry Bodsworth">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+    <!--[if lt IE 9]>
+    <script src="http://www.fragmentedmemory.com/theme/html5.js"></script>
+    <![endif]-->
+
+    <!-- Le styles -->
+    <link href="http://www.fragmentedmemory.com/theme/bootstrap.min.css" rel="stylesheet">
+    <link href="http://www.fragmentedmemory.com/theme/bootstrap.min.responsive.css" rel="stylesheet">
+    <link href="http://www.fragmentedmemory.com/theme/local.css" rel="stylesheet">
+    <link href="http://www.fragmentedmemory.com/theme/pygments.css" rel="stylesheet">
+
+    <!-- So Firefox can bookmark->"abo this site" -->
+        <link href="http://www.fragmentedmemory.com/feed/index.xml" rel="alternate" title="Fragmented Memory" type="application/atom+xml">
+
+</head>
+
+<body>
+
+<div class="navbar">
+    <div class="navbar-inner">
+    <div class="container">
+
+         <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+             <span class="icon-bar"></span>
+             <span class="icon-bar"></span>
+             <span class="icon-bar"></span>
+         </a>
+
+        <a class="brand" href="http://www.fragmentedmemory.com">Fragmented Memory</a>
+
+        <div class="nav-collapse">
+        <ul class="nav">
+            
+            <li><a href="http://www.fragmentedmemory.com/pages/about.html">About</a></li>
+            <li><a href="http://www.fragmentedmemory.com/pages/cv.html">CV</a></li>
+        </ul>
+        </div>
+        
+    </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="content">
+    <div class="row">
+
+        <div class="span9">
+    <div class='article'>
+        <div class="content-title">
+            <h1>Google Open Source</h1>
+Thu 10 July 2008
+
+by <a class="url fn" href="http://www.fragmentedmemory.com/author/garry-bodsworth.html">Garry Bodsworth</a>
+ 
+
+
+        </div>
+	
+        <div><p>Recently <a href="http://www.google.com">Google</a> has been opening up more and more of its code, obviously hosting it on <a href="http://code.google.com/">Google Code</a>. I thought I&#8217;d highlight a few of them.</p>
+<p><a href="http://code.google.com/p/googletest/">Google C++ Testing Framework</a><br />
+<em>Google&#8217;s framework for writing C++ tests on a variety of platforms (Linux, Mac OS X, Windows, Windows CE, and Symbian). Based on the xUnit architecture. Supports automatic test discovery, a rich set of assertions, user-defined assertions, death tests, fatal and non-fatal failures, various options for running the tests, and XML test report generation.</em></p>
+<p>There are a number of C++ unit testing frameworks out there. A good article navigating the minefield can be read <a href="http://www.gamesfromwithin.com/articles/0412/000061.html">here</a>. Advantages of the this framework is mainly it is backed by Google, it is mature, supplies a lot of functionality, and that it is portable.</p>
+<p><a href="http://code.google.com/apis/protocolbuffers/">Protocol Buffers</a><br />
+<em>Protocol buffers are Google&#8217;s language-neutral, platform-neutral, extensible mechanism for serializing structured data – think XML, but smaller, faster, and simpler. You define how you want your data to be structured once, then you can use special generated source code to easily write and read your structured data to and from a variety of data streams and using a variety of languages – Java, C++, or Python.</em></p>
+<p>There are obviously loads of ways to serialise data, but it seems to support a number of languages and is space efficient (at least in comparison to XML). I&#8217;m not too sure how much it would offer over JSON although this does mean you don&#8217;t have to write or find some of the code yourself in the various languages.</p>
+<p><a href="http://code.google.com/p/ratproxy/">Ratproxy</a><br />
+*A semi-automated, largely passive web application security audit tool, optimized for an accurate and sensitive detection, and automatic annotation, of potential problems and security-relevant design patterns based on the observation of existing, user-initiated traffic in complex web 2.0 environments. Detects and prioritizes broad classes of security problems, such as dynamic cross-site trust model considerations, script inclusion issues, content serving problems, insufficient XSRF and XSS defenses, and much more. *</p>
+<p>I mainly included this because I like the name&#8230; But it is also a useful tool for discovering weaknesses in your website&#8217;s security. I&#8217;ve read about commercial apps that do this but not too many open-source ones, so this release from Google can only be a good thing.</p>
+<p><strong>Some other quick ones:</strong><br />
+<a href="http://code.google.com/p/dom-checker/">Browser DOM Checker</a><br />
+*A simple utility to thoroughly validate DOM, XMLHttpRequest, and cookie security restriction handling in modern web browsers. Notable features include exhaustive hierarchy crawling, cross-domain IPC system for blind write verification, page transition checks, and more. *</p>
+<p><a href="http://code.google.com/p/bunny-the-fuzzer/">Bunny the Fuzzer</a><br />
+*A closed loop, high-performance, general purpose protocol-blind fuzzer for C programs. Uses compiler-level integration to seamlessly inject precise and reliable instrumentation hooks into the traced program. These hooks enable the fuzzer to receive real-time feedback on changes to the function call path, call parameters, and return values in response to variations in input data. This architecture makes it possible to significantly improve the coverage of the testing process without a noticeable performance impact usually associated with other attempts to peek into run-time internals. *</p></div>
+	
+        <hr>
+
+    </div>
+        </div>
+        
+        <div class="span3">
+
+            <div class="well" style="padding: 8px 0; background-color: #FBFBFB;">
+            <ul class="nav nav-list">
+                <li class="nav-header"> 
+                Site
+                </li>
+            
+                <li><a href="http://www.fragmentedmemory.com/archives.html">Archives</a>
+                <li><a href="http://www.fragmentedmemory.com/tags.html">Tags</a>
+
+
+
+                <li><a href="http://www.fragmentedmemory.com/feed/index.xml" rel="alternate">Atom feed</a></li>
+
+            </ul>
+            </div>
+
+
+            <div class="well" style="padding: 8px 0; background-color: #FBFBFB;">
+            <ul class="nav nav-list">
+                <li class="nav-header"> 
+                Categories
+                </li>
+                
+                <li><a href="http://www.fragmentedmemory.com/category/misc.html">misc</a></li>
+                   
+            </ul>
+            </div>
+
+
+
+
+            <div class="social">
+            <div class="well" style="padding: 8px 0; background-color: #FBFBFB;">
+            <ul class="nav nav-list">
+                <li class="nav-header"> 
+                Social
+                </li>
+           
+                <li><a href="http://www.fragmentedmemory.com/feed/">rss</a></li>
+                <li><a href="https://github.com/garrybodsworth">github-alt</a></li>
+                <li><a href="https://twitter.com/garrybodsworth">twitter</a></li>
+                <li><a href="https://uk.linkedin.com/in/garrybodsworth">linkedin</a></li>
+                <li><a href="http://stackoverflow.com/cv/garrybodsworth">stack-overflow</a></li>
+                <li><a href="http://pinboard.in/u:garrybodsworth">pinboard</a></li>
+            </ul>
+            </div>
+            </div>
+
+        </div>  
+    </div>     </div> 
+<footer>
+<br />
+<p><a href="http://www.fragmentedmemory.com">Fragmented Memory</a> &copy; Garry Bodsworth 2014</p>
+</footer>
+
+</div> <!-- /container -->
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+<script src="http://www.fragmentedmemory.com/theme/bootstrap-collapse.js"></script>
+ 
+</body>
+</html>

@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Fragmented Memory</title>
+    <meta name="description" content="">
+    <meta name="author" content="Garry Bodsworth">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+    <!--[if lt IE 9]>
+    <script src="http://www.fragmentedmemory.com/theme/html5.js"></script>
+    <![endif]-->
+
+    <!-- Le styles -->
+    <link href="http://www.fragmentedmemory.com/theme/bootstrap.min.css" rel="stylesheet">
+    <link href="http://www.fragmentedmemory.com/theme/bootstrap.min.responsive.css" rel="stylesheet">
+    <link href="http://www.fragmentedmemory.com/theme/local.css" rel="stylesheet">
+    <link href="http://www.fragmentedmemory.com/theme/pygments.css" rel="stylesheet">
+
+    <!-- So Firefox can bookmark->"abo this site" -->
+        <link href="http://www.fragmentedmemory.com/feed/index.xml" rel="alternate" title="Fragmented Memory" type="application/atom+xml">
+
+</head>
+
+<body>
+
+<div class="navbar">
+    <div class="navbar-inner">
+    <div class="container">
+
+         <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+             <span class="icon-bar"></span>
+             <span class="icon-bar"></span>
+             <span class="icon-bar"></span>
+         </a>
+
+        <a class="brand" href="http://www.fragmentedmemory.com">Fragmented Memory</a>
+
+        <div class="nav-collapse">
+        <ul class="nav">
+            
+            <li><a href="http://www.fragmentedmemory.com/pages/about.html">About</a></li>
+            <li><a href="http://www.fragmentedmemory.com/pages/cv.html">CV</a></li>
+        </ul>
+        </div>
+        
+    </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="content">
+    <div class="row">
+
+        <div class="span9">
+    <div class='article'>
+        <div class="content-title">
+            <h1>Virtual On-Screen Keyboards On Linux</h1>
+Sun 11 July 2010
+
+by <a class="url fn" href="http://www.fragmentedmemory.com/author/garry-bodsworth.html">Garry Bodsworth</a>
+ 
+
+
+        </div>
+	
+        <div><p>With a <a href="http://thejoojoo.com">tablet</a> awaiting a better operating system I decided I had to evaluate the landscape on on-screen virtual keyboards on Linux. Obviously the ideal would be iPad/iPhone-esque, but that would be really frighteningly good, I had much lower expectations.</p>
+<p>I was not sure if the tech was there to even show the keyboards automatically when an input field was selected. GTK are well ahead of the game on this with their IMContext base class to encapsulate input mainly for complex languages or disability accessibility, but a good side-effect is the ability to hook in an on-screen keyboard when a text input is focused. In that case the on-screen keyboard needs to know about GTK in order to know when to show.</p>
+<p>I tested all these on a VM that has now run out of hard disk space thanks to having to compile lots of stuff. Most of the keyboards I completely failed to make automatically appear on the screen when a text input was selected, it was either me or them&#8230;.</p>
+<p>So in no particular order&#8230;.</p>
+<p><a href="http://matchbox-project.org/?p=1">Matchbox Keyboard</a><br />
+Some people are using this actively. It requires hacking to be able to toggle the display of it which makes it pretty much a no-go as it would always be on top of the screen. The GUI looks all right though. Some good info <a href="http://japiblog.dddgames.com/?p=15">here</a>.</p>
+<p><a href="http://homepage3.nifty.com/tsato/xvkbd/">xvkbd</a><br />
+The venerable old man of the line up. It&#8217;s been around the block and does exactly what it says on the tin. It has lots of good features and hacks (like making it appear for login windows). As far as I could see I couldn&#8217;t hook it up to the IMContext but I could be missing something.</p>
+<p><a href="http://www.gok.ca/">Gnome On-Screen Keyboard</a><br />
+The oldest GTK based one and seems to be showing its age thanks to the UI.</p>
+<p><a href="https://wiki.ubuntu.com/Accessibility/Projects/onBoard">onboard</a><br />
+This is the Ubuntu one. I couldn&#8217;t get it to automatically appear on focus. It looks OK, but seems to be lacking some features. At least it is easily hackable in Python. Some more interesting information <a href="http://www.combibo.net/articles/using_an_onscreen_keyboard_in_ubuntu/">is here</a>.</p>
+<p><a href="http://florence.sourceforge.net/english.html">Florence</a><br />
+This is the most recommended one and it is pretty good. The main pain was I had to compile it as their were no packages for it.</p>
+<p><a href="http://gitorious.org/fvkbd">fvkbd</a><br />
+This looks fairly promising as it is very skinnable on configurable. Unfortunately I could not work out how to hide or autohide the keyboard. Also this had no packages and requires compiling. This provides the basis for the OLPC virtual keyboard test and also the Meego/Maemo virtual keyboard.</p>
+<p><a href="http://live.gnome.org/Caribou">Caribou</a><br />
+This is the virtual keyboard testbed for Gnome 3.0. It is written in Python and needs packaging so I had to compile it. This was the one that got closest to what I want because it worked. It shows a small keyboard by the input with current focus. In my VM I had to disable the Clutter code for whizzy animations before getting it to work.</p>
+<p>I&#8217;ve probably missed some but there are only so many not quite ready applications you can test before going completely and utterly bonkers.</p>
+<p>Another thing I discovered was Google Chromium&#8217;s addressbar is accessibility implemented, but none of the content in webpages is. Firefox on the other hand and anything WebkitGTK based (like Epiphany) all work properly with their accessibility. Part of the Chrome problem is the multiprocess rendering and that they have not prioritised accessibility according the bug reports I have read.</p></div>
+	
+        <hr>
+
+    </div>
+        </div>
+        
+        <div class="span3">
+
+            <div class="well" style="padding: 8px 0; background-color: #FBFBFB;">
+            <ul class="nav nav-list">
+                <li class="nav-header"> 
+                Site
+                </li>
+            
+                <li><a href="http://www.fragmentedmemory.com/archives.html">Archives</a>
+                <li><a href="http://www.fragmentedmemory.com/tags.html">Tags</a>
+
+
+
+                <li><a href="http://www.fragmentedmemory.com/feed/index.xml" rel="alternate">Atom feed</a></li>
+
+            </ul>
+            </div>
+
+
+            <div class="well" style="padding: 8px 0; background-color: #FBFBFB;">
+            <ul class="nav nav-list">
+                <li class="nav-header"> 
+                Categories
+                </li>
+                
+                <li><a href="http://www.fragmentedmemory.com/category/misc.html">misc</a></li>
+                   
+            </ul>
+            </div>
+
+
+
+
+            <div class="social">
+            <div class="well" style="padding: 8px 0; background-color: #FBFBFB;">
+            <ul class="nav nav-list">
+                <li class="nav-header"> 
+                Social
+                </li>
+           
+                <li><a href="http://www.fragmentedmemory.com/feed/">rss</a></li>
+                <li><a href="https://github.com/garrybodsworth">github-alt</a></li>
+                <li><a href="https://twitter.com/garrybodsworth">twitter</a></li>
+                <li><a href="https://uk.linkedin.com/in/garrybodsworth">linkedin</a></li>
+                <li><a href="http://stackoverflow.com/cv/garrybodsworth">stack-overflow</a></li>
+                <li><a href="http://pinboard.in/u:garrybodsworth">pinboard</a></li>
+            </ul>
+            </div>
+            </div>
+
+        </div>  
+    </div>     </div> 
+<footer>
+<br />
+<p><a href="http://www.fragmentedmemory.com">Fragmented Memory</a> &copy; Garry Bodsworth 2014</p>
+</footer>
+
+</div> <!-- /container -->
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+<script src="http://www.fragmentedmemory.com/theme/bootstrap-collapse.js"></script>
+ 
+</body>
+</html>

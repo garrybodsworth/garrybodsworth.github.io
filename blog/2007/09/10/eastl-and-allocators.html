@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Fragmented Memory</title>
+    <meta name="description" content="">
+    <meta name="author" content="Garry Bodsworth">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+    <!--[if lt IE 9]>
+    <script src="http://www.fragmentedmemory.com/theme/html5.js"></script>
+    <![endif]-->
+
+    <!-- Le styles -->
+    <link href="http://www.fragmentedmemory.com/theme/bootstrap.min.css" rel="stylesheet">
+    <link href="http://www.fragmentedmemory.com/theme/bootstrap.min.responsive.css" rel="stylesheet">
+    <link href="http://www.fragmentedmemory.com/theme/local.css" rel="stylesheet">
+    <link href="http://www.fragmentedmemory.com/theme/pygments.css" rel="stylesheet">
+
+    <!-- So Firefox can bookmark->"abo this site" -->
+        <link href="http://www.fragmentedmemory.com/feed/index.xml" rel="alternate" title="Fragmented Memory" type="application/atom+xml">
+
+</head>
+
+<body>
+
+<div class="navbar">
+    <div class="navbar-inner">
+    <div class="container">
+
+         <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+             <span class="icon-bar"></span>
+             <span class="icon-bar"></span>
+             <span class="icon-bar"></span>
+         </a>
+
+        <a class="brand" href="http://www.fragmentedmemory.com">Fragmented Memory</a>
+
+        <div class="nav-collapse">
+        <ul class="nav">
+            
+            <li><a href="http://www.fragmentedmemory.com/pages/about.html">About</a></li>
+            <li><a href="http://www.fragmentedmemory.com/pages/cv.html">CV</a></li>
+        </ul>
+        </div>
+        
+    </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="content">
+    <div class="row">
+
+        <div class="span9">
+    <div class='article'>
+        <div class="content-title">
+            <h1>EASTL And Allocators</h1>
+Mon 10 September 2007
+
+by <a class="url fn" href="http://www.fragmentedmemory.com/author/garry-bodsworth.html">Garry Bodsworth</a>
+ 
+
+
+        </div>
+	
+        <div><p>A few months back a document appeared on the Internet about <a href="http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2007/n2271.html">EASTL</a>.  It details alterations to the STL that Electronic Arts implemented (as well as their own version of the STL) to meet its requirements for standard containers and algorithms.  It has been published on the <a href="http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2007/n2363.html">C++ standardisation website</a> as a reference paper.</p>
+<p>Some of the ideas in it are very interesting and some are a little naive and lack generality, but the document itself is thoroughly worth it.  The main thrust of the document is efficiency in terms of memory and speed.  This amounts to better allocators, better control of low-level memory (alignment and so on) and intrusive type containers.</p>
+<p>It covers the deficiencies of std::allocator for EA's requirements like the copy semantics and the lack of alignment controls.  It has got me thinking there is a lack of a generic allocator framework that makes it easier for writing pluggable allocators that could be thread local, or global, or thread-safe, or instance-based.  But I'll come back to that later.</p>
+<p>vector bool is not a bit-based array but there is an implementation of a bitvector that gives the same behaviour.  That makes sense to me!</p>
+<p>The ability to resize a containers capacity to a smaller size and for the storage to respect that as most STL implementations do not do this.  Means memory can be returned back to the system.</p>
+<p>Apparently the implementation is easy to debug through a simple debugger with no overhead.  I don't know whether that is the case in reality but it certainly has its appeal, but I'm sure it would make plenty of sense in open-source implementations meaning there would be more people able to contribute.</p>
+<p>Apparently some compilers struggle with inlining so the implementation reduces code complexity to allow less able compilers to inline more.</p>
+<p>A lot of the motivation behind this is cross-platform in nature and part of that is that the platforms can be limited in memory and processing power.  Some of the ideas brought up are possible in the current STL framework with some minor jumping through hoops, fortunately EA expended the manpower on implementing exactly what they want.</p>
+<p>Now back to the allocators...  The ideas make <a href="http://www.ogre3d.org/phpBB2/viewtopic.php?t=27220&postdays=0&postorder=asc&highlight=eastl&start=25"></a>a lot of sense in this document and I wonder how many are available to coders from the current STL framework.  One thing that requires clarity is what the alignment needs in order to align, by this I mean is it easily determined from the type you are using or is it a combination of that and the machine type.  If so some of the work could be done via type traits like those available through Boost.</p>
+<p>A lot of the allocator type suggestions do not even have an easy to use reference implementation in the open-source world.  Allocators are so important but there is a lack of availability of those apart from simple HOWTOs for writing allocators.</p>
+<p>This has got me thinking about actually writing some.  Coming up with a good framework has lead me to reading big stacks of articles online about allocators, and I think there is a good way forward but 'll leave that to another post.</p>
+<p>And there is some additional discussion on the Ogre forums <a href="http://www.ogre3d.org/phpBB2/viewtopic.php?t=35473&view=previous&sid=ce193664e1d3d7c4af509e6f4e2718c6">here</a> and <a href="http://www.ogre3d.org/phpBB2/viewtopic.php?p=225568&sid=ce193664e1d3d7c4af509e6f4e2718c6">here</a>.</p></div>
+	
+        <hr>
+
+    </div>
+        </div>
+        
+        <div class="span3">
+
+            <div class="well" style="padding: 8px 0; background-color: #FBFBFB;">
+            <ul class="nav nav-list">
+                <li class="nav-header"> 
+                Site
+                </li>
+            
+                <li><a href="http://www.fragmentedmemory.com/archives.html">Archives</a>
+                <li><a href="http://www.fragmentedmemory.com/tags.html">Tags</a>
+
+
+
+                <li><a href="http://www.fragmentedmemory.com/feed/index.xml" rel="alternate">Atom feed</a></li>
+
+            </ul>
+            </div>
+
+
+            <div class="well" style="padding: 8px 0; background-color: #FBFBFB;">
+            <ul class="nav nav-list">
+                <li class="nav-header"> 
+                Categories
+                </li>
+                
+                <li><a href="http://www.fragmentedmemory.com/category/misc.html">misc</a></li>
+                   
+            </ul>
+            </div>
+
+
+
+
+            <div class="social">
+            <div class="well" style="padding: 8px 0; background-color: #FBFBFB;">
+            <ul class="nav nav-list">
+                <li class="nav-header"> 
+                Social
+                </li>
+           
+                <li><a href="http://www.fragmentedmemory.com/feed/">rss</a></li>
+                <li><a href="https://github.com/garrybodsworth">github-alt</a></li>
+                <li><a href="https://twitter.com/garrybodsworth">twitter</a></li>
+                <li><a href="https://uk.linkedin.com/in/garrybodsworth">linkedin</a></li>
+                <li><a href="http://stackoverflow.com/cv/garrybodsworth">stack-overflow</a></li>
+                <li><a href="http://pinboard.in/u:garrybodsworth">pinboard</a></li>
+            </ul>
+            </div>
+            </div>
+
+        </div>  
+    </div>     </div> 
+<footer>
+<br />
+<p><a href="http://www.fragmentedmemory.com">Fragmented Memory</a> &copy; Garry Bodsworth 2014</p>
+</footer>
+
+</div> <!-- /container -->
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+<script src="http://www.fragmentedmemory.com/theme/bootstrap-collapse.js"></script>
+ 
+</body>
+</html>

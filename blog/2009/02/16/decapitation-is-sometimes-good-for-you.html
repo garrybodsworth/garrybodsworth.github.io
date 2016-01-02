@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Fragmented Memory</title>
+    <meta name="description" content="">
+    <meta name="author" content="Garry Bodsworth">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+    <!--[if lt IE 9]>
+    <script src="http://www.fragmentedmemory.com/theme/html5.js"></script>
+    <![endif]-->
+
+    <!-- Le styles -->
+    <link href="http://www.fragmentedmemory.com/theme/bootstrap.min.css" rel="stylesheet">
+    <link href="http://www.fragmentedmemory.com/theme/bootstrap.min.responsive.css" rel="stylesheet">
+    <link href="http://www.fragmentedmemory.com/theme/local.css" rel="stylesheet">
+    <link href="http://www.fragmentedmemory.com/theme/pygments.css" rel="stylesheet">
+
+    <!-- So Firefox can bookmark->"abo this site" -->
+        <link href="http://www.fragmentedmemory.com/feed/index.xml" rel="alternate" title="Fragmented Memory" type="application/atom+xml">
+
+</head>
+
+<body>
+
+<div class="navbar">
+    <div class="navbar-inner">
+    <div class="container">
+
+         <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+             <span class="icon-bar"></span>
+             <span class="icon-bar"></span>
+             <span class="icon-bar"></span>
+         </a>
+
+        <a class="brand" href="http://www.fragmentedmemory.com">Fragmented Memory</a>
+
+        <div class="nav-collapse">
+        <ul class="nav">
+            
+            <li><a href="http://www.fragmentedmemory.com/pages/about.html">About</a></li>
+            <li><a href="http://www.fragmentedmemory.com/pages/cv.html">CV</a></li>
+        </ul>
+        </div>
+        
+    </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="content">
+    <div class="row">
+
+        <div class="span9">
+    <div class='article'>
+        <div class="content-title">
+            <h1>Decapitation Is Sometimes Good For You</h1>
+Mon 16 February 2009
+
+by <a class="url fn" href="http://www.fragmentedmemory.com/author/garry-bodsworth.html">Garry Bodsworth</a>
+ 
+
+
+        </div>
+	
+        <div><p>Lots of people out there are looking for headless web browsers to generate things like thumbnails. In the end most people either roll their own or cheat (use xvfb and grab the pixmap). You could use <a href="http://labs.trolltech.com/blogs/2009/01/15/capturing-web-pages/">Qt and grab the image</a>, but it still requires xvfb, even if you write your own rendering backend (I assume for font stuff). There are a number of ways to solve the headless rendering problem, unfortunately not all of them are ideal.</p>
+<p>For me I am looking at <a href="http://code.staikos.net/cgi-bin/gitweb.cgi?p=webkit;a=shortlog;h=kenneth/efl-port">EFL WebKit</a> as the best solution but it is not near maturity and because I quite like the way Enlightenment Foundation Libraries seem to work.</p>
+<p>The latest possible solution(s) are born from the <a href="http://clutter-project.org/">Clutter Project</a> which is now under the guidance of Intel. There is <a href="http://trac.webkit.org/wiki/clutter">Clutter Webkit</a> which provides a Clutter Actor for rendering webpages essentially to a Cairo surface on the 3D surface. I got it to compile last night and ran a test program but it was pretty slow.</p>
+<p>The other one is <a href="http://git.o-hand.com/cgit.cgi/mozilla-headless/">mozilla-headless</a> which looks really interesting by providing a Mozilla library that renders to a Cairo surface. <a href="http://chrislord.net/">Chris Lord</a> the main developer on this made presentation to FOSDEM available <a href="http://chrislord.net/files/fosdem-09-slides.odp">here</a>. There is also a video of it in action <a href="http://chrislord.net/images/mozilla/mozilla-magic.png">here</a> (requires OGG codecs). The source is all available <a href="http://git.o-hand.com/cgit.cgi/mozilla-headless/">here</a> and the embedding into Clutter is available <a href="http://git.clutter-project.org/?r=clutter-mozembed">here</a>. The source code for testing it is <a href="http://git.clutter-project.org/cgit.cgi?url=clutter-mozembed/tree/tests">here</a>.</p>
+<p>On a vaguely related note there is an interesting article about using gstreamer through Clutter&#8217;s python bindings &#8211; <a href="http://luisbg.blogalia.com//historias/61951">awesome (gstreamer * clutter)</a>.</p></div>
+	
+        <hr>
+
+    </div>
+        </div>
+        
+        <div class="span3">
+
+            <div class="well" style="padding: 8px 0; background-color: #FBFBFB;">
+            <ul class="nav nav-list">
+                <li class="nav-header"> 
+                Site
+                </li>
+            
+                <li><a href="http://www.fragmentedmemory.com/archives.html">Archives</a>
+                <li><a href="http://www.fragmentedmemory.com/tags.html">Tags</a>
+
+
+
+                <li><a href="http://www.fragmentedmemory.com/feed/index.xml" rel="alternate">Atom feed</a></li>
+
+            </ul>
+            </div>
+
+
+            <div class="well" style="padding: 8px 0; background-color: #FBFBFB;">
+            <ul class="nav nav-list">
+                <li class="nav-header"> 
+                Categories
+                </li>
+                
+                <li><a href="http://www.fragmentedmemory.com/category/misc.html">misc</a></li>
+                   
+            </ul>
+            </div>
+
+
+
+
+            <div class="social">
+            <div class="well" style="padding: 8px 0; background-color: #FBFBFB;">
+            <ul class="nav nav-list">
+                <li class="nav-header"> 
+                Social
+                </li>
+           
+                <li><a href="http://www.fragmentedmemory.com/feed/">rss</a></li>
+                <li><a href="https://github.com/garrybodsworth">github-alt</a></li>
+                <li><a href="https://twitter.com/garrybodsworth">twitter</a></li>
+                <li><a href="https://uk.linkedin.com/in/garrybodsworth">linkedin</a></li>
+                <li><a href="http://stackoverflow.com/cv/garrybodsworth">stack-overflow</a></li>
+                <li><a href="http://pinboard.in/u:garrybodsworth">pinboard</a></li>
+            </ul>
+            </div>
+            </div>
+
+        </div>  
+    </div>     </div> 
+<footer>
+<br />
+<p><a href="http://www.fragmentedmemory.com">Fragmented Memory</a> &copy; Garry Bodsworth 2014</p>
+</footer>
+
+</div> <!-- /container -->
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+<script src="http://www.fragmentedmemory.com/theme/bootstrap-collapse.js"></script>
+ 
+</body>
+</html>

@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Fragmented Memory</title>
+    <meta name="description" content="">
+    <meta name="author" content="Garry Bodsworth">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+    <!--[if lt IE 9]>
+    <script src="http://www.fragmentedmemory.com/theme/html5.js"></script>
+    <![endif]-->
+
+    <!-- Le styles -->
+    <link href="http://www.fragmentedmemory.com/theme/bootstrap.min.css" rel="stylesheet">
+    <link href="http://www.fragmentedmemory.com/theme/bootstrap.min.responsive.css" rel="stylesheet">
+    <link href="http://www.fragmentedmemory.com/theme/local.css" rel="stylesheet">
+    <link href="http://www.fragmentedmemory.com/theme/pygments.css" rel="stylesheet">
+
+    <!-- So Firefox can bookmark->"abo this site" -->
+        <link href="http://www.fragmentedmemory.com/feed/index.xml" rel="alternate" title="Fragmented Memory" type="application/atom+xml">
+
+</head>
+
+<body>
+
+<div class="navbar">
+    <div class="navbar-inner">
+    <div class="container">
+
+         <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+             <span class="icon-bar"></span>
+             <span class="icon-bar"></span>
+             <span class="icon-bar"></span>
+         </a>
+
+        <a class="brand" href="http://www.fragmentedmemory.com">Fragmented Memory</a>
+
+        <div class="nav-collapse">
+        <ul class="nav">
+            
+            <li><a href="http://www.fragmentedmemory.com/pages/about.html">About</a></li>
+            <li><a href="http://www.fragmentedmemory.com/pages/cv.html">CV</a></li>
+        </ul>
+        </div>
+        
+    </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="content">
+    <div class="row">
+
+        <div class="span9">
+    <div class='article'>
+        <div class="content-title">
+            <h1>Sharing Is Good - The Open-Source Insomniac</h1>
+Fri 11 April 2008
+
+by <a class="url fn" href="http://www.fragmentedmemory.com/author/garry-bodsworth.html">Garry Bodsworth</a>
+ 
+
+
+        </div>
+	
+        <div><p><a href="http://www.insomniacgames.com/">Insomniac Games</a> who are behind Ratchet &amp; Clank and Resistance: Fall Of Man have recently decided to start sharing knowledge.  Gaming is a notoriously secretive industry and is not well renowned for its open-ness, and Insomniac think its mad that developers keep reinvenhttp://www.blogger.com/img/gl.link.gifting the same core pieces of functionality that don't even make up the bread'n'butter of gaming.</p>
+<p>First up is the <a href="http://www.insomniacgames.com/tech/techpage.php">R&amp;D section on their website</a>.  This section contains presentations and papers about various subjects including graphics, gameplay, memory and performance.</p>
+<p>Next up is the open-source BSD-style licensed code.  The section is called the <a href="http://nocturnal.insomniacgames.com/index.php/Main_Page">Nocturnal Initiative</a> and is a wiki.  There are links to community forums which aren't busy yet.</p>
+<p>At the moment some of the source code available is:
+<ul><li>C++ Delegate/Event System</li><li>Pointer to reference counted objects</li><li>Pointer to heap allocated arrays</li><li>Endian conversion code</li><li>Insertion ordered std::set</li><li>Reversible key and value std::map</li><li>Interprocess Communication</li><ul><li>      Fast non-blocking message-based design</li><li>      Works over BSD-style sockets (TCP) or Named Pipes</li><li>Windows platform included, additional platforms are easily added</li></ul><li>Debugging Helpers</li><ul><li>      PDB-based symbol information querying</li><li>      Capture stacks within your program making heap object tracking and leak debugging easier</li><li>      Give your application automatic crash reports dispatched via email that contain handy user/machine informaton, call stack, and memory page allocation stats</li></ul><li>Console Output Manager</li><ul><li>      Log console output to one or more trace files</li><li>      Color code the console output based on Error/Warning/Debug print statements</li><li>Throttle output verbosity (configured via command line arg or environment variable)</li><li>      Outline nested stages of processing performed by your application (for builders/exporters)</li><li>      Augment crash reports with the current outline state of your application (very useful for tracking down new crash bugs)</li></ul><li>Instrumenting Profiler</li><ul><li>      Cross platform (Windows and PS3 currently)</li><li>      Macro-instrumented stack timer based profiler</li><li>      Concise profile report printed out at program exit</li><li>      Logs instance data out to human readable log file (Profile Analyzer is in development)</li></ul><li>C++ Reflection</li><ul><li>      Instrument your application classes and register them with the type registry</li><li>      Can serialize object instances to XML or our (faster) custom binary format</li><li>      Flexible parsing mechanics allow you to read in old versions of your class</li><li>      Handles renaming member variables as well as changing member type (within reasonable limits)</li><li>      Supports serializing std::vector, std::set, and std::map containers with primitives or pointers to other reflect objects</li><li>  Supports serializing enum and bitfield members using string representation (supports reordering enum elements)</li><li>      Provides for automatic object comparison and cloning</li><li>      Implements introspection using a visitor interface</li></ul></ul>
+Some of it looks pretty good.  I hope this means that there is more sharing of C++ code which is always a good thing, maybe even some of the libraries could be Boost-ified...</p></div>
+	
+        <hr>
+
+    </div>
+        </div>
+        
+        <div class="span3">
+
+            <div class="well" style="padding: 8px 0; background-color: #FBFBFB;">
+            <ul class="nav nav-list">
+                <li class="nav-header"> 
+                Site
+                </li>
+            
+                <li><a href="http://www.fragmentedmemory.com/archives.html">Archives</a>
+                <li><a href="http://www.fragmentedmemory.com/tags.html">Tags</a>
+
+
+
+                <li><a href="http://www.fragmentedmemory.com/feed/index.xml" rel="alternate">Atom feed</a></li>
+
+            </ul>
+            </div>
+
+
+            <div class="well" style="padding: 8px 0; background-color: #FBFBFB;">
+            <ul class="nav nav-list">
+                <li class="nav-header"> 
+                Categories
+                </li>
+                
+                <li><a href="http://www.fragmentedmemory.com/category/misc.html">misc</a></li>
+                   
+            </ul>
+            </div>
+
+
+
+
+            <div class="social">
+            <div class="well" style="padding: 8px 0; background-color: #FBFBFB;">
+            <ul class="nav nav-list">
+                <li class="nav-header"> 
+                Social
+                </li>
+           
+                <li><a href="http://www.fragmentedmemory.com/feed/">rss</a></li>
+                <li><a href="https://github.com/garrybodsworth">github-alt</a></li>
+                <li><a href="https://twitter.com/garrybodsworth">twitter</a></li>
+                <li><a href="https://uk.linkedin.com/in/garrybodsworth">linkedin</a></li>
+                <li><a href="http://stackoverflow.com/cv/garrybodsworth">stack-overflow</a></li>
+                <li><a href="http://pinboard.in/u:garrybodsworth">pinboard</a></li>
+            </ul>
+            </div>
+            </div>
+
+        </div>  
+    </div>     </div> 
+<footer>
+<br />
+<p><a href="http://www.fragmentedmemory.com">Fragmented Memory</a> &copy; Garry Bodsworth 2014</p>
+</footer>
+
+</div> <!-- /container -->
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+<script src="http://www.fragmentedmemory.com/theme/bootstrap-collapse.js"></script>
+ 
+</body>
+</html>

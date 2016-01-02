@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Fragmented Memory</title>
+    <meta name="description" content="">
+    <meta name="author" content="Garry Bodsworth">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+    <!--[if lt IE 9]>
+    <script src="http://www.fragmentedmemory.com/theme/html5.js"></script>
+    <![endif]-->
+
+    <!-- Le styles -->
+    <link href="http://www.fragmentedmemory.com/theme/bootstrap.min.css" rel="stylesheet">
+    <link href="http://www.fragmentedmemory.com/theme/bootstrap.min.responsive.css" rel="stylesheet">
+    <link href="http://www.fragmentedmemory.com/theme/local.css" rel="stylesheet">
+    <link href="http://www.fragmentedmemory.com/theme/pygments.css" rel="stylesheet">
+
+    <!-- So Firefox can bookmark->"abo this site" -->
+        <link href="http://www.fragmentedmemory.com/feed/index.xml" rel="alternate" title="Fragmented Memory" type="application/atom+xml">
+
+</head>
+
+<body>
+
+<div class="navbar">
+    <div class="navbar-inner">
+    <div class="container">
+
+         <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+             <span class="icon-bar"></span>
+             <span class="icon-bar"></span>
+             <span class="icon-bar"></span>
+         </a>
+
+        <a class="brand" href="http://www.fragmentedmemory.com">Fragmented Memory</a>
+
+        <div class="nav-collapse">
+        <ul class="nav">
+            
+            <li><a href="http://www.fragmentedmemory.com/pages/about.html">About</a></li>
+            <li><a href="http://www.fragmentedmemory.com/pages/cv.html">CV</a></li>
+        </ul>
+        </div>
+        
+    </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="content">
+    <div class="row">
+
+        <div class="span9">
+    <div class='article'>
+        <div class="content-title">
+            <h1>The Little Box That Almost Could</h1>
+Sun 15 February 2009
+
+by <a class="url fn" href="http://www.fragmentedmemory.com/author/garry-bodsworth.html">Garry Bodsworth</a>
+ 
+
+
+        </div>
+	
+        <div><p>A few weeks back I was looking at some small low-powered computer units. One was really interesting, a passively cooled ultra low voltage tiny computer you could VESA mount to the back of monitors.</p>
+<p>It goes under a number of different names, <a href="http://www.bvm-store.com/ProductDetail.asp?fdProductId=486">BVM&#8217;s EPC-500</a>, <a href="http://www.compactpc.com.tw/ebox-4300.htm">the eBox-4300 / 4310</a>, and [the MicroClient Sr][3]. They all seem to be rebranded versions of the same platform, and I think the eBox is the original although I could be proved wrong.</p>
+<p><strong>Features</strong><br />
+<em> 500MHz VIA Eden ULV CPU with 512Mbyte/1Gbyte DDR2 RAM<br />
+</em> Bootable from Compact Flash or USB<br />
+<em> Internal HDD option<br />
+</em> Linux port available on CF or USB Pendrive<br />
+<em> Low power consumption<br />
+</em> VESA mounting capability </p>
+<p><strong>Specifications</strong><br />
+<em> CPU: VIA Eden ULV 500MHz.<br />
+</em> BIOS: AMI BIOS.<br />
+<em> System Chipset: VIA CX700M.<br />
+</em> I/O Chip: Winbond W83697.<br />
+<em> System Memory: Onboard 512MB/1GB DDR2.<br />
+</em> I/O: 1 x EIDE, 1 x PS/2 K/B/Mouse; 1 x Type I/II CF slot<br />
+<em> 2 x RS-232 Port (option); USB 3 x USB 2.0 Ports (two on front).<br />
+</em> Display Chipset: Integrated VIA UniChrome 2D/3D Graphics with MPEG4/WMV9 decoding accelerator.<br />
+<em> Display Memory: up to 128MBytes sharing system memory.<br />
+</em> Resolution: up to 1920 x 1440.<br />
+<em> Audio: AC97 2.2 (Codec); VIA Vinyl VT1708.<br />
+</em> Audio Interface: Line out, Mic in.<br />
+<em> Ethernet: Chipset Realtek 8100B 10/100 Base-T<br />
+</em> Remote Boot ROM built-in boot ROM function, supports PXE boot and Wake-up on LAN.<br />
+<em> Mechanical &amp; Environment:<br />
+</em> Power Requirement: +5V @ 3.0A.<br />
+<em> Operating Temperature: 0 ~ 60°C.<br />
+</em> Operating Humidity: 0% &#8211; 90% relative humidity, non-condensing.<br />
+<em> Size (W x H x D): 115x 115 x 35mm.<br />
+</em> Weight: 505g</p>
+<p>Also the <a href="http://www.liantec.com/product/emboard/EMB-3700.htm">motherboards are available on their own</a> with much more power processors (up to 1.5GHz passively cooled and 2.0GHz with a fan using VIA Eden ULV processors). The spec sheet is <a href="http://download.liantec.com/download/datasheet/EMB-3700.pdf">available</a>.</p>
+<p>I was looking quite deeply into this platform to test its potential. I wanted to run Linux on this and it had an in-built video decoding co-processor as well as 3D support through the CX700M chipset. Anyway I eventually managed to get <a href="http://www.xubuntu.org/">Xubuntu</a> running with Compiz effects.</p>
+<p>The problem I found with the system is that the drivers are thoroughly inadequate and that the open-source support is nowhere to be seen without VIA helping by supplying the documentation for the video decoding acceleration. The GPU is a <a href="http://www.via.com.tw/en/products/chipsets/c-series/cx700m/">CX700M</a> and the binary drivers are <a href="http://www.viaarena.com/default.aspx?PageID=420&amp;OSID=25&amp;CatID=2580&amp;SubCatID=184">available</a> and the official drivers are <a href="http://linux.via.com.tw/support/downloadFiles.action">available from VIA</a> (Ubuntu 8.10 currently). With these the 3D support is okay apart from some font rendering issues when using Compiz.</p>
+<p>Some of the older drivers supply the support for the video decoding co-processor. Unfortunately I could not get a version working with a current version of Ubuntu, which in turn even if it did work would not have supported the 3D graphics properly. Also in order to make use of it you have to jump through a number of extra hoops and also operate as root which is a good security risk(!)</p>
+<p>There are two specialised version of the media players that VIA has customised to make use of the drivers that supply the MPEG-2/4/h.264 and WMV9 acceleration. These are <a href="http://sourceforge.net/projects/viaexp">VeXP (Via Xine Player)</a> and <a href="http://sourceforge.net/projects/vemp">VeMP (the VIA enhanced mPlayer)</a>. I did put them into Git repositories starting from the base they branched from so I could work out what the patches did. They rely on closed-source library called libddmpeg.so that is part of some of the older drivers which provides the interface to the video acceleration hardware. This in turn relies n <a href="http://www.trilithium.com/johan/2005/08/linux-gate/">linuxgate.so.1</a> which provides a direct interface into the kernel for interrupts and the suchlike. This probably explains why all these things if you can get them to work require root access. I did try grabbing the library from an older driver and using it on a newer driver, which would have been too good to be true if it worked (it didn&#8217;t but at least I didn&#8217;t kill the system).</p>
+<p>The place to go for drivers and utilities is <a href="http://www.viaarena.com/">VIA Arena</a> where they maintain all the older legacy downloads as only the bleeding edge are available on the official VIA website.</p>
+<p>There is a special version of <a href="http://www.puppylinux.org/downloads/puplets/mcpup">Puppy Linux</a> that is optimised for the platform. The development website is <a href="http://www.mcpup.org/">here</a>. Unfortunately the media player supplied is not the one that makes use of the co-processor functionality, well it didn&#8217;t for me anyway. Maybe this s worth revisiting again at some point.</p>
+<p>There is a blog covering the Microclient Sr <a href="http://microclient.wordpress.com/">here</a> and a Google Group discussin it <a href="http://groups.google.com/group/microclient">here</a>. There is also a good <a href="http://nettops.fr/index.php">comprehensive website (in French)</a>. Finally, a couple of reviews are <a href="http://www.linuxdevices.com/news/NS9828354233.html">here</a> and <a href="http://www.linuxdevices.com/articles/AT4708024578.html">here</a>.</p>
+<p>This is a really cool bit of it with nothing else in its price range/features. Unfortunately the Linux support is such a headache, if it worked I would be extremely happy and it would be very interesting to see how it functions with video and 3D. The tiny little box can even do insanely high resolutions of 1920&#215;1440 which would be very useful.</p>
+<p>[3]: MicroClient Sr.</p></div>
+	
+        <hr>
+
+    </div>
+        </div>
+        
+        <div class="span3">
+
+            <div class="well" style="padding: 8px 0; background-color: #FBFBFB;">
+            <ul class="nav nav-list">
+                <li class="nav-header"> 
+                Site
+                </li>
+            
+                <li><a href="http://www.fragmentedmemory.com/archives.html">Archives</a>
+                <li><a href="http://www.fragmentedmemory.com/tags.html">Tags</a>
+
+
+
+                <li><a href="http://www.fragmentedmemory.com/feed/index.xml" rel="alternate">Atom feed</a></li>
+
+            </ul>
+            </div>
+
+
+            <div class="well" style="padding: 8px 0; background-color: #FBFBFB;">
+            <ul class="nav nav-list">
+                <li class="nav-header"> 
+                Categories
+                </li>
+                
+                <li><a href="http://www.fragmentedmemory.com/category/misc.html">misc</a></li>
+                   
+            </ul>
+            </div>
+
+
+
+
+            <div class="social">
+            <div class="well" style="padding: 8px 0; background-color: #FBFBFB;">
+            <ul class="nav nav-list">
+                <li class="nav-header"> 
+                Social
+                </li>
+           
+                <li><a href="http://www.fragmentedmemory.com/feed/">rss</a></li>
+                <li><a href="https://github.com/garrybodsworth">github-alt</a></li>
+                <li><a href="https://twitter.com/garrybodsworth">twitter</a></li>
+                <li><a href="https://uk.linkedin.com/in/garrybodsworth">linkedin</a></li>
+                <li><a href="http://stackoverflow.com/cv/garrybodsworth">stack-overflow</a></li>
+                <li><a href="http://pinboard.in/u:garrybodsworth">pinboard</a></li>
+            </ul>
+            </div>
+            </div>
+
+        </div>  
+    </div>     </div> 
+<footer>
+<br />
+<p><a href="http://www.fragmentedmemory.com">Fragmented Memory</a> &copy; Garry Bodsworth 2014</p>
+</footer>
+
+</div> <!-- /container -->
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+<script src="http://www.fragmentedmemory.com/theme/bootstrap-collapse.js"></script>
+ 
+</body>
+</html>

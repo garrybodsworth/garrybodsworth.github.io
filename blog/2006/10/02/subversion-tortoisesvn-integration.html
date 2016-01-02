@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Fragmented Memory</title>
+    <meta name="description" content="">
+    <meta name="author" content="Garry Bodsworth">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+    <!--[if lt IE 9]>
+    <script src="http://www.fragmentedmemory.com/theme/html5.js"></script>
+    <![endif]-->
+
+    <!-- Le styles -->
+    <link href="http://www.fragmentedmemory.com/theme/bootstrap.min.css" rel="stylesheet">
+    <link href="http://www.fragmentedmemory.com/theme/bootstrap.min.responsive.css" rel="stylesheet">
+    <link href="http://www.fragmentedmemory.com/theme/local.css" rel="stylesheet">
+    <link href="http://www.fragmentedmemory.com/theme/pygments.css" rel="stylesheet">
+
+    <!-- So Firefox can bookmark->"abo this site" -->
+        <link href="http://www.fragmentedmemory.com/feed/index.xml" rel="alternate" title="Fragmented Memory" type="application/atom+xml">
+
+</head>
+
+<body>
+
+<div class="navbar">
+    <div class="navbar-inner">
+    <div class="container">
+
+         <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+             <span class="icon-bar"></span>
+             <span class="icon-bar"></span>
+             <span class="icon-bar"></span>
+         </a>
+
+        <a class="brand" href="http://www.fragmentedmemory.com">Fragmented Memory</a>
+
+        <div class="nav-collapse">
+        <ul class="nav">
+            
+            <li><a href="http://www.fragmentedmemory.com/pages/about.html">About</a></li>
+            <li><a href="http://www.fragmentedmemory.com/pages/cv.html">CV</a></li>
+        </ul>
+        </div>
+        
+    </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="content">
+    <div class="row">
+
+        <div class="span9">
+    <div class='article'>
+        <div class="content-title">
+            <h1>Subversion : TortoiseSVN Integration into Visual Studio</h1>
+Mon 02 October 2006
+
+by <a class="url fn" href="http://www.fragmentedmemory.com/author/garry-bodsworth.html">Garry Bodsworth</a>
+ 
+
+
+        </div>
+	
+        <div><p><span style="font-weight:bold;"><a href="/2007/07/tortoisesvn-and-visual-studio/">See the update here.</a></span></p>
+<p>This is the easy method of integrating <a href="http://www.tortoisesvn.net">TortoiseSVN</a> into Visual Studio.NET 2003 and 2005 (and probably Visual Studio 6.0).  I'll take it in stages first and show you how to add these useful things to your "External Tools" menu.</p>
+<p>TortoiseSVN is kind enough to provide a decent command-line interface for bringing up the dialogs.  This gives us the ability to add External Tools that will operate on the currently open project in Visual Studio.</p>
+<p>Here is a script (vbs) that will append the External Tools to the end of your list:
+<table style="font-size:75%;border: 1px dashed #2f6fab; background-color: #f9f9f9;"><tr><td><pre>'
+' Create the Subversion External Tools for Visual Studio
+'</p>
+<p>' Set the Visual Studio Version Number so we access the correct
+' part of the registry for External Tools.
+' Visual Studio.NET      = "7.0"
+' Visual Studio.NET 2003 = "7.1"
+' Visual Studio.NET 2005 = "8.0"
+Dim strVisualStudioVersionNumber
+strVisualStudioVersionNumber = "8.0"</p>
+<p>Dim strTortoiseSVNBin
+strTortoiseSVNBin = "c:\program files\TortoiseSVN\bin\"</p>
+<p>' Create the scripting shell object
+Dim WshShell
+Set WshShell = WScript.CreateObject("WScript.Shell")</p>
+<p>' Function to install an external tool
+function WriteExternalTool( strVersionNumber, <em>
+    iToolNumber, </em>
+    strTitle, <em>
+    strCommandLine, </em>
+    strArgs, <em>
+    strWorkingDir, </em>
+    strSource, _
+    strOptions)
+ ' NOTES (from Google Groups):
+ ' ToolTitle<your tool number>:
+ '   stores the name of your tool
+ ' ToolCmd<your tool number>:
+ '   stores the path to your tool
+ ' ToolArg<your tool number>: 
+ '   stores the command line arguments for your tool.
+ '   Set this to a blank string if your tool takes no arguments.
+ ' ToolDir<your tool number>:
+ '   stores the initial directory from which your tool
+ '   should be run.  Set this to a blank string if you don't care where your tool
+ '   is run from.
+ ' ToolOpt<your tool number>:
+ '   stores the settings for the checkboxes at the
+ '   bottom of the external tools dialog.  The easiest way to determine what
+ '   value you should set, is to create your tool once manually with the
+ '   checkboxes set the way you like, and then exit visual studio.  Then look up
+ '   the value that's written to this regkey.  The value that this registry
+ '   entries got set to is the value your installer should set. </p>
+<p>Dim strTitleKey, strCommandLineKey, strArgsKey, strWorkingDirKey, strSourceKey, strOptionsKey
+ ' Construct the keys we will be adding to as strings.  These depend on the number of the tool.
+ strTitleKey =  "HKEY_CURRENT_USER\Software\Microsoft\VisualStudio\" &amp; <em>
+     strVersionNumber &amp; "\External Tools\ToolTitle" &amp; iToolNumber
+ strCommandLineKey = "HKEY_CURRENT_USER\Software\Microsoft\VisualStudio\" &amp; </em>
+     strVersionNumber &amp; "\External Tools\ToolCmd" &amp; iToolNumber
+ strArgsKey =  "HKEY_CURRENT_USER\Software\Microsoft\VisualStudio\" &amp; <em>
+     strVersionNumber &amp; "\External Tools\ToolArg" &amp; iToolNumber
+ strWorkingDirKey = "HKEY_CURRENT_USER\Software\Microsoft\VisualStudio\" &amp; </em>
+     strVersionNumber &amp; "\External Tools\ToolDir" &amp; iToolNumber
+ strSourceKey =  "HKEY_CURRENT_USER\Software\Microsoft\VisualStudio\" &amp; <em>
+     strVersionNumber &amp; "\External Tools\ToolSourceKey" &amp; iToolNumber
+ strOptionsKey =  "HKEY_CURRENT_USER\Software\Microsoft\VisualStudio\" &amp; </em>
+     strVersionNumber &amp; "\External Tools\ToolOpt" &amp; iToolNumber</p>
+<p>' Write out the contents of an external tool 
+ WshShell.RegWrite strTitleKey, strTitle
+ WshShell.RegWrite strCommandLineKey, strCommandLine
+ WshShell.RegWrite strArgsKey, strArgs
+ WshShell.RegWrite strWorkingDirKey, strWorkingDir
+ WshShell.RegWrite strSourceKey, strSource
+ WshShell.RegWrite strOptionskey, strOptions, "REG_DWORD"</p>
+<p>' Update the count of external tools for the benefit of Visual Studio
+ WshShell.RegWrite "HKEY_CURRENT_USER\Software\Microsoft\VisualStudio\" &amp; <em>
+     strVersionNumber &amp; </em>
+     "\External Tools\ToolNumKeys", <em>
+    iToolNumber + 1, </em>
+    "REG_DWORD"</p>
+<p>WriteExternalTool = (iToolNumber + 1)
+end function</p>
+<p>' Get the number of current external tools as this will tell us where to start the numbering
+Dim iNumTools
+iNumTools = WshShell.RegRead( "HKEY_CURRENT_USER\Software\Microsoft\VisualStudio\" &amp; <em>
+    strVisualStudioVersionNumber &amp; </em>
+    "\External Tools\ToolNumKeys")</p>
+<p>' Install Subversion Tools</p>
+<p>' The order is:
+'   SVN Commit
+'   SVN Update
+'   SVN History
+'   SVN Diff
+'   SVN Blame
+'   SVN Revert
+'   SVN Modifications
+'   SVN Repository
+'   SVN Project History
+'   SVN Settings</p>
+<p>iNumTools = WriteExternalTool( strVisualStudioVersionNumber, <em>
+    iNumTools, </em>
+    "SVN Commit", <em>
+    strTortoiseSVNBin &amp; "tortoiseproc.exe", </em>
+    "/command:commit /path:""$(SolutionDir)"" /notempfile", <em>
+    "$(SolutionDir)", </em>
+    "", _
+    17)</p>
+<p>iNumTools = WriteExternalTool( strVisualStudioVersionNumber, <em>
+    iNumTools, </em>
+    "SVN Update", <em>
+    strTortoiseSVNBin &amp; "tortoiseproc.exe", </em>
+    "/command:update /path:""$(SolutionDir)"" /notempfile", <em>
+    "$(SolutionDir)", </em>
+    "", _
+    17)</p>
+<p>iNumTools = WriteExternalTool( strVisualStudioVersionNumber, <em>
+    iNumTools, </em>
+    "SVN History", <em>
+    strTortoiseSVNBin &amp; "tortoiseproc.exe", </em>
+    "/command:log /path:""$(ItemPath)"" /notempfile", <em>
+    "$(ItemDir)", </em>
+    "", _
+    17)</p>
+<p>iNumTools = WriteExternalTool( strVisualStudioVersionNumber, <em>
+    iNumTools, </em>
+    "SVN Diff", <em>
+    strTortoiseSVNBin &amp; "tortoiseproc.exe", </em>
+    "/command:diff /path:""$(ItemPath)"" /notempfile", <em>
+    "$(ItemDir)", </em>
+    "", _
+    17)</p>
+<p>iNumTools = WriteExternalTool( strVisualStudioVersionNumber, <em>
+    iNumTools, </em>
+    "SVN Blame", <em>
+    strTortoiseSVNBin &amp; "tortoiseproc.exe", </em>
+    "/command:blame /path:""$(ItemPath)"" /notempfile", <em>
+    "$(ItemDir)", </em>
+    "", _
+    17)</p>
+<p>iNumTools = WriteExternalTool( strVisualStudioVersionNumber, <em>
+    iNumTools, </em>
+    "SVN Revert", <em>
+    strTortoiseSVNBin &amp; "tortoiseproc.exe", </em>
+    "/command:revert /path:""$(SolutionDir)"" /notempfile", <em>
+    "$(SolutionDir)", </em>
+    "", _
+    17)</p>
+<p>iNumTools = WriteExternalTool( strVisualStudioVersionNumber, <em>
+    iNumTools, </em>
+    "SVN Modifications", <em>
+    strTortoiseSVNBin &amp; "tortoiseproc.exe", </em>
+    "/command:repostatus /path:""$(SolutionDir)"" /notempfile", <em>
+    "$(SolutionDir)", </em>
+    "", _
+    17)</p>
+<p>iNumTools = WriteExternalTool( strVisualStudioVersionNumber, <em>
+    iNumTools, </em>
+    "SVN Repository", <em>
+    strTortoiseSVNBin &amp; "tortoiseproc.exe", </em>
+    "/command:repobrowser /path:""$(SolutionDir)"" /notempfile", <em>
+    "$(SolutionDir)", </em>
+    "", _
+    17)</p>
+<p>iNumTools = WriteExternalTool( strVisualStudioVersionNumber, <em>
+    iNumTools, </em>
+    "SVN Project History", <em>
+    strTortoiseSVNBin &amp; "tortoiseproc.exe", </em>
+    "/command:log /path:""$(SolutionDir)"" /notempfile", <em>
+    "$(SolutionDir)", </em>
+    "", _
+    17)</p>
+<p>iNumTools = WriteExternalTool( strVisualStudioVersionNumber, <em>
+    iNumTools, </em>
+    "SVN Settings", <em>
+    strTortoiseSVNBin &amp; "tortoiseproc.exe", </em>
+    "/command:settings /path:""$(SolutionDir)"" /notempfile", <em>
+    "$(SolutionDir)", </em>
+    "", _
+    17)</p>
+<p>' Reset the scripting shell object
+set WshShell = nothing</pre></td></tr></table>
+<a href="http://garry.bodsworth.googlepages.com/SubversionInstall.zip">Download the script from this link</a></p>
+<p>You can set your Visual Studio version by setting the <span style="font-style: italic;">strVisualStudioVersionNumber</span> variable according to the comment.</p>
+<p>If your TortoiseSVN is not in the default installation location change the <span style="font-style: italic;">strTortoiseSVNBin </span>variable (making sure you use \ as separators).</p>
+<p>I am not a vbs expert but I tried to make this script as reusable as possible, especially with respect to writing the external tools to the registry.  This should work with any external tools you may want to add via this script.  There are probably some TortoiseSVN features that should be added as well, but I have got by on what is in that script so far.</p>
+<p>For the next part I will describe how to make a toolbar to access the new External Tools.</p></div>
+	
+        <hr>
+
+    </div>
+        </div>
+        
+        <div class="span3">
+
+            <div class="well" style="padding: 8px 0; background-color: #FBFBFB;">
+            <ul class="nav nav-list">
+                <li class="nav-header"> 
+                Site
+                </li>
+            
+                <li><a href="http://www.fragmentedmemory.com/archives.html">Archives</a>
+                <li><a href="http://www.fragmentedmemory.com/tags.html">Tags</a>
+
+
+
+                <li><a href="http://www.fragmentedmemory.com/feed/index.xml" rel="alternate">Atom feed</a></li>
+
+            </ul>
+            </div>
+
+
+            <div class="well" style="padding: 8px 0; background-color: #FBFBFB;">
+            <ul class="nav nav-list">
+                <li class="nav-header"> 
+                Categories
+                </li>
+                
+                <li><a href="http://www.fragmentedmemory.com/category/misc.html">misc</a></li>
+                   
+            </ul>
+            </div>
+
+
+
+
+            <div class="social">
+            <div class="well" style="padding: 8px 0; background-color: #FBFBFB;">
+            <ul class="nav nav-list">
+                <li class="nav-header"> 
+                Social
+                </li>
+           
+                <li><a href="http://www.fragmentedmemory.com/feed/">rss</a></li>
+                <li><a href="https://github.com/garrybodsworth">github-alt</a></li>
+                <li><a href="https://twitter.com/garrybodsworth">twitter</a></li>
+                <li><a href="https://uk.linkedin.com/in/garrybodsworth">linkedin</a></li>
+                <li><a href="http://stackoverflow.com/cv/garrybodsworth">stack-overflow</a></li>
+                <li><a href="http://pinboard.in/u:garrybodsworth">pinboard</a></li>
+            </ul>
+            </div>
+            </div>
+
+        </div>  
+    </div>     </div> 
+<footer>
+<br />
+<p><a href="http://www.fragmentedmemory.com">Fragmented Memory</a> &copy; Garry Bodsworth 2014</p>
+</footer>
+
+</div> <!-- /container -->
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+<script src="http://www.fragmentedmemory.com/theme/bootstrap-collapse.js"></script>
+ 
+</body>
+</html>
