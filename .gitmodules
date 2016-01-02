@@ -1,7 +1,0 @@
-
-[submodule ".themes/compbits"]
-	path = .themes/compbits
-	url = git://github.com/garrybodsworth/compbits.git
-[submodule "external/jekyll-alias-generator"]
-	path = external/jekyll-alias-generator
-	url = https://github.com/tsmango/jekyll_alias_generator.git
